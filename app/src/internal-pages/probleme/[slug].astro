@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import QuickModePattern from '../../components/QuickModePattern.astro';
+import ChildMessage from '../../components/ChildMessage.astro';
+import Card from '../../components/Card.astro';
+import { getAllProblems, getResolvedProblem } from '../../lib/content-bridge';
+
+export function getStaticPaths() {
+  const problems = getAllProblems();
+  return problems.map(pr => ({
+    params: { slug: pr.slug },
+    props: { problemId: pr.id }
+  }));
+}
+
+const { problemId } = Astro.props;
+const { problem, exercises } = getResolvedProblem(problemId);
+---
+<BaseLayout 
+  title={`${problem.title} — Problemă de Teren U11 (Mode B)`}
+  description={problem.observation}
+>
+  <Breadcrumb items={[
+    { label: "Probleme de Teren", href: "/#probleme" },
+    { label: problem.title }
+  ]} />
+
+  {problem.development_fixture && (
+    <div class="fixture-alert" role="alert">
+      <strong>⚠️ DEVELOPMENT FIXTURE:</strong> Această pagină este generată din date neutre de dezvoltare pentru demonstrarea rutei Mode B.
+    </div>
+  )}
+
+  <QuickModePattern problemTitle={problem.title}>
+    <div slot="causes">
+      <ul>
+        {problem.possible_causes.map(cause => <li>{cause}</li>)}
+      </ul>
+    </div>
+
+    <div slot="observe">
+      <p>{problem.observation}</p>
+    </div>
+
+    <div slot="say">
+      <ChildMessage wording={problem.intervention.what_to_say} />
+    </div>
+
+    <div slot="why">
+      <p>{problem.intervention.why_explanation}</p>
+    </div>
+
+    <div slot="action">
+      {exercises.map(ex => (
+        <Card title={ex.title} variant="quick-action" href={`/exercitii/${ex.slug}`}>
+          <p>{ex.objective}</p>
+          <p><strong>Configurare:</strong> {ex.setup}</p>
+        </Card>
+      ))}
+    </div>
+
+    <div slot="adaptation">
+      <p><strong>Adaptare:</strong> {problem.intervention.adaptation_note}</p>
+      <p><strong>Verificare:</strong> {problem.intervention.verification_check}</p>
+    </div>
+  </QuickModePattern>
+</BaseLayout>
+
+<style>
+  .fixture-alert {
+    background-color: var(--color-bg-surface-muted);
+    border: 1px solid var(--color-warning);
+    color: var(--color-text-primary);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-sm);
+  }
+</style>

@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import TacticalMotif from '../../components/TacticalMotif.astro';
+import CoachMessage from '../../components/CoachMessage.astro';
+import EvidenceBadge from '../../components/EvidenceBadge.astro';
+import QuickModePattern from '../../components/QuickModePattern.astro';
+import SectionNavigator from '../../components/SectionNavigator.astro';
+import CoachActions from '../../components/CoachActions.astro';
+import canonicalDetail from '../../../../data/principles/principle-variabilitatea-dezvoltarii-u11.json';
+import { getAllPrinciples, getCanonicalProductionContent, getResolvedPrinciple, resolveEvidenceClaims, getCategoryById } from '../../lib/content-bridge';
+
+export function getStaticPaths() { return getCanonicalProductionContent(getAllPrinciples()).map(p => ({ params:{ slug:p.slug }, props:{ principleId:p.id } })); }
+const { principleId } = Astro.props;
+const { principle, exercises } = getResolvedPrinciple(principleId);
+const isReference = principle.slug === 'variabilitatea-dezvoltarii-u11';
+const evidenceClaims = principle.development_fixture ? [] : resolveEvidenceClaims(principle);
+const category = getCategoryById(principle.category_id);
+const detail = isReference ? canonicalDetail : null;
+const rationaleLabels: Record<string, string> = {
+  tactical: 'Tactic', perceptual: 'Perceptiv', decisional: 'Decizional', cognitive: 'Cognitiv',
+  psychological: 'Psihologic', technical: 'Tehnic', social: 'Social'
+};
+const applicabilityLabels: Record<string, string> = { DIRECT: 'directă', PARTIAL: 'parțială', INDIRECT: 'indirectă' };
+const supportTypeLabels: Record<string, string> = { DIRECT: 'direct', CONTEXTUAL: 'contextual', CONTRASTING: 'contrastant', LIMITATION: 'limitare' };
+const observeItems = detail?.observable_behaviours ?? [principle.concept_text];
+const interpretationItems = detail?.possible_misinterpretations ?? [principle.why_it_matters];
+---
+<BaseLayout title={`${principle.title} — Principiu U11`} description={principle.summary}>
+  <Breadcrumb items={[{ label:'Principii de joc', href:'/principii' },{ label:principle.title }]} />
+  <CoachActions id={principle.id} kind="principle" title={principle.title} href={`/principii/${principle.slug}`}/>
+  {principle.development_fixture && <div class="fixture-alert" role="alert"><strong>Development fixture:</strong> pagină tehnică, fără statut de conținut canonic.</div>}
+
+  <article class:list={['principle-page',{ reference:isReference }]}>
+    <header class="principle-hero on-dark">
+      <div class="principle-intro">
+        <span class="eyebrow">{category?.label_ro ?? 'Principiu'}</span>
+        <h1>{isReference ? <Fragment>Copiii de aceeași vârstă<br /><em>nu sunt la același nivel.</em></Fragment> : principle.title}</h1>
+        <p>{principle.summary}</p>
+        <div class="practical-preview" id="rezumat-practic">
+          <div><span>Problema pe care o urmărești</span><p>{observeItems[0]}</p></div>
+          <div><span>Spune exact</span><blockquote>„{detail?.child_message ?? principle.child_wording}”</blockquote></div>
+          <div><span>Comportament observabil</span><p>{detail?.observable_behaviours?.[0] ?? principle.target_behavior}</p></div>
+        </div>
+      </div>
+      <div class="principle-motif"><TacticalMotif label="Variabilitate și adaptare individuală" /></div>
+    </header>
+
+    <SectionNavigator items={[{href:'#rezumat-practic',label:'Aplică acum'},{href:'#intelege',label:'Înțelege mecanismul'},{href:'#dovezi',label:'Verifică dovezile'}]} />
+
+    <section class="central-idea editorial-row" id="intelege">
+      <span class="section-code">00</span><div><span class="eyebrow">Ideea centrală</span><p>{detail?.professional_definition ?? principle.concept_text}</p></div>
+    </section>
+
+    <section class="observe-interpret" aria-label="Observație și interpretare">
+      <div class="observation"><span class="section-code">01 / FAPT</span><h2>Ce observi</h2><ul>{observeItems.map(item => <li>{item}</li>)}</ul></div>
+      <aside class="interpretation"><span class="section-code">02 / IPOTEZĂ</span><h2>Ce poate însemna</h2><p>Observația nu este încă un diagnostic. Testează o ajustare și urmărește răspunsul.</p><ul>{interpretationItems.map(item => <li>{item}</li>)}</ul></aside>
+    </section>
+
+    <section aria-labelledby="mesaj-copil"><h2 id="mesaj-copil" class="section-heading">Ce îi spui copilului</h2>
+      <CoachMessage childStatement={detail?.child_message ?? principle.child_wording} coachExplanation={detail?.coach_meaning ?? principle.coach_explanation} pedagogicalRationale={detail?.why_this_message ?? principle.why_it_matters} targetBehavior={detail?.observable_behaviours?.join(' ') ?? principle.target_behavior} phrasesToAvoid={detail?.phrases_to_avoid?.map(item=>item.phrase)} understandingCheck={detail?.understanding_check?.join(' ')} matchTransfer={detail?.match_transfer} />
+    </section>
+
+    <section class="why-grid" aria-labelledby="de-ce"><header><span class="section-code">03</span><h2 id="de-ce">De ce</h2></header><div>{detail ? Object.entries(detail.rationales).map(([key,value]) => <article><span>{rationaleLabels[key] ?? key}</span><p>{value}</p></article>) : <p>{principle.why_it_matters}</p>}</div></section>
+
+    {detail && <QuickModePattern problemTitle="Diferențele dintre copii devin vizibile în aceeași sarcină">
+      <div slot="observe"><p>Descrie comportamentul concret, fără etichetă.</p></div>
+      <div slot="causes"><p>Poate fi experiență, presiune, spațiu sau încredere. Nu diagnostica maturizarea.</p></div>
+      <div slot="say"><p>„{detail.child_message}”</p></div>
+      <div slot="why"><p>{detail.why_this_message}</p></div>
+      <div slot="action"><p>{detail.response_if_not_understood[0]}</p></div>
+      <div slot="adaptation"><p>{detail.response_if_not_understood[1]}</p></div>
+    </QuickModePattern>}
+
+    <section class="limitations" aria-labelledby="limitari"><span class="section-code">LIMITĂ</span><div><span class="eyebrow">Prudență epistemică</span><h2 id="limitari">Ce nu putem concluziona</h2><ul>{evidenceClaims.flatMap(claim=>claim.limitations).map(limit=><li>{limit}</li>)}</ul></div></section>
+
+    <section class="evidence-ledger" aria-labelledby="dovezi"><header><span class="eyebrow">Pe ce se bazează</span><h2 id="dovezi">Dovezi</h2><p>Afirmațiile sunt prezentate cu aplicabilitatea și limitele declarate în registrul de cercetare.</p></header>
+      <div>{evidenceClaims.length === 0 && <p class="evidence-unavailable" role="status">Acest principiu nu are încă dovezi canonice asociate.</p>}{evidenceClaims.map(claim => <article data-claim-id={claim.claim_id}>
+        <div class="claim-meta"><EvidenceBadge level={claim.epistemic_level} /><span>Aplicabilitate U11 · {applicabilityLabels[claim.u11_applicability] ?? claim.u11_applicability}</span></div>
+        <p class="claim-statement">{claim.statement}</p><p class="implication"><strong>Pentru antrenor:</strong> {claim.practical_implication}</p>
+        <details><summary>Surse și localizare ({claim.sources.length})</summary><ul>{claim.sources.map(source=><li data-citation-id={source.citation_id}><a href={source.url ?? (source.doi ? `https://doi.org/${source.doi}` : undefined)}>{source.title} ({source.year})</a><span> — {source.locator}; suport {supportTypeLabels[source.support_type] ?? source.support_type}</span></li>)}</ul></details>
+      </article>)}</div>
+    </section>
+
+    {exercises.length>0 && <section class="related"><span class="eyebrow">Transfer în joc</span><h2>Exerciții asociate</h2>{exercises.map(ex=><a href={`/exercitii/${ex.slug}`}><strong>{ex.title}</strong><span>{ex.area} · {ex.duration}</span></a>)}</section>}
+  </article>
+  <script is:inline>
+    /* Measures the real scrollbar gutter so the full-bleed .principle-hero
+       (above) can size itself against the true visual viewport instead of
+       100vw, which always includes the scrollbar and causes document-level
+       horizontal overflow. Placed at the end of this page's own content
+       (not <head>) so the document has already laid out enough to know
+       whether it needs a vertical scrollbar -- measuring earlier reads 0.
+       No pure-CSS fix exists once the value must be consumed inside a
+       nested, width-constrained container -- see
+       reports/audits/MANUALFC_PRE_PHASE32_PRINCIPLE_OVERFLOW_REPAIR.md. */
+    document.documentElement.style.setProperty('--scrollbar-w', (window.innerWidth - document.documentElement.clientWidth) + 'px');
+  </script>
+</BaseLayout>
+
+<style>
+  :global(:root){--scrollbar-w:15px}
+  .fixture-alert{padding:1rem;border:1px solid var(--color-warning);margin-bottom:1rem}.principle-hero{width:calc(100vw - var(--scrollbar-w));margin-left:calc(50% - 50vw + var(--scrollbar-w)/2);display:grid;grid-template-columns:1.4fr .6fr;min-height:520px;background:var(--color-bg-brand);padding:clamp(2.75rem,5vw,5rem) max(1rem,calc((100vw - var(--scrollbar-w) - var(--width-wide))/2))}.principle-intro{align-self:center}.principle-intro .eyebrow{color:var(--color-brand-gold)}.principle-intro h1{margin:1rem 0;max-width:16ch}.principle-intro h1 em{color:var(--color-brand-gold);font-style:normal}.principle-intro>p{font-size:1.08rem}.principle-motif{display:grid;align-items:center;opacity:.72}.practical-preview{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:var(--space-8);background:rgba(255,255,255,.15)}.practical-preview>div{padding:1rem;background:var(--color-bg-brand-secondary)}.practical-preview span{font-size:.62rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:var(--color-brand-gold)}.practical-preview p,.practical-preview blockquote{margin:.4rem 0 0;color:white;font-size:.88rem}.practical-preview blockquote{font-weight:750;border:0;padding:0}
+  .section-code{font:700 .68rem var(--font-family-mono);letter-spacing:.1em;color:var(--color-text-accent)}.editorial-row{display:grid;grid-template-columns:1fr 3fr;gap:var(--space-8);padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.central-idea p{font-family:var(--font-family-heading);font-size:clamp(1.8rem,3.5vw,3.2rem);font-weight:700;line-height:1.08;color:var(--color-text-primary)}
+  .observe-interpret{display:grid;grid-template-columns:1.2fr .8fr;margin:var(--space-20) 0}.observation,.interpretation{padding:clamp(2rem,5vw,4rem)}.observation{background:white;border-top:3px solid var(--color-bg-brand)}.observation ul{list-style:none;padding:0}.observation li{padding:1rem 0 1rem 2rem;border-bottom:1px solid var(--color-border);position:relative}.observation li::before{content:"";position:absolute;left:0;top:1.45rem;width:8px;height:8px;border:2px solid var(--color-bg-brand);border-radius:50%}.interpretation{background:#E7E8E2;border-left:1px solid var(--color-border)}.interpretation h2{font-style:italic}.interpretation>p{border-left:3px solid var(--color-brand-gold);padding-left:1rem;font-weight:700}
+  .section-heading{margin:var(--space-20) 0 var(--space-8)}.why-grid{display:grid;grid-template-columns:.7fr 2.3fr;gap:var(--space-12);padding:var(--space-20) 0}.why-grid>div{display:grid;grid-template-columns:repeat(2,1fr)}.why-grid article{padding:var(--space-6);border-top:1px solid var(--color-border)}.why-grid article span{font-size:.7rem;font-weight:850;text-transform:uppercase;color:var(--color-text-accent)}
+  .limitations{display:grid;grid-template-columns:.7fr 2.3fr;gap:var(--space-12);padding:var(--space-16);margin:var(--space-20) 0;background:#E7E8E2;border-block:1px solid var(--color-border-strong)}.limitations h2{font-size:clamp(2rem,4vw,3.2rem)}
+  .evidence-ledger{display:grid;grid-template-columns:.8fr 2.2fr;gap:var(--space-16);padding:var(--space-20) 0;border-top:3px solid var(--color-bg-brand)}.evidence-ledger>div>article{padding:var(--space-8) 0;border-top:1px solid var(--color-border)}.claim-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;color:var(--color-text-muted);font-size:.72rem;text-transform:uppercase}.claim-statement{font-size:1.1rem;color:var(--color-text-primary);margin-top:var(--space-4)}.implication{font-size:.9rem}details{margin-top:var(--space-4);font-size:.82rem}summary{cursor:pointer;font-weight:800;min-height:44px}.related{padding:var(--space-20) 0}.related>a{display:flex;justify-content:space-between;gap:1rem;padding:var(--space-6) 0;border-top:1px solid var(--color-border);text-decoration:none}.related>a span{color:var(--color-text-muted)}
+  .evidence-unavailable{padding:var(--space-6);border-block:1px solid var(--color-border-strong);background:#E7E8E2;color:var(--color-text-secondary)}
+  @media(max-width:800px){.principle-hero{grid-template-columns:1fr}.principle-motif{display:none}.practical-preview{grid-template-columns:1fr}.observe-interpret,.editorial-row,.why-grid,.limitations,.evidence-ledger{grid-template-columns:1fr}.why-grid>div{grid-template-columns:1fr}.limitations{padding:var(--space-8)} }
+  @media(max-width:390px){.principle-hero{padding-block:3.5rem;min-height:auto}.principle-intro h1{font-size:2.8rem}.principle-motif{margin-top:2rem}.observe-interpret{margin-block:var(--space-12)}.observation,.interpretation{padding:1.5rem}.section-heading{margin-top:var(--space-12)}}
+</style>

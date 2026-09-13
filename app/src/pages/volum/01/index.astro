@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const chapters = [
+  ['CH-0101', 'Profilul integrat de dezvoltare', '/volum/01/ch-0101'],
+  ['CH-0102', 'Percepție, orientare și atenție în joc', '/volum/01/ch-0102'],
+  ['CH-0103', 'Decizia autonomă și rolul erorii', '/volum/01/ch-0103'],
+  ['CH-0104', 'Formularea mesajului pedagogic', '/volum/01/ch-0104'],
+  ['CH-0105', 'Evaluarea înțelegerii și transferul în joc', '/volum/01/ch-0105'],
+  ['CH-0106', 'Emoțiile copilului: frustrare, anxietate competițională și rușine', '/volum/01/ch-0106'],
+  ['CH-0107', 'Relația pedagogică: cald și structurat, nu unul în locul celuilalt', '/volum/01/ch-0107'],
+  ['CH-0108', 'Comunicarea de zi cu zi: claritate, ton și verificarea reală a înțelegerii', '/volum/01/ch-0108'],
+  ['CH-0109', 'Părinții: sprijin, implicare și granițele rolului de antrenor', '/volum/01/ch-0109'],
+  ['CH-0110', 'Cât poate reflecta singur copilul: limitele auto-monitorizării la 10–11 ani', '/volum/01/ch-0110']
+];
+---
+
+<BaseLayout title="Volumul 01 — ManualFC" description="Copilul de 10–11 ani înaintea fotbalistului">
+  <div class="volume-index">
+    <p class="eyebrow">VOLUMUL 01 · 10 CAPITOLE</p>
+    <h1>Copilul înaintea fotbalistului</h1>
+    <p class="intro">Un traseu de lucru de la observația prudentă la transferul autonom în joc. Capitolele se citesc în ordine; fiecare păstrează limitele dovezilor și evită diagnosticul copilului.</p>
+    <ol>
+      {chapters.map(([id, title, href]) => <li><a href={href}><span>{id}</span><strong>{title}</strong></a></li>)}
+    </ol>
+    <nav class="volume-nav" aria-label="Continuare"><a href="/volum/02">Volumul 02 — Fundația tactică și decizia în joc →</a></nav>
+    <p class="see-also">Vezi și: <a href="/principii">toate principiile</a> · <a href="/gold-standard">Gold Standard — sprijinul și unghiul de pasă</a></p>
+  </div>
+</BaseLayout>
+
+<style>
+  .volume-index{max-width:var(--width-content);margin:0 auto;padding:var(--space-20) var(--space-6)}
+  h1{max-width:14ch}.intro{max-width:68ch;font-size:1.15rem}ol{list-style:none;padding:0;margin-top:var(--space-12)}
+  li{border-top:1px solid var(--color-border)}a{display:grid;grid-template-columns:8rem 1fr;gap:var(--space-4);padding:var(--space-6) 0;text-decoration:none;align-items:baseline}a span{font-family:var(--font-family-mono);color:var(--color-text-accent)}
+  @media(max-width:600px){a{grid-template-columns:1fr;gap:.3rem}}
+  .volume-nav{margin-top:var(--space-12);padding-top:var(--space-6);border-top:2px solid var(--color-border)}.volume-nav a{font-weight:750;text-decoration:none;color:var(--color-text-accent)}
+  .see-also{margin-top:var(--space-4);font-size:.9rem;color:var(--color-text-muted)}.see-also a{color:var(--color-text-accent)}
+</style>

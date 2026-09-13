@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  category?: string;
+}
+
+const { title, subtitle, category = "10–11 ani (2015-2016)" } = Astro.props;
+---
+<header class="page-header">
+  {category && <span class="header-category">{category}</span>}
+  <h1 class="header-title">{title}</h1>
+  {subtitle && <p class="header-subtitle">{subtitle}</p>}
+</header>
+
+<style>
+  .page-header {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+  .header-category {
+    display: inline-block;
+    background-color: var(--color-bg-surface-muted);
+    color: var(--color-text-accent);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-2);
+  }
+  .header-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+  }
+  .header-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+  }
+</style>

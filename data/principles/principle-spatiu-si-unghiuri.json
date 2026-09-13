@@ -1,0 +1,37 @@
+{
+  "id": "principle.spatiu-si-unghiuri",
+  "slug": "spatiu-si-unghiuri",
+  "category_id": "cat.perceptie-decizie",
+  "evidence_claim_ids": ["CLM-0036", "CLM-0040", "CLM-0041"],
+  "title": "Spațiul util schimbă ce poate apăra adversarul",
+  "professional_definition": "Jucătorul fără minge își reglează direcția, distanța și orientarea pentru a crea o linie sau o continuare pe care același adversar nu o poate închide simultan cu purtătorul.",
+  "child_message": "Mută-te până când adversarul nu vă mai poate acoperi pe amândoi.",
+  "coach_meaning": "Copilul citește relația minge–adversar–colegi–țintă și schimbă unghiul fără ca antrenorul să prescrie partea ori poziția finală.",
+  "why_this_message": "Reperul este limita observabilă a adversarului și păstrează alegerea despre direcție și distanță la copil.",
+  "problem_being_solved": "Doi coechipieri rămân pe aceeași linie de pasă și un singur adversar îi scoate din joc, deși există spațiu disponibil.",
+  "information_children_must_notice": ["poziția și orientarea mingii", "adversarul care acoperă linia", "poziția celuilalt coleg", "ținta și acțiunea următoare", "timpul în care adversarul poate ajunge"],
+  "decision_children_must_learn": "Să aleagă direcția și distanța deplasării care creează o opțiune distinctă și o continuare posibilă.",
+  "observable_behaviours": ["iese din linia acoperită de același adversar", "reglează din nou poziția când mingea se mută", "primește orientat spre o continuare", "creează spațiu pentru alt coleg chiar dacă nu primește"],
+  "rationales": {
+    "tactical": "Un apărător este obligat să aleagă între două opțiuni funcționale.",
+    "perceptual": "Copilul caută linia minge–adversar–coleg și spațiul accesibil.",
+    "decisional": "Direcția și distanța se schimbă cu presiunea, ținta și poziția colegilor.",
+    "cognitive": "Întrebarea despre ce poate acoperi adversarul comprimă problema fără a da soluția.",
+    "psychological": "Copilul poate regla și reîncerca fără etichete despre disponibilitatea sa de joc.",
+    "technical": "Orientarea corpului, deplasarea la timp și prima atingere susțin continuarea.",
+    "social": "Jucătorii fără minge împart responsabilitatea pentru opțiuni și nu culpabilizează purtătorul."
+  },
+  "age_appropriateness": "La 10–11 ani, relația este arătată în joc și verificată prin acțiune; copiii 2015 și 2016 sunt o singură categorie, cu reglaje individuale de timp, spațiu și opoziție.",
+  "phrases_to_avoid": [
+    {"phrase": "Stai larg.", "reason": "Transformă lățimea într-o poziție permanentă, indiferent de context."},
+    {"phrase": "Fă triunghi.", "reason": "Cere o formă geometrică fără funcția liniei, distanței și orientării."},
+    {"phrase": "Nu te ascunde.", "reason": "Judecă persoana și nu indică informația care trebuie citită."},
+    {"phrase": "Du-te acolo.", "reason": "Mută decizia de la copil la adult."}
+  ],
+  "possible_misinterpretations": ["Lățimea este confundată cu statul permanent lângă margine.", "Orice loc liber este considerat util.", "Primirea mingii este folosită ca singura dovadă a unui sprijin bun."],
+  "task_risks": ["Terenul prea mare poate elimina influența adversarului.", "Terenul prea mic poate ascunde toate liniile și crește contactele.", "Porțile nefixate și spațiul insuficient în spatele lor creează risc fizic."],
+  "understanding_check": ["poziția se schimbă când mingea se mută", "același adversar nu mai acoperă două opțiuni", "comportamentul reapare fără comandă", "copilul poate arăta ce linie a creat"],
+  "response_if_not_understood": ["compară două poziții reale și cere copilului să arate diferența", "mărește o singură dimensiune cu 2–3 m", "folosește două reporniri 3v2 și revino la 3v3", "schimbă punctul repornirii pentru a evita memorarea poziției"],
+  "match_transfer": "În joc liber sau 7v7, jucătorul recunoaște când un adversar acoperă două opțiuni și creează autonom o linie nouă într-o configurație diferită, fără a reproduce poziția din 3v3.",
+  "sources": ["SRC-0035", "SRC-0039", "SRC-0040"]
+}

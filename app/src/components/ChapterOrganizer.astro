@@ -1,0 +1,16 @@
+---
+// Stiluri centralizate în app/src/styles/educational-page.css (vezi acel fișier pentru motiv).
+interface Section { label: string; href: string }
+interface Props { centralIdea: string; sections: Section[] }
+const { centralIdea, sections } = Astro.props;
+---
+<aside class="chapter-organizer" aria-label="Prezentare generală a capitolului">
+  <p class="central-idea"><strong>Ideea centrală:</strong> {centralIdea}</p>
+  {sections.length > 0 && (
+    <p class="roadmap">
+      În acest capitol: {sections.map((s, i) => (
+        <>{i > 0 && ' · '}<a href={s.href}>{s.label}</a></>
+      ))}
+    </p>
+  )}
+</aside>

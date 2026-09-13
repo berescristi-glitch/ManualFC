@@ -1,0 +1,21 @@
+---
+interface Props { wording: string; context?: string; }
+const { wording, context = "Formulare exactă transmisă copilului pe teren" } = Astro.props;
+---
+<section class="child-message" aria-label="Mesaj pentru copil">
+  <div class="child-index" aria-hidden="true">01</div>
+  <div>
+    <span class="eyebrow">Spune-i copilului</span>
+    <blockquote>„{wording}”</blockquote>
+    {context && <p class="context-note">{context}</p>}
+  </div>
+</section>
+<style>
+  .child-message { position: relative; display: grid; grid-template-columns: auto 1fr; gap: clamp(1.25rem,4vw,3.5rem); overflow: hidden; background: var(--color-bg-brand); color: white; padding: clamp(2rem,6vw,5rem); margin: var(--space-8) 0 0; border-top: 3px solid var(--color-brand-gold); }
+  .child-message::after { content:""; position:absolute; width:220px; height:220px; right:-100px; bottom:-130px; border:1px solid rgba(244,196,48,.35); border-radius:50%; }
+  .child-index { color: var(--color-brand-gold); font-family: var(--font-family-mono); font-size: .75rem; padding-top: .45rem; }
+  .eyebrow { color: var(--color-brand-gold); margin-bottom: var(--space-6); }
+  blockquote { max-width: 17ch; font-family: var(--font-family-heading); font-size: clamp(2.1rem,5vw,4.5rem); font-weight: 850; letter-spacing: -.035em; line-height: .98; }
+  .context-note { margin: var(--space-8) 0 0; color: var(--color-steel); font-size: .78rem; }
+  @media (max-width: 560px) { .child-message { grid-template-columns: 1fr; } .child-index { display:none; } }
+</style>

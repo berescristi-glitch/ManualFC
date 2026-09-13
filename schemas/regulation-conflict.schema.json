@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/regulation-conflict.schema.json",
+  "type": "object",
+  "required": ["reference_date", "conflicts"],
+  "properties": {
+    "reference_date": {"type": "string", "format": "date"},
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["conflict_id", "fields", "rules", "classification", "resolution"],
+        "properties": {
+          "conflict_id": {"type": "string", "pattern": "^CONFLICT-[0-9]{4}$"},
+          "fields": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "rules": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^RULE-[0-9]{4}$"}},
+          "classification": {"type": "string", "minLength": 3},
+          "resolution": {"type": "string", "minLength": 20}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

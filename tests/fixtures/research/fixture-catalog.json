@@ -1,0 +1,47 @@
+{
+  "fixture_only": true,
+  "research_question": {
+    "research_question_id": "RQ-9001",
+    "question": "Ce exemplu sintetic verifică protocolul pentru categoria comună U11?",
+    "volume_id": "VOLUME-01",
+    "chapter_id": null,
+    "population": "10–11 ani, grupele 2015 și 2016 tratate împreună",
+    "context": "Fixture tehnic fără concluzii editoriale.",
+    "answer_type": "UNCERTAINTY_MAP",
+    "priority": "LOW",
+    "recommended_source_types": ["OFFICIAL_GUIDANCE"],
+    "search_terms": ["fixture U11"],
+    "domain": "pedagogie",
+    "status": "PROPOSED",
+    "result": null,
+    "limitations": ["Date sintetice."],
+    "updated_at": "2026-07-30"
+  },
+  "search_log": {
+    "search_id": "SEARCH-9001",
+    "research_question_id": "RQ-9001",
+    "platform": "Fixture Index",
+    "query": "fixture U11",
+    "filters": {},
+    "searched_at": "2026-07-30T10:00:00Z",
+    "language": "ro",
+    "date_range": null,
+    "results_count": 2,
+    "screened_count": 2,
+    "included_source_ids": ["SRC-9001"],
+    "excluded_results": [{"title_or_id": "demo exclus", "reason": "NOT_RELEVANT"}],
+    "notes": "Exemplu sintetic.",
+    "performed_by": "test-suite"
+  },
+  "source_examples": {
+    "official": {"source_id": "SRC-9001", "source_type": "OFFICIAL_GUIDANCE"},
+    "scientific": {"source_id": "SRC-9002", "source_type": "SCIENTIFIC_PRIMARY"},
+    "visual": {"source_id": "SRC-9003", "source_type": "VISUAL_ASSET_SOURCE"},
+    "version_v1": {"source_id": "SRC-9004", "superseded_by_source_id": "SRC-9005"},
+    "version_v2": {"source_id": "SRC-9005", "supersedes_source_id": "SRC-9004"},
+    "restricted": {"source_id": "SRC-9006", "access_status": "RESTRICTED_LEGITIMATE_ACCESS"}
+  },
+  "claim": {"claim_id": "CLM-9001", "source_ids": ["SRC-9001"]},
+  "citation": {"citation_id": "CIT-9001", "claim_id": "CLM-9001", "source_id": "SRC-9001", "locator": {"kind": "SECTION", "value": "Fixture"}},
+  "excluded_source": {"title_or_id": "SRC-X", "reason": "DUPLICATE_SOURCE"}
+}

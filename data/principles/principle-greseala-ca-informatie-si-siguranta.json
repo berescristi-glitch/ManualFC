@@ -1,0 +1,41 @@
+{
+  "id": "principle.greseala-ca-informatie-si-siguranta",
+  "slug": "greseala-ca-informatie-si-siguranta",
+  "category_id": "cat.comunicare",
+  "evidence_claim_ids": ["CLM-0073", "CLM-0034", "CLM-0075", "CLM-0076", "CLM-0077"],
+  "title": "Greșeala ca informație, climat orientat spre efort",
+  "professional_definition": "Tratarea greșelilor tehnice sau decizionale drept informații despre sarcină, menținând un climat orientat spre efort și învățare (nu spre rezultat), fără teama de sancțiune emoțională și fără scăderea standardelor.",
+  "child_message": "Greșeala este doar o informație: ce ai văzut diferit după ce ai pasat?",
+  "coach_meaning": "Reorientarea atenției de la sancțiunea afectivă a erorii spre analiza informației din teren.",
+  "why_this_message": "Descrie greșeala ca pe un pas de informație, nu ca eșec personal, fără să promită eliminarea completă a anxietății.",
+  "problem_being_solved": "Reacțiile critice sau sarcastice ale adultului produc inhibiție și evitare — copilul nu mai cere mingea, nu mai încearcă acțiuni riscante.",
+  "information_children_must_notice": ["reacția apărătorului după pasă", "distanța reală dintre minge și țintă"],
+  "decision_children_must_learn": "Să încerce din nou cu o mică ajustare, nu să evite acțiunea similară.",
+  "observable_behaviours": ["cere mingea din nou imediat după o eroare", "încearcă acțiuni similare fără să privească spre bancă"],
+  "rationales": {
+    "tactical": "Păstrează disponibilitatea de a încerca soluții în spații strânse, nu doar pase sigure.",
+    "perceptual": "Transformă rezultatul negativ în informație despre fază, nu în verdict.",
+    "decisional": "Menține autonomia copilului în alegerea următoarei acțiuni.",
+    "cognitive": "O descriere scurtă a ce s-a văzut, nu o etichetă.",
+    "psychological": "Climatul de stăpânire, aplicat consecvent, se asociază cu angajament mai complet — fără să promită eliminarea completă a anxietății.",
+    "technical": "Permite rafinarea execuției prin încercări repetate, fără penalizare afectivă.",
+    "social": "Normalizează greșeala ca parte a jocului pentru întreaga echipă, nu doar pentru copilul care a greșit."
+  },
+  "age_appropriateness": "La 10–11 ani (grupele 2015 și 2016 tratate unitar), reacția antrenorului la greșeală rămâne relevantă pentru dorința copilului de a continua să încerce — dovada directă la această vârstă vine dintr-un sport diferit (baseball), nu din fotbal.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "Fii mai atent, nu mai greși pase simple!",
+      "reason": "Critică generică, fără informație utilizabilă, livrată public."
+    },
+    {
+      "phrase": "Ce-ai făcut iarăși?",
+      "reason": "Sarcasm și etichetare care distrug încrederea, nu descriu fază."
+    }
+  ],
+  "possible_misinterpretations": ["Climatul orientat spre efort înseamnă că nu contează calitatea execuției."],
+  "task_risks": ["Acceptarea erorilor provenite din dezinteres total fără diferențiere față de încercările sincere."],
+  "understanding_check": ["copilul cere mingea din nou la următoarea fază, fără să evite acțiunea similară"],
+  "response_if_not_understood": ["oferă o opțiune mai simplă la repornire, nu o explicație lungă despre atitudine"],
+  "match_transfer": "În meci, echipa continuă să încerce acțiuni similare chiar și după o greșeală vizibilă sau un gol primit.",
+  "sources": ["SRC-0072", "SRC-0033", "SRC-0074", "SRC-0075", "SRC-0076"]
+}

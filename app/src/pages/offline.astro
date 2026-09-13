@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Fără conexiune" description="Această pagină nu a fost pregătită pentru teren și necesită conexiune la internet.">
+  <div class="offline-page">
+    <p class="eyebrow">FĂRĂ CONEXIUNE</p>
+    <h1>Această pagină nu a fost pregătită pentru teren</h1>
+    <p>Conținutul de aici nu a fost salvat pentru acces fără internet. Ședințele pregătite explicit din Spațiul meu (via „Disponibil pe teren”) rămân disponibile.</p>
+    <div class="offline-actions">
+      <a class="primary" href="/spatiul-meu">Deschide Spațiul meu</a>
+    </div>
+    <p class="offline-hint">Când revine conexiunea, reîncarcă pagina pentru conținutul complet.</p>
+  </div>
+</BaseLayout>
+<style>
+  .offline-page { max-width: 40rem; margin: 0 auto; padding: clamp(3rem,8vw,6rem) var(--space-6); text-align: center; }
+  .eyebrow { font-size: .75rem; font-weight: 850; letter-spacing: .06em; color: var(--color-text-accent); text-transform: uppercase; }
+  .offline-actions { margin-top: 1.5rem; }
+  .primary { display: inline-flex; min-height: 48px; align-items: center; padding: 0 1.2rem; background: var(--color-brand-gold); color: var(--color-bg-brand); font-weight: 850; text-decoration: none; border-radius: 8px; }
+  .offline-hint { margin-top: 1.5rem; font-size: .85rem; color: var(--color-text-muted); }
+</style>

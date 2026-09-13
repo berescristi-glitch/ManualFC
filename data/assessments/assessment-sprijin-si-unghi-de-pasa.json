@@ -1,0 +1,56 @@
+{
+  "id": "ASM-0001",
+  "title": "Evaluarea sprijinului și unghiului de pasă",
+  "principle_ids": [
+    "principle.spatiu-si-unghiuri",
+    "principle.progresie-si-sprijin",
+    "principle.transfer-autonom-cooperare"
+  ],
+  "criteria": [
+    {
+      "id": "ASM-0001-C1",
+      "observable_behaviour": "Recunoașterea umbrei defensive și deschiderea unui unghi de sprijin util (EX-0001).",
+      "levels": [
+        "Rămâne pe aceeași linie cu purtătorul mingii, acoperit de același adversar, chiar și cu reper extern oferit.",
+        "Deschide un unghi nou doar cu reper extern (con, întrebare ghidată) sau intervenția antrenorului.",
+        "Deschide un unghi nou autonom, fără reper extern, în majoritatea repetițiilor observate."
+      ]
+    },
+    {
+      "id": "ASM-0001-C2",
+      "observable_behaviour": "Adaptarea continuă a poziției de sprijin pe măsură ce mingea și adversarul se mișcă (EX-0002).",
+      "levels": [
+        "Găsește un unghi o singură dată și rămâne acolo, chiar dacă adversarul se repoziționează vizibil.",
+        "Se repoziționează cu întârziere vizibilă sau doar într-un singur moment al fazei de joc.",
+        "Se repoziționează repetat în cadrul aceleiași faze de joc, fără comandă verbală."
+      ]
+    },
+    {
+      "id": "ASM-0001-C3",
+      "observable_behaviour": "Orientarea corporală la recepție pentru a păstra o continuare posibilă a acțiunii (EX-0003).",
+      "levels": [
+        "Primește frecvent cu corpul închis și nu poate continua imediat acțiunea.",
+        "Scanează și se orientează corect doar cu indiciu extern explicit (con colorat sau reper vizual).",
+        "Scanează și se orientează autonom, fără indiciu extern, în majoritatea repetițiilor observate."
+      ]
+    },
+    {
+      "id": "ASM-0001-C4",
+      "observable_behaviour": "Coordonarea cu alți jucători de sprijin pentru a evita gruparea în aceeași zonă (EX-0004).",
+      "levels": [
+        "Se grupează frecvent în aceeași zonă cu ceilalți jucători de sprijin, indiferent de poziția adversarilor.",
+        "Se diferențiază spațial doar după o întrebare ghidată sau o oprire a antrenorului.",
+        "Se diferențiază spațial autonom, pe baza poziției coechipierilor, fără intervenție."
+      ]
+    },
+    {
+      "id": "ASM-0001-C5",
+      "observable_behaviour": "Transferul comportamentului de sprijin în joc reprezentativ, fără constrângeri artificiale (EX-0005).",
+      "levels": [
+        "Comportamentul nu apare în jocul liber, deși a apărut în exercițiile izolate anterioare.",
+        "Comportamentul apare ocazional în joc liber, inconsecvent între repetiții.",
+        "Comportamentul apare autonom și repetat în joc liber reprezentativ (transferul spre meciul oficial 7v7 rămâne neconfirmat — nu poate fi validat fără o pilotare reală pe teren)."
+      ]
+    }
+  ]
+}

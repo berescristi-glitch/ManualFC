@@ -1,0 +1,25 @@
+[
+  {
+    "development_fixture": true,
+    "fixture_type": "DEVELOPMENT FIXTURE",
+    "id": "exercise.2v1-support-angle",
+    "slug": "2v1-unghi-de-suport",
+    "category_id": "cat.exercitii",
+    "title": "Exercițiul 2v1 cu unghi de suport",
+    "objective": "Consolidarea demarcajului și a creeării liniei de pasă deschise.",
+    "players": "3 jucători (2 atacanți vs 1 fundaș)",
+    "area": "15x10 metri",
+    "duration": "10 minute",
+    "setup": "Suprafață dreptunghiulară delimitată de copete, două porți mici pe marginea de fund.",
+    "rules": "Atacanții mențin posesia și încearcă să înscrie la poarta mică; fundașul încearcă să recupereze.",
+    "coach_cues": "Încurajează menținerea distanței de suport și scanarea laterală.",
+    "child_cues": "Arată-te la pasă în spațiul unde portarul te poate vedea!",
+    "principle_ids": ["principle.scanning-before-receive"],
+    "tactical_visual_hooks": {
+      "diagram_ref": "diagram.2v1-support.01",
+      "animation_ref": null,
+      "video_export_ref": null,
+      "print_fallback_ref": "diagram.2v1-support.print.01"
+    }
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "id": "principle.focalizarea-observatiei-si-criterii-de-interventie",
+  "slug": "focalizarea-observatiei-si-criterii-de-interventie",
+  "category_id": "cat.metodologie-surse",
+  "evidence_claim_ids": ["CLM-0094"],
+  "title": "Focalizarea observației și criterii de intervenție",
+  "professional_definition": "Observarea deliberată a unui singur indicator tactic și amânarea intervenției vocale până la identificarea unui tipar repetat de decizie greșită, fără un prag exact de timp sau de repetări validat științific — eliminând întreruperile haotice pe teren.",
+  "child_message": "Ne uităm la un singur lucru la acest exercițiu și intervenim doar când este nevoie!",
+  "coach_meaning": "Disciplinarea propriei atenții a antrenorului pentru a nu opri jocul la fiecare greșeală izolată.",
+  "why_this_message": "Asigurarea fluenței antrenamentului și direcționarea atenției copiilor către obiectivul principal.",
+  "problem_being_solved": "Antrenorul oprește exercițiul frecvent pentru greșeli tehnice întâmplătoare, distrugând ritmul și timpul activ de joc.",
+  "information_children_must_notice": ["faptul că antrenorul urmărește un singur obiectiv clar în exercițiu"],
+  "decision_children_must_learn": "Să-și concentreze atenția pe un singur comportament cheie fără a fi copleșiți de corecții multiple.",
+  "observable_behaviours": ["joacă fluent fără opriri nejustificate", "aplică corecția specifică oferită la pauză"],
+  "rationales": {
+    "tactical": "Crește timpul activ de decizie și aplicare a principiului tactic.",
+    "perceptual": "Direcționează atenția copilului pe un singur stimul vizual prioritar.",
+    "decisional": "Oferă timp jucătorului să-și autoregleze decizia înainte ca adultul să intervină.",
+    "cognitive": "Evită supra-încărcarea memoriei de lucru a copiilor de 10–11 ani.",
+    "psychological": "Poate reduce anxietatea de a greși cauzată de opririle constante ale antrenorului.",
+    "technical": "Permite stabilizarea execuției prin repetiții continue în context.",
+    "social": "Poate crea un climat de antrenament mai calm și mai previzibil."
+  },
+  "age_appropriateness": "La 10–11 ani, un singur punct de focalizare clar per exercițiu e mai ușor de urmărit decât corecții multiple simultane.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "Stop! Atenție la preluare, la pasă, la șiret, la umeri, la voce și la poziție, toate deodată!",
+      "reason": "Bombardament cu feedback multiplu care copleșește copilul."
+    }
+  ],
+  "possible_misinterpretations": ["Observarea structurată înseamnă neatenție la comportamentele periculoase sau indisciplină.", "Există un prag exact de secunde sau de repetări validat științific pentru momentul intervenției."],
+  "task_risks": ["Intervenția impulsivă a antrenorului la prima greșeală izolată dintr-o execuție."],
+  "understanding_check": ["jucătorii pot numi singurul lucru pe care îl urmăresc în exercițiul curent"],
+  "response_if_not_understood": ["reiterarea scurtă a focalizatorului vizual la pauza de băut apă, fără o durată fixă impusă"],
+  "match_transfer": "În meci, jucătorii își păstrează concentrarea pe indicatorul tactic fără a aștepta strigăte de la margine.",
+  "sources": ["SRC-0095", "SRC-0096", "SRC-0097"]
+}

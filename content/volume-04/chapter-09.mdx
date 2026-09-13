@@ -1,0 +1,151 @@
+---
+title: "Proiectarea unei ședințe coerente"
+description: "Cum leagă antrenorul exercițiile într-o progresie spre un singur obiectiv de ședință, fără formule numerice universale"
+chapter_id: "CH-0409"
+volume_id: "VOLUME-04"
+---
+
+import ChapterOrganizer from '../../app/src/components/ChapterOrganizer.astro';
+import SectionNavigator from '../../app/src/components/SectionNavigator.astro';
+import QuickRecall from '../../app/src/components/QuickRecall.astro';
+
+# Proiectarea unei ședințe coerente
+
+<ChapterOrganizer
+  centralIdea="Nu există o formulă numerică universală (minute, procente) pentru cum trebuie împărțită o ședință — ce se poate susține e un singur obiectiv central și o secvențiere logică a exercițiilor spre el."
+  sections={[
+    { label: 'Ce știm', href: '#ce-știm-din-cercetare' },
+    { label: 'Ce le spun și de ce', href: '#regula-ce-le-spun-și-de-ce' },
+    { label: 'Ce nu putem concluziona', href: '#ce-nu-putem-concluziona' },
+    { label: 'Reflecția antrenorului', href: '#reflecția-antrenorului' }
+  ]}
+/>
+
+<SectionNavigator items={[
+  { href: '#ce-știm-din-cercetare', label: 'Ce știm' },
+  { href: '#ce-înseamnă-pentru-antrenor', label: 'Ce înseamnă' },
+  { href: '#ce-nu-putem-concluziona', label: 'Ce nu putem concluziona' },
+  { href: '#reflecția-antrenorului', label: 'Reflecție' }
+]} />
+
+## Situația de teren
+
+Antrenorul ajunge dimineața la teren și alege, pe loc, cinci exerciții din memorie: un joc de încălzire, un exercițiu de pase, un parcurs de dribling, un joc redus și, la final, un meci liber. Fiecare exercițiu, luat separat, e corect executat. Dar între ele nu există niciun fir: copiii trec de la o activitate la alta fără să știe de ce fac ceea ce fac, iar antrenorul nu ar putea răspunde, dacă ar fi întrebat, la „ce a exersat, de fapt, echipa azi?" — pentru că răspunsul corect ar fi „cinci lucruri diferite", nu unul singur.
+
+Diferența față de o ședință coerentă nu ține de câte exerciții sunt sau cât de „bune" sunt individual, ci de faptul că antrenorul alege un singur obiectiv de ședință și secvențiază exercițiile astfel încât fiecare să construiască pe precedentul, spre acel obiectiv.
+
+## Ce știm din cercetare
+
+Nu există, în sursele verificate, o formulă numerică universală pentru cum trebuie împărțită o ședință — nici pentru raportul exercițiu/joc, nici pentru numărul de obiective, nici pentru durata fiecărui bloc. Ce există sunt date observaționale despre cum arată, în practică, ședințele reale, și principii calitative de secvențiere, susținute teoretic sau testat parțial.
+
+**Cum arată, de fapt, o ședință tipică de fotbal juvenil?** Singurul studiu observațional identificat care cuantifică direct structura ședințelor de fotbal juvenil (O'Connor, Larkin & Williams, 2018, 34 de antrenori australieni, 19 lucrând cu grupe U11-U13) a găsit că o ședință tipică conține 40,9% activitate de tip joc/fază de joc, 22,3% exerciții izolate, 31% inactivitate (așteptare, ascultarea instrucțiunilor) și 5,8% tranziții — cu antrenorii plasând, tipic, mai mult exercițiu izolat la începutul ședinței și mai mult joc spre final. Un review ulterior (Larkin, Barkell & O'Connor, 2022), care sintetizează mai multe studii similare, arată însă că această compoziție variază enorm între contexte — 53-65% exerciții izolate, 20-62% joc, 17-37% inactivitate — o eterogenitate prea mare pentru a extrage un procent „corect".
+
+**Există un raport optim, dovedit, între exercițiu izolat și joc?** Nu. Chiar sinteza care documentează tiparele de mai sus recunoaște explicit eterogenitatea, nu un standard. Ce descrie constant literatura e un tipar de secvențiere — de la exercițiu mai analitic spre formă mai apropiată de joc — dar acesta e un tipar observat în practica reală a antrenorilor, nu o dovadă că e superior altor secvențieri.
+
+**Ajută o componentă de joc/problemă tactică în interiorul ședinței?** Un model pedagogic consacrat — Teaching Games for Understanding (Bunker & Thorpe, 1982) — propune să pornești de la un joc modificat care expune o problemă tactică, urmat de sarcini cu complexitate progresivă și întrebări reflexive, cu revenire la joc. O meta-analiză recentă (González-Valero și colegii, 2024, 25 de studii, n=1692) a găsit un efect global moderat pozitiv al acestei abordări asupra deciziei (g=0,82), cu efect moderat și în subgrupul de educație primară (g=0,61), unde majoritatea participanților aveau 11-12 ani — cel mai apropiat rezultat cantitativ găsit de vârsta U11. Aceasta susține parțial includerea unei componente de joc, dar nu spune nimic despre ordinea exactă optimă (joc-întâi vs. exercițiu-întâi) și nu implică eliminarea exercițiului tehnic izolat.
+
+**Trebuie amestecate deliberat sarcinile în cadrul unei ședințe, pentru beneficii de reținere?** Nu există dovadă directă în acest sens la copii. O meta-analiză dedicată exact acestei întrebări (Ammar și colegii, 2023, 36 de studii, 183 de rezultate agregate) a găsit că doar aproximativ 20% dintre rezultate confirmă tiparul clasic al interferenței contextuale — efect deja documentat, în alt dosar ManualFC, ca aproape nul sub 18 ani. Singurul studiu experimental de teren la copii apropiați de vârsta U11 (Granda Vera și colegii, 2008, 67 de școlari, vârstă medie 9,5 ani) a testat practică blocată, variabilă și combinată pe două deprinderi de fotbal: șutul s-a îmbunătățit în toate cele trei condiții, dar driblingul doar în condiția combinată — sugerând că efectul modului de secvențiere poate depinde de deprindere, nu de o regulă universală de tip „amestecă întotdeauna" sau „blochează întotdeauna".
+
+**O ședință bine structurată garantează timp activ ridicat pe sarcină?** Nu, iar dovada vine dintr-un context mai larg decât fotbalul: chiar și în educația fizică generală, unde mișcarea e obiectivul declarat al lecției, copiii de vârstă de școală elementară petrec în medie doar 44,8% din timpul lecției în activitate fizică moderată-viguroasă, cu variație mare după metoda de măsurare (32,6% prin accelerometrie față de 57,6% prin observație). Această dovadă nu e specifică fotbalului de club, dar arată clar că presupunerea „ședința înseamnă timp de practică" nu poate fi acceptată fără observație directă.
+
+**Câte obiective de învățare ar trebui să aibă o ședință?** Nu a fost identificat niciun studiu care testează experimental, la copii, efectul numărului de obiective pe ședință asupra reținerii. Argumentul pentru limitarea la unul sau foarte puține obiective vine din teoria încărcăturii cognitive (documentată separat, în dosarul despre atenție și încărcătură cognitivă): multiplicarea obiectivelor simultane crește riscul de încărcătură extraneu fără beneficiu clar de învățare — un argument teoretic, nu o cifră testată direct la această întrebare.
+
+**Încălzirea pregătește automat copilul pentru obiectivul zilei?** Aici trebuie separate două lucruri diferite. Există dovadă solidă (o meta-analiză pe 15 studii controlate randomizate în clustere) că programele structurate de încălzire reduc incidența leziunilor sportive la copii cu 36% — dar acest rezultat măsoară prevenirea leziunilor, nu accelerarea obiectivului tehnic/tactic al ședinței. Nu a fost identificată nicio sursă dedicată relației dintre conținutul încălzirii și obiectivul specific de învățare al zilei — cele două funcții, siguranță și pregătire pentru obiectiv, trebuie tratate separat, nu confundate.
+
+## Ce înseamnă pentru antrenor
+
+Antrenorul-pedagog proiectează ședința ca pe o singură poveste, nu ca pe o listă de exerciții:
+- **Alege un singur obiectiv central de ședință** (sau foarte puține), ca aplicare prudentă a principiului încărcăturii cognitive — fără să pretindă că „unul" e o cifră dovedită experimental la această întrebare specifică.
+- **Secvențiază exercițiile astfel încât fiecare să construiască pe precedentul**, de regulă de la o formă mai analitică/controlată spre una mai apropiată de joc — recunoscând că acesta e tiparul observat cel mai frecvent în practica reală a antrenorilor, nu o secvență dovedită superioară oricărei alternative.
+- **Include o componentă de joc/problemă tactică**, consistent cu suportul cantitativ parțial găsit pentru abordările centrate pe joc la o vârstă apropiată de U11 — fără a elimina exercițiul tehnic izolat.
+- **Nu impune o formulă numerică fixă** de tip „X minute încălzire, Y minute exercițiu, Z minute joc" — nicio astfel de cifră are bază validată în sursele găsite; decizia rămâne calitativă, adaptată grupului și obiectivului zilei.
+- **Tratează separat siguranța** (încălzirea structurată) **de pregătirea pentru obiectivul zilei** — sunt două funcții diferite, cu baze de dovadă diferite.
+- **Observă informal timpul pierdut în tranziții și inactivitate** din propriile ședințe, ca prim pas de auto-evaluare, înainte de a presupune că densitatea de practică e deja optimă.
+
+## Ce nu putem concluziona
+
+Nu putem concluziona că există o structură „ideală" de ședință, testată și validată, cu procente sau minute fixe pentru încălzire, exercițiu și joc — eterogenitatea documentată între studii e prea mare pentru asta. Nu putem concluziona că amestecarea deliberată a sarcinilor („interferență contextuală") aduce automat beneficii de reținere la 10-11 ani — dovada directă arată efect aproape nul sub 18 ani. Nu putem concluziona că secvența „exercițiu izolat → joc", observată frecvent la antrenorii reali, e dovedit superioară oricărei alte ordini — ea descrie o practică comună, nu un rezultat experimental comparativ. Nu putem concluziona că o ședință structurată garantează, prin simpla ei existență, timp activ ridicat — nici măcar în educația fizică generală, unde mișcarea e scopul declarat al lecției, acest lucru nu se confirmă automat. Și nu putem concluziona că orice formă de încălzire pregătește automat copilul pentru obiectivul tehnic/tactic al zilei — dovada solidă disponibilă privește prevenirea leziunilor, nu facilitarea învățării.
+
+## Regula „Ce le spun și de ce"
+
+### Formularea exactă pentru copil
+> „Azi toate exercițiile se leagă de un singur lucru — urmăriți firul!"
+
+### Sensul profesional pentru antrenor
+Conștientizarea de către copil că exercițiile ședinței nu sunt întâmplătoare, ci construiesc, pas cu pas, spre același obiectiv tactic sau tehnic.
+
+### Motivul alegerii mesajului
+Ajută copilul să caute activ legătura dintre exerciții, în loc să trateze fiecare joc sau exercițiu ca pe un eveniment izolat, fără memorie de la unul la altul.
+
+### Problema pe care o rezolvă
+Copiii care termină un exercițiu și „resetează" complet atenția la următorul, fără să observe că exercițiul următor exersează aceeași problemă, doar într-o formă mai apropiată de joc.
+
+### Informațiile pe care copilul trebuie să le observe
+- Ce anume s-a repetat de la un exercițiu la altul (aceeași decizie, aceeași mișcare, aceeași problemă tactică).
+- Cum se schimbă contextul (mai mulți adversari, spațiu mai mic, opoziție reală) fără ca problema de fond să se schimbe.
+
+### Decizia pe care trebuie să o învețe
+Să recunoască, la fiecare exercițiu nou al ședinței, ce anume din exercițiul anterior se aplică și acum, chiar dacă forma arată diferit.
+
+### Comportamente observabile
+- Copilul poate numi, la finalul ședinței, „firul" comun al exercițiilor.
+- Transferă o soluție găsită la un exercițiu mai simplu în exercițiul următor, mai aproape de joc.
+
+### Justificarea pe 7 dimensiuni
+- **Tactic**: Poate consolida aceeași problemă tactică într-un mediu progresiv, de la formă controlată la formă apropiată de joc.
+- **Perceptiv**: Menține copilul atent la aceleași repere relevante în contexte succesive, tot mai apropiate de joc.
+- **Decizional**: Repetiția aceleiași decizii-cheie, în forme diferite, poate crește calitatea recunoașterii ei ulterioare.
+- **Cognitiv**: O ședință cu un singur obiectiv central reduce riscul de încărcătură cognitivă extraneu asociată cu obiective multiple, neconectate.
+- **Psihologic**: Coerența ședinței poate oferi copilului un sentiment de progres vizibil, nu de exerciții disparate.
+- **Tehnic**: Aceeași execuție tehnică poate fi exersată în condiții progresiv mai complexe, în loc de tehnici izolate fără legătură între ele.
+- **Social**: O temă comună a ședinței poate facilita comunicarea între coechipieri, care recunosc aceeași problemă în exerciții succesive.
+
+### Adecvarea la vârstă
+La 10-11 ani (grupele 2015 și 2016 tratate unitar), capacitatea de a menține un fir logic printr-o ședință întreagă e limitată — motiv suplimentar teoretic (nu testat direct la această întrebare) pentru un singur obiectiv central de ședință, nu pentru mai multe teme paralele.
+
+### Formulări de evitat
+- *De evitat*: „Acum facem altceva, nu are legătură cu ce am făcut până acum."
+- *Motiv*: Rupe firul ședinței și transformă exercițiile într-o listă disparată — exact problema de coerență identificată în cercetare, nu o problemă de conținut al exercițiilor.
+
+### Riscuri de interpretare
+Coerența ședinței poate fi confundată cu monotonia — repetarea identică a aceluiași exercițiu, fără progresie de complexitate. De asemenea, „un singur obiectiv" poate fi confundat cu „un singur exercițiu"; obiectivul unic se poate exprima prin mai multe exerciții diferite, secvențiate.
+
+### Modul de verificare a înțelegerii
+La finalul ședinței, copilul poate răspunde într-o propoziție la întrebarea „Ce am exersat azi, de la primul până la ultimul exercițiu?"
+
+### Intervenția dacă mesajul nu funcționează
+Dacă un copil nu poate identifica firul comun, antrenorul reface explicit legătura verbal, arătând concret ce s-a repetat de la un exercițiu la altul, fără a introduce o cifră sau o durată suplimentară.
+
+### Transferul în joc
+În meci, jucătorul recunoaște situația exersată progresiv de-a lungul întregii ședințe — nu doar dintr-un singur exercițiu izolat — și aplică soluția construită treptat.
+
+## Instrumentul de teren asociat
+
+Utilizează fișa de verificare a acestui capitol pentru proiectarea secvenței de exerciții a ședinței.
+
+## Legătura cu pedagogia
+
+O ședință cu un singur fir vizibil reduce încărcătura cognitivă extraneu asociată cu obiective multiple, disparate — copilul nu trebuie să proceseze de la zero fiecare exercițiu nou, ci recunoaște elemente deja întâlnite într-un context ușor schimbat. Această coerență oferă și o structură clară de comunicare: antrenorul poate lega explicit exercițiile între ele („la fel ca înainte, dar acum cu adversar"), în loc să introducă fiecare exercițiu ca pe un eveniment nou, fără context. Nu există, în dosarul de cercetare al acestui capitol, un studiu care testează direct efectul coerenței ședinței asupra încărcăturii cognitive la copii — argumentul rămâne o extensie teoretică rezonabilă a principiului deja documentat pentru numărul de obiective, nu o concluzie testată separat.
+
+## Competențele de coaching
+
+Acest capitol construiește **COACH-C16 — Planificarea ședinței** (Definiție: Leagă exercițiile într-o progresie coerentă spre un obiectiv de ședință). Indicatorul observabil al acestei competențe este prezența unor tranziții logice între exerciții și a unui obiectiv unic de ședință; anti-tiparul e o succesiune de exerciții disparate, fără temă comună. Capitolul de față oferă antrenorului fundamentul de principiu — nu o formulă numerică — pentru a exersa exact această competență de fiecare dată când proiectează o ședință nouă.
+
+## Legătura cu practica
+
+Cele două ședințe canonice deja implementate în ManualFC, [SES-0001](/gold-standard/sedinte/SES-0001) și [SES-0002](/gold-standard/sedinte/SES-0002), sunt exemple concrete ale acestui principiu: fiecare leagă exercițiile printr-un obiectiv unic de ședință, nu printr-o listă întâmplătoare. Session Workspace este locul unde antrenorul exersează el însuși această competență, construindu-și propria secvență de exerciții în jurul unui obiectiv ales.
+
+## Reflecția antrenorului
+
+Înainte de a închide ședința de azi, antrenorul își pune câteva întrebări scurte:
+- Care a fost obiectivul unic al ședinței de azi?
+- Pot explica, într-o singură propoziție, cum s-a legat fiecare exercițiu de acel obiectiv?
+- A existat vreun exercițiu care nu avea o legătură clară cu restul — și de ce a fost acolo?
+- Ce parte din ședință a fost, de fapt, timp pierdut în organizare sau așteptare, nu practică reală?
+
+<QuickRecall items={[
+  { prompt: 'Există un raport optim, dovedit științific, între exercițiu izolat și joc într-o ședință?', answer: 'Nu — studiile observaționale arată eterogenitate mare între contexte (53-65% exerciții izolate, 20-62% joc), prea mare pentru a extrage un procent "corect" universal.' },
+  { prompt: 'O ședință structurată garantează, prin ea însăși, timp activ ridicat de practică?', answer: 'Nu — chiar și în educația fizică generală, copiii petrec în medie doar 44,8% din timpul lecției în activitate fizică moderată-viguroasă; presupunerea trebuie verificată prin observație directă, nu asumată.' },
+  { prompt: 'Câte obiective de învățare ar trebui să aibă o ședință, conform cercetării?', answer: 'Nu există un studiu care testează experimental acest număr la copii — argumentul pentru foarte puține obiective (ideal unul) vine din teoria încărcăturii cognitive, ca extensie teoretică rezonabilă, nu ca cifră testată direct.' }
+]} />
+

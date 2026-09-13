@@ -1,0 +1,12 @@
+---
+import PedagogicalBlock from './PedagogicalBlock.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+<PedagogicalBlock type="observe" title={title}>
+  <slot />
+</PedagogicalBlock>

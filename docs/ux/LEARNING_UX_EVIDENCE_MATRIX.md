@@ -1,0 +1,123 @@
+# ManualFC — Learning UX Evidence Matrix (R1)
+
+**Scop:** matrice consolidată a dovezilor externe (cognitive load, multimedia learning, progressive disclosure, retrieval practice, accesibilitate, expertise reversal, case-based learning, benchmarking) colectate pentru decizia de arhitectură a paginii educaționale ManualFC. Aceasta este cercetare, nu implementare.
+
+**Metodă:** 6 agenți de cercetare independenți, fiecare cu buget de 15-20 căutări/verificări web reale, fiecare cu regulă explicită anti-fabricare și obligația de a distinge dovada empirică de convenția de design. Sursele au fost verificate ca fiind reale (autor, an, publicație) înainte de includere. Constatările contradictorii sau contestate sunt semnalate explicit, nu ascunse.
+
+**Convenție coloane:** FINDING · EVIDENCE_STRENGTH · CONTEXT · LIMITATION · FINDABILITY_EFFECT · COMPREHENSION_EFFECT · RETENTION_EFFECT · APPLICATION_EFFECT · MOBILE_IMPLICATION · MANUALFC_DESIGN_IMPLICATION.
+
+Coduri EVIDENCE_STRENGTH: **STRONG** (meta-analitic/sistematic, replicat) · **MODERATE** (studiu real controlat sau practician cu metodologie solidă, dar unic/limitat) · **CONTESTED** (dovezi în conflict sau replicare eșuată) · **WEAK/CONVENTION** (canon de design sau euristică rezonabilă, nu experiment) · **STANDARD** (cerință normativă de conformitate, nu constatare empirică).
+
+---
+
+## Cluster 0 — Cognitive Load Theory & Multimedia Learning (Mayer)
+
+**Notă de integritate a cercetării:** acest cluster a fost recercetat integral după ce s-a descoperit că primul val (dispatch-at împreună cu celelalte 5) nu a finalizat niciodată (eșec de sesiune, fără raport recuperabil) și că o primă variantă a acestei secțiuni fusese scrisă din sinteză proprie, nu din cercetare externă verificată. Corectat printr-un al doilea val de cercetare genuină — vezi DECISIONS.md pentru istoricul complet.
+
+| # | FINDING | STRENGTH | CONTEXT | LIMITATION | FINDABILITY | COMPREHENSION | RETENTION | APPLICATION | MOBILE | MANUALFC IMPLICATION |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 44 | Modelul cu trei factori (intrinsec/extraneu/germane) — germane load contestat ca factor separat măsurabil (Jiang & Kalyuga 2020) | MODERATE (2 din 3 factori solizi) | Psihologie cognitivă/educațională | "Germane load" nu e un buton reglabil direct | — | neutru | neutru | neutru | — | Proiectează pentru reducerea aglomerării (extraneu) și gestionarea dificultății (intrinsec), nu pentru un al treilea factor incert |
+| 45 | Contiguitate spațială/split-attention (Schroeder & Cenkci 2018, meta-analiză k=58, g=0,63) | STRONG | Multimedia learning, replicat, confirmat în meta-meta-analiza Noetel 2022 | Efectul e mai mare când interpretarea CHIAR cere referențiere încrucișată | + | + puternic | neutru | + | Critic | Diagrama stă imediat adiacentă textului care o explică, niciodată în galerie/filă separată |
+| 46 | Semnalizare/cueing (Richter, Scheiter & Eitel 2016, meta-analiză) — mai puternic pentru novici, aproape dispărut pentru experți | STRONG (moderat de expertiză) | Multimedia learning | Nu ajută egal experții | neutru | + pentru novici | neutru | neutru | — | Cuie vizuale (culoare/numerotare) care leagă diagrama de text — cost mic, beneficiu mai mare pentru secțiuni pentru începători |
+| 47 | Coerență/detalii seducătoare (Sundararajan & Adesope 2020, meta-analiză) | STRONG | Multimedia learning | Nu se aplică conținutului relevant, doar tangențial/decorativ | neutru | + | + | neutru | — | Scenariile concrete de teren ale ManualFC NU sunt "detalii seducătoare" — sunt direct relevante, deci nu intră sub incidența acestui principiu |
+| 48 | Efectul de modalitate (audio > text pe ecran) — contestat pentru aplicare generală | CONTESTED | Multimedia audio-vizuală/animată | NU se aplică formatului ManualFC (fără audio, fără animație, citire auto-ritmată) | — | — | — | — | — | Nu invoca acest principiu pentru decizii de design pe o pagină text+diagramă statică |
+| 49 | Efectul exemplelor rezolvate (meta-analiză 2023, matematică, g=0,48) — solid pentru novici, mai ales în domenii procedurale | STRONG (în domeniul STEM) | Rezolvare de probleme/STEM | Transfer la proză pedagogică abstractă = extrapolare, nu identic testat | neutru | + novici | + | + | — | Exemplu complet, pas-cu-pas, pentru concepte noi — bine susținut pentru novici, extrapolare rezonabilă în afara STEM |
+| 50 | Efectul de inversare a expertizei (Tetzlaff et al. 2025, meta-analiză k=176/N=5924) — ASIMETRIC: beneficiu novici d=0,505 > cost experți d=−0,428 | STRONG (unul dintre cele mai generalizabile efecte din design instrucțional) | Design instrucțional general, nu doar multimedia | Nu prescrie MECANISMUL de livrare a stratificării (toggle vs. altceva) | neutru | + novici / − experți | + novici / − experți | + novici / − experți | La fel | Cea mai puternică dovadă pentru întrebarea mod-simplu/profund — vezi #51 |
+| 51 | Meta-meta-analiza Noetel et al. (2022, 29 review-uri/1189 studii): principiile de design multimedia sunt măsurabil MAI SLABE în contexte auto-ritmate (pagină web) decât în contexte cu ritm impus (prelegere/video) | STRONG (meta-meta-analitic) | Sinteză cross-context | Efectele nu dispar, doar se reduc | — | + dar mai mic decât efectele de laborator | + dar mai mic | + dar mai mic | — | Nu trata mărimile de efect din laborator/video ca predicții literale pentru o pagină web ManualFC — aplică principiile, așteaptă câștiguri mai mici |
+
+**Verdict poziționare text+imagine (cea mai puțin contestată recomandare din tot clusterul):** diagrama stă imediat adiacentă paragrafului pe care îl explică, niciodată în galerie, niciodată la câteva ecrane distanță, niciodată în spatele unui click (decât dacă genuin suplimentară).
+
+**Verdict expertise reversal — mod simplu vs. profund:** dovada susține stratificare adaptivă ÎN PRINCIPIU, dar NU prescrie un toggle binar ca mecanism obligatoriu. Recomandare proporțională cu dovada: NU două trasee paralele de conținut, DA disclosure în pagină controlat de cititor (secțiuni comprimabile, nu mod separat) — exact mecanismul `ExplanationToggle` ales pentru Model C Hybrid.
+
+---
+
+## Cluster 1 — Progressive Disclosure, Information Scent, Scannability, Tipografie, Navigare
+
+| # | FINDING | STRENGTH | CONTEXT | LIMITATION | FINDABILITY | COMPREHENSION | RETENTION | APPLICATION | MOBILE | MANUALFC IMPLICATION |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Acordeoanele reduc lungimea *percepută* a paginii dar ascund conținut pe care userii nu-l mai citesc deloc (NN/g) | MODERATE | Testare de uzabilitate practician, desktop | Nu e RCT; nu măsoară învățarea, doar comportamentul de click | − scade | neutru/negativ dacă conținutul e obligatoriu | negativ dacă informația ascunsă e necesară | negativ | Pe mobil riscul crește — atingere suplimentară | NU ascunde conținut esențial (Instrumentul practic, Ce nu putem concluziona) în acordeon |
+| 2 | Scent-ul informațional (Pirolli & Card 1999, replicat) prezice navigarea corectă; titluri slabe → abandon | STRONG | HCI fundamental, replicat | Scent-ul e proprietate a textului titlului, nu a widget-ului | + puternic dacă titluri bune | neutru | neutru | + dacă titlul indică acțiunea | La fel pe mobil, mai critic (spațiu mic) | Fiecare titlu de secțiune trebuie să comunice singur beneficiul, nu generic „Detalii" |
+| 3 | Progressive disclosure clasic (Nielsen 1995) validat pentru interfețe interactive complexe, NU pentru proză lungă de citit | STRONG (în domeniul original) / CONTESTED (extrapolare) | UI de formulare/setări, nu conținut editorial | Nu există dovadă directă a transferului la pagini de citit | neutru | risc de conflație fals-pozitivă | fără dovadă | fără dovadă | — | Nu justifica ascunderea conținutului lecției prin analogie cu progressive disclosure de UI |
+| 4 | Model F-shape de scanare (NN/g 2006) — contestat de studii independente ulterioare (EyeQuant) | MODERATE/CONTESTED | Eye-tracking practician, single-firm | Nu e o lege universală a vederii | — | — | — | — | — | Nu trata F-pattern ca literă de lege |
+| 5 | Model "layer-cake" — apare când titlurile sunt puternice; F-pattern e "stare de eșec" a structurii slabe | MODERATE | Eye-tracking practician | Contextual, nu universal | + puternic | + | neutru | neutru | La fel | Investiție în ierarhie de titluri front-loaded = cea mai sigură mutare de scanabilitate |
+| 6 | Lungime linie ~55-75 caractere: comprehensiune mai bună la 55 cpl vs 100 cpl (Dyson & Haselgrove 2001, experiment controlat) | STRONG (extreme) | Citire pe ecran, experiment controlat | Nu diferențiază fin 55 vs 65 vs 75 | neutru | + | neutru | neutru | Critic pe ecran îngust | Măsură țintă 60-75 caractere/linie, nu edge-to-edge |
+| 7 | Fără diferență de viteză 55-100 cpl, dar preferință clară pentru linii scurte (Ling & van Schaik 2006) | MODERATE-STRONG (rezultat nul + preferință) | Experiment controlat | Preferință ≠ performanță dovedită | neutru | + confort | neutru | neutru | — | Susține alegerea liniei scurte ca decizie rezonabilă, nu ca "dovedit mai rapid" |
+| 8 | Canon tipografic 45-75 cpl (Bringhurst) | WEAK/CONVENTION | Design de carte, nu experiment | Convenție, nu dată empirică | — | — | — | — | — | Converge cu dovada empirică — folosește ca reper, nu ca "dovadă" |
+| 9 | Line-height ≥1.5× obligatoriu pentru accesibilitate (WCAG 1.4.12) | STANDARD | Normă de conformitate | Nu e optimul comprehensiunii, e prag minim | — | — | — | — | Aplicabil identic | Line-height ≥1.5 ca prag, indiferent de "idealul" stilistic |
+| 10 | Breadcrumbs nu produc erori, dar sunt folosite rar (~6% din acțiunile de navigare, date comportamentale NN/g) | MODERATE | Testare + log comportamental | Cost redus dar impact mic | + mic, sigur | neutru | neutru | neutru | La fel | Include breadcrumb pentru orientare, nu te baza pe el ca navigare primară |
+| 11 | TOC/link-uri interne ajută orientarea pe pagini lungi, dar TOC sticky des netrecut cu vederea fără marcaj de secțiune curentă | MODERATE | Testare uzabilitate | Sticky fără highlight = ineficient | + dacă bine construit | + | neutru | neutru | Necesită hide-on-scroll pe mobil | TOC justificat la 2000+ cuvinte DAR trebuie să marcheze secțiunea curentă, altfel „decor inert" |
+| 12 | Pagini lungi cu scroll continuu preferate față de paginare arbitrară, pentru un singur fir narativ (NN/g) | MODERATE | Testare uzabilitate | Nu exclude rute separate cu scop distinct | neutru | + | neutru | neutru | — | Susține o singură pagină de citit; nu argumentează împotriva unei rute separate pentru conținut cu scop diferit |
+| 13 | Bară de progres la citire — evidența invocată (Nah 2004) e despre toleranța la *așteptare*, nu despre citire; nicio dovadă directă pentru progres-la-scroll | WEAK/CONVENTION (fără dovadă directă) | Analogie importată, nu testată | Niciun studiu testează direct bara de progres la citire | — | — | speculativ | — | — | Tratează bara de progres ca decorativă/motivațională, nu ca intervenție dovedită |
+
+---
+
+## Cluster 2 — Retrieval Practice, Spacing, Self-Explanation, Generation Effect, Metacogniție, Advance Organizers
+
+| # | FINDING | STRENGTH | CONTEXT | LIMITATION | FINDABILITY | COMPREHENSION | RETENTION | APPLICATION | MOBILE | MANUALFC IMPLICATION |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 14 | Retrieval practice (Roediger & Karpicke 2006): reamintire liberă fără feedback bate restudiul la 1 săptămână (61% vs 40%) | STRONG | Laborator cognitiv | Cere producerea EFECTIVĂ a unui răspuns, nu doar invitația | neutru | neutru | + puternic DOAR dacă răspunsul e produs | neutru | — | Un prompt pasiv fără răspuns forțat NU beneficiază automat de acest efect |
+| 15 | Meta-analiză testare practicată (Adesope et al. 2017): g≈0.5-0.9 | STRONG | Meta-analiză, 272 efecte | Toate studiile implică producere efectivă de răspuns | — | — | + puternic | — | — | Confirmă efectul e real, dar cere o intervenție mai grea decât o simplă întrebare de pagină |
+| 16 | Efectul de pre-testare (Kornell, Hays & Bjork 2009): întrebare ÎNAINTE de conținut, chiar fără răspuns corect, ajută dacă textul oferă răspunsul curând | MODERATE-STRONG | Laborator cognitiv, replicat | Cere ca pasajul să funcționeze ca feedback implicit, la scurt timp | neutru | + | + moderat | + | — | Cel mai bun candidat pentru un prompt fără răspuns forțat — DAR trebuie plasat ÎNAINTE de secțiune, nu după |
+| 17 | Efectul de spațiere (Cepeda et al. 2006) cere expuneri repetate separate în timp | STRONG | Meta-analiză | NU se aplică unei singure citiri a unei singure pagini | — | — | fără aplicabilitate intra-pagină | — | — | Nu poate fi obținut într-o singură pagină; relevant doar pentru o suprafață de recall la care userul revine |
+| 18 | Auto-explicația (Chi et al. 1994; meta-analiză Bisra et al. 2018, g=0.55) cere generare ACTIVĂ (scrisă/verbalizată) | MODERATE-STRONG | Laborator, meta-analiză | Prompt pasiv „gândește-te" nu produce efectul | neutru | + dacă articulat activ | + | + | — | Un prompt „gândește-te" fără articulare nu beneficiază de acest efect |
+| 19 | Replicare 2026 (Harders et al.): NU găsește efect de auto-explicație pentru conținut factual pur odată ce timpul e controlat | CONTESTED (replicare recentă, calitate înaltă) | Laborator, preînregistrat | Slăbește extinderea la conținut factual/procedural | — | fără efect dovedit pt. conținut factual | fără efect dovedit | — | — | Multă parte din conținutul ManualFC e factual/procedural — nu presupune beneficiu automat de auto-explicație |
+| 20 | Efectul de generare la proză expozitivă (Schindler & Richter 2025, 7 experimente, N=631): NU se replică, uneori negativ | CONTESTED (eșec de replicare direct) | Laborator, replicare directă | Contrazice extrapolarea populară de la itemi izolați la text conectat | — | fără beneficiu / posibil negativ | fără beneficiu | — | — | NU presupune că "efectul de generare" se transferă la pagini de citit |
+| 21 | Reflecție metacognitivă structurată la adulți profesioniști (Di Stefano et al., experiment de teren): reflecție scrisă asupra propriei performanțe → +23% performanță ulterioară | MODERATE (studiu de teren real) | Organizațional, adulți profesioniști | Reflecție asupra SARCINII PROPRII, nu generic „ce vei face diferit" | — | — | + | + | — | Cea mai bună analogie adultă disponibilă, dar mai slabă decât pare — pagina nu poate replica reflecția asupra unei sarcini proprii tocmai finalizate |
+| 22 | Advance organizers (Luiten et al. 1980, 135 studii; Stone 1983, 112 studii): efect mic, pozitiv, dar contestat definițional | MODERATE (efect mic, contestat) | Meta-analiză educațională | Definiția „advance organizer" variază între studii | + | + mic | + mic | neutru | — | Casetă de rezumat/hartă la început e o adăugire cu risc scăzut, cost mic — dar nu vinde ca lever puternic de retenție |
+
+---
+
+## Cluster 3 — Accesibilitate (WCAG), Mobil, Expertise Reversal, Adult Learning
+
+| # | FINDING | STRENGTH | CONTEXT | LIMITATION | FINDABILITY | COMPREHENSION | RETENTION | APPLICATION | MOBILE | MANUALFC IMPLICATION |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 23 | WCAG 2.2 SC 1.4.10 Reflow: conținut trebuie să curgă la 320px fără scroll orizontal | STANDARD | Conformitate normativă | Nu prescrie strategia de chunking | — | — | — | — | Critic | Fără diagrame/tabele cu lățime fixă care forțează scroll orizontal la 390px |
+| 24 | WCAG 2.2 SC 2.5.8 Target Size Minimum: 24×24px (AA); SC 2.5.5 Enhanced: 44×44px (AAA, nu AA) | STANDARD | Conformitate | 44px des confundat cu cerință AA — NU este | — | — | — | + | Critic | Ținte tactile ≥24px minim, 44px ca practică recomandată (nu obligație AA) |
+| 25 | Pattern APG Accordion: buton real, aria-expanded, hidden attribute pentru panouri închise | STANDARD | Pattern de referință normativ | Nu spune dacă acordeonul e alegerea corectă de UX | — | — | — | — | — | Contract minim obligatoriu pentru orice acordeon construit |
+| 26 | Acordeoanele au risc real de uzabilitate/descoperire documentat (NN/g, repetat) | MODERATE | Practician, testare repetată | Nu e experiment controlat cuantificat | − | risc de omisiune | risc negativ dacă conținut esențial | risc negativ | — | Rezervă acordeoane pentru conținut genuin opțional, nu pentru nucleul lecției |
+| 27 | Comprehensiune mobilă ≈ desktop la text simplu; degradează (timp, nu neapărat acuratețe) la text dificil (NN/g 2016) | MODERATE | UX practician | Studiul sursă 2010 nu a putut fi verificat ferm | — | − la conținut dificil (cost de timp) | neutru | neutru | Critic — pasajele tehnice dense costă mai mult timp pe mobil | Scriere mai strânsă + scaffolding vizual (diagrame) pentru pasajele tehnice dense, mai ales pe mobil |
+| 28 | Cost cognitiv al deciziilor de navigare în hipertext (DeStefano & LeFevre 2007, review peer-reviewed) | STRONG (sinteză solidă) | Psihologie cognitivă | Nu testează specific acordeoane/fotbal | − pentru novici | − | − | − | Critic pe mobil | Antrenor novice care deschide multe secțiuni plătește cost suplimentar — evită disclosure profund/multi-nivel pentru novici |
+| 29 | Expertise Reversal Effect (Kalyuga et al. 2003, replicat): scaffolding detaliat ajută novicii, măsurabil încetinește/afectează experții | STRONG (în domeniul original) | Laborator, sarcini procedurale/tehnice scurte | NU testat direct pe citire web lungă auto-dirijată | neutru | + novici / − experți | + novici / − experți | + novici / − experți | La fel | Risc real ca formatul actual (explicație lungă) să coste timp/atenție antrenorilor experimentați — răspunsul UI (secțiuni comprimabile) e extrapolare rezonabilă, nu validată direct |
+| 30 | Andragogia (Knowles) — suport empiric slab/contestat (Merriam 2001, Rachal 2002) | CONTESTED/WEAK | Teorie educație adulți | Fără definiție operațională agreată | — | — | — | — | — | NU justifica decizii de design citând andragogia ca știință stabilită — etichetează-o explicit ca euristică |
+
+---
+
+## Cluster 4 — Case-Based Learning, Contrastare, Comunicarea incertitudinii
+
+| # | FINDING | STRENGTH | CONTEXT | LIMITATION | FINDABILITY | COMPREHENSION | RETENTION | APPLICATION | MOBILE | MANUALFC IMPLICATION |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 31 | Kirschner, Sweller & Clark (2006): instrucția ghidată bate descoperirea minim-ghidată — dar NU se aplică unui caz-ancoră urmat de explicație structurată | STRONG (dar contestat de replici precum Hmelo-Silver 2007) | Design instrucțional | Nu argumentează împotriva formatului scenariu→explicație deja folosit de ManualFC | — | + pt. formatul actual | + | + | — | Structura actuală (scenariu + explicație explicită pe 8 subsecțiuni) e exact pattern-ul validat de această literatură — NU trece la "concept întâi" |
+| 32 | Ancorarea instrucției (CTGV/Vanderbilt): ancoră narativă concretă + suport structurat ulterior | MODERATE | Cogniție situată | Program discontinuat; efecte modeste de sine stătător | — | + | neutru | + | — | Susține păstrarea unui scenariu de teren detaliat per capitol, cu condiția să rămână urmat de secțiunile explicite |
+| 33 | Contrastarea cazurilor (Schwartz & Bransford 1998): comparație ÎNAINTE de explicație pregătește pentru „momentul potrivit de predare" | MODERATE-STRONG | Științe ale învățării | Comparația trebuie urmată de explicație explicită, nu substituie predarea | — | + | + | + | — | Adăugarea unei variante contrastante (eșec/greșeală) înainte de explicație ar putea ascuți capitolele existente — absentă acum |
+| 34 | Exemple greșite contrastate (Durkin & Rittle-Johnson 2012) produc învățare conceptuală mai profundă | STRONG (în domeniu, generalizare prudentă) | Educație matematică | Erorile neexplicate riscă întărirea concepției greșite | — | + dacă explicit corectat | + | + | — | Casetă "greșeală frecventă de antrenor" contrastată cu corectarea explicită — bine fundamentată |
+| 35 | Comunicarea incertitudinii nu erodează încrederea dacă e specifică și ancorată concret (van der Bles et al. 2019) | MODERATE-STRONG | Comunicarea riscului | Hedging vag/nespecific crește confuzia, nu comprehensiunea | — | + dacă specific | — | — | — | „Ce nu putem concluziona" rămâne sigur pentru încredere DOAR dacă e specific, nu hedging vag |
+| 36 | Model GRADE: separă puterea recomandării de încrederea în dovadă, ambele mereu vizibile | STRONG (standard internațional) | Medicină bazată pe dovezi | Nu testează direct fotbal/coaching | — | + | — | + | — | Păstrează "Instrumentul practic" (acțiune) și "Ce nu putem concluziona" (încredere) ca blocuri separate, niciodată combinate sau ascunse |
+| 37 | Predict-then-compare / auto-explicație comparativă (Meier et al. 2024): beneficiu real DOAR dacă cititorul se angajează efectiv înainte de a vedea răspunsul | MODERATE | Cogniție/instrucțional | `<details>/<summary>` nu poate forța angajamentul | neutru | + dacă angajare reală | + dacă angajare reală | + | — | Prompt „ce ai face tu?" cu `<details>` e ieftin și fără risc, dar trebuie formulat ca angajament explicit, nu doar click |
+
+---
+
+## Cluster 5 — Benchmarking structural (NU dovadă de eficiență a învățării)
+
+**Reamintire obligatorie:** acest cluster e descoperire de pattern-uri, nu dovadă că vreun pattern îmbunătățește învățarea. Popularitatea unei platforme nu e dovadă pedagogică.
+
+| # | PATTERN CONVERGENT | PLATFORME | ÎNCREDERE | IMPLICAȚIE MANUALFC |
+|---|---|---|---|---|
+| 38 | Orientare rapidă întâi, detaliu după, PE ACEEAȘI PAGINĂ | MDN, Kubernetes Docs, Stripe Docs (toate inspectate direct) | Ridicată (pagini reale inspectate) | Concret/simplu sus, elaborare dedesubt, aceeași pagină — nu pagină separată |
+| 39 | Zonă „concluzie" separată, etichetată explicit, distinctă de narațiune | UpToDate „Summary and Recommendations" (sus ȘI jos) | Moderată (descriere din documentația editorială proprie, nu pagină inspectată direct — gated) | Cel mai relevant model pentru separarea rapid/profund — repetă zona-cheie la început ȘI la sfârșit |
+| 40 | Marcaj de încredere/maturitate atașat INLINE lângă afirmația specifică, nu doar disclaimer global | UpToDate (GRADE), Kubernetes (stable/alpha) | Ridicată/Moderată | EvidenceBadge existent deja face asta parțial — extinde principiul la nivel de afirmație, nu doar de pagină |
+| 41 | Navigare pe două straturi: „unde sunt în sistem" (sidebar persistent) vs „unde sunt pe pagină" (TOC local) | MDN, Kubernetes | Ridicată (inspectate direct) | Relevant doar pentru conținut de tip corpus de referință cu lookup repetat — nu neapărat pentru curriculum liniar secvențial |
+| 42 | Profunzime-apoi-link-extern, NU profunzime-apoi-imbricare infinită | Kubernetes, Stripe, MDN, UpToDate | Ridicată | Nicio platformă inspectată construiește pagini infinit-imbricate — susține conținut relaționat ca link, nu ca acordeon suplimentar |
+| 43 | Platformele de fotbal (Coaching Manual, PDP) NU separă rapid/profund — flux liniar unic, fără TOC | Coaching Manual, PDP (inspectate direct) | Ridicată | Nu presupune că formatul actual de blog fotbalistic e alegere pedagogică deliberată — poate fi doar limitare de CMS |
+
+---
+
+## Constatări de rang înalt (rezumat pentru sinteza Gate 2)
+
+1. **Acordeoanele/tabs NU sunt susținute pentru conținut esențial** — dovada convergentă (NN/g, hipertext cognitive load, expertise reversal) arată risc de omisiune, nu beneficiu de învățare. Reduc lungimea percepută, nu cresc comprehensiunea.
+2. **Progressive disclosure clasic nu se transferă direct** de la UI interactivă complexă la proză lungă de citit — conflația este un risc explicit semnalat de doi agenți independent.
+3. **Structura actuală ManualFC (scenariu → explicație structurată → practică → limite) este deja aliniată** cu literatura de instrucție ghidată/ancorare — NU necesită inversare la "concept întâi".
+4. **Expertise reversal e real dar netranspus direct** — răspunsul rezonabil e un mecanism de comprimare/extindere a elaborării (nu a nucleului procedural), nu două produse separate.
+5. **Cea mai puternică idee nouă din cercetare, absentă din arhitectura curentă:** o zonă de tip "quick recall" distinctă, optimizată pentru revenire ulterioară, proiectată ca *suprafață de reamintire* (întrebare/reper întâi, răspuns după) — nu ca rezumat de re-citit. Aceasta combină pretesting effect + spacing effect naturală (revenire la zile/săptămâni distanță).
+6. **TOC e justificat la această lungime de pagină, DAR trebuie să marcheze secțiunea curentă** altfel devine "decor inert" (constatare empirică directă).
+7. **Linie de măsură 60-75 caractere, font 16-18px, line-height ≥1.5** converg dovadă empirică + canon + accesibilitate.
+8. **"Ce nu putem concluziona" trebuie să rămână vizibil în flux, nu împins într-o secțiune profundă opțională** — literatura de comunicare a incertitudinii (medicală) arată că vizibilitatea, nu profunzimea, protejează încrederea.

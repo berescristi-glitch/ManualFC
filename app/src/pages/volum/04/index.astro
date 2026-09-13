@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const chapters = [
+  ['CH-0401', 'Proiectarea unei situații reprezentative', '/volum/04/ch-0401'],
+  ['CH-0402', 'Constrângeri: alegere, dozare și eliminare', '/volum/04/ch-0402'],
+  ['CH-0403', 'Progresii și regresii fără pierderea intenției', '/volum/04/ch-0403'],
+  ['CH-0404', 'Observare și criterii de intervenție', '/volum/04/ch-0404'],
+  ['CH-0405', 'Organizare, rotații, timp activ și siguranță', '/volum/04/ch-0405'],
+  ['CH-0406', 'Transferul și reflecția după joc', '/volum/04/ch-0406'],
+  ['CH-0407', 'De la observație la decizie: separă ce vezi de ce crezi', '/volum/04/ch-0407'],
+  ['CH-0408', 'Predă percepția și decizia, nu doar execuția', '/volum/04/ch-0408'],
+  ['CH-0409', 'Proiectarea unei ședințe coerente', '/volum/04/ch-0409'],
+  ['CH-0410', 'Planificarea pe termen mediu: teme care revin, nu ședințe izolate', '/volum/04/ch-0410'],
+  ['CH-0411', 'Diferențierea fără etichetare', '/volum/04/ch-0411']
+];
+---
+
+<BaseLayout title="Volumul 04 — ManualFC" description="Metodologia practică de predare: de la situații reprezentative la constrângeri și reflecție post-joc la 10–11 ani">
+  <div class="volume-index">
+    <p class="eyebrow">VOLUMUL 04 · 11 CAPITOLE</p>
+    <h1>Metodologia practică de predare</h1>
+    <p class="intro">Ghidul practic al antrenorului-pedagog U11: proiectarea reprezentativă a antrenamentului (RLD), manipularea constrângerilor de sarcină (cu limitele metodei), scalarea prin progresii și regresii, observarea structurată, maximizarea timpului activ și o rutină oficială de siguranță, și reflecția post-joc.</p>
+    <ol>
+      {chapters.map(([id, title, href]) => <li><a href={href}><span>{id}</span><strong>{title}</strong></a></li>)}
+    </ol>
+    <nav class="volume-nav" aria-label="Continuare"><a href="/volum/03">← Volumul 03 — Comunicarea antrenorului</a></nav>
+    <p class="see-also">Vezi și: <a href="/principii">toate principiile</a> · <a href="/gold-standard">Gold Standard — sprijinul și unghiul de pasă</a> (sistemul complet de exerciții, ședințe și evaluare construit pe această metodologie)</p>
+  </div>
+</BaseLayout>
+
+<style>
+  .volume-index{max-width:var(--width-content);margin:0 auto;padding:var(--space-20) var(--space-6)}
+  h1{max-width:min(20ch, 100%);overflow-wrap:break-word}.intro{max-width:68ch;font-size:1.15rem}ol{list-style:none;padding:0;margin-top:var(--space-12)}
+  li{border-top:1px solid var(--color-border)}a{display:grid;grid-template-columns:8rem 1fr;gap:var(--space-4);padding:var(--space-6) 0;text-decoration:none;align-items:baseline}a span{font-family:var(--font-family-mono);color:var(--color-text-accent)}
+  @media(max-width:600px){a{grid-template-columns:1fr;gap:.3rem}}
+  .volume-nav{margin-top:var(--space-12);padding-top:var(--space-6);border-top:2px solid var(--color-border)}.volume-nav a{font-weight:750;text-decoration:none;color:var(--color-text-accent)}
+  .see-also{margin-top:var(--space-4);font-size:.9rem;color:var(--color-text-muted)}.see-also a{color:var(--color-text-accent)}
+</style>

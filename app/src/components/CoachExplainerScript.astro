@@ -1,0 +1,40 @@
+---
+/**
+ * TASK-2804 — Level-4 "coach explainer" production model. Renders a
+ * structured teaching script (6 parts) sourced from the canonical media
+ * registry — never a video player, since no recording exists. Ready to be
+ * swapped for a real <video> + poster + captions + transcript later without
+ * changing the data shape (see MULTIMEDIA_PRODUCTION_PIPELINE.md).
+ */
+import type { CoachExplainerScript } from '../lib/media-registry';
+interface Props { script: CoachExplainerScript; targetDuration?: number[] }
+const { script, targetDuration } = Astro.props;
+const rows: [string, string][] = [
+  ['Ce vezi', script.ce_vezi],
+  ['De ce contează', script.de_ce_conteaza],
+  ['Ce îi spui copilului', script.ce_ii_spui_copilului],
+  ['Ce urmărești', script.ce_urmaresti],
+  ['Greșeala frecventă a antrenorului', script.greseala_frecventa_a_antrenorului],
+  ['Ce faci mai departe', script.ce_faci_mai_departe]
+];
+---
+<details class="explainer">
+  <summary>Ghid de predare pentru antrenor (script)</summary>
+  <p class="explainer-note">
+    Script text, gata pentru înregistrare — nu este o filmare reală.
+    {targetDuration && <> Durată țintă la înregistrare: {targetDuration[0]}–{targetDuration[1]}s.</>}
+  </p>
+  <dl>
+    {rows.map(([label, text]) => (
+      <div><dt>{label}</dt><dd>{text}</dd></div>
+    ))}
+  </dl>
+</details>
+<style>
+  .explainer { margin-top: var(--space-8); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); }
+  .explainer summary { cursor: pointer; font-weight: 800; min-height: 44px; display: flex; align-items: center; }
+  .explainer-note { margin: var(--space-3) 0; font-size: .82rem; color: var(--color-text-muted); }
+  .explainer dl { display: grid; gap: var(--space-4); margin: var(--space-3) 0 0; }
+  .explainer dt { font-size: .7rem; font-weight: 850; text-transform: uppercase; letter-spacing: .06em; color: var(--color-text-accent); }
+  .explainer dd { margin: .3rem 0 0; }
+</style>

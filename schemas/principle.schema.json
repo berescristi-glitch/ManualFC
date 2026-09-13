@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tactical principle",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "professional_definition",
+    "child_message",
+    "coach_meaning",
+    "why_this_message",
+    "problem_being_solved",
+    "information_children_must_notice",
+    "decision_children_must_learn",
+    "observable_behaviours",
+    "rationales",
+    "age_appropriateness",
+    "phrases_to_avoid",
+    "possible_misinterpretations",
+    "task_risks",
+    "understanding_check",
+    "response_if_not_understood",
+    "match_transfer",
+    "sources"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "category_id": {
+      "type": "string"
+    },
+    "evidence_claim_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "title": {
+      "type": "string"
+    },
+    "professional_definition": {
+      "type": "string"
+    },
+    "child_message": {
+      "type": "string"
+    },
+    "coach_meaning": {
+      "type": "string"
+    },
+    "why_this_message": {
+      "type": "string"
+    },
+    "problem_being_solved": {
+      "type": "string"
+    },
+    "information_children_must_notice": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "decision_children_must_learn": {
+      "type": "string"
+    },
+    "observable_behaviours": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "maxItems": 6
+    },
+    "rationales": {
+      "type": "object",
+      "required": [
+        "tactical",
+        "perceptual",
+        "decisional",
+        "cognitive",
+        "psychological",
+        "technical",
+        "social"
+      ],
+      "properties": {
+        "tactical": {
+          "type": "string"
+        },
+        "perceptual": {
+          "type": "string"
+        },
+        "decisional": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cognitive": {
+          "type": "string"
+        },
+        "psychological": {
+          "type": "string"
+        },
+        "technical": {
+          "type": "string"
+        },
+        "social": {
+          "type": "string"
+        }
+      }
+    },
+    "age_appropriateness": {
+      "type": "string"
+    },
+    "phrases_to_avoid": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "phrase",
+          "reason"
+        ],
+        "properties": {
+          "phrase": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "possible_misinterpretations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "task_risks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "understanding_check": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "response_if_not_understood": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "match_transfer": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

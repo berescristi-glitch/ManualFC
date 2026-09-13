@@ -1,0 +1,25 @@
+---
+interface Props { id:string; kind:'problem'|'principle'|'exercise'|'session'|'assessment'|'chapter'; title:string; href:string; compact?:boolean; }
+const {id,kind,title,href,compact=false}=Astro.props;
+---
+<coach-actions data-ref={JSON.stringify({id,kind,title,href})} class:list={['coach-actions',{compact}]}>
+  <button type="button" data-save>Salvează</button><button type="button" data-favorite aria-label={`Adaugă ${title} la favorite`}>☆ Favorit</button>
+  {(kind==='exercise'||kind==='session') && <button type="button" data-session>+ Ședință</button>}
+  <span data-status aria-live="polite"></span>
+</coach-actions>
+<script>
+  import { browserCoachStatePort, makeSession, recordRecent, toggleRef, updateCoachState, type CanonicalRef } from '../lib/coach-state';
+  class CoachActionsElement extends HTMLElement {
+    ref!:CanonicalRef;
+    connectedCallback(){this.ref=JSON.parse(this.dataset.ref??'{}');recordRecent(this.ref);this.render();this.querySelector('[data-save]')?.addEventListener('click',()=>this.toggle('saved'));this.querySelector('[data-favorite]')?.addEventListener('click',()=>this.toggle('favorites'));this.querySelector('[data-session]')?.addEventListener('click',()=>this.addToSession());window.addEventListener('manualfc:state',()=>this.render())}
+    problemIdFromContext(){return new URLSearchParams(location.search).get('problema')??undefined}
+    render(){const s=browserCoachStatePort.read();const saved=s.saved.some(x=>x.id===this.ref.id&&x.kind===this.ref.kind),fav=s.favorites.some(x=>x.id===this.ref.id&&x.kind===this.ref.kind);const a=this.querySelector<HTMLButtonElement>('[data-save]'),b=this.querySelector<HTMLButtonElement>('[data-favorite]');if(a){a.textContent=saved?'✓ Salvat':'Salvează';a.setAttribute('aria-pressed',String(saved))}if(b){b.textContent=fav?'★ Favorit':'☆ Favorit';b.setAttribute('aria-pressed',String(fav))}}
+    toggle(key:'saved'|'favorites'){updateCoachState(s=>({...s,[key]:toggleRef(s[key],this.ref)}));this.say(key==='saved'?'Lista Salvate a fost actualizată.':'Favoritele au fost actualizate.')}
+    addToSession(){const problemId=this.problemIdFromContext();updateCoachState(s=>{let session=s.sessions.find(x=>x.id===s.activeSessionId);if(!session){session=makeSession(s);if(problemId)session={...session,problemId};s={...s,sessions:[session,...s.sessions],activeSessionId:session.id}}if(!session.problemId&&problemId){session={...session,problemId};s={...s,sessions:s.sessions.map(x=>x.id===session!.id?session!:x)}}if(!session.items.some(x=>x.ref.id===this.ref.id)){session={...session,items:[...session.items,{ref:this.ref,minutes:this.ref.kind==='exercise'?15:session.duration}],updatedAt:new Date().toISOString()};s={...s,sessions:s.sessions.map(x=>x.id===session!.id?session!:x)}}return s});this.say('Adăugat în ședința activă.')}
+    say(message:string){const el=this.querySelector<HTMLElement>('[data-status]');if(el)el.textContent=message}
+  }
+  if(!customElements.get('coach-actions'))customElements.define('coach-actions',CoachActionsElement);
+</script>
+<style>
+  .coach-actions{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:1rem 0}.coach-actions button{min-height:44px;padding:.55rem .85rem;border:1px solid var(--color-border);border-radius:8px;background:#fff;color:var(--color-bg-brand);font:750 .82rem var(--font-family-sans);cursor:pointer}.coach-actions button[aria-pressed="true"]{background:#edf3f0;border-color:#17774b}.coach-actions [data-status]{font-size:.78rem;color:var(--color-text-muted)}.compact{margin:.65rem 0 0}
+</style>

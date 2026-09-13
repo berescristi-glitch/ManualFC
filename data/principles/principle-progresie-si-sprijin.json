@@ -1,0 +1,37 @@
+{
+  "id": "principle.progresie-si-sprijin",
+  "slug": "progresie-si-sprijin",
+  "category_id": "cat.perceptie-decizie",
+  "evidence_claim_ids": ["CLM-0036", "CLM-0038", "CLM-0042"],
+  "title": "Progresează când poți, creează ieșirea când nu poți",
+  "professional_definition": "Echipa îmbunătățește posibilitatea următoare prin depășirea opoziției ori schimbarea unghiului, iar jucătorii fără minge oferă continuări accesibile înainte, lateral sau înapoi.",
+  "child_message": "Poți duce jocul mai aproape de țintă? Dacă nu, arată-i o ieșire.",
+  "coach_meaning": "Copilul caută mai întâi progresia funcțională și, când calea este închisă, creează ori folosește sprijinul care mută presiunea fără comandă de soluție.",
+  "why_this_message": "Cele două întrebări ordonează prioritățile, dar păstrează direcția, momentul și mijlocul acțiunii la copil.",
+  "problem_being_solved": "Jucătorii forțează pase înainte în căi închise sau păstrează mingea fără ca pozițiile de sprijin să creeze o posibilitate nouă.",
+  "information_children_must_notice": ["ținta și adversarii dintre minge și ea", "presiunea asupra purtătorului", "orientarea și continuarea primitorului", "sprijinul lateral sau înapoi", "spațiul care apare după deplasarea adversarului"],
+  "decision_children_must_learn": "Să aleagă între progresia directă, conducere, joc pe lângă și sprijinul care schimbă unghiul, în funcție de opoziție și continuare.",
+  "observable_behaviours": ["caută ținta înaintea acțiunii", "folosește sprijinul când drumul direct este închis", "jucătorul fără minge reglează ieșirea după presiune", "primitorul păstrează o acțiune următoare", "alegerea se schimbă odată cu repornirea"],
+  "rationales": {
+    "tactical": "Echipa depășește opoziția direct ori o mută pentru a deschide următoarea cale.",
+    "perceptual": "Copilul citește ținta, liniile adversarilor, presiunea și orientarea colegilor.",
+    "decisional": "Comparația dintre drumul direct și ieșire împiedică automatismul pasei înainte.",
+    "cognitive": "Două priorități scurte reduc încărcarea față de un pachet de reguli simultane.",
+    "psychological": "Revenirea la sprijin nu este etichetată ca frică, iar eroarea poate fi analizată pe verigi.",
+    "technical": "Greutatea pasei, conducerea, orientarea și prima atingere păstrează continuarea aleasă.",
+    "social": "Purtătorul și colegii fără minge împart responsabilitatea pentru progresie și siguranță."
+  },
+  "age_appropriateness": "La 10–11 ani, mesajul are două repere concrete și este urmat de acțiune; grupele 2015 și 2016 rămân împreună, cu reglaje individuale de timp, spațiu, opoziție și ajutor.",
+  "phrases_to_avoid": [
+    {"phrase": "Numai înainte.", "reason": "Confundă direcția cu progresia și cere ignorarea presiunii."},
+    {"phrase": "Nu da înapoi.", "reason": "Elimină o cale care poate muta adversarul și redeschide atacul."},
+    {"phrase": "Două atingeri ca să gândești repede.", "reason": "Regula poate grăbi execuția fără a clarifica informația ori decizia."},
+    {"phrase": "Dă și pleacă.", "reason": "Prescrie un traseu chiar când contextul cere alt sprijin."}
+  ],
+  "possible_misinterpretations": ["Orice pasă înainte este tratată ca progresie.", "Pasa înapoi devine scop și posesia pierde direcția.", "Sprijinul este evaluat numai dacă primește mingea."],
+  "task_risks": ["Prea multe reguli pot supraîncărca sarcina și reduce explorarea.", "Țintele fără spațiu exterior pot intra în coliziune cu gardul sau alt grup.", "Un teren prea lung poate face ținta inaccesibilă și fragmenta jocul."],
+  "understanding_check": ["copilul caută ținta înaintea pasei", "folosește o ieșire când calea directă este închisă", "sprijinul se mută când presiunea se schimbă", "comportamentul reapare fără ținte neutre și fără comandă"],
+  "response_if_not_understood": ["compară o cale directă și una închisă din episod", "mărește o singură dimensiune cu 2–3 m", "oferă un neutru interior pentru două reporniri și apoi scoate-l", "schimbă repornirea pentru a elimina traseul memorat"],
+  "match_transfer": "În joc liber sau 7v7, jucătorul recunoaște dacă poate îmbunătăți direct situația ori trebuie să schimbe unghiul prin sprijin, într-o configurație diferită și fără aceeași combinație.",
+  "sources": ["SRC-0035", "SRC-0037", "SRC-0041"]
+}

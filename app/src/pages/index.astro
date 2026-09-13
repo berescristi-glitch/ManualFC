@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomepageHero from '../components/HomepageHero.astro';
+import EvidenceBadge from '../components/EvidenceBadge.astro';
+import { getResolvedPrinciple, resolveEvidenceClaims } from '../lib/content-bridge';
+const { principle } = getResolvedPrinciple('variabilitatea-dezvoltarii-u11');
+const evidence = resolveEvidenceClaims(principle);
+const summaryLevel = evidence[0]?.epistemic_level;
+---
+<BaseLayout title="Metodologie U11" description="Metodologie aplicată pentru antrenorii care vor să înțeleagă ce observă, ce spun și de ce o fac.">
+  <HomepageHero />
+
+  <section id="moduri" class="mode-split" aria-labelledby="mode-title">
+    <h2 id="mode-title" class="visually-hidden">Două moduri de folosire</h2>
+    <article class="mode-learn">
+      <span class="mode-number">A / 01</span><span class="eyebrow">Vreau să învăț</span>
+      <h3>Construiește-ți judecata, nu colecția de exerciții.</h3>
+      <p>Parcurgi ideile în profunzime: copil, percepție, decizie, intervenție și transfer în joc.</p>
+      <a href="/incepe-aici">Intră în parcurs <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="mode-now on-dark">
+      <span class="mode-number">B / TEREN</span><span class="eyebrow">Rezolvă pe teren</span>
+      <h3>Pornește de la ce vezi pe teren.</h3>
+      <ol><li>Observă comportamentul</li><li>Nu presupune cauza</li><li>Modifică o variabilă</li></ol>
+      <a class="button button-primary" href="/rezolva-pe-teren">Rezolvă o problemă de joc</a>
+    </article>
+  </section>
+
+  <section class="manifest">
+    <span class="eyebrow">Principiul fondator</span>
+    <p>Antrenorul trebuie format <strong>mai întâi ca pedagog</strong> și apoi ca antrenor. O comandă scurtă pentru copil are în spate observație, decizie și responsabilitate.</p>
+  </section>
+
+  <section class="content-proof">
+    <div class="proof-index"><span>PRINCIPIU REAL</span><b>01</b></div>
+    <div class="proof-copy">
+      <span class="eyebrow">Copilul 10–11 · Dezvoltare</span>
+      <h2>Copiii de aceeași vârstă nu sunt la același nivel.</h2>
+      <p>{principle.summary}</p>
+      {summaryLevel && <EvidenceBadge level={summaryLevel} />}
+      <a class="proof-link" href={`/principii/${principle.slug}`}>Citește principiul și aplicarea lui <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="values" aria-labelledby="values-title">
+    <header><span class="eyebrow">Sistem de valori</span><h2 id="values-title">Ce nu negociem.</h2></header>
+    <ol>
+      {['Centrat pe copil','Fundamentat științific','Practic și aplicabil','Etic și sigur','Progresiv','Comunitate'].map((value,index) => <li><span>{String(index+1).padStart(2,'0')}</span><strong>{value}</strong></li>)}
+    </ol>
+  </section>
+
+  <section class="final-cta on-dark"><span class="eyebrow">Începe cu întrebarea corectă</span><h2>Ce observă copilul înainte să îi spui ce să facă?</h2><a class="button button-primary" href="/incepe-aici">Începe aici</a></section>
+  <script is:inline>
+    /* Measures the real scrollbar gutter so the full-bleed .approved-hero
+       (HomepageHero.astro) and .final-cta (below) can size themselves
+       against the true visual viewport instead of 100vw, which always
+       includes the scrollbar and causes document-level horizontal overflow.
+       Placed at the end of this page's own content (not <head>) so the
+       document has already laid out enough to know whether it needs a
+       vertical scrollbar -- measuring earlier reads 0. Same pattern as
+       app/src/pages/principii/[slug].astro (DEC-0076). */
+    document.documentElement.style.setProperty('--scrollbar-w', (window.innerWidth - document.documentElement.clientWidth) + 'px');
+  </script>
+</BaseLayout>
+
+<style>
+  :global(:root){--scrollbar-w:15px}
+  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .final-cta{width:calc(100vw - var(--scrollbar-w));margin-left:calc(50% - 50vw + var(--scrollbar-w)/2);background:var(--color-bg-brand)}
+  .mode-split{display:grid;grid-template-columns:1.15fr .85fr;margin:var(--space-20) 0}.mode-split article{padding:clamp(2rem,5vw,4.5rem);min-height:440px}.mode-learn{background:white;border-top:1px solid var(--color-bg-brand)}.mode-now{background:var(--color-bg-brand-secondary)}.mode-number{display:block;margin-bottom:var(--space-16);font:700 .7rem var(--font-family-mono);color:#596579}.mode-now .mode-number{color:#D5DAE1}.mode-now .eyebrow{color:var(--color-brand-gold)}.mode-split h3{font-size:clamp(2rem,4vw,3.6rem);max-width:14ch}.mode-learn>a{display:inline-block;margin-top:var(--space-8);font-weight:850;text-decoration:none;border-bottom:2px solid var(--color-brand-gold)}.mode-now ol{margin:var(--space-8) 0;color:#D5DAE1}.mode-now li{padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.15)}
+  .manifest{padding:var(--space-20) 0;display:grid;grid-template-columns:1fr 3fr;gap:var(--space-12);border-block:1px solid var(--color-border)}.manifest p{font-family:var(--font-family-heading);font-size:clamp(1.8rem,4vw,3.6rem);font-weight:700;line-height:1.08;max-width:23ch;color:var(--color-text-primary)}
+  .content-proof{display:grid;grid-template-columns:.55fr 2.45fr;gap:var(--space-12);padding:var(--space-24) 0}.proof-index{display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--color-border);font:700 .7rem var(--font-family-mono);color:var(--color-text-muted)}.proof-index b{font-size:5rem;color:var(--color-text-muted)}.proof-copy h2{max-width:18ch;margin:1rem 0 2rem}.proof-copy p{font-size:1.1rem}.proof-link{display:block;margin-top:var(--space-8);padding-top:var(--space-4);border-top:1px solid var(--color-border);font-weight:800;text-decoration:none}
+  .values{padding:var(--space-20) 0;border-top:3px solid var(--color-bg-brand)}.values header{display:grid;grid-template-columns:1fr 2fr}.values ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,1fr);margin-top:var(--space-12)}.values li{display:grid;grid-template-columns:3rem 1fr;gap:var(--space-4);padding:var(--space-6) 0;border-top:1px solid var(--color-border);font-size:1.25rem}.values li:nth-child(odd){margin-right:var(--space-8)}.values li span{font:700 .7rem var(--font-family-mono);color:var(--color-text-accent)}
+  .final-cta{padding:var(--space-20) max(1rem,calc((100vw - var(--width-wide))/2));text-align:center}.final-cta .eyebrow{color:var(--color-brand-gold)}.final-cta h2{max-width:20ch;margin:1rem auto 2.5rem}
+  @media(max-width:860px){.mode-split{grid-template-columns:1fr}.manifest,.content-proof{grid-template-columns:1fr}.proof-index{display:none}.values header{grid-template-columns:1fr}.values ol{grid-template-columns:1fr}.values li:nth-child(odd){margin-right:0}}
+  @media(max-width:390px){.mode-split{margin-block:var(--space-12)}.mode-split article{min-height:0}.content-proof,.manifest,.values{padding-block:var(--space-12)}}
+</style>

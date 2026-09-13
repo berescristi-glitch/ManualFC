@@ -1,0 +1,11 @@
+---
+// Bloc de elaborare comprimabil de ExplanationToggle. NU se folosește pentru nucleul
+// procedural (limbaj exact, comportament urmărit, instrumentul practic, Ce nu putem
+// concluziona) — acelea rămân mereu vizibile (P1, P4).
+// Stiluri centralizate în app/src/styles/educational-page.css (vezi acel fișier pentru motiv).
+interface Props { id: string }
+const { id } = Astro.props;
+---
+<div id={id} class="elaboration-block">
+  <slot />
+</div>

@@ -1,0 +1,115 @@
+{
+  "status": "MANUALFC_CANONICAL_LOGO_IDENTITY_V2",
+  "decision": "DEC-0080",
+  "source_master": "manualfc-brand-master.png",
+  "alpha_channel_preserved": false,
+  "notes": "Source artwork is a flat, opaque RGB composition (dark navy background baked in). There is no alpha channel, no official light-surface variant, and no official inverted/white variant. Every derivative below is a resize/crop of the same master — no redrawing, no recoloring, no distortion.",
+  "crop_boxes": {
+    "manualfc-logo-full.png": [117, 178, 1648, 727],
+    "manualfc-logo-horizontal.png": [117, 178, 1648, 578],
+    "manualfc-mark.png": [96, 213, 575, 692]
+  },
+  "assets": [
+    {
+      "asset": "manualfc-brand-master.png",
+      "role": "CANONICAL_MASTER",
+      "dimensions": [1714, 918],
+      "mode": "RGB",
+      "sha256": "3311c4ce6f37919868eaa43a0cce4270f14f570ee0ace8eeb27f21fd4c6e65c9"
+    },
+    {
+      "asset": "manualfc-logo-full.png",
+      "role": "DERIVED",
+      "dimensions": [1531, 549],
+      "mode": "RGB",
+      "usage": "Full lockup with tagline (\"ȘTIINȚĂ. PEDAGOGIE. PRACTICĂ.\") — footer, brand pages, social/OG canvas source.",
+      "sha256": "f8581ce1a7ce91ededca937066d21d06eeb7738f22b4055e0249afae89b33fb2"
+    },
+    {
+      "asset": "manualfc-logo-horizontal.png",
+      "role": "DERIVED",
+      "dimensions": [1531, 400],
+      "mode": "RGB",
+      "usage": "Mark + wordmark, no tagline — global header.",
+      "sha256": "75f8aa1e73b3ad67750b3aae607603f85cc0681583eb0046951a9906e16e6dff"
+    },
+    {
+      "asset": "manualfc-mark.png",
+      "role": "DERIVED",
+      "dimensions": [479, 479],
+      "mode": "RGB",
+      "usage": "Square brand mark (clipboard + M + football) — source for all icon/favicon sizes.",
+      "sha256": "4921522872997fcb641b7429d967635c700dc5acdd2ddf8f0262a5064cda769b"
+    },
+    {
+      "asset": "manualfc-icon-512.png",
+      "role": "DERIVED",
+      "dimensions": [512, 512],
+      "mode": "RGB",
+      "usage": "PWA manifest icon (512x512).",
+      "sha256": "1a66bd6cf4340a08e014027172892c1a36c5dd8bad5ac4759293b119b6a4492b"
+    },
+    {
+      "asset": "manualfc-icon-192.png",
+      "role": "DERIVED",
+      "dimensions": [192, 192],
+      "mode": "RGB",
+      "usage": "PWA manifest icon (192x192).",
+      "sha256": "b4810a7bddaceb267202a4dd9053385417e96ea6d6fdf23e69724b547a426e3b"
+    },
+    {
+      "asset": "manualfc-apple-touch-icon.png",
+      "role": "DERIVED",
+      "dimensions": [180, 180],
+      "mode": "RGB",
+      "usage": "apple-touch-icon link.",
+      "sha256": "acf87f08cbe3c14e50b7c4794578b0a2d7a60996b5816830457a5aee57c349b8"
+    },
+    {
+      "asset": "manualfc-favicon-48.png",
+      "role": "DERIVED",
+      "dimensions": [48, 48],
+      "mode": "RGB",
+      "usage": "favicon <link> (48x48).",
+      "sha256": "e739afc19383efe8a087d0db55c59f25bc83401be219d6e3d830fc22ab97405c"
+    },
+    {
+      "asset": "manualfc-favicon-32.png",
+      "role": "DERIVED",
+      "dimensions": [32, 32],
+      "mode": "RGB",
+      "usage": "favicon <link> (32x32).",
+      "sha256": "14dac44dfc7af2b1ef3ceefbdf7dade394efb07d6f2d3cc2e485aca22df96d84"
+    },
+    {
+      "asset": "manualfc-favicon-16.png",
+      "role": "DERIVED",
+      "dimensions": [16, 16],
+      "mode": "RGB",
+      "usage": "favicon <link> (16x16).",
+      "sha256": "2f42e52012404f9b626c096acf5e2189f6959a6647e1cc913e83c6d28c6c50db"
+    },
+    {
+      "asset": "manualfc-social.png",
+      "role": "DERIVED",
+      "dimensions": [1200, 630],
+      "mode": "RGB",
+      "usage": "og:image / twitter:image social share canvas.",
+      "sha256": "3f26a6c12d3b1f21992ed0454a4f2af6482da4a4f9e6b8ca9d348c2b851ba9a3"
+    }
+  ],
+  "superseded": {
+    "identity": "MANUALFC_CANONICAL_LOGO_IDENTITY_V1",
+    "description": "Shield/crest-based mark (navy shield, gold M, football, star). Fully removed from the repository per DEC-0080 — no code references remain.",
+    "removed_assets": [
+      "manualfc-logo-master.png",
+      "manualfc-mark-master.png",
+      "manualfc-logo-light-web.png",
+      "manualfc-logo-dark-web.png",
+      "manualfc-mark-web.png",
+      "manualfc-favicon-128.png",
+      "public/icons/icon-192.png",
+      "public/icons/icon-512.png"
+    ]
+  }
+}

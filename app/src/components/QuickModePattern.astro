@@ -1,0 +1,28 @@
+---
+interface Props { problemTitle: string; category?: string; }
+const { problemTitle, category = "Instrument de teren · Mode B" } = Astro.props;
+---
+<article class="quick-field">
+  <header><span class="eyebrow">{category}</span><h2>{problemTitle}</h2></header>
+  <div class="field-steps">
+    <section><b>01</b><h3>Observă</h3><slot name="observe" /></section>
+    <section><b>02</b><h3>Nu presupune</h3><slot name="causes" /></section>
+    <section><b>03</b><h3>Spune clar</h3><slot name="say" /></section>
+    <section><b>04</b><h3>Înțelege de ce</h3><slot name="why" /></section>
+    <section><b>05</b><h3>Modifică</h3><slot name="action" /></section>
+    <section><b>06</b><h3>Verifică din nou</h3><slot name="adaptation" /></section>
+  </div>
+</article>
+<style>
+  .quick-field { background:var(--color-bg-brand); color:white; border-top:3px solid var(--color-brand-gold); margin:var(--space-8) 0; }
+  header { padding:clamp(1.5rem,4vw,3rem); border-bottom:1px solid rgba(255,255,255,.16); }
+  header .eyebrow { color:var(--color-brand-gold); }
+  header h2 { max-width:18ch; color:white; margin:.9rem 0 0; font-size:clamp(1.8rem,4vw,3rem); }
+  .field-steps { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  section { display:grid; grid-template-columns:2.3rem 1fr; column-gap:1rem; padding:var(--space-6); border-bottom:1px solid rgba(255,255,255,.14); }
+  section:nth-child(odd) { border-right:1px solid rgba(255,255,255,.14); }
+  b { grid-row:1 / span 2; color:var(--color-brand-gold); font-family:var(--font-family-mono); font-size:.72rem; }
+  h3 { color:white; font-size:1rem; letter-spacing:.04em; text-transform:uppercase; }
+  section :global(p), section :global(li) { color:#D5DAE1; font-size:.88rem; }
+  @media(max-width:640px){ .field-steps{grid-template-columns:1fr} section:nth-child(odd){border-right:0} }
+</style>

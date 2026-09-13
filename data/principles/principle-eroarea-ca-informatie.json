@@ -1,0 +1,36 @@
+{
+  "id": "principle.eroarea-ca-informatie",
+  "slug": "eroarea-ca-informatie",
+  "category_id": "cat.perceptie-decizie",
+  "evidence_claim_ids": ["CLM-0030", "CLM-0031", "CLM-0032", "CLM-0033"],
+  "title": "Eroarea ca informație, nu ca verdict",
+  "professional_definition": "Antrenorul separă informația percepută, alegerea, execuția și rezultatul, apoi decide dacă protejează o nouă încercare sau oferă intervenția minimă necesară.",
+  "child_message": "Spune-mi ce ai văzut. Apoi încearcă din nou.",
+  "coach_meaning": "Copilul reconstruiește informația care a susținut alegerea; antrenorul nu judecă decizia exclusiv după rezultatul execuției.",
+  "why_this_message": "Este scurt, pornește de la un reper observabil și păstrează următoarea alegere la copil.",
+  "problem_being_solved": "Comenzile imediate și criticile globale pot ascunde dacă problema a fost de percepție, decizie, execuție, instrucțiune sau design al sarcinii.",
+  "information_children_must_notice": ["poziția adversarului relevant", "spațiul disponibil", "mișcarea colegului", "momentul în care opțiunea se deschide sau se închide"],
+  "decision_children_must_learn": "Să lege alegerea de informația disponibilă și să ajusteze la următoarea situație, fără să aștepte comanda adultului.",
+  "observable_behaviours": ["copilul poate numi un reper real din episod", "reia acțiunea fără evitarea mingii", "schimbă sau păstrează alegerea pe baza contextului", "solicită un reper când nu poate identifica singur problema"],
+  "rationales": {
+    "tactical": "Alegerea rămâne legată de pozițiile și mișcările reale ale jocului.",
+    "perceptual": "Întrebarea readuce atenția la informația disponibilă înaintea acțiunii.",
+    "decisional": "Copilul își păstrează responsabilitatea alegerii și poate compara două încercări.",
+    "cognitive": "Separarea verigilor reduce explicația la problema relevantă, fără diagnosticarea capacității copilului.",
+    "psychological": "Episodul este tratat ca acțiune revizuibilă, nu ca valoare personală sau talent fix.",
+    "technical": "Execuția poate fi corectată fără a declara automat că alegerea a fost greșită.",
+    "social": "Limbajul calm permite colegilor să continue cooperarea fără ridiculizare sau vinovățire."
+  },
+  "age_appropriateness": "La 10–11 ani, întrebarea are un singur obiect și este urmată rapid de o nouă experiență; nu cere explicații abstracte lungi.",
+  "phrases_to_avoid": [
+    {"phrase": "Nu mai greși!", "reason": "Cere un rezultat imposibil și nu indică informația relevantă."},
+    {"phrase": "Nu ești atent.", "reason": "Transformă o observație incompletă într-o etichetă psihologică."},
+    {"phrase": "Ți-am spus să pasezi.", "reason": "Confirmă că adultul, nu copilul, a luat decizia."}
+  ],
+  "possible_misinterpretations": ["Copilul poate crede că orice alegere este corectă indiferent de informație.", "Antrenorul poate confunda autonomia cu lipsa limitelor sau a feedbackului."],
+  "task_risks": ["Prelungirea unei sarcini neînțelese produce repetarea aceleiași confuzii.", "Tăcerea antrenorului este nepotrivită atunci când există risc fizic sau umilire."],
+  "understanding_check": ["Ce ai văzut înainte să alegi?", "Ce ai încerca diferit dacă aceeași situație reapare?"],
+  "response_if_not_understood": ["Oferă două opțiuni concrete în locul unei întrebări deschise.", "Modifică o singură variabilă pentru ca informația relevantă să devină vizibilă.", "Demonstrează cinci secunde și reia imediat jocul."],
+  "match_transfer": "Copilul caută informația și face o alegere fără comandă de pe margine; antrenorul verifică apariția comportamentului în joc liber.",
+  "sources": ["SRC-0029", "SRC-0030", "SRC-0031", "SRC-0032"]
+}

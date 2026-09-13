@@ -1,0 +1,33 @@
+{
+  "reference_date": "2026-07-30",
+  "conflicts": [
+    {
+      "conflict_id": "CONFLICT-0001",
+      "fields": ["birth_years"],
+      "rules": ["RULE-0001", "RULE-0004"],
+      "classification": "DIFFERENT_SEASONS_AND_COMPETITIONS",
+      "resolution": "Interliga de iarnă 2026–2027 include băieți 2016–2017; regulamentul național 2025–2026 includea 2015–2016. Nu se transferă eligibilitatea între sezoane."
+    },
+    {
+      "conflict_id": "CONFLICT-0002",
+      "fields": ["format", "field_length_m", "field_width_m", "goal_width_m", "match_duration_minutes"],
+      "rules": ["RULE-0001", "RULE-0004"],
+      "classification": "DIFFERENT_COMPETITIONS",
+      "resolution": "Interliga de iarnă este 4+1 în sală pe 40×20 m; Campionatul Național istoric este 6+1 pe 60×40 m. Regulamentul competiției concrete prevalează."
+    },
+    {
+      "conflict_id": "CONFLICT-0003",
+      "fields": ["match_duration_minutes", "squad_size_min", "squad_size_max"],
+      "rules": ["RULE-0006", "RULE-0007", "RULE-0008"],
+      "classification": "LOCAL_VARIATION",
+      "resolution": "Sibiu, Bihor și Suceava publică durate și loturi diferite. Niciuna dintre variante nu este regulă pentru Satu Mare."
+    },
+    {
+      "conflict_id": "CONFLICT-0004",
+      "fields": ["all"],
+      "rules": ["RULE-0003", "RULE-0005"],
+      "classification": "MISSING_CURRENT_DOCUMENTS",
+      "resolution": "Regulamentul masculin FRF și regulamentul local Satu Mare 2026–2027 nu au fost găsite în locațiile oficiale verificate; valorile rămân necunoscute."
+    }
+  ]
+}

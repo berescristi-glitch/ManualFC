@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/media-registry.schema.json",
+  "title": "Media registry",
+  "type": "object",
+  "required": ["schema_version", "media"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"const": "1.0.0"},
+    "media": {
+      "type": "array", "minItems": 1,
+      "items": {"$ref": "#/$defs/mediaEntry"}
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "mediaEntry": {
+      "type": "object",
+      "required": ["media_id", "media_type", "canonical_subject", "canonical_refs", "purpose", "duration_seconds", "status", "evidence_boundary", "reduced_motion_fallback", "reason_not_animated", "version"],
+      "properties": {
+        "media_id": {"type": "string", "pattern": "^MED-[A-Z0-9-]+$"},
+        "media_type": {"enum": ["STATIC_TACTICAL_IMAGE", "TACTICAL_LOOP", "EXERCISE_ANIMATION", "COACH_EXPLAINER", "BEFORE_AFTER", "REAL_FIELD_EXAMPLE", "MATCH_TRANSFER_EXAMPLE"]},
+        "canonical_subject": {"enum": ["exercise", "problem"]},
+        "canonical_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "purpose": {"type": "string", "minLength": 10},
+        "duration_seconds": {"type": ["number", "null"]},
+        "target_recorded_duration_seconds": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}},
+        "status": {"enum": ["AVAILABLE", "SCRIPT_READY", "NOT_STARTED", "FIELD_INPUT_REQUIRED", "NOT_APPLICABLE"]},
+        "evidence_boundary": {"enum": ["SYNTHETIC_INSTRUCTIONAL_VISUALIZATION", "CANONICAL_TEXT_DERIVED", "REAL_FOOTAGE"]},
+        "reduced_motion_fallback": {"type": ["string", "null"]},
+        "reason_not_animated": {"type": ["string", "null"]},
+        "script": {"$ref": "#/$defs/coachExplainerScript"},
+        "version": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "coachExplainerScript": {
+      "type": "object",
+      "required": ["ce_vezi", "de_ce_conteaza", "ce_ii_spui_copilului", "ce_urmaresti", "greseala_frecventa_a_antrenorului", "ce_faci_mai_departe"],
+      "properties": {
+        "ce_vezi": {"type": "string", "minLength": 10},
+        "de_ce_conteaza": {"type": "string", "minLength": 10},
+        "ce_ii_spui_copilului": {"type": "string", "minLength": 5},
+        "ce_urmaresti": {"type": "string", "minLength": 10},
+        "greseala_frecventa_a_antrenorului": {"type": "string", "minLength": 10},
+        "ce_faci_mai_departe": {"type": "string", "minLength": 10}
+      },
+      "additionalProperties": false
+    }
+  }
+}

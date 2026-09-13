@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/archive-manifest.schema.json",
+  "type": "object",
+  "required": ["archive_id", "source_id", "path", "sha256", "size_bytes", "archived_at", "licence", "storage_level", "distribution_status"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "archive_id": {"type": "string", "pattern": "^ARCH-[0-9]{4,}$"},
+    "source_id": {"type": "string", "pattern": "^SRC-[0-9]{4,}$"},
+    "path": {"type": "string", "pattern": "^research/source-snapshots/"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "size_bytes": {"type": "integer", "minimum": 1},
+    "archived_at": {"type": "string", "format": "date-time"},
+    "licence": {"type": "string", "minLength": 1},
+    "storage_level": {"enum": ["A_METADATA", "B_PERMITTED_SNAPSHOT", "C_REFERENCE_ONLY"]},
+    "distribution_status": {"enum": ["PUBLIC", "SOURCE_PACKAGE_ONLY", "LOCAL_ONLY", "EXCLUDED"]}
+  },
+  "additionalProperties": false
+}

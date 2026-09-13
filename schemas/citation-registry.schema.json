@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/citation-registry.schema.json",
+  "type": "object",
+  "required": ["schema_version", "citations"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"const": "2.0.0"},
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["citation_id", "claim_id", "source_id", "locator", "document_version", "usage_location", "support_type", "direct_quote", "verified_at"],
+        "properties": {
+          "citation_id": {"type": "string", "pattern": "^CIT-[0-9]{4,}$"},
+          "claim_id": {"type": "string", "pattern": "^CLM-[0-9]{4,}$"},
+          "source_id": {"type": "string", "pattern": "^SRC-[0-9]{4,}$"},
+          "locator": {
+            "type": "object",
+            "required": ["kind", "value"],
+            "properties": {
+              "kind": {"enum": ["PHYSICAL_PAGE", "PRINTED_PAGE", "SECTION", "PARAGRAPH", "TABLE", "FIGURE", "VIDEO_TIMESTAMP", "REGULATION_ARTICLE", "WEB_SECTION"]},
+              "value": {"type": "string", "minLength": 1},
+              "physical_page": {"type": ["integer", "null"], "minimum": 1},
+              "printed_page": {"type": ["string", "null"]},
+              "section_title": {"type": ["string", "null"]},
+              "anchor": {"type": ["string", "null"]},
+              "snapshot_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}
+            },
+            "additionalProperties": false
+          },
+          "document_version": {"type": ["string", "null"]},
+          "usage_location": {"type": "string", "minLength": 1},
+          "support_type": {"enum": ["DIRECT", "CONTEXTUAL", "CONTRASTING", "LIMITATION"]},
+          "direct_quote": {"type": ["string", "null"]},
+          "verified_at": {"type": "string", "format": "date"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

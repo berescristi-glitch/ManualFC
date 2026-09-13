@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EvidenceBadge from '../../components/EvidenceBadge.astro';
+import { getGoldStandardExercises, getGoldStandardSessions, getGoldStandardAssessment, resolveEvidenceClaims } from '../../lib/content-bridge';
+import spatiuUnghiuri from '../../../../data/principles/principle-spatiu-si-unghiuri.json';
+import progresieSprijin from '../../../../data/principles/principle-progresie-si-sprijin.json';
+
+const exercises = getGoldStandardExercises();
+const sessions = getGoldStandardSessions();
+const assessment = getGoldStandardAssessment();
+const combinedClaims = [...resolveEvidenceClaims(spatiuUnghiuri), ...resolveEvidenceClaims(progresieSprijin)];
+const evidenceClaims = combinedClaims.filter((claim, i) => combinedClaims.findIndex(c => c.claim_id === claim.claim_id) === i);
+---
+<BaseLayout title="Modul complet — Sprijinul și unghiul de pasă" description="Sistem pedagogic complet: concept, cercetare, exerciții, ședințe și evaluare pentru sprijinul și unghiul de pasă la U11.">
+  <div class="gs-page">
+    <Breadcrumb items={[{ label: 'Modul complet' }]} />
+    <p class="eyebrow">GOLD STANDARD · MOD APROFUNDAT</p>
+    <h1>Sprijinul și unghiul de pasă</h1>
+    <p class="intro">Modul pedagogic complet — de la conceptul de bază la exerciții, ședințe și evaluare — construit pentru a testa dacă un antrenor U11 poate pleca de la problema „copiii mei nu oferă unghiuri bune de sprijin” cu tot ce are nevoie pentru a o rezolva mâine. Pentru varianta scurtă, vezi <a href="/gold-standard/rapid">Rezolvă pe teren</a>. Intern, această familie rămâne Gold Standard pentru trasabilitate.</p>
+
+    <section aria-labelledby="concept">
+      <h2 id="concept">Conceptul de bază</h2>
+      <p><strong>Sprijin</strong> = poziționarea unui jucător fără minge astfel încât să ofere purtătorului mingii o continuare reală a jocului. <strong>Unghi de pasă</strong> = linia dintre purtător și coechipier, evaluată prin capacitatea unui adversar de a o închide simultan cu altă opțiune — nu un unghi geometric fix.</p>
+      <p class="reused-note">Fundația conceptuală, perceptivă și decizională e reutilizată direct din principiile canonice <a href="/principii/spatiu-si-unghiuri">Spațiu și unghiuri</a> și <a href="/principii/progresie-si-sprijin">Progresie și sprijin</a>, nu re-derivată.</p>
+    </section>
+
+    <section aria-labelledby="evidenta">
+      <h2 id="evidenta">Evidența de bază</h2>
+      <ul class="evidence-list">
+        {evidenceClaims.map(claim => (
+          <li>
+            <EvidenceBadge level={claim.epistemic_level} />
+            <p>{claim.statement}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="exercitii">
+      <h2 id="exercitii">Familia de exerciții</h2>
+      <ol class="exercise-list">
+        {exercises.map(ex => (
+          <li>
+            <a href={`/gold-standard/exercitii/${ex.id}`}>
+              <span class="ex-id">{ex.id}</span>
+              <strong>{ex.title}</strong>
+              <span class="ex-level">{ex.level} · {ex.numerical_relation}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section aria-labelledby="sedinte">
+      <h2 id="sedinte">Ședințe</h2>
+      <ol class="session-list">
+        {sessions.map(ses => (
+          <li>
+            <a href={`/gold-standard/sedinte/${ses.id}`}>
+              <span class="ex-id">{ses.id}</span>
+              <strong>{ses.title}</strong>
+              <span class="ex-level">{ses.duration_min} min</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section aria-labelledby="configurator">
+      <h2 id="configurator">Configurator de grup</h2>
+      <p>Câte grupe, câți copii activi, câtă suprafață și câte materiale ai nevoie la fiecare exercițiu, pentru orice efectiv între 8 și 18 copii, cu 1 sau 2 antrenori. <a href="/gold-standard/configurator">Deschide configuratorul de grup →</a></p>
+    </section>
+
+    <section aria-labelledby="fise-teren">
+      <h2 id="fise-teren">Fișe de teren</h2>
+      <p>O fișă pe ecran per exercițiu — format, spațiu, timp, materiale, diagramă, mesaj exact, regresie și progresie, fără raționale sau dovezi. <a href="/gold-standard/fise-de-teren">Deschide fișele de teren →</a></p>
+    </section>
+
+    <section aria-labelledby="evaluare">
+      <h2 id="evaluare">Evaluare și transfer</h2>
+      <p><a href={`/gold-standard/evaluare/${assessment.id}`}>{assessment.title}</a> — {assessment.criteria.length} criterii, de la comportamente izolate la transfer autonom în joc. Fiecare criteriu folosește niveluri calitative, nu scoruri numerice.</p>
+      <ul class="criteria-list">
+        {assessment.criteria.map(c => <li>{c.observable_behaviour}</li>)}
+      </ul>
+      <p><a href={`/gold-standard/evaluare/${assessment.id}`}>Deschide instrumentul complet de evaluare →</a></p>
+    </section>
+
+    <p class="status-note">Stare: exerciții și ședințe validate structural și pedagogic. Vizualurile tactice pentru toate cele 5 exerciții (EX-0001–EX-0005) sunt disponibile pe paginile exercițiilor. Transferul real în meciul oficial rămâne neconfirmat până la o pilotare reală pe teren.</p>
+  </div>
+</BaseLayout>
+
+<style>
+  .gs-page { max-width: var(--width-content); margin: 0 auto; padding: var(--space-20) var(--space-6); }
+  h1 { max-width: 20ch; }
+  .intro { max-width: 68ch; font-size: 1.1rem; }
+  .reused-note { font-size: .9rem; color: var(--color-text-muted); }
+  section { margin-top: var(--space-16); border-top: 1px solid var(--color-border); padding-top: var(--space-8); }
+  .evidence-list, .criteria-list { list-style: none; padding: 0; }
+  .evidence-list li { padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); }
+  .evidence-list p { margin: .5rem 0 0; }
+  .exercise-list, .session-list { list-style: none; padding: 0; }
+  .exercise-list a, .session-list a { display: grid; grid-template-columns: 6rem 1fr auto; gap: var(--space-4); padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); text-decoration: none; align-items: baseline; }
+  .ex-id { font-family: var(--font-family-mono); color: var(--color-text-accent); }
+  .ex-level { color: var(--color-text-muted); font-size: .85rem; }
+  .status-note { margin-top: var(--space-16); font-size: .85rem; color: var(--color-text-muted); }
+  @media (max-width: 600px) { .exercise-list a, .session-list a { grid-template-columns: 1fr; gap: .25rem; } }
+</style>

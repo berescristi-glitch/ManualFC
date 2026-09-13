@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getGoldStandardExercises } from '../../lib/content-bridge';
+import { SUPPORTED_PLAYER_COUNTS, computeGroupConfiguration, TOTAL_SPACE_LABEL } from '../../lib/group-configurator';
+import type { CoachCount } from '../../lib/group-configurator';
+
+const exercises = getGoldStandardExercises();
+const coachCounts: CoachCount[] = [1, 2];
+
+const rows = exercises.map((exercise) => {
+  const groupSize = Number((exercise.players as Record<string, unknown>).total);
+  return {
+    exercise,
+    groupSize,
+    byCoach: coachCounts.map((coachCount) => ({
+      coachCount,
+      configs: SUPPORTED_PLAYER_COUNTS.map((count) => computeGroupConfiguration(exercise, count, coachCount)),
+    })),
+  };
+});
+---
+<BaseLayout
+  title="Configurator de grup — Modul complet"
+  description="Câte grupe, câți copii activi, câtă suprafață și câte materiale, pentru fiecare exercițiu Gold Standard, la 8–18 copii și 1 sau 2 antrenori."
+>
+  <div class="cfg-page">
+    <Breadcrumb items={[{ label: 'Modul complet', href: '/gold-standard' }, { label: 'Configurator de grup' }]} />
+    <p class="eyebrow">GOLD STANDARD · LOGISTICĂ DE TEREN</p>
+    <h1>Configurator de grup</h1>
+    <p class="intro">
+      Răspunde la „Am {'{'}X{'}'} copii, cum organizez exercițiul?” pentru fiecare exercițiu din familia „Sprijinul și
+      unghiul de pasă”, la efective de 8–18 copii. Grupele păstrează mereu relația numerică originală a exercițiului
+      (de exemplu 2v1 rămâne 2v1) — niciun grup nu este umflat sau micșorat pentru a se potrivi la un efectiv, pentru
+      că asta ar schimba exercițiul, nu doar logistica lui.
+    </p>
+    <p class="heuristic-note">
+      Numerele de grupe, suprafață și echipament de mai jos sunt calcule directe din datele canonice ale fiecărui
+      exercițiu (format, teren, materiale). Regulile de împărțire la un efectiv neuniform, aranjamentul terenurilor
+      una lângă alta și poziționarea antrenorului sunt etichetate explicit <strong>PRACTICE_HEURISTIC</strong> —
+      judecăți practice rezonabile, nu praguri validate de cercetare.
+    </p>
+
+    {rows.map(({ exercise, groupSize, byCoach }) => (
+      <section aria-labelledby={`ex-${exercise.id}`} class="exercise-block">
+        <h2 id={`ex-${exercise.id}`}>
+          <a href={`/gold-standard/exercitii/${exercise.id}`}>{exercise.id} — {exercise.title}</a>
+        </h2>
+        <p class="exercise-meta">{exercise.numerical_relation} · grup de {groupSize} · teren canonic {exercise.field.length_m}×{exercise.field.width_m} m + {exercise.field.safety_margin_m} m siguranță</p>
+
+        {byCoach.map(({ coachCount, configs }) => (
+          <div class="coach-block">
+            <h3>{coachCount} {coachCount === 1 ? 'antrenor' : 'antrenori'}</h3>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Copii</th>
+                    {configs.map((c) => <th scope="col">{c.totalPlayers}</th>)}
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Grupe</th>
+                    {configs.map((c) => <td>{c.feasible ? c.numberOfGroups : '—'}</td>)}
+                  </tr>
+                  <tr>
+                    <th scope="row">Copii activi</th>
+                    {configs.map((c) => <td>{c.feasible ? c.activePlayers : '—'}</td>)}
+                  </tr>
+                  <tr>
+                    <th scope="row">Copii în așteptare</th>
+                    {configs.map((c) => <td>{c.feasible ? c.waitingPlayers : '—'}</td>)}
+                  </tr>
+                  <tr class="rotation-row">
+                    <th scope="row">Rotație / așteptare</th>
+                    {configs.map((c) => <td class="rotation-cell">{c.feasible && c.waitingPlayers > 0 ? c.rotationNote : (c.feasible ? '—' : '—')}</td>)}
+                  </tr>
+                  <tr>
+                    <th scope="row">Suprafață totală (lățime combinată × lungime)</th>
+                    {configs.map((c) => <td>{c.feasible ? `${c.totalSpace.combined_width_m} × ${c.totalSpace.length_m} m` : '—'}</td>)}
+                  </tr>
+                  {exercise.equipment_items.map((item, itemIndex) => (
+                    <tr>
+                      <th scope="row">{item.item}</th>
+                      {configs.map((c) => {
+                        const total = c.equipmentTotals[itemIndex];
+                        if (!c.feasible || !total) return <td>—</td>;
+                        return <td>{total.quantity_max ? `${total.quantity}-${total.quantity_max}` : total.quantity}</td>;
+                      })}
+                    </tr>
+                  ))}
+                  <tr class="rotation-row">
+                    <th scope="row">Poziționarea {coachCount === 2 ? 'antrenorilor' : 'antrenorului'}</th>
+                    {configs.map((c) => <td class="rotation-cell">{c.coachPositioning}</td>)}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            {configs.map((c) => (
+              c.feasible ? null : <p class="feasibility-note"><strong>{c.totalPlayers} copii:</strong> {c.feasibilityNote}</p>
+            ))}
+          </div>
+        ))}
+      </section>
+    ))}
+
+    <p class="total-space-label">{TOTAL_SPACE_LABEL}</p>
+  </div>
+</BaseLayout>
+
+<style>
+  .cfg-page { max-width: var(--width-wide); margin: 0 auto; padding: var(--space-20) var(--space-6); }
+  h1 { max-width: 20ch; }
+  .intro { max-width: 72ch; font-size: 1.1rem; }
+  .heuristic-note { max-width: 72ch; font-size: .9rem; color: var(--color-text-muted); background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); }
+  .exercise-block { margin-top: var(--space-16); border-top: 1px solid var(--color-border); padding-top: var(--space-8); }
+  .exercise-block h2 { margin-bottom: 0; }
+  .exercise-block h2 a { text-decoration: none; color: inherit; }
+  .exercise-meta { color: var(--color-text-muted); font-size: .9rem; margin-top: var(--space-2); }
+  .coach-block { margin-top: var(--space-8); }
+  .coach-block h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: .05em; color: var(--color-text-accent); }
+  .table-scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 40rem; font-size: .9rem; }
+  th, td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-border); text-align: left; }
+  thead th { color: var(--color-text-muted); font-weight: 700; }
+  tbody th { font-weight: 600; white-space: nowrap; }
+  td { text-align: center; }
+  .rotation-row td.rotation-cell { text-align: left; font-size: .8rem; color: var(--color-text-muted); min-width: 16rem; white-space: normal; }
+  .feasibility-note { font-size: .85rem; color: var(--color-text-muted); margin-top: var(--space-2); }
+  .total-space-label { margin-top: var(--space-16); font-size: .8rem; color: var(--color-text-muted); border-top: 1px solid var(--color-border); padding-top: var(--space-4); }
+</style>

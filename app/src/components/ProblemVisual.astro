@@ -1,0 +1,30 @@
+---
+interface Props { problemId: string; title: string; }
+const { problemId, title } = Astro.props;
+const kind = problemId === 'PRB-0001' ? 'shadow' : problemId === 'PRB-0002' ? 'crowd' : 'scan';
+---
+<figure class="problem-visual">
+  <svg viewBox="0 0 760 300" role="img" aria-labelledby={`pv-${problemId}-title pv-${problemId}-desc`}>
+    <title id={`pv-${problemId}-title`}>{title}: înainte și după</title>
+    <desc id={`pv-${problemId}-desc`}>{kind === 'shadow' ? 'În stânga, adversarul blochează linia de pasă. În dreapta, jucătorul se mută lateral și devine vizibil.' : kind === 'crowd' ? 'În stânga, patru jucători sunt grupați lângă minge. În dreapta, două opțiuni apropiate și una îndepărtată deschid spațiul.' : 'Trei cadre: jucătorul privește peste umăr, primește orientat și continuă spre spațiul liber.'}</desc>
+    <rect width="360" height="300" rx="18" class="panel bad"/><rect x="400" width="360" height="300" rx="18" class="panel good"/>
+    <text x="24" y="34" class="label">LIMITAT</text><text x="424" y="34" class="label">ȚINTĂ DE OBSERVAT</text>
+    {kind === 'shadow' && <>
+      <line x1="75" y1="150" x2="290" y2="150" class="blocked"/><circle cx="75" cy="150" r="18" class="ball-player"/><circle cx="180" cy="150" r="18" class="opponent"/><circle cx="290" cy="150" r="18" class="team"/>
+      <line x1="475" y1="150" x2="675" y2="88" class="open"/><circle cx="475" cy="150" r="18" class="ball-player"/><circle cx="575" cy="150" r="18" class="opponent"/><circle cx="675" cy="88" r="18" class="team"/><path d="M650 118 Q660 102 671 98" class="move"/>
+    </>}
+    {kind === 'crowd' && <>
+      <circle cx="180" cy="150" r="12" class="ball"/><circle cx="135" cy="120" r="18" class="team"/><circle cx="220" cy="115" r="18" class="team"/><circle cx="145" cy="190" r="18" class="team"/><circle cx="225" cy="190" r="18" class="team"/>
+      <circle cx="560" cy="150" r="12" class="ball"/><circle cx="510" cy="115" r="18" class="team"/><circle cx="510" cy="205" r="18" class="team"/><circle cx="680" cy="90" r="18" class="team"/><path d="M590 150 L655 100" class="open"/>
+    </>}
+    {kind === 'scan' && <>
+      <circle cx="175" cy="150" r="18" class="team"/><circle cx="80" cy="150" r="12" class="ball"/><path d="M166 130 Q185 92 216 118" class="move"/><text x="124" y="220" class="step">Privește după informație</text>
+      <circle cx="515" cy="150" r="18" class="team"/><circle cx="465" cy="150" r="12" class="ball"/><circle cx="650" cy="95" r="18" class="opponent"/><path d="M538 145 L625 108" class="open"/><text x="455" y="220" class="step">Primește · apoi alege</text>
+    </>}
+  </svg>
+  <figcaption>Comparație orientativă, nu rezultat garantat. Verifică schimbarea în joc.</figcaption>
+</figure>
+<style>
+  .problem-visual{margin:2rem 0}.problem-visual svg{display:block;width:100%;height:auto;background:#fff;border:1px solid var(--color-border);border-radius:18px}.panel{fill:#f6f7f5}.good{fill:#eef5ef}.label,.step{font:700 13px var(--font-family-mono);fill:#39454c}.team,.ball-player{fill:#17774b;stroke:#fff;stroke-width:4}.opponent{fill:#c84c3a;stroke:#fff;stroke-width:4}.ball{fill:#f4b942;stroke:#17252d;stroke-width:3}.blocked{stroke:#c84c3a;stroke-width:8;stroke-dasharray:12 8}.open{stroke:#17774b;stroke-width:7;stroke-linecap:round}.move{fill:none;stroke:#1d5f91;stroke-width:5;stroke-linecap:round}
+  @media(max-width:520px){.problem-visual{width:100%;margin-left:0}.step{font-size:11px}}
+</style>

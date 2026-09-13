@@ -1,0 +1,79 @@
+---
+import { getPrimaryNavigation } from '../lib/content-bridge';
+import ManualFCLogo from './ManualFCLogo.astro';
+
+const currentPath = Astro.url.pathname;
+const preferredLabels: Record<string, string> = {
+  '/incepe-aici': 'Începe aici',
+  '/volum': 'Învață',
+  '/principii': 'Principii aplicate',
+  '/gold-standard/rapid': 'Rezolvă pe teren',
+  '/gold-standard': 'Modul complet'
+};
+const navItems = getPrimaryNavigation()
+  .filter(item => preferredLabels[item.href])
+  .map(item => ({ ...item, label: preferredLabels[item.href] }));
+navItems.push({ href: '/spatiul-meu', label: 'Spațiul meu' } as (typeof navItems)[number]);
+---
+<header class="app-header">
+  <div class="container header-content">
+    <a href="/" class="logo-link" aria-label="ManualFC">
+      <ManualFCLogo variant="horizontal" class="header-logo" alt="" />
+    </a>
+    <nav class="main-nav" aria-label="Navigare principală">
+      <ul>
+        {navItems.map(item => {
+          const active = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(`${item.href}/`));
+          return <li><a href={item.href} class:list={['nav-link', { active }]} aria-current={active ? 'page' : undefined}>{item.label}</a></li>;
+        })}
+      </ul>
+    </nav>
+    <details class="mobile-menu">
+      <summary aria-label="Deschide meniul principal"><span>MENIU</span><i aria-hidden="true"></i></summary>
+      <nav class="mobile-nav" aria-label="Navigare principală mobilă">
+        <ul>
+          {navItems.map(item => {
+            const active = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(`${item.href}/`));
+            return <li><a href={item.href} class:list={{ active }} aria-current={active ? 'page' : undefined}>{item.label}</a></li>;
+          })}
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<style>
+  .app-header { position: relative; z-index: 20; background: var(--color-bg-brand); border-bottom: 1px solid rgba(255,255,255,.12); }
+  .header-content { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); }
+  .logo-link { display: inline-flex; align-items: center; gap: .7rem; color: white; text-decoration: none; }
+  .main-nav ul { display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: clamp(1rem, 2.2vw, 2rem); list-style: none; padding: 0; }
+  .main-nav li { display: inline-flex; align-items: center; height: auto; margin: 0; padding: 0; list-style: none; }
+  .nav-link { display: flex; align-items: center; min-height: 44px; color: #E4E8ED; font-size: .9rem; font-weight: 750; line-height: 1; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; }
+  .nav-link:hover, .nav-link.active { color: white; border-bottom-color: var(--color-brand-gold); }
+  .mobile-menu { display:none; }
+  @media (max-width: 860px) {
+    .header-content { align-items: flex-start; flex-direction: column; padding-block: .85rem; gap: .45rem; }
+    .main-nav { width: 100%; overflow-x: auto; scrollbar-width: thin; }
+    .main-nav ul { width: max-content; gap: 1.15rem; }
+  }
+  @media (max-width: 700px) {
+    .header-content { min-height:68px; padding-block:.55rem; flex-direction:row; align-items:center; gap:1rem; }
+    .main-nav { display:none; }
+    .mobile-menu { display:block; position:relative; }
+    summary { display:flex; align-items:center; gap:.65rem; min-height:44px; color:#F7F7F2; cursor:pointer; list-style:none; font-size:.72rem; font-weight:850; letter-spacing:.12em; }
+    summary::-webkit-details-marker { display:none; }
+    summary i, summary i::before, summary i::after { display:block; width:18px; height:1px; background:var(--color-brand-gold); transition:transform var(--transition-fast); }
+    summary i { position:relative; } summary i::before, summary i::after { content:""; position:absolute; left:0; } summary i::before{top:-6px} summary i::after{top:6px}
+    details[open] summary i { background:transparent; } details[open] summary i::before{top:0;transform:rotate(45deg)} details[open] summary i::after{top:0;transform:rotate(-45deg)}
+    details[open].mobile-menu::before { content:""; position:fixed; inset:0; z-index:40; background:rgba(13,27,42,.55); }
+    .mobile-nav { position:absolute; z-index:50; top:calc(100% + .55rem); right:0; width:min(86vw,330px); background:var(--color-bg-brand); border-top:2px solid var(--color-brand-gold); box-shadow:0 18px 40px rgba(0,0,0,.35); }
+    .mobile-nav ul { list-style:none; padding:.45rem 1rem 1rem; }
+    .mobile-nav li { margin:0; border-bottom:1px solid rgba(255,255,255,.12); }
+    .mobile-nav a { display:flex; align-items:center; min-height:52px; color:#F7F7F2; text-decoration:none; font-weight:750; }
+    .mobile-nav a.active,.mobile-nav a:hover { color:var(--color-brand-gold); }
+  }
+  .logo-link :global(.header-logo) { width:auto; height:var(--brand-logo-header-height); max-width:min(220px,calc(100vw - 9.5rem)); }
+  @media (max-width: 700px) {
+    .logo-link :global(.header-logo) { height:var(--brand-logo-mobile-height); max-width:calc(100vw - 9.5rem); }
+  }
+</style>

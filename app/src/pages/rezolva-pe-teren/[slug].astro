@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EvidenceBadge from '../../components/EvidenceBadge.astro';
+import ProblemVisual from '../../components/ProblemVisual.astro';
+import ConceptLoop from '../../components/ConceptLoop.astro';
+import CoachExplainerScript from '../../components/CoachExplainerScript.astro';
+import CoachActions from '../../components/CoachActions.astro';
+import { getProblems, getProblem, problemFamilyLabels } from '../../lib/problem-library';
+import { resolveEvidenceClaims } from '../../lib/content-bridge';
+import { getCoachExplainer } from '../../lib/media-registry';
+export function getStaticPaths(){return getProblems().map(problem=>({params:{slug:problem.slug},props:{problemId:problem.problem_id}}))}
+const problem=getProblem(Astro.props.problemId); const evidence=resolveEvidenceClaims(problem); const test=problem.quick_tests[0]; const cue=problem.child_cues[0];
+const ctx=`problema=${encodeURIComponent(problem.problem_id)}&sursa=decision-engine`;
+const explainer=getCoachExplainer(problem.problem_id);
+---
+<BaseLayout title={problem.human_title} description={`${problem.observable_behavior} Test sigur, mesaj pentru copil și verificare U11.`}>
+  <Breadcrumb items={[{label:'Rezolvă pe teren',href:'/rezolva-pe-teren'},{label:problem.human_title}]} />
+  <article class="problem-page">
+    <header class="problem-head"><p class="eyebrow">{problemFamilyLabels[problem.family]} · OBSERVAȚIE</p><h1>{problem.human_title}</h1><p>{problem.observable_behavior}</p><CoachActions id={problem.problem_id} kind="problem" title={problem.human_title} href={`/rezolva-pe-teren/${problem.slug}`}/><aside><strong>Nu presupune.</strong> {problem.what_is_not_known}</aside></header>
+    <nav class="step-nav" aria-label="Pașii ghidului"><a href="#acum">Acum</a><a href="#intelege">Înțelege</a><a href="#aplica">Aplică</a><a href="#dovezi">Dovezi</a></nav>
+    <section id="acum" class="now-grid"><div><span>01 · TESTEAZĂ RAPID</span><h2>Schimbă: {test.change_one_variable}</h2><p>{test.instruction}</p><strong>Urmărește</strong><p>{test.observe}</p></div><div class="say"><span>02 · SPUNE CLAR</span><blockquote>„{cue.say}”</blockquote><p>{cue.notice}</p></div></section>
+    <p class="limit"><strong>Limita testului:</strong> {test.interpretation_limit}</p>
+    {problem.flagship && <ProblemVisual problemId={problem.problem_id} title={problem.human_title}/>}
+    {problem.problem_id === 'PRB-0003' && <ConceptLoop variant="prb-0003" />}
+    {explainer?.script && <CoachExplainerScript script={explainer.script} targetDuration={explainer.target_recorded_duration_seconds} />}
+    <section id="intelege"><p class="eyebrow">ÎNȚELEGE · FĂRĂ DIAGNOSTIC</p><h2>Ce ar putea explica observația?</h2><div class="hypotheses">{problem.possible_explanations.map(h=><article><span>{h.evidence_state}</span><p>{h.text}</p></article>)}</div><details><summary>De ce acest mesaj?</summary><p>{cue.coach_meaning}</p><p>{cue.why}</p><h3>Evită</h3><ul>{cue.avoid.map(x=><li>{x}</li>)}</ul><h3>Întreabă</h3><ul>{problem.coach_questions.map(x=><li>{x}</li>)}</ul></details></section>
+    <section id="aplica" class="apply"><p class="eyebrow">APLICĂ PE TEREN</p><h2>Alege următorul pas</h2>
+      {problem.related_exercises.length ? <div class="action-grid">{problem.related_exercises.map(id=><article><span>EXERCIȚIU</span><h3>{id}</h3><a href={`/gold-standard/exercitii/${id}?${ctx}`}>Deschide exercițiul</a><a href={`/gold-standard/configurator?exercitiu=${id}&copii=12&antrenori=1&${ctx}`}>Adaptează la grupa mea</a></article>)}</div>:<p>Nu există încă un exercițiu canonic legitim pentru această problemă. Folosește testul de mai sus și observă din nou.</p>}
+      {problem.related_sessions.length>0 && <div class="handoff"><strong>Antrenament complet</strong>{problem.related_sessions.map(id=><><a href={`/gold-standard/sedinte/${id}?${ctx}`}>{id} · hartă și materiale</a><a href={`/gold-standard/sedinte/${id}/mod-teren?${ctx}`}>Intră în Field Mode</a></>)}</div>}
+    </section>
+    <section class="transfer"><p class="eyebrow">URMĂREȘTE · TRANSFER</p><h2>Reușita în exercițiu nu este încă transfer.</h2>{problem.transfer_checks.map(t=><p>{t.text}</p>)}<p class="status">STARE: FIELD_INPUT_REQUIRED / NECONFIRMAT</p>{problem.assessment_links.map(id=><a href={`/gold-standard/evaluare/${id}?${ctx}`}>Deschide evaluarea {id}</a>)}</section>
+    <section id="dovezi"><p class="eyebrow">DOVEZI ȘI LIMITE</p>{evidence.map(c=><details><summary><EvidenceBadge level={c.epistemic_level}/> {c.practical_implication}</summary><p>{c.statement}</p><ul>{c.limitations.map(x=><li>{x}</li>)}</ul>{c.sources.map(s=><p><a href={s.url||'#'} rel="external">{s.title}</a> · {s.year}</p>)}</details>)}<h3>Limite ale problemei</h3><ul>{problem.limitations.map(x=><li>{x}</li>)}</ul><h3>Siguranță</h3><ul>{problem.safety_notes.map(x=><li>{x}</li>)}</ul></section>
+    <footer class="return"><h2>Ce s-a schimbat?</h2><a href={`/rezolva-pe-teren/${problem.slug}#acum`}>A funcționat → verifică în joc</a><a href="#intelege">Parțial → testează altă explicație</a><a href="/rezolva-pe-teren">Nu a funcționat → revino la observații</a></footer>
+  </article>
+</BaseLayout>
+<style>
+  .problem-page{max-width:980px;margin:auto}.problem-head{padding:clamp(2rem,6vw,5rem) 0}.problem-head h1{max-width:18ch}.problem-head>p{font-size:1.15rem;max-width:68ch}.problem-head aside,.limit{padding:1rem;border-left:5px solid var(--color-brand-gold);background:#f5f2e9}.step-nav{position:sticky;top:0;z-index:4;display:flex;gap:.25rem;background:#fff;padding:.5rem;border:1px solid var(--color-border);overflow:auto}.step-nav a{min-height:44px;display:grid;place-items:center;padding:0 1rem;font-weight:800}.now-grid,.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}.now-grid>div,.action-grid article{padding:1.5rem;background:#fff;border:1px solid var(--color-border);border-radius:12px}.now-grid span,.action-grid span,.hypotheses span{font:700 .7rem var(--font-family-mono);color:var(--color-text-muted)}.say{background:var(--color-bg-brand-secondary)!important;color:#fff}.say blockquote{font:800 1.6rem var(--font-family-heading);margin:1rem 0}.hypotheses{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}.hypotheses article{padding:1rem;background:#f4f4f1}.apply,.transfer,#dovezi{padding:4rem 0;border-top:1px solid var(--color-border)}.action-grid a,.handoff a,.return a{display:block;margin-top:.75rem;font-weight:800}.handoff{padding:1.25rem;background:#edf3f0}.status{font:700 .75rem var(--font-family-mono)}details{border-top:1px solid var(--color-border);padding:1rem 0}summary{cursor:pointer;font-weight:800;min-height:44px}.return{padding:2rem;background:var(--color-bg-brand);color:#fff}.return h2{color:#fff}.return a{color:#fff}@media(max-width:700px){.now-grid,.action-grid,.hypotheses{grid-template-columns:1fr}.problem-head{padding-top:2rem}.step-nav{margin-inline:-1rem}.now-grid>div{padding:1.15rem}.apply,.transfer,#dovezi{padding-block:2.5rem}}
+  .say p,.say>span{color:#dce4e7}
+  @media(max-width:700px){.step-nav{margin-inline:0}}
+</style>

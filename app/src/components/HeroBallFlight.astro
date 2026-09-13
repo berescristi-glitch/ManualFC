@@ -1,0 +1,69 @@
+<div class="ball-flight" aria-hidden="true">
+  <div class="ball-traverse">
+    <div class="ball-bounce">
+      <svg class="football" viewBox="0 0 64 64" role="presentation">
+        <circle cx="32" cy="32" r="29" fill="#F7F7F2" stroke="#0D1B2A" stroke-width="3" />
+        <path d="m32 17 10 7-4 12H26l-4-12 10-7Z" fill="#0D1B2A" />
+        <path d="m32 17-2-12m10 20 12-5M38 36l8 11m-20-11-8 11m4-23L12 18m6 29-1 10m29-10 1 10" fill="none" stroke="#0D1B2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="m30 5-10 7-8 6-6 10m46-8 6 10-2 12-9 15M17 57l14 4 16-4" fill="none" stroke="#F4C430" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ball-flight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 52px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .ball-traverse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 38px;
+    height: 38px;
+    animation: ball-crosses-screen 3.2s linear 180ms 1 both;
+    will-change: transform;
+  }
+  .ball-bounce {
+    width: 100%;
+    height: 100%;
+    animation: ball-bounces .8s cubic-bezier(.35,0,.65,1) 180ms 4 both;
+    transform-origin: 50% 100%;
+    will-change: transform;
+  }
+  .football {
+    display: block;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 5px 3px rgb(13 27 42 / .22));
+    animation: ball-rotates 3.2s linear 180ms 1 both;
+  }
+  @keyframes ball-crosses-screen {
+    from { transform: translateX(-48px); }
+    to { transform: translateX(calc(100vw + 48px)); }
+  }
+  @keyframes ball-bounces {
+    0%, 100% { transform: translateY(14px) scaleX(1.04) scaleY(.96); }
+    48% { transform: translateY(0) scale(1); }
+  }
+  @keyframes ball-rotates {
+    from { transform: rotate(0); }
+    to { transform: rotate(900deg); }
+  }
+  @media (max-width: 700px) {
+    .ball-flight { height: 44px; }
+    .ball-traverse { width: 32px; height: 32px; animation-duration: 2.8s; }
+    .ball-bounce { animation-duration: .7s; }
+    .football { animation-duration: 2.8s; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ball-flight { display: none; }
+  }
+</style>

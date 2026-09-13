@@ -1,0 +1,37 @@
+{
+  "id": "principle.protejarea-centrului",
+  "slug": "protejarea-centrului",
+  "category_id": "cat.perceptie-decizie",
+  "evidence_claim_ids": ["CLM-0036", "CLM-0038", "CLM-0043"],
+  "title": "Protejează drumul scurt către poartă",
+  "professional_definition": "Primul apărător încetinește și orientează purtătorul departe de calea directă, al doilea acoperă depășirea, iar echipa își reface echilibrul când mingea se mută.",
+  "child_message": "Poarta e în spatele tău? Încetinește-l și arată-i drumul mai lung.",
+  "coach_meaning": "Copilul leagă mingea și purtătorul de poarta proprie, apoi reglează apropierea și unghiul pentru a reduce drumul periculos fără retragere pasivă ori intervenție pripită.",
+  "why_this_message": "Poarta oferă reperul, iar drumul mai lung definește scopul fără a prescrie automat o parte a terenului.",
+  "problem_being_solved": "Primul apărător atacă mingea frontal sau se retrage fără influență, deschizând pătrunderea centrală și anulând acoperirea colegilor.",
+  "information_children_must_notice": ["poziția mingii față de poartă", "viteza și orientarea purtătorului", "drumul direct către țintă", "poziția colegului care acoperă", "adversarul și spațiul care devin periculoase după pasă"],
+  "decision_children_must_learn": "Să aleagă viteza apropierii, momentul frânării și unghiul care întârzie calea directă, păstrând posibilitatea de intervenție și ajutorul colegilor.",
+  "observable_behaviours": ["frânează înaintea distanței de intervenție", "își poziționează corpul între purtător și drumul direct", "câștigă timp pentru revenirea colegului", "al doilea apărător acoperă fără dublaj orb", "echipa se deplasează când mingea se mută"],
+  "rationales": {
+    "tactical": "Reduce accesul direct la poartă și coordonează presiunea cu acoperirea și echilibrul.",
+    "perceptual": "Copilul citește simultan mingea, purtătorul, poarta, colegii și spațiul următor.",
+    "decisional": "Viteza, distanța și unghiul se adaptează, în locul unei intervenții automate.",
+    "cognitive": "Două repere concrete înlocuiesc o explicație abstractă despre compactitate.",
+    "psychological": "Răbdarea este legitimă, iar depășirea poate fi analizată fără etichete despre curaj.",
+    "technical": "Frânarea, pașii de reglaj, postura și momentul intervenției susțin intenția defensivă.",
+    "social": "Primul apărător câștigă timp pentru colegi, iar aceștia răspund prin acoperire, nu reproș."
+  },
+  "age_appropriateness": "La 10–11 ani, poarta și drumul sunt repere vizibile; grupele 2015 și 2016 sunt tratate împreună, cu reglaje individuale de distanță, timp, spațiu și ajutor.",
+  "phrases_to_avoid": [
+    {"phrase": "Ia-i mingea!", "reason": "Poate grăbi intervenția când echipa are nevoie de întârziere."},
+    {"phrase": "Toți în centru!", "reason": "Elimină echilibrul și lasă schimbarea ori exteriorul neprotejat."},
+    {"phrase": "Trimite-l în bandă.", "reason": "Prescrie partea chiar când drumul periculos poate fi acolo."},
+    {"phrase": "Ține poziția.", "reason": "Ignoră mutarea mingii și caracterul relațional al apărării."}
+  ],
+  "possible_misinterpretations": ["Protejarea centrului este confundată cu retragerea pasivă.", "Orientarea spre exterior devine regulă universală.", "Recuperarea mingii este folosită ca singura dovadă a unei decizii bune."],
+  "task_risks": ["Terenul prea mic poate produce coliziuni și dueluri fără reglaj.", "Poarta nefixată și lipsa spațiului exterior creează risc fizic.", "Dublajul necoordonat poate elimina doi apărători prin aceeași acțiune."],
+  "understanding_check": ["primul apărător recunoaște drumul direct", "încetinește și orientează fără comandă", "al doilea este capabil să intervină dacă primul este depășit", "relația se reface când mingea se mută", "comportamentul reapare în joc liber"],
+  "response_if_not_understood": ["reconstituie drumul scurt și cere copilului să îl arate", "mută atacantul cu 2 m mai departe pentru două reporniri", "schimbă unghiul repornirii pentru a face acoperirea vizibilă", "reduce la 2v2 și revino apoi la 3v3"],
+  "match_transfer": "În joc liber sau 7v7, jucătorul recunoaște autonom calea periculoasă într-o configurație diferită și coordonează întârzierea, acoperirea și echilibrul fără a reproduce un bloc fix.",
+  "sources": ["SRC-0035", "SRC-0037", "SRC-0042"]
+}

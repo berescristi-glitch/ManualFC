@@ -1,0 +1,187 @@
+{
+  "id": "EX-0003",
+  "title": "Primește gata să continui",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "consolidare",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copilul folosește orientarea corporală la recepție pentru a păstra o acțiune posibilă imediat după ce primește mingea, nu doar pentru a crea unghiul înainte de pasă.",
+  "observable_behaviours": [
+    "orienteaza corpul spre spatiul liber inainte de a primi mingea",
+    "primul contact pastreaza mingea intr-o zona din care poate continua actiunea"
+  ],
+  "players": {
+    "total": 3,
+    "in_possession": 2,
+    "defenders": 1,
+    "neutral_players": 0
+  },
+  "numerical_relation": "2v1",
+  "equipment": [
+    "4 conuri de delimitare",
+    "6-8 mingi de rezervă",
+    "2 conuri colorate pentru indiciul extern de spațiu"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 4 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 },
+    { "item": "conuri colorate pentru indiciul extern de spațiu", "quantity": 2 }
+  ],
+  "field": {
+    "length_m": 15,
+    "width_m": 12,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 10,
+    "format": "seturi de 2 minute, cu accent verbal doar pe indicii externe"
+  },
+  "rules": [
+    {
+      "rule": "Antrenorul marchează cu un con colorat o zonă de spațiu liber, fără să indice verbal ce să facă jucătorul cu mingea.",
+      "why": "Indiciu de focus atențional extern, sprijinit indirect de cercetarea despre focusul atențional (De Giorgio et al. 2018) — nu instrucțiune tehnică internă despre poziția piciorului."
+    },
+    {
+      "rule": "Aceleași reguli de opoziție activă ca la EX-0002.",
+      "why": "Continuitate cu treapta anterioară; singura noutate e accentul tehnic, nu complexitatea tactică."
+    }
+  ],
+  "step_by_step": [
+    "Configurație identică cu EX-0002 (2v1, opoziție activă).",
+    "Antrenorul plasează un con colorat vizibil în zona de spațiu util înainte de fiecare repetiție.",
+    "Jucătorul de sprijin trebuie să scaneze conul înainte de a primi și să primească orientat spre el."
+  ],
+  "rotation": "Rotație de adversar la fiecare 2 minute, ca la EX-0002.",
+  "transition": "Trecere la EX-0004 — se elimină conul colorat, se adaugă al doilea jucător de sprijin.",
+  "child_message": "Uită-te la conul colorat înainte să primești, și primește-o spre acolo.",
+  "why_this_message": "Indiciu extern, nu instrucțiune despre piciorul sau unghiul corpului — consecvent cu constatarea că nu există o tehnică de recepție «corectă» unică validată de cercetare.",
+  "problem_being_solved": "Copiii creează un unghi bun, dar primesc cu corpul închis și pierd posibilitatea de a continua acțiunea imediat.",
+  "information_children_must_notice": [
+    "conul colorat (indiciu extern al spațiului util)",
+    "poziția adversarului chiar înainte de a primi",
+    "propria orientare corporală față de spațiul liber"
+  ],
+  "decision_children_must_learn": "Să orienteze corpul spre spațiul util înainte de a primi, nu doar să aleagă poziția de sprijin.",
+  "rationales": {
+    "tactical": "O recepție orientată păstrează opțiunea tactică deschisă imediat, nu doar poziția de sprijin.",
+    "perceptual": "Scanarea conului înainte de recepție exersează exact lanțul scanare-orientare descris în cercetare, adaptat la vârsta U11 cu un indiciu simplu.",
+    "decisional": "Decizia se extinde de la «unde mă poziționez» la «cum mă orientez ca să pot continua».",
+    "cognitive": "Indiciul extern (conul) reduce încărcarea cognitivă față de o instrucțiune verbală despre poziția piciorului.",
+    "psychological": "Feedback-ul e vizual și imediat (a orientat spre con sau nu), nu o judecată verbală a antrenorului.",
+    "technical": "Prima atingere orientată spre spațiu, fără a prescrie un unghi exact al piciorului.",
+    "social": "Comunicarea rămâne implicită, prin poziția conului, nu prin comenzi verbale între jucători."
+  },
+  "age_appropriateness": "Indiciul extern (con colorat) e ales pentru a evita instrucțiuni tehnice interne complexe, consecvent cu singurul studiu găsit la o vârstă apropiată de U11 care testează exact acest tip de indiciu (De Giorgio et al. 2018, 7 ani, RCT).",
+  "possible_misinterpretations": [
+    "Copilul crede că trebuie să alerge fizic până la con, nu doar să se orienteze spre acea zonă.",
+    "Orientarea corporală e confundată cu o poziție fixă a picioarelor, nu cu o pregătire dinamică."
+  ],
+  "task_risks": [
+    "Prea multe conuri simultan pot supra-încărca atenția vizuală a copilului.",
+    "Copilul poate ignora adversarul real dacă se concentrează exclusiv pe con."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Pune piciorul la 45 de grade când primești.",
+      "reason": "Prescrie o tehnică unică, exactă, nevalidată de cercetare ca fiind singura corectă."
+    },
+    {
+      "phrase": "Nu primi așa!",
+      "reason": "Critică fără reper observabil; nu indică ce anume să schimbe copilul."
+    }
+  ],
+  "understanding_check": [
+    "copilul scanează vizibil spre con înainte de a primi mingea, în majoritatea repetițiilor",
+    "prima atingere păstrează mingea în zona utilă, verificată prin observare directă, nu prin întrebarea «ai înțeles?»"
+  ],
+  "response_if_not_understood": [
+    "mărește conul sau apropie-l, pentru un indiciu vizual mai ușor de observat",
+    "demonstrație scurtă din perspectiva jucătorului, fără explicație tehnică lungă"
+  ],
+  "dimension_rationale": "Dimensiuni identice cu EX-0002 — alegere specifică acestui exercițiu, nu un prag de cercetare — schimbarea e în accentul de observare (tehnic), nu în complexitatea spațială.",
+  "too_small_signs": [
+    "nu există spațiu fizic pentru a orienta corpul diferit de poziția de dinainte de recepție"
+  ],
+  "too_large_signs": [
+    "conul devine prea departe pentru a fi un indiciu util în timpul disponibil de decizie"
+  ],
+  "regression": [
+    "antrenorul indică verbal, o singură dată, direcția generală (fără con) dacă indiciul vizual nu funcționează"
+  ],
+  "progression": [
+    "trecere la EX-0004 (al doilea jucător de sprijin, fără con)",
+    "elimină conul colorat treptat pe măsură ce comportamentul apare autonom"
+  ],
+  "coach_questions": [
+    {
+      "question": "Ce ai văzut chiar înainte să primești mingea?",
+      "when": "la pauza dintre seturi"
+    },
+    {
+      "question": "Ce ai putut face imediat după ce ai primit?",
+      "when": "după o repetiție reușită"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Bravo, ai văzut spațiul înainte să primești!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "copilul primește cu corp închis, nu poate continua",
+      "possible_causes": [
+        "nu a scanat înainte de recepție",
+        "instrucție tehnică anterioară supra-încărcată",
+        "execuție motrică încă instabilă la această vârstă"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "scanarea vizibilă înainte de recepție apare în majoritatea repetițiilor, fără comandă verbală repetată",
+    "copilul poate continua acțiunea (pasă, conducere) imediat după primul contact în cel puțin jumătate din repetiții"
+  ],
+  "match_transfer": "În meci, jucătorul scanează înainte de a primi și orientează recepția astfel încât să poată continua imediat jocul, fără o pauză de reorientare.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată).",
+    "pdf_frames": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată)."
+  },
+  "sources": [
+    "SRC-0108",
+    "SRC-0109",
+    "SRC-0111",
+    "SRC-0113"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.spatiu-si-unghiuri"],
+  "pedagog_competency_ids": ["PED-C03"],
+  "coach_competency_ids": ["COACH-C06", "COACH-C11"],
+  "related_pedagog_lesson_ids": ["CH-0104"],
+  "related_coach_lesson_ids": ["CH-0408"],
+  "child_action": "Orientează corpul la recepție spre spațiul liber indicat de con și continuă acțiunea imediat după primul contact.",
+  "coach_focus": "Indiciu extern (conul colorat) — niciodată instrucție tehnică internă despre poziția piciorului sau unghiul corpului.",
+  "do_not_assume": [
+    "O recepție greșită izolată nu înseamnă că scanarea nu s-a produs — poate fi o problemă de execuție tehnică, nu de percepție.",
+    "Succesul repetat în acest exercițiu izolat nu confirmă transferul în joc cu presiune reală și fără conul colorat."
+  ],
+  "when_to_intervene": [
+    "Corp închis la recepție repetat, observat pe mai multe repetiții — demonstrație scurtă din perspectiva jucătorului, fără explicație tehnică lungă."
+  ],
+  "when_not_to_intervene": [
+    "Nu se prescrie un unghi exact al piciorului la recepție — nicio tehnică unică de recepție nu e validată de cercetare ca superioară."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul prescrie un unghi exact al piciorului la recepție.",
+      "why_it_happens": "Instrucția tehnică pare mai concretă și mai ușor de verificat decât indiciul extern, deși cercetarea nu susține o tehnică unică validată."
+    }
+  ],
+  "coach_reflection": [
+    "Am oferit un indiciu extern (con, spațiu) sau am prescris o poziție tehnică exactă a corpului?"
+  ],
+  "evidence_boundary": "Nu există o tehnică unică de recepție validată ca superioară de cercetare; indiciul extern (conul) e ales pe baza literaturii de cueing extern (De Giorgio et al. 2018, 7 ani, RCT), nu a unei rețete specifice de recepție la 10-11 ani.",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori; configurație identică cu EX-0002.",
+  "assessment_ref": "ASM-0001"
+}

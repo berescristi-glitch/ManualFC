@@ -1,0 +1,96 @@
+---
+import SkipLink from '../components/SkipLink.astro';
+import AppHeader from '../components/AppHeader.astro';
+import AppFooter from '../components/AppFooter.astro';
+import '../styles/global.css';
+import '../styles/educational-page.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  isFixture?: boolean;
+}
+
+const {
+  title,
+  description = "ManualFC — Platformă web pedagogică profesională pentru antrenori și copii U11 (10–11 ani).",
+  isFixture = false
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="icon" type="image/png" sizes="16x16" href="/brand/manualfc/logo/manualfc-favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/brand/manualfc/logo/manualfc-favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/brand/manualfc/logo/manualfc-favicon-48.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/brand/manualfc/logo/manualfc-apple-touch-icon.png" />
+  <meta name="theme-color" content="#010916" />
+  <meta name="application-name" content="ManualFC" />
+  <meta name="apple-mobile-web-app-title" content="ManualFC" />
+  <title>{title} | ManualFC U11</title>
+  <meta name="description" content={description} />
+
+  <!-- SEO OpenGraph Abstraction (Site URL = unresolved) -->
+  <meta property="og:title" content={`${title} | ManualFC U11`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ro_RO" />
+  <meta property="og:image" content="/brand/manualfc/logo/manualfc-social.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="ManualFC — Știință. Pedagogie. Practică." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/brand/manualfc/logo/manualfc-social.png" />
+  <meta name="twitter:image:alt" content="ManualFC — Știință. Pedagogie. Practică." />
+  <slot name="head" />
+</head>
+<body>
+  <SkipLink />
+  <AppHeader />
+  
+  {isFixture && (
+    <div class="fixture-warning" role="alert">
+      <div class="container">
+        <strong>FIXTURE TEHNIC:</strong> Această pagină este un artefact de testare pentru MDX și nu reprezintă conținut public canonic.
+      </div>
+    </div>
+  )}
+
+  <main id="main-content" class="container main-layout">
+    <slot />
+  </main>
+
+  <AppFooter />
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {
+          /* progressive enhancement: online ManualFC keeps working without a service worker */
+        });
+      });
+    }
+  </script>
+  <script>
+    import '../lib/educational-page.ts';
+  </script>
+</body>
+</html>
+
+<style>
+  .main-layout {
+    flex: 1;
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-20);
+  }
+  .fixture-warning {
+    background-color: var(--color-role-opponent);
+    color: var(--color-text-on-dark);
+    padding: var(--space-2) 0;
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+</style>

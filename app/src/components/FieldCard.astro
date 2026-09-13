@@ -1,0 +1,75 @@
+---
+import TacticalDiagram from './TacticalDiagram.astro';
+import type { GoldStandardExercise } from '../lib/content-bridge';
+
+interface Props { exercise: GoldStandardExercise }
+const { exercise: ex } = Astro.props;
+const variant = ex.id.toLowerCase() as 'ex-0001' | 'ex-0002' | 'ex-0003' | 'ex-0004' | 'ex-0005';
+const players = ex.players as Record<string, unknown>;
+---
+<article class="field-card" id={`fisa-${ex.id}`} aria-labelledby={`fisa-title-${ex.id}`}>
+  <header class="fc-head">
+    <p class="fc-eyebrow">{ex.id} · {ex.level}</p>
+    <h2 id={`fisa-title-${ex.id}`}>{ex.title}</h2>
+    <p class="fc-objective">{ex.primary_objective}</p>
+  </header>
+
+  <dl class="fc-facts">
+    <div><dt>Format</dt><dd>{ex.numerical_relation} · {String(players.total)} jucători</dd></div>
+    <div><dt>Spațiu</dt><dd>{ex.field.length_m}×{ex.field.width_m} m + {ex.field.safety_margin_m} m siguranță</dd></div>
+    <div><dt>Timp</dt><dd>{typeof ex.duration.total_minutes === 'number' ? `${ex.duration.total_minutes} min` : ''}</dd></div>
+    <div><dt>Materiale</dt><dd>{ex.equipment.join(' · ')}</dd></div>
+  </dl>
+
+  <div class="fc-diagram"><TacticalDiagram variant={variant} /></div>
+
+  <div class="fc-cue">
+    <span>Spune exact</span>
+    <blockquote>„{ex.child_message}”</blockquote>
+  </div>
+  <div class="fc-observe">
+    <span>Urmărește</span>
+    <p>{ex.observable_behaviours[0]}</p>
+  </div>
+
+  <div class="fc-adjust">
+    <div>
+      <span>Regresie</span>
+      <ul>{ex.regression.map((r) => <li>{r}</li>)}</ul>
+    </div>
+    <div>
+      <span>Progresie</span>
+      <ul>{ex.progression.map((p) => <li>{p}</li>)}</ul>
+    </div>
+  </div>
+
+  <p class="fc-link"><a href={`/gold-standard/exercitii/${ex.id}`}>Detaliu complet, raționale și dovezi →</a></p>
+</article>
+
+<style>
+  .field-card { max-width: 34rem; margin: 0 auto; padding: var(--space-6); background: var(--color-bg-brand); color: white; border-radius: var(--radius-lg); border-top: 3px solid var(--color-brand-gold); }
+  .fc-eyebrow { color: var(--color-brand-gold); font-size: .72rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+  .fc-head h2 { color: white; margin: .5rem 0 .5rem; font-size: 1.5rem; }
+  .fc-objective { color: #E4E8ED; font-size: .95rem; }
+  .fc-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin: var(--space-5) 0; background: rgba(255,255,255,.16); }
+  .fc-facts > div { padding: .75rem; background: var(--color-bg-brand-secondary); }
+  .fc-facts dt { font-size: .65rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; color: var(--color-brand-gold); }
+  .fc-facts dd { margin: .3rem 0 0; font-weight: 700; }
+  .fc-diagram { background: white; border-radius: var(--radius-md); padding: var(--space-4); }
+  .fc-diagram :global(figcaption) { color: var(--color-text-secondary); }
+  .fc-cue, .fc-observe { margin-top: var(--space-5); }
+  .fc-cue span, .fc-observe span, .fc-adjust span { display: block; font-size: .65rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; color: var(--color-brand-gold); }
+  .fc-cue blockquote { margin: .4rem 0 0; padding: 0; border: 0; font: 750 1.2rem/1.35 var(--font-family-heading); }
+  .fc-observe p { margin: .3rem 0 0; color: #E4E8ED; }
+  .fc-adjust { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); margin-top: var(--space-5); padding-top: var(--space-4); border-top: 1px solid rgba(255,255,255,.18); }
+  .fc-adjust ul { margin: .3rem 0 0; padding-left: 1.1rem; color: #E4E8ED; font-size: .88rem; }
+  .fc-link { margin-top: var(--space-5); font-size: .85rem; }
+  .fc-link a { color: white; text-decoration-color: var(--color-brand-gold); }
+  @media (max-width: 480px) { .fc-facts, .fc-adjust { grid-template-columns: 1fr; } }
+  @media print {
+    .field-card { background: white; color: black; border: 1px solid #333; break-inside: avoid; page-break-after: always; }
+    .fc-head h2, .fc-facts dd, .fc-cue blockquote, .fc-observe p, .fc-adjust ul, .fc-link a { color: black; }
+    .fc-facts > div { background: #F4F4F0; }
+    .fc-link { display: none; }
+  }
+</style>

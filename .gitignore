@@ -1,0 +1,88 @@
+# Environment variables, credentials and local secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+credentials*.json
+secrets*.json
+
+# Node.js, package managers and TypeScript caches
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+*.tsbuildinfo
+.eslintcache
+
+# Astro and local web builds
+.astro/
+.vercel/
+.netlify/
+/dist/**
+!/dist/README.md
+/build/
+/out/
+
+# Playwright and downloaded browsers
+playwright-report/
+test-results/
+blob-report/
+.playwright/
+ms-playwright/
+
+# Python bytecode, environments and test caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.venv/
+venv/
+env/
+
+# Generic caches, temporary outputs and local reports
+.cache/
+.tmp/
+tmp/
+temp/
+coverage/
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+~$*
+/reports/**/tmp/
+/reports/**/local/
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Local archives and browser crash data
+*.crdownload
+*.part
+chrome_debug.log
+
+# Research snapshots and restricted local material (metadata/README remain tracked)
+/research/source-snapshots/**
+!/research/source-snapshots/README.md
+/research/restricted-source-metadata/local/**
+
+.vercel
+.env*

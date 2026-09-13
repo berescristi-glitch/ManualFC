@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const volumes = [
+  {
+    id: 'VOLUMUL 01',
+    href: '/volum/01',
+    title: 'Copilul înaintea fotbalistului',
+    chapterCount: 5,
+    purpose: 'Cine e copilul de 10–11 ani înainte să fie „jucător": dezvoltare, percepție, decizie autonomă, mesajul pedagogic și cum verifici că a înțeles.',
+    who: 'Punctul de pornire pentru orice antrenor nou pe platformă — fără el, principiile tactice din Volumul 02 nu au fundație.'
+  },
+  {
+    id: 'VOLUMUL 02',
+    href: '/volum/02',
+    title: 'Fundația tactică și decizia în joc',
+    chapterCount: 8,
+    purpose: 'Jocul ca sistem de probleme: spațiu, unghiuri, sprijin, protejarea centrului, presiune și tranziții — de la ce vede copilul la ce alege să facă.',
+    who: 'Pentru antrenorul care vrea să înțeleagă de ce propune un exercițiu, nu doar cum să-l execute. Gold Standard reutilizează direct principiile de aici.'
+  },
+  {
+    id: 'VOLUMUL 03',
+    href: '/volum/03',
+    title: 'Comunicarea antrenorului, psihologia aplicată și climatul de învățare',
+    chapterCount: 6,
+    purpose: 'Cum vorbești cu un copil de 10–11 ani: limbaj scurt, întrebări care verifică înțelegerea, greșeala ca informație, disciplină fără umilire, echitatea atenției.',
+    who: 'Pentru orice antrenor — se aplică indiferent de exercițiul sau ședința aleasă din celelalte volume.'
+  },
+  {
+    id: 'VOLUMUL 04',
+    href: '/volum/04',
+    title: 'Metodologia practică de predare',
+    chapterCount: 6,
+    purpose: 'Cum proiectezi un antrenament: situații reprezentative, constrângeri de sarcină, progresii și regresii, observare structurată, timp activ și siguranță, reflecție post-joc.',
+    who: 'Pentru antrenorul care vrea să construiască propriile ședințe, nu doar să le urmeze pe cele deja gata — metodologia din spatele fiecărei ședințe Gold Standard.'
+  }
+];
+---
+<BaseLayout title="Volume — ManualFC" description="Cele patru volume ale metodologiei ManualFC, în ordinea în care se citesc.">
+  <div class="volumes-index">
+    <p class="eyebrow">METODOLOGIE · 4 VOLUME · 25 CAPITOLE</p>
+    <h1>Dacă vreau să învăț serios, de unde încep?</h1>
+    <p class="intro">De aici. Cele patru volume formează un singur traseu, în ordine: mai întâi înțelegi copilul, apoi jocul, apoi cum vorbești cu el, apoi cum proiectezi antrenamentul. <strong>Formăm mai întâi pedagogul, apoi antrenorul</strong> — de aceea Volumul 01 nu e despre fotbal, ci despre copil.</p>
+
+    <ol class="volume-list">
+      {volumes.map((v, i) => (
+        <li>
+          <a href={v.href} class="volume-card">
+            <div class="volume-head">
+              <span class="volume-step">{String(i + 1).padStart(2, '0')}</span>
+              <span class="volume-id">{v.id} · {v.chapterCount} capitole</span>
+            </div>
+            <h2>{v.title}</h2>
+            <p class="purpose">{v.purpose}</p>
+            <p class="who">{v.who}</p>
+            <span class="volume-cta">Deschide volumul →</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+
+    <p class="see-also">Volumele explică <em>de ce</em>. Pentru <em>ce fac exact mâine</em>, vezi <a href="/gold-standard">Gold Standard</a> sau <a href="/gold-standard/rapid">Am nevoie acum</a>. Pentru lista scurtă a tuturor ideilor canonice, vezi <a href="/principii">toate principiile</a>.</p>
+  </div>
+</BaseLayout>
+
+<style>
+  .volumes-index { max-width: var(--width-content); margin: 0 auto; padding: var(--space-20) var(--space-6); }
+  h1 { max-width: 22ch; }
+  .intro { max-width: 68ch; font-size: 1.15rem; }
+  .volume-list { list-style: none; padding: 0; margin-top: var(--space-12); display: grid; gap: var(--space-6); }
+  .volume-card { display: block; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-8); text-decoration: none; color: inherit; transition: border-color var(--transition-fast); }
+  .volume-card:hover { border-color: var(--color-brand-gold); }
+  .volume-head { display: flex; align-items: baseline; gap: var(--space-4); }
+  .volume-step { font-family: var(--font-family-mono); font-size: 1.5rem; color: var(--color-text-muted); }
+  .volume-id { font-family: var(--font-family-mono); font-size: .8rem; color: var(--color-text-accent); text-transform: uppercase; letter-spacing: .04em; }
+  .volume-card h2 { margin-top: var(--space-3); max-width: 40ch; }
+  .purpose { max-width: 62ch; }
+  .who { max-width: 62ch; font-size: .9rem; color: var(--color-text-muted); }
+  .volume-cta { display: inline-block; margin-top: var(--space-3); font-weight: 750; color: var(--color-text-accent); }
+  .see-also { margin-top: var(--space-12); font-size: .95rem; color: var(--color-text-muted); max-width: 68ch; }
+  .see-also a { color: var(--color-text-accent); }
+</style>

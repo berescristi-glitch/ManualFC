@@ -1,0 +1,36 @@
+{
+  "id": "principle.superioritate-egalitate-inferioritate-numerica",
+  "slug": "superioritate-egalitate-inferioritate-numerica",
+  "category_id": "cat.perceptie-decizie",
+  "evidence_claim_ids": ["CLM-0036", "CLM-0050", "CLM-0051", "CLM-0052"],
+  "title": "Folosește avantajul, prioritizează dezavantajul",
+  "professional_definition": "Copilul citește local câți atacanți și apărători sunt implicați direct în fază — nu scorul general de pe teren — și decide să implice coechipierii când are avantaj numeric sau să prioritizeze o singură cale de apărat când e în dezavantaj.",
+  "child_message": "Sunteți mai mulți aici? Folosește-i pe amândoi. Sunteți mai puțini? Alege ce aperi primul.",
+  "coach_meaning": "Copiii tratează superioritatea ca pe o oportunitate care trebuie folosită activ, nu ca pe un rezultat garantat, iar inferioritatea ca pe o problemă de prioritizare, nu de efort maxim simultan.",
+  "why_this_message": "Mesajul separă cele două roluri posibile ale aceleiași situații numerice și oferă o acțiune concretă pentru fiecare, fără să ceară numărare explicită sub presiune.",
+  "problem_being_solved": "Copiii cu avantaj numeric îl irosesc driblând direct în adversar; copiii în inferioritate se aruncă disperat la minge și lasă totul deschis.",
+  "information_children_must_notice": ["câți atacanți și apărători sunt implicați local, nu pe tot terenul", "coechipierul liber și unghiul lui", "care adversar sau cale e cea mai periculoasă acum", "momentul în care raportul numeric se schimbă"],
+  "decision_children_must_learn": "Să decidă, ca atacant cu avantaj, dacă implică un coechipier sau acționează individual, și ca apărător în dezavantaj, ce cale sau adversar oprește primul.",
+  "observable_behaviours": ["atacantul cu avantaj implică activ un coechipier liber", "driblarea directă apare doar când are sens, nu implicit", "apărătorul în inferioritate întârzie și prioritizează, nu se aruncă la minge", "schimbarea rapidă a raportului numeric este recunoscută", "tiparul reapare în zone diferite ale terenului"],
+  "rationales": {
+    "tactical": "Superioritatea se folosește prin implicarea opțiunilor, inferioritatea se gestionează prin priorități, nu prin efort maxim simultan.",
+    "perceptual": "Copilul citește numărul local de jucători implicați în fază, nu tot terenul deodată.",
+    "decisional": "Alegerea depinde de câți jucători sunt implicați acum, raport care se schimbă rapid.",
+    "cognitive": "Mesajul evită numărarea explicită sub presiune și cere o citire globală a situației.",
+    "psychological": "Apărătorul în inferioritate nu este vinovat dacă adversarul progresează după ce a prioritizat corect.",
+    "technical": "Pasa, driblarea orientată și postura defensivă de întârziere susțin cele două roluri.",
+    "social": "Coechipierii care se oferă corect ca opțiune fac superioritatea reală, nu doar teoretică."
+  },
+  "age_appropriateness": "La 10–11 ani, contrastul dintre superioritate și egalitate este arătat într-un exercițiu simplu, apoi lăsat să apară natural în joc; grupele 2015 și 2016 rămân împreună, cu raport numeric și spațiu reglate individual, ținând cont că antrenamentul pe superioritate ajută mai mult copiii cu nivel tehnic mai ridicat.",
+  "phrases_to_avoid": [
+    {"phrase": "Sunteți în plus, faceți gol!", "reason": "Tratează superioritatea ca pe o garanție, nu ca pe o oportunitate care poate fi irosită."},
+    {"phrase": "Apărați cu toții!", "reason": "Cere apărătorului în inferioritate să oprească tot simultan, ceea ce e imposibil."},
+    {"phrase": "Numărați-i!", "reason": "Transformă o citire globală a situației într-un exercițiu aritmetic nerealist sub presiune."}
+  ],
+  "possible_misinterpretations": ["Copilul crede că superioritatea numerică garantează automat succesul.", "Copilul crede că inferioritatea numerică e o înfrângere sigură.", "Copilul încearcă să numere explicit adversarii în timp ce joacă, în loc să citească situația global."],
+  "task_risks": ["Raportul numeric prea mare pentru nivelul copiilor poate elimina orice contrast vizibil.", "Spațiul prea mic poate face imposibilă folosirea reală a avantajului.", "Repetarea fără variație de zonă poate crea un tipar memorat, nu citit."],
+  "understanding_check": ["atacantul cu avantaj a implicat un coechipier liber", "driblarea directă a avut sens sau a irosit avantajul", "apărătorul în inferioritate a prioritizat o cale, nu a încercat să oprească tot", "schimbarea raportului numeric a fost recunoscută rapid", "tiparul a reapărut în zone diferite ale terenului"],
+  "response_if_not_understood": ["oprește și arată exact unde era coechipierul liber, dacă atacantul a driblat mereu", "arată consecința aruncării la minge — spațiul rămas deschis — dacă apărătorul se aruncă mereu", "simplifică la 2v1 în loc de 3v2 pentru copilul cu nivel tehnic mai scăzut, cu spațiu mai mare", "adaugă un al doilea apărător care revine rapid, pentru copilul avansat, ca să forțeze recunoașterea schimbării"],
+  "match_transfer": "În joc liber 5v5 sau 7v7, copiii recunosc superioritatea sau inferioritatea numerică local — pe margine, în careu sau în tranziție — și aleg să implice coechipierii sau să prioritizeze apărarea, nu doar în exercițiul dedicat cu raport numeric fixat.",
+  "sources": ["SRC-0035", "SRC-0049", "SRC-0050", "SRC-0051"]
+}

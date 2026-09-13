@@ -1,0 +1,179 @@
+{
+  "id": "EX-0004",
+  "title": "Sprijin cu doi coechipieri",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "avansare",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copiii coordonează două poziții de sprijin diferite, astfel încât un singur adversar (sau doi) să nu poată acoperi ambele simultan, evitând ca ambii jucători de sprijin să aleagă aceeași zonă.",
+  "observable_behaviours": [
+    "cei doi jucători de sprijin se diferentiaza spatial, nu se aduna in aceeasi zona",
+    "purtatorul mingii alege intre cele doua optiuni pe baza presiunii reale"
+  ],
+  "players": {
+    "total": 5,
+    "in_possession": 3,
+    "defenders": 2,
+    "neutral_players": 0
+  },
+  "numerical_relation": "3v2",
+  "equipment": [
+    "6 conuri de delimitare",
+    "8-10 mingi de rezervă",
+    "vestă de marcaj pentru adversari"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 6 },
+    { "item": "mingi de rezervă", "quantity": 8, "quantity_max": 10 },
+    { "item": "vestă de marcaj pentru adversari", "quantity": 2 }
+  ],
+  "field": {
+    "length_m": 18,
+    "width_m": 14,
+    "safety_margin_m": 3
+  },
+  "duration": {
+    "total_minutes": 10,
+    "format": "seturi de 2-3 minute, opoziție activă completă"
+  },
+  "rules": [
+    {
+      "rule": "Trei jucători în posesie, doi adversari activi din start.",
+      "why": "Crește numărul de decizii simultane și necesitatea de a diferenția pozițiile de sprijin — progresie justificată prin creșterea complexității informaționale, nu doar «mai mulți jucători = mai greu»."
+    },
+    {
+      "rule": "Dacă cei doi jucători de sprijin ajung în aceeași zonă, antrenorul oprește scurt și pune întrebarea ghidată, nu corectează direct poziția.",
+      "why": "Consecvent cu modelul de intervenție din capitolul despre observare și criteriile de intervenție: observă tiparul repetat, apoi întreabă, nu corectează la prima apariție."
+    }
+  ],
+  "step_by_step": [
+    "Trei jucători în posesie formează un triunghi larg; doi adversari acoperă activ.",
+    "Purtătorul mingii alege între cele două opțiuni de sprijin pe baza presiunii reale.",
+    "Cei doi jucători fără minge trebuie să se poziționeze pe linii diferite față de purtător."
+  ],
+  "rotation": "Rotație de adversari la fiecare 2-3 minute; toți cei 5 jucători trec prin ambele roluri.",
+  "transition": "Trecere la EX-0005 — jocul mic de transfer, fără constrângeri artificiale suplimentare.",
+  "child_message": "Dacă coechipierul tău e deja într-o zonă bună, găsește-ți propria zonă — nu vă adunați amândoi în același loc!",
+  "why_this_message": "Extinde principiul de bază (nu fi acoperit de același adversar) la coordonarea între doi jucători de sprijin, o problemă nouă care apare doar la această complexitate.",
+  "problem_being_solved": "Cu doi jucători de sprijin, aceștia tind să se grupeze instinctiv în aceeași zonă «sigură», anulând avantajul numeric.",
+  "information_children_must_notice": [
+    "poziția celuilalt jucător de sprijin, nu doar a mingii și adversarilor",
+    "care dintre cele două opțiuni e mai puțin acoperită în fiecare moment"
+  ],
+  "decision_children_must_learn": "Să aleagă o zonă de sprijin diferită de cea deja ocupată de celălalt coechipier, pe baza poziției adversarilor.",
+  "rationales": {
+    "tactical": "Superioritatea numerică (3v2) devine utilă doar dacă opțiunile create sunt distincte, nu suprapuse.",
+    "perceptual": "Copilul adaugă la percepția de bază (minge-adversar) și poziția coechipierului.",
+    "decisional": "Decizia individuală devine parțial dependentă de decizia coechipierului — un pas nou față de EX-0001-EX-0003.",
+    "cognitive": "Crește numărul de elemente de urmărit, justificând progresia de la 2v1 la 3v2 prin complexitate informațională, nu doar numerică.",
+    "psychological": "Coordonarea implicită (fără comenzi verbale constante) sprijină încrederea în propria citire a jocului.",
+    "technical": "Pasa către opțiunea corectă dintre cele două cere o decizie tehnică suplimentară (greutate, direcție).",
+    "social": "Introduce explicit cooperarea între doi coechipieri fără minge, nu doar relația purtător-un singur sprijin."
+  },
+  "age_appropriateness": "La 10–11 ani, coordonarea între doi coechipieri fără comunicare verbală constantă e o extensie rezonabilă după consolidarea deciziei individuale (EX-0001-EX-0003); rămâne un pas gradual, nu un salt direct la joc complet.",
+  "possible_misinterpretations": [
+    "Copiii cred că trebuie să stea cât mai departe unul de altul, indiferent de poziția adversarilor.",
+    "Purtătorul mingii alege mereu aceeași opțiune (ex. mereu cea din dreapta), nu pe baza presiunii reale."
+  ],
+  "task_risks": [
+    "Fără o intervenție ghidată la timp, tiparul de grupare în aceeași zonă se poate fixa ca obicei.",
+    "Terenul prea mic face imposibilă diferențierea spațială a celor doi jucători de sprijin."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Nu vă mai puneți amândoi acolo!",
+      "reason": "Critică fără să ofere copiilor un reper pentru a decide singuri unde altundeva să meargă."
+    }
+  ],
+  "understanding_check": [
+    "cei doi jucători de sprijin ocupă zone diferite în majoritatea repetițiilor, fără comandă externă",
+    "purtătorul mingii poate explica, la pauză, de ce a ales o opțiune și nu cealaltă"
+  ],
+  "response_if_not_understood": [
+    "marchează cu conuri de culori diferite cele două zone țintă posibile, fără a impune o poziție fixă",
+    "reduce temporar la 3v1 pentru a simplifica presiunea, apoi revino la 3v2"
+  ],
+  "dimension_rationale": "Teren mărit față de EX-0001-EX-0003 — parametru specific acestui exercițiu — pentru a oferi spațiu fizic real pentru diferențierea a două poziții de sprijin; nu corespunde unui prag validat de cercetare, ci nevoii structurale a exercițiului.",
+  "too_small_signs": [
+    "cei doi jucători de sprijin se calcă reciproc pe spațiu, fizic nu au loc să se diferențieze"
+  ],
+  "too_large_signs": [
+    "distanțele devin prea mari pentru precizia de pasă la această vârstă, jocul se fragmentează"
+  ],
+  "regression": [
+    "revenire temporară la 3v1 (un singur adversar) pentru a izola problema coordonării fără presiunea completă",
+    "marchează cele două zone țintă cu conuri"
+  ],
+  "progression": [
+    "trecere la EX-0005 (joc mic, fără constrângeri artificiale)",
+    "elimină treptat marcarea zonelor țintă"
+  ],
+  "coach_questions": [
+    {
+      "question": "Unde era deja coechipierul tău când te-ai poziționat?",
+      "when": "la pauza dintre seturi, dacă apare gruparea repetat"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Uită-te unde e deja coechipierul tău înainte să alegi zona ta."
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "toți jucătorii de sprijin se mută în aceeași zonă",
+      "possible_causes": [
+        "lipsă de comunicare între ei",
+        "lipsă de conștientizare a colegilor",
+        "sarcina anterioară (EX-0001-EX-0003) nu a impus diferențierea, deci nu a fost exersată"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "cele două opțiuni de sprijin rămân distincte spațial în majoritatea repetițiilor",
+    "purtătorul mingii alege între opțiuni pe baza presiunii, nu dintr-un tipar fix"
+  ],
+  "match_transfer": "În meciul 7v7, mai mulți jucători fără minge se coordonează implicit pentru a oferi opțiuni distincte, nu doar poziții individuale corecte izolat.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată).",
+    "pdf_frames": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0039",
+    "SRC-0041",
+    "SRC-0042"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.spatiu-si-unghiuri", "principle.progresie-si-sprijin"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C10"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C03", "COACH-C11"],
+  "related_pedagog_lesson_ids": ["CH-0101"],
+  "related_coach_lesson_ids": ["CH-0407", "CH-0408", "CH-0411"],
+  "child_action": "Se poziționează într-o zonă distinctă de cea a celuilalt jucător de sprijin, fără să aștepte comanda antrenorului.",
+  "coach_focus": "Coordonarea IMPLICITĂ între doi coechipieri, nu doar decizia individuală — pune o întrebare ghidată la tipar repetat, nu corectează direct poziția.",
+  "do_not_assume": [
+    "Gruparea într-o singură repetiție nu înseamnă că cei doi copii nu înțeleg coordonarea — poate fi o coincidență de moment, nu un tipar stabil.",
+    "Absența întrebărilor din partea copiilor nu înseamnă lipsă de interes — poate însemna că soluția le e deja clară."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat (nu prima apariție) de grupare în aceeași zonă — oprire scurtă și întrebare ghidată."
+  ],
+  "when_not_to_intervene": [
+    "Prima apariție a grupării — se lasă comportamentul să reapară sau nu înainte de a opri jocul."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul corectează direct poziția celor doi copii în loc să pună o întrebare ghidată.",
+      "why_it_happens": "E mai rapid să spui soluția decât să aștepți răspunsul copiilor, mai ales sub presiunea timpului de ședință."
+    }
+  ],
+  "coach_reflection": [
+    "Am corectat direct poziția sau am pus o întrebare care lasă copiii să găsească singuri soluția?"
+  ],
+  "evidence_boundary": "Coordonarea implicită între doi jucători de sprijin e o extensie euristică a principiului deja documentat la EX-0001/EX-0002 (PRACTICE_HEURISTIC), netestată separat ca intervenție proprie în cercetare.",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori; rotația de adversari (2-3 minute) e deja specificată în acest fișier.",
+  "assessment_ref": "ASM-0001"
+}

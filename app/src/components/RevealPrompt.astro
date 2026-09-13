@@ -1,0 +1,12 @@
+---
+// Componentă de bază pentru prompt-uri de predicție/recall cu angajament explicit
+// (P10, P11) — folosește <details>/<summary> nativ, accesibil implicit, fără JS.
+// Stiluri centralizate în app/src/styles/educational-page.css (vezi acel fișier pentru motiv).
+interface Props { prompt: string; commitLabel?: string }
+const { prompt, commitLabel = 'Gândește-te la răspunsul tău înainte să extinzi.' } = Astro.props;
+---
+<details class="reveal-prompt">
+  <summary>{prompt}</summary>
+  <p class="commit-note">{commitLabel}</p>
+  <div class="reveal-answer"><slot /></div>
+</details>

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/source-registry.schema.json",
+  "type": "object",
+  "required": ["schema_version", "sources"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"const": "2.0.0"},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id", "title", "authors", "organisation", "source_type", "year",
+          "published_at", "updated_at", "version", "edition", "url", "doi", "isbn",
+          "language", "country", "accessed_at", "verified_at", "next_review_at",
+          "archive", "sha256", "licence", "usage_rights", "access_status",
+          "currency_status", "confidence", "population", "age_range", "sport",
+          "research_question_ids", "claim_ids", "limitations", "researcher_notes",
+          "local_file", "supersedes_source_id", "superseded_by_source_id",
+          "withdrawn", "visual_rights"
+        ],
+        "properties": {
+          "source_id": {"type": "string", "pattern": "^SRC-[0-9]{4,}$"},
+          "title": {"type": "string", "minLength": 1},
+          "authors": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "organisation": {"type": ["string", "null"]},
+          "source_type": {"enum": ["OFFICIAL_REGULATION", "OFFICIAL_GUIDANCE", "SCIENTIFIC_PRIMARY", "NARRATIVE_REVIEW", "SYSTEMATIC_REVIEW", "META_ANALYSIS", "CONSENSUS_STATEMENT", "SAFEGUARDING_STANDARD", "FEDERATION_CURRICULUM", "ACADEMY_PRACTICE", "BOOK", "BOOK_CHAPTER", "COACH_EDUCATION_MATERIAL", "EXPERT_INTERVIEW", "JOURNALISM", "SECONDARY_EXPLANATION", "LOCAL_COMPETITION_RULE", "LEGAL_SOURCE", "VISUAL_ASSET_SOURCE"]},
+          "year": {"type": ["integer", "null"], "minimum": 1900},
+          "published_at": {"type": ["string", "null"], "format": "date"},
+          "updated_at": {"type": ["string", "null"], "format": "date"},
+          "version": {"type": ["string", "null"]},
+          "edition": {"type": ["string", "null"]},
+          "url": {"type": ["string", "null"], "format": "uri"},
+          "doi": {"type": ["string", "null"]},
+          "isbn": {"type": ["string", "null"]},
+          "language": {"type": "string", "minLength": 2},
+          "country": {"type": ["string", "null"]},
+          "accessed_at": {"type": "string", "format": "date"},
+          "verified_at": {"type": "string", "format": "date"},
+          "next_review_at": {"type": ["string", "null"], "format": "date"},
+          "archive": {"type": ["object", "null"]},
+          "sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+          "licence": {"type": ["string", "null"]},
+          "usage_rights": {
+            "type": "object",
+            "required": ["store_snapshot", "public_distribution", "source_package", "pdf", "web", "editable_package", "commercial_use", "modification", "attribution"],
+            "properties": {
+              "store_snapshot": {"type": "boolean"},
+              "public_distribution": {"type": "boolean"},
+              "source_package": {"type": "boolean"},
+              "pdf": {"type": "boolean"},
+              "web": {"type": "boolean"},
+              "editable_package": {"type": "boolean"},
+              "commercial_use": {"type": ["boolean", "null"]},
+              "modification": {"type": ["boolean", "null"]},
+              "attribution": {"type": ["string", "null"]}
+            },
+            "additionalProperties": false
+          },
+          "access_status": {"enum": ["OPEN", "RESTRICTED_LEGITIMATE_ACCESS", "METADATA_ONLY", "INACCESSIBLE"]},
+          "currency_status": {"enum": ["CURRENT", "REVIEW_DUE", "EXPIRED", "SUPERSEDED", "WITHDRAWN", "UNKNOWN"]},
+          "confidence": {"enum": ["HIGH", "MODERATE", "LOW", "PRACTICE_ONLY", "UNRESOLVED"]},
+          "population": {"type": ["string", "null"]},
+          "age_range": {"type": ["string", "null"]},
+          "sport": {"type": ["string", "null"]},
+          "research_question_ids": {"type": "array", "items": {"type": "string", "pattern": "^RQ-[0-9]{4,}$"}},
+          "claim_ids": {"type": "array", "items": {"type": "string", "pattern": "^CLM-[0-9]{4,}$"}},
+          "limitations": {"type": "array", "items": {"type": "string"}},
+          "researcher_notes": {"type": "string"},
+          "local_file": {"type": ["string", "null"]},
+          "supersedes_source_id": {"type": ["string", "null"], "pattern": "^SRC-[0-9]{4,}$"},
+          "superseded_by_source_id": {"type": ["string", "null"], "pattern": "^SRC-[0-9]{4,}$"},
+          "withdrawn": {"type": "boolean"},
+          "visual_rights": {
+            "type": ["object", "null"],
+            "properties": {
+              "author": {"type": "string", "minLength": 1},
+              "rights_holder": {"type": "string", "minLength": 1},
+              "permission": {"type": "string", "minLength": 1},
+              "attribution": {"type": "string", "minLength": 1}
+            },
+            "required": ["author", "rights_holder", "permission", "attribution"],
+            "additionalProperties": false
+          }
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"source_type": {"const": "VISUAL_ASSET_SOURCE"}}},
+            "then": {"properties": {"licence": {"type": "string", "minLength": 1}, "visual_rights": {"type": "object"}}, "required": ["licence", "visual_rights"]}
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

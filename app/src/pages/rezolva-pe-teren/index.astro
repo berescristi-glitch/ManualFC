@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getProblems, problemFamilyLabels } from '../../lib/problem-library';
+const problems=getProblems();
+const families=[...new Set(problems.map(p=>p.family))];
+---
+<BaseLayout title="Rezolvă pe teren" description="Pornește de la ce observi, testează fără să diagnostichezi și alege o intervenție canonică U11.">
+  <Breadcrumb items={[{label:'Rezolvă pe teren'}]} />
+  <section class="engine-hero">
+    <p class="eyebrow">DECISION ENGINE · U11</p><h1>Ce observi la copii?</h1>
+    <p>Nu ghici cauza. Alege comportamentul văzut și ajungi în câteva secunde la un test, un mesaj și următorul pas.</p>
+    <label for="problem-search">Caută în observații</label><input id="problem-search" type="search" placeholder="Ex. se îngrămădesc, nu scanează…" autocomplete="off" />
+  </section>
+  <div class="filters" role="group" aria-label="Filtrează după moment"><button class="active" data-family="all">Toate</button>{families.map(f=><button data-family={f}>{problemFamilyLabels[f]}</button>)}</div>
+  <p id="result-count" aria-live="polite">{problems.length} observații</p>
+  <section class="problem-grid" aria-label="Observații de pe teren">
+    {problems.map(p=><article data-problem data-family={p.family} data-search={`${p.human_title} ${p.observable_behavior} ${problemFamilyLabels[p.family]}`.toLowerCase()}>
+      <span>{problemFamilyLabels[p.family]}{p.flagship?' · GHID VIZUAL':''}</span><h2><a href={`/rezolva-pe-teren/${p.slug}`}>{p.human_title}</a></h2><p>{p.observable_behavior}</p><a class="go" href={`/rezolva-pe-teren/${p.slug}`}>Testează fără să presupui <span aria-hidden="true">→</span></a>
+    </article>)}
+  </section>
+  <div id="no-results" hidden><h2>Nicio observație potrivită</h2><p>Încearcă un verb simplu: „primește”, „pierde”, „pasează” sau resetează filtrele.</p><button id="reset">Arată toate</button></div>
+</BaseLayout>
+<script>
+  const input=document.querySelector<HTMLInputElement>('#problem-search'); const cards=[...document.querySelectorAll<HTMLElement>('[data-problem]')]; const count=document.querySelector('#result-count'); const empty=document.querySelector<HTMLElement>('#no-results'); let family='all';
+  function apply(){const q=input?.value.trim().toLocaleLowerCase('ro')||'';let n=0;cards.forEach(c=>{const show=(family==='all'||c.dataset.family===family)&&(!q||c.dataset.search?.includes(q));c.hidden=!show;if(show)n++});if(count)count.textContent=`${n} ${n===1?'observație':'observații'}`;if(empty)empty.hidden=n!==0}
+  document.querySelectorAll<HTMLButtonElement>('[data-family]').forEach(b=>b.addEventListener('click',()=>{family=b.dataset.family||'all';document.querySelectorAll('[data-family]').forEach(x=>x.classList.remove('active'));b.classList.add('active');apply()}));input?.addEventListener('input',apply);document.querySelector('#reset')?.addEventListener('click',()=>{if(input)input.value='';family='all';document.querySelectorAll('[data-family]').forEach(x=>x.classList.toggle('active',(x as HTMLElement).dataset.family==='all'));apply()});
+</script>
+<style>
+  .engine-hero{padding:clamp(2rem,7vw,6rem);margin:1rem calc(50% - 50vw) 2rem;background:var(--color-bg-brand);color:#fff}.engine-hero h1{color:#fff;max-width:12ch}.engine-hero p{max-width:58ch;color:#dce4e7}.engine-hero label{display:block;font-weight:800;margin:2rem 0 .5rem}.engine-hero input{width:min(680px,100%);min-height:56px;border:0;border-radius:8px;padding:0 1rem;font:inherit}.filters{display:flex;gap:.5rem;overflow:auto;padding:.5rem 0 1rem}.filters button,#reset{min-height:44px;border:1px solid var(--color-border);background:#fff;border-radius:999px;padding:.5rem 1rem;white-space:nowrap}.filters .active{background:var(--color-bg-brand-secondary);color:#fff}.problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}.problem-grid article{padding:1.5rem;border:1px solid var(--color-border);background:#fff;border-radius:12px}.problem-grid span{font:700 .72rem var(--font-family-mono);color:var(--color-text-muted)}.problem-grid h2{font-size:1.5rem}.go{display:inline-block;margin-top:1rem;font-weight:800}#no-results{padding:3rem;background:#f4f4f1;text-align:center}@media(max-width:700px){.problem-grid{grid-template-columns:1fr}.engine-hero{padding-inline:1rem}.problem-grid article{padding:1.15rem}}
+</style>

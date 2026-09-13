@@ -1,0 +1,35 @@
+---
+import ManualFCLogo from './ManualFCLogo.astro';
+const currentYear = new Date().getFullYear();
+---
+<footer class="app-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="footer-logo" href="/" aria-label="ManualFC"><ManualFCLogo variant="full" class="footer-lockup" alt="" /></a>
+      <p class="footer-thesis">Înțelege copilul.<br />Antrenează jocul.</p>
+    </div>
+    <nav aria-label="Navigare subsol">
+      <a href="/incepe-aici">Începe aici</a>
+      <a href="/volum">Învață metodologia</a>
+      <a href="/principii">Principii aplicate</a>
+      <a href="/gold-standard/rapid">Rezolvă pe teren</a>
+      <a href="/gold-standard">Modul complet</a>
+    </nav>
+    <div class="footer-note">
+      <p>Formarea antrenorului-pedagog pentru copiii de 10–11 ani.</p>
+      <p>© {currentYear} ManualFC</p>
+    </div>
+  </div>
+</footer>
+<style>
+  .app-footer { margin-top: auto; background: var(--color-bg-brand); color: white; border-top: 3px solid var(--color-brand-gold); padding: var(--space-16) 0; }
+  .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr 1fr; gap: var(--space-12); }
+  .footer-logo { display:inline-flex; margin-bottom:1rem; text-decoration:none; }
+  .footer-logo :global(.footer-lockup) { width:var(--brand-logo-footer-width); }
+  .footer-thesis { color: white; font-size: 1.4rem; line-height: 1.15; }
+  nav { display: grid; align-content: start; gap: .65rem; }
+  nav a { color: #D5DAE1; text-decoration: none; }
+  nav a:hover { color: var(--color-brand-gold); }
+  .footer-note p { color: var(--color-steel); font-size: .82rem; }
+  @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; gap: var(--space-6); } }
+</style>

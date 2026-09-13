@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/build-manifest.schema.json",
+  "type": "object",
+  "required": ["id", "kind", "source_commit", "files"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "id": {"type": "string", "pattern": "^BUILD-[0-9]{4,}$"},
+    "kind": {"enum": ["web", "pdf", "editable"]},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "files": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task",
+  "type": "object",
+  "required": [
+    "task_id",
+    "title",
+    "phase",
+    "status",
+    "priority",
+    "dependencies",
+    "outputs",
+    "acceptance_criteria",
+    "validation_commands",
+    "weight_percent",
+    "attempts",
+    "max_attempts"
+    ,"migration_disposition"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "pattern": "^TASK-[0-9]{4}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5
+    },
+    "phase": {
+      "type": "string"
+    },
+    "volume": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "PENDING",
+        "READY",
+        "IN_PROGRESS",
+        "BLOCKED",
+        "VALIDATING",
+        "REPAIR_REQUIRED",
+        "DONE",
+        "FAILED_CRITICAL"
+      ]
+    },
+    "priority": {
+      "enum": [
+        "CRITICAL",
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "validation_commands": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "weight_percent": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 100
+    },
+    "attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_attempts": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "last_error": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "started_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "completed_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "migration_disposition": {
+      "enum": ["KEEP_UNCHANGED", "KEEP_WITH_WEB_OUTPUT", "MOVE_EARLIER", "MOVE_LATER", "SPLIT", "MERGE", "REPLACE", "DEFER_TO_MULTI_AGE", "REMOVE_WITH_JUSTIFICATION"]
+    }
+  },
+  "additionalProperties": true
+}

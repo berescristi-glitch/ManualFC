@@ -1,0 +1,50 @@
+{
+  "$schema": "../schemas/research-taxonomy.schema.json",
+  "schema_version": "1.0.0",
+  "source_types": {
+    "OFFICIAL_REGULATION": {"authority": "HIGH", "allowed_uses": ["rules", "format", "safety"], "limitations": ["jurisdiction", "version"], "required_metadata": ["published_at", "version", "country"], "recheck_policy": "BEFORE_PUBLICATION", "citation_mode": "article_or_section"},
+    "OFFICIAL_GUIDANCE": {"authority": "HIGH", "allowed_uses": ["recommendation"], "limitations": ["not_experimental_evidence"], "required_metadata": ["organisation", "published_at"], "recheck_policy": "ANNUAL", "citation_mode": "page_or_section"},
+    "SCIENTIFIC_PRIMARY": {"authority": "CONTEXTUAL", "allowed_uses": ["study_result"], "limitations": ["sample", "design", "generalisability"], "required_metadata": ["authors", "published_at", "doi_or_url"], "recheck_policy": "MAJOR_BUILD", "citation_mode": "page_table_or_result"},
+    "SYSTEMATIC_REVIEW": {"authority": "HIGH", "allowed_uses": ["research_synthesis"], "limitations": ["included_studies", "heterogeneity"], "required_metadata": ["authors", "published_at", "doi_or_url"], "recheck_policy": "MAJOR_BUILD", "citation_mode": "page_or_result"},
+    "META_ANALYSIS": {"authority": "HIGH", "allowed_uses": ["quantitative_synthesis"], "limitations": ["heterogeneity", "publication_bias"], "required_metadata": ["authors", "published_at", "doi_or_url"], "recheck_policy": "MAJOR_BUILD", "citation_mode": "page_table_or_result"},
+    "CONSENSUS_STATEMENT": {"authority": "HIGH", "allowed_uses": ["consensus"], "limitations": ["consensus_not_causality"], "required_metadata": ["organisation", "published_at"], "recheck_policy": "ANNUAL", "citation_mode": "recommendation_or_section"},
+    "SAFEGUARDING_STANDARD": {"authority": "HIGH", "allowed_uses": ["safeguarding"], "limitations": ["jurisdiction", "version"], "required_metadata": ["organisation", "published_at", "version"], "recheck_policy": "BEFORE_PUBLICATION", "citation_mode": "article_or_section"},
+    "FEDERATION_CURRICULUM": {"authority": "OFFICIAL_PRACTICE", "allowed_uses": ["curriculum_reference"], "limitations": ["federation_context", "not_universal_evidence"], "required_metadata": ["organisation", "published_at"], "recheck_policy": "ANNUAL", "citation_mode": "page_or_section"},
+    "ACADEMY_PRACTICE": {"authority": "PRACTICE_ONLY", "allowed_uses": ["practice_example"], "limitations": ["selection_context", "uncontrolled"], "required_metadata": ["organisation", "published_at"], "recheck_policy": "MAJOR_BUILD", "citation_mode": "page_or_section"},
+    "BOOK": {"authority": "CONTEXTUAL", "allowed_uses": ["theory", "professional_context"], "limitations": ["edition", "secondary_synthesis"], "required_metadata": ["authors", "year", "isbn"], "recheck_policy": "ON_NEW_EDITION", "citation_mode": "page"},
+    "BOOK_CHAPTER": {"authority": "CONTEXTUAL", "allowed_uses": ["theory", "professional_context"], "limitations": ["chapter_context"], "required_metadata": ["authors", "year", "book_title"], "recheck_policy": "ON_NEW_EDITION", "citation_mode": "page"},
+    "COACH_EDUCATION_MATERIAL": {"authority": "OFFICIAL_PRACTICE", "allowed_uses": ["coach_education"], "limitations": ["programme_context"], "required_metadata": ["organisation", "version"], "recheck_policy": "ANNUAL", "citation_mode": "page_or_module"},
+    "EXPERT_INTERVIEW": {"authority": "OPINION", "allowed_uses": ["professional_opinion"], "limitations": ["subjective", "not_generalizable"], "required_metadata": ["authors", "interviewed_at"], "recheck_policy": "NONE", "citation_mode": "timestamp_or_transcript"},
+    "JOURNALISM": {"authority": "LOW", "allowed_uses": ["context", "current_event"], "limitations": ["secondary", "editorial"], "required_metadata": ["publisher", "published_at"], "recheck_policy": "MAJOR_BUILD", "citation_mode": "section"},
+    "SECONDARY_EXPLANATION": {"authority": "LOW", "allowed_uses": ["orientation_only"], "limitations": ["verify_primary_source"], "required_metadata": ["publisher", "published_at"], "recheck_policy": "MAJOR_BUILD", "citation_mode": "section"},
+    "LOCAL_COMPETITION_RULE": {"authority": "HIGH_LOCAL", "allowed_uses": ["local_rules"], "limitations": ["local_scope", "season"], "required_metadata": ["organisation", "country", "version"], "recheck_policy": "EACH_SEASON", "citation_mode": "article_or_section"},
+    "LEGAL_SOURCE": {"authority": "HIGH", "allowed_uses": ["legal_requirement"], "limitations": ["jurisdiction", "effective_date"], "required_metadata": ["jurisdiction", "published_at", "version"], "recheck_policy": "BEFORE_PUBLICATION", "citation_mode": "article"},
+    "VISUAL_ASSET_SOURCE": {"authority": "RIGHTS_ONLY", "allowed_uses": ["asset_provenance"], "limitations": ["licence_scope"], "required_metadata": ["author", "rights_holder", "licence", "url"], "recheck_policy": "BEFORE_PUBLICATION", "citation_mode": "attribution"}
+  },
+  "confidence_levels": {
+    "HIGH": "Convergență bună, metodă adecvată și aplicabilitate directă sau oficială clară.",
+    "MODERATE": "Dovezi utile, dar cu limite de populație, metodă, consistență sau transfer.",
+    "LOW": "Dovezi indirecte, limitate sau cu incertitudine importantă.",
+    "PRACTICE_ONLY": "Practică profesională descrisă fără pretenție de eficacitate demonstrată.",
+    "UNRESOLVED": "Conflict real sau informație insuficientă; nu susține formulări categorice."
+  },
+  "exclusion_reasons": [
+    "POPULATION_MISMATCH", "AGE_MISMATCH", "SPORT_MISMATCH", "DUPLICATE_SOURCE",
+    "OUTDATED_VERSION", "WEAK_METHOD", "INACCESSIBLE_TEXT", "UNKNOWN_PROVENANCE",
+    "UNVERIFIABLE_CLAIMS", "NOT_RELEVANT", "UNCLEAR_RIGHTS", "SUPERSEDED"
+  ],
+  "question_domains": [
+    "COGNITIVE_DEVELOPMENT", "PSYCHOLOGICAL_DEVELOPMENT", "SOCIAL_DEVELOPMENT",
+    "MOTOR_DEVELOPMENT", "TACTICS", "PEDAGOGY", "COMMUNICATION", "FEEDBACK",
+    "EXERCISE_DESIGN", "PLANNING", "ASSESSMENT", "PHYSICAL_PREPARATION",
+    "SAFEGUARDING", "REGULATION", "USAGE_RIGHTS", "ACCESSIBILITY", "EDTECH"
+  ],
+  "freshness_policies": {
+    "BEFORE_PUBLICATION": {"days": 30},
+    "MAJOR_BUILD": {"days": 180},
+    "ANNUAL": {"days": 365},
+    "EACH_SEASON": {"days": 180},
+    "ON_NEW_EDITION": {"days": 730},
+    "NONE": {"days": null}
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/diagram.schema.json",
+  "type": "object",
+  "required": ["id", "subject_id", "file", "variant", "title", "description"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "id": {"type": "string", "pattern": "^DIA-[0-9]{4,}$"},
+    "subject_id": {"type": "string"},
+    "file": {"type": "string", "pattern": "^assets/"},
+    "variant": {"enum": ["color", "black-and-white", "pdf-frame", "storyboard"]},
+    "paired_variant_id": {"type": ["string", "null"]},
+    "title": {"type": "string", "minLength": 3},
+    "description": {"type": "string", "minLength": 20}
+  },
+  "additionalProperties": false
+}

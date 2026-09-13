@@ -1,0 +1,37 @@
+{
+  "id": "principle.conversatii-individuale-si-echitate",
+  "slug": "conversatii-individuale-si-echitate",
+  "category_id": "cat.comunicare",
+  "evidence_claim_ids": ["CLM-0058"],
+  "title": "Conversații individuale și echitatea atenției",
+  "professional_definition": "Acordarea de atenție individuală directă și echitabilă fiecărui copil din grupă prin dialoguri scurte 1-la-1, eliminând favoritismul și discriminarea pe criterii de nivel tehnic de moment.",
+  "child_message": "Fiecare dintre voi este important pentru echipă: hai să vorbim despre progresul tău!",
+  "coach_meaning": "Asigurarea sprijinului emoțional și metodologic individualizat pentru toți copiii din lot.",
+  "why_this_message": "Transmiterea mesajului clar că valoarea copilului nu depinde de nivelul tehnic curent sau de rezultatul meciului.",
+  "problem_being_solved": "Concentrarea atenției antrenorului exclusiv pe copiii mai avansați fizic sau tehnic creează frustrare și abandon la ceilalți.",
+  "information_children_must_notice": ["atenția dedicată a antrenorului în dialogul privat", "progresul personal propriu"],
+  "decision_children_must_learn": "Să-și evalueze propriul progres în raport cu sine, nu în comparație invidioasă cu colegii.",
+  "observable_behaviours": ["vorbește deschis cu antrenorul", "își stabilește mici obiective personale", "se simte valorizat în lot"],
+  "rationales": {
+    "tactical": "Crește implicarea și responsabilitatea fiecărui jucător indiferent de rol.",
+    "perceptual": "Orientarea atenției către propriul traseu de dezvoltare.",
+    "decisional": "Încurajează asumarea obiectivelor personale de învățare.",
+    "cognitive": "Dezvoltarea auto-evaluării și reflectării personale.",
+    "psychological": "Satisface nevoia fundamentală de apartenență și apreciere.",
+    "technical": "Permite ajustarea individuală a detaliilor de execuție.",
+    "social": "Creează o atmosferă de echitate și sprijin reciproc în lot."
+  },
+  "age_appropriateness": "La 10–11 ani, copiii sunt foarte sensibili la favoritism; dialogul echitabil 1-la-1 consolidează încrederea în adult.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "Uitați-vă la Matei ce bine face, învățați și voi de la el!",
+      "reason": "Comparație publică care creează resentimente și scade stima de sine."
+    }
+  ],
+  "possible_misinterpretations": ["Conversațiile individuale înseamnă ședințe lungi de consiliere pe teren."],
+  "task_risks": ["Antrenorul uită să bifeze copiii mai tăcuți și ajunge să vorbească doar cu cei extrovertiți."],
+  "understanding_check": ["fiecare copil din lot poate numi un lucru la care lucrează personal"],
+  "response_if_not_understood": ["re-conectare scurtă la sosirea la antrenament cu o întrebare despre ziua lui"],
+  "match_transfer": "În meci, toți copiii intră pe teren cu încredere egală în valoarea lor pentru echipă.",
+  "sources": ["SRC-0057"]
+}

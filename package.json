@@ -1,0 +1,23 @@
+{
+  "name": "manualfc-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Platformă web pedagogică profesională pentru antrenori și copii U11",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/clean_web_build.mjs && astro build && node scripts/generate_astro_manifest.mjs",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "node --test tests/web/*.test.js"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.2.5",
+    "astro": "^5.13.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@types/node": "^22.13.1",
+    "typescript": "^5.7.3"
+  }
+}

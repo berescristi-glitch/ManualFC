@@ -1,0 +1,190 @@
+{
+  "id": "EX-0002",
+  "title": "Creează opțiunea sub presiune reală",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "consolidare",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copilul aplică decizia direcție+distanță pentru a crea un unghi de pasă util, cu opoziție activă completă și continuă (nu semi-pasivă ca la EX-0001).",
+  "observable_behaviours": [
+    "regleaza pozitia de sprijin cand mingea sau adversarul se muta",
+    "alege unghiul si distanta fara a astepta comanda antrenorului"
+  ],
+  "players": {
+    "total": 3,
+    "in_possession": 2,
+    "defenders": 1,
+    "neutral_players": 0
+  },
+  "numerical_relation": "2v1",
+  "equipment": [
+    "4 conuri de delimitare",
+    "6-8 mingi de rezervă",
+    "vestă de marcaj pentru adversar"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 4 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 },
+    { "item": "vestă de marcaj pentru adversar", "quantity": 1 }
+  ],
+  "field": {
+    "length_m": 15,
+    "width_m": 12,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 10,
+    "format": "seturi de 2 minute joc continuu, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Adversarul poate ataca mingea oricând, din primul moment.",
+      "why": "Elimină simplificarea EX-0001; presiunea de timp devine reală — o progresie firească a exercițiului, nu un prag de cercetare."
+    },
+    {
+      "rule": "Dacă adversarul recuperează mingea, rolurile se schimbă imediat.",
+      "why": "Menține jocul continuu și feedback-ul imediat despre eficiența deciziei."
+    }
+  ],
+  "step_by_step": [
+    "Aceiași 3 jucători ca la EX-0001, dar adversarul e activ din start.",
+    "Jocul continuă fără opriri artificiale timp de 2 minute.",
+    "Antrenorul observă un singur focalizator per set (ex: doar distanța de sprijin)."
+  ],
+  "rotation": "Rotație de adversar la fiecare 2 minute.",
+  "transition": "Trecere la EX-0003 după 2 seturi — aceeași configurație de bază, cu accent explicit pe ce se întâmplă după recepție.",
+  "child_message": "Mută-te până când adversarul nu ne mai poate acoperi pe amândoi — și fii gata să mai schimbi dacă se mișcă!",
+  "why_this_message": "Adaugă explicit natura dinamică a deciziei (INFORMAȚIE → DECIZIE → MIȘCARE → INFORMAȚIE NOUĂ), nu o poziție finală statică.",
+  "problem_being_solved": "La opoziție reală și continuă, copiii tind să găsească un unghi o singură dată și să rămână acolo, deși adversarul se repoziționează.",
+  "information_children_must_notice": [
+    "poziția și orientarea mingii, actualizată continuu",
+    "mișcarea adversarului, nu doar poziția lui inițială",
+    "timpul în care adversarul poate ajunge să acopere din nou"
+  ],
+  "decision_children_must_learn": "Să regleze continuu direcția și distanța de sprijin pe măsură ce mingea și adversarul se mișcă, nu doar o singură dată.",
+  "rationales": {
+    "tactical": "Sub opoziție reală, un adversar activ testează dacă decizia de sprijin e adaptivă, nu memorată.",
+    "perceptual": "Copilul trebuie să actualizeze continuu citirea liniei minge-adversar-coleg.",
+    "decisional": "Decizia devine repetitivă și dinamică, nu o singură alegere per repetiție.",
+    "cognitive": "Presiunea de timp reală forțează procesare rapidă, dar informația rămâne aceeași ca la EX-0001 — doar contextul se schimbă.",
+    "psychological": "Recuperarea mingii de către adversar oferă feedback imediat, fără evaluare verbală a antrenorului.",
+    "technical": "Pasarea sub presiune reală necesită precizie mai mare decât la EX-0001.",
+    "social": "Cei doi coechipieri trebuie să comunice mai des, dat fiind ritmul continuu al jocului."
+  },
+  "age_appropriateness": "La 10–11 ani, trecerea de la opoziție semi-pasivă la activă e o progresie firească odată ce decizia de bază (EX-0001) e stabilă; formatul 2v1 rămâne gestionabil perceptiv.",
+  "possible_misinterpretations": [
+    "Copilul crede că, odată găsit un unghi bun, poate rămâne acolo tot setul.",
+    "Viteza jocului e confundată cu graba de a pasa fără să verifice unghiul."
+  ],
+  "task_risks": [
+    "Opoziția prea intensă de la început poate readuce comenzi verbale ale antrenorului din reflex.",
+    "Jucătorii mai puțin experimentați pot pierde mingea frecvent și se pot descuraja."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Nu mai sta pe loc!",
+      "reason": "Comandă generică, fără reper observabil pentru copil."
+    },
+    {
+      "phrase": "Grăbește-te!",
+      "reason": "Poate produce pase forțate fără verificarea unghiului, opusul deciziei exersate."
+    }
+  ],
+  "understanding_check": [
+    "copilul își schimbă poziția de sprijin de cel puțin două ori într-un set de 2 minute, fără comandă",
+    "poate descrie, la pauză, un moment în care adversarul s-a mutat și el s-a re-poziționat"
+  ],
+  "response_if_not_understood": [
+    "regresie temporară la regula EX-0001 (adversar semi-pasiv) pentru 1 set, apoi revenire",
+    "reper extern: «Unde altundeva puteai fi?»"
+  ],
+  "dimension_rationale": "Teren ușor mai mare decât EX-0001 — un reglaj specific acestui exercițiu — pentru a susține opoziția activă continuă fără coliziuni frecvente, fără a pretinde o dimensiune validată de cercetare.",
+  "too_small_signs": [
+    "coliziuni frecvente sub opoziție activă",
+    "adversarul acoperă structural ambele opțiuni indiferent de deplasare"
+  ],
+  "too_large_signs": [
+    "adversarul nu poate presa deloc, jocul devine posesie fără presiune reală"
+  ],
+  "regression": [
+    "revenire temporară la regula adversarului semi-pasiv din EX-0001",
+    "mărește terenul cu 2 m"
+  ],
+  "progression": [
+    "trecere la EX-0003 (accent tehnic pe recepție)",
+    "reduce timpul disponibil înainte ca adversarul să poată ataca"
+  ],
+  "coach_questions": [
+    {
+      "question": "Ce ai văzut chiar înainte să te muți a doua oară?",
+      "when": "la pauza dintre seturi"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Urmărește unde se mișcă adversarul, nu unde ai stat prima dată."
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "copilul se mișcă abia după ce linia de pasă e deja blocată",
+      "possible_causes": [
+        "timing întârziat, posibil lipsă de scanare anterioară",
+        "procesare lentă, nu lipsă de «inteligență» — vezi principiul Eroarea ca informație"
+      ]
+    },
+    {
+      "observation": "copilul rămâne în poziția inițială deși adversarul s-a mutat",
+      "possible_causes": [
+        "nu a actualizat informația",
+        "supra-încărcare cognitivă la trecerea la opoziție activă"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "decizia de repoziționare reapare de mai multe ori într-un set continuu, nu doar o dată",
+    "rata de pase reușite crește față de prima repetiție a setului"
+  ],
+  "match_transfer": "În meci, jucătorul își ajustează continuu poziția de sprijin pe măsură ce faza de joc evoluează, nu doar la începutul fazei de posesie.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată).",
+    "pdf_frames": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0039",
+    "SRC-0041"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.spatiu-si-unghiuri", "principle.presiune-si-acoperire"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C07"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C06", "COACH-C11", "COACH-C12"],
+  "related_pedagog_lesson_ids": ["CH-0101"],
+  "related_coach_lesson_ids": ["CH-0407", "CH-0408", "CH-0403"],
+  "child_action": "Ajustează continuu poziția de sprijin pe măsură ce adversarul se mișcă, fără să se oprească la prima poziție găsită.",
+  "coach_focus": "Actualizarea continuă a deciziei copilului (nu o alegere unică per repetiție) — observă repoziționarea repetată, nu doar reușita primei pase.",
+  "do_not_assume": [
+    "Succesul sub opoziție semi-pasivă la EX-0001 nu garantează transferul sub opoziție activă completă — EX-0002 rămâne un pas intermediar, nu o repetare.",
+    "O ezitare sau o poziționare întârziată nu înseamnă lipsă de înțelegere — poate fi timpul de procesare necesar la această vârstă sub presiune reală."
+  ],
+  "when_to_intervene": [
+    "La pauza dintre seturi, cu întrebarea „Ce ai văzut chiar înainte să te muți a doua oară?” — niciodată în timpul jocului continuu."
+  ],
+  "when_not_to_intervene": [
+    "Opoziție prea intensă resimțită de copil nu justifică revenirea imediată la comenzi verbale — se folosește regresia documentată (adversar semi-pasiv), nu corecția verbală în timpul jocului."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul oferă un unghi fix („du-te acolo”) când adversarul se mișcă.",
+      "why_it_happens": "Reflexul de a simplifica sarcina copilului elimină exact decizia dinamică pe care exercițiul o exersează."
+    }
+  ],
+  "coach_reflection": [
+    "Am numit o cauză presupusă („nu e atent”) sau am descris comportamentul exact înainte de a decide dacă intervin?"
+  ],
+  "evidence_boundary": "Nu există un prag validat de cercetare pentru «cât de activă» trebuie să fie opoziția la această vârstă; alegerea rămâne o euristică de proiectare ManualFC (PRACTICE_HEURISTIC), nu un rezultat testat.",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori; logistica de rotație (la 2 minute) e deja specificată în acest fișier și nu e duplicată aici.",
+  "assessment_ref": "ASM-0001"
+}

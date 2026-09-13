@@ -1,0 +1,65 @@
+---
+import HeroBallFlight from './HeroBallFlight.astro';
+---
+<section class="approved-hero on-dark" aria-labelledby="homepage-hero-title">
+  <HeroBallFlight />
+  <div class="desktop-art" aria-hidden="true">
+    <img class="field-strip" src="/brand/manualfc/hero-field-strip-v1.png" alt="" width="1672" height="211" decoding="async" />
+    <img class="floodlight" src="/brand/manualfc/hero-floodlight-v1.png" alt="" width="140" height="500" decoding="async" />
+    <img class="right-scene" src="/brand/manualfc/hero-scene-right-v1.png" alt="" width="842" height="826" fetchpriority="high" decoding="async" />
+  </div>
+
+  <div class="hero-interface">
+    <span class="eyebrow">ManualFC · Metodologie U11</span>
+    <h1 id="homepage-hero-title">Înțelege copilul.<br /><em>Antrenează jocul.</em></h1>
+    <p>Manualul antrenorului modern pentru dezvoltarea copiilor U11. Cunoaștere. Pedagogie. Practică.<br />Totul <strong>pentru copil.</strong> Totul <strong>pe teren.</strong></p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="/incepe-aici">Începe să înveți <span aria-hidden="true">→</span></a>
+      <a class="button hero-secondary" href="/gold-standard/rapid">Rezolvă pe teren <span aria-hidden="true">◷</span></a>
+    </div>
+  </div>
+
+  <div class="mobile-art" aria-hidden="true">
+    <img src="/brand/manualfc/hero-scene-mobile-v1.png" alt="" width="782" height="826" fetchpriority="high" decoding="async" />
+  </div>
+</section>
+
+<style>
+  :global(:root){--scrollbar-w:15px}
+  .approved-hero { position:relative; isolation:isolate; width:calc(100vw - var(--scrollbar-w)); min-height:clamp(720px,calc(100vh - 86px),860px); margin-top:calc(-1 * var(--space-6)); margin-left:calc(50% - 50vw + var(--scrollbar-w)/2); overflow:hidden; background:var(--color-bg-brand); }
+  .desktop-art { position:absolute; inset:0; z-index:0; overflow:hidden; }
+  .desktop-art img { position:absolute; display:block; opacity:1; filter:none; mix-blend-mode:normal; }
+  .field-strip { inset:auto 0 0; width:100%; height:24%; object-fit:cover; object-position:center bottom; mask-image:linear-gradient(180deg,transparent 0,#000 26%); }
+  .floodlight { left:0; top:8%; width:clamp(95px,8.5vw,140px); height:54%; object-fit:cover; object-position:left center; mask-image:linear-gradient(90deg,#000 0 58%,transparent 100%),linear-gradient(180deg,transparent 0,#000 12% 82%,transparent 100%); mask-composite:intersect; }
+  .right-scene { inset:0 0 0 auto; width:57%; height:100%; object-fit:cover; object-position:left bottom; mask-image:linear-gradient(90deg,transparent 0,#000 10%); }
+  .hero-interface { position:relative; z-index:2; width:min(100% - 2rem,var(--width-wide)); min-height:inherit; margin-inline:auto; padding:clamp(5rem,10vh,7.5rem) 0 4.5rem; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; }
+  .eyebrow { color:#F4C430; margin-bottom:1.3rem; }
+  h1 { max-width:11ch; margin:0 0 1.8rem; color:#F7F7F2; font-size:clamp(4rem,6.2vw,6.3rem); line-height:.98; }
+  h1 em { color:#F4C430; font-style:normal; }
+  p { max-width:47ch; color:#F7F7F2; font-size:clamp(1.03rem,1.45vw,1.3rem); line-height:1.45; }
+  p strong { color:#F4C430; font-weight:650; }
+  .hero-actions { display:flex; flex-wrap:wrap; gap:1.3rem; margin-top:2rem; }
+  .button { min-width:230px; gap:1.5rem; font-size:1rem; }
+  .button span { font-size:1.45rem; line-height:1; }
+  .hero-secondary { border:1px solid #F4C430; color:#F7F7F2; background:var(--color-bg-brand); }
+  .hero-secondary:hover { color:white; background:#1B263B; }
+  .mobile-art { display:none; }
+
+  @media(max-width:1024px){
+    .approved-hero{min-height:720px}.right-scene{width:59%;object-position:10% bottom}.hero-interface{padding-top:6rem}h1{font-size:clamp(3.7rem,8vw,5.2rem)}.floodlight{width:100px}
+  }
+
+  @media(max-width:680px){
+    .approved-hero{min-height:0;background:var(--color-bg-brand);}
+    .desktop-art{display:none}
+    .hero-interface{width:calc(100% - 1.5rem);min-height:0;padding:3rem 0 2.25rem;justify-content:flex-start}
+    .eyebrow{margin-bottom:.9rem}h1{font-size:clamp(3rem,14vw,4.1rem);line-height:.98;margin-bottom:1.25rem}p{font-size:.98rem;line-height:1.42;max-width:38ch}.hero-actions{width:100%;display:grid;gap:.75rem;margin-top:1rem}.button{width:100%;min-width:0;min-height:48px}.hero-secondary{background:var(--color-bg-brand)}
+    .mobile-art{position:relative;display:block;width:100%;background:var(--color-bg-brand);overflow:hidden}
+    .mobile-art::before{content:"";position:absolute;z-index:1;inset:0 0 auto;height:60px;background:linear-gradient(180deg,var(--color-bg-brand) 0%,rgba(1,9,22,0) 100%);pointer-events:none}
+    .mobile-art img{display:block;width:100%;height:auto;opacity:1;filter:none;mix-blend-mode:normal}
+  }
+
+  @media(max-width:390px){
+    .hero-interface{width:calc(100% - 1.25rem);padding-top:2.4rem;padding-bottom:2rem}h1{font-size:3.05rem}.mobile-art::before{height:48px}
+  }
+</style>

@@ -1,0 +1,37 @@
+{
+  "id": "principle.tacet-si-observa-fara-joystick",
+  "slug": "tacet-si-observa-fara-joystick",
+  "category_id": "cat.comunicare",
+  "evidence_claim_ids": ["CLM-0084", "CLM-0085", "CLM-0086", "CLM-0087", "CLM-0088"],
+  "title": "Susținere fără dirijare: comunicarea antrenorului în timpul meciului",
+  "professional_definition": "Limitarea comenzilor tehnice/tactice repetate care preiau decizia copilului în timpul fazei active de joc, combinată cu încurajare specifică de efort și competență — fără să treacă în extrema opusă a tăcerii complete, care nu este susținută ca superioară de nicio dovadă directă.",
+  "child_message": "Meciul e al vostru — eu vă susțin, voi decideți ce faceți cu mingea.",
+  "coach_meaning": "Antrenorul rămâne prezent și implicat emoțional, dar nu preia decizia tehnică/tactică a copilului prin comenzi repetate de pe margine.",
+  "why_this_message": "Separă explicit «susținerea» de «dirijare», astfel încât copilul înțeleagă că antrenorul e atent, dar decizia de joc rămâne a lui.",
+  "problem_being_solved": "Comenzile prescriptive continue transformă copilul în executant dependent de vocea adultului; tăcerea completă poate fi resimțită ca dezinteres — capitolul evită ambele extreme.",
+  "information_children_must_notice": ["soluțiile posibile din joc, fără să aștepte instrucțiunea de la margine", "diferența dintre o încurajare și o comandă"],
+  "decision_children_must_learn": "Să citească singur situația din joc și să aleagă acțiunea, folosind încurajarea antrenorului ca sprijin emoțional, nu ca instrucțiune tehnică.",
+  "observable_behaviours": ["ia decizia înainte de a privi spre margine", "reacționează la încurajare cu efort suplimentar, nu cu așteptarea următoarei comenzi"],
+  "rationales": {
+    "tactical": "Decizia de joc rămâne a copilului, exersată în condiții reale de meci.",
+    "perceptual": "Copilul învață să citească informația din joc, nu semnalele de pe margine.",
+    "decisional": "Autonomia decizională se exersează repetat, fără preluare externă a alegerii.",
+    "cognitive": "Reducerea comenzilor tehnice repetate lasă loc procesării proprii a situației.",
+    "psychological": "Încurajarea specifică de competență susține motivația, fără să fie percepută ca dirijare.",
+    "technical": "Copilul aplică soluția tehnică pe care o alege singur, nu una impusă din exterior.",
+    "social": "Comunicarea între coechipieri rămâne principalul canal de coordonare pe teren, nu vocea antrenorului."
+  },
+  "age_appropriateness": "La 10–11 ani (grupele 2015 și 2016 tratate unitar), copiii pot distinge o încurajare de o comandă și pot exersa decizia autonomă în condiții de joc real.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "Pasează-i lui Andrei! Șutează acuma!",
+      "reason": "Comandă prescriptivă care preia decizia tehnică/tactică a copilului."
+    }
+  ],
+  "possible_misinterpretations": ["Reducerea comenzilor tehnice înseamnă tăcere completă și lipsă de reacție a antrenorului.", "«Joystick coaching» a fost dovedit științific ca fenomen dăunător, deși e doar termen de teren."],
+  "task_risks": ["Antrenorul confundă «limitarea comenzilor» cu «tăcerea totală» și încetează orice încurajare.", "Părinții de pe margine preiau comenzile tehnice pe care antrenorul le-a eliminat, dacă nu sunt informați."],
+  "understanding_check": ["jucătorii iau decizii fără să privească spre margine înainte de acțiune și pot explica simplu, în pauză, ce opțiuni au văzut"],
+  "response_if_not_understood": ["discuție scurtă în pauză: «Ce opțiuni ai văzut tu acolo?» — reper extern, nu instrucțiune tehnică"],
+  "match_transfer": "În meciurile 7v7, copiii își coordonează jocul mai ales între ei, iar antrenorul rămâne o prezență activă de susținere, nu o sursă continuă de comenzi.",
+  "sources": ["SRC-0083", "SRC-0084", "SRC-0085", "SRC-0086"]
+}

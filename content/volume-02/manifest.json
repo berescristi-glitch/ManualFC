@@ -1,0 +1,17 @@
+{
+  "volume_id": "VOLUME-02",
+  "title": "Fundația tactică și decizia în joc la 10–11 ani",
+  "status": "FIELD_REVIEW_READY",
+  "chapters": [
+    {"chapter_id": "CH-0201", "title": "Jocul ca sistem de probleme", "route": "/volum/02/ch-0201"},
+    {"chapter_id": "CH-0202", "title": "Spațiu și unghiuri", "route": "/volum/02/ch-0202"},
+    {"chapter_id": "CH-0203", "title": "Progresie și sprijin", "route": "/volum/02/ch-0203"},
+    {"chapter_id": "CH-0204", "title": "Protejarea centrului", "route": "/volum/02/ch-0204"},
+    {"chapter_id": "CH-0205", "title": "Presiune și acoperire", "route": "/volum/02/ch-0205"},
+    {"chapter_id": "CH-0206", "title": "Tranziția la pierderea mingii", "route": "/volum/02/ch-0206"},
+    {"chapter_id": "CH-0207", "title": "Tranziția la câștigarea mingii", "route": "/volum/02/ch-0207"},
+    {"chapter_id": "CH-0208", "title": "Superioritate, egalitate și inferioritate numerică", "route": "/volum/02/ch-0208"}
+  ],
+  "field_review_package": "docs/field-review/VOLUME_02_FIELD_REVIEW_PACKAGE.md",
+  "visual_status": "DEFERRED_BY_DESIGN_FREEZE"
+}

@@ -1,0 +1,195 @@
+---
+/**
+ * TASK-2804 — reusable Level-2 "concept loop" component, generalizing the
+ * TacticalLoop.astro pattern (EX-0001, TASK-2711) to EX-0002, EX-0003 and
+ * PRB-0003. Same contract: CSS/SVG only (no video file, none fabricated),
+ * muted by design, explicit pause/play, respects prefers-reduced-motion,
+ * the static TacticalDiagram/ProblemVisual already on the page remains the
+ * primary reference frame. Each variant shows exactly one canonical idea,
+ * matched to the coordinates already used in TacticalDiagram.astro /
+ * ProblemVisual.astro for semantic fidelity.
+ */
+interface Props { variant: 'ex-0002' | 'ex-0003' | 'prb-0003' }
+const { variant } = Astro.props;
+const id = `cloop-${variant}`;
+
+const meta: Record<Props['variant'], { title: string; desc: string; caption: string; duration: number }> = {
+  'ex-0002': {
+    title: 'Buclă tactică EX-0002 — Creează opțiunea sub presiune reală (animat)',
+    desc: 'Coechipierul de sprijin se repoziționează de două ori pe măsură ce adversarul activ se mișcă: o primă deschidere, apoi o a doua ajustare — nu o poziție găsită o singură dată. Bucla se repetă la fiecare 10 secunde. Fără sunet.',
+    caption: 'Repoziționare repetată (nu o singură dată) — un exemplu posibil al comportamentului urmărit, nu singura cale corectă.',
+    duration: 10
+  },
+  'ex-0003': {
+    title: 'Buclă tactică EX-0003 — Primește gata să continui (animat)',
+    desc: 'Coechipierul scanează conul colorat înainte ca mingea să ajungă, apoi primește orientat spre spațiul indicat și continuă acțiunea. Bucla se repetă la fiecare 10 secunde. Fără sunet.',
+    caption: 'Scanează înainte de recepție → primește orientat → continuă — secvența temporală, nu doar poziția finală.',
+    duration: 10
+  },
+  'prb-0003': {
+    title: 'Buclă — Primește mingea fără să verifice înainte (animat)',
+    desc: 'Jucătorul privește doar mingea în timp ce aceasta se apropie, apoi — în varianta țintă — aruncă o privire scurtă peste umăr chiar înainte de recepție și continuă orientat. Bucla se repetă la fiecare 9 secunde. Fără sunet.',
+    caption: 'Un exemplu posibil al comportamentului urmărit — timpul dintre privire și sosirea mingii, nu o formă obligatorie.',
+    duration: 9
+  }
+};
+const { title, desc, caption, duration } = meta[variant];
+---
+<figure class="concept-loop" id={id} data-concept-loop>
+  <svg viewBox="0 0 400 260" role="img" aria-labelledby={`${id}-title`} aria-describedby={`${id}-desc`}>
+    <title id={`${id}-title`}>{title}</title>
+    <desc id={`${id}-desc`}>{desc}</desc>
+    <rect class="field" x="10" y="10" width="380" height="240" rx="6" />
+
+    {variant === 'ex-0002' && (
+      <g class="v-ex0002">
+        <path class="lane-loop" d="M80 200 L260 70" pathLength="100" />
+        <g class="defender"><polygon points="0,-14 13,10 -13,10" transform="translate(150,175)" /></g>
+        <g class="ball-carrier"><circle r="13" transform="translate(80,200)" /><circle class="ball" cx="90" cy="190" r="4" /></g>
+        <g class="support-ghost"><circle r="11" transform="translate(150,150)" /></g>
+        <g class="support-move"><circle r="13" /></g>
+        <text class="label" x="60" y="232">P</text>
+        <text class="label" x="136" y="172">A</text>
+      </g>
+    )}
+
+    {variant === 'ex-0003' && (
+      <g class="v-ex0003">
+        <g class="cone"><rect x="-9" y="-9" width="18" height="18" transform="translate(300,150) rotate(45)" /></g>
+        <path class="scan-line" d="M260 130 L300 150" stroke-dasharray="3 4" />
+        <g class="defender"><polygon points="0,-14 13,10 -13,10" transform="translate(190,155)" /></g>
+        <g class="ball-carrier"><circle r="13" transform="translate(100,200)" /></g>
+        <g class="ball-move"><circle r="4" /></g>
+        <g class="support-move"><circle r="13" /></g>
+        <text class="label" x="80" y="232">P</text>
+        <text class="label" x="176" y="150">A</text>
+      </g>
+    )}
+
+    {variant === 'prb-0003' && (
+      <g class="v-prb0003">
+        <g class="ball-move"><circle r="9" /></g>
+        <g class="player"><circle r="15" /></g>
+        <path class="scan-arc" d="M-14 -6 Q-22 -16 -12 -22" transform="translate(230,150)" />
+        <text class="label" x="230" y="196">jucător</text>
+      </g>
+    )}
+
+    <defs><marker id={`${id}-arrow`} markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" /></marker></defs>
+  </svg>
+  <figcaption>
+    {caption}
+    <button type="button" class="loop-toggle" data-loop-toggle aria-pressed="true">Pauză</button>
+  </figcaption>
+</figure>
+
+<style define:vars={{ dur: `${duration}s` }}>
+  .concept-loop { margin: var(--space-6) 0 0; }
+  .concept-loop svg { width: 100%; height: auto; max-width: 420px; }
+  .field { fill: #EEF0EA; stroke: var(--color-border-strong); stroke-width: 1.5; }
+  .ball-carrier circle:first-child, .player circle { fill: var(--color-bg-brand); stroke: var(--color-bg-brand); }
+  .ball-carrier .ball, .ball-move circle { fill: var(--color-brand-gold); stroke: none; }
+  .defender polygon { fill: white; stroke: var(--color-text-primary); stroke-width: 2.5; }
+  .cone rect { fill: var(--color-brand-gold); stroke: var(--color-bg-brand); stroke-width: 1; }
+  .label { font: 700 12px var(--font-family-mono); fill: var(--color-text-primary); text-anchor: middle; }
+  figcaption { margin-top: var(--space-3); font-size: .85rem; color: var(--color-text-secondary); max-width: 48ch; display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+  .loop-toggle { font: inherit; font-weight: 700; padding: .3rem .8rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-strong); background: white; color: var(--color-text-primary); cursor: pointer; min-height: 44px; }
+  .loop-toggle:hover { background: var(--color-bg-subtle); }
+
+  /* EX-0002: support repositions twice; lane line follows */
+  .v-ex0002 .support-ghost circle { fill: none; stroke: var(--color-text-muted); stroke-width: 1.5; stroke-dasharray: 2 3; opacity: .6; }
+  .v-ex0002 .support-move circle { fill: white; stroke: var(--color-brand-gold); stroke-width: 2.5; }
+  .v-ex0002 .support-move { animation: ex0002-move var(--dur) ease-in-out infinite; }
+  .v-ex0002 .lane-loop { fill: none; stroke: var(--color-brand-gold); stroke-width: 2.5; stroke-dasharray: 100; stroke-dashoffset: 100; opacity: 0; animation: ex0002-lane var(--dur) ease-in-out infinite; }
+  @keyframes ex0002-move {
+    0%   { transform: translate(150px,150px); opacity: 0; }
+    10%  { opacity: 1; }
+    35%  { transform: translate(230px,85px); opacity: 1; }
+    55%  { transform: translate(230px,85px); opacity: 1; }
+    80%  { transform: translate(260px,70px); opacity: 1; }
+    95%  { opacity: 0; }
+    100% { transform: translate(150px,150px); opacity: 0; }
+  }
+  @keyframes ex0002-lane {
+    0%   { stroke-dashoffset: 100; opacity: 0; }
+    10%  { opacity: 1; }
+    35%  { stroke-dashoffset: 40; }
+    80%  { stroke-dashoffset: 0; opacity: 1; }
+    95%  { opacity: 0; }
+    100% { stroke-dashoffset: 100; opacity: 0; }
+  }
+
+  /* EX-0003: ball approaches, scan appears just before arrival, support settles oriented */
+  .v-ex0003 .support-move circle { fill: white; stroke: var(--color-brand-gold); stroke-width: 2.5; }
+  .v-ex0003 .support-move { animation: ex0003-support var(--dur) ease-in-out infinite; }
+  .v-ex0003 .ball-move circle { animation: ex0003-ball var(--dur) linear infinite; }
+  .v-ex0003 .scan-line { fill: none; stroke: var(--color-text-muted); stroke-width: 1.5; opacity: 0; animation: ex0003-scan var(--dur) ease-in-out infinite; }
+  @keyframes ex0003-support {
+    0%   { transform: translate(260px,130px); }
+    70%  { transform: translate(260px,130px); }
+    100% { transform: translate(320px,100px); }
+  }
+  @keyframes ex0003-ball {
+    0%   { transform: translate(100px,200px); opacity: 1; }
+    65%  { transform: translate(255px,133px); opacity: 1; }
+    72%  { opacity: 0; }
+    100% { opacity: 0; transform: translate(100px,200px); }
+  }
+  @keyframes ex0003-scan {
+    0%   { opacity: 0; }
+    45%  { opacity: 0; }
+    55%  { opacity: 1; }
+    68%  { opacity: 1; }
+    75%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  /* PRB-0003: ball approaches, look-back glance appears just before arrival */
+  .v-prb0003 .player { transform: translate(230px,150px); }
+  .v-prb0003 .ball-move circle { fill: var(--color-brand-gold); animation: prb0003-ball var(--dur) linear infinite; }
+  .v-prb0003 .scan-arc { fill: none; stroke: var(--color-text-primary); stroke-width: 2.5; stroke-linecap: round; opacity: 0; animation: prb0003-scan var(--dur) ease-in-out infinite; }
+  .v-prb0003 .label { font-size: 10px; fill: var(--color-text-muted); }
+  @keyframes prb0003-ball {
+    0%   { transform: translate(60px,150px); opacity: 1; }
+    70%  { transform: translate(216px,150px); opacity: 1; }
+    78%  { opacity: 0; }
+    100% { opacity: 0; transform: translate(60px,150px); }
+  }
+  @keyframes prb0003-scan {
+    0%   { opacity: 0; }
+    50%  { opacity: 0; }
+    58%  { opacity: 1; }
+    72%  { opacity: 1; }
+    80%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  .concept-loop.is-paused .support-move,
+  .concept-loop.is-paused .lane-loop,
+  .concept-loop.is-paused .ball-move,
+  .concept-loop.is-paused .scan-line,
+  .concept-loop.is-paused .scan-arc { animation-play-state: paused; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .v-ex0002 .support-move, .v-ex0002 .lane-loop,
+    .v-ex0003 .support-move, .v-ex0003 .ball-move, .v-ex0003 .scan-line,
+    .v-prb0003 .ball-move, .v-prb0003 .scan-arc { animation: none; }
+    .v-ex0002 .support-move { transform: translate(260px,70px); opacity: 1; }
+    .v-ex0002 .lane-loop { stroke-dashoffset: 0; opacity: 1; }
+    .v-ex0003 .support-move { transform: translate(320px,100px); }
+    .v-ex0003 .ball-move, .v-prb0003 .ball-move { opacity: 0; }
+    .loop-toggle { display: none; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-concept-loop]').forEach((figure) => {
+    const button = figure.querySelector<HTMLButtonElement>('[data-loop-toggle]');
+    if (!button) return;
+    button.addEventListener('click', () => {
+      const paused = figure.classList.toggle('is-paused');
+      button.textContent = paused ? 'Redă' : 'Pauză';
+      button.setAttribute('aria-pressed', String(!paused));
+    });
+  });
+</script>

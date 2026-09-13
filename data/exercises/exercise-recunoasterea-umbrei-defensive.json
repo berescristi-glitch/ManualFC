@@ -1,0 +1,202 @@
+{
+  "id": "EX-0001",
+  "title": "Cine ne poate acoperi pe amândoi?",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "introducere",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copilul recunoaște momentul în care un singur adversar poate acoperi simultan două opțiuni de pasă pe aceeași linie și se deplasează pentru a ieși din acea umbră defensivă.",
+  "observable_behaviours": [
+    "se deplasează lateral pentru a ieși de pe linia acoperită de același adversar",
+    "cere mingea doar când linia de pasă e vizibil deschisă"
+  ],
+  "players": {
+    "total": 3,
+    "in_possession": 2,
+    "defenders": 1,
+    "neutral_players": 0
+  },
+  "numerical_relation": "2v1",
+  "equipment": [
+    "4 conuri de delimitare",
+    "2 conuri mici pentru porți mini",
+    "6-8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 4 },
+    { "item": "conuri mici pentru porți mini", "quantity": 2 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 }
+  ],
+  "field": {
+    "length_m": 12,
+    "width_m": 10,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 8,
+    "format": "seturi de 90 de secunde cu rotație, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Adversarul nu poate ataca mingea decât după ce a fost pasată o dată.",
+      "why": "Reduce presiunea de timp în faza de introducere, ca decizia de poziționare să rămână vizibilă pentru observare — un reglaj ales pentru acest exercițiu, nu un prag validat de cercetare."
+    },
+    {
+      "rule": "Cei doi jucători în posesie schimbă rolul de purtător/sprijin după fiecare pasă reușită.",
+      "why": "Amândoi exersează atât decizia de a găsi unghiul, cât și pasarea către un unghi găsit de coleg."
+    }
+  ],
+  "step_by_step": [
+    "Trei jucători: doi în posesie, un adversar.",
+    "Purtătorul mingii încearcă să păstreze posesia; coechipierul caută un unghi pe care adversarul nu-l poate acoperi simultan.",
+    "Adversarul se poziționează astfel încât să poată acoperi ambele opțiuni cât mai mult timp posibil.",
+    "Rotație: adversarul se schimbă la fiecare 90 de secunde."
+  ],
+  "rotation": "Rotație de adversar la fiecare 90 de secunde; toți cei 3 jucători dintr-un grup trec prin rolul de adversar.",
+  "transition": "Trecere directă la EX-0002 fără pauză de reorganizare — același grup de 3, aceeași zonă, opoziție activată complet.",
+  "child_message": "Mută-te până când adversarul nu ne mai poate acoperi pe amândoi deodată!",
+  "why_this_message": "Reperul e limita observabilă a adversarului, nu o poziție fixă — păstrează alegerea despre direcție și distanță la copil (reutilizat direct din principiul Spațiu și unghiuri).",
+  "problem_being_solved": "Doi coechipieri rămân pe aceeași linie de pasă și un singur adversar îi scoate din joc pe amândoi, deși există spațiu disponibil.",
+  "information_children_must_notice": [
+    "poziția și orientarea mingii",
+    "adversarul care acoperă linia de pasă",
+    "spațiul liber disponibil lateral"
+  ],
+  "decision_children_must_learn": "Să aleagă direcția și distanța deplasării care creează o opțiune distinctă de cea pe care adversarul o acoperă deja.",
+  "rationales": {
+    "tactical": "Un adversar e obligat să aleagă între două opțiuni funcționale, nu să acopere ambele gratuit.",
+    "perceptual": "Copilul exersează citirea liniei minge-adversar-coleg în forma ei cea mai simplă, cu un singur adversar.",
+    "decisional": "Direcția și distanța deplasării rămân alegerea copilului, nu o poziție dictată.",
+    "cognitive": "Un singur adversar și o singură decizie de bază reduc încărcarea cognitivă la introducere.",
+    "psychological": "Succesul e vizibil rapid (unghiul se deschide sau nu), fără evaluare subiectivă a antrenorului.",
+    "technical": "Recepția și pasarea rămân simple, tehnica nu concurează cu decizia la acest nivel.",
+    "social": "Cei doi coechipieri împart responsabilitatea pentru găsirea opțiunii, nu doar purtătorul mingii."
+  },
+  "age_appropriateness": "La 10–11 ani, relația e arătată direct în joc și verificată prin acțiune, cu un singur adversar pentru a păstra problema perceptivă gestionabilă (principiu reutilizat din Spațiu și unghiuri).",
+  "possible_misinterpretations": [
+    "Orice deplasare laterală e considerată corectă, chiar dacă nu deschide un unghi nou.",
+    "Copilul crede că trebuie să se îndepărteze cât mai mult posibil, nu doar suficient."
+  ],
+  "task_risks": [
+    "Terenul prea mic elimină spațiul necesar pentru a ieși din umbra defensivă.",
+    "Adversarul prea pasiv nu creează presiune reală de decizie."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Stai larg.",
+      "reason": "Transformă lățimea într-o poziție fixă, indiferent de unde e adversarul (respins explicit în principiul Spațiu și unghiuri)."
+    },
+    {
+      "phrase": "Du-te acolo.",
+      "reason": "Mută decizia de la copil la adult."
+    }
+  ],
+  "understanding_check": [
+    "copilul poate arăta, după exercițiu, poziția din care adversarul îl acoperea și poziția în care nu-l mai acoperea",
+    "comportamentul de deplasare reapare fără comandă verbală la rotația următoare"
+  ],
+  "response_if_not_understood": [
+    "compară două poziții reale, cere copilului să arate diferența (reutilizat din principiul Spațiu și unghiuri)",
+    "mărește lățimea terenului cu 2-3 m"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Teren mic pentru a păstra presiunea perceptivă a unui singur adversar vizibilă și gestionabilă; cercetarea despre dimensiunea terenului arată doar că suprafețe mai mari asociază distanțe mai mari, nu o dimensiune optimă exactă.",
+  "too_small_signs": [
+    "adversarul acoperă ambele opțiuni indiferent de deplasare — spațiul lateral nu există fizic",
+    "coliziuni frecvente între jucători"
+  ],
+  "too_large_signs": [
+    "adversarul nu poate acoperi nicio opțiune, exercițiul devine trivial",
+    "pasele devin prea lungi pentru precizia tehnică la această vârstă"
+  ],
+  "regression": [
+    "adversar semi-pasiv (nu poate ataca mingea deloc, doar se poziționează)",
+    "mărește terenul cu 2-3 m pentru mai mult timp de decizie"
+  ],
+  "progression": [
+    "trecere la EX-0002 (opoziție activă completă, continuă)",
+    "reduce terenul cu 1-2 m pentru presiune de timp mai mare"
+  ],
+  "coach_questions": [
+    {
+      "question": "Unde te putea acoperi adversarul pe amândoi?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ce s-a schimbat când te-ai mutat?",
+      "when": "după o repetiție reușită"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Caută spațiul liber, nu piciorul cu care primești."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ai găsit unghiul!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "copilul rămâne pe aceeași linie cu purtătorul mingii",
+      "possible_causes": [
+        "nu a perceput unghiul adversarului",
+        "nu știe unde e spațiul util",
+        "a fost instruit anterior să «stea larg» fix"
+      ]
+    },
+    {
+      "observation": "copilul se deplasează, dar prea aproape de purtător",
+      "possible_causes": [
+        "nu a evaluat distanța",
+        "lipsă de încredere să se îndepărteze"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "unghiul deschis apare fără comandă verbală a antrenorului în cel puțin jumătate din repetiții",
+    "copilul poate explica, într-o propoziție, de ce s-a mutat"
+  ],
+  "match_transfer": "În meci, jucătorul recunoaște când un adversar acoperă două opțiuni și se repoziționează autonom, fără a aștepta comanda antrenorului.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată).",
+    "pdf_frames": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0039",
+    "SRC-0040"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.spatiu-si-unghiuri"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C07"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C06", "COACH-C11"],
+  "related_pedagog_lesson_ids": ["CH-0101"],
+  "related_coach_lesson_ids": ["CH-0407", "CH-0408"],
+  "child_action": "Se deplasează lateral spre spațiul deschis și cere mingea doar când linia de pasă e vizibil liberă.",
+  "coach_focus": "Cueing extern (\"spațiul liber\", nu \"piciorul\") și observarea apariției autonome a deplasării, nu doar reușita pasei.",
+  "do_not_assume": [
+    "O repetiție reușită nu înseamnă că decizia s-a stabilizat — poate fi întâmplare.",
+    "Faptul că un copil nu cere mingea imediat nu înseamnă că nu a văzut opțiunea — poate încă evalua distanța."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de rămânere pe aceeași linie cu purtătorul, observat la pauza dintre seturi — nu la prima repetiție nereușită."
+  ],
+  "when_not_to_intervene": [
+    "O singură încercare nereușită.",
+    "Deplasare prezentă dar insuficientă ca distanță — se lasă încă o repetiție înainte de a corecta."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul corectează poziția copilului la prima repetiție nereușită.",
+      "why_it_happens": "Presiunea de a arăta progres vizibil imediat, fără să lase timp pentru auto-corecție."
+    }
+  ],
+  "coach_reflection": [
+    "Am oferit copilului timp să repete decizia înainte să intervin, sau am corectat la prima încercare nereușită?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED). COACH-C06 (Cueing) este COMPETENCY_SUPPORTED prin acest exercițiu, dar rămâne DEDICATED_CHAPTER_GAP — nu are un capitol narativ propriu în Antrenorul V1.",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori (rotație de adversar la fiecare 90 de secunde, deja specificată în acest fișier); logistica de rotație nu este duplicată aici.",
+  "assessment_ref": "ASM-0001"
+}

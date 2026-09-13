@@ -1,0 +1,70 @@
+{
+  "id": "principle.adaptarea-sarcinii-u11",
+  "slug": "adaptarea-sarcinii-u11",
+  "category_id": "cat.copilul-10-11",
+  "title": "Adaptarea sarcinii și dezvoltarea competenței motrice la 10–11 ani",
+  "professional_definition": "Adaptarea sarcinii este o intervenție de practică în care antrenorul modifică o singură constrângere, repetă situația și compară comportamentul observabil, fără a prezenta ajustarea drept efect garantat sau diagnostic al copilului.",
+  "child_message": "Schimbăm un singur lucru și încercăm din nou. Privește unde ai mai mult timp sau spațiu.",
+  "coach_meaning": "Antrenorul modifică variabila de sarcină (ex. mărește spațiul sau reduce presiunea) înainte de a trage orice concluzie despre nivelul sau atenția copilului.",
+  "why_this_message": "Îi arată copilului ce s-a schimbat și ce informație să caute, fără etichetare și fără promisiunea că ajustarea va rezolva automat dificultatea.",
+  "problem_being_solved": "Separarea unei dificultăți observate în sarcină de o judecată generală despre atenția, motivația sau potențialul copilului.",
+  "information_children_must_notice": [
+    "Distanța față de adversarul direct",
+    "Spațiul liber disponibil în spatele liniei de presiune",
+    "Semnalul vizual al coechipierului demarcat"
+  ],
+  "decision_children_must_learn": "Să recunoască nivelul de presiune al adversarului și să aleagă o execuție tehnică adaptată timpului decizional disponibil.",
+  "observable_behaviours": [
+    "Copilul recepționează mingea cu orientare corporală adecvată după mărirea spațiului.",
+    "Copilul încearcă din nou pasarea în spațiu liber fără ezitare după ce presiunea adversarului este dozată."
+  ],
+  "rationales": {
+    "tactical": "Modificarea constrângerilor creează repere spațiale clare pentru construirea posesiei.",
+    "perceptual": "O ajustare poate face mai accesibile reperele relevante; antrenorul verifică prin reobservare dacă privirea se mută dincolo de minge.",
+    "decisional": "Reducerea numărului de opțiuni simultane simplifică alegerea decizională fără a o anula.",
+    "cognitive": "Schimbarea unei singure variabile păstrează comparația inteligibilă, fără a atribui greșeala unei capacități cognitive neverificate.",
+    "psychological": "Limbajul descriptiv protejează copilul de rușinare; efectul asupra motivației trebuie observat, nu presupus.",
+    "technical": "Permite stabilizarea coordonării motorii în execuția pasării și preluării.",
+    "social": "Creează un mediu inclusiv în care fiecare copil progresează din punctul său de pornire."
+  },
+  "age_appropriateness": "Adecvat pentru grupa pedagogică 10–11 ani (2015–2016), asigurând tranziția de la simplu la complex în jocul 7v7.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "De ce nu ești atent când pasezi?",
+      "reason": "Atribuie greșeala unei cauze psihologice neverificate în loc să descrie comportamentul și contextul."
+    },
+    {
+      "phrase": "Exercițiul este ușor, toți ceilalți reușesc!",
+      "reason": "Produce rușine și frustrare, ignorând variabilitatea naturală a competenței motrice la 10–11 ani."
+    }
+  ],
+  "possible_misinterpretations": [
+    "Simplificarea exercițiului înseamnă că antrenorul 'scade ștacheta' pentru toată echipa.",
+    "Un copil pentru care s-a mărit spațiul este văzut ca mai puțin valoros."
+  ],
+  "task_risks": [
+    "Menținerea exercițiului într-o zonă de confort prea mare, ce elimină provocarea decizională.",
+    "Complexificarea prea rapidă a sarcinii înainte ca execuția să se fi stabilizat."
+  ],
+  "understanding_check": [
+    "Ce s-a schimbat în exercițiu când am lărgit terenul?",
+    "Cum te ajută un plus de timp să vezi unde este adversarul?"
+  ],
+  "response_if_not_understood": [
+    "Antrenorul trece temporar de la opoziție activă la opoziție semi-pasivă (ex. adversar pe linie).",
+    "Antrenorul oferă o demonstrație vizuală scurtă din unghiul de vedere al jucătorului."
+  ],
+  "match_transfer": "În meciul 7v7, jucătorul recunoaște spațiul liber și își ajustează viteza de preluare în funcție de presiunea adversă.",
+  "sources": [
+    "SRC-0025",
+    "SRC-0026",
+    "SRC-0027",
+    "SRC-0028"
+  ],
+  "evidence_claim_ids": [
+    "CLM-0026",
+    "CLM-0027",
+    "CLM-0028",
+    "CLM-0029"
+  ]
+}

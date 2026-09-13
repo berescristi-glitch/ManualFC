@@ -1,0 +1,37 @@
+{
+  "id": "principle.manipularea-si-dozarea-constrangerilor",
+  "slug": "manipularea-si-dozarea-constrangerilor",
+  "category_id": "cat.metodologie-surse",
+  "evidence_claim_ids": ["CLM-0089", "CLM-0090", "CLM-0091"],
+  "title": "Manipularea constrângerilor de sarcină, fără să înlocuiască instrucția directă",
+  "professional_definition": "Ghidarea comportamentelor tactice dorite prin modificarea mediului de antrenament (spațiu, reguli, porți, efective), ca alternativă la comenzile verbale rigide — nu ca metodă universal superioară instrucției directe, care își păstrează rolul pentru clarificări tehnice și reguli de siguranță.",
+  "child_message": "Regula nouă ne ajută să descoperim o soluție mai deșteaptă: folosiți spațiul creat!",
+  "coach_meaning": "Schimbarea mediului de joc pentru a stimula comportamentul tactic, ca alternativă la comanda verbală rigidă — nu ca înlocuitor universal al oricărei instrucții.",
+  "why_this_message": "Încurajarea copiilor să descopere oportunitățile oferite de noua configurație a terenului.",
+  "problem_being_solved": "Antrenorul striga soluția de pe margine („Dă pasă în lateral!”) în loc să modifice porțile sau terenul pentru ca pasa să devină o opțiune atractivă natural.",
+  "information_children_must_notice": ["modificarea porților sau a terenului", "spațiul deschis de noua regulă"],
+  "decision_children_must_learn": "Să-și adapteze alegerea în funcție de noile avantaje create de constrângerea de sarcină.",
+  "observable_behaviours": ["utilizează lățimea când porțile sunt depărtate", "se adaptează la spațiul redus sau extins fără să aștepte comanda antrenorului"],
+  "rationales": {
+    "tactical": "Sprijină învățarea principiilor de joc prin manipularea mediului, ca alternativă la instrucțiuni prescriptive.",
+    "perceptual": "Direcționează atenția vizuală către oportunitățile de acțiune oferite de mediu.",
+    "decisional": "Păstrează responsabilitatea deciziei la jucător, fără să elimine complet rolul antrenorului.",
+    "cognitive": "Favorizează rezolvarea de probleme prin explorare activă.",
+    "psychological": "Poate crește satisfacția descoperirii autonome a soluțiilor.",
+    "technical": "Adaptează execuția la cerințele create de spațiu și timp.",
+    "social": "Poate stimula autoreglarea în cadrul grupului, fără intervenție arbitrară."
+  },
+  "age_appropriateness": "La 10–11 ani, modificările fizice ale terenului sunt o formă de comunicare non-verbală ușor de citit — dar nu există dovadă că acest tip de constrângere „funcționează excelent” specific la această vârstă; e o extrapolare rezonabilă, nu un rezultat testat direct.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "Jucăm cu 12 reguli speciale: ai voie doar 2 atingeri, pasă doar cu stângul și șut doar din voleu!",
+      "reason": "Supra-încărcare de reguli care distruge fluența și atenția la joc."
+    }
+  ],
+  "possible_misinterpretations": ["Constrângerea înseamnă pedepsirea jocului liber prin reguli restrictive.", "Manipularea constrângerilor e întotdeauna superioară instrucției directe."],
+  "task_risks": ["Menținerea unei constrângeri prea rigide după ce comportamentul dorit a fost deja consolidat."],
+  "understanding_check": ["copiii folosesc spontan comportamentul favorizat de constrângere"],
+  "response_if_not_understood": ["eliminarea sau simplificarea constrângerii dacă creează blocaj tehnico-tactic; o clarificare tehnică directă și scurtă rămâne o opțiune legitimă"],
+  "match_transfer": "În meciul fără constrângeri artificiale, soluția tactică exersată rămâne disponibilă în repertoriul jucătorilor.",
+  "sources": ["SRC-0087", "SRC-0088", "SRC-0089", "SRC-0090"]
+}

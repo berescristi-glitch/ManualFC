@@ -1,0 +1,70 @@
+{
+  "id": "principle.variabilitatea-dezvoltarii-u11",
+  "slug": "variabilitatea-dezvoltarii-u11",
+  "category_id": "cat.copilul-10-11",
+  "title": "Variabilitatea dezvoltării la 10–11 ani și adaptarea individuală",
+  "professional_definition": "Copiii de aceeași vârstă cronologică pot răspunde diferit la aceeași sarcină. Antrenorul descrie diferența observată, testează prudent o ajustare și evită să transforme prestația momentană într-un diagnostic de maturizare sau într-un verdict despre potențial.",
+  "child_message": "Fiecare învățăm în ritmul nostru. Important este să încerci din nou când greșești.",
+  "coach_meaning": "Antrenorul adaptează exercițiul după capacitatea observabilă pe teren, nu după anul nașterii (2015 sau 2016).",
+  "why_this_message": "Protejează dreptul copilului de a greși și mută atenția antrenorului de la etichetă la comportamentul observabil. Efectul unei ajustări trebuie verificat prin repetare, nu presupus.",
+  "problem_being_solved": "Prevenirea omogenizării artificiale a grupei U11 și eliminarea etichetării premature a copiilor pe criterii de talie sau vârstă cronologică.",
+  "information_children_must_notice": [
+    "Nivelul de presiune al adversarului",
+    "Spațiul disponibil pentru preluare",
+    "Direcția liberă de acțiune"
+  ],
+  "decision_children_must_learn": "Să aleagă opțiunea de joc adecvată spațiului și timpului de decizie pe care le are la dispoziție.",
+  "observable_behaviours": [
+    "Copilul își păstrează calmul la greșeală și reia acțiunea.",
+    "Copilul cere mingea în spațiu liber adecvat vitezei sale de execuție."
+  ],
+  "rationales": {
+    "tactical": "Adaptarea spațiului oferă timp decizional adecvat.",
+    "perceptual": "Orientarea atenției pe repere vizuale din joc.",
+    "decisional": "Încurajarea alegerii autonome fără comenzi din afara terenului.",
+    "cognitive": "Reducerea încărcării cognitive excesive.",
+    "psychological": "Susținerea sentimentului de competență și apartenență.",
+    "technical": "Executarea tehnicii în condiții de presiune dozată.",
+    "social": "Echitate și respect pentru ritmul fiecărui coechipier."
+  },
+  "age_appropriateness": "Adecvat pentru categoria comună 2015–2016: anul nașterii organizează grupa, dar nu este suficient pentru a prescrie aceeași dificultate sau pentru a estima maturizarea individuală.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "La vârsta ta ar trebui să știi asta!",
+      "reason": "Creează frustrare și ignoră diferențele de experiență de practică."
+    },
+    {
+      "phrase": "Nu mai greși!",
+      "reason": "Blochează explorarea și autonomia decizională."
+    }
+  ],
+  "possible_misinterpretations": [
+    "Antrenorul favorizează unii copii în detrimentul altora.",
+    "Regresia exercițiului reprezintă o pedeapsă."
+  ],
+  "task_risks": [
+    "Plasarea copilului într-o sarcină prea simplă ce produce plictiseală.",
+    "Plasarea într-o sarcină prea complexă ce produce anxietate."
+  ],
+  "understanding_check": [
+    "Ce poți schimba dacă adversarul vine prea repede spre tine?",
+    "Cum te ajută un spațiu mai mare să vezi coechipierul liber?"
+  ],
+  "response_if_not_understood": [
+    "Antrenorul modifică modest o singură variabilă — de exemplu spațiul sau presiunea adversarului — și repetă sarcina.",
+    "Antrenorul compară comportamentul înainte și după ajustare; dacă intenția jocului dispare, revine la forma anterioară."
+  ],
+  "match_transfer": "În meciul 7v7, jucătorul recunoaște momentul de presiune și alege o soluție simplă și sigură de menținere a posesiei.",
+  "sources": [
+    "SRC-0021",
+    "SRC-0022",
+    "SRC-0023",
+    "SRC-0024"
+  ],
+  "evidence_claim_ids": [
+    "CLM-0022",
+    "CLM-0023",
+    "CLM-0024",
+    "CLM-0025"
+  ]
+}

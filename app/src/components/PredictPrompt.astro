@@ -1,0 +1,10 @@
+---
+import RevealPrompt from './RevealPrompt.astro';
+// Prompt de pre-testare (P10): plasat ÎNAINTE de un punct de decizie din scenariu.
+// Maxim unul per capitol (regula §39 — nu transformă pagina într-un quiz).
+interface Props { prompt: string }
+const { prompt } = Astro.props;
+---
+<RevealPrompt prompt={prompt}>
+  <slot />
+</RevealPrompt>

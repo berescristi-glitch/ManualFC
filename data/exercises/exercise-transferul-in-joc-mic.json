@@ -1,0 +1,177 @@
+{
+  "id": "EX-0005",
+  "title": "Transferul în joc mic",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "transfer",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copilul aplică decizia de sprijin, unghi de pasă și orientare la recepție într-un joc mic reprezentativ, fără constrângerile artificiale ale exercițiilor anterioare (fără con colorat, fără zone marcate, fără reguli de opoziție redusă).",
+  "observable_behaviours": [
+    "creeaza un unghi de sprijin util fara comanda de pe margine",
+    "primeste orientat spre o continuare posibila in ritmul normal al jocului"
+  ],
+  "players": {
+    "total": 8,
+    "in_possession": 4,
+    "defenders": 4,
+    "neutral_players": 0
+  },
+  "numerical_relation": "4v4",
+  "equipment": [
+    "8-10 conuri de delimitare",
+    "2 seturi de porți mici sau porți mari cu portar opțional",
+    "10-12 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 8, "quantity_max": 10 },
+    { "item": "seturi de porți mici (sau porți mari cu portar opțional)", "quantity": 2 },
+    { "item": "mingi de rezervă", "quantity": 10, "quantity_max": 12 }
+  ],
+  "field": {
+    "length_m": 30,
+    "width_m": 20,
+    "safety_margin_m": 3
+  },
+  "duration": {
+    "total_minutes": 12,
+    "format": "2 reprize de 5-6 minute, cu o pauză scurtă de reflecție între ele"
+  },
+  "rules": [
+    {
+      "rule": "Joc liber 4v4, fără constrângeri artificiale de sarcină.",
+      "why": "Reprezentativitate maximă din familia de exerciții — verifică dacă principiul exersat izolat apare autonom în context de joc complet (concept: Representative Learning Design)."
+    },
+    {
+      "rule": "Antrenorul nu intervine verbal în timpul fazei active — observă un singur focalizator (ex: apariția unghiurilor de sprijin fără comandă).",
+      "why": "Consecvent cu modelul de intervenție din capitolul despre observare și criteriile de intervenție: amânarea intervenției cât timp copiii procesează activ."
+    }
+  ],
+  "step_by_step": [
+    "4v4 pe teren mic, cu porți la ambele capete.",
+    "Antrenorul observă, fără să dirijeze, dacă principiul de sprijin exersat izolat apare în joc.",
+    "La pauza dintre reprize, o reflecție scurtă ghidată (nu monolog) leagă jocul de exercițiile anterioare."
+  ],
+  "rotation": "Rotație de echipe dacă efectivul o permite; altfel, aceleași echipe cu schimbare de porți la pauză.",
+  "transition": "Ultimul exercițiu al familiei — nu urmează un exercițiu specific, ci ședința completă și reflecția de final.",
+  "child_message": "Jucați ca de obicei — folosiți ce ați exersat dacă vă ajută!",
+  "why_this_message": "Nu se repetă instrucțiunea tehnică; testează dacă principiul a devenit un comportament autonom, nu o comandă memorată.",
+  "problem_being_solved": "Comportamentele exersate izolat (EX-0001-EX-0004) nu apar automat în jocul complet dacă nu sunt testate explicit într-un context reprezentativ.",
+  "information_children_must_notice": [
+    "toate reperele exersate anterior (minge, adversar relevant, coleg, spațiu, orientare la recepție), acum fără indicii artificiale (conuri colorate, zone marcate)"
+  ],
+  "decision_children_must_learn": "Să aplice lanțul decizional exersat (progresie directă → sprijin cu unghi → recepție orientată) în ritmul și complexitatea reale ale jocului.",
+  "rationales": {
+    "tactical": "Testează transferul real al principiului, nu doar performanța în sarcina izolată (distincție explicită performanță vs. învățare).",
+    "perceptual": "Toate reperele perceptive relevante sunt prezente simultan, ca în meci.",
+    "decisional": "Decizia se ia sub presiunea completă a jocului, fără simplificări artificiale.",
+    "cognitive": "Verifică dacă procesarea a devenit suficient de automată pentru a funcționa fără indicii externe.",
+    "psychological": "Absența comenzilor de pe margine sprijină autonomia decizională exersată în capitolul despre comunicarea antrenorului în timpul meciului.",
+    "technical": "Execuția tehnică (recepție, pasă) e testată în condiții reale, nu facilitate.",
+    "social": "Cooperarea între mai mulți coechipieri, testată complet, nu doar în perechi sau triouri izolate."
+  },
+  "age_appropriateness": "La 10–11 ani, jocul 4v4 pe teren redus păstrează un raport gestionabil de informație per copil, fiind totodată suficient de aproape de contextul de meci 7v7 pentru a testa transferul.",
+  "possible_misinterpretations": [
+    "Absența intervenției antrenorului e interpretată ca dezinteres, nu ca alegere pedagogică deliberată.",
+    "Un joc cu rezultate slabe e interpretat ca eșec al întregii familii de exerciții, nu ca informație despre ce mai trebuie exersat."
+  ],
+  "task_risks": [
+    "Fără reflecția de la pauză, transferul nu e verificat, doar presupus.",
+    "Zona de siguranță insuficientă în jurul porților la acest format poate crea risc fizic."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "De ce nu faci ce am exersat?!",
+      "reason": "Presupune eșec și diagnostichează fără verificare — greșeala rămâne informație, nu verdict (principiul Eroarea ca informație)."
+    }
+  ],
+  "understanding_check": [
+    "cel puțin un comportament din EX-0001-EX-0004 apare autonom în joc, observat fără comandă",
+    "la pauza de reflecție, copiii pot numi o situație din joc similară cu un exercițiu anterior"
+  ],
+  "response_if_not_understood": [
+    "revenire scurtă la EX-0001 sau EX-0002 cu un focalizator specific, apoi retur la 4v4",
+    "reflecție ghidată suplimentară: «Unde ai văzut o situație ca la exercițiul cu conul?»"
+  ],
+  "dimension_rationale": "Dimensiuni mai apropiate de un teren de joc mic real — parametru specific acestui exercițiu, informat indirect de cercetarea despre dimensiunea terenului în jocuri reduse, dar nu un prag exact validat.",
+  "too_small_signs": [
+    "jocul devine aglomerat, fără spațiu pentru decizii de sprijin distincte"
+  ],
+  "too_large_signs": [
+    "jucătorii de 10-11 ani nu pot acoperi fizic distanțele, jocul se fragmentează în grupuri mici izolate"
+  ],
+  "regression": [
+    "revenire la 3v2 (EX-0004) dacă transferul nu apare deloc",
+    "reintroducere temporară a unui reper vizual extern"
+  ],
+  "progression": [
+    "fără progresie suplimentară în această familie — următorul pas e integrarea în ședința completă"
+  ],
+  "coach_questions": [
+    {
+      "question": "Unde ai văzut o situație asemănătoare cu ce am exersat?",
+      "when": "la pauza de reflecție dintre reprize, nu în timpul jocului"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ați jucat cu încredere!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "comportamentele exersate izolat nu apar deloc în joc",
+      "possible_causes": [
+        "sarcina de transfer e prea grea dintr-o dată — necesită o treaptă intermediară",
+        "familia de exerciții nu a fost suficient consolidată încă",
+        "jocul are alt focus emergent (ex. presiunea fizică) care domină atenția"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "cel puțin un comportament țintă (unghi de sprijin, recepție orientată) apare autonom, observat de antrenor",
+    "copiii pot lega verbal jocul de exercițiile anterioare la reflecția de final"
+  ],
+  "match_transfer": "Acest exercițiu ESTE testul de transfer — comportamentul țintă trebuie să apară aici pentru a fi considerat parțial transferat spre meciul oficial 7v7; transferul complet în meci real rămâne neconfirmat până la o pilotare reală pe teren.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată).",
+    "pdf_frames": "PENDING — specificație semantică TASK-2207; niciun fișier grafic produs (design freeze activ, doar specificații textuale până la aprobare separată)."
+  },
+  "sources": [
+    "SRC-0037",
+    "SRC-0035",
+    "SRC-0040"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.transfer-autonom-cooperare"],
+  "pedagog_competency_ids": ["PED-C07", "PED-C06"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C03", "COACH-C14", "COACH-C15"],
+  "related_pedagog_lesson_ids": ["CH-0104", "CH-0103"],
+  "related_coach_lesson_ids": ["CH-0406", "CH-0407"],
+  "child_action": "Aplică, în jocul liber, comportamentul de sprijin exersat izolat (EX-0001-EX-0004), fără nicio comandă de pe margine.",
+  "coach_focus": "Non-intervenție verbală în timpul fazei active — acesta e testul de transfer, nu un test de performanță în sarcină izolată.",
+  "do_not_assume": [
+    "Absența comportamentului țintă în jocul liber nu înseamnă eșec al exercițiilor anterioare — poate fi un rezultat real, informativ despre ce mai trebuie exersat.",
+    "Apariția comportamentului o singură dată nu confirmă un transfer stabil — trebuie observat repetat, în mai multe reprize."
+  ],
+  "when_to_intervene": [
+    "Doar pentru siguranță fizică sau comportament nesportiv — niciodată pentru a corecta tactic în timpul fazei active."
+  ],
+  "when_not_to_intervene": [
+    "Comportamentul țintă nu apare deloc — se notează ca informație validă (nu eșec), nu se întrerupe jocul pentru a preda din nou."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul intervine tactic în timpul jocului liber „ca să nu piardă ocazia de a preda”.",
+      "why_it_happens": "Dorința de a maximiza fiecare moment de joc contrazice exact scopul acestui exercițiu — testarea transferului autonom, nu predarea suplimentară."
+    }
+  ],
+  "coach_reflection": [
+    "Am rezistat impulsului de a interveni tactic în timpul jocului liber?",
+    "Ce am notat ca informație, nu ca verdict, dacă transferul nu a apărut?"
+  ],
+  "evidence_boundary": "Acesta e chiar testul de transfer al lanțului EX-0001-EX-0004; absența transferului e o informație validă, nu o dovadă de eșec al metodei. Transferul complet în meciul oficial 7v7 rămâne FIELD_INPUT_REQUIRED — nu poate fi confirmat fără pilotare reală pe teren.",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori; formatul 4v4 din acest fișier e un exemplu, nu o cerință fixă.",
+  "assessment_ref": "ASM-0001"
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/regulation-rule.schema.json",
+  "type": "object",
+  "required": ["schema_version", "reference_date", "rules"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "reference_date": {"type": "string", "format": "date"},
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule_id", "competition", "organizer", "jurisdiction", "season", "category_kind", "birth_years", "format", "players_on_field", "squad_size_min", "squad_size_max", "match_duration_minutes", "break_duration_minutes", "field_length_m", "field_width_m", "goal_width_m", "goal_height_m", "ball_size", "offside_rule", "substitution_rule", "goalkeeper_restart", "touchline_restart", "classification", "special_rules", "source_id", "exact_locations", "confidence", "status", "valid_from", "valid_until", "recheck_date"],
+        "properties": {
+          "rule_id": {"type": "string", "pattern": "^RULE-[0-9]{4}$"},
+          "competition": {"type": "string", "minLength": 3},
+          "organizer": {"type": "string", "minLength": 2},
+          "jurisdiction": {"enum": ["FRF_NATIONAL", "FRF_AJF_PARTNERSHIP", "AJF_SATU_MARE", "OTHER_AJF_COMPARATIVE"]},
+          "season": {"type": "string", "pattern": "^[0-9]{4}–[0-9]{4}$"},
+          "category_kind": {"enum": ["MATCH_REGULATION", "TRAINING_RECOMMENDATION", "LOCAL_ADAPTATION"]},
+          "birth_years": {"type": ["array", "null"], "items": {"type": "integer", "minimum": 2000}},
+          "format": {"type": ["string", "null"]},
+          "players_on_field": {"type": ["integer", "null"], "minimum": 1},
+          "squad_size_min": {"type": ["integer", "null"], "minimum": 1},
+          "squad_size_max": {"type": ["integer", "null"], "minimum": 1},
+          "match_duration_minutes": {"type": ["integer", "null"], "minimum": 1},
+          "break_duration_minutes": {"type": ["integer", "null"], "minimum": 0},
+          "field_length_m": {"type": ["object", "null"], "required": ["min", "max", "unit"], "properties": {"min": {"type": "number"}, "max": {"type": "number"}, "unit": {"const": "m"}}, "additionalProperties": false},
+          "field_width_m": {"type": ["object", "null"], "required": ["min", "max", "unit"], "properties": {"min": {"type": "number"}, "max": {"type": "number"}, "unit": {"const": "m"}}, "additionalProperties": false},
+          "goal_width_m": {"type": ["number", "null"]},
+          "goal_height_m": {"type": ["number", "null"]},
+          "ball_size": {"type": ["integer", "null"]},
+          "offside_rule": {"type": ["string", "null"]},
+          "substitution_rule": {"type": ["string", "null"]},
+          "goalkeeper_restart": {"type": ["string", "null"]},
+          "touchline_restart": {"type": ["string", "null"]},
+          "classification": {"type": ["string", "null"]},
+          "special_rules": {"type": "array", "items": {"type": "string"}},
+          "source_id": {"type": ["string", "null"], "pattern": "^SRC-[0-9]{4,}$"},
+          "exact_locations": {"type": "array", "items": {"type": "string", "minLength": 2}},
+          "confidence": {"enum": ["HIGH", "MODERATE", "LOW", "UNRESOLVED"]},
+          "status": {"enum": ["CURRENT_CONFIRMED", "CURRENT_LOCAL_CONFIRMED", "HISTORICAL_CONFIRMED", "PROVISIONAL_PREVIOUS_SEASON", "CONFLICTING", "NOT_PUBLISHED_OR_NOT_FOUND", "AWAITING_OFFICIAL_CONFIRMATION", "NOT_APPLICABLE"]},
+          "valid_from": {"type": ["string", "null"], "format": "date"},
+          "valid_until": {"type": ["string", "null"], "format": "date"},
+          "recheck_date": {"type": "string", "format": "date"}
+        },
+        "allOf": [
+          {"if": {"properties": {"status": {"enum": ["CURRENT_CONFIRMED", "CURRENT_LOCAL_CONFIRMED"]}}}, "then": {"properties": {"source_id": {"type": "string"}, "exact_locations": {"minItems": 1}}}},
+          {"if": {"properties": {"field_length_m": {"type": "object"}}}, "then": {"properties": {"field_length_m": {"properties": {"min": {"type": "number"}, "max": {"type": "number"}}}}}}
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

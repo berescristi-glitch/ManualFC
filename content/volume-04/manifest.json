@@ -1,0 +1,81 @@
+{
+  "volume_id": "VOLUME-04",
+  "title": "Metodologia practică de predare",
+  "slug": "04",
+  "description": "Ghidul practic al antrenorului-pedagog U11: de la proiectarea situațiilor reprezentative la manipularea constrângerilor, observarea structurată și reflecția post-joc.",
+  "order": 4,
+  "status": "FIELD_REVIEW_READY",
+  "approved_at": "2026-08-11",
+  "forensic_audit": "reports/audits/POST_TASK0608_FORENSIC_AUDIT.md",
+  "remediation_task": "reports/task-reports/TASK-0809.md",
+  "independent_audit": "reports/audits/volume-04-forensic-remediation-audit.md",
+  "forensic_note": "5 din 6 capitole (toate cu excepția CH-0401) se bazau pe surse fabricate sau nepotrivite, verificate independent 2026-08-11. Verdictul PASS_FIELD_REVIEW_READY emis de TASK-0807 a fost anulat. TASK-0809 a remediat toate cele 6 capitole (5 prin re-cercetare, CH-0401 prin verificare semantică). Un audit independent separat (TASK-0810, executat fără nicio implicare în scrierea remedierii) a re-verificat bibliografic toate cele 21 surse noi și a recitit integral toate capitolele, emițând verdict PASS_FIELD_REVIEW_READY cu doar 2 constatări minore cosmetice.",
+  "chapters": [
+    {
+      "chapter_id": "CH-0401",
+      "slug": "01",
+      "title": "Proiectarea unei situații reprezentative",
+      "description": "Principii RLD și păstrarea cuplajului percepție-acțiune la U11"
+    },
+    {
+      "chapter_id": "CH-0402",
+      "slug": "02",
+      "title": "Constrângeri: alegere, dozare și eliminare",
+      "description": "Manipularea deliberată a constrângerilor de sarcină pentru emergența comportamentelor tactice"
+    },
+    {
+      "chapter_id": "CH-0403",
+      "slug": "03",
+      "title": "Progresii și regresii fără pierderea intenției",
+      "description": "Scalarea dificultății sarcinilor de antrenament menținând intactă intenția tactică"
+    },
+    {
+      "chapter_id": "CH-0404",
+      "slug": "04",
+      "title": "Observare și criterii de intervenție",
+      "description": "Focalizarea observației antrenorului și stabilirea criteriilor raționale de intervenție"
+    },
+    {
+      "chapter_id": "CH-0405",
+      "slug": "05",
+      "title": "Organizare, rotații, timp activ și siguranță",
+      "description": "Managementul terenului, maximizarea timpului activ și o rutină oficială de siguranță cu efect măsurat"
+    },
+    {
+      "chapter_id": "CH-0406",
+      "slug": "06",
+      "title": "Transferul și reflecția după joc",
+      "description": "Reflecția ghidată post-joc și ancorarea transferului în meciul oficial"
+    },
+    {
+      "chapter_id": "CH-0407",
+      "slug": "07",
+      "title": "De la observație la decizie: separă ce vezi de ce crezi",
+      "description": "Cum transformă antrenorul o observație într-o problemă lucrabilă și alege dintre mai multe explicații posibile, nu din prima idee"
+    },
+    {
+      "chapter_id": "CH-0408",
+      "slug": "08",
+      "title": "Predă percepția și decizia, nu doar execuția",
+      "description": "Cum antrenează antrenorul ce vede și decide copilul, legând tehnica de decizia pe care o servește"
+    },
+    {
+      "chapter_id": "CH-0409",
+      "slug": "09",
+      "title": "Proiectarea unei ședințe coerente",
+      "description": "Cum leagă antrenorul exercițiile într-o progresie spre un singur obiectiv de ședință, fără formule numerice universale"
+    },
+    {
+      "chapter_id": "CH-0410",
+      "slug": "10",
+      "title": "Planificarea pe termen mediu: teme care revin, nu ședințe izolate",
+      "description": "Cum leagă antrenorul o temă pe mai multe săptămâni, fără să importe necritic modele de periodizare pentru adolescenți sau adulți"
+    },
+    {
+      "chapter_id": "CH-0411",
+      "slug": "11",
+      "title": "Diferențierea fără etichetare",
+      "description": "Cum adaptează antrenorul sarcina la copilul din fața lui, fără separare vizibilă și fără o rată universală de succes optimă"
+    }
+  ]
+}

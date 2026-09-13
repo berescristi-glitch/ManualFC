@@ -1,0 +1,38 @@
+/* Stiluri pentru componentele paginii educaționale (ChapterOrganizer, ExplanationToggle,
+   ElaborationBlock, RevealPrompt, QuickRecall, SectionNavigator).
+   Centralizat aici (nu în <style> per-componentă): componentele Astro folosite din
+   fișierele MDX din content/ (în afara srcDir) nu beneficiază de style hoisting
+   per-componentă la build — vezi app/src/lib/educational-page.ts pentru explicația
+   completă a aceluiași mecanism pentru script. */
+
+.chapter-organizer{margin:var(--space-8) 0 var(--space-10);padding:var(--space-5) var(--space-6);border-inline-start:3px solid var(--color-border-strong);background:var(--color-surface-muted, #f6f5f2)}
+.chapter-organizer .central-idea{margin:0 0 .5rem;max-width:72ch;font-size:1.02rem}
+.chapter-organizer .roadmap{margin:0;font-size:.85rem;color:var(--color-text-muted);max-width:72ch}
+.chapter-organizer .roadmap a{font-weight:700}
+@media print{.chapter-organizer{display:none}}
+
+explanation-toggle{display:block;margin:var(--space-6) 0}
+explanation-toggle button{min-height:44px;padding:.6rem 1rem;border:1px solid var(--color-border-strong);border-radius:8px;background:#fff;font:750 .85rem var(--font-family-sans);cursor:pointer}
+@media print{explanation-toggle{display:none}}
+
+.elaboration-block{margin:var(--space-4) 0}
+.elaboration-block[hidden]{display:none}
+
+.reveal-prompt{margin:var(--space-3) 0;padding:var(--space-4) var(--space-5);border:1px solid var(--color-border);border-radius:8px}
+.reveal-prompt summary{cursor:pointer;font-weight:750;min-height:44px;display:flex;align-items:center}
+.reveal-prompt .commit-note{margin:.4rem 0 0;font-size:.78rem;font-style:italic;color:var(--color-text-muted)}
+.reveal-prompt .reveal-answer{margin-top:.6rem;padding-top:.6rem;border-top:1px solid var(--color-border)}
+
+.quick-recall{margin-top:var(--space-12);padding-top:var(--space-8);border-top:2px solid var(--color-border-strong)}
+.quick-recall .intro{color:var(--color-text-muted);font-size:.88rem;margin-top:0}
+
+.section-nav-wrap .section-nav{display:flex;align-items:center;gap:var(--space-6);margin:var(--space-8) 0;padding:.7rem 0;border-block:1px solid var(--color-border)}
+.section-nav-wrap .section-nav>span{font-size:.68rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase;color:var(--color-text-muted);white-space:nowrap}
+.section-nav-wrap ul{display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;list-style:none;margin:0;padding:0}
+.section-nav-wrap a{display:inline-flex;align-items:center;min-height:44px;font-weight:750;text-decoration:none;color:var(--color-text-accent)}
+.section-nav-wrap a.active{text-decoration:underline;text-underline-offset:4px}
+.section-nav-wrap.sticky{position:sticky;top:0;z-index:5;background:var(--color-bg, #fff);transition:transform .2s ease}
+.section-nav-wrap.sticky.hide-on-scroll{transform:translateY(-100%)}
+@media(prefers-reduced-motion:reduce){.section-nav-wrap.sticky{transition:none}}
+@media(max-width:900px){.section-nav-wrap .section-nav{align-items:flex-start;flex-direction:column;gap:.25rem}.section-nav-wrap ul{width:100%;justify-content:space-between}}
+@media print{.section-nav-wrap{display:none}}

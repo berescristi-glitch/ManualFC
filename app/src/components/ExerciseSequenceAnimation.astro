@@ -1,0 +1,177 @@
+---
+/**
+ * TASK-2804 — Level-3 "exercise animation" prototype (see
+ * docs/architecture/MULTIMEDIA_PRODUCTION_PIPELINE.md). One real, working
+ * CSS/SVG animation for EX-0001's full canonical cycle: open the angle,
+ * complete the pass, then swap ball-carrier/support roles — the exact rule
+ * already stated in the exercise data ("cei doi jucători în posesie schimbă
+ * rolul de purtător/sprijin după fiecare pasă reușită"). Reuses the same
+ * coordinates already validated in TacticalDiagram/TacticalLoop for EX-0001
+ * — no new invented choreography beyond the documented rule. No video file
+ * exists or is fabricated. Muted, explicit play/pause + restart, respects
+ * prefers-reduced-motion, and a text stage list stays available regardless
+ * of motion preference.
+ */
+const DURATION_S = 24;
+const stages = [
+  'Start: sprijinul e pe aceeași linie, acoperit de adversar.',
+  'Sprijinul se deplasează lateral și deschide un unghi nou.',
+  'Pasă reușită către unghiul deschis.',
+  'Rolurile se schimbă: cine a primit devine noul purtător (regula exercițiului).',
+  'Ciclul se reia — noul sprijin va căuta din nou un unghi.'
+];
+---
+<figure class="exseq" data-exercise-animation>
+  <svg viewBox="0 0 400 260" role="img" aria-labelledby="exseq-title" aria-describedby="exseq-desc">
+    <title id="exseq-title">Animație de exercițiu EX-0001 — ciclul complet (animat)</title>
+    <desc id="exseq-desc">Sprijinul deschide un unghi, primește pasa, apoi rolurile de purtător și sprijin se schimbă conform regulii exercițiului. Ciclul se repetă la fiecare {DURATION_S} de secunde. Fără sunet.</desc>
+    <rect class="field" x="10" y="10" width="380" height="240" rx="6" />
+
+    <path class="pass-lane" d="M90 190 L280 90" pathLength="100" />
+    <g class="defender"><polygon points="0,-14 13,10 -13,10" transform="translate(190,150)" /></g>
+
+    <g class="marker-a"><circle r="13" /><circle class="ball" data-ball-a r="4" /></g>
+    <g class="marker-b"><circle r="13" /></g>
+    <g class="ball-flight"><circle r="4" /></g>
+
+    <text class="role-label role-a-P">P</text>
+    <text class="role-label role-a-S">S</text>
+    <text class="role-label role-b-S">S</text>
+    <text class="role-label role-b-P">P</text>
+    <text class="label" x="176" y="146">A</text>
+  </svg>
+
+  <div class="exseq-stage" aria-hidden="true">
+    <p class="stage-1">{stages[0]}</p>
+    <p class="stage-2">{stages[1]}</p>
+    <p class="stage-3">{stages[2]}</p>
+    <p class="stage-4">{stages[3]}</p>
+    <p class="stage-5">{stages[4]}</p>
+  </div>
+
+  <figcaption>
+    Ciclu complet de {DURATION_S}s — reprezentare comprimată a regulii, nu durata reală a exercițiului.
+    <span class="exseq-controls">
+      <button type="button" class="loop-toggle" data-loop-toggle aria-pressed="true">Pauză</button>
+      <button type="button" class="loop-restart" data-loop-restart>Reia de la început</button>
+    </span>
+  </figcaption>
+
+  <details class="exseq-transcript">
+    <summary>Vezi etapele în text</summary>
+    <ol>{stages.map((s) => <li>{s}</li>)}</ol>
+  </details>
+</figure>
+
+<style define:vars={{ dur: `${DURATION_S}s` }}>
+  .exseq { margin: var(--space-6) 0 0; }
+  .exseq svg { width: 100%; height: auto; max-width: 420px; }
+  .field { fill: #EEF0EA; stroke: var(--color-border-strong); stroke-width: 1.5; }
+  .defender polygon { fill: white; stroke: var(--color-text-primary); stroke-width: 2.5; }
+  .label { font: 700 12px var(--font-family-mono); fill: var(--color-text-primary); text-anchor: middle; }
+  .pass-lane { fill: none; stroke: var(--color-border-strong); stroke-width: 2; stroke-dasharray: 2 5; }
+
+  .marker-a circle:first-child, .marker-b circle { fill: var(--color-bg-brand); stroke: var(--color-bg-brand); }
+  .marker-a .ball, .ball-flight circle { fill: var(--color-brand-gold); stroke: none; }
+  .marker-a { animation: exseq-a var(--dur) ease-in-out infinite; }
+  .marker-b { animation: exseq-b var(--dur) ease-in-out infinite; }
+  .marker-a .ball { animation: exseq-ball-a-visible var(--dur) step-end infinite; }
+  .ball-flight circle { opacity: 0; animation: exseq-ball-flight var(--dur) ease-in-out infinite; }
+
+  .role-label { font: 700 12px var(--font-family-mono); fill: var(--color-text-primary); text-anchor: middle; }
+  .role-a-P { animation: exseq-role-a-P var(--dur) step-end infinite; }
+  .role-a-S { animation: exseq-role-a-S var(--dur) step-end infinite; }
+  .role-b-S { animation: exseq-role-b-S var(--dur) step-end infinite; }
+  .role-b-P { animation: exseq-role-b-P var(--dur) step-end infinite; }
+
+  @keyframes exseq-a {
+    0%   { transform: translate(90px,190px); }
+    38%  { transform: translate(90px,190px); }
+    100% { transform: translate(90px,190px); }
+  }
+  @keyframes exseq-b {
+    0%   { transform: translate(200px,130px); opacity: .55; }
+    9%   { opacity: .55; }
+    28%  { transform: translate(280px,90px); opacity: 1; }
+    100% { transform: translate(280px,90px); opacity: 1; }
+  }
+  @keyframes exseq-ball-a-visible {
+    0%   { opacity: 1; }
+    30%  { opacity: 1; }
+    31%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  @keyframes exseq-ball-flight {
+    0%   { opacity: 0; transform: translate(90px,190px); }
+    30%  { opacity: 0; transform: translate(90px,190px); }
+    31%  { opacity: 1; }
+    40%  { opacity: 1; transform: translate(280px,90px); }
+    41%  { opacity: 0; }
+    100% { opacity: 0; transform: translate(90px,190px); }
+  }
+  @keyframes exseq-role-a-P { 0% { opacity: 1; } 40% { opacity: 1; } 41% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes exseq-role-a-S { 0% { opacity: 0; } 40% { opacity: 0; } 41% { opacity: 1; } 100% { opacity: 1; } }
+  @keyframes exseq-role-b-S { 0% { opacity: 1; } 40% { opacity: 1; } 41% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes exseq-role-b-P { 0% { opacity: 0; } 40% { opacity: 0; } 41% { opacity: 1; } 100% { opacity: 1; } }
+
+  .exseq-stage { position: relative; margin-top: var(--space-3); font-weight: 750; min-height: 2.6em; }
+  .exseq-stage p { position: absolute; inset: 0; margin: 0; opacity: 0; }
+  .exseq-stage .stage-1 { animation: exseq-stage-1 var(--dur) step-end infinite; }
+  .exseq-stage .stage-2 { animation: exseq-stage-2 var(--dur) step-end infinite; }
+  .exseq-stage .stage-3 { animation: exseq-stage-3 var(--dur) step-end infinite; }
+  .exseq-stage .stage-4 { animation: exseq-stage-4 var(--dur) step-end infinite; }
+  .exseq-stage .stage-5 { animation: exseq-stage-5 var(--dur) step-end infinite; }
+  @keyframes exseq-stage-1 { 0% { opacity: 1; } 9% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes exseq-stage-2 { 0% { opacity: 0; } 9% { opacity: 1; } 30% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes exseq-stage-3 { 0% { opacity: 0; } 30% { opacity: 1; } 41% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes exseq-stage-4 { 0% { opacity: 0; } 41% { opacity: 1; } 90% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes exseq-stage-5 { 0% { opacity: 0; } 90% { opacity: 1; } 100% { opacity: 1; } }
+  figcaption { margin-top: var(--space-2); font-size: .85rem; color: var(--color-text-secondary); max-width: 48ch; display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+  .exseq-controls { display: inline-flex; gap: var(--space-3); }
+  .loop-toggle, .loop-restart { font: inherit; font-weight: 700; padding: .3rem .8rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-strong); background: white; color: var(--color-text-primary); cursor: pointer; min-height: 44px; }
+  .loop-toggle:hover, .loop-restart:hover { background: var(--color-bg-subtle); }
+  .exseq-transcript { margin-top: var(--space-4); }
+  .exseq-transcript summary { cursor: pointer; font-weight: 700; min-height: 44px; display: flex; align-items: center; }
+  .exseq-transcript ol { margin: .5rem 0 0; padding-left: 1.2rem; }
+
+  .exseq.is-paused .marker-a,
+  .exseq.is-paused .marker-b,
+  .exseq.is-paused .marker-a .ball,
+  .exseq.is-paused .ball-flight circle,
+  .exseq.is-paused .role-label,
+  .exseq.is-paused .exseq-stage p { animation-play-state: paused; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marker-a, .marker-b, .marker-a .ball, .ball-flight circle, .role-label, .exseq-stage p { animation: none; }
+    .marker-a { transform: translate(90px,190px); }
+    .marker-b { transform: translate(280px,90px); opacity: 1; }
+    .marker-a .ball { opacity: 0; }
+    .ball-flight circle { opacity: 0; }
+    .role-a-P, .role-b-S { opacity: 0; }
+    .role-a-S, .role-b-P { opacity: 1; }
+    .exseq-controls { display: none; }
+    .exseq-stage { display: none; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-exercise-animation]').forEach((figure) => {
+    const toggleBtn = figure.querySelector<HTMLButtonElement>('[data-loop-toggle]');
+    const restartBtn = figure.querySelector<HTMLButtonElement>('[data-loop-restart]');
+    toggleBtn?.addEventListener('click', () => {
+      const paused = figure.classList.toggle('is-paused');
+      toggleBtn.textContent = paused ? 'Redă' : 'Pauză';
+      toggleBtn.setAttribute('aria-pressed', String(!paused));
+    });
+    restartBtn?.addEventListener('click', () => {
+      figure.classList.remove('is-paused');
+      if (toggleBtn) { toggleBtn.textContent = 'Pauză'; toggleBtn.setAttribute('aria-pressed', 'true'); }
+      figure.querySelectorAll<HTMLElement | SVGElement>('*').forEach((el) => {
+        // eslint-disable-next-line no-self-assign
+        el.style.animation = 'none';
+        void el.getBoundingClientRect();
+        el.style.animation = '';
+      });
+    });
+  });
+</script>

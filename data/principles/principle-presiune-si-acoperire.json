@@ -1,0 +1,37 @@
+{
+  "id": "principle.presiune-si-acoperire",
+  "slug": "presiune-si-acoperire",
+  "category_id": "cat.perceptie-decizie",
+  "evidence_claim_ids": ["CLM-0036", "CLM-0043", "CLM-0044"],
+  "title": "Unul influențează, celălalt protejează",
+  "professional_definition": "Primul apărător reduce controlat timpul și opțiunile purtătorului, al doilea rămâne capabil să răspundă depășirii, iar rolurile se schimbă imediat când mingea se mută.",
+  "child_message": "Unul îl încetinește. Celălalt: dacă trece, poți fi tu următorul?",
+  "coach_meaning": "Copiii coordonează influența asupra purtătorului cu protecția acțiunii următoare, fără dublaj orb și fără roluri atribuite permanent.",
+  "why_this_message": "Cele două funcții sunt concrete și verificabile, iar întrebarea pregătește schimbul de rol fără a dicta distanța ori partea.",
+  "problem_being_solved": "Doi apărători atacă aceeași acțiune sau rămân pasivi, astfel încât o depășire ori pasă elimină orice răspuns defensiv.",
+  "information_children_must_notice": ["mingea și orientarea purtătorului", "drumul direct spre poartă", "unghiul și viteza primului apărător", "spațiul din spatele duelului", "adversarul fără minge și următoarea pasă"],
+  "decision_children_must_learn": "Să decidă cine poate influența acum, ce cale reduce și unde se poziționează acoperirea pentru a deveni următoarea presiune.",
+  "observable_behaviours": ["primul apărător se apropie și frânează controlat", "al doilea nu este eliminat prin aceeași acțiune", "acoperirea protejează drumul periculos", "rolurile se schimbă la pasă", "echipa reface imediat o nouă acoperire"],
+  "rationales": {
+    "tactical": "Presiunea reduce opțiunile, iar acoperirea limitează consecința depășirii.",
+    "perceptual": "Copiii citesc duelul, poarta, colegul și următoarea posibilitate adversă.",
+    "decisional": "Rolul, distanța și unghiul se adaptează la mutarea mingii.",
+    "cognitive": "Două responsabilități scurte fac relația verificabilă fără pachet de reguli.",
+    "psychological": "Întârzierea nu este etichetată ca pasivitate, iar acoperirea nu cere salvarea individuală a fazei.",
+    "technical": "Apropierea, frânarea, postura, deplasarea și intervenția susțin rolurile.",
+    "social": "Colegii își oferă protecție și refac rolurile fără reproș după depășire."
+  },
+  "age_appropriateness": "La 10–11 ani, rolurile sunt arătate într-un 2v2 și verificate imediat; grupele 2015 și 2016 rămân împreună, cu reglaje individuale de start, timp, spațiu și ajutor.",
+  "phrases_to_avoid": [
+    {"phrase": "Amândoi la minge.", "reason": "Elimină acoperirea și permite aceleiași acțiuni să depășească doi apărători."},
+    {"phrase": "Stai în spatele lui.", "reason": "Oferă o adresă fără unghi, distanță sau relație cu poarta."},
+    {"phrase": "Intră tare.", "reason": "Confundă intensitatea cu informația și poate crește riscul."},
+    {"phrase": "Om la om.", "reason": "Poate rupe protecția porții și nu explică schimbul de roluri."}
+  ],
+  "possible_misinterpretations": ["Presiunea este confundată cu sprintul necontrolat.", "Acoperirea devine o poziție pasivă și prea adâncă.", "Tacklingul este folosit ca singura dovadă a apărării bune."],
+  "task_risks": ["Intrările necontrolate cresc riscul de contact.", "Perechea în așteptare poate intra în zona de finalizare.", "Terenul prea mic elimină timpul pentru frânare și schimb de rol."],
+  "understanding_check": ["primul reduce o opțiune fără să fie depășit prin propria viteză", "acoperirea poate interveni după depășire", "rolurile se schimbă la pasă fără comandă", "relația reapare în 3v3 ori 5v5 liber"],
+  "response_if_not_understood": ["reconstituie un moment și mută numai acoperirea", "schimbă unghiul repornirii pentru a evita memorarea", "mărește lungimea cu 2–3 m dacă nu există timp", "folosește temporar 2v1 cu intrarea întârziată a celui de-al doilea apărător"],
+  "match_transfer": "În joc liber sau 7v7, copiii identifică autonom cine influențează purtătorul și cine protejează acțiunea următoare, apoi schimbă rolurile într-o configurație diferită.",
+  "sources": ["SRC-0035", "SRC-0042", "SRC-0043"]
+}

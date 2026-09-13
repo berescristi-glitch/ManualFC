@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Chapter01 from '../../../../../content/volume-03/chapter-01.mdx';
+import Chapter02 from '../../../../../content/volume-03/chapter-02.mdx';
+import Chapter03 from '../../../../../content/volume-03/chapter-03.mdx';
+import Chapter04 from '../../../../../content/volume-03/chapter-04.mdx';
+import Chapter05 from '../../../../../content/volume-03/chapter-05.mdx';
+import Chapter06 from '../../../../../content/volume-03/chapter-06.mdx';
+import Chapter07 from '../../../../../content/volume-03/chapter-07.mdx';
+import Chapter08 from '../../../../../content/volume-03/chapter-08.mdx';
+import Chapter09 from '../../../../../content/volume-03/chapter-09.mdx';
+import Chapter10 from '../../../../../content/volume-03/chapter-10.mdx';
+
+const chapters = {
+  'ch-0301': { title: 'Limbaj scurt și informație relevantă', component: Chapter01 },
+  'ch-0302': { title: 'Întrebări, feedback și verificarea înțelegerii', component: Chapter02 },
+  'ch-0303': { title: 'Emoții, greșeală și climat de siguranță', component: Chapter03 },
+  'ch-0304': { title: 'Disciplina fără umilire', component: Chapter04 },
+  'ch-0305': { title: 'Comunicarea antrenorului în timpul meciului', component: Chapter05 },
+  'ch-0306': { title: 'Conversații individuale și echitate', component: Chapter06 },
+  'ch-0307': { title: 'Feedback specific și demonstrație fără impunere', component: Chapter07 },
+  'ch-0308': { title: 'Identitatea antrenorului: dincolo de tactică', component: Chapter08 },
+  'ch-0309': { title: 'Reflecția antrenorului: ce am observat despre propria intervenție', component: Chapter09 },
+  'ch-0310': { title: 'Dezvoltarea profesională a antrenorului: ce chiar funcționează', component: Chapter10 }
+} as const;
+
+export function getStaticPaths() {
+  return ['ch-0301', 'ch-0302', 'ch-0303', 'ch-0304', 'ch-0305', 'ch-0306', 'ch-0307', 'ch-0308', 'ch-0309', 'ch-0310'].map(chapter => ({ params: { chapter } }));
+}
+
+const slug = Astro.params.chapter as keyof typeof chapters;
+const entry = chapters[slug];
+if (!entry) throw new Error(`[FAIL_CLOSED] Capitol VOLUME-03 necunoscut: ${slug}`);
+const Content = entry.component;
+---
+
+<BaseLayout title={`${entry.title} — ManualFC`} description={`Capitolul ${slug.toUpperCase()} din VOLUMUL 03`}>
+  <article class="chapter-shell">
+    <nav aria-label="Volumul 03"><a href="/volum/03">← Cuprins Volumul 03</a></nav>
+    <article class="chapter-content"><Content /></article>
+  </article>
+</BaseLayout>
+
+<style>
+  .chapter-shell{max-width:var(--width-content);margin:0 auto;padding:var(--space-12) var(--space-6) var(--space-20)}
+  nav{margin-bottom:var(--space-10)}nav a{font-weight:750}.chapter-content :global(h1){max-width:min(18ch, 100%);overflow-wrap:break-word}.chapter-content :global(h2){margin-top:var(--space-12)}.chapter-content :global(h3){margin-top:var(--space-8)}.chapter-content :global(p),.chapter-content :global(li){max-width:72ch}.chapter-content :global(code){overflow-wrap:anywhere}
+</style>

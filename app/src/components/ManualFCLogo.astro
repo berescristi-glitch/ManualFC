@@ -1,0 +1,41 @@
+---
+/**
+ * ManualFC brand lockup — TASK-3701 (clipboard/M/football identity, DEC-0080).
+ * The canonical master (`manualfc-brand-master.png`) has its dark-navy
+ * background and gold/white artwork baked in as a single flat image — there
+ * is no official light-surface or transparent variant, so this component
+ * does not attempt to invert or recolor it (see brand rules, §17).
+ */
+interface Props {
+  variant?: 'full' | 'horizontal' | 'mark';
+  class?: string;
+  alt?: string;
+}
+
+const {
+  variant = 'full',
+  class: className,
+  alt = 'ManualFC'
+} = Astro.props;
+
+const sources = {
+  full: { src: '/brand/manualfc/logo/manualfc-logo-full.png', width: 1531, height: 549 },
+  horizontal: { src: '/brand/manualfc/logo/manualfc-logo-horizontal.png', width: 1531, height: 400 },
+  mark: { src: '/brand/manualfc/logo/manualfc-mark.png', width: 479, height: 479 }
+} as const;
+
+const { src, width, height } = sources[variant];
+---
+<img
+  class:list={['manualfc-logo', `logo-${variant}`, className]}
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  decoding="async"
+/>
+
+<style>
+  .manualfc-logo { display: block; width: 220px; max-width: 100%; height: auto; object-fit: contain; }
+  .logo-mark { width: 44px; }
+</style>

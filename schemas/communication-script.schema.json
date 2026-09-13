@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/communication-script.schema.json",
+  "type": "object",
+  "required": ["id", "slug", "title", "principle_ids", "message_foundations"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "id": {"type": "string", "pattern": "^SCR-[0-9]{4,}$"},
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "title": {"type": "string", "minLength": 3},
+    "principle_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "message_foundations": {"type": "array", "minItems": 1, "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}

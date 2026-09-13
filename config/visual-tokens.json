@@ -1,0 +1,54 @@
+{
+  "$schema": "../schemas/visual-tokens.schema.json",
+  "version": "1.0.0",
+  "roles": {
+    "possession": {"color": "#1769AA", "shape": "circle", "label_prefix": "A"},
+    "opponent": {"color": "#C62828", "shape": "square", "label_prefix": "D"},
+    "neutral": {"color": "#F9A825", "shape": "diamond", "label_prefix": "N"},
+    "goalkeeper": {"color": "#2E7D32", "shape": "hexagon", "label_prefix": "P"},
+    "coach": {"color": "#FFFFFF", "outline": "#111111", "shape": "star", "label_prefix": "C"}
+  },
+  "paths": {
+    "pass": "dashed",
+    "off_ball_run": "solid",
+    "dribble": "double",
+    "change_of_direction": "curved"
+  },
+  "semantic_colors": {
+    "background_main": "#F7F7F2",
+    "background_surface": "#FFFFFF",
+    "background_surface_muted": "#E9EBE7",
+    "background_brand": "#010916",
+    "background_brand_secondary": "#1B263B",
+    "border_default": "#CED2D5",
+    "border_accent": "#F4C430",
+    "text_primary": "#0D1B2A",
+    "text_secondary": "#334155",
+    "text_muted": "#667085",
+    "text_accent": "#8A6800",
+    "brand_gold": "#F4C430",
+    "steel_grey": "#8D99AE",
+    "evidence_badge": "#8B5CF6",
+    "pedagogical_callout": "#0EA5E9",
+    "psychology_callout": "#EC4899",
+    "tactical_callout": "#10B981"
+  },
+  "layout_widths": {
+    "prose": "68ch",
+    "standard": "900px",
+    "wide": "1200px"
+  },
+  "epistemic_levels": {
+    "HIGH": {"label": "Evidență Puternică", "badge_color": "#166534", "symbol": "[EVIDENȚĂ RĂSDÂNDITĂ]"},
+    "MODERATE": {"label": "Evidență Moderată", "badge_color": "#075985", "symbol": "[STUDIU EXPERIMENTAL]"},
+    "LOW": {"label": "Evidență Limitată", "badge_color": "#854D0E", "symbol": "[DATE RESTRÂNSE]"},
+    "PRACTICE_ONLY": {"label": "Practică de Academie", "badge_color": "#6B21A8", "symbol": "[CONSENS EXPERȚI]"},
+    "UNRESOLVED": {"label": "Neconfirmat", "badge_color": "#991B1B", "symbol": "[ÎN VERIFICARE]"}
+  },
+  "accessibility": {
+    "color_is_never_the_only_signal": true,
+    "svg_requires_title_and_description": true,
+    "reduced_motion_required": true,
+    "black_and_white_profile_required": true
+  }
+}

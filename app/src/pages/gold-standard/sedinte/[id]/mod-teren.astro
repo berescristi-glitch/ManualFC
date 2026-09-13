@@ -1,0 +1,231 @@
+---
+/**
+ * TASK-2710 — Field Mode (ședință). Activat explicit din pagina normală a
+ * ședinței, niciodată auto-detectat. Toate segmentele sunt randate static la
+ * build (aceeași sursă canonică ca pagina normală de ședință și ca
+ * exercițiile individuale — niciun conținut paralel), iar un script mic,
+ * fără framework, arată câte un segment o dată și rulează un cronometru
+ * simplu. Fără raționale lungi implicit — „De ce acum” și justificarea
+ * metodologică rămân pe pagina normală, nu aici.
+ */
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import TacticalDiagram from '../../../../components/TacticalDiagram.astro';
+import { getGoldStandardSessions, getGoldStandardSession, getGoldStandardExercise } from '../../../../lib/content-bridge';
+
+export function getStaticPaths() {
+  return getGoldStandardSessions().map((ses) => ({ params: { id: ses.id } }));
+}
+const { id } = Astro.params;
+const ses = getGoldStandardSession(id as string);
+const diagramVariants = ['EX-0001', 'EX-0002', 'EX-0003', 'EX-0004', 'EX-0005'];
+const variant60ByIndex = new Map(ses.duration_variant_60min.segments.map((s) => [s.segment_index, s]));
+
+const slides = ses.segments.map((seg, index) => {
+  const exercise = seg.exercise_ids[0] ? getGoldStandardExercise(seg.exercise_ids[0]) : null;
+  const hasDiagram = exercise ? diagramVariants.includes(exercise.id) : false;
+  const groupSize = exercise ? Number((exercise.players as Record<string, unknown>).total) : 0;
+  const v60 = variant60ByIndex.get(index)!;
+  return { seg, exercise, hasDiagram, groupSize, v60 };
+});
+---
+<BaseLayout title={`Mod teren — ${ses.title}`} description={`Mod teren pentru ${ses.title}: un segment pe ecran, cronometru, navigare cu degetul mare.`}>
+  <div class="field-mode" data-field-mode data-total={slides.length} data-session-id={ses.id}>
+    <h1 class="fm-session-title">Mod teren — {ses.title}</h1>
+    <header class="fm-top">
+      <div class="fm-top-links">
+        <a class="fm-exit" href={`/gold-standard/sedinte/${ses.id}`}>← Ieși din modul teren</a>
+        <a class="fm-map-link" href={`/gold-standard/sedinte/${ses.id}#harta`}>Vezi montarea terenului</a>
+      </div>
+      <p class="fm-progress"><span data-fm-current>1</span> din {slides.length} — {ses.title} · <span data-fm-duration-label>75 min</span></p>
+    </header>
+
+    <div class="fm-slides">
+      {slides.map(({ seg, exercise, hasDiagram, groupSize, v60 }, i) => (
+        <section class="fm-slide" data-fm-slide data-index={i} hidden={i !== 0}>
+          <p class="fm-time">
+            <span data-fm-time-75>{seg.start_min}′–{seg.end_min}′</span>
+            <span data-fm-time-60 hidden>{v60.start_min}′–{v60.end_min}′</span>
+          </p>
+          <h2>{seg.title}</h2>
+
+          <blockquote class="fm-cue">„{seg.coach_message}”</blockquote>
+          <p class="fm-observe"><strong>Urmărește:</strong> {seg.observation_focus.join(' · ')}</p>
+          {seg.coach_focus && <p class="fm-coach-focus"><strong>Coach focus:</strong> {seg.coach_focus}</p>}
+          {seg.non_intervention_criteria && seg.non_intervention_criteria.length > 0 && (
+            <p class="fm-non-intervene"><strong>Când NU intervii:</strong> {seg.non_intervention_criteria.join(' · ')}</p>
+          )}
+          {seg.verification_method && <p class="fm-verify"><strong>Cum verifici:</strong> {seg.verification_method}</p>}
+
+          {exercise && (
+            <div class="fm-setup">
+              <dl class="fm-facts">
+                <div><dt>Format</dt><dd>{exercise.numerical_relation} · {groupSize} jucători</dd></div>
+                <div><dt>Spațiu</dt><dd>{exercise.field.length_m}×{exercise.field.width_m} m + {exercise.field.safety_margin_m} m</dd></div>
+                <div><dt>Materiale</dt><dd>{exercise.equipment.join(' · ')}</dd></div>
+              </dl>
+              {hasDiagram && <TacticalDiagram variant={exercise.id.toLowerCase() as 'ex-0001' | 'ex-0002' | 'ex-0003' | 'ex-0004' | 'ex-0005'} />}
+              <details class="fm-adjust">
+                <summary>Ajustează dacă e nevoie</summary>
+                <div class="fm-adjust-grid">
+                  <div><span>Regresie</span><ul>{exercise.regression.map((r) => <li>{r}</li>)}</ul></div>
+                  <div><span>Progresie</span><ul>{exercise.progression.map((p) => <li>{p}</li>)}</ul></div>
+                </div>
+              </details>
+            </div>
+          )}
+
+          <p class="fm-transition"><strong>Tranziție:</strong> {seg.transition_logistics}</p>
+        </section>
+      ))}
+    </div>
+
+    <nav class="fm-bar" aria-label="Navigare mod teren">
+      <button type="button" data-fm-prev disabled>Înapoi</button>
+      <div class="fm-timer">
+        <span class="fm-timer-display" data-fm-timer-display>00:00</span>
+        <button type="button" data-fm-timer-toggle aria-pressed="false">Start</button>
+        <button type="button" data-fm-timer-reset>Reset</button>
+      </div>
+      <button type="button" data-fm-next>Următorul</button>
+    </nav>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .fm-session-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  /* Mod teren e o unealtă de concentrare, nu o pagină de navigare — ascunde
+     navigarea principală și subsolul doar pe această rută, fără să atingă
+     BaseLayout/AppHeader/AppFooter folosite de restul site-ului. */
+  body:has(.field-mode) .main-nav,
+  body:has(.field-mode) .mobile-menu,
+  body:has(.field-mode) .app-footer {
+    display: none;
+  }
+  body:has(.field-mode) .main-layout {
+    padding-bottom: 0;
+  }
+</style>
+
+<style>
+  .field-mode { min-height: 100vh; display: flex; flex-direction: column; background: var(--color-bg-main); }
+  .fm-top { padding: var(--space-4) var(--space-6); border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); flex-wrap: wrap; }
+  .fm-top-links { display: flex; align-items: center; gap: var(--space-5); flex-wrap: wrap; }
+  .fm-exit { font-size: .9rem; color: var(--color-text-secondary); text-decoration: none; min-height: 48px; display: flex; align-items: center; }
+  .fm-map-link { font-size: .9rem; color: var(--color-text-accent); text-decoration: none; min-height: 48px; display: flex; align-items: center; }
+  .fm-progress { font-size: .85rem; color: var(--color-text-muted); font-weight: 700; }
+  .fm-slides { flex: 1; padding: var(--space-8) var(--space-6) calc(var(--space-16) + 80px); max-width: 40rem; margin: 0 auto; width: 100%; }
+  @media (max-width: 560px) { .fm-slides { padding-bottom: 240px; } }
+  .fm-time { font-family: var(--font-family-mono); color: var(--color-text-accent); font-weight: 700; font-size: 1.1rem; }
+  .fm-slide h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: .3rem 0 var(--space-6); }
+  .fm-cue { margin: 0; padding: var(--space-5); background: var(--color-bg-brand); color: white; border-radius: var(--radius-lg); font: 750 1.3rem/1.4 var(--font-family-heading); border-left: 4px solid var(--color-brand-gold); }
+  .fm-observe { margin-top: var(--space-5); font-size: 1.05rem; }
+  .fm-coach-focus { margin-top: var(--space-3); font-size: .9rem; font-weight: 700; color: var(--color-text-accent); }
+  .fm-non-intervene, .fm-verify { margin-top: var(--space-2); font-size: .85rem; color: var(--color-text-secondary); }
+  .fm-setup { margin-top: var(--space-8); }
+  .fm-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--color-border); border-radius: var(--radius-md); overflow: hidden; }
+  .fm-facts > div { padding: var(--space-3); background: var(--color-bg-surface); }
+  .fm-facts dt { font-size: .65rem; text-transform: uppercase; letter-spacing: .08em; color: var(--color-text-muted); font-weight: 850; }
+  .fm-facts dd { margin: .25rem 0 0; font-weight: 700; }
+  .fm-adjust { margin-top: var(--space-6); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); }
+  .fm-adjust summary { cursor: pointer; font-weight: 700; min-height: 48px; display: flex; align-items: center; }
+  .fm-adjust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-3); }
+  .fm-adjust-grid span { display: block; font-size: .7rem; text-transform: uppercase; color: var(--color-text-accent); font-weight: 850; }
+  .fm-adjust-grid ul { margin: .3rem 0 0; padding-left: 1.1rem; font-size: .9rem; }
+  .fm-transition { margin-top: var(--space-8); padding-top: var(--space-4); border-top: 1px solid var(--color-border); font-size: .9rem; color: var(--color-text-muted); }
+  @media (max-width: 480px) { .fm-facts, .fm-adjust-grid { grid-template-columns: 1fr; } }
+
+  .fm-bar { position: fixed; bottom: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-4); background: var(--color-bg-brand); border-top: 3px solid var(--color-brand-gold); z-index: 10; }
+  .fm-bar button { font: inherit; font-weight: 800; min-height: 52px; padding: 0 var(--space-4); border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,.3); background: var(--color-bg-brand-secondary); color: white; cursor: pointer; }
+  .fm-bar button:disabled { opacity: .4; cursor: default; }
+  .fm-bar > button[data-fm-next] { background: var(--color-brand-gold); color: var(--color-bg-brand); border-color: var(--color-brand-gold); justify-self: end; }
+  .fm-bar > button[data-fm-prev] { justify-self: start; }
+  .fm-timer { display: flex; align-items: center; gap: var(--space-2); justify-self: center; }
+  .fm-timer-display { font-family: var(--font-family-mono); font-size: 1.3rem; font-weight: 800; color: white; min-width: 3.6ch; text-align: center; }
+  .fm-timer button { min-height: 48px; padding: 0 var(--space-3); }
+  @media (max-width: 560px) {
+    .fm-bar { grid-template-columns: 1fr; gap: var(--space-2); }
+    .fm-bar > button[data-fm-prev], .fm-bar > button[data-fm-next] { justify-self: stretch; }
+    .fm-timer { justify-self: stretch; justify-content: center; }
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-field-mode]');
+  if (root) {
+    const durationParam = new URLSearchParams(window.location.search).get('durata');
+    const is60 = durationParam === '60';
+    root.querySelectorAll<HTMLElement>('[data-fm-time-75]').forEach((el) => { el.hidden = is60; });
+    root.querySelectorAll<HTMLElement>('[data-fm-time-60]').forEach((el) => { el.hidden = !is60; });
+    const durationLabel = root.querySelector<HTMLElement>('[data-fm-duration-label]');
+    if (durationLabel) durationLabel.textContent = is60 ? '60 min' : '75 min';
+
+    const total = Number(root.dataset.total ?? '0');
+    const slides = Array.from(root.querySelectorAll<HTMLElement>('[data-fm-slide]'));
+    const currentLabel = root.querySelector<HTMLElement>('[data-fm-current]');
+    const prevBtn = root.querySelector<HTMLButtonElement>('[data-fm-prev]');
+    const nextBtn = root.querySelector<HTMLButtonElement>('[data-fm-next]');
+    let index = 0;
+
+    function render() {
+      slides.forEach((slide, i) => { slide.hidden = i !== index; });
+      if (currentLabel) currentLabel.textContent = String(index + 1);
+      if (prevBtn) prevBtn.disabled = index === 0;
+      if (nextBtn) {
+        const atEnd = index === total - 1;
+        nextBtn.textContent = atEnd ? 'Termină ședința → Reflecție' : 'Următorul';
+        nextBtn.disabled = false;
+      }
+      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    }
+    prevBtn?.addEventListener('click', () => { if (index > 0) { index -= 1; render(); } });
+    nextBtn?.addEventListener('click', () => {
+      if (index < total - 1) { index += 1; render(); return; }
+      const params = new URLSearchParams(window.location.search);
+      const dest = new URLSearchParams({ sesiune: root.dataset.sessionId ?? '', durata: params.get('durata') === '60' ? '60' : '75' });
+      const problema = params.get('problema'); if (problema) dest.set('problema', problema);
+      window.location.href = `/spatiul-meu/reflectie?${dest.toString()}`;
+    });
+
+    const display = root.querySelector<HTMLElement>('[data-fm-timer-display]');
+    const toggleBtn = root.querySelector<HTMLButtonElement>('[data-fm-timer-toggle]');
+    const resetBtn = root.querySelector<HTMLButtonElement>('[data-fm-timer-reset]');
+    let seconds = 0;
+    let intervalId: number | null = null;
+
+    function formatTime(total: number) {
+      const m = Math.floor(total / 60).toString().padStart(2, '0');
+      const s = (total % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+    function updateDisplay() { if (display) display.textContent = formatTime(seconds); }
+    toggleBtn?.addEventListener('click', () => {
+      const running = intervalId !== null;
+      if (running) {
+        if (intervalId) window.clearInterval(intervalId);
+        intervalId = null;
+        toggleBtn.textContent = 'Start';
+        toggleBtn.setAttribute('aria-pressed', 'false');
+      } else {
+        intervalId = window.setInterval(() => { seconds += 1; updateDisplay(); }, 1000);
+        toggleBtn.textContent = 'Pauză';
+        toggleBtn.setAttribute('aria-pressed', 'true');
+      }
+    });
+    resetBtn?.addEventListener('click', () => {
+      seconds = 0;
+      updateDisplay();
+    });
+
+    render();
+  }
+</script>

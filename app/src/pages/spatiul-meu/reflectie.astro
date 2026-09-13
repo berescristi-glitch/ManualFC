@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getGoldStandardSessions, getGoldStandardSessionExercises, getGoldStandardAssessment } from '../../lib/content-bridge';
+import { getProblems } from '../../lib/problem-library';
+
+function criterionExerciseId(text: string): string | null { const m = text.match(/\(EX-\d{4}\)/); return m ? m[0].slice(1, -1) : null; }
+const assessment = getGoldStandardAssessment();
+const problems = getProblems().map(p => ({
+  id: p.problem_id, title: p.human_title, slug: p.slug,
+  cue: p.child_cues[0]?.say ?? '', transferCheck: p.transfer_checks[0]?.text ?? '', exerciseIds: p.related_exercises,
+  criteria: p.assessment_links.length ? assessment.criteria.filter(c => { const exId = criterionExerciseId(c.observable_behaviour); return exId ? p.related_exercises.includes(exId) : false; }).map(c => c.observable_behaviour) : []
+}));
+const sessions = getGoldStandardSessions().map(s => { const exercises = getGoldStandardSessionExercises(s); return { id: s.id, title: s.title, exerciseIds: exercises.map(e => e.id), exerciseTitles: exercises.map(e => e.title) }; });
+---
+<BaseLayout title="Reflecție după antrenament" description="Reflecție scurtă după ședință: ce ai observat, unde a apărut și ce merită făcut data viitoare.">
+  <Breadcrumb items={[{ label: 'Spațiul meu', href: '/spatiul-meu' }, { label: 'Reflecție' }]} />
+  <div class="reflection" data-reflection data-problems={JSON.stringify(problems)} data-sessions={JSON.stringify(sessions)}>
+    <header class="refl-head">
+      <p class="eyebrow">REFLECȚIE DUPĂ ANTRENAMENT</p>
+      <h1>Ce ai observat?</h1>
+      <div class="refl-context" data-context></div>
+    </header>
+
+    <form data-refl-form>
+      <fieldset>
+        <legend>Ai observat comportamentul urmărit?</legend>
+        <label><input type="radio" name="observed" value="not_observed" required /> Nu a apărut</label>
+        <label><input type="radio" name="observed" value="emerging" /> Abia apare</label>
+        <label><input type="radio" name="observed" value="partial" /> Apare parțial</label>
+        <label><input type="radio" name="observed" value="consistent_in_task" /> Apare constant, autonom</label>
+      </fieldset>
+
+      <fieldset data-transfer-fieldset hidden>
+        <legend>Unde a apărut?</legend>
+        <label><input type="radio" name="transfer" value="transfer_unconfirmed" /> Doar în exercițiu</label>
+        <label><input type="radio" name="transfer" value="transfer_seen" /> Și în joc liber, fără constrângeri</label>
+      </fieldset>
+
+      <p class="refl-next" data-next hidden><strong>Următorul pas:</strong> <span data-next-text></span></p>
+
+      <details class="refl-more">
+        <summary>Adaugă detalii (opțional)</summary>
+        <label>Ce a funcționat?<textarea name="whatWorked" rows="2"></textarea></label>
+        <label>De ce crezi că s-a întâmplat?<textarea name="whyItHappened" rows="2"></textarea></label>
+        <label>Ce ai schimba?<textarea name="whatToChange" rows="2"></textarea></label>
+      </details>
+
+      <label>Notițe<textarea name="coachNote" rows="3" placeholder="Ex. am folosit varianta cu adversar semi-activ."></textarea></label>
+      <p class="refl-privacy">Nu introduce nume, date medicale sau alte date personale despre copii.</p>
+
+      <div class="refl-actions">
+        <button class="save" type="submit">Salvează reflecția</button>
+        <button type="button" data-delete hidden>Șterge reflecția</button>
+      </div>
+      <p data-status aria-live="polite"></p>
+    </form>
+
+    <p class="refl-reentry" data-reentry hidden><a data-reentry-link href="#"></a></p>
+    <a class="refl-back" href="/spatiul-meu">← Spațiul meu</a>
+  </div>
+</BaseLayout>
+<script>
+ import {browserCoachStatePort,saveReflection,deleteReflection,computeNextAction,type ObservedState,type TransferState} from '../../lib/coach-state';
+ const root=document.querySelector<HTMLElement>('[data-reflection]')!;
+ const problems=JSON.parse(root.dataset.problems??'[]') as {id:string;title:string;slug:string;cue:string;transferCheck:string;exerciseIds:string[];criteria:string[]}[];
+ const sessionsData=JSON.parse(root.dataset.sessions??'[]') as {id:string;title:string;exerciseIds:string[];exerciseTitles:string[]}[];
+ const params=new URLSearchParams(location.search);
+ const form=document.querySelector<HTMLFormElement>('[data-refl-form]')!;
+ const transferFieldset=document.querySelector<HTMLFieldSetElement>('[data-transfer-fieldset]')!;
+ const nextEl=document.querySelector<HTMLElement>('[data-next]')!;
+ const nextText=document.querySelector<HTMLElement>('[data-next-text]')!;
+ const statusEl=document.querySelector<HTMLElement>('[data-status]')!;
+ const contextEl=document.querySelector<HTMLElement>('[data-context]')!;
+ const reentry=document.querySelector<HTMLElement>('[data-reentry]')!;
+ const reentryLink=document.querySelector<HTMLAnchorElement>('[data-reentry-link]')!;
+ const deleteBtn=document.querySelector<HTMLButtonElement>('[data-delete]')!;
+ const esc=(s:string)=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
+
+ const editId=params.get('id');
+ const state=browserCoachStatePort.read();
+ const existing=editId?state.reflections.find(r=>r.id===editId):undefined;
+
+ let workspaceSessionId=existing?.workspaceSessionId??params.get('ws')??undefined;
+ let canonicalSessionId=existing?.canonicalSessionId??params.get('sesiune')??undefined;
+ let problemId=existing?.problemId??params.get('problema')??undefined;
+ let exerciseIds=existing?.exerciseIds??[];
+
+ if(!existing && workspaceSessionId){
+  const ws=state.sessions.find(s=>s.id===workspaceSessionId);
+  if(ws){exerciseIds=ws.items.map(i=>i.ref.id);if(!problemId)problemId=ws.problemId;}
+ }
+ if(!existing && canonicalSessionId){
+  const cs=sessionsData.find(s=>s.id===canonicalSessionId);
+  if(cs && !exerciseIds.length)exerciseIds=cs.exerciseIds;
+ }
+ const problem=problemId?problems.find(p=>p.id===problemId):undefined;
+ const canonicalSession=canonicalSessionId?sessionsData.find(s=>s.id===canonicalSessionId):undefined;
+
+ function renderContext(){
+  const parts:string[]=[];
+  if(canonicalSession)parts.push(`<p class="refl-ctx-session"><strong>${esc(canonicalSession.title)}</strong> · ${canonicalSession.exerciseTitles.map(esc).join(' · ')}</p>`);
+  if(problem){
+   parts.push(`<p class="refl-ctx-problem"><strong>Problemă:</strong> ${esc(problem.title)}</p>`);
+   if(problem.cue)parts.push(`<blockquote class="refl-ctx-cue">„${esc(problem.cue)}”</blockquote>`);
+   if(problem.criteria.length)parts.push(`<p class="refl-ctx-criteria"><strong>Ce urmăreai:</strong> ${problem.criteria.map(esc).join(' · ')}</p>`);
+   if(problem.transferCheck)parts.push(`<p class="refl-ctx-transfer"><strong>Verificare de transfer:</strong> ${esc(problem.transferCheck)}</p>`);
+  }
+  contextEl.innerHTML=parts.length?parts.join(''):'<p class="refl-ctx-empty">Reflecție liberă, fără context canonic legat.</p>';
+  if(problem){
+   reentry.hidden=false;reentryLink.href=`/rezolva-pe-teren/${problem.slug}`;reentryLink.textContent='Vezi din nou comportamentul urmărit →';
+  } else if(exerciseIds.length){
+   reentry.hidden=false;reentryLink.href=`/gold-standard/exercitii/${exerciseIds[0]}`;reentryLink.textContent='Vezi din nou comportamentul urmărit →';
+  }
+ }
+ renderContext();
+
+ function selectedObserved():ObservedState|null{const el=form.querySelector<HTMLInputElement>('input[name=observed]:checked');return el?el.value as ObservedState:null;}
+ function selectedTransfer():TransferState{const el=form.querySelector<HTMLInputElement>('input[name=transfer]:checked');return el?el.value as TransferState:'transfer_unconfirmed';}
+ function syncTransferVisibility(){
+  const observed=selectedObserved();
+  const needsTransfer=observed==='partial'||observed==='consistent_in_task';
+  transferFieldset.hidden=!needsTransfer;
+  if(!needsTransfer)form.querySelectorAll<HTMLInputElement>('input[name=transfer]').forEach(el=>{el.checked=false});
+  updateNext();
+ }
+ function updateNext(){
+  const observed=selectedObserved();
+  if(!observed){nextEl.hidden=true;return}
+  nextText.textContent=computeNextAction(observed,selectedTransfer());
+  nextEl.hidden=false;
+ }
+ form.querySelectorAll<HTMLInputElement>('input[name=observed]').forEach(el=>el.addEventListener('change',syncTransferVisibility));
+ form.querySelectorAll<HTMLInputElement>('input[name=transfer]').forEach(el=>el.addEventListener('change',updateNext));
+
+ if(existing){
+  const observedInput=form.querySelector<HTMLInputElement>(`input[name=observed][value="${existing.observedState}"]`);
+  if(observedInput)observedInput.checked=true;
+  syncTransferVisibility();
+  const transferInput=form.querySelector<HTMLInputElement>(`input[name=transfer][value="${existing.transferState}"]`);
+  if(transferInput)transferInput.checked=true;
+  updateNext();
+  (form.elements.namedItem('whatWorked') as HTMLTextAreaElement).value=existing.whatWorked??'';
+  (form.elements.namedItem('whyItHappened') as HTMLTextAreaElement).value=existing.whyItHappened??'';
+  (form.elements.namedItem('whatToChange') as HTMLTextAreaElement).value=existing.whatToChange??'';
+  (form.elements.namedItem('coachNote') as HTMLTextAreaElement).value=existing.coachNote??'';
+  deleteBtn.hidden=false;
+ }
+
+ deleteBtn.addEventListener('click',()=>{
+  if(!editId)return;
+  deleteReflection(editId);
+  location.href='/spatiul-meu';
+ });
+
+ form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const observed=selectedObserved();
+  if(!observed){statusEl.textContent='Alege ce ai observat înainte de a salva.';return}
+  const f=new FormData(form);
+  const saved=saveReflection({
+   id:editId??undefined,workspaceSessionId,canonicalSessionId,problemId,exerciseIds,
+   observedState:observed,transferState:selectedTransfer(),
+   whatWorked:String(f.get('whatWorked')||'')||undefined,
+   whyItHappened:String(f.get('whyItHappened')||'')||undefined,
+   whatToChange:String(f.get('whatToChange')||'')||undefined,
+   coachNote:String(f.get('coachNote')||'')||undefined
+  });
+  statusEl.textContent='Reflecția a fost salvată în acest browser.';
+  deleteBtn.hidden=false;
+  history.replaceState({},'',`?id=${encodeURIComponent(saved.id)}`);
+ });
+</script>
+<style>
+ .reflection{max-width:640px;margin:0 auto;padding:clamp(2rem,5vw,4rem) var(--space-6) 4rem}
+ .refl-head{margin-bottom:1.5rem}.eyebrow{font-size:.75rem;font-weight:850;letter-spacing:.06em;color:var(--color-text-accent);text-transform:uppercase}
+ .refl-context{margin-top:1rem;padding:1.25rem;background:#f4f4f1;border-left:4px solid var(--color-brand-gold)}
+ .refl-context p{margin:.4rem 0}.refl-ctx-cue{margin:.5rem 0;font-weight:750;font-style:italic}
+ .refl-ctx-empty{color:var(--color-text-muted)}
+ fieldset{border:1px solid var(--color-border);border-radius:8px;padding:1rem;margin:1rem 0}
+ legend{font-weight:850;padding:0 .4rem}
+ fieldset label{min-height:44px;display:flex;align-items:center;gap:.5rem}
+ .refl-next{padding:1rem;background:#edf3f0;border-left:4px solid #17774b;margin:1rem 0}
+ .refl-more{margin:1rem 0}.refl-more label{display:block;font-weight:750;margin:.6rem 0 .2rem}
+ textarea{width:100%;padding:.5rem;font:inherit;margin-top:.25rem}
+ .refl-privacy{font-size:.8rem;color:var(--color-text-muted)}
+ .refl-actions{display:flex;gap:.75rem;margin-top:1rem}
+ .save,.refl-actions button{min-height:48px;padding:0 1.2rem;font-weight:850}
+ .save{background:var(--color-bg-brand);color:#fff;border:0}
+ [data-delete]{background:#fff;border:1px solid var(--color-border)}
+ .refl-reentry{margin-top:1rem}.refl-back{display:inline-block;margin-top:1.5rem;color:var(--color-text-accent)}
+</style>

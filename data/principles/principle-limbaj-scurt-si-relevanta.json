@@ -1,0 +1,37 @@
+{
+  "id": "principle.limbaj-scurt-si-relevanta",
+  "slug": "limbaj-scurt-si-relevanta",
+  "category_id": "cat.comunicare",
+  "evidence_claim_ids": ["CLM-0053", "CLM-0065", "CLM-0066", "CLM-0067", "CLM-0068"],
+  "title": "Limbaj scurt și informație relevantă",
+  "professional_definition": "Antrenorul comprimă mesajul vorbit la o singură idee, cu reper extern (efectul dorit, nu mecanica mișcării), livrată înainte sau după acțiune, nu în timp ce copilul execută.",
+  "child_message": "Împinge mingea unde nu e adversar.",
+  "coach_meaning": "Reper extern, orientat spre rezultatul dorit, nu spre mecanica mișcării copilului.",
+  "why_this_message": "Cinci cuvinte, un singur verb de acțiune, fără jargon tactic și fără referire la mecanica mișcării — tiparul pe care cercetarea îl asociază cu învățare mai bună la această vârstă.",
+  "problem_being_solved": "Copilul primește mingea și se blochează, așteptând o instrucțiune completă sau reproducând ultima explicație lungă a antrenorului, în loc să citească spațiul din fața lui.",
+  "information_children_must_notice": ["poziția adversarului cel mai apropiat", "spațiul liber din jur"],
+  "decision_children_must_learn": "Să aleagă direcția mingii după spațiul liber observat, nu după o instrucțiune memorată dinainte.",
+  "observable_behaviours": ["copilul acționează fără să aștepte confirmarea antrenorului", "direcția aleasă variază cu poziția reală a adversarului, nu e mereu aceeași"],
+  "rationales": {
+    "tactical": "Păstrează inițiativa la copil, nu la instrucțiunea antrenorului.",
+    "perceptual": "Îndreaptă atenția spre minge și spațiu, nu spre propriul corp.",
+    "decisional": "Alegerea rămâne la copil, în funcție de ce vede, nu de o comandă.",
+    "cognitive": "O singură idee, ușor de reținut și de acționat imediat, nu o listă.",
+    "psychological": "Copilul poate încerca și greși fără să fi „uitat” o instrucțiune complicată.",
+    "technical": "Direcția și greutatea acțiunii se evaluează în raport cu spațiul citit, nu cu o mecanică impusă.",
+    "social": "Un reper scurt lasă loc jocului să continue, nu unui monolog care oprește toată echipa."
+  },
+  "age_appropriateness": "La 10–11 ani (grupele 2015 și 2016 tratate unitar), capacitatea de procesare verbală este măsurabil sub cea a unui adult și încă în dezvoltare; reperul scurt și extern respectă acest fapt fără un prag exact de cuvinte sau secunde.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "De ce nu te uiți în jur când primești mingea și nu vezi că Andrei era liber în stânga ta?",
+      "reason": "Acuză mascată într-o întrebare lungă, livrată probabil chiar în timp ce copilul mai e concentrat pe fază."
+    }
+  ],
+  "possible_misinterpretations": ["Copilul poate crede că trebuie să driblească mereu înainte, chiar și când pasa e opțiunea mai bună."],
+  "task_risks": ["Reperul repetat mecanic, fără variație de context, poate deveni zgomot de fond în loc de informație utilă."],
+  "understanding_check": ["copilul poate răspunde scurt unde era spațiul liber"],
+  "response_if_not_understood": ["verifică dacă instrucțiunea a fost dată în timp ce copilul executa și mut-o înainte sau după fază"],
+  "match_transfer": "În 7v7, copilul alege direcția mingii fără o instrucțiune verbală imediată a antrenorului, în faze diferite de cea exersată.",
+  "sources": ["SRC-0052", "SRC-0064", "SRC-0065", "SRC-0066", "SRC-0067"]
+}

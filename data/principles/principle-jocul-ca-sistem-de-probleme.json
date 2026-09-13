@@ -1,0 +1,36 @@
+{
+  "id": "principle.jocul-ca-sistem-de-probleme",
+  "slug": "jocul-ca-sistem-de-probleme",
+  "category_id": "cat.perceptie-decizie",
+  "evidence_claim_ids": ["CLM-0030", "CLM-0038", "CLM-0039"],
+  "title": "Problema de joc înaintea traseului",
+  "professional_definition": "Antrenorul proiectează o tensiune între obiectiv și opoziție, păstrează informația, minimum două opțiuni și consecința, apoi observă cum copilul găsește o soluție schimbabilă.",
+  "child_message": "Unde nu poate apăra același adversar? Arată-mi în joc.",
+  "coach_meaning": "Copilul compară căile de progresie folosind orientarea adversarului, spațiul, colegii și ținta; antrenorul nu prescrie partea ori pasa.",
+  "why_this_message": "Întrebarea indică limita observabilă a apărătorului și cere o demonstrație imediată, păstrând alegerea la copil.",
+  "problem_being_solved": "Sarcinile coregrafiate și comenzile de soluție pot produce execuții corecte fără recunoașterea problemei tactice.",
+  "information_children_must_notice": ["orientarea și distanța adversarului", "poziția colegilor", "spațiul disponibil", "direcția și ținta"],
+  "decision_children_must_learn": "Să aleagă o cale de progresie compatibilă cu ceea ce adversarul poate și nu poate proteja în acel moment.",
+  "observable_behaviours": ["caută cel puțin două căi înaintea acțiunii", "schimbă unghiul când adversarul închide prima opțiune", "alege fără comandă laterală", "adaptează soluția când repornirea se schimbă"],
+  "rationales": {
+    "tactical": "Alegerea rezolvă relația dintre progresie și protecția adversarului.",
+    "perceptual": "Copilul caută informație funcțională din adversar, spațiu, colegi și țintă.",
+    "decisional": "Minimum două opțiuni împiedică reducerea sarcinii la execuția unei comenzi.",
+    "cognitive": "Întrebarea comprimă problema într-o comparație concretă și verificabilă.",
+    "psychological": "Soluția poate fi revizuită fără etichetarea copilului după rezultat.",
+    "technical": "Orientarea, momentul și greutatea acțiunii sunt evaluate în raport cu intenția.",
+    "social": "Colegii oferă soluții și continuă jocul fără reproș după pierdere."
+  },
+  "age_appropriateness": "La 10–11 ani, problema este arătată în joc și redusă la un singur reper, fără terminologie abstractă ori două curricule după anul nașterii.",
+  "phrases_to_avoid": [
+    {"phrase": "Joacă obligatoriu în dreapta.", "reason": "Prescrie soluția înainte ca informația să fie citită."},
+    {"phrase": "Fă triunghi.", "reason": "Numește forma fără funcție, distanță sau relație cu adversarul."},
+    {"phrase": "Două atingeri, ca să gândești repede.", "reason": "Poate grăbi execuția fără să facă problema perceptibilă."}
+  ],
+  "possible_misinterpretations": ["Antrenorul confundă orice joc redus cu o sarcină reprezentativă.", "Alegerea liberă este confundată cu lipsa obiectivului.", "Tehnica este ignorată în loc să fie legată de intenție."],
+  "task_risks": ["Terenul prea mic poate produce contacte repetate și ascunde informația.", "Opoziția prea pasivă elimină problema și creează succes artificial.", "Observarea unui singur copil nu trebuie să reducă supravegherea întregului joc."],
+  "understanding_check": ["copilul poate arăta două căi înaintea repornirii", "soluția se schimbă când adversarul își schimbă orientarea", "comportamentul reapare fără comanda antrenorului"],
+  "response_if_not_understood": ["compară două poziții reale ale adversarului", "mărește o singură dimensiune cu 2–3 m", "întârzie presiunea la o repornire și revino apoi la joc normal"],
+  "match_transfer": "Într-un joc liber sau meci, jucătorul recunoaște relația adversar–spațiu într-o configurație diferită și alege o soluție adecvată fără a reproduce aceeași pasă.",
+  "sources": ["SRC-0029", "SRC-0037", "SRC-0038"]
+}

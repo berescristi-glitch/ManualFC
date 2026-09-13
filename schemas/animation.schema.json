@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/animation.schema.json",
+  "type": "object",
+  "required": ["id", "subject_id", "storyboard_id", "pdf_frame_ids", "states"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "id": {"type": "string", "pattern": "^ANI-[0-9]{4,}$"},
+    "subject_id": {"type": "string"},
+    "storyboard_id": {"type": "string", "pattern": "^DIA-[0-9]{4,}$"},
+    "pdf_frame_ids": {"type": "array", "minItems": 3, "maxItems": 8, "items": {"type": "string"}},
+    "states": {"type": "array", "minItems": 2, "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}

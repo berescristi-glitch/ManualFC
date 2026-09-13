@@ -1,0 +1,67 @@
+---
+interface Props {
+  mode: 'A' | 'B';
+  title: string;
+  description: string;
+  ctaText: string;
+  ctaHref: string;
+}
+
+const { mode, title, description, ctaText, ctaHref } = Astro.props;
+const isModeA = mode === 'A';
+---
+<div class={`mode-card ${isModeA ? 'mode-a' : 'mode-b'}`}>
+  <span class="mode-tag">{isModeA ? 'ÎNVAȚĂ — Construiește-ți judecata' : 'TEREN — Rezolvă o situație'}</span>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a href={ctaHref} class={`btn ${isModeA ? 'btn-primary' : 'btn-secondary'}`}>{ctaText} &rarr;</a>
+</div>
+
+<style>
+  .mode-card {
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+  }
+  .mode-a { border-top: 4px solid var(--color-role-possession); }
+  .mode-b { border-top: 4px solid var(--color-role-neutral); }
+  .mode-tag {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-text-accent);
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+  }
+  .mode-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-3);
+  }
+  .mode-card p {
+    flex: 1;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color var(--transition-fast);
+  }
+  .btn-primary {
+    background-color: var(--color-role-possession);
+    color: var(--color-text-on-dark);
+  }
+  .btn-primary:hover { background-color: #1E88E5; }
+  .btn-secondary {
+    background-color: var(--color-bg-surface-hover);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+  }
+  .btn-secondary:hover { background-color: var(--color-border); }
+</style>

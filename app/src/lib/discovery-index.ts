@@ -1,0 +1,24 @@
+import { getAllPrinciples, getCanonicalProductionContent, getGoldStandardAssessment, getGoldStandardExercises, getGoldStandardSessions } from './content-bridge';
+import { getProblems } from './problem-library';
+
+export type DiscoveryType='PROBLEMĂ'|'PRINCIPIU'|'EXERCIȚIU'|'ȘEDINȚĂ'|'EVALUARE'|'CAPITOL';
+export interface DiscoveryItem { id:string; type:DiscoveryType; title:string; summary:string; href:string; searchText:string; gameMoment:string; playersMin?:number; playersMax?:number; minutes?:number; evidence:string; media:boolean; }
+const norm=(value:string)=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+
+export function getDiscoveryIndex():DiscoveryItem[]{
+  const problems=getProblems().map(p=>({id:p.problem_id,type:'PROBLEMĂ' as const,title:p.human_title,summary:p.observable_behavior,href:`/rezolva-pe-teren/${p.slug}`,searchText:norm([p.human_title,p.slug,p.observable_behavior,p.what_is_seen,p.problem_id==='PRB-0003'?'scanare scanează privire peste umăr':'',...p.possible_explanations.map(x=>x.text),...p.child_cues.map(x=>x.say)].join(' ')),gameMoment:p.family,evidence:p.research_state,media:p.flagship}));
+  const principles=getCanonicalProductionContent(getAllPrinciples()).map(p=>({id:p.id,type:'PRINCIPIU' as const,title:p.title,summary:p.summary,href:`/principii/${p.slug}`,searchText:norm(`${p.title} ${p.summary} ${p.target_behavior} ${p.child_wording}`),gameMoment:'PEDAGOGIE_TACTICĂ',evidence:'EVIDENCE_LINKED',media:Boolean(p.tactical_visual_hooks)}));
+  const exercises=getGoldStandardExercises().map(e=>({id:e.id,type:'EXERCIȚIU' as const,title:e.title,summary:e.primary_objective,href:`/gold-standard/exercitii/${e.id}`,searchText:norm(`${e.title} ${e.primary_objective} ${e.problem_being_solved} ${e.observable_behaviours.join(' ')} ${e.child_message}`),gameMoment:e.game_moment,playersMin:8,playersMax:18,minutes:Number((e.duration as any).total_minutes||0),evidence:'CANONICAL',media:e.visual_assets.static_svg!=='unavailable'}));
+  const sessions=getGoldStandardSessions().map(s=>({id:s.id,type:'ȘEDINȚĂ' as const,title:s.title,summary:s.primary_objective,href:`/gold-standard/sedinte/${s.id}`,searchText:norm(`${s.title} ${s.primary_objective} ${s.observable_behaviours.join(' ')} ${s.match_theme}`),gameMoment:'SESIUNE_COMPLETĂ',playersMin:Number((s.players_range as any).min||8),playersMax:Number((s.players_range as any).max||18),minutes:s.duration_min,evidence:'CANONICAL',media:true}));
+  const a=getGoldStandardAssessment(); const assessment=[{id:a.id,type:'EVALUARE' as const,title:a.title,summary:a.criteria.map(c=>c.observable_behaviour).join(' · '),href:`/gold-standard/evaluare/${a.id}`,searchText:norm(`${a.title} ${a.criteria.map(c=>c.observable_behaviour).join(' ')}`),gameMoment:'OBSERVAȚIE',evidence:'CANONICAL',media:false}];
+  const chapters=[
+    {id:'VOLUME-01',title:'Copilul U11 și dezvoltarea lui',summary:'Maturizare, variație individuală, adaptare și evaluare fără etichete.',href:'/volum/01',terms:'copil dezvoltare maturizare adaptare evaluare'},
+    {id:'VOLUME-02',title:'Jocul ca sistem de probleme',summary:'Spațiu, sprijin, progresie, apărare și tranziții.',href:'/volum/02',terms:'spatiu sprijin progresie presiune acoperire tranzitie superioritate'},
+    {id:'VOLUME-03',title:'Antrenorul ca pedagog',summary:'Limbaj, întrebări, siguranță emoțională, disciplină și echitate.',href:'/volum/03',terms:'limbaj intrebari siguranta disciplina comunicare echitate'},
+    {id:'VOLUME-04',title:'Proiectarea și observarea antrenamentului',summary:'Sarcini reprezentative, constrângeri, progresie, organizare și transfer.',href:'/volum/04',terms:'sarcina constrangeri observatie interventie organizare reflectie transfer'}
+  ].map(c=>({...c,type:'CAPITOL' as const,searchText:norm(`${c.title} ${c.summary} ${c.terms}`),gameMoment:'STUDIU',evidence:'EVIDENCE_LINKED',media:false}));
+  return [...problems,...principles,...exercises,...sessions,...assessment,...chapters];
+}
+
+export function scoreDiscovery(item:DiscoveryItem,query:string){const q=norm(query).trim();if(!q)return 1;const terms=q.split(/\s+/);let score=0;for(const term of terms){if(norm(item.title).includes(term))score+=5;if(norm(item.summary).includes(term))score+=3;if(item.searchText.includes(term))score+=1}return score;}
+export function explainDiscovery(item:DiscoveryItem,query:string){const q=norm(query);if(q&&norm(item.title).includes(q))return 'Potrivire în titlu';if(q&&norm(item.summary).includes(q))return 'Potrivire în obiectiv sau observație';return q?'Potrivire în conținutul canonic':'Conținut canonic disponibil';}

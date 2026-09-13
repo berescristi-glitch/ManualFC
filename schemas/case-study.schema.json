@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/case-study.schema.json",
+  "type": "object",
+  "required": ["id", "slug", "title", "scenario_type", "principle_ids", "exercise_ids", "script_ids", "analysis"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "id": {"type": "string", "pattern": "^CASE-[0-9]{4,}$"},
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "title": {"type": "string", "minLength": 3},
+    "scenario_type": {"const": "didactic"},
+    "principle_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "exercise_ids": {"type": "array", "items": {"type": "string"}},
+    "script_ids": {"type": "array", "items": {"type": "string"}},
+    "analysis": {"type": "string", "minLength": 40}
+  },
+  "additionalProperties": false
+}

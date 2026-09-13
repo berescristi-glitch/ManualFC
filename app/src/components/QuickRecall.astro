@@ -1,0 +1,14 @@
+---
+// Stiluri centralizate în app/src/styles/educational-page.css (vezi acel fișier pentru motiv).
+import RevealPrompt from './RevealPrompt.astro';
+interface Item { prompt: string; answer: string }
+interface Props { items: Item[] }
+const { items } = Astro.props;
+---
+<section class="quick-recall" id="recall-rapid" aria-label="Recall rapid">
+  <h2>Recall rapid</h2>
+  <p class="intro">Pentru revenire ulterioară: încearcă să răspunzi înainte de a extinde.</p>
+  {items.map(item => (
+    <RevealPrompt prompt={item.prompt}>{item.answer}</RevealPrompt>
+  ))}
+</section>

@@ -1,0 +1,36 @@
+{
+  "id": "principle.mesaj-pedagogic-observabil",
+  "slug": "mesaj-pedagogic-observabil",
+  "category_id": "cat.comunicare",
+  "evidence_claim_ids": ["CLM-0032", "CLM-0033", "CLM-0034", "CLM-0035"],
+  "title": "Mesaj scurt, reper clar, alegere la copil",
+  "professional_definition": "Antrenorul comprimă analiza într-un singur reper observabil și păstrează decizia la copil, apoi verifică efectul în următoarea acțiune.",
+  "child_message": "Privește umărul adversarului și alege din nou.",
+  "coach_meaning": "Reperul extern direcționează căutarea informației fără a dicta pasa, driblingul sau conducerea.",
+  "why_this_message": "Conține o acțiune perceptivă concretă și o invitație la alegere, fără etichetă sau explicație abstractă.",
+  "problem_being_solved": "Mesajele vagi, lauda goală și comenzile de soluție nu îi arată copilului ce informație poate folosi autonom.",
+  "information_children_must_notice": ["orientarea adversarului", "linia de pasă disponibilă", "spațiul liber", "mișcarea colegului"],
+  "decision_children_must_learn": "Să compare opțiunile după informația observată și să aleagă fără comanda soluției de pe margine.",
+  "observable_behaviours": ["copilul caută reperul înaintea acțiunii", "poate numi două opțiuni", "alege fără comandă", "comportamentul reapare în joc liber"],
+  "rationales": {
+    "tactical": "Mesajul leagă alegerea de relația reală adversar–spațiu–coechipier.",
+    "perceptual": "Numește o informație pe care copilul o poate căuta imediat.",
+    "decisional": "Nu predetermină soluția și păstrează alegerea la jucător.",
+    "cognitive": "Reduce intervenția la o singură unitate acționabilă.",
+    "psychological": "Evită judecata globală despre încredere sau motivație.",
+    "technical": "Permite execuției să fie aleasă în funcție de presiunea observată.",
+    "social": "Tonul descriptiv păstrează demnitatea și cooperarea în grup."
+  },
+  "age_appropriateness": "Copiii de 10–11 ani primesc un reper concret și o nouă experiență, nu o explicație lungă în timpul jocului.",
+  "phrases_to_avoid": [
+    {"phrase": "Fii atent!", "reason": "Nu precizează informația relevantă."},
+    {"phrase": "Pasează!", "reason": "Mută alegerea de la copil la antrenor."},
+    {"phrase": "Nu ai încredere.", "reason": "Transformă un comportament într-o concluzie psihologică neverificată."}
+  ],
+  "possible_misinterpretations": ["Copilul poate privi reperul fără să îl folosească în alegere.", "Antrenorul poate transforma întrebarea într-un test cu un singur răspuns acceptat."],
+  "task_risks": ["Prea multe repere simultane blochează reluarea jocului.", "Autonomia nu înlocuiește intervenția directă pentru siguranță."],
+  "understanding_check": ["Arată-mi unde vei privi.", "Ce două opțiuni ai dacă adversarul închide linia?"],
+  "response_if_not_understood": ["Oferă două opțiuni concrete.", "Demonstrează fără discurs și reia.", "Modifică sarcina pentru a face reperul vizibil."],
+  "match_transfer": "În joc liber, copilul caută reperul și alege fără comandă; antrenorul notează apariția independentă.",
+  "sources": ["SRC-0031", "SRC-0032", "SRC-0033", "SRC-0034"]
+}

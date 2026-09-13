@@ -1,0 +1,17 @@
+---
+// Extins (P8): marchează secțiunea curentă prin scroll-spy — un TOC fără acest marcaj
+// e "decor inert" (constatare empirică directă, vezi LEARNING_UX_EVIDENCE_MATRIX.md #11).
+// Logica de scroll-spy și stilurile sunt centralizate în app/src/lib/educational-page.ts
+// și app/src/styles/educational-page.css (încărcate global din BaseLayout.astro) — vezi
+// acele fișiere pentru motivul (script/style hoisting nu funcționează pentru componente
+// folosite din MDX în content/, care e în afara srcDir).
+interface Item { href: string; label: string }
+interface Props { items: Item[]; label?: string; sticky?: boolean }
+const { items, label = 'Pe această pagină', sticky = false } = Astro.props;
+---
+<section-navigator class:list={['section-nav-wrap', { sticky }]}>
+  <nav class="section-nav" aria-label={label}>
+    <span>{label}</span>
+    <ul>{items.map(item => <li><a href={item.href} data-section-link>{item.label}</a></li>)}</ul>
+  </nav>
+</section-navigator>

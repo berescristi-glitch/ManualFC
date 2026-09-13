@@ -1,0 +1,20 @@
+---
+interface Props {
+  width?: 'prose' | 'standard' | 'wide';
+}
+
+const { width = 'standard' } = Astro.props;
+---
+<div class={`content-container container-${width}`}>
+  <slot />
+</div>
+
+<style>
+  .content-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container-prose { max-width: var(--width-prose); }
+  .container-standard { max-width: var(--width-standard); }
+  .container-wide { max-width: var(--width-wide); }
+</style>

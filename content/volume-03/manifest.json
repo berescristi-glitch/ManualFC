@@ -1,0 +1,24 @@
+{
+  "volume_id": "VOLUME-03",
+  "title": "Comunicarea antrenorului, psihologia aplicată și climatul de învățare la 10–11 ani",
+  "version": "1.0.0",
+  "status": "FIELD_REVIEW_READY",
+  "approved_at": "2026-08-11",
+  "forensic_audit": "reports/audits/POST_TASK0608_FORENSIC_AUDIT.md",
+  "remediation_task": "reports/task-reports/TASK-0709.md",
+  "independent_audit": "reports/audits/volume-03-forensic-remediation-audit.md",
+  "forensic_note": "5 din 6 capitole (toate cu excepția CH-0306) se bazau pe surse fabricate sau nepotrivite, verificate independent 2026-08-11. Aprobarea TASK-0708 a fost anulată. TASK-0709 a remediat toate cele 6 capitole (5 prin re-cercetare, CH-0306 prin verificare semantică). Un audit independent separat (TASK-0710, executat fără nicio implicare în scrierea remedierii) a re-verificat bibliografic 21 din 22 surse noi și a recitit integral toate capitolele, emițând verdict PASS_FIELD_REVIEW_READY cu doar 4 constatări minore cosmetice.",
+  "chapters": [
+    "CH-0301",
+    "CH-0302",
+    "CH-0303",
+    "CH-0304",
+    "CH-0305",
+    "CH-0306",
+    "CH-0307",
+    "CH-0308",
+    "CH-0309",
+    "CH-0310"
+  ],
+  "field_review_package": "docs/field-review/VOLUME_03_FIELD_REVIEW_PACKAGE.md"
+}

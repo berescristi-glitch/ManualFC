@@ -1,0 +1,89 @@
+/* Visual Tokens Mapping — ManualFC (Sursa canonică: config/visual-tokens.json) */
+:root {
+  /* Tactical Visual Roles (din config/visual-tokens.json -> roles) */
+  --color-role-possession: #1769AA;
+  --color-role-opponent: #C62828;
+  --color-role-neutral: #F9A825;
+  --color-role-goalkeeper: #2E7D32;
+  --color-role-coach: #FFFFFF;
+  --color-role-coach-outline: #111111;
+
+  /* Surfaces & Neutral Tones (din config/visual-tokens.json -> semantic_colors) */
+  --color-bg-main: #F7F7F2;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-surface-muted: #E9EBE7;
+  --color-bg-brand: #010916;
+  --color-bg-brand-secondary: #1B263B;
+  --color-border: #CED2D5;
+  --color-border-strong: #8D99AE;
+  --color-border-accent: #F4C430;
+
+  /* Typography Colors */
+  --color-text-primary: #0D1B2A;
+  --color-text-secondary: #334155;
+  --color-text-muted: #667085;
+  --color-text-accent: #765800;
+  --color-text-on-dark: #FFFFFF;
+  --color-brand-gold: #F4C430;
+  --color-steel: #8D99AE;
+
+  /* Brand logo sizing (single source of truth — see app/src/components/ManualFCLogo.astro) */
+  --brand-logo-header-height: 36px;
+  --brand-logo-mobile-height: 30px;
+  --brand-logo-footer-width: 180px;
+
+  /* Semantics & Callout Colors */
+  --color-success: #2E7D32;
+  --color-warning: #F9A825;
+  --color-danger: #C62828;
+  --color-evidence: #8B5CF6;
+  --color-pedagogical: #0EA5E9;
+  --color-psychology: #EC4899;
+  --color-tactical: #10B981;
+
+  /* Typography Scale */
+  --font-family-base: "Aptos", "Segoe UI", Arial, sans-serif;
+  --font-family-heading: "Arial Narrow", "Aptos Display", "Segoe UI", Arial, sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-display: clamp(3.25rem, 7.5vw, 7.25rem);
+  --font-size-page: clamp(2.75rem, 6vw, 5.75rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Radii & Shadows */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+
+  /* Layout Widths (din config/visual-tokens.json -> layout_widths) */
+  --width-prose: 68ch;
+  --width-standard: 900px;
+  --width-wide: 1200px;
+
+  /* Accessibility & Motion */
+  --focus-ring-color: #F4C430;
+  --focus-ring-width: 3px;
+  --transition-fast: 0.15s ease-in-out;
+}

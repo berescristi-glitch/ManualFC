@@ -1,0 +1,383 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Exercise",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "age_category",
+    "level",
+    "theme",
+    "game_moment",
+    "primary_objective",
+    "observable_behaviours",
+    "players",
+    "numerical_relation",
+    "equipment",
+    "equipment_items",
+    "field",
+    "duration",
+    "rules",
+    "step_by_step",
+    "rotation",
+    "transition",
+    "child_message",
+    "why_this_message",
+    "problem_being_solved",
+    "information_children_must_notice",
+    "decision_children_must_learn",
+    "rationales",
+    "age_appropriateness",
+    "possible_misinterpretations",
+    "task_risks",
+    "phrases_to_avoid",
+    "understanding_check",
+    "response_if_not_understood",
+    "dimension_rationale",
+    "too_small_signs",
+    "too_large_signs",
+    "regression",
+    "progression",
+    "coach_questions",
+    "coach_feedback",
+    "common_errors",
+    "success_criteria",
+    "match_transfer",
+    "visual_assets",
+    "sources"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "age_category": {
+      "const": "10–11 ani, grupe 2015 și 2016 tratate împreună"
+    },
+    "level": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "string"
+    },
+    "game_moment": {
+      "type": "string"
+    },
+    "primary_objective": {
+      "type": "string"
+    },
+    "observable_behaviours": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "players": {
+      "type": "object"
+    },
+    "numerical_relation": {
+      "type": "string"
+    },
+    "equipment": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "equipment_items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["item", "quantity"],
+        "properties": {
+          "item": {"type": "string", "minLength": 1},
+          "quantity": {"type": "number", "exclusiveMinimum": 0},
+          "quantity_max": {"type": "number", "exclusiveMinimum": 0}
+        },
+        "additionalProperties": false
+      }
+    },
+    "field": {
+      "type": "object",
+      "required": [
+        "length_m",
+        "width_m",
+        "safety_margin_m"
+      ],
+      "properties": {
+        "length_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "width_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "safety_margin_m": {
+          "type": "number",
+          "minimum": 0
+        },
+        "zones": {
+          "type": "array"
+        },
+        "goals": {
+          "type": "array"
+        }
+      }
+    },
+    "duration": {
+      "type": "object"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "step_by_step": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rotation": {
+      "type": "string"
+    },
+    "transition": {
+      "type": "string"
+    },
+    "child_message": {
+      "type": "string"
+    },
+    "why_this_message": {
+      "type": "string"
+    },
+    "problem_being_solved": {
+      "type": "string"
+    },
+    "information_children_must_notice": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision_children_must_learn": {
+      "type": "string"
+    },
+    "rationales": {
+      "type": "object",
+      "required": [
+        "tactical",
+        "perceptual",
+        "decisional",
+        "cognitive",
+        "psychological",
+        "technical",
+        "social"
+      ],
+      "properties": {
+        "tactical": {
+          "type": "string"
+        },
+        "perceptual": {
+          "type": "string"
+        },
+        "decisional": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cognitive": {
+          "type": "string"
+        },
+        "psychological": {
+          "type": "string"
+        },
+        "technical": {
+          "type": "string"
+        },
+        "social": {
+          "type": "string"
+        }
+      }
+    },
+    "age_appropriateness": {
+      "type": "string"
+    },
+    "possible_misinterpretations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "task_risks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "phrases_to_avoid": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "understanding_check": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "response_if_not_understood": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dimension_rationale": {
+      "type": "string"
+    },
+    "too_small_signs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "too_large_signs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "regression": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "progression": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "coach_questions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "coach_feedback": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "common_errors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "success_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "match_transfer": {
+      "type": "string"
+    },
+    "visual_assets": {
+      "type": "object",
+      "required": [
+        "static_svg",
+        "animation_or_storyboard",
+        "pdf_frames"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gold_standard_v2": {
+      "type": "object",
+      "required": ["status", "version"],
+      "properties": {
+        "status": {"enum": ["V1", "V2"]},
+        "version": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "pedagogical_principle_ids": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "pedagog_competency_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^PED-C[0-9]{2}$"}
+    },
+    "coach_competency_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^COACH-C[0-9]{2}$"}
+    },
+    "related_pedagog_lesson_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^CH-01[0-9]{2}$"}
+    },
+    "related_coach_lesson_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^CH-0[34][0-9]{2}$"}
+    },
+    "child_action": {
+      "type": "string"
+    },
+    "coach_focus": {
+      "type": "string"
+    },
+    "do_not_assume": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "when_to_intervene": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "when_not_to_intervene": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "coach_common_errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["observation", "why_it_happens"],
+        "properties": {
+          "observation": {"type": "string", "minLength": 1},
+          "why_it_happens": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "coach_reflection": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "evidence_boundary": {
+      "type": "string"
+    },
+    "group_configuration_note": {
+      "type": "string"
+    },
+    "assessment_ref": {
+      "type": "string",
+      "pattern": "^ASM-[0-9]{4,}$"
+    }
+  },
+  "additionalProperties": false
+}

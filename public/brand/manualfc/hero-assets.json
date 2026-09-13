@@ -1,0 +1,67 @@
+{
+  "status": "DERIVED_FROM_APPROVED_MASTER",
+  "source": "manualfc-homepage-hero-v1.png",
+  "source_sha256": "8A58755F8ABA6F214DD3A953CB9F7395F979385F6E14FD94C5575E7364022552",
+  "source_dimensions": [
+    1672,
+    941
+  ],
+  "crops": [
+    {
+      "asset": "hero-scene-right-v1.png",
+      "coordinates": [
+        830,
+        115,
+        1672,
+        941
+      ],
+      "dimensions": [
+        842,
+        826
+      ],
+      "sha256": "A927190726FB78DF11F9DD4E6B4F477B66CD48576A3717313AE4081E08DC2D5C"
+    },
+    {
+      "asset": "hero-floodlight-v1.png",
+      "coordinates": [
+        0,
+        120,
+        140,
+        620
+      ],
+      "dimensions": [
+        140,
+        500
+      ],
+      "sha256": "99CDC660C64F4DFE28AF61B580ECFF1E4DEE5C8BF685D830D16F35C64032D40D"
+    },
+    {
+      "asset": "hero-field-strip-v1.png",
+      "coordinates": [
+        0,
+        730,
+        1672,
+        941
+      ],
+      "dimensions": [
+        1672,
+        211
+      ],
+      "sha256": "8F23F26074DC90EDA4FB79B4019F3C8EF4CC4D0788C0F6E06823CD00B858D1DC"
+    },
+    {
+      "asset": "hero-scene-mobile-v1.png",
+      "coordinates": [
+        890,
+        115,
+        1672,
+        941
+      ],
+      "dimensions": [
+        782,
+        826
+      ],
+      "sha256": "0C3E22FB891752308C6ED2677A9F7655DE732FFD742E9A2F5A3435C6FBFA4A35"
+    }
+  ]
+}

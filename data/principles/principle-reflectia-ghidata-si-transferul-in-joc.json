@@ -1,0 +1,37 @@
+{
+  "id": "principle.reflectia-ghidata-si-transferul-in-joc",
+  "slug": "reflectia-ghidata-si-transferul-in-joc",
+  "category_id": "cat.metodologie-surse",
+  "evidence_claim_ids": ["CLM-0099", "CLM-0100"],
+  "title": "Reflecția ghidată și transferul în joc",
+  "professional_definition": "Încheierea fiecărei ședințe de antrenament printr-o reflecție scurtă, cu întrebări deschise care leagă explicit exercițiul de meci, pentru a sprijini transferul învățării — fără o durată exactă validată de cercetare.",
+  "child_message": "Discutăm puțin la final despre ce am învățat și unde ne ajută în meci!",
+  "coach_meaning": "Fixarea conștientă a conexiunii dintre practica de antrenament și jocul oficial.",
+  "why_this_message": "Ajutarea copiilor să facă legătura dintre exercițiile pe teren și situațiile din meci.",
+  "problem_being_solved": "Copiii termină antrenamentul, își strâng lucrurile și pleacă fără să știe ce problemă tactică au învățat să rezolve.",
+  "information_children_must_notice": ["situația tactică exersată în antrenament", "corespondența ei din meciul real"],
+  "decision_children_must_learn": "Să identifice singuri momentele din meci în care se aplică soluția învățată.",
+  "observable_behaviours": ["răspunde activ la reflecție", "recunoaște situația în meciul de weekend"],
+  "rationales": {
+    "tactical": "Poate consolida înțelegerea conceptuală a principiilor tactice exersate.",
+    "perceptual": "Leagă indicatorii vizuali din antrenament de faza corespunzătoare din meci.",
+    "decisional": "Poate spori calitatea auto-evaluării deciziilor luate pe parcursul antrenamentului.",
+    "cognitive": "Poate favoriza integrarea cunoștințelor pe termen mai lung.",
+    "psychological": "Oferă sentimentul de încheiere cu succes și sens al fiecărui antrenament.",
+    "technical": "Conectează execuția tehnică la contextul tactic al jocului.",
+    "social": "Creează un spațiu de învățare colaborativă unde copiii învață din reflecțiile colegilor."
+  },
+  "age_appropriateness": "La 10–11 ani, o reflecție ghidată scurtă poate dezvolta gândirea autonomă fără a plictisi — fără ca «scurtă» să însemne un număr exact de minute validat de cercetare.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "V-am strâns ca să vă spun eu ce greșeli ați făcut toți și de ce nu ați ascultat!",
+      "reason": "Monolog critic post-joc care distruge valoarea reflexivă."
+    }
+  ],
+  "possible_misinterpretations": ["Reflecția înseamnă analiză lungă teoretică sau vestiar de 30 minute.", "Există o durată exactă (3–5 minute) validată de cercetare pentru debriefing."],
+  "task_risks": ["Adresarea unor întrebări închise care cer răspunsuri mecanice („Am jucat bine azi? Da!”)."],
+  "understanding_check": ["fiecare copil poate spune într-o propoziție ce a învățat azi pe teren"],
+  "response_if_not_understood": ["repunerea rapidă a unei faze cheie din antrenament printr-o demonstrație scurtă, fără o durată impusă"],
+  "match_transfer": "În meciul de weekend, jucătorii verbalizează și aplică autonom soluția discutată la reflecție.",
+  "sources": ["SRC-0104", "SRC-0105", "SRC-0106", "SRC-0107"]
+}

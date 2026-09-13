@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/message-foundation.schema.json",
+  "title": "Ce se află în spatele acestei sarcini?",
+  "type": "object",
+  "required": [
+    "id", "message_type", "child_wording", "coach_meaning", "why_this_wording",
+    "problem_being_solved", "information_to_notice", "interpretation", "decision_to_learn",
+    "observable_behaviours", "rationales", "age_appropriateness", "phrases_to_avoid",
+    "misinterpretation_risks", "task_risks", "understanding_check", "response_if_not_working", "match_transfer"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^MSG-[0-9]{4,}$"},
+    "message_type": {"enum": ["instruction", "task", "question", "rule", "constraint", "feedback", "correction", "non_intervention"]},
+    "child_wording": {"type": "string", "minLength": 1},
+    "coach_meaning": {"type": "string", "minLength": 1},
+    "why_this_wording": {"type": "string", "minLength": 1},
+    "problem_being_solved": {"type": "string", "minLength": 1},
+    "information_to_notice": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "interpretation": {"type": "string", "minLength": 1},
+    "decision_to_learn": {"type": "string", "minLength": 1},
+    "execution_support": {"type": ["string", "null"]},
+    "observable_behaviours": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"type": "string"}},
+    "rationales": {
+      "type": "object",
+      "required": ["tactical", "perceptual", "decisional", "cognitive", "psychological", "technical", "social"],
+      "properties": {
+        "tactical": {"type": "string", "minLength": 1},
+        "perceptual": {"type": "string", "minLength": 1},
+        "decisional": {"type": "string", "minLength": 1},
+        "cognitive": {"type": "string", "minLength": 1},
+        "psychological": {"type": "string", "minLength": 1},
+        "technical": {"type": "string", "minLength": 1},
+        "social": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "age_appropriateness": {"type": "string", "minLength": 1},
+    "phrases_to_avoid": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["phrase", "reason"],
+        "properties": {"phrase": {"type": "string"}, "reason": {"type": "string"}},
+        "additionalProperties": false
+      }
+    },
+    "misinterpretation_risks": {"type": "array", "items": {"type": "string"}},
+    "task_risks": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "understanding_check": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "response_if_not_working": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "match_transfer": {"type": "string", "minLength": 1},
+    "source_claim_ids": {"type": "array", "items": {"type": "string", "pattern": "^CLM-[0-9]{4,}$"}}
+  },
+  "additionalProperties": false
+}

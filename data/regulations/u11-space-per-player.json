@@ -1,0 +1,12 @@
+{
+  "reference_date": "2026-07-30",
+  "formula": "suprafață_totală_m2 = lungime_m × lățime_m; suprafață_per_jucător_m2 = suprafață_totală_m2 / (2 × players_on_field)",
+  "classification": "DESCRIPTIVE_CALCULATION_NOT_TRAINING_RECOMMENDATION",
+  "rows": [
+    {"rule_id": "RULE-0001", "area_m2": 800, "total_players_including_goalkeepers": 10, "area_per_player_m2": 80, "length_width_ratio": 2.0},
+    {"rule_id": "RULE-0002", "area_m2": 2400, "total_players_including_goalkeepers": 14, "area_per_player_m2": 171.43, "length_width_ratio": 1.5},
+    {"rule_id": "RULE-0004", "area_m2": 2400, "total_players_including_goalkeepers": 14, "area_per_player_m2": 171.43, "length_width_ratio": 1.5},
+    {"rule_id": "RULE-0006", "area_m2": 2400, "total_players_including_goalkeepers": 14, "area_per_player_m2": 171.43, "length_width_ratio": 1.5},
+    {"rule_id": "RULE-0008", "area_m2": 2400, "total_players_including_goalkeepers": 14, "area_per_player_m2": 171.43, "length_width_ratio": 1.5}
+  ]
+}

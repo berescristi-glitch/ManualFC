@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">Răspunsul antrenorului la dezvăluirea unui copil</title>
+  <desc id="desc">Flux în cinci pași: ascultă calm, explică limitele secretului, securizează, notează factual și raportează. Pericolul imediat merge la 112.</desc>
+  <rect width="960" height="360" fill="#fff"/>
+  <g font-family="Arial, sans-serif" fill="#111" stroke="#111" stroke-width="2">
+    <text x="30" y="35" font-size="22" font-weight="700" stroke="none">Dezvăluire — versiunea 1.0, 2026-07-30</text>
+    <g font-size="16">
+      <rect x="30" y="80" width="150" height="75" rx="8" fill="#fff"/><text x="50" y="112" stroke="none">1. Ascultă calm</text><text x="50" y="136" stroke="none">fără interogare</text>
+      <rect x="215" y="80" width="170" height="75" rx="8" fill="#fff"/><text x="232" y="112" stroke="none">2. Nu promite secret</text><text x="232" y="136" stroke="none">explică need-to-know</text>
+      <rect x="420" y="80" width="150" height="75" rx="8" fill="#fff"/><text x="445" y="112" stroke="none">3. Securizează</text><text x="445" y="136" stroke="none">fără confruntare</text>
+      <rect x="605" y="80" width="140" height="75" rx="8" fill="#fff"/><text x="630" y="112" stroke="none">4. Notează</text><text x="620" y="136" stroke="none">cuvinte și fapte</text>
+      <rect x="780" y="80" width="150" height="75" rx="8" fill="#fff"/><text x="802" y="112" stroke="none">5. Raportează</text><text x="798" y="136" stroke="none">fără întârziere</text>
+    </g>
+    <g fill="none"><path d="M180 118H215"/><path d="M385 118H420"/><path d="M570 118H605"/><path d="M745 118H780"/></g>
+    <g fill="#111"><path d="M215 118l-10-6v12z"/><path d="M420 118l-10-6v12z"/><path d="M605 118l-10-6v12z"/><path d="M780 118l-10-6v12z"/></g>
+    <polygon points="420,215 510,180 600,215 510,250" fill="#fff"/>
+    <text x="456" y="211" font-size="15" stroke="none">Pericol</text><text x="448" y="231" font-size="15" stroke="none">imediat?</text>
+    <path d="M510 250V295H655" fill="none"/><path d="M600 215H745V295" fill="none"/>
+    <rect x="655" y="270" width="120" height="50" fill="#fff"/><text x="689" y="301" font-size="18" stroke="none">112</text>
+    <rect x="300" y="270" width="230" height="50" fill="#fff"/><text x="325" y="301" font-size="16" stroke="none">119 / DGASPC / canal competent</text>
+    <text x="530" y="286" font-size="14" stroke="none">DA</text><text x="610" y="207" font-size="14" stroke="none">NU</text>
+  </g>
+  <text x="30" y="345" font-family="Arial, sans-serif" font-size="12">Surse: Legea 272/2004 art. 89; UEFA Child and Youth Protection Toolkit 2025. Diagramă originală.</text>
+</svg>

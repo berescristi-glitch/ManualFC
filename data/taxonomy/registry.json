@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "project": "manual-u11",
+  "description": "Registrul canonic al taxonomiei de conținut și arhitecturii de rute ManualFC",
+  "entity_classes": [
+    "PRIMARY_CONTENT_ENTITY",
+    "SUPPORTING_ENTITY",
+    "RESEARCH_ENTITY",
+    "VISUAL_ENTITY",
+    "SYSTEM_ENTITY"
+  ],
+  "categories": [
+    { "id": "cat.copilul-10-11", "label_ro": "Copilul de 10–11 ani", "slug": "copilul-10-11", "order": 1, "route_base": "/copilul-10-11" },
+    { "id": "cat.antrenorul-pedagog", "label_ro": "Antrenorul-pedagog", "slug": "antrenorul-pedagog", "order": 2, "route_base": "/antrenorul-pedagog" },
+    { "id": "cat.principii-joc", "label_ro": "Principii de joc", "slug": "principii-joc", "order": 3, "route_base": "/principii" },
+    { "id": "cat.perceptie-decizie", "label_ro": "Percepție și decizie", "slug": "perceptie-decizie", "order": 4, "route_base": "/perceptie-decizie" },
+    { "id": "cat.tehnica-context", "label_ro": "Tehnică în context", "slug": "tehnica-context", "order": 5, "route_base": "/tehnica-context" },
+    { "id": "cat.motricitate", "label_ro": "Motricitate & Dezvoltare Fizică", "slug": "motricitate", "order": 6, "route_base": "/motricitate" },
+    { "id": "cat.psihologie", "label_ro": "Psihologie & Emoție", "slug": "psihologie", "order": 7, "route_base": "/psihologie" },
+    { "id": "cat.comunicare", "label_ro": "Comunicare & Relaționare", "slug": "comunicare", "order": 8, "route_base": "/comunicare" },
+    { "id": "cat.exercitii", "label_ro": "Biblioteca de exerciții", "slug": "exercitii", "order": 9, "route_base": "/exercitii" },
+    { "id": "cat.sedinte", "label_ro": "Ședințe complete de antrenament", "slug": "sedinte", "order": 10, "route_base": "/sedinte" },
+    { "id": "cat.probleme-teren", "label_ro": "Probleme de rezolvat pe teren", "slug": "probleme-teren", "order": 11, "route_base": "/probleme" },
+    { "id": "cat.evaluare", "label_ro": "Evaluare & Progresie", "slug": "evaluare", "order": 12, "route_base": "/evaluare" },
+    { "id": "cat.safeguarding", "label_ro": "Protecția copilului & Safeguarding", "slug": "safeguarding", "order": 13, "route_base": "/safeguarding" },
+    { "id": "cat.parinti", "label_ro": "Relația cu părinții", "slug": "parinti", "order": 14, "route_base": "/parinti" },
+    { "id": "cat.resurse", "label_ro": "Resurse & Fișe descurcabile", "slug": "resurse", "order": 15, "route_base": "/resurse" },
+    { "id": "cat.metodologie-surse", "label_ro": "Metodologie & Surse de cercetare", "slug": "metodologie-surse", "order": 16, "route_base": "/surse" }
+  ],
+  "entity_contracts": {
+    "Principle": {
+      "entity_class": "PRIMARY_CONTENT_ENTITY",
+      "id_prefix": "principle.",
+      "route_base": "/principii",
+      "relations": [
+        { "target_entity": "Decision", "direction": "outgoing", "cardinality": "many-to-many", "required": false },
+        { "target_entity": "Exercise", "direction": "outgoing", "cardinality": "many-to-many", "required": false },
+        { "target_entity": "Claim", "direction": "outgoing", "cardinality": "many-to-many", "required": false }
+      ]
+    },
+    "Exercise": {
+      "entity_class": "PRIMARY_CONTENT_ENTITY",
+      "id_prefix": "exercise.",
+      "route_base": "/exercitii",
+      "relations": [
+        { "target_entity": "Principle", "direction": "incoming", "cardinality": "many-to-many", "required": false },
+        { "target_entity": "Problem", "direction": "incoming", "cardinality": "many-to-many", "required": false },
+        { "target_entity": "TacticalVisual", "direction": "outgoing", "cardinality": "one-to-many", "required": false }
+      ]
+    },
+    "Problem": {
+      "entity_class": "PRIMARY_CONTENT_ENTITY",
+      "id_prefix": "problem.",
+      "route_base": "/probleme",
+      "relations": [
+        { "target_entity": "Exercise", "direction": "outgoing", "cardinality": "many-to-many", "required": true },
+        { "target_entity": "Principle", "direction": "outgoing", "cardinality": "many-to-many", "required": false },
+        { "target_entity": "Claim", "direction": "outgoing", "cardinality": "many-to-many", "required": false }
+      ]
+    },
+    "CoachMessage": {
+      "entity_class": "SUPPORTING_ENTITY",
+      "id_prefix": "message.coach.",
+      "route_base": null,
+      "relations": [
+        { "target_entity": "ChildMessage", "direction": "outgoing", "cardinality": "one-to-one", "required": true }
+      ]
+    },
+    "ChildMessage": {
+      "entity_class": "SUPPORTING_ENTITY",
+      "id_prefix": "message.child.",
+      "route_base": null,
+      "relations": []
+    },
+    "TacticalVisual": {
+      "entity_class": "VISUAL_ENTITY",
+      "id_prefix": "diagram.",
+      "route_base": null,
+      "relations": []
+    }
+  }
+}

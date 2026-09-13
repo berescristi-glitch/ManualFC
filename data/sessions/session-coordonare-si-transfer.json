@@ -1,0 +1,206 @@
+{
+  "id": "SES-0002",
+  "title": "Sprijinul și unghiul de pasă — coordonare și transfer",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "duration_min": 75,
+  "primary_objective": "Consolidează decizia de bază printr-o reamintire scurtă, apoi introduce coordonarea între doi jucători de sprijin (EX-0004) și testează transferul într-un joc mic reprezentativ (EX-0005).",
+  "observable_behaviours": [
+    "cei doi jucători de sprijin ocupă zone diferite, fără să se grupeze",
+    "cel puțin un comportament exersat izolat apare autonom în jocul liber final"
+  ],
+  "players_range": {
+    "min": 8,
+    "max": 18,
+    "note": "EX-0004 cere grupuri de 5 (3v2); EX-0005 cere grupuri de 8 (4v4) — cele două exerciții au praguri de grup diferite, deci numărul de copii în așteptare diferă între segmente la același efectiv total. Vezi configuratorul de grup pentru numărul exact de grupe, spațiu și material la fiecare efectiv de la 8 la 18. Se ajustează numărul de grupuri paralele, nu formatul exercițiilor."
+  },
+  "operational_contingencies": [
+    {
+      "scenario": "3 copii ajung după ce ședința a început",
+      "guidance": "PRACTICE_HEURISTIC: la EX-0004, copiii întârziați intră la următoarea rotație de adversari (deja programată la 2-3 minute). La EX-0005, intră la pauza dintre cele două reprize, nu în mijlocul unei reprize — schimbarea de jucători în timpul fazei active ar întrerupe exact comportamentul de transfer pe care segmentul îl observă."
+    },
+    {
+      "scenario": "Terenul disponibil e mai mic decât dimensiunea canonică (18×14m pentru EX-0004, 30×20m pentru EX-0005)",
+      "guidance": "PRACTICE_HEURISTIC: pentru EX-0005 în special, un teren prea mic pentru 4v4 schimbă natura jocului reprezentativ mai mult decât la exercițiile izolate. Dacă spațiul complet de 30×20m nu e disponibil, redu numărul de terenuri paralele (mai mulți copii în așteptare între reprize) în loc să comprimi terenul unui singur joc sub pragul la care mișcarea 4v4 mai are sens."
+    },
+    {
+      "scenario": "Veste de marcaj sau porți insuficiente",
+      "guidance": "PRACTICE_HEURISTIC: fără veste suficiente pentru două culori, folosește convenția tricou-pe-umăr/tricou-normal pentru a distinge echipele — nu renunța la distincția vizuală, e necesară pentru observarea comportamentului de sprijin. Fără porți, conurile mari marchează porți mini (deja o variantă acceptată explicit în materialul canonic al EX-0005)."
+    },
+    {
+      "scenario": "Un exercițiu eșuează — niciun copil nu reușește nici cu regresia maximă",
+      "guidance": "PRACTICE_HEURISTIC: la EX-0004, revino temporar la EX-0001-EX-0003 (regresia documentată explicit a exercițiului) mai degrabă decât să repeți EX-0004 fără succes. La EX-0005, dacă transferul nu apare deloc, notează asta ca informație validă pentru evaluare (ASM-0001) — jocul liber final rămâne oricum planificat, nu se anulează sesiunea."
+    },
+    {
+      "scenario": "Tranziția de la EX-0004 (18×14m) la EX-0005 (30×20m) durează prea mult",
+      "guidance": "PRACTICE_HEURISTIC: dacă spațiul o permite, marchează dinainte conturul complet de 30×20m și folosește doar o parte din el pentru EX-0004, ca extinderea la EX-0005 să nu ceară remarcarea terenului. Dacă tranzițiile tot depășesc timpul alocat, scurtează întâi ultimele minute libere din segmentul de încheiere (55′-75′), niciodată timpul dedicat reflecției ghidate din același segment."
+    }
+  ],
+  "duration_variant_60min": {
+    "total_minutes": 60,
+    "policy_note": "Variantă de 60 minute — PRACTICE_HEURISTIC, o adaptare operațională, nu o durată validată de cercetare. Structura de 2 reprize la EX-0005 rămâne intactă (doar mai scurtă); reflecția finală păstrează bucla completă PROBLEMĂ→CONCEPT→EXERCIȚIU→TRANSFER.",
+    "segments": [
+      { "segment_index": 0, "start_min": 0, "end_min": 8, "reduction_note": "Redus cu 2 min: reamintirea rămâne verbală și scurtă ca în versiunea de 75 min; se renunță la timpul de așteptare pentru răspunsuri multiple, păstrând opțiunea de a insera o repetiție EX-0001 dacă e nevoie." },
+      { "segment_index": 1, "start_min": 8, "end_min": 24, "reduction_note": "Redus cu 4 min: mai puține seturi de 2-3 minute per grup — coordonarea între cei doi jucători de sprijin, obiectivul central, rămâne exersată cu opoziție activă completă." },
+      { "segment_index": 2, "start_min": 24, "end_min": 44, "reduction_note": "Redus cu 5 min, păstrând ambele reprize — tăierea unei reprize întregi ar elimina jumătate din oportunitatea de a observa transferul, obiectivul acestei ședințe; fereastra pentru transfer spontan e doar mai mică." },
+      { "segment_index": 3, "start_min": 44, "end_min": 60, "reduction_note": "Redus cu 4 min: bucla PROBLEMĂ→CONCEPT→EXERCIȚIU→TRANSFER rămâne completă în întrebările de reflecție; se renunță din timpul liber final pentru echipament, nu din reflecția ghidată." }
+    ]
+  },
+  "equipment": [
+    "conuri de delimitare pentru toate stațiile",
+    "mingi de rezervă",
+    "veste de marcaj pentru două culori de echipă",
+    "porți mici sau porți mari cu portar opțional pentru EX-0005"
+  ],
+  "surface_plan": {
+    "layout": "Stații de 18x14m pentru EX-0004 (3v2), teren de 30x20m pentru EX-0005 (4v4), amplasate cu spațiu de siguranță de minimum 3m.",
+    "rotation": "Rotație de adversari la fiecare 2-3 minute în EX-0004; la EX-0005, schimbare de echipe/porți la pauza dintre reprize."
+  },
+  "segments": [
+    {
+      "start_min": 0,
+      "end_min": 10,
+      "title": "Încălzire cu reamintire scurtă",
+      "exercise_ids": [],
+      "coach_message": "Cine își amintește ce am exersat data trecută cu unghiul de pasă?",
+      "why_now": "Rutină de siguranță (reutilizată din capitolul despre organizare și siguranță) combinată cu o reamintire scurtă, nu o reluare completă a EX-0001-EX-0003 — sesiunea anterioară a consolidat deja decizia de bază.",
+      "methodological_rationale": "Reamintirea scurtă, nu re-predarea, respectă timpul disponibil real al unei ședințe de club (instrucțiunea Gold Standard #43).",
+      "observation_focus": [
+        "participarea activă la reamintirea verbală, nu doar execuția fizică"
+      ],
+      "intervention_criteria": [
+        "dacă niciun copil nu-și amintește elementele de bază, se inserează o repetiție scurtă de EX-0001 înainte de a continua"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil răspunde parțial sau ezitant la reamintire, nu se corectează imediat — se lasă și alți copii să completeze răspunsul înainte de a interveni."
+      ],
+      "coach_focus": "Reamintire scurtă, nu re-predare completă — verifică participarea activă, nu doar execuția fizică.",
+      "verification_method": "Cel puțin un copil poate numi verbal elementul de bază exersat în SES-0001 înainte de a continua.",
+      "transition_logistics": "Formarea grupurilor de 5 pentru EX-0004."
+    },
+    {
+      "start_min": 10,
+      "end_min": 30,
+      "title": "EX-0004 — Sprijin cu doi coechipieri",
+      "exercise_ids": [
+        "EX-0004"
+      ],
+      "coach_message": "Dacă coechipierul tău e deja într-o zonă bună, găsește-ți propria zonă — nu vă adunați amândoi în același loc!",
+      "why_now": "Introduce complexitatea coordonării între doi jucători de sprijin abia după ce decizia individuală (SES-0001) e stabilă.",
+      "methodological_rationale": "Progresia 2v1→3v2 e justificată prin creșterea complexității informaționale (poziția celuilalt coechipier), nu doar prin numărul de jucători.",
+      "observation_focus": [
+        "diferențierea spațială a celor doi jucători de sprijin"
+      ],
+      "intervention_criteria": [
+        "oprire scurtă și întrebare ghidată doar la tipar repetat de grupare în aceeași zonă, nu la prima apariție (reutilizat din capitolul despre observare și criteriile de intervenție)"
+      ],
+      "non_intervention_criteria": [
+        "Prima apariție a grupării în aceeași zonă — se lasă comportamentul să reapară sau nu înainte de a opri jocul."
+      ],
+      "coach_focus": "Coordonarea IMPLICITĂ între doi coechipieri — pune o întrebare ghidată la tipar repetat, nu corectează direct poziția.",
+      "verification_method": "La pauza dintre seturi, verifică dacă cei doi jucători de sprijin ocupă zone diferite în majoritatea repetițiilor.",
+      "transition_logistics": "Extindere la teren de 30x20m și formare de echipe de 4 pentru EX-0005."
+    },
+    {
+      "start_min": 30,
+      "end_min": 55,
+      "title": "EX-0005 — Transferul în joc mic",
+      "exercise_ids": [
+        "EX-0005"
+      ],
+      "coach_message": "Jucați ca de obicei — folosiți ce ați exersat dacă vă ajută!",
+      "why_now": "Testează dacă principiile exersate izolat (SES-0001, EX-0004) apar autonom în joc reprezentativ complet, fără constrângeri artificiale.",
+      "methodological_rationale": "Ultimul pas al progresiei — verifică transferul, nu doar performanța în sarcina izolată (distincție explicită performanță vs. învățare).",
+      "observation_focus": [
+        "apariția autonomă a unui unghi de sprijin util, fără comandă de pe margine"
+      ],
+      "intervention_criteria": [
+        "fără comenzi verbale în timpul fazei active; observare tăcută, un singur focalizator per repriză (reutilizat din capitolele despre comunicarea antrenorului în timpul meciului și observarea structurată)"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul țintă nu apare deloc într-o repriză — se notează ca informație validă (pentru ASM-0001), nu se întrerupe jocul pentru a preda din nou."
+      ],
+      "coach_focus": "Non-intervenție verbală completă în timpul fazei active — testul de transfer, nu de performanță izolată.",
+      "verification_method": "La pauza dintre reprize, notează dacă a apărut cel puțin un comportament țintă, fără comandă de pe margine.",
+      "transition_logistics": "Pauză scurtă între cele două reprize pentru reflecția intermediară."
+    },
+    {
+      "start_min": 55,
+      "end_min": 75,
+      "title": "Reflecție ghidată, transfer în meci și încheiere",
+      "exercise_ids": [],
+      "coach_message": "Unde ați văzut, în jocul de azi, o situație ca la exercițiile cu conul sau cu doi coechipieri?",
+      "why_now": "Reflecția leagă explicit jocul liber de exercițiile anterioare, sprijinind transferul spre meciul oficial.",
+      "methodological_rationale": "Închide bucla PROBLEMĂ → CONCEPT → EXERCIȚIU → TRANSFER cerută de arhitectura Gold Standard; ultimele minute rămân libere pentru echipament, în cadrul aceluiași segment de încheiere.",
+      "observation_focus": [
+        "capacitatea copiilor de a lega verbal jocul de exercițiile anterioare"
+      ],
+      "intervention_criteria": [
+        "întrebări deschise; niciun verdict impus dacă un copil nu poate încă face legătura"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil nu poate încă lega jocul de exercițiile anterioare, nu se impune un verdict — rămâne informație pentru ședințele următoare."
+      ],
+      "coach_focus": "Întrebări deschise care leagă explicit jocul liber de exercițiile anterioare.",
+      "verification_method": "Cel puțin un copil poate numi o situație din joc similară cu un exercițiu anterior.",
+      "transition_logistics": "Ultimele minute libere pentru echipament și plecare, în interiorul acestui segment."
+    }
+  ],
+  "message_foundations": [
+    {
+      "message": "Dacă coechipierul tău e deja într-o zonă bună, găsește-ți propria zonă!",
+      "source_principle": "principle.progresie-si-sprijin",
+      "claim_ids": [
+        "CLM-0038",
+        "CLM-0042"
+      ]
+    },
+    {
+      "message": "Jucați ca de obicei — folosiți ce ați exersat dacă vă ajută!",
+      "source_principle": null,
+      "claim_ids": [
+        "CLM-0038"
+      ]
+    }
+  ],
+  "session_rationale": "A doua ședință, la câteva zile după prima, consolidează decizia de bază printr-o reamintire scurtă (nu re-predare completă) și adaugă cele două trepte rămase din progresie: coordonarea între doi jucători de sprijin și transferul reprezentativ. Separarea în două ședințe (nu una singură de ~120 minute) reflectă o alegere practică ManualFC pentru a limita numărul de concepte noi per ședință la vârsta U11, nu un rezultat de cercetare privind intervalul optim între ședințe.",
+  "match_theme": "Coordonarea sprijinului între mai mulți coechipieri și aplicarea deciziei exersate în joc reprezentativ complet.",
+  "reflection": [
+    "Unde ați văzut, în jocul de azi, o situație ca la exercițiile cu conul sau cu doi coechipieri?",
+    "Ce ați făcut diferit când și coechipierul vostru căuta o poziție bună?"
+  ],
+  "sources": [
+    "SRC-0035",
+    "SRC-0037",
+    "SRC-0040",
+    "SRC-0041",
+    "SRC-0042",
+    "SRC-0104",
+    "SRC-0105"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "child_objectives": [
+    "Reamintește și consolidează decizia de bază de sprijin exersată în SES-0001.",
+    "Coordonează doi jucători de sprijin pentru a evita gruparea în aceeași zonă (EX-0004).",
+    "Aplică lanțul decizional exersat izolat într-un joc reprezentativ complet, fără constrângeri artificiale (EX-0005)."
+  ],
+  "coach_objectives": [
+    {
+      "objective": "Verifică dacă cel puțin un comportament exersat izolat apare autonom în jocul liber final — testul central al ședinței.",
+      "coach_competency_id": "COACH-C14"
+    },
+    {
+      "objective": "Menține non-intervenție verbală completă în timpul EX-0005, observând tăcut, cu un singur focalizator per repriză.",
+      "coach_competency_id": "COACH-C03"
+    }
+  ],
+  "reflection_v2": {
+    "child_game_dimension": [
+      "Comportamentul de sprijin exersat izolat (EX-0004) sau decizia de bază (SES-0001) au apărut în jocul liber (EX-0005)?",
+      "A fost un singur moment izolat sau s-a repetat în ambele reprize?"
+    ],
+    "coach_dimension": [
+      "Am rezistat impulsului de a interveni tactic în timpul EX-0005?",
+      "Am notat corect dacă transferul a apărut sau nu, ca informație, nu ca verdict despre copii?"
+    ]
+  }
+}

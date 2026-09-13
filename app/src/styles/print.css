@@ -1,0 +1,98 @@
+/* ManualFC Print & PDF Foundation Stylesheet (Print-Safe) */
+@media print {
+  *, *::before, *::after {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html {
+    font-size: 12pt;
+    background: #FFFFFF !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  /* Hide UI Chrome & Navigation */
+  .skip-link,
+  .app-header,
+  .app-footer,
+  .no-print,
+  [role="alert"] {
+    display: none !important;
+  }
+
+  /* Force Layout Width & Margins */
+  .container,
+  .main-layout,
+  .content-article {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  /* Ensure Meaning Survives Without Color (Borders, Labels, Spacing) */
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: #000000 !important;
+  }
+
+  /* Show Link Target URLs in Print */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    font-style: italic;
+  }
+
+  /* Avoid Breaking Important Content Cards & Pedagogical Blocks */
+  .card,
+  .coach-meaning,
+  .child-message,
+  .pedagogical-block,
+  .evidence-claim,
+  .quick-field {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    border: 1pt solid #333333 !important;
+    margin-bottom: 12pt !important;
+    padding: 8pt !important;
+  }
+
+  .home-hero,
+  .principle-hero,
+  .lab-hero,
+  .founding-rule,
+  .final-cta {
+    width: 100% !important;
+    margin: 0 0 18pt !important;
+    padding: 12pt 0 !important;
+  }
+
+  .tactical-motif {
+    max-width: 90mm !important;
+  }
+
+  .child-message blockquote {
+    font-size: 24pt !important;
+    quotes: none;
+  }
+
+  /* Distinct Print Badges */
+  .badge {
+    border: 1pt solid #000000 !important;
+    padding: 2pt 4pt !important;
+    font-weight: bold !important;
+  }
+}

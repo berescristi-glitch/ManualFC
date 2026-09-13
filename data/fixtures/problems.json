@@ -1,0 +1,25 @@
+[
+  {
+    "development_fixture": true,
+    "fixture_type": "DEVELOPMENT FIXTURE",
+    "id": "problem.no-passing-angle",
+    "slug": "lipsa-unghi-de-pasa",
+    "category_id": "cat.probleme-teren",
+    "title": "Lipsa unghiului de pasă deschis",
+    "observation": "Jucătorul fără minge rămâne în spatele oponentului direct sau se apropie la sub 2 metri de purtătorul de minge.",
+    "possible_causes": [
+      "Orientare vizuală redusă către purtătorul de minge.",
+      "Neînțelegerea noțiunii de coridor liber de pasă."
+    ],
+    "intervention": {
+      "things_to_check": "Verifică dacă jucătorul își mișcă picioarele înainte ca mingea să se oprească.",
+      "what_to_say": "Fă 2 pași în lateral până când vezi ambele picioare ale colegului tău!",
+      "why_explanation": "Menținerea liniei de vedere directe deschide linia de pasă și îndepărtează fundașul.",
+      "exercise_ids": ["exercise.2v1-support-angle"],
+      "adaptation_note": "Extinde lățimea terenului cu 2 metri dacă fundașul interceptază prea ușor.",
+      "verification_check": "Întreabă copilul: 'Te putea vedea colegul tău când a privit sus?'"
+    },
+    "principle_ids": ["principle.scanning-before-receive"],
+    "evidence_claim_ids": ["CLM-001"]
+  }
+]

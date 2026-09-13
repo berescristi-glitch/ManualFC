@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import ChildMessage from '../../components/ChildMessage.astro';
+import Card from '../../components/Card.astro';
+import { getAllExercises, getResolvedExercise } from '../../lib/content-bridge';
+
+export function getStaticPaths() {
+  const exercises = getAllExercises();
+  return exercises.map(ex => ({
+    params: { slug: ex.slug },
+    props: { exerciseId: ex.id }
+  }));
+}
+
+const { exerciseId } = Astro.props;
+const { exercise, principles } = getResolvedExercise(exerciseId);
+---
+<BaseLayout 
+  title={`${exercise.title} — Exercițiu U11`}
+  description={exercise.objective}
+>
+  <Breadcrumb items={[
+    { label: "Biblioteca de Exerciții", href: "/#exercitii" },
+    { label: exercise.title }
+  ]} />
+
+  {exercise.development_fixture && (
+    <div class="fixture-alert" role="alert">
+      <strong>⚠️ DEVELOPMENT FIXTURE:</strong> Pagina este generată din date neutre de dezvoltare.
+    </div>
+  )}
+
+  <PageHeader 
+    title={exercise.title}
+    subtitle={exercise.objective}
+    category="Exercițiu Canonic 10–11 Ani"
+  />
+
+  <div class="exercise-grid">
+    <div class="spec-card">
+      <h3>Specificații Teren</h3>
+      <ul>
+        <li><strong>Jucători:</strong> {exercise.players}</li>
+        <li><strong>Suprafață:</strong> {exercise.area}</li>
+        <li><strong>Durată:</strong> {exercise.duration}</li>
+      </ul>
+    </div>
+
+    <div class="setup-card">
+      <h3>Organizare & Regulament</h3>
+      <p><strong>Configurare:</strong> {exercise.setup}</p>
+      <p><strong>Reguli:</strong> {exercise.rules}</p>
+    </div>
+  </div>
+
+  <SectionHeader title="Indicații de Comunicare pe Teren" />
+
+  <ChildMessage wording={exercise.child_cues} />
+
+  <Card title="Indicații pentru Antrenor (Coach Cues)" variant="pedagogical">
+    <p>{exercise.coach_cues}</p>
+  </Card>
+
+  <SectionHeader title="Principii Tactice Conexe" />
+  <div class="principles-list">
+    {principles.map(p => (
+      <Card title={p.title} variant="interactive" href={`/principii/${p.slug}`}>
+        <p>{p.summary}</p>
+      </Card>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .fixture-alert {
+    background-color: var(--color-bg-surface-muted);
+    border: 1px solid var(--color-warning);
+    color: var(--color-text-primary);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-sm);
+  }
+  .exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+  .spec-card, .setup-card {
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+  }
+  .spec-card h3, .setup-card h3 {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-accent);
+    margin-bottom: var(--space-3);
+  }
+  .spec-card ul {
+    list-style: none;
+  }
+  .spec-card li {
+    margin-bottom: var(--space-2);
+    font-size: var(--font-size-sm);
+  }
+  .principles-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+</style>

@@ -1,0 +1,4 @@
+{
+  "version": "2026-08-17.1",
+  "note": "Bump this string whenever Gold Standard exercise/session data, media registry entries, or Field Mode segment structure change materially. Offline packs compare their stored content_version against this value to detect staleness — see docs/architecture/OFFLINE_ACCOUNT_ENTITLEMENT.md."
+}

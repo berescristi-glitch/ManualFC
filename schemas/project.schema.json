@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/project.schema.json",
+  "title": "Project configuration",
+  "type": "object",
+  "required": ["project_id", "product_kind", "primary_delivery", "pedagogical_first", "language", "age_category", "future_age_architecture", "minimum_deliverables", "canonical_registries"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "project_id": {"const": "manual-u11"},
+    "product_kind": {"const": "platformă web pedagogică profesională"},
+    "primary_delivery": {"const": "static_web"},
+    "pedagogical_first": {"const": true},
+    "language": {"const": "ro"},
+    "age_category": {
+      "type": "object",
+      "required": ["label", "birth_years", "single_curriculum", "individual_adaptation_dimensions"],
+      "properties": {
+        "label": {"const": "10–11 ani, grupele 2015 și 2016 tratate împreună"},
+        "birth_years": {"const": [2015, 2016]},
+        "single_curriculum": {"const": true},
+        "individual_adaptation_dimensions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        }
+      },
+      "additionalProperties": false
+    },
+    "minimum_deliverables": {
+      "type": "object",
+      "required": ["volumes", "exercises", "sessions", "communication_scripts", "case_studies"],
+      "properties": {
+        "volumes": {"const": 10},
+        "exercises": {"type": "integer", "minimum": 60},
+        "sessions": {"type": "integer", "minimum": 36},
+        "communication_scripts": {"type": "integer", "minimum": 50},
+        "case_studies": {"type": "integer", "minimum": 15}
+      },
+      "additionalProperties": false
+    },
+    "future_age_architecture": {
+      "type": "object",
+      "required": ["production_scope", "expansion_order"],
+      "properties": {
+        "production_scope": {"const": "10–11"},
+        "expansion_order": {"const": ["8–9", "6–7", "4–5", "12–13", "14–15", "16–18"]}
+      },
+      "additionalProperties": false
+    },
+    "canonical_registries": {
+      "type": "object",
+      "required": ["tasks", "task_history", "sources", "claims", "citations"],
+      "additionalProperties": {"type": "string", "minLength": 1}
+    }
+  },
+  "additionalProperties": false
+}

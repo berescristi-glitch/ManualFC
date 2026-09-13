@@ -1,0 +1,37 @@
+{
+  "id": "principle.tranzitia-la-pierderea-mingii",
+  "slug": "tranzitia-la-pierderea-mingii",
+  "category_id": "cat.perceptie-decizie",
+  "evidence_claim_ids": ["CLM-0036", "CLM-0045", "CLM-0046", "CLM-0047"],
+  "title": "Cine influențează, cine protejează, chiar în primele secunde",
+  "professional_definition": "Imediat după pierderea mingii, cel mai bine plasat jucător decide dacă influențează controlat noul purtător sau întârzie, iar restul echipei se reorientează spre protejarea centrului și a adversarilor liberi, fără comandă pentru fiecare pierdere.",
+  "child_message": "Ai pierdut mingea. Cine e aproape, încetinește. Restul, închideți drumul spre poartă.",
+  "coach_meaning": "Copiii separă două decizii ale aceluiași moment: influența imediată asupra purtătorului, rezervată celui mai bine plasat, și protecția centrului, responsabilitatea tuturor celorlalți.",
+  "why_this_message": "Mesajul scurt distribuie responsabilitatea fără să ceară întregii echipe să alerge spre minge și fără să impună un cronometru netestat.",
+  "problem_being_solved": "După o pierdere, copiii fie ignoră mingea, fie aleargă toți spre ea, lăsând drumul spre propria poartă neprotejat.",
+  "information_children_must_notice": ["locul unde s-a pierdut mingea", "purtătorul advers și drumul lui cel mai scurt spre poartă", "colegii liberi și spațiul periculos din spate", "dacă un coleg e deja mai bine plasat pentru a influența"],
+  "decision_children_must_learn": "Să decidă rapid dacă influențează purtătorul sau protejează centrul, în funcție de poziția proprie față de minge și de poartă, nu după un rol fix.",
+  "observable_behaviours": ["cel mai aproape încearcă influență controlată sau întârziere, nu atac necontrolat", "restul echipei se orientează spre poartă, nu spre minge", "centrul terenului rămâne protejat", "reacția apare fără comandă verbală la fiecare pierdere", "tiparul reapare în zone diferite ale terenului"],
+  "rationales": {
+    "tactical": "Influența imediată și protecția centrului sunt două funcții distincte care trebuie coordonate, nu o singură reacție de grup.",
+    "perceptual": "Copiii citesc locul pierderii, purtătorul, colegii și spațiul din spate, nu doar mingea.",
+    "decisional": "Rolul se stabilește după poziția fiecăruia în momentul pierderii, nu după o regulă fixă sau un cronometru.",
+    "cognitive": "Propoziția separă două comenzi scurte și verificabile, fără prag numeric de reținut.",
+    "psychological": "Copilul care nu ajunge primul la minge nu este etichetat lent; poate fi cel care a protejat centrul.",
+    "technical": "Orientarea rapidă a corpului, primul pas de recuperare a poziției și frânarea susțin ambele roluri.",
+    "social": "Echipa își împarte responsabilitatea fără să aștepte comanda antrenorului la fiecare pierdere."
+  },
+  "age_appropriateness": "La 10–11 ani, momentul este arătat dintr-un joc oprit și reluat fără explicații lungi; grupele 2015 și 2016 rămân împreună, cu reglaj individual al distanței, timpului de reacție și clarității semnalului.",
+  "phrases_to_avoid": [
+    {"phrase": "Toată lumea la minge.", "reason": "Anulează protecția centrului și lasă poarta descoperită."},
+    {"phrase": "Aveți 5 secunde.", "reason": "Impune un cronometru fără bază științifică testată și mută atenția copilului de la joc la numărat."},
+    {"phrase": "Fugiți înapoi.", "reason": "Cere efort fără informație despre cine, unde și de ce."},
+    {"phrase": "Nu mai pierde mingea.", "reason": "Confundă cauza cu răspunsul; pierderea se va întâmpla, contează reacția."}
+  ],
+  "possible_misinterpretations": ["Copilul crede că trebuie să alerge mereu spre minge, indiferent de poziție.", "Copilul crede că viteza reacției se măsoară în secunde fixe.", "Copilul care întârzie e perceput ca lipsit de efort, deși poate proteja centrul."],
+  "task_risks": ["Aglomerarea în jurul mingii poate produce contact necontrolat.", "Terenul prea mare pentru efectiv poate elimina orice șansă reală de reorganizare.", "Repetarea fără varietate de zonă a pierderii poate crea un tipar memorat, nu citit."],
+  "understanding_check": ["cel mai aproape a ales între influență și întârziere fără să fie eliminat", "centrul terenului a rămas protejat", "restul echipei s-a orientat spre poartă, nu spre minge", "reacția a apărut fără comandă verbală", "tiparul a reapărut într-o zonă diferită"],
+  "response_if_not_understood": ["oprește la aglomerarea în jurul mingii și arată spațiul gol rămas în spate", "simplifică temporar la 3v3 + portari pe spațiu mai mic, apoi revino la formatul mai mare", "oferă un reper vizual clar pentru zona de protejat, apoi elimină-l treptat", "reconstituie exact aceeași pierdere și reia din același loc"],
+  "match_transfer": "În joc liber 5v5 sau 7v7, copiii identifică autonom cine influențează purtătorul și cine protejează centrul după fiecare pierdere, iar tiparul apare în zone diferite ale terenului, nu doar în sarcina dedicată.",
+  "sources": ["SRC-0035", "SRC-0044", "SRC-0045", "SRC-0046"]
+}

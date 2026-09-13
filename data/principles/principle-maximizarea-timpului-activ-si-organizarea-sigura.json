@@ -1,0 +1,37 @@
+{
+  "id": "principle.maximizarea-timpului-activ-si-organizarea-sigura",
+  "slug": "maximizarea-timpului-activ-si-organizarea-sigura",
+  "category_id": "cat.metodologie-surse",
+  "evidence_claim_ids": ["CLM-0095", "CLM-0096", "CLM-0097", "CLM-0098"],
+  "title": "Organizare, timp activ și siguranță — trei domenii separate",
+  "professional_definition": "Proiectarea organizării spațiale și a rotațiilor pe teren pentru a reduce timpul de așteptare al copiilor, fără un prag procentual de timp activ validat științific, combinată cu o rutină oficială de încălzire cu efect măsurat asupra riscului de accidentare.",
+  "child_message": "Timpul pe teren este pentru joc: organizăm stații paralele ca toată lumea să joace continuu, în siguranță!",
+  "coach_meaning": "Optimizarea structurii antrenamentului pentru participare continuă, cu siguranță fizică sprijinită de un program oficial de încălzire.",
+  "why_this_message": "Creșterea implicării motrice și menținerea entuziasmului tuturor copiilor, fără a compromite siguranța.",
+  "problem_being_solved": "Cozi lungi de copii care așteaptă la un singur con, generând plictiseală, pierdere de atenție și împingeri — plus lipsa unei rutine structurate de prevenire a accidentărilor.",
+  "information_children_must_notice": ["stația de joc atribuită", "traseul rapid de rotație între reprize"],
+  "decision_children_must_learn": "Să facă rotația rapid fără întârziere și să fie gata de joc imediat ce mingea intră pe teren.",
+  "observable_behaviours": ["se mișcă rapid între runde", "rămâne concentrat pe tot parcursul ședinței"],
+  "rationales": {
+    "tactical": "Permite acumularea unui număr mai mare de repetiții decizionale în fiecare antrenament.",
+    "perceptual": "Menține starea de alertă vizuală și orientare continuă.",
+    "decisional": "Crește frecvența deciziilor luate per minut de antrenament.",
+    "cognitive": "Menține angajamentul atențional fără timpi morți prelungiți.",
+    "psychological": "Poate satisface dorința naturală a copiilor de a se juca continuu.",
+    "technical": "Poate crește volumul de atingeri de minge în condiții de presiune.",
+    "social": "Poate reduce conflictele generate de așteptarea la rând."
+  },
+  "age_appropriateness": "La 10–11 ani, capacitatea de a aștepta pasiv scade rapid; stațiile paralele active și încălzirea structurată sunt adecvate acestei vârste — programul FIFA 11+ Kids a fost testat la exact această categorie de vârstă (vârstă medie 10,8 ani).",
+  "phrases_to_avoid": [
+    {
+      "phrase": "Faceți o singură coloană de 14 copii și așteptați rândul fiecare pe cale de consecință!",
+      "reason": "Gestionare ineficientă a terenului care distruge timpul activ."
+    }
+  ],
+  "possible_misinterpretations": ["Timpul activ înseamnă că nu se fac pauze de apă sau explicarea regulilor.", "Există un prag procentual de timp activ validat de cercetare.", "Orice program de încălzire are efectul măsurat pentru FIFA 11+ Kids."],
+  "task_risks": ["Plasarea terenurilor paralele prea aproape una de alta, creând pericol de coliziune.", "Omiterea rutinei de încălzire structurată sau aplicarea ei inconsecventă."],
+  "understanding_check": ["copiii execută rotația autonom, fără o durată cronometrată impusă"],
+  "response_if_not_understood": ["desenarea clară a zonelor de rotație cu conuri de culori diferite; reintroducerea explicită a rutinei de încălzire dacă a fost omisă"],
+  "match_transfer": "În meci, jucătorii au o condiție fizică mai bună și un risc redus de accidentare datorită rutinei consecvente din antrenament.",
+  "sources": ["SRC-0098", "SRC-0099", "SRC-0100", "SRC-0101", "SRC-0102", "SRC-0103"]
+}

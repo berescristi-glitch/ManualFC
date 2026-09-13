@@ -1,0 +1,44 @@
+---
+interface Props {
+  sourceId: string;
+  author: string;
+  year: number | string;
+  title: string;
+  locator?: string;
+}
+
+const { sourceId, author, year, title, locator } = Astro.props;
+---
+<div class="source-reference" data-source-id={sourceId}>
+  <span class="ref-icon" aria-hidden="true">📚</span>
+  <div class="ref-details">
+    <strong class="ref-author">{author} ({year})</strong> — <span class="ref-title">"{title}"</span>
+    {locator && <span class="ref-locator"> [{locator}]</span>}
+  </div>
+</div>
+
+<style>
+  .source-reference {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    background-color: var(--color-bg-surface-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-xs);
+    margin: var(--space-2) 0;
+  }
+  .ref-icon {
+    font-size: var(--font-size-sm);
+  }
+  .ref-author {
+    color: var(--color-text-primary);
+  }
+  .ref-title {
+    color: var(--color-text-secondary);
+  }
+  .ref-locator {
+    color: var(--color-text-accent);
+  }
+</style>

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/problem.schema.json",
+  "title": "Canonical problem library",
+  "type": "object",
+  "required": ["schema_version", "problems"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"const": "1.0.0"},
+    "problems": {
+      "type": "array", "minItems": 8, "maxItems": 12,
+      "items": {"$ref": "#/$defs/problem"}
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "ref": {"type": "string", "minLength": 3},
+    "text": {"type": "string", "minLength": 8},
+    "labelledText": {
+      "type": "object", "required": ["id", "text", "evidence_state"],
+      "properties": {
+        "id": {"$ref": "#/$defs/ref"}, "text": {"$ref": "#/$defs/text"},
+        "evidence_state": {"enum": ["VERIFIED_FACT", "CONSENSUS", "STUDY_RESULT", "PRACTICE_HEURISTIC", "HYPOTHESIS", "NEEDS_RESEARCH", "NEEDS_FIELD_VALIDATION"]}
+      }, "additionalProperties": false
+    },
+    "test": {
+      "type": "object", "required": ["id", "change_one_variable", "instruction", "observe", "interpretation_limit"],
+      "properties": {"id":{"$ref":"#/$defs/ref"},"change_one_variable":{"type":"string","minLength":3},"instruction":{"$ref":"#/$defs/text"},"observe":{"$ref":"#/$defs/text"},"interpretation_limit":{"$ref":"#/$defs/text"}},
+      "additionalProperties": false
+    },
+    "cue": {
+      "type": "object", "required": ["id", "say", "coach_meaning", "why", "notice", "observe_after", "avoid"],
+      "properties": {"id":{"$ref":"#/$defs/ref"},"say":{"$ref":"#/$defs/text"},"coach_meaning":{"$ref":"#/$defs/text"},"why":{"$ref":"#/$defs/text"},"notice":{"$ref":"#/$defs/text"},"observe_after":{"$ref":"#/$defs/text"},"avoid":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/text"}}},
+      "additionalProperties": false
+    },
+    "media": {
+      "type":"object","required":["id","kind","status","alt"],
+      "properties":{"id":{"$ref":"#/$defs/ref"},"kind":{"enum":["STATIC_TACTICAL_IMAGE","TACTICAL_LOOP","EXERCISE_ANIMATION","COACH_EXPLAINER","REAL_FIELD_EXAMPLE","BEFORE_AFTER","MATCH_TRANSFER_EXAMPLE"]},"status":{"enum":["AVAILABLE","PLANNED","UNAVAILABLE"]},"alt":{"$ref":"#/$defs/text"}},"additionalProperties":false
+    },
+    "problem": {
+      "type": "object",
+      "required": ["problem_id","slug","human_title","observable_behavior","family","game_moment","context","what_is_seen","what_is_not_known","possible_explanations","quick_tests","child_cues","coach_questions","related_principles","related_exercises","related_sessions","assessment_links","transfer_checks","media","evidence_claim_ids","limitations","safety_notes","age_applicability","status","research_state","flagship"],
+      "properties": {
+        "problem_id":{"type":"string","pattern":"^PRB-[0-9]{4}$"},"slug":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"human_title":{"$ref":"#/$defs/text"},"observable_behavior":{"$ref":"#/$defs/text"},
+        "family":{"enum":["POSSESSION","TRANSITION_AFTER_LOSS","TRANSITION_AFTER_WIN","DEFENDING","PERCEPTION_DECISION","PEDAGOGICAL_BEHAVIOURAL"]},"game_moment":{"type":"string"},"context":{"$ref":"#/$defs/text"},"what_is_seen":{"$ref":"#/$defs/text"},"what_is_not_known":{"$ref":"#/$defs/text"},
+        "possible_explanations":{"type":"array","minItems":3,"items":{"$ref":"#/$defs/labelledText"}},"quick_tests":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/test"}},"child_cues":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/cue"}},"coach_questions":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/text"}},
+        "related_principles":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/ref"}},"related_exercises":{"type":"array","items":{"pattern":"^EX-[0-9]{4}$"}},"related_sessions":{"type":"array","items":{"pattern":"^SES-[0-9]{4}$"}},"assessment_links":{"type":"array","items":{"pattern":"^ASM-[0-9]{4}$"}},"transfer_checks":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/labelledText"}},"media":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/media"}},"evidence_claim_ids":{"type":"array","minItems":1,"items":{"pattern":"^CLM-[0-9]{4,}$"}},"limitations":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/text"}},"safety_notes":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/text"}},"age_applicability":{"const":"U11_PARTIAL_EVIDENCE"},"status":{"const":"PUBLISHED"},"research_state":{"enum":["VERIFIED_WITH_LIMITS","NEEDS_FIELD_VALIDATION"]},"flagship":{"type":"boolean"}
+      }, "additionalProperties": false
+    }
+  }
+}

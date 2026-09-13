@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">Hartă de escaladare safeguarding</title>
+  <desc id="desc">Trei ramuri: pericol imediat către 112, violență asupra copilului către 119 sau DGASPC și conduită către canalul clubului, fără blocarea raportării legale.</desc>
+  <rect width="900" height="360" fill="#fff"/>
+  <g font-family="Arial, sans-serif" stroke="#111" stroke-width="2" fill="#fff">
+    <text x="25" y="35" font-size="22" font-weight="700" fill="#111" stroke="none">Escaladare — versiunea 1.0, 2026-07-30</text>
+    <rect x="325" y="65" width="250" height="55" rx="8"/><text x="357" y="99" font-size="18" fill="#111" stroke="none">Preocupare sau incident</text>
+    <path d="M450 120V165M450 165H150V205M450 165V205M450 165H750V205" fill="none"/>
+    <rect x="45" y="205" width="210" height="75" rx="8"/><text x="80" y="237" font-size="17" fill="#111" stroke="none">Pericol imediat</text><text x="106" y="263" font-size="21" fill="#111" stroke="none">112</text>
+    <rect x="340" y="205" width="220" height="75" rx="8"/><text x="359" y="237" font-size="17" fill="#111" stroke="none">Violență / suspiciune</text><text x="370" y="263" font-size="18" fill="#111" stroke="none">119 / DGASPC</text>
+    <rect x="645" y="205" width="210" height="75" rx="8"/><text x="675" y="237" font-size="17" fill="#111" stroke="none">Conduită / politică</text><text x="670" y="263" font-size="16" fill="#111" stroke="none">canal club + alternativ</text>
+    <text x="105" y="310" font-size="14" fill="#111" stroke="none">Securizează</text>
+    <text x="405" y="310" font-size="14" fill="#111" stroke="none">Nu investiga</text>
+    <text x="700" y="310" font-size="14" fill="#111" stroke="none">Documentează</text>
+  </g>
+  <text x="25" y="345" font-family="Arial, sans-serif" font-size="12">Canalul intern nu condiționează raportarea legală. Surse: Legea 272/2004; OUG 105/2021; pagini oficiale verificate.</text>
+</svg>

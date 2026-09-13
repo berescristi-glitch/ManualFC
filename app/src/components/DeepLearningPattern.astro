@@ -1,0 +1,85 @@
+---
+interface Props {
+  conceptTitle: string;
+  volumeLabel?: string;
+}
+
+const { conceptTitle, volumeLabel = "Parcurs Editorial (Mode A)" } = Astro.props;
+---
+<article class="deep-learning-pattern container-prose">
+  <header class="pattern-header">
+    <span class="pattern-badge">{volumeLabel}</span>
+    <h1>{conceptTitle}</h1>
+  </header>
+
+  <section class="pattern-section section-why">
+    <h2>1. De ce contează în joc</h2>
+    <slot name="why-it-matters" />
+  </section>
+
+  <section class="pattern-section section-perception">
+    <h2>2. Percepția și ce vede copilul</h2>
+    <slot name="perception" />
+  </section>
+
+  <section class="pattern-section section-decision">
+    <h2>3. Decizia pe care o învață copilul</h2>
+    <slot name="decision" />
+  </section>
+
+  <section class="pattern-section section-coach-wording">
+    <h2>4. Cum explică antrenorul-pedagog</h2>
+    <slot name="coach-wording" />
+  </section>
+
+  <section class="pattern-section section-evidence">
+    <h2>5. Nivel de dovadă & metodologie</h2>
+    <slot name="evidence" />
+  </section>
+
+  <section class="pattern-section section-transfer">
+    <h2>6. Transfer în joc & evaluare</h2>
+    <slot name="transfer" />
+  </section>
+</article>
+
+<style>
+  .deep-learning-pattern {
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-top: 4px solid var(--color-role-possession);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    margin: var(--space-8) auto;
+  }
+  .pattern-header {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+  .pattern-badge {
+    background-color: var(--color-role-possession);
+    color: var(--color-text-on-dark);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+  .pattern-header h1 {
+    font-size: var(--font-size-3xl);
+    color: var(--color-text-primary);
+    margin-top: var(--space-2);
+    margin-bottom: 0;
+  }
+  .pattern-section {
+    margin-bottom: var(--space-8);
+  }
+  .pattern-section h2 {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-accent);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+</style>

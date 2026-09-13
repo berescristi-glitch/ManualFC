@@ -1,0 +1,19 @@
+{
+  "volume_id": "VOLUME-01",
+  "title": "Copilul de 10–11 ani înaintea fotbalistului",
+  "status": "FIELD_REVIEW_READY",
+  "chapters": [
+    {"chapter_id": "CH-0101", "title": "Profilul integrat de dezvoltare", "route": "/volum/01/ch-0101"},
+    {"chapter_id": "CH-0102", "title": "Percepție, orientare și atenție în joc", "route": "/volum/01/ch-0102"},
+    {"chapter_id": "CH-0103", "title": "Decizia autonomă și rolul erorii", "route": "/volum/01/ch-0103"},
+    {"chapter_id": "CH-0104", "title": "Formularea mesajului pedagogic", "route": "/volum/01/ch-0104"},
+    {"chapter_id": "CH-0105", "title": "Evaluarea înțelegerii și transferul în joc", "route": "/volum/01/ch-0105"},
+    {"chapter_id": "CH-0106", "title": "Emoțiile copilului: frustrare, anxietate competițională și rușine", "route": "/volum/01/ch-0106"},
+    {"chapter_id": "CH-0107", "title": "Relația pedagogică: cald și structurat, nu unul în locul celuilalt", "route": "/volum/01/ch-0107"},
+    {"chapter_id": "CH-0108", "title": "Comunicarea de zi cu zi: claritate, ton și verificarea reală a înțelegerii", "route": "/volum/01/ch-0108"},
+    {"chapter_id": "CH-0109", "title": "Părinții: sprijin, implicare și granițele rolului de antrenor", "route": "/volum/01/ch-0109"},
+    {"chapter_id": "CH-0110", "title": "Cât poate reflecta singur copilul: limitele auto-monitorizării la 10–11 ani", "route": "/volum/01/ch-0110"}
+  ],
+  "field_review_package": "docs/field-review/VOLUME_01_FIELD_REVIEW_PACKAGE.md",
+  "visual_status": "DEFERRED_BY_DESIGN_FREEZE"
+}

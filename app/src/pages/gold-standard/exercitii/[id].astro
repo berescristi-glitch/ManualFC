@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import { getGoldStandardExercises, getGoldStandardExercise, getGoldStandardSessions, getGoldStandardSessionExercises } from '../../../lib/content-bridge';
+import TacticalDiagram from '../../../components/TacticalDiagram.astro';
+import TacticalLoop from '../../../components/TacticalLoop.astro';
+import ConceptLoop from '../../../components/ConceptLoop.astro';
+import ExerciseSequenceAnimation from '../../../components/ExerciseSequenceAnimation.astro';
+import FieldSummary from '../../../components/FieldSummary.astro';
+import SectionNavigator from '../../../components/SectionNavigator.astro';
+import CoachActions from '../../../components/CoachActions.astro';
+
+export function getStaticPaths() {
+  return getGoldStandardExercises().map(ex => ({ params: { id: ex.id } }));
+}
+const { id } = Astro.params;
+const ex = getGoldStandardExercise(id as string);
+const rationaleLabels: Record<string, string> = {
+  tactical: 'Tactic', perceptual: 'Perceptiv', decisional: 'Decizional', cognitive: 'Cognitiv',
+  psychological: 'Psihologic', technical: 'Tehnic', social: 'Social'
+};
+function formatDuration(duration: Record<string, unknown>): string {
+  const minutes = Number(duration.total_minutes);
+  const format = String(duration.format ?? '');
+  return `${minutes} min${format ? ` · ${format}` : ''}`;
+}
+const durationLabel = formatDuration(ex.duration);
+const rationalesByKey: Record<string, string> = ex.rationales as unknown as Record<string, string>;
+const diagramVariants = ['EX-0001', 'EX-0002', 'EX-0003', 'EX-0004', 'EX-0005'] as const;
+const hasDiagram = (diagramVariants as readonly string[]).includes(ex.id);
+const allExercises = getGoldStandardExercises();
+const exIndex = allExercises.findIndex(e => e.id === ex.id);
+const prevExercise = exIndex > 0 ? allExercises[exIndex - 1] : null;
+const nextExercise = exIndex < allExercises.length - 1 ? allExercises[exIndex + 1] : null;
+const parentSession = getGoldStandardSessions().find(ses => getGoldStandardSessionExercises(ses).some(e => e.id === ex.id));
+const playerCount = String(ex.players.total ?? ex.numerical_relation);
+const equipmentLabel = ex.equipment.join(' · ');
+const isV2 = ex.gold_standard_v2?.status === 'V2';
+function chapterHref(chapterId: string): string {
+  const volume = chapterId.startsWith('CH-01') ? '01' : chapterId.startsWith('CH-03') ? '03' : '04';
+  return `/volum/${volume}/${chapterId.toLowerCase()}`;
+}
+---
+<BaseLayout title={`${ex.title} — Exercițiu aplicat`} description={ex.primary_objective}>
+  <article class="gs-exercise">
+    <Breadcrumb items={[{ label: 'Modul complet', href: '/gold-standard' }, { label: ex.title }]} />
+    <FieldSummary eyebrow={`Exercițiu aplicat · ${ex.level} · ${ex.id}`} title={ex.title} objective={ex.primary_objective} relation={ex.numerical_relation} players={`${playerCount} jucători`} field={`${ex.field.length_m}×${ex.field.width_m} m + ${ex.field.safety_margin_m} m siguranță`} duration={durationLabel} equipment={equipmentLabel} childMessage={ex.child_message} observable={ex.observable_behaviours[0]} />
+    <CoachActions id={ex.id} kind="exercise" title={ex.title} href={`/gold-standard/exercitii/${ex.id}`}/>
+    <SectionNavigator items={[{href:'#organizare',label:'Organizează'},{href:'#observa',label:'Observă și adaptează'},{href:'#fundamentare',label:'Înțelege de ce'},...(ex.gold_standard_v2?.status === 'V2' ? [{href:'#teorie-practica',label:'Pedagogul → Antrenorul'}] : []),{href:'#transfer',label:'Verifică transferul'}]} />
+    <p class="dimension-note">{ex.dimension_rationale}</p>
+
+    <section aria-labelledby="mesaj" id="organizare">
+      <h2 id="mesaj">Ce le spui</h2>
+      <blockquote>„{ex.child_message}”</blockquote>
+      <p>{ex.why_this_message}</p>
+    </section>
+
+    <section aria-labelledby="pasi">
+      <h2 id="pasi">Desfășurare</h2>
+      <ol>{ex.step_by_step.map(step => <li>{step}</li>)}</ol>
+      {hasDiagram && <TacticalDiagram variant={ex.id.toLowerCase() as 'ex-0001' | 'ex-0002' | 'ex-0003' | 'ex-0004' | 'ex-0005'} />}
+      {ex.id === 'EX-0001' && <TacticalLoop variant="ex-0001" />}
+      {ex.id === 'EX-0001' && <ExerciseSequenceAnimation />}
+      {ex.id === 'EX-0002' && <ConceptLoop variant="ex-0002" />}
+      {ex.id === 'EX-0003' && <ConceptLoop variant="ex-0003" />}
+      {(ex.id === 'EX-0004' || ex.id === 'EX-0005') && (
+        <p class="no-motion-note">Fără animație pentru acest exercițiu: o secvență animată ar sugera o coregrafie fixă, pe care exercițiul o respinge explicit (vezi nota de mai jos de la diagramă).</p>
+      )}
+    </section>
+
+    <section aria-labelledby="reguli">
+      <h2 id="reguli">Reguli și motivul lor</h2>
+      <dl>{ex.rules.map(r => <Fragment><dt>{r.rule}</dt><dd>{r.why}</dd></Fragment>)}</dl>
+    </section>
+
+    <section aria-labelledby="rationale" class="rationale-grid" id="fundamentare">
+      <h2 id="rationale">Justificarea pe 7 dimensiuni</h2>
+      <div>
+        {Object.entries(rationaleLabels).map(([key, label]) => (
+          <article><span>{label}</span><p>{rationalesByKey[key]}</p></article>
+        ))}
+      </div>
+    </section>
+
+    <section aria-labelledby="erori" id="observa">
+      <h2 id="erori">Erori comune: observație vs. cauze posibile</h2>
+      <dl>{ex.common_errors.map(err => <Fragment><dt>{err.observation}</dt><dd><ul>{err.possible_causes.map(c => <li>{c}</li>)}</ul></dd></Fragment>)}</dl>
+    </section>
+
+    <section class="prog-regress" aria-label="Progresie și regresie">
+      <div><h3>Regresie</h3><ul>{ex.regression.map(r => <li>{r}</li>)}</ul></div>
+      <div><h3>Progresie</h3><ul>{ex.progression.map(p => <li>{p}</li>)}</ul></div>
+    </section>
+
+    <section aria-labelledby="evitat">
+      <h2 id="evitat">Formulări de evitat</h2>
+      <ul class="avoid-list">{ex.phrases_to_avoid.map(p => <li><strong>„{p.phrase}”</strong> — {p.reason}</li>)}</ul>
+    </section>
+
+    {isV2 && (
+      <section aria-labelledby="v2-teorie-practica" id="teorie-practica">
+        <h2 id="v2-teorie-practica">Pedagogul → Antrenorul → Practica</h2>
+        <div class="v2-links">
+          {ex.pedagog_competency_ids && ex.pedagog_competency_ids.length > 0 && (
+            <p><strong>Pedagogie:</strong> {ex.pedagog_competency_ids.join(' · ')}
+              {ex.related_pedagog_lesson_ids && ex.related_pedagog_lesson_ids.length > 0 && (
+                <> — {ex.related_pedagog_lesson_ids.map((cid, i) => <>{i > 0 && ' · '}<a href={chapterHref(cid)}>{cid}</a></>)}</>
+              )}
+            </p>
+          )}
+          {ex.coach_competency_ids && ex.coach_competency_ids.length > 0 && (
+            <p><strong>Antrenorul:</strong> {ex.coach_competency_ids.join(' · ')}
+              {ex.related_coach_lesson_ids && ex.related_coach_lesson_ids.length > 0 && (
+                <> — {ex.related_coach_lesson_ids.map((cid, i) => <>{i > 0 && ' · '}<a href={chapterHref(cid)}>{cid}</a></>)}</>
+              )}
+            </p>
+          )}
+          {ex.pedagogical_principle_ids && ex.pedagogical_principle_ids.length > 0 && (
+            <p><strong>Principiu:</strong> {ex.pedagogical_principle_ids.map((pid, i) => <>{i > 0 && ' · '}<a href={`/principii/${pid.replace('principle.', '')}`}>{pid}</a></>)}</p>
+          )}
+        </div>
+
+        {ex.coach_focus && <p class="coach-focus"><strong>Coach focus:</strong> {ex.coach_focus}</p>}
+
+        {ex.child_action && <p><strong>Ce face copilul:</strong> {ex.child_action}</p>}
+
+        {(ex.when_to_intervene?.length || ex.when_not_to_intervene?.length) && (
+          <div class="intervene-grid">
+            {ex.when_to_intervene && ex.when_to_intervene.length > 0 && (
+              <div><h3>Când intervii</h3><ul>{ex.when_to_intervene.map(w => <li>{w}</li>)}</ul></div>
+            )}
+            {ex.when_not_to_intervene && ex.when_not_to_intervene.length > 0 && (
+              <div><h3>Când NU intervii</h3><ul>{ex.when_not_to_intervene.map(w => <li>{w}</li>)}</ul></div>
+            )}
+          </div>
+        )}
+
+        {ex.do_not_assume && ex.do_not_assume.length > 0 && (
+          <div class="do-not-assume">
+            <h3>Ce nu trebuie să presupui</h3>
+            <ul>{ex.do_not_assume.map(d => <li>{d}</li>)}</ul>
+          </div>
+        )}
+
+        {ex.coach_common_errors && ex.coach_common_errors.length > 0 && (
+          <div>
+            <h3>Eroarea comună a antrenorului</h3>
+            <dl>{ex.coach_common_errors.map(e => <Fragment><dt>{e.observation}</dt><dd>{e.why_it_happens}</dd></Fragment>)}</dl>
+          </div>
+        )}
+
+        {ex.coach_reflection && ex.coach_reflection.length > 0 && (
+          <div class="coach-reflection">
+            <h3>Reflecția antrenorului</h3>
+            <ul>{ex.coach_reflection.map(r => <li>{r}</li>)}</ul>
+          </div>
+        )}
+
+        {ex.evidence_boundary && <p class="evidence-boundary"><strong>Granița dovezii:</strong> {ex.evidence_boundary}</p>}
+
+        {ex.assessment_ref && <p><a href={`/gold-standard/evaluare/${ex.assessment_ref}`}>Vezi evaluarea legată ({ex.assessment_ref}) →</a></p>}
+      </section>
+    )}
+
+    <section aria-labelledby="transfer">
+      <h2 id="transfer">Transfer în joc</h2>
+      <p>{ex.match_transfer}</p>
+    </section>
+
+    {!hasDiagram && <aside class="visual-note"><strong>Organizare fără diagramă în această versiune.</strong> Folosește dimensiunile, marja de siguranță și pașii de mai sus; activul vizual canonic nu este încă disponibil și nu este simulat.</aside>}
+
+    <nav class="exercise-nav" aria-label="Navigare exerciții">
+      {parentSession && <a class="session-link" href={`/gold-standard/sedinte/${parentSession.id}`}>← Înapoi la {parentSession.id}</a>}
+      <div class="prev-next">
+        {prevExercise ? <a href={`/gold-standard/exercitii/${prevExercise.id}`}>← {prevExercise.id}</a> : <span />}
+        {nextExercise ? <a href={`/gold-standard/exercitii/${nextExercise.id}`}>{nextExercise.id} →</a> : <span />}
+      </div>
+    </nav>
+  </article>
+</BaseLayout>
+
+<style>
+  .gs-exercise { max-width: var(--width-content); margin: 0 auto; padding: var(--space-20) var(--space-6); }
+  .dimension-note { font-size: .85rem; color: var(--color-text-muted); margin-top: var(--space-4); }
+  section { margin-top: var(--space-16); border-top: 1px solid var(--color-border); padding-top: var(--space-8); }
+  blockquote { font-size: 1.3rem; font-weight: 700; border-left: 3px solid var(--color-brand-gold); padding-left: 1rem; margin: 0 0 1rem; }
+  dl { display: grid; gap: var(--space-4); }
+  dt { font-weight: 700; }
+  dd { margin: 0 0 var(--space-4); color: var(--color-text-secondary); }
+  .rationale-grid > div { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--color-border); border: 1px solid var(--color-border); margin-top: var(--space-4); }
+  .rationale-grid article { background: white; padding: var(--space-4); }
+  .rationale-grid article:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .rationale-grid span { display: block; font-size: .7rem; font-weight: 850; text-transform: uppercase; color: var(--color-text-accent); margin-bottom: .3rem; }
+  .prog-regress { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+  .avoid-list { list-style: none; padding: 0; }
+  .avoid-list li { padding: var(--space-2) 0; }
+  .visual-note { margin-top: var(--space-12); padding:var(--space-4); font-size:.82rem; color:var(--color-text-secondary); background:#E7E8E2; border-block:1px solid var(--color-border-strong); }
+  .no-motion-note { margin-top: var(--space-6); font-size: .82rem; color: var(--color-text-muted); }
+  .v2-links p { margin: .3rem 0; }
+  .coach-focus { padding: var(--space-4); background: var(--color-bg-brand); color: white; border-radius: var(--radius-md); font-weight: 700; }
+  .intervene-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-top: var(--space-6); }
+  .do-not-assume, .coach-reflection { margin-top: var(--space-6); }
+  .evidence-boundary { margin-top: var(--space-6); font-size: .85rem; color: var(--color-text-muted); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+  @media (max-width: 680px) { .intervene-grid { grid-template-columns: 1fr; } }
+  .exercise-nav { margin-top: var(--space-12); padding-top: var(--space-6); border-top: 2px solid var(--color-border); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-4); }
+  .session-link { font-weight: 750; color: var(--color-text-accent); text-decoration: none; }
+  .prev-next { display: flex; gap: var(--space-6); font-weight: 750; }
+  .prev-next a { color: var(--color-text-accent); text-decoration: none; }
+  @media (max-width: 600px) { .exercise-nav { flex-direction: column; align-items: flex-start; } }
+  @media (max-width: 680px) { .rationale-grid > div, .prog-regress { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "volume_id": "VOLUME-01",
+  "title": "Copilul de 10–11 ani și procesul de învățare",
+  "purpose": "Formarea antrenorului ca pedagog și înțelegerea procesului cognitiv, perceptiv, motric și emoțional al copilului de 10–11 ani (2015-2016).",
+  "audience": "Antrenori-pedagogi de copii U11",
+  "age_category": "10–11 ani (2015-2016 tratate împreună)",
+  "chapter_order": [
+    "CH-0101",
+    "CH-0102",
+    "CH-0103",
+    "CH-0104",
+    "CH-0105",
+    "CH-0106",
+    "CH-0107",
+    "CH-0108",
+    "CH-0109",
+    "CH-0110"
+  ],
+  "chapters": [
+    {
+      "chapter_id": "CH-0101",
+      "title": "Profilul integrat de dezvoltare al copilului de 10–11 ani (2015–2016)",
+      "evidence_status": "PARTIAL_EVIDENCE",
+      "authoring_readiness": true,
+      "practical_outputs": ["Profil de dezvoltare U11", "Grilă de variație individuală"],
+      "visual_requirements": ["Infografic comparativ dezvoltare"],
+      "production_priority": 1
+    },
+    {
+      "chapter_id": "CH-0102",
+      "title": "Atenția, percepția și scanarea în joc",
+      "evidence_status": "RESEARCH_REQUIRED",
+      "authoring_readiness": false,
+      "practical_outputs": ["Checklist scanare vizuală pe teren"],
+      "visual_requirements": ["Diagramă unghi vizual", "Animație secvență scanare"],
+      "production_priority": 3
+    },
+    {
+      "chapter_id": "CH-0103",
+      "title": "Luarea deciziei autonome și rolul erorii în învățare",
+      "evidence_status": "PARTIAL_EVIDENCE",
+      "authoring_readiness": false,
+      "practical_outputs": ["Scripturi feedback post-eroare"],
+      "visual_requirements": ["Schema decizională autonomă vs joystick"],
+      "production_priority": 4
+    },
+    {
+      "chapter_id": "CH-0104",
+      "title": "Formularea mesajului pedagogic („Ce le spun și de ce”)",
+      "evidence_status": "PARTIAL_EVIDENCE",
+      "authoring_readiness": true,
+      "practical_outputs": ["Ghid de comunicare teren (18 puncte)"],
+      "visual_requirements": ["Carduri mesaj copil vs sens antrenor"],
+      "production_priority": 2
+    },
+    {
+      "chapter_id": "CH-0105",
+      "title": "Evaluarea înțelegerii și transferul în jocul de meci",
+      "evidence_status": "PRACTICE_ONLY",
+      "authoring_readiness": false,
+      "practical_outputs": ["Grilă de evaluare transfer meci 7v7"],
+      "visual_requirements": ["Diagramă de analiză meci"],
+      "production_priority": 5
+    },
+    {
+      "chapter_id": "CH-0106",
+      "title": "Emoțiile copilului: frustrare, anxietate competițională și rușine",
+      "evidence_status": "PARTIAL_EVIDENCE",
+      "authoring_readiness": true,
+      "pedagog_competency_ids": ["PED-C06"],
+      "research_dossier": "research/dossiers/EMOTIONAL_DEVELOPMENT_AND_REGULATION_R1.md",
+      "practical_outputs": ["Grilă de citire a reacției emoționale"],
+      "visual_requirements": ["Diagramă frustrare vs anxietate vs rușine"],
+      "production_priority": 6
+    },
+    {
+      "chapter_id": "CH-0107",
+      "title": "Relația pedagogică: cald și structurat, nu unul în locul celuilalt",
+      "evidence_status": "PARTIAL_EVIDENCE",
+      "authoring_readiness": true,
+      "pedagog_competency_ids": ["PED-C09", "PED-C08"],
+      "research_dossier": "research/dossiers/PEDAGOGICAL_RELATIONSHIP_R1.md",
+      "practical_outputs": ["Harta relațională căldură × structură"],
+      "visual_requirements": ["Diagramă cadran căldură/structură"],
+      "production_priority": 7
+    },
+    {
+      "chapter_id": "CH-0108",
+      "title": "Comunicarea de zi cu zi: claritate, ton și verificarea reală a înțelegerii",
+      "evidence_status": "PARTIAL_EVIDENCE",
+      "authoring_readiness": true,
+      "pedagog_competency_ids": ["PED-C03", "PED-C04"],
+      "research_dossier": "research/dossiers/GENERAL_PEDAGOGICAL_COMMUNICATION_R1.md",
+      "practical_outputs": ["Protocol un-reper-o-demonstrație-o-acțiune"],
+      "visual_requirements": [],
+      "production_priority": 8
+    },
+    {
+      "chapter_id": "CH-0109",
+      "title": "Părinții: sprijin, implicare și granițele rolului de antrenor",
+      "evidence_status": "PARTIAL_EVIDENCE",
+      "authoring_readiness": true,
+      "pedagog_competency_ids": ["PED-C12"],
+      "research_dossier": "research/dossiers/PARENTS_YOUTH_SPORT_R1.md",
+      "practical_outputs": ["Ghid de rol părinte-antrenor"],
+      "visual_requirements": [],
+      "production_priority": 9
+    },
+    {
+      "chapter_id": "CH-0110",
+      "title": "Cât poate reflecta singur copilul: limitele auto-monitorizării la 10–11 ani",
+      "evidence_status": "PARTIAL_EVIDENCE",
+      "authoring_readiness": true,
+      "pedagog_competency_ids": ["PED-C13"],
+      "research_dossier": "research/dossiers/CHILD_METACOGNITION_AND_REFLECTION_R1.md",
+      "practical_outputs": ["Secvența de reflecție în trei pași"],
+      "visual_requirements": [],
+      "production_priority": 10
+    }
+  ]
+}

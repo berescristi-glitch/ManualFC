@@ -1,0 +1,37 @@
+{
+  "id": "principle.intrebari-si-verificarea-intelegerii",
+  "slug": "intrebari-si-verificarea-intelegerii",
+  "category_id": "cat.comunicare",
+  "evidence_claim_ids": ["CLM-0069", "CLM-0070", "CLM-0071", "CLM-0072"],
+  "title": "Întrebări deschise și verificarea prin comportament",
+  "professional_definition": "Utilizarea întrebărilor ghidate orientate spre ceea ce copilul observă pe teren, urmată de verificarea prin comportament observat, nu prin răspuns verbal — „ați înțeles?” nu e o verificare fiabilă la această vârstă.",
+  "child_message": "Ce ai văzut liber în fața ta înainte de preluare?",
+  "coach_meaning": "Verificarea atenției perceptive a copilului și ghidarea autonomă spre identificarea spațiului liber, prin descriere sau demonstrație, nu prin confirmare verbală generică.",
+  "why_this_message": "Întrebarea deschisă cere copilului să descrie informația percepută, nu să ghicească ce voia antrenorul sau să confirme automat că a înțeles.",
+  "problem_being_solved": "Comenzile directe sau întrebările acuzatoare („De ce n-ai pasat?”) creează defensivă și inhibă decizia autonomă; iar „ați înțeles?” nu produce informație de încredere — copiii de această vârstă nu-și detectează fiabil propria neînțelegere.",
+  "information_children_must_notice": ["orientarea apărătorilor", "culoarul de pasă deschis", "poziționarea colegilor"],
+  "decision_children_must_learn": "Să evalueze opțiunile înainte de preluare și să aleagă pe baza informației citite.",
+  "observable_behaviours": ["descrie scurt spațiul văzut", "arată pe teren opțiunea fără să ezite", "încearcă din nou la repornire"],
+  "rationales": {
+    "tactical": "Ghidează copilul spre recunoașterea oportunităților de progresie.",
+    "perceptual": "Direcționează privirea spre informația relevantă din joc.",
+    "decisional": "Păstrează responsabilitatea alegerii la copil.",
+    "cognitive": "Activează memoria de lucru și procesarea autonomă.",
+    "psychological": "Protejează încrederea și dreptul la alegere.",
+    "technical": "Adaptează execuția la intenția identificată.",
+    "social": "Promovează comunicarea descriptivă între coechipieri."
+  },
+  "age_appropriateness": "La 10–11 ani, întrebările deschise scurte sprijină dezvoltarea gândirii tactice fără a crea frustrare verbală.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "De ce n-ai pasat lui Ionuț?",
+      "reason": "Întrebare acuzatoare care blochează gândirea autonomă."
+    }
+  ],
+  "possible_misinterpretations": ["Antrenorul așteaptă un răspuns teoretic lung în loc de o indicație scurtă pe teren."],
+  "task_risks": ["Adresarea întrebărilor în timp ce jocul curge poate distrage atenția copilului de la fază."],
+  "understanding_check": ["copilul descrie în 3 cuvinte ce a văzut și demonstrează la repornire"],
+  "response_if_not_understood": ["repunerea fazei cu presiune redusă și întrebarea: «Unde era colegul tău liber?»"],
+  "match_transfer": "În meci, copilul caută spontan soluția și, întrebat scurt în pauză, poate arăta sau descrie ce a văzut, nu doar confirma verbal.",
+  "sources": ["SRC-0068", "SRC-0069", "SRC-0070", "SRC-0071"]
+}

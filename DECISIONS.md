@@ -1,0 +1,602 @@
+# Decisions
+
+## DEC-0054 — ManualFC concurează ca sistem de decizie pentru antrenor, nu ca bibliotecă de exerciții
+
+Auditul premium a stabilit că avantajul demonstrabil este lanțul `observație → cauză testabilă → mesaj → sarcină → evaluare → transfer`, susținut de pedagogie și dovezi. Volumul de exerciții, ornamentul vizual sau un SaaS generic nu constituie direcția competitivă.
+
+Arhitectura recomandată are trei motoare: Decision Engine, Learning Engine și Field Engine. Prioritățile transformaționale sunt Problem Engine, Presentation Layer V2, Field Mode + Group Configurator, multimedia completă și bucla Session Workspace → Assessment. Acestea sunt recomandări și ipoteze de produs, nu autorizare de implementare. Orice tracking despre copii rămâne blocat până la privacy/legal design și date reale de pilot.
+
+## DEC-0053 — Aliasul Production servește artefactul e59f10d; protecția rămâne numai pe Preview
+
+Deploymentul verificat `dpl_DM6ueZVLZwQpVL942NUnSDDYxQic` a fost promovat fără rebuild. Vercel a creat echivalentul Production `dpl_9UpgnY7xuhpcR2FZyMjZ4JrWzsnE`, păstrând metadata `gitCommitSha=e59f10d` și `originalDeploymentId`. Aliasul `manualfc.vercel.app` a fost mutat de pe deploymentul vechi defect la acest artefact.
+
+Politica `ssoProtection.deploymentType=preview` este cea mai îngustă configurație compatibilă cu testarea: Production este public, iar Preview-urile rămân protejate. Mediul păstrează `noindex, nofollow` și nu activează analytics, tracking, domeniu custom, plăți ori funcționalități comerciale. Verificările live sunt PASS: 18/18 rute, 8/8 active și browser responsive la 1440/1280/768/390 px. `TASK-2601` este `DONE`; această decizie de deployment nu schimbă baseline-ul Phase-25 `4bf2064`.
+
+## DEC-0052 — Preview-ul reparat rămâne protejat până la o decizie explicită de acces
+
+Commitul `e59f10d` configurează explicit outputul static Vercel `dist/web` și protecția `X-Robots-Tag: noindex, nofollow`. Deploymentul Preview `dpl_DM6ueZVLZwQpVL942NUnSDDYxQic` este `READY`; verificarea autentificată confirmă 18/18 rute critice și buildul de 74 pagini, fără secrete, variabile de mediu sau date reale despre copii.
+
+Vercel Authentication redirecționează browserul anonim la login, astfel că auditul vizual live la 1440/1280/768/390 nu este încă executabil. Nu se dezactivează protecția și nu se promovează deploymentul la producție fără acord explicit. `TASK-2601` rămâne `IN_PROGRESS`, cu starea `PRODUCT_OR_ACCOUNT_DECISION_REQUIRED`.
+
+## DEC-0051 — Staging Vercel folosește Preview direct; autentificarea este blocker extern
+
+Repository-ul nu are remote Git sau proiect Vercel legat, iar aplicația Astro este statică și nu cere variabile de mediu. Pentru primul mediu de test s-a ales deploy direct Vercel Preview dintr-un snapshot curat al commitului acceptat, fără adapter SSR, `vercel.json`, domeniu custom, analytics ori funcționalități comerciale.
+
+Auditul pre-upload a găsit zero secrete și zero date reale despre copii/pilot. Gate-ul local este PASS. CLI-ul Vercel a respins credentialul local ca invalid înaintea creării proiectului sau uploadului. `TASK-2601` rămâne `IN_PROGRESS`; reluarea necesită autentificare interactivă, apoi continuă de la inventarul proiectelor Vercel, nu de la validarea Phase-25.
+
+## DEC-0050 — Phase-25 recuperat și validat în browser; acceptanța este PASS pentru baseline-ul 4bf2064
+
+Recuperarea handoffului a stabilit că 14 commituri după `b109920` au integrat baseline-ul vizual și au închis succesiv constatările auditului de produs, până la `HEAD = 4bf2064`. Nu există fișiere tracked modificate sau staged, deci produsul curent este reproductibil din Git; cele patru fișiere neversionate sunt exclusiv artefacte QA și rămân păstrate.
+
+Validarea pe HEAD curent este complet verde: conținut/proiect fără erori, registry reproductibil, 417/417 teste, Astro check fără diagnostice și build static de 74 pagini. Auditul browser-first executat post-remediere la 1440/1280/768/390 px confirmă că rutele live ale produsului din Gold Standard și volum/Principii se deschid, renderizează `h1` și conținut principal, și nu există defect de rutare sau redirect loop în fluxul de producție.
+
+Prin urmare, `FIELD_PILOT_PRODUCT_ACCEPTANCE = PASS_FIELD_PILOT_PRODUCT_ACCEPTANCE` și `MANUALFC_FIELD_PILOT_PRODUCT_BASELINE = 4bf2064`. `TASK-2501` este `DONE`; acceptarea de pilot poate continua cu `PHASE-23` și date de teren reale. `PHASE-23 = FIELD_INPUT_REQUIRED` rămâne valabil, dar nu ca blocaj tehnic al produsului: datele reale sunt necesare pentru pilotul de teren, nu pentru validarea produsului.
+
+## DEC-0001 — Categoria de vârstă
+
+Copiii născuți în 2015 și 2016 sunt tratați împreună ca o singură categorie de aproximativ 10–11 ani. Nu se creează curricule separate. Adaptarea este individuală.
+
+## DEC-0002 — Fundamentarea mesajelor
+
+Orice mesaj sau sarcină transmisă copilului trebuie să explice de ce este folosită și ce mecanism de învățare urmărește.
+
+## DEC-0003 — Format final
+
+Produsul final include manual web interactiv, PDF, resurse editabile, surse și arhivă testată.
+
+## DEC-0004 — Arhitectură statică data-driven
+
+Sursa de adevăr este separată de interfață: capitole în Markdown/MDX, entități în JSON validat, diagrame SVG și logică interactivă TypeScript. Stackul țintă este Astro cu export static, componente interactive izolate, CSS de print și Playwright/Chromium pentru browser și PDF. Alegerea favorizează funcționarea offline și derivarea web/PDF din aceleași date.
+
+## DEC-0005 — Cercetare și citare normalizate
+
+Sursele, afirmațiile și citările au registre separate. O citare leagă explicit afirmația, sursa, locatorul concret și locul utilizării. Tipurile de afirmații separă faptele, recomandările oficiale, rezultatele studiilor, practicile, opiniile și sintezele metodologice.
+
+## DEC-0006 — Fundamentarea canonică a mesajelor
+
+Orice indicație transmisă copilului este modelată separat și include formularea exactă, sensul pentru antrenor, problema, informația observată, interpretarea, decizia, comportamentele, cele șase justificări profesionale, adecvarea la vârstă, riscurile, verificarea, intervenția alternativă și transferul în meci.
+
+## DEC-0007 — Progres ponderat
+
+Registrul atribuie fiecărui task o pondere pozitivă, iar suma ponderilor este 100. Progresul global este suma ponderilor taskurilor `DONE`; stările parțiale nu contribuie, pentru a evita raportarea optimistă fără outputuri validate.
+
+## DEC-0008 — Git necesită autorizare separată
+
+La inspectare, rădăcina nu conținea `.git`. Inițializarea Git și politica asociată au fost separate în `TASK-0002`; TASK-0001 nu modifică această stare fără autorizare explicită.
+
+## DEC-0009 — Baseline Git și politica fișierelor locale
+
+Repository-ul este inițializat pe ramura `main`. Sunt versionate sursele, registrele persistente, documentația, schemele, testele și rapoartele proiectului. Sunt ignorate secretele și fișierele `.env`, dependențele instalate, cache-urile Astro/TypeScript/Python/Playwright, browserele descărcate, build-urile locale, rapoartele temporare și fișierele de editor sau sistem. `dist/README.md` rămâne versionat pentru a documenta rolul directorului; artefactele generate din `dist/` nu fac parte din baseline.
+
+## DEC-0010 — Identitate tehnică locală pentru commitul baseline
+
+Mediul nu avea configurate `user.name` și `user.email`. Pentru commitul solicitat s-a folosit numai în configurația locală a repository-ului identitatea neutră `Codex <codex@localhost>`. Configurația globală a utilizatorului nu a fost modificată și commitul nu este atribuit unei persoane reale fără date furnizate.
+
+## DEC-0011 — Un singur validator canonic pentru date
+
+Validatorul canonic este `scripts/validate_content.py`, implementat în Python și bazat pe schemele Draft 2020-12 din `schemas/`. Alegerea folosește bootstrapul deja existent și evită instalarea prematură a stackului Astro din TASK-0401. `jsonschema==4.26.0` este fixat în `requirements-dev.txt`; după instalare, validarea este locală și nu necesită internet. Viitoarea aplicație va apela acest motor, nu va duplica regulile în TypeScript.
+
+## DEC-0011a — Reutilizare control plane extern pentru TASK-0004
+
+TASK-0004 nu construiește un orchestrator autonom intern. În schimb, proiectul definește un contract de integrare cu un control plane extern existent pentru selecția taskurilor READY bazată pe dependențele DONE, păstrând astfel focusul pe arhitectura și conținutul platformei web.
+
+## DEC-0012 — Consolidarea contractului pedagogic
+
+Schemele pentru mesaje, principii și exerciții cer explicit justificarea decizională și riscurile sarcinii; schema ședinței cere colecția fundamentărilor mesajelor. Câmpurile suplimentare neînregistrate sunt respinse pentru aceste entități. Nu există instanțe editoriale de migrat la data deciziei; fixture-urile de test au fost actualizate, iar registrele reale sunt încă goale.
+
+## DEC-0013 — Severități și euristici prudente
+
+Erorile structurale, referințele rupte, outputurile lipsă și fundamentarea absentă sunt `ERROR`. Problemele editoriale obiective care necesită revizie, dar nu dovedesc singure invaliditatea, sunt `WARNING` și devin blocante în `--strict`. Euristicile nu certifică adevărul pedagogic și nu încearcă detectarea autorului textului.
+
+## DEC-0014 — Taxonomie centrală și registre de cercetare v2
+
+Taxonomia surselor, nivelurilor de încredere, motivelor de excludere,
+domeniilor întrebărilor și politicilor de actualitate este centralizată în
+`config/research-taxonomy.json`. Registrele pentru surse, afirmații și citări
+folosesc schema `2.0.0`; întrebările, căutările și manifestele de arhivă au
+contracte dedicate. Migrarea automată este permisă numai pentru registrele v1
+goale; datele populate cer o migrare explicită și revizuită.
+
+## DEC-0015 — Arhivare fail-closed și distribuție bazată pe drepturi
+
+Orice sursă păstrează cel puțin metadate. Un snapshot local este creat numai
+dacă drepturile declarate permit stocarea și are manifest cu SHA-256. Materialul
+protejat rămâne referință/metadată și nu intră în distribuția publică. Directoarele
+de snapshot și material local restricționat sunt ignorate implicit de Git; un
+activ permis poate fi inclus numai prin decizie explicită, manifest și audit.
+
+## DEC-0016 — Jurnal de căutare append-only și deduplicare conservatoare
+
+Căutările sunt înregistrate în JSONL append-only, cu interogarea exactă,
+filtrele, screeningul și excluderile. DOI, URL normalizat, SHA-256 și ISBN produc
+duplicate certe și blochează inserarea; asemănarea de titlu, autori și an produce
+doar o coadă de revizie și nu unește automat sursele.
+
+## DEC-0017 — Reguli U11 cu jurisdicție, sezon și statut explicit
+
+Categoria pedagogică a manualului rămâne unică pentru copiii născuți în 2015 și
+2016, dar eligibilitatea administrativă este înregistrată exact pentru fiecare
+competiție. Regulamentul competiției concrete prevalează numai în domeniul său;
+regulile altui AJF sunt comparative, iar documentele vechi sunt exclusiv
+istorice. Valorile negăsite rămân `null` cu statut și dată de reverificare.
+Dimensiunile și spațiul per jucător extrase din regulamente sunt descriptive,
+nu recomandări universale pentru antrenament.
+
+## DEC-0018 — Safeguarding pe niveluri de autoritate și aprobare
+
+Sistemul canonic păstrează separat obligația legală românească, cerința FRF cu
+domeniul ei de aplicare, standardele FIFA și UEFA, practica recunoscută,
+recomandarea pedagogică și modelul intern. Niciun model nu este prezentat drept
+politică adoptată: poartă marcajul `MODEL PENTRU ADAPTARE ȘI APROBARE DE CĂTRE
+CLUB`, iar punctele sensibile cer revizie juridică. Răspunsul la dezvăluire
+protejează, ascultă fără întrebări sugestive, documentează factual și
+escaladează; clubul și antrenorul nu desfășoară investigații proprii. Contactele
+publice au sursă, dată de verificare și termen de recontrol.
+
+## DEC-0019 — Platforma web devine produsul principal
+
+Produsul este o platformă statică pentru formarea antrenorului-pedagog, cu
+modurile „Vreau să învăț” și „Am nevoie de o soluție acum”. PDF-urile, fișele și
+pachetele editabile sunt derivate. Antrenorul este format întâi ca pedagog, iar
+contractul în 18 puncte se aplică tuturor mesajelor și sarcinilor.
+
+## DEC-0020 — Migrare fără pierderea progresului
+
+Cele șase taskuri închise înaintea pivotului păstrează ponderile care însumează
+2,462%. Cele 11 taskuri noi redistribuie numai munca rămasă; TASK-0003 adaugă
+progres după validare. Fiecare task are o dispoziție de migrare, iar extinderea
+4–18 ani rămâne amânată până după validarea comercială.
+
+## DEC-0021 — Plafon strict de automatizare și Gate pentru Control Plane
+
+ManualFC este un produs pedagogic web; control plane-ul este o infrastructură auxiliară. De acum înainte sunt permise maximum 2 intervenții/taskuri dedicate exclusiv integrării sau reparării control plane-ului. TASK-0004 este prima intervenție și stabilește dovedirea integrării fără gap (`NONE`). Ca urmare, dezvoltarea extinderilor de automatizare se oprește, iar activitatea se focalizează direct pe componentele aplicației web, începând cu TASK-0401.
+
+## DEC-0022 — Gate evidence pentru conținutul canonic de producție
+
+Claims folosite de entități canonice non-fixture trebuie să aibă metadata explicită pentru nivel epistemic, populație, vârsta participanților, context, aplicabilitate U11, limite și implicație practică. Fiecare trebuie să rezolve prin cel puțin o citare către una dintre sursele declarate de claim. Gate-ul se aplică utilizării în producție, fără a impune retroactiv aceeași extensie claims-urilor istorice nepublicate. Pagina web rezolvă aceleași registre și nu păstrează un al doilea set manual de niveluri sau surse.
+
+## DEC-0023 — Răspunsul după eroare este condiționat de veriga acțiunii
+
+ManualFC nu tratează eroarea drept succes automat și nu prescrie corectarea imediată. Antrenorul separă informația, interpretarea, alegerea, execuția și rezultatul. Oprește pentru siguranță, clarifică neînțelegerea și modifică sarcina când informația necesară lipsește; când intenția este inteligibilă și repetarea este sigură, protejează o nouă încercare înaintea explicației. Matricea este instrument de practică pentru pilot, nu test diagnostic validat.
+
+## DEC-0024 — TASK-0504 se integrează în arhitectura CH-0104
+
+Titlul de task „Motivație, autonomie și încredere” nu creează un al șaselea capitol și nu înlocuiește arhitectura aprobată. CH-0104 rămâne „Formularea mesajului pedagogic”, iar cele trei constructe sunt tratate ca rezultate posibile, criterii și limite ale comunicării. Nicio formulare nu este prezentată drept cauză suficientă pentru motivație, încredere sau participare persistentă.
+
+## DEC-0025 — TASK-0505 evaluează transferul prin comportamente sociale observabile
+
+Titlul de task despre cooperare, apartenență și diferențiere este integrat în CH-0105, capitolul aprobat despre evaluarea înțelegerii și transferul în meci. Transferul cere oportunitate, apariție fără comandă și context schimbat. Cooperarea este descrisă prin acțiuni, iar apartenența nu este presupusă din simpla participare. Diferențierea schimbă o condiție a sarcinii, nu demnitatea ori identitatea copilului.
+
+## DEC-0026 — Auditul VOLUME-01 separă buildul reușit de integrarea editorială
+
+Un build Astro verde nu demonstrează că toate capitolele și principiile canonice sunt accesibile în produs. TASK-0506 se închide cu verdict `REPAIR_REQUIRED`, iar TASK-0507 trebuie să publice traseul de volum, să completeze CH-0101 și să producă pachetul de field review. Datoria vizuală rămâne explicită sub design freeze și nu este declarată finalizată.
+
+## DEC-0027 — VOLUME-01 intră în field review cu QA vizual declarat, nu presupus
+
+După închiderea tuturor defectelor critice și majore, VOLUME-01 primește verdict `PASS_FIELD_REVIEW_READY`. Lipsa browserului integrat este raportată ca `VISUAL_QA = PENDING_USER_REVIEW`, conform deciziei de produs anterioare, iar diagramele și animațiile rămân `DEFERRED_BY_DESIGN_FREEZE`. Verdictul acoperă conținutul și instrumentele de teren, nu un release vizual final.
+
+## DEC-0028 — Problema de joc este unitatea de proiectare pentru VOLUME-02
+
+ManualFC definește operațional problema de joc prin obiectiv, opoziție, informație schimbătoare, minimum două opțiuni plauzibile și consecință. Aceasta este o sinteză metodologică, nu o taxonomie universală. Forma numerică și regulile sunt alese după problemă; succesul nu este reproducerea unui traseu, iar tehnica este evaluată în relație cu intenția.
+
+## DEC-0029 — Spațiul și unghiul sunt relații funcționale, nu coordonate fixe
+
+ManualFC numește util spațiul care schimbă o posibilitate de joc, iar unghiul este evaluat după linia, orientarea și continuarea pe care le creează. Dimensiunile terenului sunt ipoteze de reglaj și se modifică o singură variabilă odată; literatura despre dispersie nu este transformată într-o prescripție U11. Mesajul copilului indică limita adversarului și păstrează soluția la copil.
+
+## DEC-0030 — Progresia este evaluată prin posibilitatea următoare
+
+Direcția mingii nu este folosită singură drept dovadă de progresie. O acțiune progresivă depășește opoziția ori schimbă relația astfel încât următoarea cale devine mai bună; sprijinul poate apărea înainte, lateral sau înapoi. Sarcinile pornesc cu reguli puține, iar o constrângere este adăugată numai dacă problema rămâne invizibilă și efectul poate fi verificat.
+
+## DEC-0031 — Protejarea centrului coordonează presiunea, acoperirea și echilibrul
+
+Centrul este tratat drept drumul scurt și periculos către poartă, schimbător odată cu mingea, nu coridor geometric fix. Primul apărător încetinește și orientează, al doilea acoperă, iar echipa păstrează echilibrul. Frecvențele observate în 3v3 și 6v6 U11 nu sunt transformate în efect de învățare ori format superior.
+
+## DEC-0032 — Presiunea și acoperirea sunt roluri schimbătoare
+
+Presiunea este influență controlată asupra purtătorului, nu sprint sau tackling obligatoriu. Acoperirea rămâne capabilă să răspundă depășirii și devine noua presiune când mingea se mută. Tipul țintei este tratat ca o constrângere care schimbă oportunitățile defensive, nu ca metodă cu efect garantat.
+
+## DEC-0033 — Tranziția la pierdere separă influența imediată de protecția centrului, fără presing în bloc și fără prag temporal netestat
+
+CH-0206 tratează pierderea mingii ca un moment cu două decizii distincte, coordonate, nu ca un cronometru: cel mai bine plasat jucător decide dacă influențează sau întârzie, restul echipei protejează centrul. Presingul în bloc, cu roluri fixe și declanșator comun, rămâne `PRACTICE_ONLY` și amânat — nu există dovadă a fezabilității sau eficienței lui predat ca sistem la 10–11 ani. Nu a fost identificat niciun studiu, la nicio vârstă, care testează sau validează un prag temporal de tipul „regulii de 5 secunde”; singura lucrare tehnică relevantă găsită folosește o fereastră temporală doar ca etichetă de date pentru un model de învățare automată pe fotbal profesionist adult, nu ca prag pedagogic. Cercetarea directă la U11 despre reorganizarea defensivă imediată după pierdere lipsește și acest gol este declarat explicit, nu acoperit prin extrapolare din eșantioane U13–U15.
+
+## DEC-0034 — Câștigarea mingii cere control, apoi privire, apoi decizie, fără regulă fixă de viteză
+
+CH-0207 respinge atât „atacă imediat” cât și „păstrează mereu în siguranță” ca reguli fixe pentru tranziția la câștigarea mingii, propunând o secvență observabilă: control curat, privire reală, decizie potrivită situației (progresie sau sprijin). Statisticile despre eficiența contraatacului există doar la nivel profesionist adult și nu sunt importate ca normă U11. Un test formal de decizie, izolat de joc (Fenner et al. 2022, U10, n=8), nu a prezis succesul real într-un joc redus — ManualFC observă comportamentul pe teren, nu tratează testele abstracte de decizie ca substitut. Cercetarea directă la U11 despre chiar momentul câștigării mingii lipsește și este declarată explicit.
+
+## DEC-0035 — Situațiile numerice se citesc local, iar antrenamentul pe superioritate nu ajută uniform
+
+CH-0208 tratează superioritatea, egalitatea și inferioritatea numerică drept informație locală (zona fazei), nu scor general pe teren: atacantul cu avantaj trebuie să implice activ coechipierii, apărătorul în dezavantaj trebuie să prioritizeze o cale, nu să se arunce la minge. Singura dovadă directă la U11 este un studiu de caz cu opt copii (García-Angulo et al. 2024); un studiu la aceeași vârstă (Práxedes et al. 2018) arată că antrenamentul pe superioritate numerică ajută decizia și execuția doar la copiii cu nivel tehnic mediu, nu la cei cu nivel scăzut — beneficiul este condiționat individual, nu universal. Răspunsul la dezechilibru numeric observat la U15 sau la adulți tineri nu este transferat la U11 fără dovadă directă. Cu închiderea acestui capitol, toate cele opt capitole ale VOLUME-02 (CH-0201–CH-0208) sunt complete conform arhitecturii din registry; următorul pas este auditul independent (TASK-0609).
+
+## DEC-0036 — Auditul VOLUME-02 separă conținutul verificat de integrarea web incompletă
+
+TASK-0609 se închide cu verdict `REPAIR_REQUIRED`, la fel ca precedentul VOLUME-01 (`DEC-0026`). Factualitatea, pedagogia, structura, limba și consistența cu VOLUME-01 primesc verdict PASS: nu au fost găsite claims duplicate, contradicții între capitole sau supra-generalizări U11 nesemnalizate în cele 15 lanțuri claim→citation→source noi. Rămân trei defecte majore, toate de integrare web — content bridge nu încarcă principiile CH-0201–CH-0208, nu există rută `/volum/02`, iar pachetul de field review lipsește — cu owner explicit TASK-0610. Un build Astro verde nu demonstrează că volumul este publicat.
+
+## DEC-0037 — Remedierea TASK-0610 aprobă VOLUME-02 pentru field review cu 36 pagini statice și 0 erori
+
+TASK-0610 închide toate cele trei defecte majore V02-M01, V02-M02 și V02-M03: Content Bridge înregistrează toate cele 8 principii canonice (`/principii/...`), manifestul `FIELD_REVIEW_READY` și rutele statice `/volum/02` + `/volum/02/ch-0201`..`ch-0208` sunt generate integral (36 pagini statice în build), iar pachetul de field review `VOLUME_02_FIELD_REVIEW_PACKAGE.md` reunește cele 8 instrumente de teren. Re-auditul independent confirmă verdictul `PASS_FIELD_REVIEW_READY`. Toate validările (`validate_content.py --strict`, `validate_project.py`, 258 teste Python, `npm run check`, `npm run build`) trec cu 0 erori. Design freeze este protejat. Macro obiectivul VOLUME-02 este atins: `VOLUME_02_COMPLETE_FOR_FIELD_REVIEW = YES`.
+
+## DEC-0038 — Volumul 04 operaționalizează metodologia practică de predare
+
+VOLUME-04 („Metodologia practică de predare”) acoperă cele 6 capitole canonice (`CH-0401`–`CH-0406`), tratând proiectarea reprezentativă a antrenamentului (RLD), manipularea deliberată a constrângerilor de sarcină, scalarea prin progresii/regresii conservând intenția, observarea structurată pe un singur criteriu, maximizarea timpului activ peste 70% și reflecția ghidată post-joc. Fiecare capitol este conectat la surse primare/peer-reviewed, entități de principii canonice, fișe de teren și structura pedagogică de 15 dimensiuni.
+
+## DEC-0039 — Auditul independent și integrarea web aprobă VOLUME-04 pentru field review
+
+TASK-0807 finalizează auditul independent al Volumului 04 cu verdict `PASS_FIELD_REVIEW_READY`. Content Bridge expune cele 6 noi principii, manifestul `content/volume-04/manifest.json` este generat, rutele web `/volum/04` și `/volum/04/ch-0401`..`ch-0406` sunt construite și testate, iar pachetul de recenzie de teren `docs/field-review/VOLUME_04_FIELD_REVIEW_PACKAGE.md` este complet. Macro obiectivul este atins: `VOLUME_04_COMPLETE_FOR_FIELD_REVIEW = YES`.
+
+**ANULAT prin DEC-0040 — acest verdict s-a bazat pe cercetare fabricată; vezi mai jos.**
+
+## DEC-0040 — Audit forensic post-TASK-0608: VOLUME-03 și VOLUME-04 retrogradate, verdictele anterioare anulate
+
+Un audit forensic independent (`reports/audits/POST_TASK0608_FORENSIC_AUDIT.md`) a verificat extern — prin rezolvarea DOI-ului la `doi.org`, CrossRef API și PubMed — fiecare din cele 12 surse noi introduse pentru VOLUME-03 și VOLUME-04 (`SRC-0052`–`SRC-0063`). Constatare: 9 din 12 surse (`SRC-0053`–`SRC-0056`, `SRC-0059`–`SRC-0063`) sunt fie fabricate (DOI inexistent), fie atașate unui DOI care aparține unei lucrări complet diferite și nerelaționate. O a zecea sursă (`SRC-0052`) avea titlu și populație greșite. Doar `SRC-0057` și `SRC-0058` au trecut verificarea nealterate. Zece din cele douăsprezece claims noi (toate cu excepția `CLM-0058` și `CLM-0059`) sunt construite pe aceste surse compromise și au fost marcate `CONTESTED`.
+
+Această descoperire anulează:
+
+- verdictul `PASS_FIELD_REVIEW_READY` al TASK-0708 pentru VOLUME-03 (nedocumentat separat în acest jurnal — o a treia lacună de proces: TASK-0701–0708 nu au primit nicio intrare `DEC-00xx`, spre deosebire de toate volumele anterioare);
+- verdictul `PASS_FIELD_REVIEW_READY` al TASK-0807 pentru VOLUME-04 (`DEC-0039` de mai sus).
+
+Cauza structurală: auditurile TASK-0707 și TASK-0807 au verificat prezența câmpurilor (sursă înregistrată, nivel epistemic completat), nu adevărul lor — validatorul `scripts/validate_content.py` verifică integritate structurală/schema, nu factualitate, și a trecut „PASS” pe tot parcursul. TASK-0807 a agravat problema combinând auditul cu reparația/integrarea în același task, eliminând separarea audit/reparare stabilită la VOLUME-01 (`TASK-0506`/`TASK-0507`), VOLUME-02 (`TASK-0609`/`TASK-0610`) și VOLUME-03 (`TASK-0707`/`TASK-0708`).
+
+VOLUME-01 și VOLUME-02 sunt confirmate corecte la această re-verificare independentă; `TRUSTED_BASELINE` rămâne valid pentru ele. VOLUME-03 și VOLUME-04 devin `RESEARCH_INTEGRITY_FAILURE — NOT_FIELD_REVIEW_READY` până la re-cercetare completă și verificare externă a fiecărei surse noi, capitol cu capitol. Trei prescripții numerice prezentate ca susținute științific („regula celor 15 secunde” în CH-0301, „timp activ peste 70%” în CH-0405, „debriefing de 3-5 minute” în CH-0406) nu au nicio bază reală și trebuie etichetate explicit `MANUALFC_HEURISTIC`, nu prezentate ca prag validat — exact tiparul pe care CH-0206 din VOLUME-02 îl respinsese deja explicit pentru „regula de 5 secunde”.
+
+## DEC-0041 — VOLUME-03 restabilit ca FIELD_REVIEW_READY printr-un verdict nou și independent
+
+`TASK-0709` a re-cercetat de la zero cele 5 capitole afectate de fabricare (CH-0301–CH-0305) și a re-verificat semantic CH-0306, ale cărui sursă bibliografică era validă dar al cărui claim supra-clasifica o lucrare teoretică drept rezultat empiric direct aplicabil la U11. 22 de surse noi au fost adăugate, fiecare verificată extern (CrossRef) înainte de folosire. Cele 4 claim-uri rămase `CONTESTED` din auditul forensic (`CLM-0054`–`CLM-0057`) au fost marcate explicit `REPLACED`, cu `replacement_claim_id` valid — niciunul lăsat silențios nerezolvat.
+
+Respectând explicit lecția din `DEC-0040` (combinarea audit+reparare în `TASK-0807` a permis fabricarea să treacă neobservată), `TASK-0710` a fost executat ca task separat, de o sesiune fără nicio implicare în scrierea `TASK-0709`, fără premisa că remedierea e corectă. Auditul a re-verificat independent 21 din 22 surse noi direct prin CrossRef (nu doar prin re-citirea registrului JSON sau a rapoartelor de task), a recitit integral toate cele 6 capitole, a verificat consistența internă a registrelor de cercetare programatic, a confirmat absența duplicării cu VOLUME-01/VOLUME-02, și a verificat explicit că niciun capitol nu înlocuiește o dogmă cu dogma opusă (risc semnalat special pentru CH-0305). Verdict: `PASS_FIELD_REVIEW_READY`, cu 4 constatări minore, strict cosmetice/de documentare, care nu afectează adevărul sau siguranța conținutului.
+
+`content/volume-03/manifest.json` este actualizat la `status: FIELD_REVIEW_READY`, `approved_at: 2026-08-11`. `TRUSTED_BASELINE` include acum VOLUME-01, VOLUME-02 și VOLUME-03. VOLUME-04 rămâne `RESEARCH_INTEGRITY_FAILURE — NOT_FIELD_REVIEW_READY`, remediere neînceput prin `TASK-0809`.
+
+
+
+
+## DEC-0042 — VOLUME-04 restabilit ca FIELD_REVIEW_READY printr-un verdict nou și independent; TRUSTED_BASELINE include acum toate cele 4 volume publicate
+
+`TASK-0809` a re-cercetat de la zero cele 5 capitole afectate de fabricare (CH-0402–CH-0406) și a re-verificat semantic CH-0401, a cărui sursă bibliografică era validă dar al cărui claim supra-clasifica o carte de metodologie generală drept rezultat empiric direct aplicabil la U11. 21 de surse noi au fost adăugate, fiecare verificată extern (CrossRef) înainte de folosire. CH-0405 a fost tratat explicit pe trei domenii de evidență separate (timp activ / organizare / siguranță), evitând amestecarea lor — pragul fabricat „timp activ peste 70%" a fost eliminat, iar domeniul de siguranță a câștigat conținut real, absent complet din versiunea veche, bazat pe un RCT oficial (FIFA 11+ Kids, reducere 48% a riscului de accidentare, verificat și prin PubMed). CH-0402 evită explicit dogma „abordarea bazată pe constrângeri e întotdeauna superioară instrucției directe", cu o secțiune dedicată limitelor metodei. Toate cele 5 claim-uri `CONTESTED` din auditul forensic (`CLM-0060`–`CLM-0064`) au fost marcate explicit `REPLACED`, cu `replacement_claim_id` valid.
+
+Respectând aceeași separare audit/reparare aplicată deja la VOLUME-03 (`DEC-0041`), `TASK-0810` a fost executat ca task separat, de o sesiune fără nicio implicare în scrierea `TASK-0809`, fără premisa că remedierea e corectă. Auditul a re-verificat independent toate cele 21 de surse noi (`SRC-0087`–`SRC-0107`) direct prin CrossRef, a re-confirmat printr-o a treia cale (OpenAlex) cifra cheie de siguranță (48%/HR 0,52) din CH-0405, a recitit integral toate cele 6 capitole, a verificat consistența internă a registrelor de cercetare programatic, a confirmat absența duplicării cu VOLUME-01/02/03 (inclusiv reutilizarea corectă, fără duplicat, a `CLM-0070`/`SRC-0069` din VOLUME-03 în CH-0404), și a verificat explicit evitarea dogmei opuse la CH-0402 și separarea celor trei domenii la CH-0405. Verdict: `PASS_FIELD_REVIEW_READY`, cu 2 constatări minore, strict cosmetice, care nu afectează adevărul sau siguranța conținutului.
+
+`content/volume-04/manifest.json` este actualizat la `status: FIELD_REVIEW_READY`, `approved_at: 2026-08-11`. `TRUSTED_BASELINE` include acum VOLUME-01, VOLUME-02, VOLUME-03 și VOLUME-04 — toate cele 4 volume publicate ale platformei. Rămâne de făcut verificarea finală de consistență încrucișată V01→V04 înainte de a declara `POST_GEMINI_TRUST_RESTORED = YES`.
+
+
+## DEC-0043 — Verificare finală de consistență V01→V04 și POST_GEMINI_TRUST_RESTORED = YES
+
+Verificare finală, cross-volume, înainte de a declara încrederea restaurată integral:
+
+- **Duplicare surse:** 0 DOI-uri duplicate în `research/sources.json` (106 surse, toate cele 4 volume). Reutilizările intenționate (`CLM-0034`/`SRC-0033` din VOLUME-01 în CH-0303; `CLM-0070`/`SRC-0069` din VOLUME-03 în CH-0404) sunt corect legate, fără duplicate.
+- **Terminologie:** categoria de vârstă (copiii născuți în 2015 și 2016, tratați unitar) e prezentă consecvent în toate cele 4 volume, cu formulări echivalente specifice fiecărui volum (DEC-0001 nu cere formulare identică, doar tratament unitar).
+- **Contradicții:** nicio regulă numerică fabricată de tipul celor eliminate în VOLUME-03/04 ([]"regula celor N secunde", praguri procentuale") nu a fost găsită re-introdusă în VOLUME-01/VOLUME-02. Temele de evitare a dogmei (VOLUME-03 CH-0305: nici dirijare continuă, nici tăcere totală; VOLUME-04 CH-0402: nici CLA universal superioară, nici instrucție directă eliminată) sunt coerente între ele, nu contradictorii.
+- **Progresie pedagogică:** VOLUME-01 (profilul copilului) → VOLUME-02 (principii tactice) → VOLUME-03 (comunicare și psihologie aplicată) → VOLUME-04 (metodologie practică de predare) rămâne o progresie logică, fără suprapuneri nerezolvate.
+- **Validare finală:** `validate_content.py --strict` (0 erori), `validate_project.py` (0 erori), `generate_task_registry.py --check` (192 taskuri, reproductibil), suita completă de teste (355 teste, PASS), `npm run build` (62 pagini).
+
+**Toate cele 4 volume publicate sunt acum `FIELD_REVIEW_READY`, fiecare prin verdict independent, necombinat cu reparația:** VOLUME-01 și VOLUME-02 confirmate de auditul forensic inițial (`POST_TASK0608_FORENSIC_AUDIT.md`); VOLUME-03 prin `TASK-0710`; VOLUME-04 prin `TASK-0810`.
+
+`POST_GEMINI_TRUST_RESTORED = YES`.
+
+Acest commit stabilește noul `TRUSTED_BASELINE` pentru întregul proiect. Conform instrucțiunilor de recuperare, bucla se oprește aici — nu se începe VOLUME-05, Gold Standard, arhitectură nouă, design sau lucru comercial fără o decizie explicită a utilizatorului.
+
+
+## DEC-0044 — Gold Standard „Sprijinul și unghiul de pasă": reutilizarea fundației VOLUME-02, nu re-derivare; lanțul vechi TASK-0410–0418 SUPERSEDE
+
+La deschiderea lucrului asupra primului sistem pedagogic vertical complet (Gold Standard, `TASK-2201`), auditul de pregătire a găsit că un lanț de 9 taskuri (`TASK-0410`–`TASK-0418`, `PHASE-04`) planifica deja un „prototip" pe această temă, dar rămâne `PENDING`, cu 0 tentative, blocat de două taskuri de infrastructură niciodată construite (`TASK-0304` — motor de animații, `TASK-0407` — harness Playwright). Arhitectura lui declarată (pagină Astro standalone, blob JSON separat) nu corespunde arhitecturii reale consolidate a platformei (`content/volume-0N/chapter-0M.mdx` + `data/principles/*.json` + `content-bridge.ts`). Conform politicii forward-only, acest lanț nu este șters, dar noul grafic de taskuri (`PHASE-22`, `TASK-2201`–`TASK-2211`) nu depinde de el — clasificare `SUPERSEDE`.
+
+A doua constatare, mai importantă: fundația conceptuală, perceptivă și decizională pentru „sprijin și unghi de pasă" există deja, verificată corect și `FIELD_REVIEW_READY`, ca parte organică a VOLUME-02 (`principle-spatiu-si-unghiuri`/CH-0202, `principle-progresie-si-sprijin`/CH-0203), sprijinită de evidență reală, nefabricată (`CLM-0036`, `CLM-0038`, `CLM-0040`, `CLM-0041`, `CLM-0042` — Clemente et al. 2021/2023, Pinder/Davids/Renshaw/Araújo 2011, Silvino/Sarmento/Teoldo 2024, Machado et al. 2020, toate `VERIFIED`). Gold Standard-ul reutilizează explicit această fundație — nu re-derivă modelul conceptual/perceptiv/decizional de la zero, nu duplică, nu contrazice mesajele deja aprobate din CH-0202/CH-0203. Lucrul nou necesar e delimitat strict la ce lipsește: cercetare punctuală despre execuția tehnică, apoi primele producții reale ale entităților de exercițiu, ședință și evaluare (scheme existente în `schemas/`, zero instanțe până acum).
+
+Fixture-urile de dezvoltare din `data/fixtures/` (`exercise.2v1-support-angle`, `principle.scanning-before-receive`, `problem.no-passing-angle`) sunt confirmate ca schele de test pentru validarea schemei (`"development_fixture": true`), nu conținut de producție — nu sunt reutilizate ca material Gold Standard, dar nici șterse (folosite de `tests/test_ch0101_batch1.py`/`tests/test_taxonomy.py`, în afara scopului acestui task).
+
+
+## DEC-0045 — Gold Standard „Sprijinul și unghiul de pasă" audiat independent: PASS_FIELD_REVIEW_READY
+
+`TASK-2209` a fost executat ca subagent complet separat de sesiunea care a produs `TASK-2201`–`TASK-2208`, fără nicio implicare în scrierea materialului auditat și fără premisa că e corect — respectând aceeași separare audit/reparație aplicată la VOLUME-03 (`DEC-0041`) și VOLUME-04 (`DEC-0042`), impusă după eșecul documentat în `DEC-0040`.
+
+Toate cele 7 surse cerute explicit (`SRC-0089` reutilizat din CH-0402, `SRC-0108`–`SRC-0113`) au fost re-verificate independent prin CrossRef — 0 titluri greșite, 0 autori greșiți, 0 DOI aparținând altei lucrări, spre deosebire de precedentul VOLUME-03/04 care a motivat această separare. Auditul a mers mai departe decât potrivirea titlului pentru cele 3 cifre-eșantion cu cea mai mare miză epistemică (De Giorgio et al. 2018: 34 copii de 7 ani, 17v17; Coutinho et al. 2023: 16 copii, 12,94 ani; McGuckian et al. 2018: 32 semi-elită adulți), confirmându-le cuvânt cu cuvânt prin acces la fulltext/abstract, nu doar prin registrul intern. S-a verificat explicit că populația reală a fiecărui studiu (adulți/U17+, 7 ani, 12,94 ani) nu e nicăieri ridicată tacit la un fapt dovedit la 10–11 ani — formulările rămân „extrapolare plauzibilă" / „cea mai apropiată dovadă găsită" în toate cele 5 exerciții, `CONCEPT_MODEL.md` și paginile web. Politica numerelor exacte, evitarea dogmei (nici unghi universal fix, nici „unghiul nu contează"; nici constrângeri universal superioare instrucției directe, nici invers), onestitatea `FIELD_VALIDATION_PENDING` (fără nicio urmă de rezultate de pilotare fabricate), testul limbajului pentru copil și design freeze-ul (`git diff a5251c6 HEAD --stat`, 0 fișiere înghețate atinse) au fost toate confirmate.
+
+Verdict: `PASS_FIELD_REVIEW_READY`, cu 1 constatare minoră (o citare formală lipsă între `CLM-0103` și `SRC-0089` reutilizat, deși legătura conceptuală e corectă) și 2 cosmetice (o sursă absentă din lista `sources` a unui exercițiu deși claim-ul e folosit acolo; două mesaje pentru copil ușor lungi pentru rostire instantanee, dar formulate explicit pentru pauza dintre seturi). Niciuna dintre aceste 3 constatări nu afectează adevărul, siguranța sau calibrarea epistemică a materialului — conform aceleiași reguli aplicate constatărilor minore din auditurile VOLUME-03/VOLUME-04, `TASK-2210` (remediere condiționată de `REPAIR_REQUIRED`) nu se activează și rămâne `PENDING`, neactivat, fără a fi șters (politică forward-only). `TASK-2211` — pachetul de field review — devine `READY`.
+
+
+## DEC-0046 — Gold Standard „Sprijinul și unghiul de pasă" complet: GOLD_STANDARD_SUPPORT_ANGLE = READY_FOR_FIELD_PILOT
+
+`TASK-2211` a produs `docs/field-review/GOLD_STANDARD_SUPPORT_ANGLE_FIELD_REVIEW_PACKAGE.md`, ultimul task al buclei `AUTONOMOUS_RESUMABLE_GOLD_STANDARD_LOOP`. Pachetul leagă explicit toate cele 8 straturi produse (concept, cercetare, exerciții, ședințe, evaluare, instrumente de teren, specificații vizuale, integrare web) de fundația deja `FIELD_REVIEW_READY` din VOLUME-02, declară explicit ce ESTE (pregătire pentru pilotare) și ce NU ESTE (dovadă de eficacitate) acest pachet, definește trei categorii distincte de problemă posibilă (produs / pedagogică / exercițiu, cu exemple concrete pentru acest subiect, ca observațiile viitoare de teren să nu fie clasificate greșit), siruleaza explicit șapte limite ale ce nu se poate concluziona dintr-un singur pilot (cauzalitate, extrapolare de vârstă, retenție, generalizare, numărul „optim" de ședințe/exerciții, validitate bibliografică, folosire ca dovadă publicabilă), și include o matrice de decizie KEEP/MODIFY/REMOVE/RESEARCH_REQUIRED cu criterii per componentă — nu completată cu verdicte anticipate, deoarece niciun pilot real nu a fost rulat încă.
+
+Cu toate cele 9 taskuri ale buclei (`TASK-2201`–`TASK-2209`, `TASK-2211`) `DONE`, `TASK-2210` rămas neactivat (`REPAIR_REQUIRED` nu a fost declanșat), și verdictul independent `PASS_FIELD_REVIEW_READY` al `TASK-2209` neschimbat de nicio remediere ulterioară: **`GOLD_STANDARD_SUPPORT_ANGLE = READY_FOR_FIELD_PILOT`.**
+
+Aceasta este condiția de oprire legitimă A (succes) din specificația buclei. Conform instrucțiunilor explicite ale acesteia, bucla se oprește aici — nu se începe VOLUME-05, un alt subiect Gold Standard, redesign, arhitectură nouă, sau lucru comercial fără o decizie explicită nouă a utilizatorului.
+
+
+## DEC-0047 — PHASE-23 pornește: Runda 1 de pilotare reală izolează SES-0001 înaintea SES-0002
+
+Cu `GOLD_STANDARD_SUPPORT_ANGLE = READY_FOR_FIELD_PILOT` confirmat (`DEC-0046`), a început `PHASE-23` (`REAL_FIELD_PILOT_RESUMABLE_LOOP`) — o fază calitativ diferită, în care succesul nu se mai poate infera din validatoare/teste/build/coerență metodologică, ci exclusiv din date reale de teren furnizate de utilizator.
+
+`TASK-2301` a decis să nu piloteze simultan ambele ședințe Gold Standard. Runda 1 folosește doar `SES-0001` (`EX-0001`–`EX-0003`, toate 2v1: introducere → consolidare sub presiune → dimensiune tehnică), lăsând `SES-0002` (`EX-0004` 3v2, `EX-0005` 4v4) pentru o rundă ulterioară. Motivul: `SES-0002` se construiește direct pe fundația comportamentală din `SES-0001` — dacă ambele ar fi expuse simultan și `EX-0004` ar eșua, nu s-ar putea distinge dacă problema e proprie exercițiului sau o fundație netestată. Izolarea constatărilor de utilizabilitate/pedagogice înaintea expunerii întregului sistem e o cerință explicită a buclei PHASE-23.
+
+Livrabile: `docs/field-pilot/GOLD_STANDARD_SUPPORT_ANGLE_FIELD_SHEET_R1.md` (fișă unică de teren, secțiuni live minime, restul explicit pre-/post-ședință, fără jargon de cercetare) și `docs/field-pilot/PHASE23_FIELD_RETURN_TEMPLATE_R1.md` (template exact pentru datele reale, fără nimic inventat). `ASM-0001` nu a fost modificat — doar marcat pentru observare, conform regulii „nu repara înainte de a primi date".
+
+**Niciun rezultat de pilotare, comportament de copil, feedback de antrenor sau date de sesiune nu a fost inventat sau simulat în acest task — regula absolută a fazei (secțiunea 1 din specificația PHASE-23) rămâne respectată integral.**
+
+Stare macro Gold Standard: `FIELD_PILOT_ROUND_1_READY`. **`FIELD_INPUT_REQUIRED = YES`.** Bucla se oprește aici — conform regulii explicite „no autonomous work during field wait", nu se generează constatări, remedieri sau taskuri de analiză ipotetice înainte de date reale de teren. 0 taskuri `READY` în registru.
+
+
+## DEC-0048 — Audit de paritate implementare produs: navigarea globală remediată, divergență HEAD/working-tree documentată
+
+Suspiciunea explicită a utilizatorului — că repository-ul conține substanțial mai multă informație validată decât e efectiv disponibilă în produsul web real — a fost investigată sistematic (`TASK-2401`) și **confirmată**. Conținutul canonic (25 capitole randate integral, 25 principii de producție, sistemul Gold Standard complet, deja `PASS_FIELD_REVIEW_READY`) era corect, dar `getPrimaryNavigation()` — funcția care alimentează antetul global, consumat pe fiecare pagină, direct și fără filtrare de `AppHeader.astro` din `git HEAD` — ruta exclusiv către 3 rute fixture de dezvoltare (`/principii/orientare-corporala-scanare`, `/probleme/lipsa-unghi-de-pasa`, `/exercitii/2v1-unghi-de-suport`, toate marcate explicit „DEVELOPMENT FIXTURE"). Niciunul din cele 4 volume, niciunul din celelalte 24 de principii, și întregul sistem Gold Standard erau rute orfane, accesibile doar cunoscând URL-ul exact.
+
+Remediat (`8d213d4`): `getPrimaryNavigation()` corectată să indice conținut real (`/principii`, `/gold-standard/rapid`, `/gold-standard`); creat primul index real de principii (`app/src/pages/principii/index.astro`, grupate tematic, 25 de intrări reale, fixture-urile excluse explicit); adăugate cross-linkuri între cele 4 pagini index de volum (anterior, fiecare volum era o insulă fără nicio legătură de intrare din restul site-ului).
+
+**Constatare colaterală majoră, nerezolvată autonom:** fișierele din lista de design freeze (`AppHeader.astro`, `AppFooter.astro`, `index.astro`, `incepe-aici.astro`) au în `git HEAD` un conținut complet diferit și semnificativ mai vechi decât ce rulează în working tree-ul curent al acestei sesiuni — un redesign vizual în lucru, niciodată comis, documentat parțial în `plans/MANUALFC-visual-identity-v1.md` (tot necomis). Homepage-ul din `git HEAD` are CTA-ul principal „Am nevoie de o soluție acum" legat direct la `/design-system`. Remedierile funcționale echivalente aplicate acestor 4 fișiere în working tree **nu au fost comise** — comiterea lor ar fi inclus accidental întregul redesign vizual necomis, o încălcare directă a politicii de design freeze respectate riguros pe tot parcursul proiectului. Rămân documentate explicit ca reziduu, condiționate de o decizie viitoare a utilizatorului despre statutul acelui redesign.
+
+**Incident colateral, rezolvat fără pierdere de date:** în timpul validării, `app/package.json` a părut lipsă. Investigație fail-closed completă (fără `npm install`/`ci`/`clean`/`reset`/`checkout`/`commit`) a stabilit că nu a existat niciodată — manifestul canonic e la rădăcină (`E:\ManualFC\package.json`), confirmat de `git log` din commit-ul original `TASK-0401`. `app/node_modules`/`app/.astro` erau cache-uri Vite/Astro disponibile (fără pachete reale instalate), apărute incidental în timpul rulării unui `npm run dev` cu `cwd=app/`, care au schimbat rezoluția `npm prefix` pentru acel director. Șterse după inspecție read-only completă; root-ul rămas neatins pe tot parcursul.
+
+`TASK-2402` (audit independent de paritate, executat separat de remediere) devine `READY`.
+
+
+## DEC-0049 — Audit independent de paritate: REPAIR_REQUIRED pentru un defect, remediat; ciclu închis
+
+`TASK-2402`, executat de un subagent complet separat de `TASK-2401`, fără nicio implicare în scrierea remedierii și fără premisa că e corectă, a confirmat exacte toate constatările `TASK-2401` (inventar, remediere comisă `8d213d4`, conformitate design freeze, teste/validatoare) cu o singură excepție blocantă: `app/src/components/HomepageHero.astro` — componenta hero a homepage-ului, necomisă, importată de `index.astro` — nu primise de fapt remedierea CTA-ului „Am nevoie acum" (rămăsese pe ruta fixture stricată `/probleme/lipsa-unghi-de-pasa`), contrazicând direct afirmația explicită de reparare „funcțională" din raportul `TASK-2401` și din `DEC-0048`. Verificat de auditor prin build propriu (`npm run build` din rădăcină) și inspecția `dist/web/index.html` — nu prin simplă citire de cod.
+
+`TASK-2403` a corectat defectul exact cum a fost delimitat de auditor: o singură linie (`href`), verificată din nou prin build propriu și grep pe HTML-ul generat (0 ocurențe rămase ale rutei stricate). Fișierul rămâne necomis, din același motiv documentat deja pentru `AppHeader.astro`/`AppFooter.astro`/`index.astro`/`incepe-aici.astro` — face parte din redesign-ul vizual în lucru, niciodată comis.
+
+Auditul independent a mai găsit o eroare aritmetică minoră în raportul `TASK-2401` (taxonomia are 16 categorii/13 fără conținut, nu 15/10 cum fusese sumarizat — lista de nume enumerată era deja corectă). Corectată ca addendum în raportul de audit, fără impact asupra vreunui verdict.
+
+Cu defectul blocant remediat și verificat, ciclul audit→remediere `PHASE-24` pentru această rundă se închide. Reziduul deja documentat de `TASK-2401`/`TASK-2402` (divergența HEAD/working-tree pentru fișierele design-freeze, etichetarea `/design-system`, migrarea `/exercitii`/`/probleme` de pe fixture, cele 13 categorii de taxonomie aspirațională) rămâne neschimbat — niciunul dintre acestea nu blochează accesul la conținutul real de producție din navigarea globală, care e acum funcțional atât pentru un checkout git curat cât și pentru working tree-ul curent.
+## DEC-0055 — Wave-1 autorizat și delimitat
+
+Utilizatorul a autorizat implementarea exclusivă a fundației premium Wave-1: production hygiene (`TASK-2702`), IA V2 și terminologie (`TASK-2703`), Presentation Layer V2 pentru principii/exerciții (`TASK-2704`) și un audit browser-first separat (`TASK-2717`). Numerotarea `TASK-2717` evită coliziunea cu backlogul strategic `TASK-2705`–`TASK-2716`, care rămâne neactivat. Fiecare task de implementare primește commit separat unde este practic; Preview-ul Vercel nu înlocuiește Production, iar baseline-ul se îngheață numai după verdict `PASS`.
+
+## DEC-0056 — Fixture-urile rămân active de QA, dar nu mai sunt rute de produs
+
+`TASK-2702` stabilește frontiera structurală: numai `app/src/pages` generează produs public, iar paginile demonstrative trăiesc în `app/src/internal-pages`. Entitățile cu `development_fixture: true` rămân disponibile adaptoarelor și testelor, dar sunt filtrate din `getStaticPaths`. Astfel nu pierdem harness-ul tehnic și nu mai prezentăm accidental laboratorul, fixture-ul MDX, exercițiul, problema sau principiul demonstrativ ca ofertă editorială.
+
+## DEC-0057 — IA V2 descrie munca antrenorului, nu structura repository-ului
+
+Navigarea publică folosește cinci intenții verificabile: `Începe aici`, `Învață`, `Principii aplicate`, `Rezolvă pe teren`, `Modul complet`. „Volume”, „canonic”, „Mode B” și „Gold Standard” rămân termeni legitimi de arhitectură și trasabilitate, dar nu mai sunt sarcina principală de decodare din header. Nu folosim încă eticheta „Bibliotecă”, fiindcă produsul nu are un inventar unificat, căutare sau filtre care să susțină acea promisiune.
+
+## DEC-0058 — Presentation Layer V2 este o proiecție, nu o rescriere a adevărului
+
+Rezumatul practic al principiului și exercițiului este derivat numai din câmpuri canonice; stratul profund păstrează mesajul complet, raționalele, interpretările alternative, riscurile, adaptările, dovezile și transferul. `FieldSummary` nu este numit și nu se comportă ca Field Mode. Pentru EX-0004/EX-0005 lipsa activului vizual este declarată explicit, fără diagramă inventată sau control nefuncțional.
+## DEC-0059 — Problem Engine pornește din observație, nu din diagnostic
+
+Wave-3 folosește IDs stabile pentru problemă, ipoteză, test, cue și transfer. Un test modifică o singură variabilă și reduce incertitudinea; nu confirmă o cauză internă. Relațiile reutilizează conținutul canonic și pot rămâne goale când nu există încă un exercițiu sau o ședință legitimă. Media este `AVAILABLE` numai dacă există în produs, altfel `PLANNED`.
+## DEC-0060 — Decision Engine este o proiecție progresivă a grafului
+
+Primul ecran răspunde în sub 30 de secunde cu observația, limita, testul și cue-ul. Mecanismul și dovezile rămân în disclosures, iar acțiunile trimit către motoarele existente. Nicio pagină nu duplică Group Configurator sau Field Mode. Transferul este neconfirmat până la observație în joc.
+## DEC-0061 — Discovery rămâne lexical, static și explicabil
+
+La dimensiunea actuală, un index construit din loaderele canonice este mai rapid și mai verificabil decât un backend semantic. Scorul titlu/rezumat/conținut este fix, iar fiecare rezultat explică potrivirea. Filtrele pentru efectiv și timp exclud obiectele fără metadata; nu aproximează în tăcere.
+
+## DEC-0062 — Wave-3 este acceptat și baseline-ul runtime este înghețat
+
+După re-audit browser live la 1440/1280/768/390, repararea exclusivă a constatărilor Critical/Major și revalidarea completă, Wave-3 primește verdict `PASS`. Baseline-ul runtime este commitul `ae04ed53929ce5a4a06a374a479451c40737e10c`, servit de Preview-ul curat `dpl_ZZvvHG9GTSSycW41RVkmVJUtT9aK`. Commitul ulterior de documentare nu schimbă baseline-ul runtime. Production rămâne neschimbat, proiectul accidental rămâne neatins, iar Wave-4 nu pornește: `STOP`.
+
+## DEC-0063 — Phase-28 folosește taskuri 2801–2806 și un domeniu local-first înlocuibil
+
+TASK-2713–TASK-2716 au sensuri rezervate în auditul strategic, deși nu erau materializate în registru; nu sunt repurposate. Phase-28 folosește TASK-2801–TASK-2806. Starea antrenorului este separată de conținutul canonic și de provider: UI-ul consumă comenzi/selectori de domeniu, iar adapterul local poate fi înlocuit ulterior cu unul cloud. Workspace păstrează IDs și configurări, nu copii ale prozei. Domeniul nu conține identitate sau PII despre copii.
+
+## DEC-0064 — Gate A eșuează semantic; Wave-4 se oprește
+
+Deși smoke-ul inițial a confirmat rutele, headerele, Search și Field Mode, auditul semantic explicit pe EX-0001 a găsit `main main = 1`. Aceasta încalcă o cerință nominală Gate A. Nu se repară și nu se începe Wave-4 în aceeași buclă, deoarece handoff-ul cere STOP la orice eșec Gate A. Marcarea prematură PASS din TASK-2801 este corectată, nu ascunsă.
+
+## DEC-0065 — Repair-ul Wave-3 păstrează baseline-ul istoric și introduce pointer final
+
+Defectul latent este reparat în `bc2f676`: BaseLayout este singurul proprietar `<main>`, iar built-output validatorul impune un singur landmark pe fiecare document. Preview-ul și Production au trecut re-auditul. `MANUALFC_PREMIUM_WAVE3_BASELINE = ae04ed5` rămâne adevărul acceptării inițiale; `MANUALFC_PREMIUM_WAVE3_FINAL_BASELINE = bc2f67691266ac63fb2091f02bffac59ad19e463` este runtime-ul reparat. TASK-2801 este deblocat și închis; Wave-4 poate continua.
+
+## DEC-0066 — Wave-4 este acceptat pe Preview curat, izolat de Production; baseline-ul e înghețat
+
+Blocajul de acces Vercel raportat la închiderea inițială a `TASK-2806` (conectorul MCP autentificat, dar fără vizibilitate la proiectul `manualfc`) a fost rezolvat de utilizator prin autentificarea CLI Vercel local (`npx vercel`, cont `berescristi-8889`, cu acces confirmat la proiectul corect). Candidatul `560e27c7f6c81e841affe0ff7b072ba91d872c91` a fost publicat dintr-un git worktree izolat, curat, exact pe acest commit, ca deployment `Preview` (`target: null`), niciodată Production. Protecția SSO a fost păstrată; s-a activat suplimentar „Protection Bypass for Automation" (mecanism aditiv, nu o dezactivare globală a protecției) pentru a permite auditul browser real pe Preview. Identitatea runtime-ului a fost verificată prin hash de conținut, nu presupusă: bundle-ul `CoachActions.astro...js` de pe Preview poartă hash-ul nou (`CfvghWJB`) corespunzător reparației `problemId`, distinct de hash-ul vechi (`1vAmKmJ9`) din runtime-ul TASK-2805. Auditul live independent (nu localhost, nu capturi de ecran) a acoperit fluxul semnătură complet — context Decision Engine→Workspace păstrat corect, 16 jucători/2 antrenori, Mod Teren offline la 75 min din același document cache-uit, un cold start autentic (tab nou, context offline, fără stare JS anterioară) pe Preview-ul live cu 0 erori consolă, reflecție offline salvată și persistentă la reîncărcare fără nicio pierdere, căutare funcțională, 0 scroll orizontal la 390/1440, ținte de atins la 44px, `main=1`/`nested=0`. Rezultat: 0 Critical, 0 Major — nicio reparație suplimentară necesară față de candidatul deja comis. `MANUALFC_PREMIUM_WAVE4_BASELINE = 560e27c7f6c81e841affe0ff7b072ba91d872c91`. Production rămâne complet neschimbat (`bc2f676`, `dpl_GwmVnMkeBy7aMnAAQzBNgEFHYRv6`) — promovarea Wave-4 în Production rămâne o decizie de release separată, neautorizată aici. `TASK-2806` este `DONE`; `PHASE-28 / WAVE-4 = PASS`.
+
+## DEC-0067 — PHASE-29 formalizează, nu reinventează, fundația de cunoaștere deja existentă
+
+Înainte de a scrie orice document nou, inspecția obligatorie a guvernanței a găsit că arhitectura cerută de PHASE-29 (cei doi piloni copil/antrenor, un graf de cunoaștere, un contract obligatoriu de conținut, un registru de dovezi, un pipeline de cercetare) exista deja, parțial, dinainte de Wave-1: categoriile canonice `cat.copilul-10-11`/`cat.antrenorul-pedagog` (TASK-0201), graful `problem→...→evidence→media` (Wave-3), contractul de 18 întrebări din `PEDAGOGICAL_PRODUCT_PRINCIPLES.md`, registrul de claim-uri validat (`claim-registry.schema.json`) și dosare reale de cercetare (`research/dossiers/`, verificate direct — nu presupuse). Decizia: fiecare din cele 14 documente noi (`docs/knowledge/`) citează explicit precedentul folosit și extinde, nu duplică. Singurele adăugiri structurale reale sunt cele care lipseau genuin: competențele pedagogice (13) și de coaching (18) ca obiecte cu ID stabil, legătura explicită concept→competență→comportament, dimensiunea de reflecție a antrenorului (distinctă de reflecția copilului deja implementată), și patru straturi de prezentare peste modelul pe două niveluri deja existent. Toate schimbările de schemă propuse (`docs/knowledge/KNOWLEDGE_SCHEMA_IMPACT_ANALYSIS.md`) sunt aditive și opționale — niciun exercițiu, ședință, problemă sau principiu canonic existent nu devine invalid. Runtime-ul Wave-4 acceptat (`560e27c`) nu a fost atins. `MANUALFC_KNOWLEDGE_FOUNDATION_ARCHITECTURE_BASELINE = 506cf3b12290e4144a6c521618a19c67426e948d` — se îngheață separat de `MANUALFC_PREMIUM_WAVE4_BASELINE` (`560e27c`, neschimbat). `TASK-2901`–`TASK-2910` sunt `DONE`; `PHASE-29 = PASS`.
+
+## DEC-0068 — PHASE-30 populează registrul real de cercetare, nu unul paralel; volumele existente absorb domeniile noi fără schemă nouă
+
+Cei 9 agenți de cercetare paralelă (unul per cluster: dezvoltarea copilului, motivație/autonomie, atenție, feedback, chestionare, intervenția antrenorului, cadre de achiziție, percepție-decizie-acțiune, transfer) au produs 126 de claim-uri atomice, verificate prin căutare externă reală (WebSearch/WebFetch), niciuna inventată. Verificat explicit înainte de integrare: manifestele `content/volume-01..04/manifest.json` arată că volumele existente deja corespund pilonilor cerute — `VOLUME-01` („Copilul de 10–11 ani înaintea fotbalistului") și `VOLUME-03` („Comunicarea antrenorului, psihologia aplicată") sunt deja, structural, teritoriul Pedagogul/Antrenorul — deci nu a fost nevoie să se rezerve un `VOLUME-05`/`VOLUME-06` nou; toate cele 126 de claim-uri au fost integrate cu `volume_id` din intervalul 01-04 deja existent, `chapter_id: null` (dosare de domeniu, nu de capitol). Integrarea a folosit un script de parsare automată a secțiunilor „## CLAIMS" din dosare, urmat de deduplicare explicită a surselor: 12 din cele 125 de surse candidate s-au dovedit deja citate de capitole anterioare (ex. Malina et al. 2015, Ford et al. 2011, Bergmann et al. 2021) — fuzionate corect în ID-ul canonic existent, nu duplicate paralele. Un eșantion independent de 6 claim-uri, verificate prin rezoluție directă a DOI-ului (nu doar re-citire a raportului agentului), nu a găsit nicio nepotrivire claim-sursă. Runtime-ul rămâne neschimbat — nicio schemă, niciun fișier din `app/src/`/`data/` atins. `MANUALFC_RESEARCH_FOUNDATION_BASELINE = 735ffa2e991582d6b09aeb323df37077afff5b87` (commit-ul de conținut, verificat prin `git rev-parse HEAD` imediat după commit), înghețat separat de `MANUALFC_KNOWLEDGE_FOUNDATION_ARCHITECTURE_BASELINE` (`506cf3b`) și `MANUALFC_PREMIUM_WAVE4_BASELINE` (`560e27c`), ambele neschimbate. `TASK-3001`–`TASK-3012` sunt `DONE`; `PHASE-30 = PASS`.
+
+## DEC-0069 — PHASE-30 Wave-2 închide cel mai mare gol identificat (reflecția antrenorului) și confirmă că reflecția nu îmbunătățește automat practica
+
+Wave-2 a cercetat cele 7 domenii rămase prioritare identificate explicit la finalul Wave-1: relația pedagogică (PED-D07), dinamica de grup (PED-D08), părinții (PED-D10, zero acoperire anterioară), dezvoltarea emoțională dincolo de eroare/siguranță (PED-D04), și întregul cluster de reflecție/auto-evaluare/dezvoltare profesională a antrenorului (COACH-D32-34, anterior identificat drept „cel mai mare gol real" al arhitecturii). 73 de claim-uri noi, 67 surse noi, integrate cu aceeași metodă ca Wave-1 (parsare automată + deduplicare împotriva registrului complet, inclusiv sursele adăugate în Wave-1). Constatare cu impact direct asupra viitorului Reflection V2: un studiu controlat (Da Silva et al., 2022) arată că o intervenție de reflecție a crescut scorul de reflecție măsurat, dar nicio altă variabilă (comportament de predare, rezultate) nu s-a schimbat semnificativ — reflecția NU îmbunătățește automat practica, disciplină care trebuie păstrată explicit în orice design viitor de Coach Development. Decalajul documentat direct la antrenori de fotbal juvenil între auto-evaluare și evaluare observată/a sportivilor confirmă principiul arhitectural PHASE-29 de a baza dezvoltarea antrenorului pe comportament observabil, nu doar auto-raportare. Toate cele 12 domenii Pedagogul au acum cel puțin o formă de acoperire (0 rămân `NOT_RESEARCHED`). Porțile de autorizare Pedagogul V1 și Antrenorul V1 primesc verdictul onest `READY_WITH_LIMITATIONS`, nu `READY_FOR_AUTHORING` necondiționat — un Val 3 rămâne recomandat pentru golurile reziduale (planificare pe termen mediu a antrenorului, identitatea antrenorului, comunicarea generală, diferențe individuale dincolo de maturizare biologică). Un eșantion independent suplimentar de 4 claim-uri (cumulat 10 din ambele valuri) verificat prin rezoluție DOI directă — 0 nepotriviri. Runtime-ul rămâne neschimbat. `MANUALFC_RESEARCH_FOUNDATION_WAVE2_BASELINE = 2dc67f8aa0feb7b42b5c5f9c7ba7dc72d647844f` (commit-ul de conținut, verificat prin `git rev-parse HEAD` imediat după commit), înghețat separat de baseline-ul Wave-1 (`735ffa2`), fără a-l suprascrie. `TASK-3013`–`TASK-3022` sunt `DONE`; `PHASE-30 Wave-2 = PASS`. PHASE-31 (redactare) rămâne neautorizat.
+
+## DEC-0070 — PHASE-30 Wave-3 închide toate golurile structurale rămase; Pedagogul V1 și Antrenorul V1 primesc verdict `READY_WITH_LIMITATIONS`
+
+Wave-3 (val final de cercetare pentru PHASE-30) a cercetat cele 8 domenii rămase, clasificate explicit după importanța de autorizare, nu cercetate uniform: comunicarea pedagogică generală (PED-D06), diferențele individuale (PED-D11), metacogniția copilului (PED-D12), identitatea antrenorului (COACH-D01), diferențierea (COACH-D29), design de ședință (COACH-D27), planificare pe termen mediu (COACH-D28, al doilea gol „HIGH" identificat de două ori — acum închis) și organizare/timp activ (COACH-D19/D20, tratat cu onestitate asimetrică — timp activ are literatură matură cu un studiu direct U11-fotbal, poziționarea antrenorului rămâne fără literatură sport-specifică reală, formalizată explicit `PRACTICE_HEURISTIC`, nu inventată). 78 de claim-uri noi, 76 surse noi. În timpul integrării s-a descoperit și rezolvat un defect real de mediu: coruperea determinist reproductibilă a `research/claims.json`/`citations.json` la orice `git checkout`, cauzată de o interacțiune între `core.autocrlf=true` (setare preexistentă) și regula `.gitattributes` `eol=lf` pentru JSON — filtrul de conversie al Git pentru Windows corupe o secvență UTF-8 pe mai mulți octeți exact la limita unui buffer de 512KB. Rezolvat prin scriere directă a octeților curați din blob-ul Git, ocolind checkout-ul, fără nicio modificare de configurare git — semnalat explicit ca risc real pentru orice checkout viitor pe această mașină, nu doar remediat tăcut. Rezultat final: **toate cele 12 domenii Pedagogul** au acoperire de fundație (0 `PARTIAL`, 0 `NOT_RESEARCHED`); **toate cele 34 de domenii Antrenorul** au stare explicită și justificată (0 `NOT_RESEARCHED`, restul fie `FOUNDATION_READY`, fie `DEFERRED_WITH_JUSTIFICATION`/`PRACTICE_HEURISTIC` onest, niciodată ascunse). Auditul K1/K2/K3 a trasat 6 lanțuri complete teorie→competență→comportament→practică→observație→reflecție (3 Pedagog, 3 Antrenor) fără nicio ruptură. Un eșantion suplimentar de 4 claim-uri verificat prin rezoluție DOI directă — 0 nepotriviri (cumulat 14 claim-uri din 3 valuri, 0 nepotriviri totale). Blueprint-uri complete de autorizare create pentru PHASE-31 (`PHASE31_PEDAGOGUL_AUTHORING_BLUEPRINT.md`, 12 capitole) și PHASE-32 (`PHASE32_ANTRENORUL_AUTHORING_BLUEPRINT.md`, 15 capitole) — fără nicio proză finală de lecție. Ambele porți de autorizare răspund `READY_WITH_LIMITATIONS`, pragul cerut pentru a proceda (nu saturație completă de cercetare). `PHASE-30 = COMPLETE_FINAL`. `MANUALFC_RESEARCH_FOUNDATION_FINAL_BASELINE = b7347a5d1b5fb31f8adaaa43d8c5a8a281b21044` (commit-ul de conținut, verificat prin `git rev-parse HEAD` imediat după commit), înghețat separat de toate baseline-urile anterioare (arhitectură `506cf3b`, Wave-4 `560e27c`, Wave-1 `735ffa2`, Wave-2 `2dc67f8`), niciunul suprascris. `TASK-3023`–`TASK-3033` sunt `DONE`. **PHASE-31/PHASE-32 (redactare efectivă) rămân explicit neautorizate** — decizie a utilizatorului.
+
+## DEC-0071 — PHASE-31 redimensionează onest blueprint-ul Pedagogul V1 după descoperirea a 5 capitole deja publicate; primul RUNTIME_CHANGED: YES din acest lanț de faze
+
+Blueprint-ul `PHASE31_PEDAGOGUL_AUTHORING_BLUEPRINT.md` (produs în PHASE-30 Wave-3) proiecta 12 capitole complet noi pentru Pedagogul V1. Regula obligatorie a specificației PHASE-31 („inspectează arhitectura reală înainte de a redacta, nu redesena sisteme fără conflict genuin găsit”) a fost aplicată riguros: inspecția directă a `content/volume-01/*.mdx` a găsit că **5 din cele 12 capitole planificate există deja, publicate și mature** — CH-0101 (profilul copilului), CH-0102 (percepție/atenție), CH-0103 (decizie/eroare), CH-0104 (motivație/mesaj pedagogic), CH-0105 (evaluare/grup/diferențiere). Decizia: scopul a fost redimensionat onest la **5 capitole genuin noi** (CH-0106 emoții, CH-0107 relația pedagogică, CH-0108 comunicare generală, CH-0109 părinți, CH-0110 metacogniția copilului), fiecare ancorat explicit în dosarul de cercetare PHASE-30 corespunzător, evitând duplicarea conținutului deja publicat. Rezultat: **toate cele 13 familii de competențe Pedagogul au acum un capitol-casă real**, inclusiv PED-C12 (lucrul cu părinții), anterior singura competență complet neacoperită de conținut. Auditul factual pe eșantion (3 fapte specifice verificate direct împotriva dosarelor sursă — Aune et al. 2025, Bonavolontà et al. 2021, Gaedicke et al. 2021) nu a găsit nicio discrepanță, inclusiv respectarea unei nuanțe critice din sursă (Gaedicke et al. e o sursă despre risc sever, folosită selectiv doar pentru constatările structurale, nu pentru a sugera risc sporit în fotbalul U11 obișnuit — capitolul CH-0107 respectă exact această graniță). Cele patru teste de calitate obligatorii („prea subțire”, „prea academic”, „doar teorie”, „practică fără motiv”) trec pe toate cele 5 capitole noi. Spre deosebire de întreg PHASE-30 (strict cercetare), acesta e **primul task cu `RUNTIME_CHANGED: YES`** — o extensie aditivă minimă, în tiparul deja existent (`[chapter].astro`, `index.astro`, `manifest.json`), verificată real prin `npm run check` (0 erori) și `npm run build` (92 pagini generate) și prin inspecție HTTP directă a tuturor celor 10 rute — nu doar presupusă funcțională. Două teste Python pre-existente care presupuneau exact 5 capitole au fost actualizate la 10, o mentenanță așteptată, nu o eludare. Limitare raportată onest: fără server Playwright disponibil în această sesiune, auditul vizual/accesibilitate complet la 1440/1280/768/390 nu a fost efectuat — `AXE = NOT_RUN`, nu presupus PASS. `MANUALFC_PEDAGOGUL_V1_BASELINE = 35d2a36f67f5d232eef6f1a295a00c817e6907b0` (commit-ul de conținut, verificat prin `git rev-parse HEAD` imediat după commit), înghețat separat de toate baseline-urile anterioare. `TASK-3101`–`TASK-3105` sunt `DONE`. `PEDAGOGUL_V1 = PASS`. **PHASE-32 (Antrenorul V1) rămâne neautorizat** — recomandare explicită de a aplica aceeași verificare arhitecturală (inspectează volumul-03/04 existent înainte de a redacta) când va fi autorizat.
+
+
+## DEC-0072 — Educational Page System V1: Model Hybrid câștigă, defect real de hoisting MDX descoperit și reparat, componente aplicate la toate cele 10 capitole Pedagogul, Preview blocat de lipsa credențialelor Vercel
+
+Sarcină de cercetare→design→implementare pentru arhitectura paginii educaționale ManualFC (nu doar cercetare, spre deosebire de PHASE-30). Gate 1: 6 agenți de cercetare paraleli au produs 43 de constatări verificate (surse reale, forța dovezii etichetată onest) acoperind cognitive load/multimedia learning, progressive disclosure/scanabilitate/tipografie, retrieval practice/metacogniție, accesibilitate WCAG/mobil/expertise reversal, benchmarking coach-education și cross-domain, case-based learning/comunicarea incertitudinii — consolidate în `docs/ux/LEARNING_UX_EVIDENCE_MATRIX.md` și `MANUALFC_EDUCATIONAL_PAGE_RESEARCH.md`. Constatarea centrală, confirmată din trei unghiuri independente: acordeoanele/tab-urile NU au dovadă de îmbunătățire a învățării pentru conținut esențial — au doar dovadă de reducere a lungimii percepute, cu risc documentat de omisiune completă. Gate 2: 17 principii de design trasabile la dovezi (`MANUALFC_EDUCATIONAL_DESIGN_PRINCIPLES.md`). Gate 3-4: inventarul celor 23 de componente Astro existente a găsit 12 complet nefolosite (dead code, inclusiv 9 wrapper-e `PedagogicalBlock` niciodată integrate) — niciuna reutilizată orbește. Trei arhitecturi comparate onest (Linear Editorial, Layered Progressive Disclosure, Hybrid Learning+Reference); **Model C Hybrid câștigă explicit**, cu motiv și sacrificiu recunoscute, nu concluzie de tip „toate pot funcționa". Contract de componente cu buget minim (6 componente noi: `ChapterOrganizer`, `ExplanationToggle`, `ElaborationBlock`, `RevealPrompt`, `QuickRecall`, `PredictPrompt`, plus extinderea `SectionNavigator`).
+
+**Defect real de arhitectură descoperit în timpul implementării (Gate 5, buclă de reparare):** componentele Astro folosite din fișiere `.mdx` din `content/` (în afara `srcDir`) nu beneficiază de script/style hoisting la build — markup-ul se randa, dar `<script>`/`<style>` dispăreau silențios din output, verificat direct prin inspecția bundle-urilor compilate, nu presupus. Reparat prin centralizarea logicii (`app/src/lib/educational-page.ts`) și a stilurilor (`app/src/styles/educational-page.css`) în `srcDir`, încărcate global din `BaseLayout.astro` ca Web Components. **Al doilea defect real, de fidelitate de conținut:** prima editare a `chapter-03.mdx` a eliminat accidental paragraful de deschidere al scenariului — descoperit prin verificare programatică linie-cu-linie contra `git show HEAD`, nu presupus corect din `git diff --stat`. Reparat imediat, apoi verificat pe toate cele 10 capitole (0 linii originale lipsă). Sistemul complet aplicat la toate cele 10 capitole Pedagogul (CH-0101–CH-0110), cu `ExplanationToggle` folosit doar la cele 5 capitole cu secțiune reală „Justificarea completă" — omis corect, nu forțat, la CH-0101/0102/0105.
+
+Verificare finală: `npm run check` 0 erori/96 fișiere, `npm run build` 92 pagini (fără regresie), `pytest` 505/505, `validate_project.py` 0 erori, verificare structurală HTTP pe toate cele 10 capitole plus pagini de regresie (`principii`, `gold-standard`, `rezolva-pe-teren`). `AXE = NOT_RUN`, raportat onest — Playwright MCP indisponibil pe toată durata sesiunii. **`PREVIEW_LIVE_ACCEPTANCE_BLOCKED`**: Vercel CLI neinstalat, fără `VERCEL_TOKEN`, sesiune non-interactivă nu poate rula `vercel login` — blocaj extern real, documentat, nu ocolit tăcut; acțiunea manuală unică necesară e ca utilizatorul să autentifice CLI-ul o singură dată. `MANUALFC_EDUCATIONAL_PAGE_SYSTEM_V1_BASELINE = 6940e2e9efab83af738fdc9f447b050e0f42cdd2` (commit-ul de conținut, verificat prin `git rev-parse HEAD`), înghețat separat de toate baseline-urile anterioare (`35d2a36` Pedagogul V1, `b7347a5` cercetare finală), niciunul suprascris. `TASK-3301`–`TASK-3308` sunt `DONE`. **PHASE-32 (Antrenorul V1) rămâne explicit neautorizat.**
+
+
+## DEC-0073 — Corectare integrității cercetării: clusterul Cognitive Load/Multimedia Learning nu finalizase niciodată, prima variantă fusese sinteză proprie, nu cercetare externă verificată
+
+În timpul redactării raportului final al Educational Page System V1 (DEC-0072), o verificare de rutină (`ListAgents`, apoi `TaskOutput`) a descoperit că primul dintre cele 6 agenți de cercetare dispatch-ați pentru Gate 1 — cel însărcinat cu Cognitive Load Theory și Multimedia Learning (Mayer) — nu a trimis niciodată o notificare de finalizare și nu mai exista ca task recuperabil (probabil eșec de sesiune similar celor documentate în PHASE-30, dar fără fereastra de reset observată la timp pentru relansare). Contrar disciplinei aplicate riguros celorlalte 5 clustere, secțiunea 1 din `MANUALFC_EDUCATIONAL_PAGE_RESEARCH.md` fusese scrisă din sinteza proprie a asistentului (cunoștințe generale despre CLT/Mayer), nu din cercetare externă verificată cu surse reale — o încălcare directă a regulii anti-fabricare pe care întreaga sesiune o aplică. Constatarea nu a fost ascunsă sau minimizată: a fost tratată ca un defect real, de aceeași clasă cu incidentul de corupere Git (DEC-0070) sau defectele de hoisting/fidelitate din DEC-0072.
+
+**Reparație:** un al doilea val de cercetare genuină a fost dispatch-at pentru exact același subiect, cu buget redus de căutări (12-15, față de 15-20 la primul val) pentru a evita repetarea eșecului. Agentul a finalizat cu succes, producând 8 constatări verificate cu surse reale (Schroeder & Cenkci 2018 pentru contiguitate spațială g=0,63; Tetzlaff et al. 2025 pentru inversarea expertizei, meta-analiză k=176/N=5924, efect asimetric d=0,505 novici vs. d=−0,428 experți; Noetel et al. 2022, meta-meta-analiză 29 review-uri/1189 studii, arătând că principiile de design multimedia sunt măsurabil mai slabe în contexte auto-ritmate ca o pagină web decât în prelegere/video — o nuanță importantă, absentă din sinteza inițială nesigură). Secțiunea 1 din raportul de cercetare, cele 8 rânduri noi din matricea de dovezi (acum Cluster 0, #44-51) și principiile P2/P3 din `MANUALFC_EDUCATIONAL_DESIGN_PRINCIPLES.md` au fost toate rescrise pe baza cercetării genuine, cu citări reale în loc de afirmații nesursate.
+
+**Constatare de fond:** deciziile de arhitectură luate anterior pe baza sintezei nesigure (poziționarea diagramei lângă text, mecanismul de comprimare reversibil în loc de toggle binar) s-au dovedit a fi corect aliniate cu dovada reală, odată verificată — nu a fost necesară nicio schimbare de arhitectură sau re-implementare, doar corectarea trasabilității documentației la surse verificate. Aceasta nu schimbă `MANUALFC_EDUCATIONAL_PAGE_SYSTEM_V1_BASELINE` (`6940e2e`), care rămâne runtime-ul acceptat — DEC-0073 e o corectare de integritate a documentației de cercetare, nu o schimbare de conținut publicat sau de cod.
+
+
+## DEC-0074 — Preview live acceptance completat: utilizatorul autentifică Vercel CLI prin flux de dispozitiv, deployment confirmat funcțional prin `vercel curl`
+
+DEC-0072 raportase onest `PREVIEW_LIVE_ACCEPTANCE_BLOCKED` — Vercel CLI neinstalat global, fără `VERCEL_TOKEN`, sesiune non-interactivă incapabilă să completeze `vercel login`. Utilizatorul a cerut explicit „vercel login", iar comanda a fost reîncercată: `npx vercel@latest login` a produs un flux de autentificare pe dispozitiv (`Visit https://vercel.com/oauth/device?user_code=...`), mecanism care funcționează perfect dintr-o sesiune non-interactivă — procesul CLI face polling în fundal cât timp autentificarea reală se completează în browser-ul propriu al utilizatorului, fără să ceară input pe stdin. Utilizatorul a confirmat codul în browser; comanda de fundal a revenit cu „Congratulations! You are now signed in."
+
+Cu autentificarea rezolvată, `vercel deploy --yes` a rulat din arborele de lucru curat (HEAD `138f0a5` la momentul deploy-ului — identic funcțional cu candidatul acceptat `6940e2e`, diferența fiind exclusiv cele 2 commit-uri de documentație intermediare DEC-0073/urmărirea baseline-ului, fără nicio modificare `app/`/`content/`). Deployment confirmat ca Preview autentic, niciodată Production: `"target": null`, `"readyState": "READY"`, `dpl_G9dfe4Zzpgt88EoT7JWPr1y5nTKj`, `https://manualfc-g6s80g4tn-berescristi-8889s-projects.vercel.app`.
+
+Auditul live a întâmpinat inițial protecția SSO standard a Vercel Preview (toate rutele răspundeau 302 la `curl` simplu) — rezolvat folosind `vercel curl`, care atașează automat credențialele de deployment protection ale contului autentificat. Verificare reală pe infrastructura live (nu doar presupusă identică cu local): 4 capitole (`CH-0101`, `CH-0103`, `CH-0106`, `CH-0110`) + 2 pagini de regresie (`principii`, `gold-standard/exercitii`) — toate cu `main=1`, 0 ancore `href="#..."` nerezolvate, 0 salturi de ierarhie de titluri. Cel mai important: CSS-ul bundle-uit livrat de Vercel conține byte-cu-byte regulile `.chapter-organizer`/`.reveal-prompt`/`.quick-recall`/`.section-nav-wrap`/`explanation-toggle`, iar JS-ul inline conține `customElements.define("explanation-toggle",...)`/`customElements.define("section-navigator",...)` — dovadă directă, extrasă din răspunsul HTTP real al Vercel, nu din presupunerea că build-ul local se comportă identic în producție, că reparația defectului de hoisting MDX (DEC-0072) funcționează corect pe infrastructura reală, nu doar pe serverul local de preview.
+
+**Limitare onestă păstrată:** verificarea rămâne `STRUCTURAL_PASS` (HTTP/HTML prin `vercel curl`), nu un audit complet de browser real cu tastatură/mouse/screen-reader — Playwright MCP a rămas indisponibil pe toată durata sesiunii. `AXE = NOT_RUN`, neschimbat.
+
+`MANUALFC_EDUCATIONAL_PAGE_SYSTEM_V1_BASELINE` rămâne `6940e2e9efab83af738fdc9f447b050e0f42cdd2` (nicio schimbare de conținut/cod din acest task) — DEC-0074 completează gate-ul de acceptanță live rămas deschis în DEC-0072, nu schimbă baseline-ul. `TASK-3308` rămâne `DONE`, actualizat cu rezultatul real. **PHASE-32 (Antrenorul V1) rămâne explicit neautorizat.**
+
+
+## DEC-0075 — LIVE_BROWSER acceptance cu Playwright real: un defect MAJOR reparat (H1 taiat pe mobil), o corupere reala preexistenta a working tree-ului descoperita si reparata
+
+Utilizatorul a cerut explicit ca gate-ul final `LIVE_BROWSER` să fie verificat cu un browser real (Playwright/Chromium), nu doar `curl`/`vercel curl` — DEC-0074 marcase onest acest gate drept `STRUCTURAL_PASS`, nu `PASS`, exact pentru acest motiv. Deployment-ul Preview e protejat de Vercel Authentication (SSO); asistentul a refuzat explicit să citească token-ul CLI local stocat sau să facă apeluri API cu el (blocat de clasificatorul de siguranță, respectat ca atare, nu ocolit) — soluția aleasă de utilizator a fost mult mai simplă și mai sigură: a lansat Chrome real cu remote debugging activat, s-a autentificat manual în fereastra deschisă folosind propriul cont Vercel, iar asistentul s-a conectat la ACEA sesiune deja autentificată prin Chrome DevTools Protocol (`chromium.connectOverCDP`), fără să vadă vreodată o parolă, un token sau un secret.
+
+**Metodă:** Playwright 1.62.1 + Chromium instalate temporar, izolat, într-un director de scratchpad (nu în `package.json`-ul produsului). 28 combinații pagină×viewport (7 pagini reprezentative — intrarea Pedagogul, cel mai scurt capitol, cel mai lung, unul practic, unul emoțional, plus 2 pagini de regresie din alte zone ale site-ului — × 1440/1280/768/390) verificate pentru: `main` unic, ierarhie de titluri, overflow orizontal real (măsurat, nu presupus), erori de consolă, erori de pagină, cereri de rețea eșuate. Teste interactive separate: toggle-ul de comprimare (deschis implicit, se comprimă/extinde reversibil, funcțional din tastatură), Quick Recall (`<details>` inițial închis, se deschide la click, răspunsul devine vizibil), secțiunea „Ce nu putem concluziona" (rămâne vizibilă indiferent de starea toggle-ului — confirmat programatic, nu doar din citirea codului), link-uri de ancorare directă (`#id`, target vizibil în viewport la deschidere directă), `prefers-reduced-motion:reduce` (toggle-ul rămâne funcțional), și un test de progressive enhancement (conținutul nucleu rămâne prezent în DOM indiferent de execuția JS, prin construcție — `ElaborationBlock` nu poartă niciodată atributul `hidden` în HTML-ul server-randat). Scan real Axe (`axe-core`, nu presupus `NOT_RUN`): **0 violări** pe 5 pagini, ruleset WCAG 2.0/2.1 A/AA.
+
+**Defect MAJOR real găsit și reparat:** captura de ecran a arătat vizual titlul capitolului CH-0106 tăiat la 390px ("anxietate competiționa" cu sfârșitul cuvântului dispărut peste marginea ecranului), confirmat prin măsurătoare (`document.documentElement.scrollWidth` 431px vs `clientWidth` 375px — un overflow real de 56px, nu un artefact de măsurare). Cauza: `.chapter-content :global(h1){max-width:18ch}` din `app/src/pages/volum/01/[chapter].astro` — la `font-size`-ul mare (`clamp()`) folosit pentru H1, unitatea `ch` poate calcula o lățime mai mare decât containerul disponibil la viewport-uri mobile foarte înguste. Verificat explicit (prin `git diff` între baseline-ul PHASE-31 `35d2a36` și HEAD) că acest CSS și textul titlului sunt byte-identice de dinainte de acest task — defectul precede Educational Page System V1 și nu e o regresie cauzată de el. Reparat oricum, pentru că afectează direct una dintre cele 4 pagini de capitol declarate reprezentative pentru acest gate de acceptanță: `max-width:min(18ch, 100%);overflow-wrap:break-word` (commit `aff2017`), redeploy Preview (`dpl_2uzqqEHRNsZq5inH6mft8CVWAt9W`), reaudit complet — `scrollWidth`=`clientWidth`=375 confirmat pe toate cele 4 viewport-uri, 0 regresie pe restul celor 27 de combinații testate.
+
+**Descoperire critică, în afara scopului direct al gate-ului browser:** în timpul verificării locale a reparației H1, `npm run build` a eșuat cu o eroare de parsare JSON pe `data/media/media-registry.json`. Investigație directă (nu presupunere) a găsit fișierul la **0 bytes** pe disc. O scanare a tuturor fișierelor urmărite marcate ca modificate a găsit încă trei fișiere la 0 bytes: `public/icons/icon-192.png`, `public/icons/icon-512.png`, `tests/test_task2802_workspace.py`. Verificare esențială: toate patru fișierele erau deja marcate `M` (modificate) în starea `git status` de la **chiar începutul acestei sesiuni**, înainte de orice acțiune a asistentului — deci corupere preexistentă, cu origine necunoscută (posibil un proces Node/Claude Code anterior întrerupt brutal, dat fiind că build-ul eșuat a arătat separat un crash `libuv`: „Assertion failed: !(handle->flags & UV_HANDLE_CLOSING)"), nicidecum cauzată de acest task. Reparat prin scriere directă a bytes-ilor din blob-ul `git show HEAD:<fișier>` pentru toate cele patru fișiere — aceeași metodă sigură documentată în DEC-0070 (niciodată `git checkout` pe fișiere binare/JSON mari), verificat byte-cu-byte identic cu HEAD. Acesta e un defect real de infrastructură locală, semnalat explicit, nu ocolit tăcut.
+
+**Constatări reale dar explicit în afara scopului acestei sarcini** (nu reparate, pentru că afectează pagini neatinse de Educational Page System V1): `.principle-hero{width:100vw;...}` din `principii/[slug].astro` cauzează overflow orizontal la toate viewport-urile — tehnica clasică `100vw` full-bleed vulnerabilă la lățimea scrollbar-ului, prezentă neschimbat de dinainte de acest lanț de faze (confirmat prin `git log`/`git diff`); Axe raportează `color-contrast` drept `incomplete` (nu violare confirmată) pe tagline-ul logo-ului ManualFC suprapus peste imagine — element global, pe fiecare pagină a site-ului, neatins de acest task.
+
+Validare finală: `npm run check` 0 erori, `npm run build` 92 pagini, `pytest` 505/505, Axe real 0 violări (rulat de două ori, înainte și după reparație), CRITICAL=0, MAJOR=0 pe toate cele 7 pagini × 4 viewport-uri din scopul declarat al acestui gate. `TASK-3309 = DONE`. **`MANUALFC_EDUCATIONAL_PAGE_SYSTEM_V1_BASELINE = aff20175c03fed387fb9afdbaf767d065f7ea1e8`** (commit-ul care conține reparația H1, verificat prin `git rev-parse`) — baseline-ul runtime NU mai e `6940e2e`, pentru că sursa s-a schimbat real (regula §45 a specificației). `PHASE-32 (Antrenorul V1) rămâne explicit neautorizat.`
+
+
+## DEC-0076 — Hygiene patch izolat repară overflow-ul orizontal preexistent pe principii/[slug].astro, Educational Page System V1 rămâne înghețat
+
+Utilizatorul a cerut explicit un task de igienizare separat, izolat, pentru defectul de overflow orizontal semnalat dar NEreparat în DEC-0075 (`.principle-hero{width:100vw;margin-left:calc(50% - 50vw)}`), cu instrucțiuni stricte: reproduce întâi, identifică root cause exact, repară minim, verifică cu browser real, confirmă 0 regresie pe Educational Page System V1 (înghețat la `aff2017`), un singur commit izolat, STOP fără PHASE-32.
+
+**Reproducere înainte de reparație (nu presupusă):** browser real conectat la Preview-ul deja autentificat a confirmat overflow identic la toate cele 4 viewport-uri (1440/1280/768/390), cu o discrepanță CONSTANTĂ de 15px (nu procentuală) — dovadă directă a cauzei: `100vw` include lățimea barei de scroll verticale, în timp ce `calc(50% - ...)` se rezolvă corect față de content-box-ul containerului, care exclude bara de scroll.
+
+**Două încercări de reparație eșuate, documentate onest, nu ascunse:** (1) `overflow:clip` pe elementul însuși — nu funcționează, pentru că `overflow` controlează doar randarea conținutului intern al unei cutii, nu dimensiunea/poziția cutiei înseși, care tot contribuie la `scrollWidth`-ul documentului; (2) o proprietate CSS custom `--scrollbar-w:calc(100vw - 100%)` definită la nivel de `:root`/`body` — nu funcționează, pentru că proprietățile CSS custom nu se precalculează la locul declarării: `var()` substituie textul brut al expresiei, iar `%`-ul din interior se re-rezolvă în CONTEXTUL elementului care îl consumă (`.principle-hero`, imbricat într-un container de 1200px), nu în contextul viewport-ului — rezultat: efectul de full-bleed a dispărut complet, deși overflow-ul a dispărut incidental (o reparație greșită care ar fi trecut neobservată dacă verificarea s-ar fi limitat doar la `scrollWidth`, fără verificare vizuală/geometrică completă).
+
+**Fix funcțional, verificat empiric:** măsurare JS directă a lățimii reale a barei de scroll (`window.innerWidth - document.documentElement.clientWidth`), scrisă ca proprietate CSS în pixeli ficși (nu procentuală, deci imună la capcana de re-rezolvare de mai sus), plasată la FINALUL conținutului propriu al paginii — nu în `<head>`, unde măsurătoarea ar citi incorect 0 înainte ca documentul să fi decis dacă are nevoie de bară de scroll verticală (constatare empirică directă: prima plasare în `<head>` a produs exact acest rezultat greșit). Fallback static `15px` pentru randarea inițială/fără JS. Nicio mascare globală (`html,body{overflow-x:hidden}`) folosită.
+
+**Verificare completă, browser real (Chrome via CDP, aceeași sesiune autentificată Vercel):** 5 rute × 4 viewport-uri = 20 combinații — ruta raportată inițial, o a doua rută Principiu (dovedește generalizarea reparației la șablon, nu doar la un slug), două pagini Pedagogul din Educational Page System V1 (`ch-0109`, `ch-0106` — verificate neschimbate, înghețate), o pagină Gold Standard (regresie). Toate PASS: 0 overflow document-level, `main` unic, 0 erori de consolă persistente. Axe real: 0 violări (rulat de două ori, local și pe Preview nou). O eroare de consolă tranzitorie (fetch eșuat de manifest, redirecționat prin SSO Vercel) observată o singură dată, la prima navigare către noul URL de deployment — reprodusă intenționat de două ori suplimentar și confirmată că NU se repetă; artefact de mediu specific primei stabiliri a cookie-ului SSO pentru un deployment nou, nu un defect real, nelegat de acest patch.
+
+Commit izolat (`96acb8c`), un singur fișier (`app/src/pages/principii/[slug].astro`), fără amestec de documentație în commit-ul de runtime (regula §27). Deployment Preview nou (`dpl_FptDFGDMFS43qWKqzyYurCvNsBGV`, `target: null`) verificat identic cu local. `npm run check`/`build`, `pytest` 505/505, `validate_project.py` 0 erori, `git diff --check` PASS.
+
+**`MANUALFC_EDUCATIONAL_PAGE_SYSTEM_V1 = aff20175c03fed387fb9afdbaf767d065f7ea1e8` rămâne neschimbat, nesuprascris** — acest patch e strict aditiv, pe un fișier complet diferit (`principii/[slug].astro`, nu atins de Educational Page System V1). **`MANUALFC_PRE_PHASE32_HYGIENE_BASELINE = 96acb8c63e270873de8c562114c0d704743ce545`** (commit-ul izolat al reparației, verificat prin `git rev-parse`). `TASK-3310 = DONE`. `PHASE32_READINESS: READY` (neschimbat). **`PHASE-32 (Antrenorul V1) rămâne explicit neautorizat.`**
+
+
+## DEC-0077 — PHASE-32 (Antrenorul V1) acceptată: 9 capitole noi de coaching bazate pe dovezi, un defect H1 pre-existent găsit și reparat pe volume-02/03/04
+
+Utilizatorul a autorizat explicit PHASE-32 prin masterul de execuție „MANUALFC — PHASE-32 / ANTRENORUL V1 / EVIDENCE-BASED COACH EDUCATION" — prima autorizare a acestei faze, ținută deliberat neautorizată în toate deciziile anterioare (DEC-0072–DEC-0076).
+
+**Reconciliere înainte de autorat:** verificare directă a conținutului real din `content/volume-03/`/`content/volume-04/` față de `COACH_COMPETENCY_FRAMEWORK.md`/`COACH_DOMAIN_MAP.md` a arătat că ~40-50% din cele 15 module scopate inițial existau deja (CH-0301-0306, CH-0401-0406), reducând autoratul nou la 9 capitole. Referințe stale găsite în ambele documente (`content/volume-04/ch-0801/0802/0805`, inexistente) — corectate la căile reale (CH-0401/0402/0405), replicând exact tiparul deja documentat în PHASE-31.
+
+**Conținut nou:** 9 capitole (CH-0307/0308/0309/0310 în VOLUME-03; CH-0407/0408/0409/0410/0411 în VOLUME-04), fiecare scris de un agent dedicat dintr-un dosar de cercetare real, urmând contractul lecției Antrenorul plus patru secțiuni noi obligatorii în toate: „Legătura cu pedagogia", „Competențele de coaching", „Legătura cu practica", „Reflecția antrenorului". Zero Coach Score/ranking numeric — respins explicit cu justificare (CH-0308, CH-0310, CH-0411). „Regula 85%" și LTAD identificate și respinse explicit ca nevalidate științific (CH-0411, respectiv CH-0410). `docs/knowledge/GOLD_STANDARD_V2_MAPPING.md` adaugă maparea exactă EX-0001-0005/SES-0001-0002 cerută de specificație, fără migrare de schemă runtime.
+
+**Audit de acoperire:** toate cele 13 familii PED-C verificate față de cele 18 COACH-C — 7 cu legătură explicită, 6 fără (declarat structural, nu ca defect: Pedagogul acoperă un strat relațional/etic — demnitate, apartenență, limite, relația cu părinții — fără corespondent tehnic-metodologic distinct necesar în Antrenorul). Gol identificat onest: COACH-C06 (Cueing) rămâne fără capitol narativ dedicat, candidat legitim pentru o fază viitoare. 6 lanțuri teorie→practică construite și testate în formatul `THEORY_TO_PRACTICE_CONTRACT.md` §9 — 4 complete/deja implementate în produs, 2 declarate parțial/conceptuale (planificare pe termen mediu — `season-plans` fără conținut; reflecție/dezvoltare antrenor — Reflection V2/Coach Development specificate, neimplementate).
+
+**Defect real găsit și reparat în timpul QA-ului (nu ascuns):** auditul real de browser a arătat overflow orizontal 5-12px la 390px pe 3 rute noi. Investigație directă a arătat că fix-ul H1 din DEC-0075 fusese aplicat DOAR pe `volum/01/[chapter].astro` — `volum/02/03/04` și indexurile 03/04 păstraseră `max-width:18ch`/`20ch` neîngrădit, fără `overflow-wrap:break-word`. Titlurile mai lungi din PHASE-32 au fost primele care au declanșat vizibil acest defect latent preexistent (confirmat: prezent identic pe `volum/02`, complet neatins de această fază). Reparat identic în toate cele 5 fișiere afectate (commit `00cd0f5`). **Fals pozitiv investigat și infirmat, documentat pentru transparență:** o primă re-verificare post-fix a arătat overflow-ul încă prezent — investigație suplimentară (măsurare `getComputedStyle` directă) a identificat cache-ul browserului real (nu al serverului, nu un fix incomplet) ca sursă; confirmat 0 overflow după bypass explicit de cache.
+
+**Validare finală:** `npm run check` 0 erori, `npm run build` 101 pagini, `pytest` 505/505, `validate_project.py` 0 erori. QA real de browser (Chrome real via CDP, cache dezactivat): 15 rute × 4 viewport-uri = 60 combinații, toate PASS — 0 overflow, 0 violări Axe, `main`/`h1` unic, 0 erori de consolă/pagină, 0 regresie pe Educational Page System V1/Principii/Gold Standard/volume-02.
+
+**Deployment Preview:** `.vercel/project.json` avea un link stale (`vercel deploy` a eșuat inițial cu `Not authorized`) — reparat prin `vercel link` la proiectul real deja existent (`manualfc`, verificat prin `vercel project ls`, nicio credențială brută citită). Deploy nou `dpl_7y81gtiGxFQhuWr9kzDH5RZSjBoY`, `target: null`, `READY`. Fix H1 confirmat byte-cu-byte în CSS-ul servit live. QA real de browser pe Preview: 10/10 combinații PASS, cu singura eroare de consolă fiind artefactul tranzitoriu deja documentat identic în DEC-0075/DEC-0076 (fetch manifest redirecționat prin SSO, o singură dată, la prima navigare către deployment-ul nou).
+
+Raport final: `reports/audits/MANUALFC_PHASE32_ANTRENORUL_V1_ACCEPTANCE.md`. Task-uri: TASK-3401–TASK-3407, toate `DONE`.
+
+**`MANUALFC_EDUCATIONAL_PAGE_SYSTEM_V1 = aff20175c03fed387fb9afdbaf767d065f7ea1e8` și `MANUALFC_PRE_PHASE32_HYGIENE_BASELINE = 96acb8c63e270873de8c562114c0d704743ce545` rămân neschimbate, nesuprascrise.** **`MANUALFC_ANTRENORUL_V1_BASELINE = 00cd0f51c20d6cd29b89afe27e1659a2987a1df8`** (ultimul commit de runtime/cod înainte de commit-urile doar-documentație, verificat prin `git rev-parse`). `PHASE33_READINESS: READY`. **`PHASE-33 rămâne explicit neautorizat.`**
+
+
+## DEC-0078 — PHASE-33 (Gold Standard V2) acceptată: bucla Pedagogul→Antrenorul→Practica implementată ca date reale, nu doar documentată
+
+Utilizatorul a autorizat explicit PHASE-33 prin masterul de execuție „MANUALFC — PHASE-33 / THEORY → PRACTICE INTEGRATION / GOLD STANDARD V2" — prima migrare efectivă de schemă/date pentru maparea deja produsă doar ca documentație în PHASE-32 (`GOLD_STANDARD_V2_MAPPING.md`).
+
+**Preflight de guvernanță și integritate:** `git status`/`branch`/`rev-parse`/`diff`/`ls-files -o` rulate întâi; baseline-ul `MANUALFC_ANTRENORUL_V1_BASELINE` (`00cd0f5`) verificat direct prin `git cat-file -t` și `git merge-base --is-ancestor`, nu presupus din prompt. `research/sources.json`/`claims.json`/`citations.json` — BYTE_INTEGRITY/JSON_PARSE/SCHEMA toate PASS.
+
+**Migrare aditivă de schemă:** `exercise.schema.json`/`session.schema.json` extinse cu proprietăți noi, toate opționale (niciun câmp nou în `required`) — conținutul V1 existent rămâne valid neschimbat, verificat prin `validate_content.py --strict` = 0 erori pe tot proiectul, nu doar pe obiectele migrate. `scripts/validate_gold_standard_v2.py` (nou) verifică, pentru orice obiect marcat V2, atât completitudinea semantică cât și existența reală a fiecărui ID referențiat (PED-Cxx, COACH-Cxx, CH-xxxx, principle.*, ASM-xxxx) față de sursele canonice — niciun ID inventat.
+
+**Migrare secvențială, exact conform ordinii cerute** (EX-0001 ca implementare de referință, cu toate gate-urile rulate înainte de a continua la EX-0002): toate cele 5 exerciții și ambele ședințe migrate la Gold Standard V2, cu legături reale de competență/capitol/principiu, `child_action`/`coach_focus`/`do_not_assume`/`when_(not_)to_intervene`/`coach_common_errors`/`coach_reflection`/`evidence_boundary` pe fiecare exercițiu, `child_objectives`/`coach_objectives`/`reflection_v2` pe fiecare ședință. Bucla e implementată **în produs** — pagina de exercițiu primește o secțiune nouă „Pedagogul → Antrenorul → Practica", pagina de ședință o secțiune „Copiii și antrenorul" plus reflecția pe două dimensiuni, iar Field Mode afișează coach focus/non-intervenție/verificare per segment — nu doar înregistrată ca metadate JSON invizibile.
+
+**Defecte reale găsite și reparate, nu ascunse:** (1) un test existent (`test_no_unsupported_exact_angle_presented_as_validated`) a prins o repetare a frazei „45 de grade" în afara `phrases_to_avoid`, introdusă în timpul migrării EX-0003 — reparată prin reformulare fără a pierde sensul; (2) un defect real, preexistent (confirmat prin `git show HEAD:...` identic dinainte de această fază) de contrast de culoare (Axe: 2,62 față de 4,5:1 necesar) pe link-ul „harta terenului" din panoul de pregătire al paginilor de ședință — reparat, pentru că bloca un gate propriu declarat al acestei faze (SES-0001/0002 sunt suprafețe de acceptanță explicite ale PHASE-33); (3) un gol în traseul learning-first — CH-0408/CH-0409 menționau `PRB-0003`/`EX-0003`/`SES-0001`/`SES-0002` doar ca text simplu — transformate în hyperlink-uri reale.
+
+**Decizii explicite de scop, conform regulilor stricte ale promptului:** `ASM-0001` NU a fost rescris (§31) — legătura se face dinspre exercițiu (`assessment_ref`), nu prin restructurarea evaluării. `CoachState`/unealta generică de reflecție NU a fost extinsă (§45) — câmpurile text libere existente pot găzdui deja reflecția pe două dimensiuni, iar dimensiunile explicite sunt acum afișate pe pagina ședinței. Decision Engine-ul NU a fost redesenat (§36) — traseul FIELD-FIRST (Problemă → exercițiu → competențe/capitole) funcționează automat prin legăturile deja existente ale `PRB-0003`. COACH-C06 (Cueing) declarat explicit `COMPETENCY_SUPPORTED`/`DEDICATED_CHAPTER_GAP` (§11) — nu s-a inventat un capitol artificial.
+
+**Validare finală:** `npm run check` 0 erori, `npm run build` 101 pagini, `pytest` 505/505, `validate_content.py`/`validate_gold_standard_v2.py`/`validate_project.py` toate 0 erori. Audit real de browser (Chrome real via CDP, cache dezactivat explicit): 76 de combinații rută×viewport în total (8 pentru EX-0001, 24 pentru toate cele 5 exerciții + ASM-0001, 44 pentru matricea completă cerută de specificație — exerciții, ședințe, Field Mode, unealta de reflecție, o problemă flagship, regresie Pedagogul/Antrenorul) — toate PASS după cele două reparații, 0 overflow, 0 violări Axe, 0 erori de consolă.
+
+**Deployment Preview:** `.vercel/project.json` a necesitat un nou `vercel link` (proiectul real existent, nicio credențială citită). Deploy nou `dpl_9NEGyVg14unAh1JvBSbZLX2j1wvN`, `target: null`, `READY`, `https://manualfc-ifgk4x76z-berescristi-8889s-projects.vercel.app`. **Limitare onestă:** browser-ul real folosit pentru QA local nu avea o sesiune SSO autentificată pentru acest Preview — navigarea directă a fost interceptată de interstițiul SSO al Vercel însuși (confirmat: nodurile Axe raportate erau elemente ale interfeței Vercel — `/signup`, `/legal/terms` — nu ale produsului ManualFC). Verificarea live s-a făcut prin `vercel curl` (atașează automat credențialele CLI, fără citire de token brut): toate rutele noi răspund 200, conțin conținutul real, iar regula CSS exactă a reparației de contrast (`.prep-grid strong a{color:#fff}`) a fost confirmată byte-cu-byte în bundle-ul servit de Vercel. Acesta e `STRUCTURAL_PASS`, nu un audit Axe complet pe infrastructura live — distincție identică celei deja documentate în DEC-0074.
+
+Raport final: `reports/audits/MANUALFC_PHASE33_GOLD_STANDARD_V2_ACCEPTANCE.md`. Task-uri: TASK-3501–TASK-3507, toate `DONE`.
+
+**`MANUALFC_EDUCATIONAL_PAGE_SYSTEM_V1 = aff20175c03fed387fb9afdbaf767d065f7ea1e8`, `MANUALFC_PRE_PHASE32_HYGIENE_BASELINE = 96acb8c63e270873de8c562114c0d704743ce545` și `MANUALFC_ANTRENORUL_V1_BASELINE = 00cd0f51c20d6cd29b89afe27e1659a2987a1df8` rămân neschimbate, nesuprascrise.** **`MANUALFC_GOLD_STANDARD_V2_BASELINE = 1404fb980505c9f3d2751dc44827dbe13c5fa1a9`** (ultimul commit de runtime/cod, verificat prin `git rev-parse`). `PHASE34_READINESS: READY`. **`PHASE-34 rămâne explicit neautorizat.`**
+
+## DEC-0079 — Auditul master de integritate închide toate problemele Critical/Major cunoscute
+
+Snapshot-ul pre-repair a fost înghețat înaintea modificărilor. Defectul critic PRB-0008 a demonstrat că existența unui claim nu este suficientă: obiectele publicate trebuie să respingă fail-closed claim-uri `OUTDATED`/`WITHDRAWN`/`REPLACED` și surse retrase. Contactul IPJ care nu a putut fi reverificat nu a fost actualizat prin presupunere, ci eliminat din setul canonic public. După reparații, Chromium/Axe, offline pregătit, build-ul, 101 rute și suitele Python/Node trec. Firefox/WebKit, auditul npm online, validarea umană și terenul rămân explicit neexecutate. Verdict: `PASS_WITH_NON_BLOCKING_DECLARED_LIMITATIONS`.
+
+## DEC-0080 — Global Brand Identity Migration: identitatea shield/crest înlocuită integral cu identitatea clipboard/M/minge
+
+Utilizatorul a autorizat explicit „MANUALFC GLOBAL BRAND IDENTITY MIGRATION" (TASK-3701), furnizând un artwork master nou — clipboard navy cu minge, mark „M" auriu/alb, wordmark „Manual"/„FC", tagline „ȘTIINȚĂ. PEDAGOGIE. PRACTICĂ." — cu reguli explicite: nicio redesenare, nicio reinterpretare, nicio recreere din memorie în HTML/CSS, nicio substituire cu emoji/iconițe generice, artwork-ul furnizat e master canonic, derivatele doar prin resize/crop/optimizare/conversie, fără întindere/distorsiune, fără umbre/gradient-uri/recolorare arbitrară pe logo însuși.
+
+**Verificare înainte de încredere, nu presupunere:** răspunsul inițial al utilizatorului la întrebarea despre locația fișierului conținea o cale (`/mnt/data/...`) dintr-o convenție de mediu vizibil străină (alt sandbox AI) — verificată explicit și confirmată inexistentă local (`ls` eșuat complet pe `/mnt`), nu acceptată orbește. Fișierul real a fost găsit independent în `Downloads`-ul utilizatorului și confirmat atât prin metadate (PNG 1714×918, corespunde exact dimensiunilor declarate) cât și vizual, înainte de a fi folosit ca sursă canonică.
+
+**Derivate generate prin măsurare precisă, nu prin coordonate estimate:** limitele de decupare pentru lockup-ul complet, lockup-ul orizontal și mark-ul pătrat au fost calculate prin analiză de prag de luminozitate pixel-cu-pixel (fără numpy disponibil în mediu — rescris pur în PIL), nu prin coordonate ghicite vizual. Un prim decupaj al mark-ului (589×589) avea un bleed vizibil al wordmark-ului pe marginea dreaptă — prins prin inspecție vizuală directă a PNG-ului generat (nu doar verificarea că scriptul a rulat fără eroare), recalculat la un decupaj corect, simetric (479×479), reverificat vizual curat.
+
+**Domeniul componentei simplificat, nu păstrat ca no-op pentru compatibilitate:** `ManualFCLogo.astro` a fost rescris — prop-ul `surface` (`'dark'|'light'`) și `showTagline` au fost eliminate complet, pentru că artwork-ul nou are un singur tratament vizual fix, fără variantă oficială light-surface sau inversată; regula explicită a promptului („nu crea o variantă light/inversată neoficială") a fost aplicată prin eliminarea posibilității arhitecturale, nu doar prin instrucțiune în comentariu. `variant` devine `'full' | 'horizontal' | 'mark'`, fiecare cu `width`/`height` explicite (previne CLS). Toate cele 3 puncte de folosire din cod (`AppHeader.astro`, `AppFooter.astro`, `design-system.astro`) actualizate consecvent.
+
+**Decizie explicită de a NU recolora platforma:** promptul avertiza direct că schimbarea logo-ului nu autorizează recolorarea nediscriminată a întregii platforme. Culorile eșantionate direct din artwork (fundal ≈ `#000A16`, auriu ≈ `#F1C94F`) au fost comparate cu tokenurile existente (`--color-bg-brand: #0D1B2A`, `--color-brand-gold: #F4C430`) și găsite suficient de apropiate încât o schimbare ar fi fost o recolorare nejustificată — niciun token nu a fost modificat. Migrarea rămâne strict scoped la logo și suprafețele care îl referă direct (header, footer, favicon, manifest, meta tags), nu un re-brand vizual general.
+
+**Curățare completă a identității vechi, verificată nu presupusă:** `manualfc-logo-master.png`, `manualfc-mark-master.png`, `manualfc-logo-light-web.png`, `manualfc-logo-dark-web.png`, `manualfc-mark-web.png`, `manualfc-favicon-128.png`, `public/icons/icon-192.png`, `public/icons/icon-512.png` — toate șterse doar după o căutare repository-wide care a confirmat 0 referințe de cod rămase (singurele hit-uri rămase sunt documente istorice — `DECISIONS.md`, rapoarte de audit vechi — lăsate neatinse, corect, ca înregistrare a stării de atunci). `logo-assets.json` rescris integral pentru identitatea V2, cu hash-uri SHA-256 pentru fiecare asset și un bloc `superseded` documentând explicit ce a fost eliminat și de ce. `public/sw.js` avea calea veche `/icons/icon-192.png`/`icon-512.png` hardcodată în lista de precache (`APP_SHELL_URLS`) — actualizată la noile iconițe, cu `SW_VERSION` incrementat (`v1`→`v2`) pentru ca instanțele deja instalate să curețe cache-ul vechi.
+
+**Validare completă:** `npm run check` 0 erori/96 fișiere, `npm run build` 101 pagini (neschimbat față de baseline-ul anterior), `pytest` 518/518 (505 anterioare + 12 teste noi dedicate migrării de brand + 1 din TASK-3601), `node --test` 1/1, `validate_project.py` 0 erori. Build-ul verificat direct (nu presupus) că nu mai conține niciun asset sau referință HTML către identitatea veche.
+
+**QA real de browser** (Chrome real lansat cu `--remote-debugging-port`, izolat, conectat prin Playwright CDP, axe-core injectat): 5 rute × 4 viewport-uri (390/768/1280/1440) — logo-ul se randează corect (dimensiuni naturale > 0, `complete=true`) la toate combinațiile, 0 regresii introduse de migrare pe rutele auditate (`/incepe-aici`, `/gold-standard`, `/volum/01/ch-0101` — toate 0 overflow, 0 violări Axe).
+
+**Constatare reală, declarată onest, nereparată — în afara scopului acestui task:** homepage-ul (`/`) are un overflow orizontal preexistent de 8px la toate cele 4 viewport-uri, cauzat de secțiunea hero cu imagini de teren (`.approved-hero`, `.ball-flight`, `.desktop-art`, `.field-strip` — tipar `100vw`/full-bleed similar categoriei de bug deja documentate și reparate separat în DEC-0076, dar într-un fișier diferit, neatins de acest task), plus o violare Axe de contrast (`color-contrast`, 1.41:1 față de 3:1 necesar) pe indicatorul numeric „01" al unei secțiuni. Investigație directă a confirmat că niciuna dintre cele două nu are legătură cu logo-ul, header-ul sau footer-ul (elementele implicate sunt complet independente de componentele de brand modificate) și că ambele preced acest task. Nu au fost reparate — motivul e strict scop, nu ascundere: TASK-3701 e o migrare de identitate de brand, nu un audit general de layout/accesibilitate al homepage-ului.
+
+Raport final: `reports/task-reports/TASK-3701.md`, `docs/brand/MANUALFC_BRAND_SYSTEM_V2.md`. Task: `TASK-3701 = DONE`.
+
+**Toate baseline-urile anterioare (`MANUALFC_GOLD_STANDARD_V2_BASELINE`, `MANUALFC_ANTRENORUL_V1_BASELINE`, `MANUALFC_PRE_PHASE32_HYGIENE_BASELINE`, `MANUALFC_EDUCATIONAL_PAGE_SYSTEM_V1`) rămân neschimbate, nesuprascrise.** Acest task nu a fost autorizat sau instruit să înghețe un nou baseline global — este o migrare de brand aditivă peste starea deja acceptată de `TASK-3601`.
+
+## DEC-0081 — TASK-3703 închide overflow-ul și contrastul rămase din TASK-3701, plus 2 defecte gemene găsite de auditul obligatoriu; TASK-3702 înregistrat retroactiv
+
+Utilizatorul a autorizat explicit „MANUALFC — TASK-3703 / POST-BRAND VISUAL DEBUG, REGRESSION REPAIR & ACCEPTANCE", cerând reproducere cu browser real înainte de reparație, reparație minimă strict pe problemele validate, audit complet post-reparație pe 10 suprafețe × 5 viewport-uri, verificare programatică a integrității brandului și, explicit, neatingerea corupției Git deja documentate.
+
+**Guvernanță reparată înainte de lucru:** o investigație de integritate Git executată integral în aceeași sesiune ca TASK-3701 (11 obiecte loose corupte identificate prin `fsck`, verdict `BLOCKED` pentru reparare — fără remote, fără sursă alternativă) fusese raportată complet utilizatorului, dar niciodată formalizată ca artefact de guvernanță. Promptul TASK-3703 o referă ca „TASK-3702" presupunând că există — a fost creat retroactiv `reports/task-reports/TASK-3702.md`, cu constatările neschimbate, și înregistrat în generator.
+
+**Faza 1, reproducere reală înainte de orice reparație:** cele 2 defecte deja declarate în TASK-3701 (overflow ~8px pe homepage, contrast 1.42:1 pe indicatorul „01") au fost re-reproduse cu Chrome real (CDP). Auditul obligatoriu de 10 suprafețe a scos la iveală **2 defecte suplimentare de exact aceeași categorie**, niciodată investigate anterior: overflow identic ~8px pe `/incepe-aici` (`.founding-rule`, același tipar `100vw`/`margin-left:calc(50% - 50vw)`) și contrast insuficient pe cardul „Continuă" din `/spatiul-meu` (eyebrow 2.62:1, paragraf 1.67:1 — regulile globale de tip-selector `p{}` și de clasă `.eyebrow{}` câștigă asupra culorii albe moștenite dintr-un fundal întunecat local, pentru că lipsea echivalentul lui `.continue h2{color:#fff}` deja prezent în cod pentru `<h2>`). **Toate 4 confirmate preexistente TASK-3701** prin `git show 0466ea9:<fișier>` (ultimul commit dinaintea TASK-3601/TASK-3701) — nicio regresie de brand.
+
+**Decizie de scop, motivată explicit:** promptul enumera doar 2 defecte de reparat în Faza 2, dar obiectivul general cerea „închiderea tuturor defectelor vizuale cunoscute rămase după TASK-3701". Cele 2 defecte suplimentare, fiind exact același tipar deja rezolvat cu succes de două ori în cod (`principii/[slug].astro`, DEC-0076), au fost reparate și ele, nu doar declarate — risc minim, tipar validat, conexiune demonstrată direct cu categoria de defecte vizate.
+
+**Reparații, toate cu tokenuri/tipare existente, nicio invenție:** `--scrollbar-w` măsurat prin JS (tiparul DEC-0076) aplicat identic pe `.approved-hero`/`.final-cta`/`.founding-rule`; `.proof-index b` mutat de la `--color-border` (1.42:1) la `--color-text-muted` (4.63:1, token deja existent); `.continue p{color:#fff}` și `.continue .eyebrow{color:var(--color-brand-gold)}` (10.59:1) adăugate, oglindind exact tiparul deja folosit pentru `.mode-now .eyebrow` pe homepage. Niciun `overflow-x:hidden` global, niciun artwork de brand atins, niciun token de brand schimbat.
+
+**Faza 3, audit complet:** Chrome real (CDP) + axe-core, 10 suprafețe × 5 viewport-uri (320/390/768/1280/1440) = 50 combinații, toate PASS — 0 overflow, 0 violări Axe, `main`/`h1` unice, 0 imagini rupte, 0 erori de consolă. O singură instanță de logo cu dimensiune randată 0×0 găsită pe Field Mode, investigată și confirmată intenționată (`body:has(.field-mode) .app-footer{display:none}` ascunde deliberat footer-ul în modul de teren), nu defect.
+
+**Faza 4, integritatea brandului:** verificare programatică (Python + PIL) — toate cele 11 assete din `logo-assets.json` există, hash-urile SHA-256 corespund exact (inclusiv masterul, neschimbat), dimensiunile și rapoartele de aspect corespund cutiilor de decupare declarate, verificare de bleed pe marginile mark-ului (analiză de luminozitate) confirmă curat, 0 referințe runtime rămase către identitatea shield/crest.
+
+**Faza 6, Preview:** un blocaj real de infrastructură, nelegat de brand, a fost găsit și reparat corect scoping-ul: `vercel deploy` a eșuat cu `scandir` pe `node_modules.corrupt-20260831` (director preexistent, corupt, dintr-o instalare npm eșuată anterioară, nelegat de acest task) — reparat prin adăugarea unui `.vercelignore` nou care exclude directorul din pachetul de deploy, **fără a-l șterge** (nu e artefactul acestui task să elimine). Deployment `dpl_EsAg7inWWokUqNvnt2ufhbxFWzBC` (`target: null`) verificat live prin `vercel curl`: homepage, favicon, manifest, imaginea socială, `/incepe-aici/`, `/spatiul-meu/` toate 200 OK, regula CSS exactă a reparației (`--scrollbar-w`) confirmată byte-cu-byte în bundle-ul servit.
+
+**Validare completă:** `npm run check` 0 erori/96 fișiere, `npm run build` 101 pagini, `pytest` 518/518, `node --test` 1/1, `validate_project.py`/`validate_content.py --strict`/`validate_html_landmarks.py`/`audit_route_links.py` toate 0 erori, `generate_task_registry.py --check` reproductibil (305 taskuri), `git diff --check` 0 erori.
+
+**Limitare reală, investigată, declarată onest, nereparată:** reflow sub ~200px CSS-pixeli (simulat prin înjumătățirea unui viewport de 390px — echivalentul unui telefon îngust cu zoom 200%+ compus) arată 73px overflow, cauzat de mai multe componente independente cu dimensiuni fixe (animație decorativă, floor-ul `clamp()` al `<h1>`, padding fix de card) — nu un singur defect reparabil minimal, și sub referința oficială WCAG 1.4.10 de 320px (deja verificată PASS la 320×568). Corupția Git din TASK-3702 rămâne neatinsă conform instrucțiunii explicite; o a 12-a instanță a aceleiași clase de corupere, găsită incidental într-un `git log` pe `incepe-aici.astro`, e doar menționată.
+
+Rapoarte finale: `reports/audits/MANUALFC_POST_BRAND_VISUAL_ACCEPTANCE.md`, `reports/task-reports/TASK-3702.md`, `reports/task-reports/TASK-3703.md`. Task-uri: `TASK-3702 = DONE (BLOCKED pentru reparare Git, investigație completă)`, `TASK-3703 = DONE — PASS_WITH_DECLARED_NON_BLOCKING_LIMITATIONS`.
+
+**Toate baseline-urile anterioare rămân neschimbate, nesuprascrise.** Acest task nu îngheață un baseline nou — e o reparație aditivă, minimă, peste starea deja acceptată de TASK-3701.
+
+## DEC-0082 — Corectarea `--color-bg-brand`: judecata inițială din DEC-0080 ("suficient de apropiat") s-a dovedit greșită vizual
+
+Utilizatorul a semnalat direct, fără ambiguitate: integrarea noului logo în header „arată oribil". Verificarea vizuală imediată (captură de ecran reală, nu presupunere) a arătat un chenar dreptunghiular clar vizibil în jurul logo-ului din header, ca un sticker lipit peste fundal, nu un logo integrat.
+
+**Cauza confirmată prin măsurare de pixeli, nu prin inspecție vizuală aproximativă:** fiecare derivat al logo-ului e un PNG plat, opac (fără canal alfa), cu fundalul propriu al artwork-ului copt direct în imagine. Eșantionarea directă a arătat fundalul header-ului la `rgb(13,27,42)` (vechiul `--color-bg-brand`, `#0D1B2A`) tranzitând brusc la `rgb(1,10,23)` exact la marginea imaginii logo-ului — o diferență suficient de mare încât să fie clar vizibilă pe ecran, contrazicând direct judecata din DEC-0080 („culorile eșantionate sunt suficient de apropiate, o schimbare de token ar fi o recolorare nejustificată").
+
+**Reparație precisă, nu o nouă presupunere:** `--color-bg-brand` a fost recalculat ca medie pe un patch de 40×40px din colțul artwork-ului master (`#010916`), nu un singur pixel citit cu ochiul liber. Corectat în `config/visual-tokens.json` (sursa canonică declarată explicit în comentariul din `tokens.css`) și `app/src/styles/tokens.css`. Toate literalele hardcodate `#0D1B2A` care reprezentau același rol semantic (fundal brand, nu text) au fost aliniate la token, pentru ca reparația să fie completă, nu parțială: `HomepageHero.astro` (fundalul hero-ului și al variantei mobile), `design-system.astro` (swatch-urile „Midnight Navy" și fundalul specimenelor de logo din laboratorul intern de brand — ar fi reprodus exact același defect acolo), `theme-color` din `BaseLayout.astro`, `theme_color` din `manifest.webmanifest` (culoarea de chrome a browserului/PWA).
+
+**Ce NU s-a schimbat, deliberat:** `--color-text-primary` (aceeași valoare veche `#0D1B2A`, dar rol semantic complet diferit — text pe fundal deschis, nu fundal întunecat) și liniile decorative de cerneală din SVG-ul mingii (`HeroBallFlight.astro`, contur pe un fundal alb-cremos, fără nicio legătură cu fundalul brand) au rămas neatinse — o suprascriere globală de tip regex ar fi fost incorectă și ar fi încălcat exact principiul „nu recolora nediscriminat" pe care DEC-0080 îl proteja corect, doar cu o valoare de prag greșită.
+
+**Verificare vizuală directă înainte și după, nu doar validare de cod:** captură de ecran reală a header-ului la 1440px și 390px, plus eșantionare de pixeli pe imagine — înainte: tranziție clară de culoare la x=113 (marginea logo-ului); după: 0 tranziție, fundalul header-ului și fundalul logo-ului identice (`rgb(1,9,22)` vs `rgb(0,9,22)`, diferență de rotunjire de 1 unitate, imperceptibilă). Verificat vizual identic și pe footer (logo „full" cu tagline) și pe tranziția header→hero de pe homepage.
+
+**Validare:** `npm run check` 0 erori, `npm run build` 101 pagini, `pytest` 518/518. Re-verificare Axe/overflow pe 4 rute × 2 viewport-uri (390/1440, inclusiv homepage și spatiul-meu, ambele modificate recent în TASK-3703): 0 regresii — fundalul mai închis nu poate scădea contrastul textului alb/auriu deja folosit peste el, doar îl crește.
+
+Raport final: `reports/task-reports/TASK-3704.md`. Document actualizat: `docs/brand/MANUALFC_BRAND_SYSTEM_V2.md` (§4/§5). Task: `TASK-3704 = DONE`.
+
+**Toate baseline-urile anterioare rămân neschimbate, nesuprascrise.** Acesta e un singur token corectat cu dovadă vizuală directă, nu un nou baseline sau un re-brand.
+
+## DEC-0083 — Rebalansarea header/footer: dimensiuni de logo aduse la un standard editorial restrâns, prin tokenuri CSS reutilizabile
+
+Utilizatorul a cerut o reparație completă a integrării brandului în header desktop/mobil, footer, hero și metadate, cu targeturi precise de dimensionare (înălțime logo 32-38px desktop, 28-32px mobil; înălțime header 68-76px; lățime logo footer 160-200px), explicit interzicând orice redesenare, redecupare geometrică sau reinterpretare a logo-ului oficial — doar layout, scalare, spațiere și ierarhie.
+
+**Verificare înainte de a construi ceva nou:** cerințele #3 (hero fără branding duplicat) și #4 (artwork-ul mare de brand nefolosit ca secțiune full-width) au fost verificate direct în cod, nu presupuse — `ManualFCLogo` nu apare nicăieri în `HomepageHero.astro`, iar artwork-ul mare (`manualfc-logo-full.png`/masterul) nu e folosit ca secțiune de pagină nicăieri, doar pentru `og:image`/`twitter:image`. Ambele cerințe erau deja îndeplinite — nu s-a construit nimic nou pentru ele, evitând scope creep.
+
+**Implementare prin tokenuri, nu prin dimensiuni hardcodate repetate:** conform cererii explicite de reutilizabilitate, au fost adăugate trei proprietăți CSS custom în `tokens.css` (sursă unică de adevăr): `--brand-logo-header-height:36px`, `--brand-logo-mobile-height:30px`, `--brand-logo-footer-width:180px`. `AppHeader.astro` a trecut de la dimensionare pe lățime fixă (190px/160px) la dimensionare pe înălțime (`var(--brand-logo-header-height)`/`var(--brand-logo-mobile-height)`, cu `width:auto`), lăsând raportul de aspect intrinsec al imaginii (din atributele `width`/`height` HTML deja prezente) să deriveze automat lățimea corectă — fără nicio distorsiune. `AppFooter.astro` a trecut la `var(--brand-logo-footer-width)`.
+
+**Măsurători reale, nu presupuse:** header desktop 86px → 73px randat real (țintă 68-76); logo desktop 36px înălțime × ~138px lățime (țintă 32-38); header mobil 78px → 69px; logo mobil 30px × ~115px (țintă 28-32); footer 260px → 180px lățime. Toate confirmate prin `getBoundingClientRect()` într-un Chrome real, nu calculate pe hârtie.
+
+**Breakpoint-ul tablet (≤860px) păstrat neschimbat, deliberat:** la această lățime, header-ul comută la un layout preexistent pe două rânduri (logo sus, navigare dedesubt, cu scroll orizontal dacă e nevoie) — inspectat vizual la 768px, arată curat și intenționat. Regula explicită „nu modifica navigarea existentă decât dacă e necesar pentru spațiere" a fost respectată — nu s-a atins această structură.
+
+**Verificare vizuală reală, nu doar build verde:** Chrome real (CDP) la toate cele 7 viewport-uri cerute (1440/1280/1024/768/430/390/360) — capturi de ecran pentru header, meniu mobil deschis/închis, footer desktop/mobil, homepage complet. Toate randate corect, logo lizibil, fără tăiere, fără distorsiune de raport de aspect, fără suprapunere cu navigarea.
+
+**Validare:** `npm run check` 0 erori, `npm run build` 101 pagini, `pytest` 518/518, `validate_project.py`/`validate_html_landmarks.py`/`audit_route_links.py` 0 erori, `git diff --check` 0 erori. Axe: 0 violări pe toate cele 7 viewport-uri, 0 overflow orizontal.
+
+Raport final: `reports/task-reports/TASK-3705.md`. Task: `TASK-3705 = DONE`.
+
+**Toate baseline-urile anterioare rămân neschimbate, nesuprascrise.** Acesta e un ajustament de dimensionare peste identitatea deja aprobată (DEC-0080/DEC-0082) — logo-ul oficial rămâne neatins geometric, proporțional și cromatic.

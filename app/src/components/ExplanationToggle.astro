@@ -1,0 +1,17 @@
+---
+// Comprimă/extinde blocurile ElaborationBlock ale acestei pagini. Stare implicită: extins
+// (P2 — deschis implicit, sigur pentru antrenorul novice). Nu afectează nucleul procedural.
+// Logica de interacțiune și stilurile sunt centralizate în app/src/lib/educational-page.ts
+// și app/src/styles/educational-page.css (încărcate global din BaseLayout.astro) — vezi
+// acele fișiere pentru motivul (script/style hoisting nu funcționează pentru componente
+// folosite din MDX în content/, care e în afara srcDir).
+interface Props { targets: string[] }
+const { targets } = Astro.props;
+const controls = targets.join(' ');
+---
+<explanation-toggle data-targets={controls}>
+  <button type="button" data-toggle-btn aria-expanded="true" aria-controls={controls}>
+    <span data-label-collapse>▾ Comprimă explicația completă</span>
+    <span data-label-expand hidden>▸ Arată explicația completă</span>
+  </button>
+</explanation-toggle>

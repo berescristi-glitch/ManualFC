@@ -1,0 +1,311 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import SurfaceMap from '../../../components/SurfaceMap.astro';
+import CoachActions from '../../../components/CoachActions.astro';
+import { getGoldStandardSessions, getGoldStandardSession, getGoldStandardAssessment, getGoldStandardSessionExercises } from '../../../lib/content-bridge';
+import { SUPPORTED_PLAYER_COUNTS, computeGroupConfiguration } from '../../../lib/group-configurator';
+import type { CoachCount } from '../../../lib/group-configurator';
+import { buildSurfaceMap } from '../../../lib/surface-map';
+
+export function getStaticPaths() {
+  return getGoldStandardSessions().map(ses => ({ params: { id: ses.id } }));
+}
+const { id } = Astro.params;
+const ses = getGoldStandardSession(id as string);
+const assessment = getGoldStandardAssessment();
+const sessionExercises = getGoldStandardSessionExercises(ses);
+
+const equipmentMatches = sessionExercises.every(ex => ex.equipment.join('|') === sessionExercises[0].equipment.join('|'));
+const equipment = equipmentMatches ? sessionExercises[0].equipment : null;
+const equipmentByExercise = equipmentMatches ? null : sessionExercises.map(ex => ({ id: ex.id, items: ex.equipment }));
+const maxLength = Math.max(...sessionExercises.map(ex => ex.field.length_m));
+const maxWidth = Math.max(...sessionExercises.map(ex => ex.field.width_m));
+
+const variant60ByIndex = new Map(ses.duration_variant_60min.segments.map((s) => [s.segment_index, s]));
+const coachCounts: CoachCount[] = [1, 2];
+const mapExerciseSegments = ses.segments
+  .map((seg, index) => ({ seg, index, exercise: seg.exercise_ids[0] ? sessionExercises.find((ex) => ex.id === seg.exercise_ids[0]) ?? null : null }))
+  .filter((entry) => entry.exercise !== null);
+const mapVariants = SUPPORTED_PLAYER_COUNTS.flatMap((count) =>
+  coachCounts.map((coachCount) => ({
+    count,
+    coachCount,
+    segmentMaps: mapExerciseSegments.map(({ seg, exercise }) => {
+      const config = computeGroupConfiguration(exercise!, count, coachCount);
+      return { seg, exercise: exercise!, config, spec: buildSurfaceMap(config) };
+    }),
+  }))
+);
+const isV2 = ses.gold_standard_v2?.status === 'V2';
+---
+<BaseLayout title={`${ses.title} — Gold Standard`} description={ses.primary_objective}>
+  <div class="gs-session">
+    <Breadcrumb items={[{ label: 'Gold Standard', href: '/gold-standard' }, { label: ses.id }]} />
+    <p class="eyebrow">GOLD STANDARD · ȘEDINȚĂ {ses.id} · {ses.duration_min} minute</p>
+    <h1>{ses.title}</h1>
+    <p class="objective">{ses.primary_objective}</p>
+    <CoachActions id={ses.id} kind="session" title={ses.title} href={`/gold-standard/sedinte/${ses.id}`}/>
+    <a class="field-mode-cta" href={`/gold-standard/sedinte/${ses.id}/mod-teren?durata=75`} data-field-mode-cta>Pornește modul teren (75 min) →</a>
+    <p class="field-mode-note">Un segment pe ecran, cronometru, navigare cu degetul mare — pentru lângă teren, nu pentru citit acasă. Alegerea 60/75 de mai jos schimbă și modul teren.</p>
+
+    {isV2 && ses.child_objectives && ses.coach_objectives && (
+      <section aria-labelledby="obiective-duale" class="dual-objectives">
+        <h2 id="obiective-duale">Copiii și antrenorul</h2>
+        <div class="dual-grid">
+          <div>
+            <h3>Copiii</h3>
+            <ul>{ses.child_objectives.map(o => <li>{o}</li>)}</ul>
+          </div>
+          <div>
+            <h3>Antrenorul</h3>
+            <ul>{ses.coach_objectives.map(o => <li>{o.objective} <span class="competency-tag">{o.coach_competency_id}</span></li>)}</ul>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <section aria-labelledby="pregatire" class="prep-summary">
+      <h2 id="pregatire">Pregătire — ce iei cu tine</h2>
+      <div class="prep-grid">
+        <div><span>Jucători</span><strong>8–18, orice efectiv</strong></div>
+        <div><span>Antrenori</span><strong>1 sau 2</strong></div>
+        <div><span>Spațiu maxim</span><strong>până la {maxLength}×{maxWidth}m</strong></div>
+        <div><span>Exerciții, în ordine</span><strong>{sessionExercises.map(ex => ex.id).join(' → ')}</strong></div>
+      </div>
+      <div class="prep-grid prep-grid-duration">
+        <div><span>Durată</span><strong>75 min (canonic) sau 60 min (comprimat)</strong></div>
+        <div><span>Grupe și rotație</span><strong>vezi <a href="#harta">harta terenului</a> pentru efectivul tău</strong></div>
+      </div>
+      {equipment && <p class="prep-equipment"><strong>Material:</strong> {equipment.join(', ')}.</p>}
+      {equipmentByExercise && (
+        <div class="prep-equipment">
+          <strong>Material (variază pe exercițiu):</strong>
+          <ul>{equipmentByExercise.map(e => <li><strong>{e.id}:</strong> {e.items.join(', ')}.</li>)}</ul>
+        </div>
+      )}
+      <p class="prep-config-link">Pentru numărul exact de grupe, spațiu total și material la efective de 8–18 copii: <a href="/gold-standard/configurator">configuratorul de grup</a> ({sessionExercises.map(ex => ex.id).join(', ')}). Pentru situații neplanificate: <a href="#contingente">contingențele operaționale</a>.</p>
+    </section>
+
+    <section aria-labelledby="harta" id="harta">
+      <h2 id="harta-title">Harta terenului</h2>
+      <p class="harta-intro">Cum montezi tot antrenamentul pe teren, pentru efectivul și numărul de antrenori pe care îi ai azi. Alege mai jos.</p>
+      <div class="harta-controls">
+        <fieldset>
+          <legend>Copii</legend>
+          {SUPPORTED_PLAYER_COUNTS.map((count, i) => (
+            <label class="pill">
+              <input type="radio" name="harta-count" value={count} checked={i === 3} data-harta-count />
+              <span>{count}</span>
+            </label>
+          ))}
+        </fieldset>
+        <fieldset>
+          <legend>Antrenori</legend>
+          {coachCounts.map((c) => (
+            <label class="pill">
+              <input type="radio" name="harta-coach" value={c} checked={c === 1} data-harta-coach />
+              <span>{c}</span>
+            </label>
+          ))}
+        </fieldset>
+      </div>
+
+      {mapVariants.map(({ count, coachCount, segmentMaps }) => (
+        <div class="harta-variant" data-harta-variant data-count={count} data-coach={coachCount} hidden={!(count === SUPPORTED_PLAYER_COUNTS[3] && coachCount === 1)}>
+          {segmentMaps.map(({ seg, exercise, config, spec }, i) => (
+            <div class="harta-segment">
+              <p class="harta-segment-title"><strong>{seg.title}</strong> <span class="harta-segment-time">{seg.start_min}′–{seg.end_min}′</span></p>
+              {spec ? (
+                <SurfaceMap spec={spec} exerciseId={exercise.id} exerciseTitle={exercise.title} totalPlayers={count} coachCount={coachCount} />
+              ) : (
+                <p class="harta-infeasible">{config.feasibilityNote}</p>
+              )}
+              {i < segmentMaps.length - 1 && <p class="harta-transition"><strong>Tranziție spre următoarea zonă:</strong> {seg.transition_logistics}</p>}
+            </div>
+          ))}
+        </div>
+      ))}
+    </section>
+
+    <section aria-labelledby="contingente">
+      <h2 id="contingente">Contingențe operaționale</h2>
+      <p class="contingente-intro">Ce faci când ședința nu merge exact cum e planificată. Fiecare răspuns e o judecată practică rezonabilă, nu un rezultat validat de cercetare.</p>
+      <dl class="contingente-list">
+        {ses.operational_contingencies.map(c => (
+          <div class="contingenta">
+            <dt>{c.scenario}</dt>
+            <dd>{c.guidance}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section aria-labelledby="segmente">
+      <h2 id="segmente">Structura ședinței</h2>
+      <div class="duration-toggle" role="group" aria-label="Alege durata ședinței">
+        <label class="pill"><input type="radio" name="duration" value="75" checked data-duration-toggle /> <span>75 min · canonic</span></label>
+        <label class="pill"><input type="radio" name="duration" value="60" data-duration-toggle /> <span>60 min · comprimat</span></label>
+      </div>
+      <p class="duration-policy-note" data-duration-note-60 hidden>{ses.duration_variant_60min.policy_note}</p>
+      <ol class="segments">
+        {ses.segments.map((seg, index) => {
+          const v60 = variant60ByIndex.get(index)!;
+          return (
+            <li>
+              <div class="seg-time">
+                <span data-seg-time-75>{seg.start_min}′–{seg.end_min}′</span>
+                <span data-seg-time-60 hidden>{v60.start_min}′–{v60.end_min}′</span>
+              </div>
+              <div class="seg-body">
+                <h3>{seg.title}</h3>
+                {seg.exercise_ids.length > 0 && (
+                  <p class="seg-links">{seg.exercise_ids.map(exId => <a href={`/gold-standard/exercitii/${exId}`}>{exId}</a>)}</p>
+                )}
+                <p class="seg-message">„{seg.coach_message}”</p>
+                <p class="seg-why"><strong>De ce acum:</strong> {seg.why_now}</p>
+                <p class="seg-obs"><strong>Focalizare observare:</strong> {seg.observation_focus.join(' · ')}</p>
+                {seg.coach_focus && <p class="seg-coach-focus"><strong>Coach focus:</strong> {seg.coach_focus}</p>}
+                {seg.non_intervention_criteria && seg.non_intervention_criteria.length > 0 && (
+                  <p class="seg-non-intervene"><strong>Când NU intervii:</strong> {seg.non_intervention_criteria.join(' · ')}</p>
+                )}
+                {seg.verification_method && <p class="seg-verify"><strong>Cum verifici:</strong> {seg.verification_method}</p>}
+                <p class="seg-reduction" data-seg-reduction-60 hidden><strong>La 60 min:</strong> {v60.reduction_note}</p>
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+
+    <section aria-labelledby="rationale">
+      <h2 id="rationale">De ce această structură</h2>
+      <p>{ses.session_rationale}</p>
+    </section>
+
+    <section aria-labelledby="reflectie">
+      <h2 id="reflectie">Reflecție de închidere</h2>
+      <ul>{ses.reflection.map(q => <li>{q}</li>)}</ul>
+      {isV2 && ses.reflection_v2 && (
+        <div class="reflection-v2">
+          <div>
+            <h3>Copil / joc</h3>
+            <ul>{ses.reflection_v2.child_game_dimension.map(q => <li>{q}</li>)}</ul>
+          </div>
+          <div>
+            <h3>Antrenor</h3>
+            <ul>{ses.reflection_v2.coach_dimension.map(q => <li>{q}</li>)}</ul>
+          </div>
+          <p class="reflection-boundary">Reflecția antrenorului nu este o măsură obiectivă a schimbării de comportament, iar auto-raportarea copilului nu este dovadă obiectivă de învățare — ambele rămân developmentale și descriptive, nu un scor.</p>
+        </div>
+      )}
+    </section>
+
+    <p class="theme-note"><strong>Temă de meci:</strong> {ses.match_theme}</p>
+
+    <section aria-labelledby="evaluare-link">
+      <h2 id="evaluare-link">Cum știu dacă a funcționat</h2>
+      <p>Observă comportamentele din <a href={`/gold-standard/evaluare/${assessment.id}`}>{assessment.title}</a> în jocul liber de la finalul ședinței — nu în timpul exercițiilor structurate, unde reperele externe sunt încă prezente.</p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .gs-session { max-width: var(--width-content); margin: 0 auto; padding: var(--space-20) var(--space-6); }
+  h1 { max-width: 24ch; }
+  .objective { max-width: 60ch; font-size: 1.1rem; }
+  .field-mode-cta { display: inline-flex; align-items: center; min-height: 48px; margin-top: var(--space-6); padding: 0 var(--space-6); background: var(--color-brand-gold); color: var(--color-bg-brand); font-weight: 800; border-radius: var(--radius-md); text-decoration: none; }
+  .field-mode-note { margin-top: var(--space-2); font-size: .85rem; color: var(--color-text-muted); }
+  .prep-summary { margin-top: var(--space-10); border-top: none; padding: var(--space-6); background: var(--color-bg-brand); color: white; border-radius: var(--radius-lg); }
+  .prep-summary h2 { color: white; }
+  .prep-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-6); margin-top: var(--space-4); }
+  .prep-grid span { display: block; font-size: .72rem; text-transform: uppercase; color: var(--color-brand-gold); }
+  .prep-grid strong { display: block; margin-top: .2rem; }
+  .prep-grid strong a { color: white; text-decoration-color: var(--color-brand-gold); }
+  .prep-equipment { margin-top: var(--space-4); font-size: .9rem; color: white; }
+  .prep-equipment ul { list-style: none; padding: 0; margin: var(--space-2) 0 0; display: grid; gap: .2rem; }
+  .prep-config-link { margin-top: var(--space-4); font-size: .85rem; color: rgba(255, 255, 255, .85); }
+  .prep-config-link a { color: white; text-decoration-color: var(--color-brand-gold); }
+  @media (max-width: 700px) { .prep-grid { grid-template-columns: 1fr 1fr; } }
+  section { margin-top: var(--space-16); border-top: 1px solid var(--color-border); padding-top: var(--space-8); }
+  .contingente-intro { max-width: 60ch; color: var(--color-text-muted); }
+  .contingente-list { display: grid; gap: var(--space-6); margin-top: var(--space-6); }
+  .contingenta { border-left: 3px solid var(--color-brand-gold); padding-left: var(--space-4); }
+  .contingenta dt { font-weight: 700; margin-bottom: .3rem; }
+  .contingenta dd { margin: 0; color: var(--color-text-secondary); font-size: .95rem; }
+  .segments { list-style: none; padding: 0; }
+  .segments li { display: grid; grid-template-columns: 6rem 1fr; gap: var(--space-6); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); }
+  .seg-time { font-family: var(--font-family-mono); color: var(--color-text-accent); }
+  .seg-message { font-weight: 700; }
+  .seg-why, .seg-obs { font-size: .9rem; color: var(--color-text-secondary); }
+  .seg-links a { margin-right: .6rem; font-family: var(--font-family-mono); font-size: .8rem; }
+  .seg-reduction { color: var(--color-text-accent); font-size: .85rem; }
+  .theme-note { margin-top: var(--space-12); }
+  @media (max-width: 600px) { .segments li { grid-template-columns: 1fr; } }
+
+  .prep-grid-duration { margin-top: 1px; }
+  .prep-config-link a { color: white; text-decoration-color: var(--color-brand-gold); }
+
+  .harta-intro { max-width: 60ch; color: var(--color-text-muted); }
+  .harta-controls { display: flex; flex-wrap: wrap; gap: var(--space-6); margin-top: var(--space-6); }
+  .harta-controls fieldset, .duration-toggle { border: 0; padding: 0; margin: 0; display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
+  .harta-controls legend { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--color-text-muted); font-weight: 850; width: 100%; margin-bottom: .3rem; }
+  .duration-toggle { margin-top: var(--space-4); }
+  .pill { position: relative; display: inline-flex; }
+  .pill input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+  .pill span { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 .9rem; border-radius: var(--radius-full); border: 1px solid var(--color-border-strong); font-size: .85rem; font-weight: 700; color: var(--color-text-secondary); }
+  .pill input:checked + span { background: var(--color-bg-brand); border-color: var(--color-bg-brand); color: white; }
+  .pill input:focus-visible + span { outline: 2px solid var(--color-brand-gold); outline-offset: 2px; }
+  .duration-policy-note { margin-top: var(--space-4); font-size: .85rem; color: var(--color-text-accent); max-width: 68ch; }
+  .harta-variant { margin-top: var(--space-8); display: grid; gap: var(--space-10); }
+  .harta-variant[hidden] { display: none; }
+  .harta-segment-title { display: flex; justify-content: space-between; gap: var(--space-4); font-size: 1.05rem; }
+  .harta-segment-time { font-family: var(--font-family-mono); color: var(--color-text-accent); font-weight: 700; }
+  .harta-infeasible { color: var(--color-text-muted); font-size: .9rem; }
+  .harta-transition { margin-top: var(--space-2); font-size: .85rem; color: var(--color-text-secondary); }
+  .dual-objectives { margin-top: var(--space-10); }
+  .dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); margin-top: var(--space-4); }
+  .dual-grid h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--color-text-accent); }
+  .competency-tag { font-family: var(--font-family-mono); font-size: .75rem; color: var(--color-text-muted); }
+  @media (max-width: 680px) { .dual-grid { grid-template-columns: 1fr; } }
+  .seg-coach-focus { font-size: .9rem; font-weight: 700; }
+  .seg-non-intervene, .seg-verify { font-size: .85rem; color: var(--color-text-secondary); }
+  .reflection-v2 { margin-top: var(--space-8); display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+  .reflection-v2 h3 { font-size: .8rem; text-transform: uppercase; color: var(--color-text-accent); }
+  .reflection-boundary { grid-column: 1 / -1; font-size: .82rem; color: var(--color-text-muted); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+  @media (max-width: 680px) { .reflection-v2 { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('.gs-session');
+  if (root) {
+    const durationInputs = root.querySelectorAll<HTMLInputElement>('[data-duration-toggle]');
+    const fmCta = root.querySelector<HTMLAnchorElement>('[data-field-mode-cta]');
+    function applyDuration(value: string) {
+      const is60 = value === '60';
+      root!.querySelectorAll<HTMLElement>('[data-seg-time-75]').forEach((el) => { el.hidden = is60; });
+      root!.querySelectorAll<HTMLElement>('[data-seg-time-60]').forEach((el) => { el.hidden = !is60; });
+      root!.querySelectorAll<HTMLElement>('[data-seg-reduction-60]').forEach((el) => { el.hidden = !is60; });
+      root!.querySelectorAll<HTMLElement>('[data-duration-note-60]').forEach((el) => { el.hidden = !is60; });
+      if (fmCta) {
+        const url = new URL(fmCta.href, window.location.href);
+        url.searchParams.set('durata', value);
+        fmCta.href = url.toString();
+        fmCta.textContent = `Pornește modul teren (${value} min) →`;
+      }
+    }
+    durationInputs.forEach((input) => input.addEventListener('change', () => { if (input.checked) applyDuration(input.value); }));
+
+    const countInputs = root.querySelectorAll<HTMLInputElement>('[data-harta-count]');
+    const coachInputs = root.querySelectorAll<HTMLInputElement>('[data-harta-coach]');
+    function applyHarta() {
+      const count = root!.querySelector<HTMLInputElement>('[data-harta-count]:checked')?.value;
+      const coach = root!.querySelector<HTMLInputElement>('[data-harta-coach]:checked')?.value;
+      root!.querySelectorAll<HTMLElement>('[data-harta-variant]').forEach((el) => {
+        el.hidden = !(el.dataset.count === count && el.dataset.coach === coach);
+      });
+    }
+    countInputs.forEach((input) => input.addEventListener('change', applyHarta));
+    coachInputs.forEach((input) => input.addEventListener('change', applyHarta));
+  }
+</script>

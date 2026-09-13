@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TacticalMotif from '../components/TacticalMotif.astro';
+---
+<BaseLayout title="Începe aici — orientare metodologică" description="Orientarea antrenorului-pedagog pentru activitatea cu copiii de 10–11 ani.">
+  <Breadcrumb items={[{label:'Începe aici'}]} />
+  <header class="start-hero">
+    <div><span class="eyebrow">Orientare · 8 minute</span><h1>Înainte de exercițiu,<br />înțelege <em>copilul.</em></h1><p>Acesta nu este un al doilea homepage. Este punctul de orientare: cum citești ManualFC și cum transformi o indicație într-o intervenție pedagogică.</p></div>
+    <TacticalMotif variant="angle" label="Orientare în metodologia ManualFC" />
+  </header>
+
+  <section class="founding-rule"><span class="eyebrow">Principiul canonic fondator</span><blockquote>Antrenorul trebuie format mai întâi ca pedagog și apoi ca antrenor.</blockquote><p>Tactica începe cu percepția, orientarea și decizia, nu cu memorarea unei formații rigide.</p></section>
+
+  <section class="reading-path" aria-labelledby="path-title"><header><span class="eyebrow">Cum folosești platforma</span><h2 id="path-title">Un traseu. Două viteze.</h2></header><div>
+    <article><b>01</b><h3>Învață în profunzime</h3><p>Pornește de la copil, continuă cu problemele jocului și ajunge la exercițiu abia după ce înțelegi decizia urmărită.</p><a href="/principii">Vezi toate principiile →</a></article>
+    <article class="field"><b>02</b><h3>Intervino pe teren</h3><p>Când ai nevoie de ajutor rapid, descrie ce vezi. ManualFC separă observația de cauza posibilă și propune o ajustare verificabilă.</p><a href="/gold-standard/rapid">Încearcă modul rapid →</a></article>
+  </div></section>
+
+  <section class="method-loop" aria-labelledby="loop-title"><div><span class="eyebrow">Modelul de lucru</span><h2 id="loop-title">Nu corecta rezultatul înainte să înțelegi procesul.</h2></div><ol><li><span>01</span><strong>Observare</strong><p>Ce informație a căutat copilul?</p></li><li><span>02</span><strong>Interpretare</strong><p>Ce ipoteză prudentă poți testa?</p></li><li><span>03</span><strong>Alegere</strong><p>Ce decizie avea la dispoziție?</p></li><li><span>04</span><strong>Execuție</strong><p>Ce i-a permis sau limitat acțiunea?</p></li><li><span>05</span><strong>Reverificare</strong><p>Comportamentul reapare fără comandă?</p></li></ol></section>
+
+  <section class="start-cta on-dark"><span class="eyebrow">Primul material</span><h2>Copiii de aceeași vârstă nu sunt la același nivel.</h2><p>Învață să adaptezi sarcina fără să etichetezi copilul.</p><a class="button button-primary" href="/principii/variabilitatea-dezvoltarii-u11">Continuă cu principiul 01</a></section>
+  <script is:inline>
+    /* Measures the real scrollbar gutter so the full-bleed .founding-rule
+       (above) can size itself against the true visual viewport instead of
+       100vw, which always includes the scrollbar and causes document-level
+       horizontal overflow. Same pattern as app/src/pages/principii/[slug].astro
+       (DEC-0076) and app/src/pages/index.astro (TASK-3703). */
+    document.documentElement.style.setProperty('--scrollbar-w', (window.innerWidth - document.documentElement.clientWidth) + 'px');
+  </script>
+</BaseLayout>
+<style>
+  :global(:root){--scrollbar-w:15px}
+  .start-hero{display:grid;grid-template-columns:1.25fr .75fr;gap:var(--space-12);align-items:center;padding:var(--space-16) 0 var(--space-20)}.start-hero h1{margin:1rem 0 2rem}.start-hero h1 em{font-style:normal;color:var(--color-text-accent)}.start-hero p{font-size:1.15rem}.start-hero :global(svg){color:var(--color-bg-brand);opacity:.7}
+  .founding-rule{width:calc(100vw - var(--scrollbar-w));margin-left:calc(50% - 50vw + var(--scrollbar-w)/2);padding:var(--space-20) max(1rem,calc((100vw - var(--scrollbar-w) - var(--width-wide))/2));background:var(--color-bg-brand);color:white}.founding-rule .eyebrow{color:var(--color-brand-gold)}.founding-rule blockquote{max-width:23ch;margin:1.2rem 0;font-family:var(--font-family-heading);font-size:clamp(2rem,5vw,4.5rem);font-weight:800;line-height:1.02}.founding-rule p{color:#D5DAE1}
+  .reading-path,.method-loop{padding:var(--space-20) 0}.reading-path>header{display:grid;grid-template-columns:1fr 2fr}.reading-path>div{display:grid;grid-template-columns:1.15fr .85fr;margin-top:var(--space-12)}.reading-path article{padding:clamp(2rem,5vw,4rem);background:white;border-top:3px solid var(--color-bg-brand)}.reading-path article.field{background:#E7E8E2;border-color:var(--color-brand-gold)}.reading-path b{font:700 .7rem var(--font-family-mono);color:var(--color-text-accent)}.reading-path h3{font-size:2rem;margin-top:var(--space-12)}.reading-path a{font-weight:800;text-decoration:none}
+  .method-loop{display:grid;grid-template-columns:.85fr 2.15fr;gap:var(--space-16);border-top:1px solid var(--color-border)}.method-loop ol{list-style:none;padding:0}.method-loop li{display:grid;grid-template-columns:3rem 1fr 1.4fr;gap:1rem;align-items:baseline;padding:1.1rem 0;border-top:1px solid var(--color-border)}.method-loop li span{font:700 .7rem var(--font-family-mono);color:var(--color-text-accent)}.method-loop li p{margin:0;font-size:.9rem}
+  .start-cta{margin-top:var(--space-12);padding:clamp(2rem,6vw,5rem);background:var(--color-bg-brand);border-top:3px solid var(--color-brand-gold)}.start-cta .eyebrow{color:var(--color-brand-gold)}.start-cta h2{max-width:18ch;margin-top:1rem}.start-cta p{color:#D5DAE1}
+  @media(max-width:760px){.start-hero,.method-loop{grid-template-columns:1fr}.start-hero :global(svg){max-width:400px}.reading-path>header,.reading-path>div{grid-template-columns:1fr}.method-loop li{grid-template-columns:2rem 1fr}.method-loop li p{grid-column:2}.reading-path,.method-loop{padding-block:var(--space-12)}}
+</style>

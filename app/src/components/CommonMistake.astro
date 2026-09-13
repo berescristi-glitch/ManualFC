@@ -1,0 +1,6 @@
+---
+import PedagogicalBlock from './PedagogicalBlock.astro';
+interface Props { title?: string; }
+const { title } = Astro.props;
+---
+<PedagogicalBlock type="mistake" title={title}><slot /></PedagogicalBlock>

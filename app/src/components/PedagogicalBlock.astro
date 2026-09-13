@@ -1,0 +1,87 @@
+---
+export interface Props {
+  type?: 'why' | 'observe' | 'decision' | 'mistake' | 'avoid' | 'check' | 'adaptation' | 'transfer' | 'evidence' | 'info';
+  title?: string;
+  badgeLabel?: string;
+  accentColor?: string;
+  symbol?: string;
+}
+
+const {
+  type = 'info',
+  title,
+  badgeLabel,
+  accentColor,
+  symbol
+} = Astro.props;
+
+const typeDefaults: Record<string, { title: string; label: string; color: string; symbol: string }> = {
+  why: { title: "De ce contează", label: "Fundamentare", color: "var(--color-pedagogical)", symbol: "💡" },
+  observe: { title: "Ce observi pe teren", label: "Percepție", color: "var(--color-tactical)", symbol: "👀" },
+  decision: { title: "Decizia pe care o învață copilul", label: "Decizie", color: "var(--color-role-possession)", symbol: "🧠" },
+  mistake: { title: "Greșeală frecventă de corectat", label: "Corecție", color: "var(--color-warning)", symbol: "⚠️" },
+  avoid: { title: "Formulare de evitat pe teren", label: "De Evitat", color: "var(--color-danger)", symbol: "🚫" },
+  check: { title: "Verificarea înțelegerii", label: "Verificare", color: "var(--color-role-goalkeeper)", symbol: "❓" },
+  adaptation: { title: "Adaptare individuală", label: "Adaptare", color: "var(--color-role-neutral)", symbol: "⚙️" },
+  transfer: { title: "Transfer în jocul de meci", label: "Meci", color: "var(--color-tactical)", symbol: "⚽" },
+  evidence: { title: "Notă de dovadă & metodologie", label: "Dovadă", color: "var(--color-evidence)", symbol: "🔬" },
+  info: { title: "Informație pedagogică", label: "Info", color: "var(--color-border-accent)", symbol: "📌" }
+};
+
+const config = typeDefaults[type] || typeDefaults.info;
+const finalTitle = title || config.title;
+const finalBadge = badgeLabel || config.label;
+const finalColor = accentColor || config.color;
+const finalSymbol = symbol || config.symbol;
+---
+<div class="pedagogical-block" style={`--block-accent: ${finalColor};`}>
+  <div class="block-header">
+    <span class="block-symbol" aria-hidden="true">{finalSymbol}</span>
+    <span class="block-badge">{finalBadge}</span>
+    <h4 class="block-title">{finalTitle}</h4>
+  </div>
+  <div class="block-content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .pedagogical-block {
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--block-accent);
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-6);
+    margin: var(--space-4) 0;
+  }
+  .block-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    flex-wrap: wrap;
+  }
+  .block-symbol {
+    font-size: var(--font-size-lg);
+  }
+  .block-badge {
+    background-color: var(--color-bg-surface-muted);
+    color: var(--color-text-accent);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+  }
+  .block-title {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0;
+  }
+  .block-content {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+  }
+</style>

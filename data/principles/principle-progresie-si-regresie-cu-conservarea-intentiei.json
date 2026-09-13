@@ -1,0 +1,37 @@
+{
+  "id": "principle.progresie-si-regresie-cu-conservarea-intentiei",
+  "slug": "progresie-si-regresie-cu-conservarea-intentiei",
+  "category_id": "cat.metodologie-surse",
+  "evidence_claim_ids": ["CLM-0092", "CLM-0093"],
+  "title": "Progresie și regresie cu conservarea intenției tactice",
+  "professional_definition": "Scalarea dificultății unei sarcini de antrenament prin ajustarea spațiului sau a raportului numeric, menținând intactă problema tactică de bază și cuplajul percepție-acțiune, fără un prag numeric validat științific pentru momentul exact al ajustării.",
+  "child_message": "Dacă este prea greu sau prea ușor, schimbăm spațiul sau numărul de jucători, dar jocul rămâne același!",
+  "coach_meaning": "Ajustarea nivelului de dificultate fără a transforma un joc tactic într-un dril izolat de execuție.",
+  "why_this_message": "Explicarea faptului că adaptarea sarcinii sprijină succesul, fără a schimba scopul principal al jocului.",
+  "problem_being_solved": "Când copiii nu reușesc într-un exercițiu 3v2, antrenorul elimină toți adversarii și îi pune să paseze la conuri, pierzând complet intenția tactică.",
+  "information_children_must_notice": ["modificarea dimensiunii terenului sau a numărului de coechipieri", "păstrarea porților și a direcției"],
+  "decision_children_must_learn": "Să aplice același principiu tactic (ex: unghiul de sprijin) indiferent dacă jocul este mai ușor sau mai greu.",
+  "observable_behaviours": ["rezolvă problema cu sprijin suplimentar", "se adaptează când spațiul se restrânge"],
+  "rationales": {
+    "tactical": "Menține continuitatea învățării prin păstrarea principiului tactic de bază.",
+    "perceptual": "Conservează prezența stimulilor vizuali relevanți din joc.",
+    "decisional": "Protejează autonomia decizională a jucătorului în posesie.",
+    "cognitive": "Ajustează încărcarea cognitivă la nivelul curent al copilului.",
+    "psychological": "Poate preveni frustrarea (când e prea greu) și plictiseala (când e prea ușor).",
+    "technical": "Menține execuția tehnică conectată la intenția tactică.",
+    "social": "Permite participarea tuturor copiilor prin adaptare individualizată."
+  },
+  "age_appropriateness": "La 10–11 ani, copiii au ritmuri de dezvoltare diferite; regresia bine dozată permite copiilor mai puțin experimentați să exerseze aceeași tactică fără a fi excluși.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "Fiindcă nu vă iese 3v2, opriți jocul și faceți 50 de pase la perete!",
+      "reason": "Regresie distructivă care elimină decizia și demotivează copiii."
+    }
+  ],
+  "possible_misinterpretations": ["Regresia înseamnă eșec sau pedeapsă pentru copii.", "Există un prag procentual exact validat pentru când să progresezi sau să regresezi."],
+  "task_risks": ["Creșterea dificultății prea devreme, înainte ca majoritatea execuțiilor să fie de succes — fără prag procentual validat, decizia rămâne observația antrenorului."],
+  "understanding_check": ["copiii mențin aceleași comportamente de scanare și sprijin și după regresie/progresie"],
+  "response_if_not_understood": ["adăugarea unui joker (jucător neutru) pentru a facilita posesia fără a scoate adversarii"],
+  "match_transfer": "În meci, jucătorii aplică principiul învățat indiferent de presiunea variabilă a adversarului.",
+  "sources": ["SRC-0091", "SRC-0092", "SRC-0093", "SRC-0094"]
+}

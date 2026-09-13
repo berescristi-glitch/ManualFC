@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/search-log.schema.json",
+  "type": "object",
+  "required": ["search_id", "research_question_id", "platform", "query", "filters", "searched_at", "language", "date_range", "results_count", "screened_count", "included_source_ids", "excluded_results", "notes", "performed_by"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "search_id": {"type": "string", "pattern": "^SEARCH-[0-9]{4,}$"},
+    "research_question_id": {"type": "string", "pattern": "^RQ-[0-9]{4,}$"},
+    "platform": {"type": "string", "minLength": 2},
+    "query": {"type": "string", "minLength": 1},
+    "filters": {"type": "object"},
+    "searched_at": {"type": "string", "format": "date-time"},
+    "language": {"type": "string", "minLength": 2},
+    "date_range": {"type": ["string", "null"]},
+    "results_count": {"type": "integer", "minimum": 0},
+    "screened_count": {"type": "integer", "minimum": 0},
+    "included_source_ids": {"type": "array", "items": {"type": "string", "pattern": "^SRC-[0-9]{4,}$"}},
+    "excluded_results": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["title_or_id", "reason"],
+        "properties": {
+          "title_or_id": {"type": "string", "minLength": 1},
+          "reason": {
+            "enum": [
+              "POPULATION_MISMATCH", "AGE_MISMATCH", "SPORT_MISMATCH",
+              "DUPLICATE_SOURCE", "OUTDATED_VERSION", "WEAK_METHOD",
+              "INACCESSIBLE_TEXT", "UNKNOWN_PROVENANCE", "UNVERIFIABLE_CLAIMS",
+              "NOT_RELEVANT", "UNCLEAR_RIGHTS", "SUPERSEDED"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "notes": {"type": "string"},
+    "performed_by": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

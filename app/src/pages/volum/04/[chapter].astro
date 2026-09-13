@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Chapter01 from '../../../../../content/volume-04/chapter-01.mdx';
+import Chapter02 from '../../../../../content/volume-04/chapter-02.mdx';
+import Chapter03 from '../../../../../content/volume-04/chapter-03.mdx';
+import Chapter04 from '../../../../../content/volume-04/chapter-04.mdx';
+import Chapter05 from '../../../../../content/volume-04/chapter-05.mdx';
+import Chapter06 from '../../../../../content/volume-04/chapter-06.mdx';
+import Chapter07 from '../../../../../content/volume-04/chapter-07.mdx';
+import Chapter08 from '../../../../../content/volume-04/chapter-08.mdx';
+import Chapter09 from '../../../../../content/volume-04/chapter-09.mdx';
+import Chapter10 from '../../../../../content/volume-04/chapter-10.mdx';
+import Chapter11 from '../../../../../content/volume-04/chapter-11.mdx';
+
+const chapters = {
+  'ch-0401': { title: 'Proiectarea unei situații reprezentative', component: Chapter01 },
+  'ch-0402': { title: 'Constrângeri: alegere, dozare și eliminare', component: Chapter02 },
+  'ch-0403': { title: 'Progresii și regresii fără pierderea intenției', component: Chapter03 },
+  'ch-0404': { title: 'Observare și criterii de intervenție', component: Chapter04 },
+  'ch-0405': { title: 'Organizare, rotații, timp activ și siguranță', component: Chapter05 },
+  'ch-0406': { title: 'Transferul și reflecția după joc', component: Chapter06 },
+  'ch-0407': { title: 'De la observație la decizie: separă ce vezi de ce crezi', component: Chapter07 },
+  'ch-0408': { title: 'Predă percepția și decizia, nu doar execuția', component: Chapter08 },
+  'ch-0409': { title: 'Proiectarea unei ședințe coerente', component: Chapter09 },
+  'ch-0410': { title: 'Planificarea pe termen mediu: teme care revin, nu ședințe izolate', component: Chapter10 },
+  'ch-0411': { title: 'Diferențierea fără etichetare', component: Chapter11 }
+} as const;
+
+export function getStaticPaths() {
+  return ['ch-0401', 'ch-0402', 'ch-0403', 'ch-0404', 'ch-0405', 'ch-0406', 'ch-0407', 'ch-0408', 'ch-0409', 'ch-0410', 'ch-0411'].map(chapter => ({ params: { chapter } }));
+}
+
+const slug = Astro.params.chapter as keyof typeof chapters;
+const entry = chapters[slug];
+if (!entry) throw new Error(`[FAIL_CLOSED] Capitol VOLUME-04 necunoscut: ${slug}`);
+const Content = entry.component;
+---
+
+<BaseLayout title={`${entry.title} — ManualFC`} description={`Capitolul ${slug.toUpperCase()} din VOLUMUL 04`}>
+  <article class="chapter-shell">
+    <nav aria-label="Volumul 04"><a href="/volum/04">← Cuprins Volumul 04</a></nav>
+    <article class="chapter-content"><Content /></article>
+  </article>
+</BaseLayout>
+
+<style>
+  .chapter-shell{max-width:var(--width-content);margin:0 auto;padding:var(--space-12) var(--space-6) var(--space-20)}
+  nav{margin-bottom:var(--space-10)}nav a{font-weight:750}.chapter-content :global(h1){max-width:min(18ch, 100%);overflow-wrap:break-word}.chapter-content :global(h2){margin-top:var(--space-12)}.chapter-content :global(h3){margin-top:var(--space-8)}.chapter-content :global(p),.chapter-content :global(li){max-width:72ch}.chapter-content :global(code){overflow-wrap:anywhere}
+</style>

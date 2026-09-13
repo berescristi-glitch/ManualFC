@@ -1,0 +1,33 @@
+---
+interface Props {
+  variant?: 'default' | 'possession' | 'opponent' | 'neutral' | 'goalkeeper' | 'coach' | 'accent';
+}
+
+const { variant = 'default' } = Astro.props;
+
+const variantColors: Record<string, string> = {
+  possession: "var(--color-role-possession)",
+  opponent: "var(--color-role-opponent)",
+  neutral: "var(--color-role-neutral)",
+  goalkeeper: "var(--color-role-goalkeeper)",
+  coach: "var(--color-role-coach)",
+  accent: "var(--color-text-accent)",
+  default: "var(--color-bg-surface-hover)"
+};
+
+const bgColor = variantColors[variant] || variantColors.default;
+const textColor = (variant === 'coach' || variant === 'neutral') ? '#111111' : '#FFFFFF';
+---
+<span class="ui-badge" style={`background-color: ${bgColor}; color: ${textColor};`}>
+  <slot />
+</span>
+
+<style>
+  .ui-badge {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+</style>

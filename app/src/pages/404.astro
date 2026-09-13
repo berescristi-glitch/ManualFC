@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout 
+  title="Pagina Nu a Fost Găsită (404)"
+  description="Pagina solicitată nu există în platforma ManualFC."
+>
+  <div class="error-container">
+    <span class="error-code">404</span>
+    <h1>Pagina nu a fost găsită</h1>
+    <p>Ne pare rău, pagina pe care o căutați nu există sau a fost mutată.</p>
+    <a href="/" class="btn-home">&larr; Înapoi la pagina principală</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .error-container {
+    text-align: center;
+    padding: var(--space-12) 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .error-code {
+    display: block;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--color-role-opponent);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+  }
+  .btn-home {
+    display: inline-block;
+    margin-top: var(--space-6);
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-role-possession);
+    color: var(--color-text-on-dark);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+  }
+</style>

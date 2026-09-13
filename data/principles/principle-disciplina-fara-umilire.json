@@ -1,0 +1,37 @@
+{
+  "id": "principle.disciplina-fara-umilire",
+  "slug": "disciplina-fara-umilire",
+  "category_id": "cat.comunicare",
+  "evidence_claim_ids": ["CLM-0078", "CLM-0079", "CLM-0080", "CLM-0081", "CLM-0082", "CLM-0083"],
+  "title": "Disciplină fără umilire, cu limite clare și susținerea autonomiei",
+  "professional_definition": "Construirea cadrului de disciplină prin reguli clare, explicate, livrate cu susținerea autonomiei copilului, eliminând pedepsele fizice, sarcasmul și umilirea publică (cerință de safeguarding), fără să prezinte «consecințele logice» drept tehnică validată științific.",
+  "child_message": "Avem reguli comune ca să ne putem juca toți în siguranță.",
+  "coach_meaning": "Instaurarea structurii și respectului mutual pe teren fără mijloace coercitive sau umilitoare, explicând motivul regulii, nu doar impunând-o.",
+  "why_this_message": "Explică faptul că regulile protejează jocul tuturor, nu reprezintă moftul antrenorului — structura capătă sens pentru copil.",
+  "problem_being_solved": "Pedeapsa fizică sau umilirea publică rup încrederea și asociază efortul cu suferința, fără să construiască înțelegerea regulii.",
+  "information_children_must_notice": ["limitele de siguranță ale exercițiului", "respectarea colegilor în pauze"],
+  "decision_children_must_learn": "Să respecte acordurile comune ale echipei, înțelegând de ce există, nu doar din supunere.",
+  "observable_behaviours": ["strâng echipamentul împreună", "ascultă când vorbește un coleg, fără amenințare", "se alătură rapid la exercițiu"],
+  "rationales": {
+    "tactical": "Disciplina pe teren se traduce prin organizare și responsabilitate colectivă.",
+    "perceptual": "Orientarea atenției către semnalele de repornire ale antrenorului.",
+    "decisional": "Înțelegerea motivului regulii, nu doar supunerea la ea.",
+    "cognitive": "Structura explicată se reține mai bine decât o comandă arbitrară.",
+    "psychological": "Susținerea autonomiei, combinată cu limite clare, se asociază cu angajament mai mare și mai puțină epuizare pe termen mediu.",
+    "technical": "Permite menținerea unei densități mari de exersare fără întreruperi punitive.",
+    "social": "Creează o cultură de respect reciproc, nu de frică față de consecințe."
+  },
+  "age_appropriateness": "La 10–11 ani (grupele 2015 și 2016 tratate unitar), copiii înțeleg conceptul de regulă de grup și dreptate; explicarea regulii, nu doar impunerea ei, respectă această capacitate.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "Treci la linie și fă 20 de flotări pentru că ai întârziat!",
+      "reason": "Folosirea efortului fizic ca pedeapsă este interzisă de standardul de safeguarding al proiectului."
+    }
+  ],
+  "possible_misinterpretations": ["Eliminarea pedepselor înseamnă lipsa oricăror reguli sau consecințe.", "«Consecințele logice» sunt o metodă validată științific."],
+  "task_risks": ["Antrenorul cedează la comportamente disruptive neadresate la timp."],
+  "understanding_check": ["copilul poate numi regula încălcată și motivul ei, fără defensivă"],
+  "response_if_not_understood": ["discuție individuală scurtă, privată, care explică din nou motivul regulii — nu o pedeapsă mai mare"],
+  "match_transfer": "În meci, echipa își păstrează calmul și respectul față de arbitru și adversar chiar și în situații tensionate.",
+  "sources": ["SRC-0077", "SRC-0078", "SRC-0079", "SRC-0080", "SRC-0081", "SRC-0082"]
+}

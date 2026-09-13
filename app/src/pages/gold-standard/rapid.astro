@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import QuickModePattern from '../../components/QuickModePattern.astro';
+---
+<BaseLayout title="Rezolvă pe teren — exemplu rapid" description="Exemplul rapid Gold Standard și acces către biblioteca completă de observații ManualFC.">
+  <Breadcrumb items={[{label:'Rezolvă pe teren',href:'/rezolva-pe-teren'},{label:'Exemplu Gold Standard'}]}/>
+  <section class="legacy-quick"><p class="eyebrow">GOLD STANDARD · MOD RAPID</p><h1>Rezolvă pe teren</h1><p>Pattern-ul rapid validat rămâne disponibil; noul Decision Engine îl extinde la opt observații.</p><a class="button button-primary" href="/rezolva-pe-teren">Vezi toate observațiile</a>
+    <QuickModePattern problemTitle="Copiii se ascund în spatele adversarului" category="Exemplu rapid · Sprijin și unghi de pasă">
+      <div slot="observe"><p>Coechipierul fără minge rămâne acoperit de același adversar.</p></div>
+      <div slot="causes"><p>Nu știi încă dacă nu vede linia, o vede târziu sau sarcina este prea grea. Testează înainte să concluzionezi.</p></div>
+      <div slot="say"><p>„Ieși din umbră: fă-te vizibil pentru minge.”</p></div>
+      <div slot="why"><p>Reperul extern păstrează alegerea direcției la copil.</p></div>
+      <div slot="action"><p><a href="/rezolva-pe-teren/jucatorul-se-ascunde-in-spatele-adversarului">Deschide ghidul complet</a>.</p></div>
+      <div slot="adaptation"><p>Verifică dacă linia de pasă reapare în joc liber; până atunci transferul este neconfirmat.</p></div>
+    </QuickModePattern>
+  </section>
+</BaseLayout>
+<style>.legacy-quick{max-width:900px;margin:auto;padding-block:clamp(2rem,6vw,5rem)}.legacy-quick>.button{display:inline-flex;margin:1rem 0 3rem}</style>

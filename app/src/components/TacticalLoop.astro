@@ -1,0 +1,91 @@
+---
+/**
+ * TASK-2711 FOUNDATION — Level 1 "Tactical Loop" prototype (see
+ * docs/architecture/MULTIMEDIA_FOUNDATION.md). One real, working,
+ * accessible looping SVG animation for EX-0001, built entirely with CSS
+ * keyframes — no video file, because none exists and none is fabricated
+ * here. Muted by design (no audio element at all), loops, has an explicit
+ * pause/play control, respects `prefers-reduced-motion`, and the static
+ * TacticalDiagram already on the page serves as its poster/fallback frame.
+ */
+interface Props { variant: 'ex-0001' }
+const { variant } = Astro.props;
+const id = `tloop-${variant}`;
+---
+<figure class="tactical-loop" id={id} data-tactical-loop>
+  <svg viewBox="0 0 400 260" role="img" aria-labelledby={`${id}-title`} aria-describedby={`${id}-desc`}>
+    <title id={`${id}-title`}>Buclă tactică EX-0001 — Cine ne poate acoperi pe amândoi? (animat)</title>
+    <desc id={`${id}-desc`}>Coechipierul de sprijin pornește pe aceeași linie cu purtătorul mingii, acoperit de adversar, apoi se deplasează lateral pentru a deschide un unghi de pasă nou. Bucla se repetă la fiecare 10 secunde. Fără sunet.</desc>
+    <rect class="field" x="10" y="10" width="380" height="240" rx="6" />
+
+    <path class="lane-old" d="M90 190 L200 130" />
+    <path class="lane-loop" d="M90 190 L280 90" pathLength="220" />
+    <g class="defender"><polygon points="0,-14 13,10 -13,10" transform="translate(190,150)" /></g>
+    <g class="ball-carrier"><circle r="13" transform="translate(90,190)" /><circle class="ball" cx="100" cy="180" r="4" /></g>
+    <g class="support-ghost"><circle r="13" transform="translate(200,130)" /></g>
+    <g class="support-loop"><circle r="13" /></g>
+    <text class="label" x="70" y="222">P</text>
+    <text class="label" x="176" y="146">A</text>
+  </svg>
+  <figcaption>
+    Buclă tactică (prototip) — se repetă la 10 secunde, fără sunet. Cadrul static de mai sus rămâne referința principală.
+    <button type="button" class="loop-toggle" data-loop-toggle aria-pressed="true">Pauză</button>
+  </figcaption>
+</figure>
+
+<style>
+  .tactical-loop { margin: var(--space-6) 0 0; }
+  .tactical-loop svg { width: 100%; height: auto; max-width: 420px; }
+  .field { fill: #EEF0EA; stroke: var(--color-border-strong); stroke-width: 1.5; }
+  .lane-old { fill: none; stroke: var(--color-text-muted); stroke-width: 2; stroke-dasharray: 2 5; }
+  .lane-loop { fill: none; stroke: var(--color-brand-gold); stroke-width: 2.5; stroke-dasharray: 220; stroke-dashoffset: 220; opacity: 0; animation: lane-draw 10s ease-in-out infinite; }
+  .ball-carrier circle:first-child { fill: var(--color-bg-brand); stroke: var(--color-bg-brand); }
+  .ball-carrier .ball { fill: var(--color-brand-gold); stroke: none; }
+  .defender polygon { fill: white; stroke: var(--color-text-primary); stroke-width: 2.5; }
+  .support-ghost circle { fill: none; stroke: var(--color-text-muted); stroke-width: 1.5; stroke-dasharray: 2 3; opacity: .6; }
+  .support-loop circle { fill: white; stroke: var(--color-brand-gold); stroke-width: 2.5; }
+  .support-loop { animation: support-move 10s ease-in-out infinite; }
+  .label { font: 700 12px var(--font-family-mono); fill: var(--color-text-primary); text-anchor: middle; }
+  figcaption { margin-top: var(--space-3); font-size: .85rem; color: var(--color-text-secondary); max-width: 48ch; display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+  .loop-toggle { font: inherit; font-weight: 700; padding: .3rem .8rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-strong); background: white; color: var(--color-text-primary); cursor: pointer; min-height: 44px; }
+  .loop-toggle:hover { background: var(--color-bg-subtle); }
+
+  @keyframes support-move {
+    0%   { transform: translate(200px,130px); opacity: 0; }
+    8%   { opacity: 1; }
+    25%  { transform: translate(280px,90px); opacity: 1; }
+    80%  { transform: translate(280px,90px); opacity: 1; }
+    95%  { opacity: 0; }
+    100% { transform: translate(200px,130px); opacity: 0; }
+  }
+  @keyframes lane-draw {
+    0%   { stroke-dashoffset: 220; opacity: 0; }
+    8%   { opacity: 1; }
+    25%  { stroke-dashoffset: 0; }
+    80%  { stroke-dashoffset: 0; opacity: 1; }
+    95%  { opacity: 0; }
+    100% { stroke-dashoffset: 220; opacity: 0; }
+  }
+
+  .tactical-loop.is-paused .support-loop,
+  .tactical-loop.is-paused .lane-loop { animation-play-state: paused; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .support-loop, .lane-loop { animation: none; opacity: 1; }
+    .support-loop { transform: translate(280px,90px); }
+    .lane-loop { stroke-dashoffset: 0; }
+    .loop-toggle { display: none; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-tactical-loop]').forEach((figure) => {
+    const button = figure.querySelector<HTMLButtonElement>('[data-loop-toggle]');
+    if (!button) return;
+    button.addEventListener('click', () => {
+      const paused = figure.classList.toggle('is-paused');
+      button.textContent = paused ? 'Redă' : 'Pauză';
+      button.setAttribute('aria-pressed', String(!paused));
+    });
+  });
+</script>

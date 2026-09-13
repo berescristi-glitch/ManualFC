@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/visual-tokens.schema.json",
+  "title": "Visual tokens",
+  "type": "object",
+  "required": ["version", "roles", "paths", "accessibility"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "version": {"type": "string"},
+    "roles": {"type": "object", "required": ["possession", "opponent", "neutral", "goalkeeper", "coach"]},
+    "paths": {"type": "object", "required": ["pass", "off_ball_run", "dribble", "change_of_direction"]},
+    "semantic_colors": {"type": "object"},
+    "layout_widths": {"type": "object"},
+    "epistemic_levels": {"type": "object"},
+    "accessibility": {
+      "type": "object",
+      "required": ["color_is_never_the_only_signal", "svg_requires_title_and_description", "reduced_motion_required", "black_and_white_profile_required"],
+      "additionalProperties": {"const": true}
+    }
+  },
+  "additionalProperties": false
+}

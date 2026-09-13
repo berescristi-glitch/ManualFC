@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/season-plan.schema.json",
+  "type": "object",
+  "required": ["id", "title", "weekly_model", "curriculum_ids", "microcycles"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "id": {"type": "string", "pattern": "^PLAN-[0-9]{4,}$"},
+    "title": {"type": "string", "minLength": 3},
+    "weekly_model": {"enum": ["2_training_plus_match", "3_training_plus_match"]},
+    "curriculum_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "microcycles": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "order", "session_ids"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^MIC-[0-9]{4,}$"},
+          "order": {"type": "integer", "minimum": 1},
+          "session_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

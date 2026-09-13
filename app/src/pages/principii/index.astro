@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getAllPrinciples, getCanonicalProductionContent, getTaxonomyCategories } from '../../lib/content-bridge';
+
+const principles = getCanonicalProductionContent(getAllPrinciples());
+const groups = getTaxonomyCategories()
+  .sort((a, b) => a.order - b.order)
+  .map(cat => ({
+    catId: cat.id,
+    label: cat.label_ro,
+    items: principles.filter(p => p.category_id === cat.id).sort((a, b) => a.title.localeCompare(b.title, 'ro')),
+  }))
+  .filter(g => g.items.length > 0);
+---
+<BaseLayout title="Principii aplicate — ManualFC" description="Principiile de joc și pedagogie ManualFC, grupate după problemele pe care îl ajută pe antrenor să le înțeleagă.">
+  <div class="principles-index">
+    <p class="eyebrow">PRINCIPII DE JOC · {principles.length} principii</p>
+    <h1>Principii pentru joc și antrenament</h1>
+    <p class="intro">Fiecare principiu leagă un comportament observabil de percepție, decizie și mesajul exact folosit cu copilul, cu dovada care îl susține. Grupate tematic — vezi și <a href="/volum/01">volumele complete</a> pentru contextul capitolului din care provine fiecare principiu.</p>
+
+    {groups.map(group => (
+      <section class="category-group">
+        <h2>{group.label}</h2>
+        <ol>
+          {group.items.map(p => (
+            <li><a href={`/principii/${p.slug}`}><strong>{p.title}</strong><span>{p.summary}</span></a></li>
+          ))}
+        </ol>
+      </section>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .principles-index{max-width:var(--width-content);margin:0 auto;padding:var(--space-20) var(--space-6)}
+  h1{max-width:20ch}.intro{max-width:68ch;font-size:1.15rem}.intro a{color:var(--color-text-accent)}
+  .category-group{margin-top:var(--space-12)}.category-group h2{font-size:1.4rem;padding-bottom:var(--space-2);border-bottom:1px solid var(--color-border)}
+  ol{list-style:none;padding:0;margin-top:var(--space-4)}
+  li{border-top:1px solid var(--color-border)}
+  a{display:block;padding:var(--space-4) 0;text-decoration:none}
+  a strong{display:block;color:var(--color-text-primary)}
+  a span{display:block;font-size:.9rem;color:var(--color-text-muted);margin-top:.2rem}
+  @media(max-width:600px){.category-group h2{font-size:1.2rem}}
+</style>

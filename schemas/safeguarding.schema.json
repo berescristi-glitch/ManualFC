@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/safeguarding.schema.json",
+  "type": "object",
+  "required": ["schema_version", "reference_date", "requirements", "risks", "roles", "situations", "contacts", "scripts", "instruments"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "reference_date": {"type": "string", "format": "date"},
+    "requirements": {
+      "type": "array", "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["requirement_id", "topic", "requirement_text", "status", "legal_or_policy_basis", "issuer", "exact_article_or_section", "applies_to", "effective_date", "last_verified", "responsible_role", "required_evidence", "manual_implication", "club_action", "uncertainty", "legal_review_required", "source_ids"],
+        "properties": {
+          "requirement_id": {"type": "string", "pattern": "^SAFE-REQ-[0-9]{3}$"},
+          "topic": {"type": "string", "minLength": 3},
+          "requirement_text": {"type": "string", "minLength": 15},
+          "status": {"enum": ["LEGAL_REQUIREMENT_ROMANIA", "FRF_REQUIREMENT", "AJF_OR_COMPETITION_REQUIREMENT", "FIFA_STANDARD", "UEFA_STANDARD", "RECOGNIZED_SAFEGUARDING_PRACTICE", "CLUB_POLICY_RECOMMENDATION", "PEDAGOGICAL_RECOMMENDATION", "REQUIRES_LEGAL_CONFIRMATION", "REQUIRES_CLUB_APPROVAL", "UNRESOLVED"]},
+          "legal_or_policy_basis": {"type": "string", "minLength": 3},
+          "issuer": {"type": "string", "minLength": 2},
+          "exact_article_or_section": {"type": ["string", "null"]},
+          "applies_to": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "effective_date": {"type": ["string", "null"], "format": "date"},
+          "last_verified": {"type": "string", "format": "date"},
+          "responsible_role": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "required_evidence": {"type": "array", "items": {"type": "string"}},
+          "manual_implication": {"type": "string", "minLength": 10},
+          "club_action": {"type": "string", "minLength": 10},
+          "uncertainty": {"type": "string"},
+          "legal_review_required": {"type": "boolean"},
+          "source_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^SRC-[0-9]{4,}$"}}
+        },
+        "allOf": [
+          {"if": {"properties": {"status": {"const": "LEGAL_REQUIREMENT_ROMANIA"}}}, "then": {"properties": {"exact_article_or_section": {"type": "string", "minLength": 3}}}},
+          {"if": {"properties": {"status": {"const": "FRF_REQUIREMENT"}}}, "then": {"properties": {"applies_to": {"contains": {"type": "string", "minLength": 3}}}}}
+        ],
+        "additionalProperties": false
+      }
+    },
+    "risks": {
+      "type": "array", "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["risk_id", "category", "risk", "probability", "impact", "aggravating_factors", "preventive_control", "responsible_role", "coach_observes", "child_wording", "why_wording", "understanding_check"],
+        "properties": {
+          "risk_id": {"type": "string", "pattern": "^SAFE-RISK-[0-9]{3}$"},
+          "category": {"enum": ["ADULT", "PEER", "ORGANISATIONAL", "ENVIRONMENTAL", "DIGITAL"]},
+          "risk": {"type": "string", "minLength": 5},
+          "probability": {"enum": ["LOW", "MEDIUM", "HIGH", "CONTEXT_DEPENDENT"]},
+          "impact": {"enum": ["MODERATE", "SERIOUS", "CRITICAL"]},
+          "aggravating_factors": {"type": "array", "items": {"type": "string"}},
+          "preventive_control": {"type": "string", "minLength": 10},
+          "responsible_role": {"type": "string", "minLength": 2},
+          "coach_observes": {"type": "string", "minLength": 5},
+          "child_wording": {"type": "string", "minLength": 5},
+          "why_wording": {"type": "string", "minLength": 10},
+          "understanding_check": {"type": "string", "minLength": 5}
+        },
+        "additionalProperties": false
+      }
+    },
+    "roles": {
+      "type": "array", "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["role_id", "role", "must_do", "must_not_do", "reports_what", "reports_to", "documents", "training", "conflicts"],
+        "properties": {
+          "role_id": {"type": "string", "pattern": "^SAFE-ROLE-[0-9]{3}$"},
+          "role": {"type": "string", "minLength": 2},
+          "must_do": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "must_not_do": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "reports_what": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "reports_to": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "documents": {"type": "array", "items": {"type": "string"}},
+          "training": {"type": "array", "items": {"type": "string"}},
+          "conflicts": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "situations": {
+      "type": "array", "minItems": 30,
+      "items": {
+        "type": "object",
+        "required": ["situation_id", "situation", "risk_level", "immediate_action", "coach_says", "coach_avoids", "contact", "documentation", "deadline", "basis", "follow_up"],
+        "properties": {
+          "situation_id": {"type": "string", "pattern": "^SAFE-SIT-[0-9]{3}$"},
+          "situation": {"type": "string", "minLength": 5},
+          "risk_level": {"enum": ["IMMEDIATE_DANGER", "URGENT_CONCERN", "SAFEGUARDING_CONCERN", "CONDUCT", "MEDICAL"]},
+          "immediate_action": {"type": "string", "minLength": 10},
+          "coach_says": {"type": "string", "minLength": 5},
+          "coach_avoids": {"type": "string", "minLength": 5},
+          "contact": {"type": "string", "minLength": 2},
+          "documentation": {"type": "string", "minLength": 5},
+          "deadline": {"type": "string", "minLength": 2},
+          "basis": {"type": "string", "minLength": 3},
+          "follow_up": {"type": "string", "minLength": 5}
+        },
+        "additionalProperties": false
+      }
+    },
+    "contacts": {
+      "type": "array", "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["contact_id", "name", "role", "phone", "email", "hours", "jurisdiction", "source_url", "verified_at", "recheck_at"],
+        "properties": {
+          "contact_id": {"type": "string", "pattern": "^SAFE-CONTACT-[0-9]{3}$"},
+          "name": {"type": "string", "minLength": 2},
+          "role": {"type": "string", "minLength": 3},
+          "phone": {"type": ["string", "null"]},
+          "email": {"type": ["string", "null"]},
+          "hours": {"type": ["string", "null"]},
+          "jurisdiction": {"type": "string", "minLength": 2},
+          "source_url": {"type": "string", "format": "uri"},
+          "verified_at": {"type": "string", "format": "date"},
+          "recheck_at": {"type": "string", "format": "date"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "scripts": {
+      "type": "array", "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["script_id", "child_says", "coach_says", "professional_meaning", "why", "avoid", "document", "report_to", "never_promise", "age_appropriate"],
+        "properties": {
+          "script_id": {"type": "string", "pattern": "^SAFE-SCRIPT-[0-9]{3}$"},
+          "child_says": {"type": "string", "minLength": 3},
+          "coach_says": {"type": "string", "minLength": 5},
+          "professional_meaning": {"type": "string", "minLength": 10},
+          "why": {"type": "string", "minLength": 10},
+          "avoid": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "document": {"type": "string", "minLength": 5},
+          "report_to": {"type": "string", "minLength": 2},
+          "never_promise": {"const": "secret absolut"},
+          "age_appropriate": {"type": "string", "minLength": 10}
+        },
+        "additionalProperties": false
+      }
+    },
+    "instruments": {"type": "array", "minItems": 23, "items": {"type": "string", "minLength": 3}}
+  },
+  "additionalProperties": false
+}

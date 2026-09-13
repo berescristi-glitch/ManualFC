@@ -1,0 +1,37 @@
+{
+  "id": "principle.proiectarea-situatiilor-reprezentative",
+  "slug": "proiectarea-situatiilor-reprezentative",
+  "category_id": "cat.metodologie-surse",
+  "evidence_claim_ids": ["CLM-0059"],
+  "title": "Proiectarea situațiilor reprezentative de învățare",
+  "professional_definition": "Construirea sarcinilor de antrenament prin conservarea cuplajului percepție-acțiune (minge, adversar, direcție, porți și alegere tactică liberă), asigurând transferul direct al deciziei în jocul complet U11.",
+  "child_message": "Jucăm ca în meci: găsește spațiul liber, alege cea mai bună opțiune și acționează rapid!",
+  "coach_meaning": "Eliminarea drilurilor analitice fără decizie în favoarea situațiilor reprezentative de joc.",
+  "why_this_message": "Orientarea atenției copilului pe rezolvarea unei probleme reale din meci, nu pe execuția mecanică a unei comenzi.",
+  "problem_being_solved": "Copiii execută perfect driluri izolate fără adversar, dar se blochează în meci din cauza lipsei reprezentativității în antrenament.",
+  "information_children_must_notice": ["poziția adversarului", "poziția colegului", "porțile și direcția de atac"],
+  "decision_children_must_learn": "Să aleagă între pasă, dribling sau șut pe baza stimulilor reali din mediu.",
+  "observable_behaviours": ["scanează terenul înainte de a primi", "alege opțiunea liberă", "se adaptează dacă adversarul se mișcă"],
+  "rationales": {
+    "tactical": "Asigură transferul direct al comportamentelor decizionale din antrenament în meciul oficial.",
+    "perceptual": "Menține cuplajul dintre informația vizuală din mediu și execuția motrică.",
+    "decisional": "Dezvoltă autonomia decizională fără a depinde de comenzile vocale ale antrenorului.",
+    "cognitive": "Solicită procesarea informației reale și anticiparea intenției adversarului.",
+    "psychological": "Crește motivația intrinsecă prin experimentarea situațiilor autentice de joc.",
+    "technical": "Tehnica este exersată sub presiunea realistă a timpului și spațiului.",
+    "social": "Stimulează comunicarea non-verbală și sincronizarea cu colegii de echipă."
+  },
+  "age_appropriateness": "La 10–11 ani, copiii pot citi un număr limitat de stimuli simultani; sarcina nu trebuie supra-încărcată abstract. Numărul exact nu este specificat de sursă — euristică practică ManualFC, nu prag validat științific.",
+  "phrases_to_avoid": [
+    {
+      "phrase": "Pasăm la conul roșu, alergăm la conul albastru și apoi șutăm fără să ne uităm!",
+      "reason": "Mecanizare fără decizie care distruge reprezentativitatea jocului."
+    }
+  ],
+  "possible_misinterpretations": ["Reprezentativitatea înseamnă doar meci 7v7 fără nicio constrângere sau obiectiv metodologic."],
+  "task_risks": ["Setarea unui număr prea mare de reguli artificiale care distrage atenția copilului de la joc."],
+  "understanding_check": ["copilul explică de ce a ales o anumită soluție în funcție de poziția adversarului"],
+  "response_if_not_understood": ["reducerea numărului de adversari (ex: de la 3v3 la 3v2) pentru a simplifica lectura"],
+  "match_transfer": "În meci, jucătorul recunoaște instantaneu configurația spațială exersată în antrenament.",
+  "sources": ["SRC-0058"]
+}

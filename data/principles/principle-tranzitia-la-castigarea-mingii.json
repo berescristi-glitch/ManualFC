@@ -1,0 +1,37 @@
+{
+  "id": "principle.tranzitia-la-castigarea-mingii",
+  "slug": "tranzitia-la-castigarea-mingii",
+  "category_id": "cat.perceptie-decizie",
+  "evidence_claim_ids": ["CLM-0036", "CLM-0048", "CLM-0049"],
+  "title": "Control întâi, apoi privire, apoi decizie",
+  "professional_definition": "Imediat după câștigarea mingii, copilul controlează mai întâi mingea în siguranță, apoi privește spațiul, colegii și adversarul, apoi alege între progresie și sprijin în funcție de ce a văzut, nu după o regulă fixă.",
+  "child_message": "Ai câștigat mingea. Uită-te: ai loc să mergi înainte sau ai nevoie de un coleg aproape?",
+  "coach_meaning": "Copiii separă controlul, privirea și decizia în ordine, în loc să aleagă automat viteza sau siguranța ca regulă generală.",
+  "why_this_message": "Întrebarea cere o privire reală înainte de alegere și oferă două opțiuni concrete, fără să impună un răspuns corect universal.",
+  "problem_being_solved": "Copiii fie lovesc mingea înainte fără informație, fie o țin prea mult din prudență și pierd momentul în care drumul era liber.",
+  "information_children_must_notice": ["dacă mingea poate fi controlată fără presiune imediată", "spațiul liber în față și cel mai apropiat drum spre poartă", "colegii disponibili și unghiul lor", "adversarul cel mai aproape și timpul disponibil"],
+  "decision_children_must_learn": "Să aleagă între a progresa, a susține posesia lângă un coleg sau a proteja temporar mingea, în funcție de spațiul și presiunea observate, nu de o regulă memorată.",
+  "observable_behaviours": ["primul control rămâne curat sub presiune moderată", "apare o privire reală înainte de decizie", "alegerea se potrivește cu spațiul disponibil", "colegii din apropiere oferă opțiuni reale de sprijin", "tiparul reapare în zone diferite ale terenului"],
+  "rationales": {
+    "tactical": "Controlul protejează posesia; privirea și decizia distinctă evită atât graba, cât și pasivitatea.",
+    "perceptual": "Copilul citește spațiul, colegii, adversarul și poarta înainte de a alege.",
+    "decisional": "Alegerea dintre progresie și sprijin depinde de situație, nu de o instrucțiune fixă.",
+    "cognitive": "Secvența control-privire-decizie este scurtă și memorabilă, fără să fie un algoritm rigid.",
+    "psychological": "Copilul care alege sprijinul nu este etichetat fricos, iar cel care progresează nu este etichetat iresponsabil.",
+    "technical": "Prima atingere, orientarea corpului și postura de scanare susțin întreaga secvență.",
+    "social": "Colegii din apropiere oferă opțiuni reale, nu doar prezență, ceea ce ușurează decizia purtătorului."
+  },
+  "age_appropriateness": "La 10–11 ani, secvența este arătată dintr-un moment oprit, apoi lăsată să apară natural în joc; grupele 2015 și 2016 rămân împreună, cu reglaj individual al presiunii inițiale, spațiului și clarității opțiunilor.",
+  "phrases_to_avoid": [
+    {"phrase": "Atacă imediat!", "reason": "Elimină controlul și privirea, transformând graba într-o regulă fixă."},
+    {"phrase": "Dă-o înapoi mereu!", "reason": "Elimină progresia chiar și când drumul e liber."},
+    {"phrase": "Nu te grăbi niciodată.", "reason": "Confundă prudența cu calitatea deciziei."},
+    {"phrase": "Vezi tot terenul.", "reason": "Este o cerință imposibilă pentru un copil de 10 ani sub presiune."}
+  ],
+  "possible_misinterpretations": ["Copilul crede că trebuie mereu să atace rapid după ce câștigă mingea.", "Copilul crede că trebuie mereu să țină mingea în siguranță.", "Copilul consideră un test izolat de decizie drept dovadă a capacității lui reale."],
+  "task_risks": ["Presiunea inițială prea mare poate elimina orice șansă de control curat.", "Spațiul prea mic poate face imposibilă orice progresie reală.", "Repetarea fără variație de zonă poate crea un tipar memorat, nu citit."],
+  "understanding_check": ["primul control a rămas curat sub presiune moderată", "a apărut o privire reală înainte de decizie", "alegerea s-a potrivit cu spațiul disponibil", "un coleg din apropiere a oferit o opțiune reală", "tiparul a reapărut în zone diferite ale terenului"],
+  "response_if_not_understood": ["oprește și arată unde ar fi putut privi copilul înainte de a alege", "elimină temporar presiunea imediată, apoi adaugă treptat un adversar la distanță tot mai mică", "arată drumul liber care a existat și a dispărut, dacă a ținut mingea prea mult", "reconstituie exact aceeași fază și reia din același punct de plecare"],
+  "match_transfer": "În joc liber 5v5 sau 7v7, copilul controlează curat mingea recuperată, privește real înainte de a alege, iar decizia dintre progresie și sprijin se potrivește cu spațiul disponibil, în zone diferite ale terenului.",
+  "sources": ["SRC-0035", "SRC-0047", "SRC-0048"]
+}

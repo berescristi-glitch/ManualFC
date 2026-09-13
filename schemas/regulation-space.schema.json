@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/regulation-space.schema.json",
+  "type": "object",
+  "required": ["reference_date", "formula", "classification", "rows"],
+  "properties": {
+    "reference_date": {"type": "string", "format": "date"},
+    "formula": {"type": "string", "minLength": 20},
+    "classification": {"const": "DESCRIPTIVE_CALCULATION_NOT_TRAINING_RECOMMENDATION"},
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule_id", "area_m2", "total_players_including_goalkeepers", "area_per_player_m2", "length_width_ratio"],
+        "properties": {
+          "rule_id": {"type": "string", "pattern": "^RULE-[0-9]{4}$"},
+          "area_m2": {"type": "number", "exclusiveMinimum": 0},
+          "total_players_including_goalkeepers": {"type": "integer", "minimum": 2},
+          "area_per_player_m2": {"type": "number", "exclusiveMinimum": 0},
+          "length_width_ratio": {"type": "number", "exclusiveMinimum": 0}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

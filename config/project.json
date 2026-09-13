@@ -1,0 +1,40 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "project_id": "manual-u11",
+  "product_kind": "platformă web pedagogică profesională",
+  "primary_delivery": "static_web",
+  "pedagogical_first": true,
+  "language": "ro",
+  "age_category": {
+    "label": "10–11 ani, grupele 2015 și 2016 tratate împreună",
+    "birth_years": [2015, 2016],
+    "single_curriculum": true,
+    "individual_adaptation_dimensions": [
+      "experiență",
+      "dezvoltare tehnică",
+      "înțelegerea jocului",
+      "maturizare fizică",
+      "încredere",
+      "nevoi cognitive, emoționale și sociale",
+      "ritm de învățare"
+    ]
+  },
+  "future_age_architecture": {
+    "production_scope": "10–11",
+    "expansion_order": ["8–9", "6–7", "4–5", "12–13", "14–15", "16–18"]
+  },
+  "minimum_deliverables": {
+    "volumes": 10,
+    "exercises": 60,
+    "sessions": 36,
+    "communication_scripts": 50,
+    "case_studies": 15
+  },
+  "canonical_registries": {
+    "tasks": "TASK_REGISTRY.json",
+    "task_history": "TASK_HISTORY.jsonl",
+    "sources": "research/sources.json",
+    "claims": "research/claims.json",
+    "citations": "research/citations.json"
+  }
+}

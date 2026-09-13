@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://manual-u11.local/schemas/research-question.schema.json",
+  "type": "object",
+  "required": ["research_question_id", "question", "volume_id", "chapter_id", "population", "context", "answer_type", "priority", "recommended_source_types", "search_terms", "domain", "status", "result", "limitations", "updated_at"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "research_question_id": {"type": "string", "pattern": "^RQ-[0-9]{4,}$"},
+    "question": {"type": "string", "minLength": 20},
+    "volume_id": {"type": "string", "pattern": "^VOLUME-(?:0[1-9]|10)$"},
+    "chapter_id": {"type": ["string", "null"]},
+    "population": {"const": "10–11 ani, grupele 2015 și 2016 tratate împreună"},
+    "context": {"type": "string", "minLength": 10},
+    "answer_type": {"enum": ["FACT", "OFFICIAL_RULE", "EFFECT_ESTIMATE", "RECOMMENDATION", "PRACTICE_MAP", "RIGHTS_DECISION", "UNCERTAINTY_MAP"]},
+    "priority": {"enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW"]},
+    "recommended_source_types": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "search_terms": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "domain": {"type": "string"},
+    "status": {"enum": ["PROPOSED", "SEARCHING", "SCREENING", "SYNTHESIZED", "AUDITED", "CLOSED", "BLOCKED"]},
+    "result": {"type": ["string", "null"]},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "updated_at": {"type": "string", "format": "date"}
+  },
+  "additionalProperties": false
+}

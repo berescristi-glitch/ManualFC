@@ -1,0 +1,36 @@
+{
+  "id": "principle.transfer-autonom-cooperare",
+  "slug": "transfer-autonom-cooperare",
+  "category_id": "cat.evaluare",
+  "evidence_claim_ids": ["CLM-0030", "CLM-0035", "CLM-0036", "CLM-0037"],
+  "title": "Transferul se vede fără comandă",
+  "professional_definition": "Un comportament este transferat când apare autonom într-un context relevant și schimbat, iar antrenorul poate demonstra că oportunitatea a existat.",
+  "child_message": "Arată-mi cum îi oferi colegului o opțiune.",
+  "coach_meaning": "Copilul caută o acțiune de sprijin relevantă pentru joc, fără ca antrenorul să îi dicteze poziția exactă.",
+  "why_this_message": "Folosește un verb observabil și leagă cooperarea de efectul asupra jocului.",
+  "problem_being_solved": "Antrenorul confundă executarea într-un exercițiu, obediența verbală ori simpla prezență în echipă cu înțelegerea și transferul.",
+  "information_children_must_notice": ["poziția colegului cu mingea", "adversarul relevant", "spațiul liber", "direcția de atac"],
+  "decision_children_must_learn": "Să aleagă un sprijin care oferă colegului o soluție și păstrează progresul jocului.",
+  "observable_behaviours": ["creează un unghi fără comandă", "comunică informație utilă", "reacționează constructiv după eroarea colegului", "adaptează sprijinul la presiune"],
+  "rationales": {
+    "tactical": "Sprijinul creează sau păstrează o soluție reală de progresie.",
+    "perceptual": "Copilul trebuie să observe relația coleg–adversar–spațiu.",
+    "decisional": "Poziția nu este comandată, ci aleasă după context.",
+    "cognitive": "Evaluarea separă oportunitatea de comportament și evită concluziile din absența contextului.",
+    "psychological": "Copilul este evaluat prin acțiuni schimbabile, nu prin etichete de caracter.",
+    "technical": "Orientarea și distanța sprijinului permit o eventuală recepție utilă.",
+    "social": "Cooperarea este definită prin ajutor concret și reacție respectuoasă."
+  },
+  "age_appropriateness": "La 10–11 ani, comportamentul este demonstrat în joc și discutat printr-un singur episod concret.",
+  "phrases_to_avoid": [
+    {"phrase": "Nu ești jucător de echipă.", "reason": "Transformă un episod într-o etichetă de identitate."},
+    {"phrase": "Du-te acolo!", "reason": "Produce poziționare comandată, nu transfer autonom."},
+    {"phrase": "Ai înțeles, ai făcut bine exercițiul.", "reason": "Confundă performanța din sarcină cu transferul în meci."}
+  ],
+  "possible_misinterpretations": ["Copilul poate căuta pasa către un coleg doar pentru a demonstra cooperarea.", "Antrenorul poate interpreta lipsa oportunității ca lipsă de înțelegere."],
+  "task_risks": ["Observarea unui singur copil poate reduce supravegherea siguranței întregului joc.", "Scorarea excesivă poate transforma meciul într-un test."],
+  "understanding_check": ["Unde ai putea merge ca el să aibă două opțiuni?", "Ce s-a schimbat când adversarul a urmărit pasul?"],
+  "response_if_not_understood": ["Arată două cadre și cere alegerea.", "Creează o oportunitate mai vizibilă printr-o singură ajustare.", "Retrage comanda și verifică din nou în joc liber."],
+  "match_transfer": "Comportamentul apare fără comandă în 7v7, într-un rol ori context diferit de exercițiul inițial.",
+  "sources": ["SRC-0029", "SRC-0034", "SRC-0035", "SRC-0036"]
+}

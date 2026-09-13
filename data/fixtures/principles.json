@@ -1,0 +1,24 @@
+[
+  {
+    "development_fixture": true,
+    "fixture_type": "DEVELOPMENT FIXTURE",
+    "id": "principle.scanning-before-receive",
+    "slug": "orientare-corporala-scanare",
+    "category_id": "cat.principii-joc",
+    "title": "Orientare corporală și scanare",
+    "summary": "Principiul de observare a spațiului liber anterior primirii mingii.",
+    "concept_text": "Jucătorul își adaptează poziția corpului pentru a avea un câmp vizual deschis asupra terenului.",
+    "why_it_matters": "Extinde opțiunile de pasă și decizie rapidă înainte ca minge să ajungă la picioare.",
+    "child_wording": "Verifică spațiul din spatele tău înainte să atinge minge!",
+    "coach_explanation": "Orientarea corporală deschisă reduce timpul de decizie și sprijină luarea deciziei conștiente.",
+    "target_behavior": "Rotirea capului și recepția pe piciorul exterior.",
+    "exercise_ids": ["exercise.2v1-support-angle"],
+    "evidence_claim_ids": ["CLM-001"],
+    "tactical_visual_hooks": {
+      "diagram_ref": "diagram.support-angle.01",
+      "animation_ref": "animation.support-angle.01",
+      "video_export_ref": null,
+      "print_fallback_ref": "diagram.support-angle.print.01"
+    }
+  }
+]
