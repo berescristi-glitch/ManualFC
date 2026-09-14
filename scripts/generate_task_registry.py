@@ -1388,6 +1388,31 @@ add("TASK-3711", "P0 Product Stabilization: repararea rutei CTA 'Rezolva pe tere
         "Fresh clone independent din origin (E:/ManualFC-remote-verify-3711): npm install, npm run check, npm test (9/9), pytest (518/518), npm run build (101 pagini, identic), sitemap (100 URL-uri + 404.html = 101), git fsck --full curat, arbore de fisiere urmarite identic byte-cu-byte cu repo-ul canonic (948/948, 0 diferente)."],
     volume="CONTROL-PLANE", units=1, status="DONE",
     validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test", "git diff --check"])
+add("TASK-3712", "Gold Standard Content Expansion: 10 exercitii noi (EX-0006-EX-0015) si 4 sedinte noi (SES-0003-SES-0006) in aceeasi tema deja validata, fara a doua tema de antrenament", "CONTROL-PLANE", ["TASK-3711"],
+    ["data/exercises/exercise-unghiul-de-sprijin-din-spate.json", "data/exercises/exercise-unu-doi-pentru-a-iesi-din-umbra.json",
+     "data/exercises/exercise-al-treilea-jucator-de-sprijin.json", "data/exercises/exercise-receptie-sub-presiune-completa.json",
+     "data/exercises/exercise-momentul-potrivit-de-plecare.json", "data/exercises/exercise-patru-sprijiniri-o-singura-minge.json",
+     "data/exercises/exercise-prima-privire-dupa-recuperare.json", "data/exercises/exercise-sprijin-pe-culoar-lateral.json",
+     "data/exercises/exercise-joc-mic-3v3-doua-porti.json", "data/exercises/exercise-joc-mic-5v5-zona-de-finalizare.json",
+     "data/sessions/session-sprijin-din-spate-si-combinatie.json", "data/sessions/session-al-treilea-jucator-si-presiune.json",
+     "data/sessions/session-recuperare-si-sprijin-lateral.json", "data/sessions/session-transfer-complet-jocuri-variate.json",
+     "data/assessments/assessment-sprijin-si-unghi-de-pasa.json", "data/problems/problem-library.json",
+     "app/src/lib/content-bridge.ts", "app/src/components/FieldCard.astro",
+     "tests/test_task3712_gold_standard_expansion.py", "tests/web/built-routes.test.js",
+     "plans/TASK-3712-gold-standard-content-expansion.md", REPORT("TASK-3712")],
+    SCHEMA_OK + [
+        "10 exercitii noi (EX-0006-EX-0015) si 4 sedinte noi (SES-0003-SES-0006), toate cu theme='sprijin-si-unghi-de-pasa' -- aceeasi tema deja validata, nicio tema noua de antrenament introdusa.",
+        "Fiecare exercitiu are toate campurile V2 obligatorii (verificat de scripts/validate_gold_standard_v2.py, 0 erori pe 15 exercitii/6 sedinte): problema, perceptie, decizie, mesaj exact, cele 7 rationale, cand intervii/nu intervii, progresie/regresie, granita dovezii.",
+        "assessment-sprijin-si-unghi-de-pasa.json extins cu 3 criterii noi (C6-C8), nu cate unul per exercitiu -- ramane un instrument de teren utilizabil, nu un tabel birocratic de 15 randuri.",
+        "problem-library.json intarit pentru PRB-0001,0002,0003,0005,0007,0008; PRB-0005 (assessment_links gol anterior) legat acum corect la ASM-0001 prin EX-0012. PRB-0004/PRB-0006 (organizare defensiva) lasate deliberat orfane -- construirea de exercitii pentru ele ar fi insemnat, de fapt, o a doua tema de antrenament.",
+        "Defect real gasit si reparat: app/src/components/FieldCard.astro randa TacticalDiagram necondiționat pentru orice exercitiu, ceea ce oprea complet npm run build imediat ce a aparut un exercitiu (EX-0006) in afara variantelor EX-0001-EX-0005 cunoscute de TacticalDiagram -- reparat cu acelasi tipar hasDiagram/nota onesta deja folosit in exercitii/[id].astro si sedinte/[id]/mod-teren.astro.",
+        "content-bridge.ts actualizat (liste hardcodate, nu glob) cu toate cele 15 exercitii si 6 sedinte; build produce 119 pagini (101+18), fara pagini orfane sau linkuri rupte (audit_route_links.py: 0 BROKEN_INTERNAL_REFS).",
+        "Verificare reala de browser (Playwright, Chromium) la 1440px si 390px pe 8 pagini noi/afectate: 0 overflow orizontal, main=1/h1=1 peste tot, 0 violari axe.",
+        "Fresh clone independent din origin (E:/ManualFC-remote-verify-3712): npm install, npm run check, npm test (9/9), pytest (554/554), npm run build (119 pagini, identic), sitemap (118 URL-uri + 404.html = 119), audit_route_links.py PASS, comportament offline verificat cu browser real, git fsck --full curat, arbore de fisiere urmarite identic byte-cu-byte cu repo-ul canonic (965/965, 0 diferente)."],
+    volume="CONTROL-PLANE", units=2, status="DONE",
+    validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test",
+                 "python scripts/validate_content.py --strict", "python scripts/validate_gold_standard_v2.py",
+                 "python scripts/audit_route_links.py", "git diff --check"])
 add("TASK-2717", "Wave-1 browser acceptance, Preview si baseline", "PHASE-27", ["TASK-2704"],
     ["plans/TASK-2717-wave1-acceptance.md", "reports/audits/MANUALFC_WAVE1_BROWSER_ACCEPTANCE.md", REPORT("TASK-2717")],
     SCHEMA_OK + [
@@ -1932,6 +1957,11 @@ def materialize() -> dict:
             task["attempts"] = 1
             task["started_at"] = "2026-09-14T20:30:00+03:00"
             task["completed_at"] = "2026-09-14T21:20:00+03:00"
+            task["last_error"] = None
+        if task["task_id"] == "TASK-3712":
+            task["attempts"] = 1
+            task["started_at"] = "2026-09-14T21:30:00+03:00"
+            task["completed_at"] = "2026-09-14T22:15:00+03:00"
             task["last_error"] = None
         if task["task_id"] == "TASK-2705":
             task["attempts"] = 1
