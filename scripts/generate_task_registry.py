@@ -1374,6 +1374,20 @@ add("TASK-3705", "Header/footer brand lockup rebalansare: inaltimea header-ului 
     validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build",
                  "python scripts/validate_project.py", "python scripts/validate_html_landmarks.py",
                  "python scripts/audit_route_links.py", "git diff --check"])
+add("TASK-3711", "P0 Product Stabilization: repararea rutei CTA 'Rezolva pe teren', declararea reala a dependentelor playwright/@axe-core-playwright, SEO tehnic minim (site/canonical/sitemap/robots) si smoke test real de browser+accesibilitate", "CONTROL-PLANE", ["TASK-3705"],
+    ["app/src/components/AppHeader.astro", "app/src/components/AppFooter.astro", "app/src/components/HomepageHero.astro",
+     "app/src/pages/incepe-aici.astro", "app/src/layouts/BaseLayout.astro", "astro.config.mjs", "public/robots.txt",
+     "package.json", "package-lock.json", "tests/web/browser-a11y-smoke.test.js",
+     "plans/TASK-3711-p0-product-stabilization.md", REPORT("TASK-3711")],
+    SCHEMA_OK + [
+        "Cauza radacina a CTA-ului 'Rezolva pe teren' dovedita, nu presupusa: getPrimaryNavigation() intorcea deja ruta reala /rezolva-pe-teren, dar AppHeader.astro filtra pe cheia veche /gold-standard/rapid (item eliminat silentios din nav); AppFooter/HomepageHero/incepe-aici aveau href hardcodat la ruta veche.",
+        "Header/footer/hero/onboarding repointate la /rezolva-pe-teren; referintele interne legitime din gold-standard/index.astro si volum/index.astro catre pagina legacy gold-standard/rapid.astro (care exista in continuare si leaga ea insasi inapoi la /rezolva-pe-teren) lasate neschimbate, fara motiv functional de schimbare.",
+        "playwright si @axe-core/playwright declarate ca devDependencies reale in package.json, cu package-lock.json actualizat prin npm install normal (nu --no-save, nu editare manuala).",
+        "astro.config.mjs are 'site' setat (singurul URL real documentat, manualfc.vercel.app, DEC-0053 -- domeniul de productie propriu ramane o decizie de produs neluata inca) si integrarea @astrojs/sitemap; BaseLayout.astro are canonical/og:url/og:image rezolvate absolut (inlocuind marcajul anterior 'Site URL = unresolved'); public/robots.txt valid, cu Sitemap: catre sitemap-index.xml.",
+        "tests/web/browser-a11y-smoke.test.js: Chromium real via Playwright, verifica homepage, exact un main, exact un h1, ruta CTA reparata, si 0 violari axe-core pe 6 pagini critice.",
+        "Fresh clone independent din origin (E:/ManualFC-remote-verify-3711): npm install, npm run check, npm test (9/9), pytest (518/518), npm run build (101 pagini, identic), sitemap (100 URL-uri + 404.html = 101), git fsck --full curat, arbore de fisiere urmarite identic byte-cu-byte cu repo-ul canonic (948/948, 0 diferente)."],
+    volume="CONTROL-PLANE", units=1, status="DONE",
+    validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test", "git diff --check"])
 add("TASK-2717", "Wave-1 browser acceptance, Preview si baseline", "PHASE-27", ["TASK-2704"],
     ["plans/TASK-2717-wave1-acceptance.md", "reports/audits/MANUALFC_WAVE1_BROWSER_ACCEPTANCE.md", REPORT("TASK-2717")],
     SCHEMA_OK + [
@@ -1913,6 +1927,11 @@ def materialize() -> dict:
             task["attempts"] = 1
             task["started_at"] = "2026-09-09T17:20:00+03:00"
             task["completed_at"] = "2026-09-09T17:55:00+03:00"
+            task["last_error"] = None
+        if task["task_id"] == "TASK-3711":
+            task["attempts"] = 1
+            task["started_at"] = "2026-09-14T20:30:00+03:00"
+            task["completed_at"] = "2026-09-14T21:20:00+03:00"
             task["last_error"] = None
         if task["task_id"] == "TASK-2705":
             task["attempts"] = 1
