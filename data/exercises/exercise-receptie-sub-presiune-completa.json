@@ -1,0 +1,202 @@
+{
+  "id": "EX-0009",
+  "title": "Recepția cu fața la joc, sub presiune completă",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "avansare",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copilul păstrează scanarea și orientarea corporală exersate în EX-0003 chiar și atunci când adversarul poate ataca imediat mingea după recepție, nu doar atunci când opoziția e moderată sau semi-pasivă.",
+  "observable_behaviours": [
+    "scanează înainte de recepție chiar și cu adversarul aproape și activ",
+    "primul contact orientează mingea spre spațiul liber, nu spre siguranță imediată fără informație"
+  ],
+  "players": {
+    "total": 3,
+    "in_possession": 2,
+    "defenders": 1,
+    "neutral_players": 0
+  },
+  "numerical_relation": "2v1",
+  "equipment": [
+    "4 conuri de delimitare",
+    "conuri colorate pentru indiciul de scanare",
+    "6-8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 4 },
+    { "item": "conuri colorate", "quantity": 2 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 }
+  ],
+  "field": {
+    "length_m": 10,
+    "width_m": 8,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 8,
+    "format": "seturi de 90 de secunde de joc continuu, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Adversarul poate ataca mingea imediat după ce a fost pasată, fără întârzierea folosită în EX-0001-EX-0003.",
+      "why": "Elimină exact constrângerea care păstra decizia gestionabilă în exercițiile anterioare — testează dacă scanarea și orientarea rezistă sub presiune reală."
+    },
+    {
+      "rule": "Teren mai mic decât EX-0003, cu adversarul pornind mai aproape de linia de pasă.",
+      "why": "Reduce timpul disponibil pentru scanare, forțând-o să devină mai rapidă, nu eliminată."
+    }
+  ],
+  "step_by_step": [
+    "Trei jucători: doi în posesie, un adversar activ din primul moment.",
+    "Înainte de fiecare pasă, un con colorat e ridicat scurt de antrenor sau de coechipier, indicând spre ce parte trebuie orientată recepția.",
+    "Jucătorul care primește scanează spre con înainte ca mingea să ajungă, apoi primește orientat spre spațiul indicat.",
+    "Adversarul atacă imediat mingea după pasă, fără întârziere.",
+    "Rotație: adversarul se schimbă la fiecare 90 de secunde."
+  ],
+  "rotation": "Rotație de adversar la fiecare 90 de secunde; toți cei 3 jucători dintr-un grup trec prin rolul de adversar.",
+  "transition": "Trecere directă la EX-0010 fără pauză de reorganizare — același grup de 3, aceeași zonă.",
+  "child_message": "Uită-te la con înainte să vină mingea — chiar dacă adversarul e chiar lângă tine!",
+  "why_this_message": "Reperul rămâne extern (conul), nu o instrucțiune tehnică internă despre poziția piciorului — aceeași alegere ca în EX-0003, aplicată acum sub presiune reală.",
+  "problem_being_solved": "Sub presiune moderată (EX-0003), scanarea și orientarea la recepție apar relativ ușor; sub presiune completă, mulți copii renunță la scanare din reflex de siguranță, pierzând tocmai informația de care au nevoie pentru a continua acțiunea.",
+  "information_children_must_notice": [
+    "conul colorat, înainte de sosirea mingii",
+    "poziția și viteza adversarului care atacă imediat",
+    "spațiul liber rămas disponibil după recepție"
+  ],
+  "decision_children_must_learn": "Să mențină scanarea și orientarea corporală chiar și atunci când presiunea de timp crește, nu doar atunci când adversarul e semi-pasiv.",
+  "rationales": {
+    "tactical": "Orientarea la recepție păstrează o continuare posibilă a acțiunii, indiferent de intensitatea presiunii adversarului.",
+    "perceptual": "Scanarea sub presiune completă e o citire mai grea decât cea din EX-0003 — timpul de procesare scade real.",
+    "decisional": "Copilul trebuie să decidă rapid dacă orientarea indicată de con mai e realistă sau dacă trebuie ajustată în ultima clipă.",
+    "cognitive": "Introducerea presiunii complete după ce scanarea de bază e stabilă din EX-0003 respectă progresia de la simplu la complex.",
+    "psychological": "Riscul de a greși crește vizibil sub presiune completă — copilul trebuie să accepte o recepție imperfectă fără să renunțe la scanare data viitoare.",
+    "technical": "Prima atingere orientată rămâne tehnica centrală, acum executată sub constrângere de timp reală.",
+    "social": "Coechipierul care pasează trebuie să sincronizeze momentul pasei cu ridicarea conului, altfel informația ajunge prea târziu."
+  },
+  "age_appropriateness": "La 10–11 ani, trecerea de la presiune moderată la presiune completă se face doar după ce scanarea de bază e stabilă (EX-0003); grupele 2015 și 2016 rămân împreună, cu reglaj individual al distanței de pornire a adversarului.",
+  "possible_misinterpretations": [
+    "Copilul crede că sub presiune completă e mai bine să renunțe la scanare pentru siguranță, nu că trebuie să o facă mai rapid.",
+    "Copilul asociază o recepție imperfectă sub presiune cu eșecul personal, nu cu dificultatea reală a sarcinii."
+  ],
+  "task_risks": [
+    "Adversar prea agresiv fizic poate crește riscul de contact necontrolat la recepție.",
+    "Teren prea mic pentru presiune completă poate elimina orice șansă reală de continuare a acțiunii."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Dă-o simplu, nu mai risca.",
+      "reason": "Elimină exact comportamentul țintă (scanarea și orientarea), înlocuindu-l cu o soluție de siguranță impusă."
+    },
+    {
+      "phrase": "Trebuia să vezi asta.",
+      "reason": "Judecă rezultatul fără să recunoască dificultatea reală crescută de presiunea completă."
+    }
+  ],
+  "understanding_check": [
+    "scanarea spre con rămâne vizibilă chiar și în repetițiile cu adversar foarte aproape",
+    "copilul poate spune, după o recepție imperfectă, ce a văzut înainte de a primi"
+  ],
+  "response_if_not_understood": [
+    "revino temporar la distanța de pornire a adversarului din EX-0003 și crește-o treptat",
+    "reconstituie un moment static și cere copilului să arate unde era conul"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Mai mic decât EX-0003, deliberat, pentru ca presiunea de timp să fie reală, nu doar declarată.",
+  "too_small_signs": [
+    "adversarul ajunge la minge înainte ca recepția să se poată finaliza, indiferent de scanare",
+    "coliziuni frecvente la recepție"
+  ],
+  "too_large_signs": [
+    "adversarul nu mai ajunge la timp, presiunea completă devine identică cu cea moderată din EX-0003",
+    "exercițiul își pierde scopul de a testa scanarea sub constrângere reală"
+  ],
+  "regression": [
+    "revino la distanța de pornire a adversarului din EX-0003 (presiune moderată)",
+    "elimină temporar conul colorat, cerând doar orientarea generală spre spațiul liber"
+  ],
+  "progression": [
+    "trecere la EX-0010 (momentul potrivit de plecare)",
+    "adversarul poate schimba direcția de atac în ultima clipă, nu doar viteza"
+  ],
+  "coach_questions": [
+    {
+      "question": "Ce culoare avea conul chiar înainte să primești?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ai simțit că ai avut timp să te uiți, sau ai ghicit?",
+      "when": "după o repetiție cu adversar foarte aproape"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Ochii pe con înainte, nu pe minge când vine."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, te-ai uitat chiar și cu adversarul aproape — asta conta azi."
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "copilul renunță la scanare sub presiune completă, deși o făcea consecvent în EX-0003",
+      "possible_causes": [
+        "presiunea de timp a crescut prea brusc față de exercițiul anterior",
+        "reflexul de siguranță (privește doar mingea) domină sub stres real"
+      ]
+    },
+    {
+      "observation": "recepția orientată reușește, dar mingea se pierde imediat la contactul cu adversarul",
+      "possible_causes": [
+        "orientarea a fost corectă, dar protecția mingii cu corpul nu a fost încă exersată",
+        "adversarul a fost lăsat prea aproape de la începutul repetiției"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "scanarea spre con rămâne vizibilă în cel puțin jumătate din repetițiile cu adversar activ",
+    "copilul poate descrie, într-o propoziție, ce a văzut înainte de recepție, chiar și după o recepție imperfectă"
+  ],
+  "match_transfer": "În meci, jucătorul păstrează scanarea și orientarea corporală la recepție chiar și atunci când un adversar presează imediat, nu doar în fazele cu timp confortabil de decizie.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0005, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0095",
+    "SRC-0096",
+    "SRC-0097"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.spatiu-si-unghiuri", "principle.focalizarea-observatiei-si-criterii-de-interventie"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C10"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C06", "COACH-C12"],
+  "related_pedagog_lesson_ids": ["CH-0102"],
+  "related_coach_lesson_ids": ["CH-0404", "CH-0408"],
+  "child_action": "Scanează spre conul colorat înainte de sosirea mingii și primește orientat spre spațiul indicat, chiar și cu adversarul aproape și activ din primul moment.",
+  "coach_focus": "Observarea persistenței scanării sub presiune crescută, nu doar reușita tehnică a recepției.",
+  "do_not_assume": [
+    "O recepție imperfectă sub presiune completă nu înseamnă că scanarea a lipsit — poate fi doar execuția tehnică sub stres real.",
+    "Faptul că un copil ezită o dată nu înseamnă că a regresat față de EX-0003 — presiunea completă e o sarcină vizibil mai grea."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de abandonare completă a scanării (privește doar mingea) sub presiune, observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "O singură recepție imperfectă tehnic, cu scanare prezentă.",
+    "Scanare mai lentă decât în EX-0003 — se lasă timp de adaptare la noul nivel de presiune înainte de a corecta."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul crește presiunea prea brusc, sărind direct de la EX-0003 la opoziție maximă fără pași intermediari.",
+      "why_it_happens": "Dorința de a testa rapid dacă exercițiul anterior „a prins”, fără a respecta regresia disponibilă (distanța de pornire a adversarului)."
+    }
+  ],
+  "coach_reflection": [
+    "Am crescut presiunea gradual, sau am sărit direct la nivelul maxim fără o etapă intermediară?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului, distanța de pornire a adversarului și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori (rotație de adversar la fiecare 90 de secunde, deja specificată în acest fișier).",
+  "assessment_ref": "ASM-0001"
+}

@@ -1,0 +1,200 @@
+{
+  "id": "EX-0010",
+  "title": "Momentul potrivit, nu doar locul potrivit",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "consolidare",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copilul învață că unghiul de sprijin depinde și de MOMENTUL deplasării, nu doar de direcție și distanță — o plecare prea devreme lasă timp adversarului să se repoziționeze, una prea târzie nu mai ajunge înainte ca purtătorul să aibă nevoie de opțiune.",
+  "observable_behaviours": [
+    "așteaptă vizibil un semnal (mișcarea purtătorului sau a adversarului) înainte de a se deplasa, nu pleacă automat",
+    "ajunge în unghiul deschis chiar în momentul în care purtătorul are nevoie de opțiune, nu prea devreme, nu prea târziu"
+  ],
+  "players": {
+    "total": 3,
+    "in_possession": 2,
+    "defenders": 1,
+    "neutral_players": 0
+  },
+  "numerical_relation": "2v1",
+  "equipment": [
+    "4 conuri de delimitare",
+    "6-8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 4 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 }
+  ],
+  "field": {
+    "length_m": 12,
+    "width_m": 10,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 8,
+    "format": "seturi de 90 de secunde de joc continuu, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Coechipierul de sprijin trebuie să rămână nemișcat până când adversarul face prima mișcare de repoziționare.",
+      "why": "Elimină plecarea automată (memorată din EX-0001-EX-0002) și obligă la citirea unui semnal real înainte de decizie — reglaj ales pentru acest exercițiu, nu un prag validat de cercetare."
+    },
+    {
+      "rule": "Dacă adversarul nu se mișcă timp de 4-5 secunde, coechipierul poate iniția singur deplasarea.",
+      "why": "Evită blocajul complet al jocului atunci când adversarul rămâne static — o soluție practică, nu un prag validat de cercetare."
+    }
+  ],
+  "step_by_step": [
+    "Trei jucători: doi în posesie, un adversar.",
+    "Coechipierul de sprijin rămâne nemișcat până observă prima mișcare a adversarului sau un semnal clar al purtătorului.",
+    "În momentul semnalului, coechipierul se deplasează exact atât cât e nevoie pentru un unghi nou.",
+    "Purtătorul așteaptă acel moment, nu forțează pasa înainte ca unghiul să fie deschis.",
+    "Rotație: adversarul se schimbă la fiecare 90 de secunde."
+  ],
+  "rotation": "Rotație de adversar la fiecare 90 de secunde; toți cei 3 jucători dintr-un grup trec prin rolul de adversar.",
+  "transition": "Trecere directă la EX-0011 fără pauză de reorganizare — grup nou de 7 pentru presiunea numerică la patru sprijiniri.",
+  "child_message": "Nu pleca imediat — așteaptă să vezi ce face adversarul, apoi mută-te chiar în acel moment!",
+  "why_this_message": "Reperul e evenimentul (mișcarea adversarului), nu un cronometru sau o poziție fixă — păstrează decizia despre CÂND la copil, extensie temporală a principiului Spațiu și unghiuri.",
+  "problem_being_solved": "Copiii care au exersat deja repoziționarea din EX-0001-EX-0002 tind să plece automat la începutul fiecărei repetiții, indiferent de momentul real în care adversarul se mișcă sau purtătorul are nevoie de opțiune — plecarea prea devreme lasă timp adversarului să se adapteze.",
+  "information_children_must_notice": [
+    "primul semn de mișcare al adversarului",
+    "dacă purtătorul mingii are deja o opțiune sau are nevoie de una nouă",
+    "timpul scurs de la ultima mișcare a adversarului"
+  ],
+  "decision_children_must_learn": "Să aleagă momentul deplasării în funcție de mișcarea adversarului sau nevoia purtătorului, nu după un tipar memorat din exercițiile anterioare.",
+  "rationales": {
+    "tactical": "Un unghi deschis prea devreme dă adversarului timp să se repoziționeze; unul deschis prea târziu nu mai ajunge la timp pentru purtător — momentul contează la fel de mult ca direcția.",
+    "perceptual": "Copilul trebuie să citească un eveniment dinamic (mișcarea adversarului), nu doar o poziție statică, ceea ce adaugă o dimensiune temporală absentă din EX-0001.",
+    "decisional": "Decizia nu mai e doar „unde”, ci și „când” — o extensie firească după ce direcția și distanța sunt deja stabile.",
+    "cognitive": "Introducerea unei singure variabile noi (momentul) după ce direcția e stabilă respectă progresia de la simplu la complex.",
+    "psychological": "Așteptarea activă (nu plecarea automată) cere răbdare, nu pasivitate — o distincție care merită numită explicit copiilor.",
+    "technical": "Execuția deplasării rămâne simplă tehnic; accentul e pe momentul declanșării, nu pe viteza sau tehnica mișcării.",
+    "social": "Purtătorul și coechipierul trebuie să se sincronizeze pe același semnal, nu doar unul dintre ei să decidă unilateral momentul."
+  },
+  "age_appropriateness": "La 10–11 ani, conceptul de „moment” se arată concret printr-un semnal vizibil (mișcarea adversarului), nu printr-o explicație abstractă despre timing; grupele 2015 și 2016 rămân împreună, cu reglaj individual al pragului de 4-5 secunde pentru inițiativă proprie.",
+  "possible_misinterpretations": [
+    "Copilul crede că trebuie să aștepte mereu maximum de timp posibil, nu doar momentul potrivit.",
+    "Copilul confundă „așteptarea activă” cu pasivitatea completă, rămânând nemișcat chiar și după semnal."
+  ],
+  "task_risks": [
+    "Adversar complet static poate bloca jocul dincolo de pragul de 4-5 secunde dacă regula de inițiativă proprie nu e aplicată corect.",
+    "Teren prea mic nu lasă timp real între semnal și necesitatea unghiului deschis."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Mișcă-te imediat!",
+      "reason": "Contrazice direct comportamentul țintă — așteptarea unui semnal real înainte de deplasare."
+    },
+    {
+      "phrase": "Numără până la trei și pleacă.",
+      "reason": "Impune un cronometru fix în locul citirii unui semnal real, exact ce principiile canonice resping explicit."
+    }
+  ],
+  "understanding_check": [
+    "coechipierul rămâne vizibil nemișcat până la semnal, nu pleacă automat la începutul repetiției",
+    "unghiul deschis apare chiar în momentul în care purtătorul are nevoie de el, nu cu mult înainte sau după"
+  ],
+  "response_if_not_understood": [
+    "oprește jocul chiar înainte de momentul deplasării și arată exact ce semnal trebuia observat",
+    "elimină temporar pragul de 4-5 secunde și lasă antrenorul să dea semnalul verbal, apoi reintrodu regula treptat"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Identică cu EX-0001, deliberat, pentru ca singura variabilă nouă introdusă să fie momentul, nu spațiul.",
+  "too_small_signs": [
+    "nu există timp real între semnal și nevoia de unghi deschis — totul se întâmplă simultan",
+    "coliziuni frecvente din cauza deciziilor grăbite"
+  ],
+  "too_large_signs": [
+    "timpul disponibil e atât de mare încât momentul devine irelevant — orice plecare funcționează",
+    "adversarul nu mai poate crea o presiune reală asupra deciziei de timing"
+  ],
+  "regression": [
+    "antrenorul dă semnalul verbal exact în momentul potrivit, până când copiii recunosc singuri tiparul",
+    "mărește pragul de așteptare obligatorie înainte de a permite inițiativa proprie"
+  ],
+  "progression": [
+    "trecere la EX-0011 (coordonare la patru sprijiniri sub presiune numerică)",
+    "adversarul poate simula o mișcare falsă pentru a testa dacă copilul reacționează la semnale false"
+  ],
+  "coach_questions": [
+    {
+      "question": "Ce ai văzut chiar înainte să te miști?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ai plecat prea devreme sau exact la timp de data asta?",
+      "when": "după o repetiție cu deplasare vizibil timpurie"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Așteaptă semnalul, nu pleca din obișnuință."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ai așteptat exact momentul potrivit!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "copilul pleacă automat la începutul fiecărei repetiții, indiferent de mișcarea adversarului",
+      "possible_causes": [
+        "tiparul memorat din EX-0001-EX-0002 (pleacă imediat) rămâne dominant",
+        "nu a observat încă regula nouă despre semnal"
+      ]
+    },
+    {
+      "observation": "copilul așteaptă atât de mult încât unghiul deschis nu mai ajunge la timp pentru purtător",
+      "possible_causes": [
+        "confundă răbdarea cu pasivitatea completă",
+        "nu a recunoscut încă semnalul adversarului"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "deplasarea are loc vizibil după semnalul adversarului, nu automat, în majoritatea repetițiilor",
+    "copilul poate explica, într-o propoziție, ce semnal a așteptat înainte de a se muta"
+  ],
+  "match_transfer": "În meci, jucătorul de sprijin recunoaște momentul potrivit pentru a-și oferi unghiul — nici prea devreme, dând timp adversarului să reacționeze, nici prea târziu, pierzând fereastra reală de pasă.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0005, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0037",
+    "SRC-0042"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.spatiu-si-unghiuri", "principle.progresie-si-sprijin"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C07"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C06", "COACH-C11"],
+  "related_pedagog_lesson_ids": ["CH-0102"],
+  "related_coach_lesson_ids": ["CH-0407", "CH-0408"],
+  "child_action": "Așteaptă un semnal real (mișcarea adversarului) înainte de a se deplasa spre unghiul deschis, nu pleacă automat la începutul repetiției.",
+  "coach_focus": "Observarea momentului deplasării în raport cu semnalul, nu doar reușita direcției alese.",
+  "do_not_assume": [
+    "O plecare timpurie nu înseamnă lipsă de atenție — poate fi un tipar memorat din exercițiile anterioare, care are nevoie de timp pentru a se ajusta.",
+    "O așteptare lungă nu înseamnă pasivitate — poate fi încă evaluarea semnalului adversarului."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de plecare automată, fără așteptarea semnalului, observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "O singură repetiție cu deplasare timpurie.",
+    "Ezitare vizibilă înainte de deplasare — se lasă timp pentru citirea semnalului înainte de a corecta."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul numără cu voce tare pentru a semnaliza momentul deplasării.",
+      "why_it_happens": "Dorința de a grăbi înțelegerea conceptului, înlocuind citirea reală a semnalului cu un cronometru extern."
+    }
+  ],
+  "coach_reflection": [
+    "Am lăsat copilul să citească singur semnalul, sau am oferit eu un cronometru care a înlocuit decizia lui?"
+  ],
+  "evidence_boundary": "Pragul de 4-5 secunde pentru inițiativă proprie și dimensiunea terenului sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori (rotație de adversar la fiecare 90 de secunde, deja specificată în acest fișier).",
+  "assessment_ref": "ASM-0001"
+}

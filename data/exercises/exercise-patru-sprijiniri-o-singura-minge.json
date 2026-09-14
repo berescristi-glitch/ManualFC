@@ -1,0 +1,202 @@
+{
+  "id": "EX-0011",
+  "title": "Trei sprijiniri, un singur adversar rămas liber",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "avansare",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copiii mențin coordonarea la trei jucători de sprijin (exersată în EX-0008) sub o presiune numerică mai mare, cu trei adversari în loc de doi, testând dacă diferențierea spațială rezistă când opoziția crește.",
+  "observable_behaviours": [
+    "cei trei jucători de sprijin ocupă trei zone distincte chiar și cu trei adversari activi",
+    "purtătorul găsește unghiul liber în mai puțin timp decât la primele repetiții din EX-0008"
+  ],
+  "players": {
+    "total": 7,
+    "in_possession": 4,
+    "defenders": 3,
+    "neutral_players": 0
+  },
+  "numerical_relation": "4v3",
+  "equipment": [
+    "6 conuri de delimitare",
+    "8-10 mingi de rezervă",
+    "veste de marcaj pentru adversari"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 6 },
+    { "item": "mingi de rezervă", "quantity": 8, "quantity_max": 10 },
+    { "item": "veste de marcaj", "quantity": 3 }
+  ],
+  "field": {
+    "length_m": 22,
+    "width_m": 16,
+    "safety_margin_m": 3
+  },
+  "duration": {
+    "total_minutes": 10,
+    "format": "seturi de 2-3 minute de joc continuu, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Trei adversari acoperă activ, dar geometria (4 în posesie, 3 adversari) nu mai garantează matematic o opțiune complet liberă, ca la EX-0008 — de această dată, unghiul deschis apare doar temporar.",
+      "why": "Testează dacă diferențierea spațială la trei jucători de sprijin rezistă când marja numerică scade, nu doar când e generoasă — reglaj ales pentru acest exercițiu, nu un prag validat de cercetare."
+    },
+    {
+      "rule": "Cei trei jucători de sprijin păstrează regula din EX-0008: nu ocupă treimi adiacente ale terenului.",
+      "why": "Menține comportamentul deja exersat, nu introduce o regulă nouă — singura variabilă nouă e presiunea numerică crescută."
+    }
+  ],
+  "step_by_step": [
+    "Șapte jucători: patru în posesie (un purtător, trei de sprijin), trei adversari.",
+    "Terenul rămâne împărțit mental în trei treimi, ca în EX-0008.",
+    "Purtătorul scanează cele trei opțiuni, știind că unghiul liber apare doar temporar, nu permanent.",
+    "Pasa trebuie să vină exact în fereastra scurtă în care unghiul e deschis.",
+    "Rotație: adversarii se schimbă la fiecare 2-3 minute."
+  ],
+  "rotation": "Rotație de adversari la fiecare 2-3 minute; toți cei 7 jucători dintr-un grup trec prin rolul de adversar, câte trei simultan.",
+  "transition": "Trecere directă la EX-0012 fără pauză de reorganizare — grup nou de 5 pentru prima privire după recuperare.",
+  "child_message": "Fereastra se deschide mai scurt acum — fiți gata să pasați imediat ce vedeți unghiul liber!",
+  "why_this_message": "Reperul rămâne fereastra temporară de oportunitate, nu o poziție fixă garantată — extensie directă a conceptului deja introdus în EX-0008, acum sub presiune mai mare.",
+  "problem_being_solved": "Coordonarea la trei jucători de sprijin, stabilă când geometria numerică e generoasă (EX-0008, 4v2), poate să se dezorganizeze când presiunea numerică crește (4v3) — testul verifică dacă diferențierea spațială a devenit un comportament stabil sau doar o soluție pentru cazul ușor.",
+  "information_children_must_notice": [
+    "poziția celorlalți doi jucători de sprijin, ca în EX-0008",
+    "care dintre cei trei adversari s-a apropiat cel mai mult de o opțiune",
+    "durata scurtă a ferestrei în care unghiul rămâne liber"
+  ],
+  "decision_children_must_learn": "Să mențină diferențierea spațială la trei jucători de sprijin și să pasez rapid în fereastra scurtă de oportunitate, chiar și cu presiune numerică crescută.",
+  "rationales": {
+    "tactical": "Cu trei adversari în loc de doi, marja numerică scade — opțiunea liberă devine temporară, nu garantată, testând stabilitatea reală a comportamentului.",
+    "perceptual": "Copilul trebuie să recunoască o fereastră de timp mai scurtă decât în EX-0008, nu doar o poziție statică liberă.",
+    "decisional": "Decizia include acum și viteza de execuție — a vedea unghiul liber nu mai ajunge dacă pasa întârzie.",
+    "cognitive": "Creșterea presiunii numerice după stabilizarea comportamentului de bază (EX-0008) respectă progresia de la simplu la complex.",
+    "psychological": "Eșecul mai frecvent față de EX-0008 e informație despre dificultatea sarcinii, nu despre regresia grupului.",
+    "technical": "Pasa trebuie executată mai rapid, fără a compromite precizia — o cerință tehnică reală, nu doar decizională.",
+    "social": "Cei trei jucători de sprijin depind unii de alții mai mult ca oricând — o singură suprapunere de zonă elimină singura opțiune reală."
+  },
+  "age_appropriateness": "La 10–11 ani, creșterea presiunii numerice se introduce doar după ce EX-0008 e stabil; grupele 2015 și 2016 rămân împreună, cu reglaj individual al vitezei cerute la pasă.",
+  "possible_misinterpretations": [
+    "Copiii cred că eșecul frecvent înseamnă că exercițiul e greșit pentru ei, nu că testează exact limita capacității lor actuale.",
+    "Purtătorul forțează o pasă în afara ferestrei de oportunitate doar pentru a evita să piardă timpul."
+  ],
+  "task_risks": [
+    "Trei adversari prea agresivi pot crește riscul de contact necontrolat în spațiul aglomerat.",
+    "Teren prea mic pentru șapte jucători elimină orice fereastră reală de oportunitate."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Grăbește-te!",
+      "reason": "Instrucțiune fără informație despre CE anume trebuie văzut mai repede."
+    },
+    {
+      "phrase": "De ce ați pierdut mingea?",
+      "reason": "Tratează dificultatea crescută intenționat a exercițiului ca pe o greșeală de evitat, nu ca pe informație despre limita actuală."
+    }
+  ],
+  "understanding_check": [
+    "cele trei zone rămân distincte chiar și cu trei adversari activi, în cel puțin jumătate din repetiții",
+    "pasele reușite se concentrează exact în fereastra scurtă de oportunitate, nu la întâmplare"
+  ],
+  "response_if_not_understood": [
+    "revino temporar la EX-0008 (4v2) pentru a reconfirma stabilitatea diferențierii spațiale",
+    "mărește ușor terenul pentru mai mult timp de decizie, fără a elimina complet presiunea numerică crescută"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Mai mare decât EX-0008 pentru a compensa parțial numărul crescut de adversari, păstrând totuși presiunea reală mai mare decât la exercițiul anterior.",
+  "too_small_signs": [
+    "trei adversari acoperă tot spațiul disponibil indiferent de poziționarea celor de sprijin",
+    "coliziuni frecvente în spațiul aglomerat"
+  ],
+  "too_large_signs": [
+    "presiunea numerică crescută nu se mai simte real — jocul devine la fel de ușor ca EX-0008",
+    "pasele lungi devin necesare, depășind precizia tehnică realistă la această vârstă"
+  ],
+  "regression": [
+    "revino la EX-0008 (4v2) dacă diferențierea spațială se pierde complet sub presiunea numerică crescută",
+    "mărește ușor terenul pentru mai mult timp de decizie"
+  ],
+  "progression": [
+    "trecere la EX-0012 (prima privire după recuperare)",
+    "reduce ușor terenul pentru presiune de timp și mai mare, odată ce comportamentul e stabil"
+  ],
+  "coach_questions": [
+    {
+      "question": "Cât timp a rămas deschis unghiul de data asta, față de exercițiul trecut?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ce ați făcut diferit ca să găsiți spațiul mai repede?",
+      "when": "după un set cu pase reușite consecutive"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Fereastra e scurtă — ochii pe spațiu, nu pe adversarul mai apropiat."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ați ținut cele trei zone distincte chiar și cu presiune mai mare!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "diferențierea spațială la trei sprijiniri se pierde complet, jucătorii revin la aglomerarea din EX-0002/EX-0004",
+      "possible_causes": [
+        "presiunea numerică crescută a fost introdusă prea brusc, fără regresia disponibilă",
+        "grupul nu era încă stabil la EX-0008 înainte de a trece mai departe"
+      ]
+    },
+    {
+      "observation": "purtătorul recunoaște unghiul liber, dar pasa ajunge după ce fereastra s-a închis",
+      "possible_causes": [
+        "timpul de decizie a rămas cel exersat în EX-0008, mai lent decât permite noua presiune",
+        "execuția tehnică a pasei nu a ținut pasul cu viteza de decizie"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "diferențierea spațială la trei jucători de sprijin persistă în cel puțin jumătate din repetiții, chiar sub presiune numerică crescută",
+    "cel puțin o pasă reușită apare exact în fereastra scurtă de oportunitate per set"
+  ],
+  "match_transfer": "În meci, cei trei jucători de sprijin mențin poziții diferențiate chiar și când adversarul are aproape la fel de mulți jucători aproape de fază, recunoscând ferestre scurte de oportunitate în loc să aștepte o opțiune complet liberă și permanentă.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0005, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0050",
+    "SRC-0051"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.progresie-si-sprijin", "principle.superioritate-egalitate-inferioritate-numerica"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C10"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C10", "COACH-C12"],
+  "related_pedagog_lesson_ids": ["CH-0101"],
+  "related_coach_lesson_ids": ["CH-0407", "CH-0403"],
+  "child_action": "Menține poziția într-o treime distinctă de ceilalți doi jucători de sprijin și pasează rapid în fereastra scurtă de oportunitate, chiar cu trei adversari activi.",
+  "coach_focus": "Observarea persistenței diferențierii spațiale sub presiune numerică crescută, nu doar reușita ocazională a pasei.",
+  "do_not_assume": [
+    "O scădere a ratei de succes față de EX-0008 nu înseamnă regresie — presiunea numerică e real mai mare.",
+    "O suprapunere izolată de zone sub presiune crescută nu invalidează stabilitatea comportamentului exersat în EX-0008."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de pierdere completă a diferențierii spațiale (revenire la aglomerare), observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "O rată de succes mai mică decât la EX-0008, dacă diferențierea spațială rămâne vizibilă.",
+    "O singură pasă întârziată în afara ferestrei de oportunitate."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul tratează rata de succes mai mică drept eșec pedagogic, nu drept semn că exercițiul testează corect o dificultate mai mare.",
+      "why_it_happens": "Compararea directă cu rata de succes din EX-0008, fără a recunoaște că presiunea numerică a crescut real."
+    }
+  ],
+  "coach_reflection": [
+    "Am comparat corect dificultatea acestui exercițiu cu EX-0008, sau am așteptat aceeași rată de succes la o sarcină mai grea?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 14/16/18 jucători și 1-2 antrenori (grupuri de 7, rotație de adversari la fiecare 2-3 minute); la efective sub 14, se organizează cu grupuri mixte, folosind rotația documentată în capitolul despre organizare și siguranță.",
+  "assessment_ref": "ASM-0001"
+}

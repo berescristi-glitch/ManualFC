@@ -1,0 +1,200 @@
+{
+  "id": "EX-0007",
+  "title": "Unu-doi pentru a ieși din umbră",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "consolidare",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copilul folosește o combinație scurtă (pasă și mutare imediată) pentru a ieși din umbra unui adversar care acoperă bine ambele opțiuni statice, ca a doua cale de rezolvare pe lângă repoziționarea simplă din EX-0001-EX-0002.",
+  "observable_behaviours": [
+    "pasează și se deplasează imediat spre un spațiu nou, fără să aștepte pe loc",
+    "purtătorul inițial recunoaște mișcarea coechipierului și returnează pasa în spațiul nou, nu în poziția veche"
+  ],
+  "players": {
+    "total": 3,
+    "in_possession": 2,
+    "defenders": 1,
+    "neutral_players": 0
+  },
+  "numerical_relation": "2v1",
+  "equipment": [
+    "4 conuri de delimitare",
+    "6-8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 4 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 }
+  ],
+  "field": {
+    "length_m": 14,
+    "width_m": 10,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 9,
+    "format": "seturi de 2 minute de joc continuu, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Adversarul poate acoperi ambele opțiuni statice de pasă simultan (spre deosebire de EX-0001, unde acoperea doar una).",
+      "why": "Creează exact situația în care repoziționarea simplă nu mai ajunge — un reglaj ales pentru acest exercițiu, nu un prag validat de cercetare."
+    },
+    {
+      "rule": "După ce pasează, jucătorul trebuie să se deplaseze într-un spațiu diferit înainte de a cere mingea înapoi.",
+      "why": "Interzice combinația falsă (pasă și stai pe loc) — comportamentul țintă e mișcarea, nu doar reușita tehnică a pasei duble."
+    }
+  ],
+  "step_by_step": [
+    "Trei jucători: doi în posesie, un adversar care acoperă bine ambele opțiuni statice.",
+    "Purtătorul pasează scurt coechipierului aflat cel mai aproape de o deschidere temporară.",
+    "Imediat după pasă, primul jucător se deplasează într-un spațiu nou, diferit de poziția inițială.",
+    "Coechipierul returnează pasa în spațiul nou, nu în poziția veche.",
+    "Rotație: adversarul se schimbă la fiecare 2 minute."
+  ],
+  "rotation": "Rotație de adversar la fiecare 2 minute; toți cei 3 jucători dintr-un grup trec prin rolul de adversar.",
+  "transition": "Trecere directă la EX-0008 fără pauză de reorganizare — grup nou de 6 pentru coordonarea la trei sprijiniri.",
+  "child_message": "Dă-o și pleacă imediat — nu aștepta pe loc să ți-o dea înapoi în același loc!",
+  "why_this_message": "Reperul e acțiunea (mișcarea imediată după pasă), nu o poziție fixă de destinație — copilul alege unde se mută, la fel ca în principiul Spațiu și unghiuri.",
+  "problem_being_solved": "Când un adversar acoperă bine ambele opțiuni statice de pasă, repoziționarea simplă nu mai creează un unghi nou — e nevoie de o combinație activă (pasă + mișcare) pentru a schimba geometria situației.",
+  "information_children_must_notice": [
+    "dacă adversarul acoperă deja ambele opțiuni înainte de a primi mingea",
+    "spațiul care se deschide chiar în momentul pasei, nu înainte",
+    "poziția coechipierului după ce s-a deplasat"
+  ],
+  "decision_children_must_learn": "Să aleagă combinația (pasă + mișcare imediată) atunci când repoziționarea simplă nu mai e suficientă pentru a crea un unghi nou.",
+  "rationales": {
+    "tactical": "O combinație scurtă schimbă geometria situației mai rapid decât o repoziționare simplă, exact când adversarul a acoperit deja ambele opțiuni statice.",
+    "perceptual": "Copilul trebuie să recunoască momentul în care poziția statică nu mai ajunge, nu doar unghiul deschis.",
+    "decisional": "Alegerea combinației, nu doar a direcției, e noul element decizional față de EX-0001-EX-0002.",
+    "cognitive": "Secvența pasă-mișcare-recepție adaugă un pas față de decizia simplă de poziționare, motiv pentru care exercițiul e consolidare, nu introducere.",
+    "psychological": "Succesul e vizibil imediat (pasa de retur ajunge sau nu în spațiul nou), fără evaluare subiectivă a antrenorului.",
+    "technical": "Pasa scurtă și precisă imediat înaintea deplasării rămâne tehnica principală exersată, fără presiune de execuție complexă.",
+    "social": "Ambii coechipieri depind unul de celălalt pentru a face combinația să funcționeze — purtătorul inițial trebuie să vadă mișcarea, nu doar pasa."
+  },
+  "age_appropriateness": "La 10–11 ani, combinația e arătată mai întâi static (unde se mută, cum se cere mingea înapoi), apoi lăsată să curgă în joc continuu; grupele 2015 și 2016 rămân împreună, cu reglaj individual al vitezei de execuție.",
+  "possible_misinterpretations": [
+    "Copilul crede că orice pasă urmată de mișcare e o combinație reușită, chiar dacă mișcarea nu creează un spațiu nou real.",
+    "Copilul se mută, dar prea departe pentru ca pasa de retur să mai fie realistă tehnic."
+  ],
+  "task_risks": [
+    "Adversar prea pasiv nu obligă la combinație — repoziționarea simplă rămâne suficientă.",
+    "Teren prea mic nu lasă spațiu real pentru ca mișcarea după pasă să conteze."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Dă-o și stai.",
+      "reason": "Contrazice direct comportamentul țintă al exercițiului — mișcarea imediată după pasă."
+    },
+    {
+      "phrase": "Du-te acolo.",
+      "reason": "Mută decizia despre unde se deschide spațiul de la copil la adult."
+    }
+  ],
+  "understanding_check": [
+    "copilul se deplasează vizibil imediat după fiecare pasă, fără comandă verbală",
+    "pasa de retur ajunge în spațiul nou, nu în poziția veche, în majoritatea repetițiilor"
+  ],
+  "response_if_not_understood": [
+    "oprește imediat după o pasă și arată exact unde ar fi trebuit să se deplaseze copilul",
+    "reduce viteza cerută — permite o pauză scurtă între pasă și mișcare înainte de a cere execuție continuă"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Puțin mai mare decât EX-0001 pentru ca mișcarea după pasă să aibă unde să creeze un spațiu vizibil diferit.",
+  "too_small_signs": [
+    "spațiul nou creat prin mișcare se suprapune cu cel vechi — combinația nu schimbă nimic vizibil",
+    "coliziuni frecvente în timpul deplasării după pasă"
+  ],
+  "too_large_signs": [
+    "pasa de retur devine prea lungă pentru precizia tehnică la această vârstă",
+    "adversarul nu mai poate acoperi nicio opțiune de la început, combinația devine inutilă"
+  ],
+  "regression": [
+    "execută secvența static (pasă, oprire, arată spațiul, apoi mișcare) înainte de viteză reală",
+    "adversar semi-pasiv care nu presează imediat purtătorul inițial"
+  ],
+  "progression": [
+    "trecere la EX-0008 (coordonare la trei sprijiniri)",
+    "adversarul poate urmări activ jucătorul care se deplasează, nu doar purtătorul mingii"
+  ],
+  "coach_questions": [
+    {
+      "question": "Unde s-a deschis spațiul chiar după ce ai dat pasa?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ce s-a schimbat față de exercițiul trecut, unde doar te mutai?",
+      "when": "după prima repetiție reușită de combinație"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Caută spațiul care se deschide chiar acum, nu unde erai înainte."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ai plecat imediat după pasă — exact asta căutam!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "copilul pasează și rămâne pe loc, așteptând returul în aceeași poziție",
+      "possible_causes": [
+        "nu a înțeles încă diferența față de repoziționarea simplă din EX-0001-EX-0002",
+        "combinația a fost exersată prea rapid, fără etapa statică"
+      ]
+    },
+    {
+      "observation": "purtătorul inițial pasează înapoi în poziția veche, nu în spațiul nou",
+      "possible_causes": [
+        "nu a observat mișcarea coechipierului",
+        "a memorat direcția pasei din repetiția anterioară"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "combinația (pasă + mișcare + retur în spațiul nou) reușește în cel puțin jumătate din repetițiile cu adversar activ",
+    "copilul poate explica, într-o propoziție, de ce s-a mutat exact în acel spațiu"
+  ],
+  "match_transfer": "În meci, jucătorul recunoaște când un adversar acoperă bine ambele opțiuni statice și inițiază o combinație scurtă pentru a schimba geometria situației, în loc să repete o repoziționare care nu mai funcționează.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0005, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0039",
+    "SRC-0040"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.spatiu-si-unghiuri"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C07"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C08", "COACH-C11"],
+  "related_pedagog_lesson_ids": ["CH-0101"],
+  "related_coach_lesson_ids": ["CH-0407", "CH-0408"],
+  "child_action": "Pasează scurt și se deplasează imediat într-un spațiu nou, cerând mingea înapoi acolo, nu în poziția veche.",
+  "coach_focus": "Observarea mișcării imediate după pasă, nu doar reușita tehnică a celor două pase.",
+  "do_not_assume": [
+    "O combinație reușită tehnic (ambele pase precise) nu înseamnă că mișcarea a creat un spațiu nou real — poate fi coincidență de poziție.",
+    "Faptul că un copil nu se mișcă imediat nu înseamnă că nu a înțeles — poate încă coordona timpul pasei cu mișcarea."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de a rămâne pe loc după pasă, observat la pauza dintre seturi — nu la prima repetiție fără mișcare."
+  ],
+  "when_not_to_intervene": [
+    "O singură repetiție fără mișcare imediată după pasă.",
+    "Mișcare prezentă dar insuficientă ca distanță pentru un spațiu nou vizibil — se lasă încă o repetiție înainte de a corecta."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul corectează tehnica pasei în loc de timpul mișcării.",
+      "why_it_happens": "Pasa e mai ușor de observat și corectat decât coordonarea temporală dintre pasă și deplasare."
+    }
+  ],
+  "coach_reflection": [
+    "Am corectat mișcarea (timpul, direcția) sau am corectat tehnica pasei, care nu era de fapt problema?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori (rotație de adversar la fiecare 2 minute, deja specificată în acest fișier).",
+  "assessment_ref": "ASM-0001"
+}

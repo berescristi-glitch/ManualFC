@@ -45,11 +45,38 @@
     },
     {
       "id": "ASM-0001-C5",
-      "observable_behaviour": "Transferul comportamentului de sprijin în joc reprezentativ, fără constrângeri artificiale (EX-0005).",
+      "observable_behaviour": "Transferul comportamentului de sprijin în joc reprezentativ, fără constrângeri artificiale (EX-0005, EX-0014, EX-0015).",
       "levels": [
         "Comportamentul nu apare în jocul liber, deși a apărut în exercițiile izolate anterioare.",
-        "Comportamentul apare ocazional în joc liber, inconsecvent între repetiții.",
-        "Comportamentul apare autonom și repetat în joc liber reprezentativ (transferul spre meciul oficial 7v7 rămâne neconfirmat — nu poate fi validat fără o pilotare reală pe teren)."
+        "Comportamentul apare ocazional în joc liber, inconsecvent între repetiții sau doar la unul dintre formatele de joc (3v3, 4v4 sau 5v5).",
+        "Comportamentul apare autonom și repetat în joc liber reprezentativ, la mai multe relații numerice (transferul spre meciul oficial 7v7 rămâne neconfirmat — nu poate fi validat fără o pilotare reală pe teren)."
+      ]
+    },
+    {
+      "id": "ASM-0001-C6",
+      "observable_behaviour": "Recunoașterea unghiului de sprijin din spate ca alegere activă și folosirea unei combinații scurte pentru a ieși din umbra unui adversar bine poziționat (EX-0006, EX-0007).",
+      "levels": [
+        "Evită sistematic unghiul din spate, chiar și atunci când e singura opțiune reală, și nu inițiază combinația când repoziționarea simplă nu mai e suficientă.",
+        "Cere unghiul din spate sau inițiază combinația doar cu validare verbală explicită a antrenorului.",
+        "Cere unghiul din spate ca alegere activă și inițiază combinația autonom, fără reper extern, în majoritatea repetițiilor observate."
+      ]
+    },
+    {
+      "id": "ASM-0001-C7",
+      "observable_behaviour": "Coordonarea la trei jucători de sprijin, menținerea scanării la recepție sub presiune completă și recunoașterea momentului potrivit pentru deplasare (EX-0008, EX-0009, EX-0010).",
+      "levels": [
+        "Se grupează cu ceilalți jucători de sprijin indiferent de numărul lor, renunță la scanare sub presiune completă și pleacă automat, fără să aștepte un semnal real.",
+        "Diferențierea la trei jucători, scanarea sub presiune sau așteptarea semnalului apar doar cu reper extern sau intervenția antrenorului.",
+        "Diferențierea la trei jucători, scanarea sub presiune completă și așteptarea unui semnal real pentru deplasare apar autonom, fără reper extern, în majoritatea repetițiilor observate."
+      ]
+    },
+    {
+      "id": "ASM-0001-C8",
+      "observable_behaviour": "Aplicarea deciziei progresie-sau-sprijin exact în momentul recuperării mingii și adaptarea deciziei de sprijin la un spațiu îngust de bandă (EX-0012, EX-0013).",
+      "levels": [
+        "Pasează automat înapoi imediat după orice recuperare, indiferent de spațiul disponibil, și încearcă mecanic deplasarea laterală și în spațiul îngust de bandă.",
+        "Secvența control-privire-decizie sau adaptarea la spațiul îngust apar doar cu întrebare ghidată sau intervenția antrenorului.",
+        "Secvența control-privire-decizie la recuperare și adaptarea deciziei de sprijin la spațiul îngust apar autonom, fără reper extern, în majoritatea repetițiilor observate."
       ]
     }
   ]

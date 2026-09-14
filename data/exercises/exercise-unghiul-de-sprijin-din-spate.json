@@ -1,0 +1,200 @@
+{
+  "id": "EX-0006",
+  "title": "Un unghi în spate, nu doar în lateral",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "introducere",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copilul recunoaște când un unghi de sprijin în spatele purtătorului mingii (nu doar lateral) rămâne singura opțiune reală deschisă și oferă acea pasă înapoi ca o alegere activă, nu ca o soluție de rezervă rușinoasă.",
+  "observable_behaviours": [
+    "se deplasează în spatele liniei mingii când opțiunile înainte și lateral sunt acoperite",
+    "cere mingea clar cu vocea sau cu mâna când unghiul din spate e deschis"
+  ],
+  "players": {
+    "total": 3,
+    "in_possession": 2,
+    "defenders": 1,
+    "neutral_players": 0
+  },
+  "numerical_relation": "2v1",
+  "equipment": [
+    "4 conuri de delimitare",
+    "6-8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 4 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 }
+  ],
+  "field": {
+    "length_m": 12,
+    "width_m": 9,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 8,
+    "format": "seturi de 90 de secunde cu rotație, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Adversarul poate acoperi o singură opțiune de pasă o dată (înainte sau lateral), niciodată pe amândouă simultan cu unghiul din spate.",
+      "why": "Constrânge geometria astfel încât unghiul din spate devine, la un moment dat, singura opțiune reală — reglaj ales pentru acest exercițiu, nu un prag validat de cercetare."
+    },
+    {
+      "rule": "Coechipierul de sprijin nu are voie să se poziționeze lateral fix — trebuie să înceapă fiecare repetiție din spatele purtătorului.",
+      "why": "Elimină tentația de a repeta soluția deja exersată în EX-0001/EX-0002 (unghi lateral) și obligă la citirea reală a situației."
+    }
+  ],
+  "step_by_step": [
+    "Trei jucători: purtătorul mingii, un coechipier de sprijin, un adversar.",
+    "Coechipierul pornește din spatele purtătorului la fiecare repetiție.",
+    "Adversarul acoperă o singură opțiune (înainte sau lateral) — nu poate acoperi și unghiul din spate.",
+    "Coechipierul decide dacă rămâne în spate (opțiune sigură) sau se deplasează lateral, în funcție de ce acoperă adversarul.",
+    "Rotație: adversarul se schimbă la fiecare 90 de secunde."
+  ],
+  "rotation": "Rotație de adversar la fiecare 90 de secunde; toți cei 3 jucători dintr-un grup trec prin rolul de adversar.",
+  "transition": "Trecere directă la EX-0007 fără pauză de reorganizare — același grup de 3, aceeași zonă.",
+  "child_message": "Dacă înainte și lateral sunt închise, în spate e liber — cere-o acolo, nu e o soluție proastă!",
+  "why_this_message": "Multe echipe la această vârstă asociază pasa înapoi cu eșecul; mesajul numește explicit unghiul din spate ca o alegere validă, nu ca un compromis (extensie directă a principiului Progresie și sprijin, care distinge deja între direcții de sprijin fără să le ierarhizeze moral).",
+  "problem_being_solved": "După ce pasează, jucătorul de sprijin oferă mereu aceeași linie laterală deja exersată, chiar și atunci când adversarul o acoperă vizibil, în loc să recunoască unghiul din spate ca opțiune reală.",
+  "information_children_must_notice": [
+    "care dintre cele două opțiuni (înainte, lateral) e acoperită de adversar",
+    "poziția proprie față de linia mingii",
+    "dacă purtătorul are nevoie de o soluție imediată sau poate aștepta"
+  ],
+  "decision_children_must_learn": "Să aleagă unghiul din spate ca opțiune activă exact în momentul în care celelalte două sunt acoperite, nu ca ultimă soluție după ce a ezitat.",
+  "rationales": {
+    "tactical": "Un unghi din spate păstrat viu obligă adversarul să aleagă ce acoperă, exact ca în principiul de bază — doar că acum geometria include o a treia direcție.",
+    "perceptual": "Copilul trebuie să citească DOUĂ opțiuni acoperite simultan, nu una, ceea ce ridică ușor complexitatea față de EX-0001.",
+    "decisional": "Alegerea nu mai e doar „unde mă mut”, ci „care dintre trei direcții rămâne reală chiar acum”.",
+    "cognitive": "Introducerea unei a treia direcții (spate) după ce lateral e deja stabil din EX-0001-EX-0002 respectă progresia de la simplu la complex.",
+    "psychological": "Numirea explicită a pasei înapoi ca alegere validă contracarează asocierea ei cu eșecul sau lipsa de curaj.",
+    "technical": "Recepția cu spatele la adversar și orientarea rapidă spre următoarea opțiune rămân simple, tehnica nu concurează cu decizia.",
+    "social": "Purtătorul mingii trebuie să accepte pasa înapoi ca soluție bună, nu ca semn că fusese abandonat de coechipier."
+  },
+  "age_appropriateness": "La 10–11 ani, distincția înainte/lateral/spate se arată direct în joc, cu o singură regulă de constrângere; grupele 2015 și 2016 rămân împreună, cu reglaj individual al vitezei de citire.",
+  "possible_misinterpretations": [
+    "Copilul crede că pasa înapoi e mereu opțiunea sigură implicită, nu una aleasă situațional.",
+    "Copilul rămâne fix în spate tot timpul, ignorând momentele când lateralul chiar e deschis."
+  ],
+  "task_risks": [
+    "Adversar prea pasiv nu creează presiune reală asupra alegerii dintre cele trei direcții.",
+    "Teren prea îngust nu lasă spațiu real pentru unghiul din spate să difere vizibil de cel lateral."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Dă-o înapoi dacă nu ai nimic altceva.",
+      "reason": "Transformă pasa înapoi într-un eșec rezidual, nu într-o decizie activă."
+    },
+    {
+      "phrase": "Stai mereu în spate.",
+      "reason": "Elimină decizia și fixează o poziție, exact ce principiul Spațiu și unghiuri respinge explicit."
+    }
+  ],
+  "understanding_check": [
+    "copilul poate arăta, după exercițiu, care direcție era acoperită și de ce a ales-o pe cealaltă",
+    "cererea de minge în spate apare cu voce clară, nu ezitant, când unghiul e cu adevărat deschis"
+  ],
+  "response_if_not_understood": [
+    "oprește și arată exact ce acoperea adversarul în momentul deciziei",
+    "reduce temporar la o singură direcție acoperită fixă (doar lateral), apoi adaugă varianta cu înainte acoperit"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Lungime puțin mai mare decât EX-0001 pentru ca unghiul din spate să aibă spațiu propriu, vizibil diferit de lateral.",
+  "too_small_signs": [
+    "unghiul din spate se suprapune vizual cu cel lateral — copiii nu pot distinge cele două opțiuni",
+    "coliziuni frecvente între purtător și sprijin"
+  ],
+  "too_large_signs": [
+    "pasele înapoi devin prea lungi pentru precizia tehnică la această vârstă",
+    "adversarul nu mai poate acoperi nicio opțiune, exercițiul devine trivial"
+  ],
+  "regression": [
+    "adversar care acoperă o singură direcție fixă (doar lateral) până la stabilizare",
+    "mărește terenul cu 1-2 m pentru mai mult timp de decizie"
+  ],
+  "progression": [
+    "trecere la EX-0007 (combinație activă pentru a ieși din umbră)",
+    "adversarul poate schimba ce acoperă la mijlocul repetiției, nu doar la început"
+  ],
+  "coach_questions": [
+    {
+      "question": "Ce era acoperit când ai cerut-o în spate?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ai fi putut primi lateral de data asta?",
+      "when": "după o repetiție în care copilul a ales spate fără să verifice lateralul"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Caută ce e liber chiar acum, nu ce a fost liber data trecută."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ai cerut-o clar în spate — a fost alegerea corectă acolo."
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "copilul evită să ceară mingea în spate chiar când e singura opțiune deschisă",
+      "possible_causes": [
+        "asociază pasa înapoi cu eșecul, nu cu o decizie bună",
+        "nu a fost încă validat verbal pentru alegerea corectă a spatelui"
+      ]
+    },
+    {
+      "observation": "copilul rămâne fix în spate și în repetițiile unde lateralul e liber",
+      "possible_causes": [
+        "a memorat o singură soluție din repetiția anterioară",
+        "nu re-evaluează situația la fiecare repetiție"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "unghiul din spate e cerut clar, fără ezitare, în cel puțin jumătate din repetițiile în care e singura opțiune reală",
+    "copilul poate explica, într-o propoziție, de ce a ales spatele și nu lateralul"
+  ],
+  "match_transfer": "În meci, jucătorul de sprijin oferă și acceptă o pasă înapoi ca alegere activă atunci când adversarul închide opțiunile înainte și lateral, fără să considere asta un eșec al fazei.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0005, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0037",
+    "SRC-0041"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.progresie-si-sprijin", "principle.spatiu-si-unghiuri"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C07"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C06", "COACH-C11"],
+  "related_pedagog_lesson_ids": ["CH-0101"],
+  "related_coach_lesson_ids": ["CH-0407", "CH-0408"],
+  "child_action": "Pornește din spatele purtătorului, citește care opțiune (înainte/lateral) e acoperită și cere mingea clar în unghiul rămas deschis, inclusiv atunci când acesta e în spate.",
+  "coach_focus": "Validarea verbală explicită a pasei înapoi ca decizie bună, nu doar observarea reușitei tehnice a pasei.",
+  "do_not_assume": [
+    "Faptul că un copil alege des unghiul din spate nu înseamnă că evită efortul — poate fi exact decizia corectă repetată.",
+    "O ezitare la cererea mingii în spate nu înseamnă că nu a văzut opțiunea — poate încă asocia pasa înapoi cu eșecul."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de refuz al unghiului din spate chiar când e singura opțiune reală, observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "O singură repetiție în care copilul a preferat să aștepte în loc să ceară imediat unghiul din spate.",
+    "Alegerea lateralului într-o repetiție ambiguă, unde ambele opțiuni erau parțial deschise."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul laudă doar pasele înainte și rămâne tăcut la pasele înapoi reușite.",
+      "why_it_happens": "Asocierea culturală implicită a progresiei cu valoarea, chiar și atunci când exercițiul cere explicit contrariul."
+    }
+  ],
+  "coach_reflection": [
+    "Am validat verbal o pasă înapoi la fel de clar cum aș fi validat una înainte?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori (rotație de adversar la fiecare 90 de secunde, deja specificată în acest fișier).",
+  "assessment_ref": "ASM-0001"
+}

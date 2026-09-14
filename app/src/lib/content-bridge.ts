@@ -56,8 +56,22 @@ import gsExercise2Raw from '../../../data/exercises/exercise-creeaza-optiunea-su
 import gsExercise3Raw from '../../../data/exercises/exercise-primeste-gata-sa-continui.json';
 import gsExercise4Raw from '../../../data/exercises/exercise-sprijin-cu-doi-coechipieri.json';
 import gsExercise5Raw from '../../../data/exercises/exercise-transferul-in-joc-mic.json';
+import gsExercise6Raw from '../../../data/exercises/exercise-unghiul-de-sprijin-din-spate.json';
+import gsExercise7Raw from '../../../data/exercises/exercise-unu-doi-pentru-a-iesi-din-umbra.json';
+import gsExercise8Raw from '../../../data/exercises/exercise-al-treilea-jucator-de-sprijin.json';
+import gsExercise9Raw from '../../../data/exercises/exercise-receptie-sub-presiune-completa.json';
+import gsExercise10Raw from '../../../data/exercises/exercise-momentul-potrivit-de-plecare.json';
+import gsExercise11Raw from '../../../data/exercises/exercise-patru-sprijiniri-o-singura-minge.json';
+import gsExercise12Raw from '../../../data/exercises/exercise-prima-privire-dupa-recuperare.json';
+import gsExercise13Raw from '../../../data/exercises/exercise-sprijin-pe-culoar-lateral.json';
+import gsExercise14Raw from '../../../data/exercises/exercise-joc-mic-3v3-doua-porti.json';
+import gsExercise15Raw from '../../../data/exercises/exercise-joc-mic-5v5-zona-de-finalizare.json';
 import gsSession1Raw from '../../../data/sessions/session-introducere.json';
 import gsSession2Raw from '../../../data/sessions/session-coordonare-si-transfer.json';
+import gsSession3Raw from '../../../data/sessions/session-sprijin-din-spate-si-combinatie.json';
+import gsSession4Raw from '../../../data/sessions/session-al-treilea-jucator-si-presiune.json';
+import gsSession5Raw from '../../../data/sessions/session-recuperare-si-sprijin-lateral.json';
+import gsSession6Raw from '../../../data/sessions/session-transfer-complet-jocuri-variate.json';
 import gsAssessmentRaw from '../../../data/assessments/assessment-sprijin-si-unghi-de-pasa.json';
 
 /**
@@ -572,6 +586,16 @@ export function getGoldStandardExercises(): GoldStandardExercise[] {
       parseGoldStandardExercise(gsExercise3Raw, 'exercise-primeste-gata-sa-continui.json'),
       parseGoldStandardExercise(gsExercise4Raw, 'exercise-sprijin-cu-doi-coechipieri.json'),
       parseGoldStandardExercise(gsExercise5Raw, 'exercise-transferul-in-joc-mic.json'),
+      parseGoldStandardExercise(gsExercise6Raw, 'exercise-unghiul-de-sprijin-din-spate.json'),
+      parseGoldStandardExercise(gsExercise7Raw, 'exercise-unu-doi-pentru-a-iesi-din-umbra.json'),
+      parseGoldStandardExercise(gsExercise8Raw, 'exercise-al-treilea-jucator-de-sprijin.json'),
+      parseGoldStandardExercise(gsExercise9Raw, 'exercise-receptie-sub-presiune-completa.json'),
+      parseGoldStandardExercise(gsExercise10Raw, 'exercise-momentul-potrivit-de-plecare.json'),
+      parseGoldStandardExercise(gsExercise11Raw, 'exercise-patru-sprijiniri-o-singura-minge.json'),
+      parseGoldStandardExercise(gsExercise12Raw, 'exercise-prima-privire-dupa-recuperare.json'),
+      parseGoldStandardExercise(gsExercise13Raw, 'exercise-sprijin-pe-culoar-lateral.json'),
+      parseGoldStandardExercise(gsExercise14Raw, 'exercise-joc-mic-3v3-doua-porti.json'),
+      parseGoldStandardExercise(gsExercise15Raw, 'exercise-joc-mic-5v5-zona-de-finalizare.json'),
     ];
   }
   return cachedGoldStandardExercises;
@@ -590,6 +614,10 @@ export function getGoldStandardSessions(): GoldStandardSession[] {
     cachedGoldStandardSessions = [
       parseGoldStandardSession(gsSession1Raw, 'session-introducere.json'),
       parseGoldStandardSession(gsSession2Raw, 'session-coordonare-si-transfer.json'),
+      parseGoldStandardSession(gsSession3Raw, 'session-sprijin-din-spate-si-combinatie.json'),
+      parseGoldStandardSession(gsSession4Raw, 'session-al-treilea-jucator-si-presiune.json'),
+      parseGoldStandardSession(gsSession5Raw, 'session-recuperare-si-sprijin-lateral.json'),
+      parseGoldStandardSession(gsSession6Raw, 'session-transfer-complet-jocuri-variate.json'),
     ];
   }
   return cachedGoldStandardSessions;

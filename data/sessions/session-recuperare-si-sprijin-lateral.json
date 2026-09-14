@@ -1,0 +1,254 @@
+{
+  "id": "SES-0005",
+  "title": "Sprijinul și unghiul de pasă — recuperarea mingii și sprijinul lateral",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "duration_min": 75,
+  "primary_objective": "Testează coordonarea la trei sprijiniri sub presiune numerică mai mare (EX-0011), extinde decizia de progresie/sprijin la momentul real al recuperării mingii (EX-0012) și adaptează decizia de sprijin la un spațiu îngust de bandă (EX-0013).",
+  "observable_behaviours": [
+    "cele trei zone de sprijin rămân distincte chiar și cu trei adversari activi",
+    "controlul și privirea reală apar imediat după recuperarea mingii, înainte de decizie",
+    "deplasarea de sprijin se adaptează la lățimea reală disponibilă, nu la un tipar memorat"
+  ],
+  "players_range": {
+    "min": 8,
+    "max": 18,
+    "note": "EX-0011 cere grupuri de 7 (4v3); EX-0012 cere grupuri de 5 (3v2); EX-0013 revine la grupuri de 3 — vezi configuratorul de grup pentru numărul exact de grupe, spațiu și material la fiecare efectiv de la 8 la 18."
+  },
+  "operational_contingencies": [
+    {
+      "scenario": "3 copii ajung după ce ședința a început",
+      "guidance": "PRACTICE_HEURISTIC: la EX-0011, copiii întârziați intră la următoarea rotație de adversari. La EX-0012, intră la pauza dintre seturi, nu în mijlocul jocului continuu. La EX-0013, intră la rotația de 90 de secunde."
+    },
+    {
+      "scenario": "Terenul disponibil nu permite un culoar îngust real pentru EX-0013",
+      "guidance": "PRACTICE_HEURISTIC: dacă terenul disponibil e doar pătrat, marchează cu conuri un culoar virtual de lățimea cerută în interiorul spațiului mai mare — geometria contează, nu forma fizică reală a terenului de club."
+    },
+    {
+      "scenario": "Presiunea numerică din EX-0011 pare prea mare pentru grup",
+      "guidance": "PRACTICE_HEURISTIC: revino temporar la EX-0008 (4v2) pentru a reconfirma stabilitatea diferențierii spațiale înainte de a relua EX-0011."
+    },
+    {
+      "scenario": "Un exercițiu eșuează — niciun copil nu reușește nici cu regresia maximă",
+      "guidance": "PRACTICE_HEURISTIC: tratează eșecul ca informație despre exercițiu, nu despre copii. Oprește segmentul, folosește imediat o întrebare de reflecție, apoi treci mai devreme la segmentul următor."
+    },
+    {
+      "scenario": "Tranzițiile între cele trei exerciții durează prea mult",
+      "guidance": "PRACTICE_HEURISTIC: pregătește dinainte materialul pentru toate cele trei stații, mai ales culoarul îngust al EX-0013, care cere conuri suplimentare. Dacă tranzițiile tot depășesc timpul alocat, scurtează întâi jocul liber final, niciodată reflecția."
+    }
+  ],
+  "duration_variant_60min": {
+    "total_minutes": 60,
+    "policy_note": "Variantă de 60 minute — PRACTICE_HEURISTIC, o adaptare operațională, nu o durată validată de cercetare. Toate cele trei exerciții rămân în ședință, cu mai puține repetări fiecare; reflecția păstrează bucla completă.",
+    "segments": [
+      { "segment_index": 0, "start_min": 0, "end_min": 8, "reduction_note": "Redus cu 2 min: timpul de organizare de la începutul rutinei, nu execuția ei." },
+      { "segment_index": 1, "start_min": 8, "end_min": 22, "reduction_note": "Redus cu 3 min: mai puține seturi la presiune numerică crescută — geometria de bază rămâne exersată complet." },
+      { "segment_index": 2, "start_min": 22, "end_min": 34, "reduction_note": "Redus cu 3 min: mai puține cicluri de recuperare în jocul continuu, nu o revenire la joc oprit." },
+      { "segment_index": 3, "start_min": 34, "end_min": 46, "reduction_note": "Redus cu 2 min: mai puține repetări în culoarul îngust — adaptarea rămâne exersată complet." },
+      { "segment_index": 4, "start_min": 46, "end_min": 54, "reduction_note": "Comprimat, nu eliminat — întrebările de reflecție rămân, fără timp de așteptare între răspunsuri." },
+      { "segment_index": 5, "start_min": 54, "end_min": 60, "reduction_note": "Cea mai mare reducere relativă — jocul liber e timp activ suplimentar, nu fază pedagogică esențială." }
+    ]
+  },
+  "equipment": [
+    "conuri de delimitare pentru toate stațiile",
+    "conuri suplimentare pentru marcarea culoarului îngust din EX-0013",
+    "mingi de rezervă suficiente pentru fiecare stație",
+    "veste de marcaj pentru adversari"
+  ],
+  "surface_plan": {
+    "layout": "O stație de 22x16m pentru EX-0011 (grupuri de 7), o stație de 20x14m pentru EX-0012 (grupuri de 5) și un culoar de 16x6m pentru EX-0013 (grupuri de 3), distanțate cu minimum 3m între ele.",
+    "rotation": "Rotație de adversari la 2-3 minute în EX-0011; alternare de roluri la fiecare set în EX-0012; rotație de adversar la 90 de secunde în EX-0013."
+  },
+  "segments": [
+    {
+      "start_min": 0,
+      "end_min": 10,
+      "title": "Încălzire și rutină de siguranță",
+      "exercise_ids": [],
+      "coach_message": "Începem cu rutina scurtă de siguranță, ca de fiecare dată.",
+      "why_now": "Rutină structurată de încălzire cu efect măsurat asupra riscului de accidentare (programul oficial FIFA 11+ Kids), reutilizată din capitolul despre organizare și siguranță.",
+      "methodological_rationale": "Siguranța rămâne prima prioritate, indiferent de tema tehnico-tactică a ședinței.",
+      "observation_focus": [
+        "execuția corectă a mișcărilor de încălzire, nu graba de a termina"
+      ],
+      "intervention_criteria": [
+        "intervenție imediată doar pentru risc fizic real"
+      ],
+      "non_intervention_criteria": [
+        "O ezitare izolată la un exercițiu de încălzire nu justifică oprirea rutinei."
+      ],
+      "coach_focus": "Verifică execuția corectă a mișcărilor de încălzire, nu doar viteza de finalizare.",
+      "verification_method": "Observare directă a execuției; nicio evaluare verbală necesară la acest segment.",
+      "transition_logistics": "Formarea grupurilor de 7 pentru EX-0011."
+    },
+    {
+      "start_min": 10,
+      "end_min": 27,
+      "title": "EX-0011 — Trei sprijiniri, un singur adversar rămas liber",
+      "exercise_ids": [
+        "EX-0011"
+      ],
+      "coach_message": "Fereastra se deschide mai scurt acum — fiți gata să pasați imediat ce vedeți unghiul liber!",
+      "why_now": "Testează dacă diferențierea spațială la trei jucători de sprijin (EX-0008) rezistă când presiunea numerică crește de la doi la trei adversari.",
+      "methodological_rationale": "Creșterea presiunii numerice se introduce doar după stabilizarea comportamentului de bază la EX-0008.",
+      "observation_focus": [
+        "persistența diferențierii spațiale sub presiune numerică crescută"
+      ],
+      "intervention_criteria": [
+        "revenire temporară la EX-0008 dacă diferențierea spațială se pierde complet"
+      ],
+      "non_intervention_criteria": [
+        "O rată de succes mai mică decât la EX-0008 nu justifică o intervenție, dacă diferențierea spațială rămâne vizibilă."
+      ],
+      "coach_focus": "Observarea persistenței diferențierii spațiale sub presiune numerică crescută.",
+      "verification_method": "La pauza dintre seturi, verifică dacă diferențierea spațială persistă în cel puțin jumătate din repetiții.",
+      "transition_logistics": "Regrupare în echipe de 5 pentru EX-0012."
+    },
+    {
+      "start_min": 27,
+      "end_min": 42,
+      "title": "EX-0012 — Prima privire, nu prima pasă înapoi",
+      "exercise_ids": [
+        "EX-0012"
+      ],
+      "coach_message": "Ai recuperat mingea. Controleaz-o întâi, uită-te — ai loc să mergi înainte sau ai nevoie de un coleg aproape?",
+      "why_now": "Aplică decizia progresie/sprijin, deja exersată static, exact în momentul real, dinamic, al recuperării mingii.",
+      "methodological_rationale": "Jocul continuu cu recuperări repetate creează momente reale de decizie, nu doar simulate static.",
+      "observation_focus": [
+        "secvența control-privire-decizie la fiecare recuperare"
+      ],
+      "intervention_criteria": [
+        "reintroduce pauza obligatorie de 1-2 secunde dacă reflexul automat de pasă înapoi persistă"
+      ],
+      "non_intervention_criteria": [
+        "O singură pasă înapoi într-o situație ambiguă nu justifică o intervenție."
+      ],
+      "coach_focus": "Observarea secvenței control-privire-decizie la fiecare recuperare, nu doar rezultatul final al fazei.",
+      "verification_method": "La pauza dintre seturi, verifică dacă alegerea dintre progresie și sprijin se potrivește cu spațiul disponibil.",
+      "transition_logistics": "Regrupare în echipe de 3 pentru EX-0013, în culoarul îngust marcat."
+    },
+    {
+      "start_min": 42,
+      "end_min": 56,
+      "title": "EX-0013 — Sprijin pe culoar, cu banda aproape",
+      "exercise_ids": [
+        "EX-0013"
+      ],
+      "coach_message": "Aici nu ai loc în lateral ca înainte — mută-te în lungul culoarului până se deschide un unghi!",
+      "why_now": "Testează dacă decizia de sprijin exersată în spații late (EX-0001-EX-0002) se adaptează la o geometrie reală, îngustă, de bandă.",
+      "methodological_rationale": "Aceeași decizie de bază, aplicată unui context nou, verifică dacă a fost înțeleasă, nu doar memorată pentru un singur tip de spațiu.",
+      "observation_focus": [
+        "deplasarea predominant în lungul culoarului, nu lateral fără spațiu real"
+      ],
+      "intervention_criteria": [
+        "oprire scurtă pentru a arăta diferența de lățime, doar la tipar repetat de încercare laterală fără rezultat"
+      ],
+      "non_intervention_criteria": [
+        "O singură încercare laterală nereușită în noul spațiu nu justifică o intervenție."
+      ],
+      "coach_focus": "Observarea adaptării deciziei la o geometrie nouă, nu doar reușita tehnică a pasei.",
+      "verification_method": "La pauza dintre seturi, verifică dacă deplasarea predominantă e în lungul culoarului.",
+      "transition_logistics": "Strângerea materialului; pregătire pentru reflecția de închidere."
+    },
+    {
+      "start_min": 56,
+      "end_min": 66,
+      "title": "Reflecție ghidată de închidere",
+      "exercise_ids": [],
+      "coach_message": "Ce ați observat diferit între cele trei exerciții de azi — care v-a cerut o decizie nouă, nu doar o repetare?",
+      "why_now": "Reflecția leagă explicit cele trei concepte (presiune numerică, moment de recuperare, spațiu îngust) de percepția proprie a diferenței dintre ele.",
+      "methodological_rationale": "Reflecția scurtă la final consolidează transferul, fără o durată cronometrată fixă validată de cercetare.",
+      "observation_focus": [
+        "capacitatea copiilor de a numi diferența reală dintre cele trei exerciții"
+      ],
+      "intervention_criteria": [
+        "întrebări deschise, copiii formulează concluzia"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil nu poate încă formula o observație, nu se impune un răspuns."
+      ],
+      "coach_focus": "Întrebări deschise; copiii formulează concluzia, nu antrenorul într-un monolog.",
+      "verification_method": "Cel puțin un copil poate numi, într-o propoziție, ce a fost diferit la unul dintre cele trei exerciții.",
+      "transition_logistics": "Încheierea segmentului de reflecție; echipamentul se strânge în timpul jocului liber final."
+    },
+    {
+      "start_min": 66,
+      "end_min": 75,
+      "title": "Joc liber de relaxare",
+      "exercise_ids": [],
+      "coach_message": "Jucați liber, fără reguli speciale — azi ați exersat trei situații diferite!",
+      "why_now": "Închidere pozitivă a ședinței, timp activ suplimentar fără presiune evaluativă.",
+      "methodological_rationale": "Nu se introduc constrângeri noi la finalul unei ședințe cu încărcare cognitivă deja ridicată.",
+      "observation_focus": [
+        "siguranța fizică generală"
+      ],
+      "intervention_criteria": [
+        "doar pentru siguranță fizică sau comportament nesportiv"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul de joc liber, chiar dacă nu reflectă exercițiile exersate, nu justifică o intervenție tactică."
+      ],
+      "coach_focus": "Siguranță fizică generală, nu conținut tehnico-tactic.",
+      "verification_method": "Nu se aplică o verificare de conținut la acest segment.",
+      "transition_logistics": "Final de ședință; echipamentul se strânge în timpul acestui segment."
+    }
+  ],
+  "message_foundations": [
+    {
+      "message": "Ai recuperat mingea. Controleaz-o întâi, uită-te — ai loc să mergi înainte sau ai nevoie de un coleg aproape?",
+      "source_principle": "principle.tranzitia-la-castigarea-mingii",
+      "claim_ids": [
+        "CLM-0048",
+        "CLM-0049"
+      ]
+    },
+    {
+      "message": "Fereastra se deschide mai scurt acum — fiți gata să pasați imediat!",
+      "source_principle": "principle.superioritate-egalitate-inferioritate-numerica",
+      "claim_ids": [
+        "CLM-0050",
+        "CLM-0052"
+      ]
+    }
+  ],
+  "session_rationale": "A cincea ședință din arc crește presiunea pe un comportament deja exersat (EX-0011), introduce un declanșator realist nou (recuperarea mingii, EX-0012) și testează adaptarea deciziei de bază la un spațiu neobișnuit (EX-0013). Cele trei exerciții testează generalizarea comportamentelor deja exersate în situații mai grele, nu introduc concepte complet noi — o alegere practică ManualFC pentru a consolida, nu doar acumula.",
+  "match_theme": "Generalizarea deciziilor de sprijin deja exersate la presiune numerică mai mare, la momentul real al recuperării mingii și la un spațiu îngust de bandă.",
+  "reflection": [
+    "Ce ați observat diferit între cele trei exerciții de azi — care v-a cerut o decizie nouă, nu doar o repetare?",
+    "Unde din meciurile voastre reale ați recunoscut vreuna dintre aceste trei situații?"
+  ],
+  "sources": [
+    "SRC-0035",
+    "SRC-0040",
+    "SRC-0041",
+    "SRC-0047",
+    "SRC-0048",
+    "SRC-0050",
+    "SRC-0051"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "child_objectives": [
+    "Menține diferențierea spațială la trei jucători de sprijin sub presiune numerică mai mare (EX-0011).",
+    "Aplică decizia progresie/sprijin exact în momentul recuperării mingii, nu din reflex automat (EX-0012).",
+    "Adaptează decizia de sprijin la un spațiu îngust de bandă, nu la un tipar memorat (EX-0013)."
+  ],
+  "coach_objectives": [
+    {
+      "objective": "Recunoaște că o rată de succes mai mică sub presiune crescută e informație despre dificultatea reală, nu regresie a grupului.",
+      "coach_competency_id": "COACH-C12"
+    },
+    {
+      "objective": "Verifică dacă decizia deja exersată static apare și în context dinamic, real, de recuperare a mingii.",
+      "coach_competency_id": "COACH-C14"
+    }
+  ],
+  "reflection_v2": {
+    "child_game_dimension": [
+      "Copiii au recunoscut vreuna dintre cele trei situații ca fiind similară cu ceva din meciurile lor reale?",
+      "Care dintre cele trei exerciții a fost cel mai greu pentru majoritatea grupului, și de ce?"
+    ],
+    "coach_dimension": [
+      "Am tratat corect rata de succes mai mică din EX-0011 ca informație despre dificultate, nu ca eșec pedagogic?",
+      "Am recunoscut secvența control-privire-decizie la recuperare, sau am evaluat doar direcția finală a pasei?"
+    ]
+  }
+}

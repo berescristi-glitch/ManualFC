@@ -1,0 +1,202 @@
+{
+  "id": "EX-0012",
+  "title": "Prima privire, nu prima pasă înapoi",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "avansare",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "tranziție după recuperare",
+  "primary_objective": "Copilul aplică decizia deja exersată (unghi de sprijin, progresie vs. sprijin) exact în momentul recuperării mingii, în loc să paseze automat înapoi din reflex, fără să fi verificat mai întâi dacă exista un drum înainte.",
+  "observable_behaviours": [
+    "controlează mingea și privește real spațiul înainte de a alege direcția pasei, chiar imediat după recuperare",
+    "alege progresia înainte atunci când drumul e liber, nu doar pasa înapoi din reflex"
+  ],
+  "players": {
+    "total": 5,
+    "in_possession": 3,
+    "defenders": 2,
+    "neutral_players": 0
+  },
+  "numerical_relation": "3v2",
+  "equipment": [
+    "6 conuri de delimitare",
+    "8 mingi de rezervă",
+    "veste de marcaj pentru adversari"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 6 },
+    { "item": "mingi de rezervă", "quantity": 8 },
+    { "item": "veste de marcaj", "quantity": 2 }
+  ],
+  "field": {
+    "length_m": 20,
+    "width_m": 14,
+    "safety_margin_m": 3
+  },
+  "duration": {
+    "total_minutes": 10,
+    "format": "seturi de 2 minute de joc continuu, cu pierderi/recuperări repetate ale mingii, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Jocul e continuu 3v2, cu ambele echipe alternând între posesie și recuperare de mai multe ori pe set — nu se oprește la fiecare pierdere de minge.",
+      "why": "Creează momente reale, repetate, de recuperare a mingii în interiorul aceluiași set, exact contextul în care decizia trebuie exersată — reglaj ales pentru acest exercițiu, nu un prag validat de cercetare."
+    },
+    {
+      "rule": "Jucătorul care recuperează mingea nu are voie să paseze în primele 1-2 secunde — trebuie mai întâi să controleze și să privească.",
+      "why": "Previne reflexul automat de pasă înapoi imediată, obligând la secvența control-privire-decizie deja documentată în principiul Tranziția la câștigarea mingii."
+    }
+  ],
+  "step_by_step": [
+    "Cinci jucători: trei într-o echipă, doi în cealaltă (relația 3v2 se păstrează, echipele alternează rolul de „3” la fiecare set).",
+    "Jocul curge continuu; la fiecare recuperare a mingii, jucătorul care a recuperat controlează mai întâi, apoi privește spațiul.",
+    "Dacă drumul înainte e liber, alege progresia; dacă nu, alege sprijinul lateral sau din spate (comportament deja exersat în EX-0001-EX-0006).",
+    "Jocul continuă până la următoarea pierdere/recuperare, fără oprire.",
+    "Rotație: echipele se schimbă la fiecare set de 2 minute."
+  ],
+  "rotation": "Rotație de roluri (3 vs. 2) la fiecare set de 2 minute; toți cei 5 jucători trec prin ambele configurații.",
+  "transition": "Trecere directă la EX-0013 fără pauză de reorganizare — grup nou de 3 pentru sprijinul pe culoar lateral.",
+  "child_message": "Ai recuperat mingea. Controleaz-o întâi, uită-te — ai loc să mergi înainte sau ai nevoie de un coleg aproape?",
+  "why_this_message": "Mesaj reutilizat direct din principiul canonic Tranziția la câștigarea mingii — separă explicit controlul, privirea și decizia, fără să impună un răspuns corect universal.",
+  "problem_being_solved": "Imediat după ce recuperează mingea, mulți copii pasează automat înapoi din reflex de siguranță, chiar și atunci când exista un drum liber înainte — decizia progresie/sprijin exersată static (EX-0001-EX-0006) nu apare încă automat în momentul real al recuperării.",
+  "information_children_must_notice": [
+    "dacă mingea poate fi controlată fără presiune imediată",
+    "spațiul liber în față, chiar în momentul recuperării",
+    "coechipierii disponibili și unghiul lor, dacă drumul înainte nu e liber"
+  ],
+  "decision_children_must_learn": "Să aleagă între progresie și sprijin exact în funcție de spațiul observat imediat după recuperare, nu după un reflex automat de pasă înapoi.",
+  "rationales": {
+    "tactical": "Decizia progresie-sau-sprijin exersată deja static (EX-0001-EX-0006) trebuie să apară și în momentul real, dinamic, al recuperării mingii, nu doar în posesie stabilă.",
+    "perceptual": "Copilul trebuie să observe spațiul într-un moment de tranziție rapidă, nu într-o fază de joc deja organizată.",
+    "decisional": "Aceeași decizie (unghi de sprijin, progresie vs. sprijin) e acum declanșată de un eveniment nou — recuperarea mingii — nu de o poziție statică de start.",
+    "cognitive": "Secvența control-privire-decizie e scurtă și memorabilă, fără să fie un algoritm rigid impus copilului.",
+    "psychological": "Copilul care alege sprijinul nu e etichetat fricos, iar cel care progresează nu e etichetat iresponsabil — ambele sunt decizii valide, în funcție de ce a văzut.",
+    "technical": "Prima atingere curată sub presiune moderată e condiția tehnică pentru ca privirea și decizia să aibă loc.",
+    "social": "Coechipierii apropiați trebuie să ofere opțiuni reale de sprijin chiar din primele secunde după recuperare, nu doar prezență pasivă."
+  },
+  "age_appropriateness": "La 10–11 ani, secvența control-privire-decizie e arătată mai întâi dintr-un moment oprit, apoi lăsată să apară natural în jocul continuu; grupele 2015 și 2016 rămân împreună, cu reglaj individual al presiunii inițiale la recuperare.",
+  "possible_misinterpretations": [
+    "Copilul crede că trebuie mereu să progreseze după recuperare, ca regulă fixă.",
+    "Copilul crede că trebuie mereu să paseze în siguranță, pierzând ocazii reale de progresie."
+  ],
+  "task_risks": [
+    "Presiunea inițială prea mare la recuperare poate elimina orice șansă de control curat.",
+    "Teren prea mic poate face imposibilă orice progresie reală, chiar și atunci când decizia corectă ar fi să progreseze."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Dă-o înapoi mereu când recuperezi!",
+      "reason": "Impune reflexul exact pe care exercițiul îl testează și încearcă să-l înlocuiască cu o decizie reală."
+    },
+    {
+      "phrase": "Atacă imediat ce ai recuperat-o!",
+      "reason": "Elimină controlul și privirea, transformând graba într-o regulă fixă — respinsă explicit de principiul canonic."
+    }
+  ],
+  "understanding_check": [
+    "primul control rămâne curat sub presiune moderată la recuperare, în majoritatea repetițiilor",
+    "alegerea dintre progresie și sprijin se potrivește vizibil cu spațiul disponibil, nu e automată"
+  ],
+  "response_if_not_understood": [
+    "oprește jocul chiar după o recuperare și arată drumul liber care a existat, dacă mingea a fost pasată automat înapoi",
+    "reintroduce regula pauzei de 1-2 secunde înainte de pasă, dacă reflexul automat persistă"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Suficient de mare pentru ca progresia reală să fie posibilă, dar suficient de mic pentru ca recuperările să fie frecvente în interiorul unui singur set.",
+  "too_small_signs": [
+    "nu există spațiu real pentru progresie, indiferent de decizie",
+    "recuperările devin haotice, cu coliziuni frecvente"
+  ],
+  "too_large_signs": [
+    "recuperările devin prea rare pentru a exersa decizia de mai multe ori per set",
+    "presiunea la recuperare dispare complet, exercițiul devine identic cu posesia stabilă din EX-0004"
+  ],
+  "regression": [
+    "reintroduce pauza obligatorie de 1-2 secunde după recuperare, dacă reflexul automat de pasă înapoi persistă",
+    "reduce numărul de adversari activi în faza de recuperare"
+  ],
+  "progression": [
+    "trecere la EX-0013 (sprijin pe culoar lateral)",
+    "elimină pauza obligatorie, lăsând decizia complet la viteza reală a jocului"
+  ],
+  "coach_questions": [
+    {
+      "question": "Ce ai văzut chiar după ce ai recuperat mingea?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Exista drum liber înainte, sau chiar trebuia să cauți sprijin?",
+      "when": "după o recuperare urmată de pasă înapoi automată"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Control, apoi privire, apoi alegere — în ordinea asta."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ai văzut drumul liber și ai progresat — exact asta căutam!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "copilul pasează automat înapoi imediat după recuperare, fără să privească spațiul din față",
+      "possible_causes": [
+        "reflexul de siguranță domină sub presiunea momentului de recuperare",
+        "decizia exersată static (EX-0001-EX-0006) nu s-a transferat încă în context dinamic"
+      ]
+    },
+    {
+      "observation": "copilul progresează forțat chiar și când adversarul e aproape și drumul nu e cu adevărat liber",
+      "possible_causes": [
+        "graba de a aplica noul comportament fără o privire reală",
+        "nu a evaluat corect distanța adversarului"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "controlul rămâne curat la recuperare în cel puțin jumătate din repetiții",
+    "alegerea dintre progresie și sprijin se potrivește cu spațiul observat, nu e automată, în majoritatea repetițiilor"
+  ],
+  "match_transfer": "În meci, jucătorul controlează curat mingea recuperată, privește real spațiul înainte de a alege, iar decizia dintre progresie și sprijin se potrivește cu situația reală, nu cu un reflex automat de pasă înapoi — transferul spre meciul oficial rămâne neconfirmat fără o pilotare reală pe teren.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0005, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0047",
+    "SRC-0048"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.tranzitia-la-castigarea-mingii", "principle.progresie-si-sprijin"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C07"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C11", "COACH-C14"],
+  "related_pedagog_lesson_ids": ["CH-0103"],
+  "related_coach_lesson_ids": ["CH-0407", "CH-0406"],
+  "child_action": "Controlează mingea recuperată, privește real spațiul din față și alege între progresie și sprijin în funcție de ce vede, nu din reflex automat.",
+  "coach_focus": "Observarea secvenței control-privire-decizie la fiecare recuperare, nu doar rezultatul final al fazei.",
+  "do_not_assume": [
+    "O pasă înapoi după recuperare nu e automat greșită — poate fi exact decizia corectă dacă drumul înainte era cu adevărat blocat.",
+    "Faptul că un copil ezită după recuperare nu înseamnă că a greșit — poate fi tocmai secvența control-privire-decizie în desfășurare."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de pasă automată înapoi, fără nicio privire reală spre spațiul din față, observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "O singură pasă înapoi într-o situație ambiguă, unde drumul înainte nu era clar liber.",
+    "O ezitare vizibilă de 1-2 secunde după recuperare — face parte din secvența exersată, nu e o greșeală."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul corectează orice pasă înapoi ca fiind greșită, indiferent de situația reală din spațiu.",
+      "why_it_happens": "Confuzia între „progresia e obiectivul acestui exercițiu” și „progresia e mereu decizia corectă” — decizia rămâne situațională, nu impusă."
+    }
+  ],
+  "coach_reflection": [
+    "Am evaluat decizia copilului în funcție de spațiul real disponibil, sau am presupus că progresia era mereu răspunsul corect?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului, pauza obligatorie de 1-2 secunde și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 10/15/18 jucători și 1-2 antrenori (grupuri de 5, rotație de roluri la fiecare set); la alte efective, se organizează cu grupuri mixte, folosind rotația documentată în capitolul despre organizare și siguranță.",
+  "assessment_ref": "ASM-0001"
+}

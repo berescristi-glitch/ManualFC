@@ -1,0 +1,227 @@
+{
+  "id": "SES-0006",
+  "title": "Sprijinul și unghiul de pasă — transfer complet, jocuri variate",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "duration_min": 75,
+  "primary_objective": "Închide arcul extins (EX-0001-EX-0013) cu două jocuri de transfer noi, la relații numerice diferite de EX-0005 (3v3 în EX-0014, 5v5 în EX-0015), oferind antrenorului variație reală pentru sezon și verificând dacă principiile transferă dincolo de un singur format deja cunoscut.",
+  "observable_behaviours": [
+    "cel puțin un comportament exersat izolat de-a lungul întregului arc apare autonom, în ambele jocuri",
+    "echipele folosesc lățimea și adâncimea terenului la ambele formate, nu doar la cel mai mic"
+  ],
+  "players_range": {
+    "min": 10,
+    "max": 18,
+    "note": "EX-0014 cere grupuri de 6 (3v3); EX-0015 cere grupuri de 10 (5v5) — la efective sub 10, EX-0015 se joacă redus (4v4, ca EX-0005), păstrând aceeași logică de zonă de finalizare. Vezi configuratorul de grup pentru numărul exact de grupe, spațiu și material."
+  },
+  "operational_contingencies": [
+    {
+      "scenario": "3 copii ajung după ce ședința a început",
+      "guidance": "PRACTICE_HEURISTIC: la ambele jocuri, copiii întârziați intră la pauza dintre reprize, nu în mijlocul unei reprize — schimbarea de jucători în timpul fazei active ar întrerupe exact comportamentul de transfer pe care segmentul îl observă."
+    },
+    {
+      "scenario": "Terenul disponibil e mai mic decât dimensiunea canonică (24×16m pentru EX-0014, 32×22m pentru EX-0015)",
+      "guidance": "PRACTICE_HEURISTIC: pentru EX-0015 în special, un teren prea mic schimbă natura jocului reprezentativ mai mult decât la exercițiile izolate. Dacă spațiul complet nu e disponibil, redu la formatul mai mic (EX-0014, sau chiar EX-0005) în loc să comprimi terenul unui joc 5v5 sub pragul la care mișcarea reală mai are sens."
+    },
+    {
+      "scenario": "Efectiv sub 10 jucători, insuficient pentru 5v5 complet",
+      "guidance": "PRACTICE_HEURISTIC: joacă EX-0015 la format redus (4v4, ca EX-0005), păstrând zona de finalizare — logica exercițiului nu depinde strict de numărul exact de jucători."
+    },
+    {
+      "scenario": "Un joc eșuează — niciun comportament exersat izolat nu apare deloc",
+      "guidance": "PRACTICE_HEURISTIC: notează asta ca informație validă pentru evaluare (ASM-0001) — jocul liber final rămâne oricum planificat, nu se anulează ședința. Revino la exercițiile izolate relevante în ședința următoare."
+    },
+    {
+      "scenario": "Tranziția de la EX-0014 (24×16m) la EX-0015 (32×22m) durează prea mult",
+      "guidance": "PRACTICE_HEURISTIC: dacă spațiul o permite, marchează dinainte conturul complet de 32×22m și folosește doar o parte din el pentru EX-0014. Dacă tranzițiile tot depășesc timpul alocat, scurtează întâi ultimele minute din segmentul de încheiere, niciodată timpul dedicat reflecției."
+    }
+  ],
+  "duration_variant_60min": {
+    "total_minutes": 60,
+    "policy_note": "Variantă de 60 minute — PRACTICE_HEURISTIC, o adaptare operațională, nu o durată validată de cercetare. Structura de 2 reprize la ambele jocuri rămâne intactă (doar mai scurtă); reflecția finală păstrează bucla completă a întregului arc.",
+    "segments": [
+      { "segment_index": 0, "start_min": 0, "end_min": 8, "reduction_note": "Redus cu 2 min: reamintirea rămâne verbală și scurtă; se renunță la timpul de așteptare pentru răspunsuri multiple." },
+      { "segment_index": 1, "start_min": 8, "end_min": 21, "reduction_note": "Redus cu 3 min: reprize mai scurte la EX-0014, păstrând ambele reprize — obiectivul central (transfer la 3v3) rămâne testat." },
+      { "segment_index": 2, "start_min": 21, "end_min": 40, "reduction_note": "Redus cu 5 min, păstrând ambele reprize la EX-0015 — tăierea unei reprize întregi ar elimina jumătate din oportunitatea de a observa transferul la formatul cel mai mare." },
+      { "segment_index": 3, "start_min": 40, "end_min": 52, "reduction_note": "Redus cu 3 min: bucla PROBLEMĂ→CONCEPT→EXERCIȚIU→TRANSFER rămâne completă în întrebările de reflecție ale întregului arc." },
+      { "segment_index": 4, "start_min": 52, "end_min": 60, "reduction_note": "Redus cu 2 min: se renunță din timpul liber final pentru echipament, nu din reflecția ghidată." }
+    ]
+  },
+  "equipment": [
+    "conuri de delimitare pentru ambele terenuri",
+    "porți mici sau conuri mari pentru porți mini (EX-0014)",
+    "porți mari sau porți mici cu portar opțional (EX-0015)",
+    "mingi de rezervă",
+    "veste de marcaj pentru două culori de echipă"
+  ],
+  "surface_plan": {
+    "layout": "Teren de 24x16m pentru EX-0014 (3v3), extins la 32x22m pentru EX-0015 (5v5), amplasate cu spațiu de siguranță de minimum 3m.",
+    "rotation": "Schimb de porți la pauza dintre reprize, în interiorul fiecărui joc; fără rotație de jucători."
+  },
+  "segments": [
+    {
+      "start_min": 0,
+      "end_min": 10,
+      "title": "Încălzire cu reamintire scurtă a întregului arc",
+      "exercise_ids": [],
+      "coach_message": "Cine își amintește ceva din exercițiile pe care le-am făcut până acum despre unde vă mutați ca să ajutați coechipierul?",
+      "why_now": "Rutină de siguranță combinată cu o reamintire scurtă a întregului arc (EX-0001-EX-0013), nu o reluare completă — ședințele anterioare au consolidat deja fiecare concept izolat.",
+      "methodological_rationale": "Reamintirea scurtă, nu re-predarea, respectă timpul disponibil real al unei ședințe de club.",
+      "observation_focus": [
+        "participarea activă la reamintirea verbală, nu doar execuția fizică"
+      ],
+      "intervention_criteria": [
+        "dacă niciun copil nu-și amintește elemente de bază, se numesc verbal, scurt, înainte de a continua"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil răspunde parțial sau ezitant la reamintire, nu se corectează imediat — se lasă și alți copii să completeze."
+      ],
+      "coach_focus": "Reamintire scurtă, nu re-predare completă — verifică participarea activă.",
+      "verification_method": "Cel puțin un copil poate numi verbal un element din arcul exersat anterior.",
+      "transition_logistics": "Formarea a două echipe de 3 pentru EX-0014."
+    },
+    {
+      "start_min": 10,
+      "end_min": 26,
+      "title": "EX-0014 — Joc mic 3v3 cu două porți",
+      "exercise_ids": [
+        "EX-0014"
+      ],
+      "coach_message": "Jucați ca de obicei — folosiți ce ați exersat dacă vă ajută!",
+      "why_now": "Primul test de transfer al ședinței, la o relație numerică diferită de EX-0005, oferind variație reală față de un singur joc de transfer repetat identic.",
+      "methodological_rationale": "Testează transferul la o relație numerică nouă (3v3), nu doar la formatul deja cunoscut (4v4).",
+      "observation_focus": [
+        "apariția autonomă a unui unghi de sprijin util, fără comandă de pe margine"
+      ],
+      "intervention_criteria": [
+        "fără comenzi verbale în timpul fazei active; observare tăcută"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul țintă nu apare deloc într-o repriză — se notează ca informație validă, nu se întrerupe jocul."
+      ],
+      "coach_focus": "Non-intervenție verbală completă în timpul fazei active — testul de transfer, nu de performanță izolată.",
+      "verification_method": "La pauza dintre reprize, notează dacă a apărut cel puțin un comportament țintă.",
+      "transition_logistics": "Extindere la teren de 32x22m și formare de echipe de 5 pentru EX-0015."
+    },
+    {
+      "start_min": 26,
+      "end_min": 50,
+      "title": "EX-0015 — Joc mic 5v5 cu zonă de finalizare",
+      "exercise_ids": [
+        "EX-0015"
+      ],
+      "coach_message": "Jucați ca de obicei — folosiți ce ați exersat, mai ales aproape de poartă!",
+      "why_now": "Al doilea test de transfer al ședinței, la formatul cel mai apropiat de meciul real din întregul arc, cu o zonă de finalizare care schimbă valoarea deciziilor aproape de poartă.",
+      "methodological_rationale": "Ultimul pas al progresiei complete (EX-0001-EX-0015) — verifică transferul la scara cea mai mare, nu doar performanța în formate mai mici.",
+      "observation_focus": [
+        "apariția a cel puțin două comportamente exersate izolat, în momente diferite ale jocului"
+      ],
+      "intervention_criteria": [
+        "fără comenzi verbale în timpul fazei active; observare tăcută, notând momentul apariției fiecărui comportament"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul țintă nu apare deloc într-o repriză — se notează ca informație validă, nu se întrerupe jocul."
+      ],
+      "coach_focus": "Non-intervenție verbală completă — testul de transfer la scara cea mai mare din întregul arc.",
+      "verification_method": "La pauza dintre reprize, notează câte comportamente exersate izolat au apărut și în ce moment.",
+      "transition_logistics": "Pauză scurtă pentru reflecția capstone a întregii ședințe."
+    },
+    {
+      "start_min": 50,
+      "end_min": 65,
+      "title": "Reflecție capstone: tot arcul, de la problemă la transfer",
+      "exercise_ids": [],
+      "coach_message": "Din tot ce am exersat — de la primul exercițiu cu umbra adversarului până la jocul de azi — ce ați folosit fără să vă gândiți la el?",
+      "why_now": "Reflecția finală leagă explicit întregul arc (EX-0001-EX-0015) de cele două jocuri de transfer din această ședință, închizând bucla PROBLEMĂ→CONCEPT→EXERCIȚIU→TRANSFER la scara întregului sistem, nu doar a unei ședințe.",
+      "methodological_rationale": "Această reflecție e mai lungă decât cea a unei ședințe obișnuite, deliberat, pentru că închide un arc de 15 exerciții, nu doar 2-3.",
+      "observation_focus": [
+        "capacitatea copiilor de a lega concret un moment din joc de un exercițiu specific din arc"
+      ],
+      "intervention_criteria": [
+        "întrebări deschise; niciun verdict impus dacă un copil nu poate încă face legătura"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil nu poate încă lega jocul de exercițiile anterioare, nu se impune un verdict — rămâne informație pentru ședințele viitoare."
+      ],
+      "coach_focus": "Întrebări deschise care leagă explicit ambele jocuri de întregul arc de exerciții exersat anterior.",
+      "verification_method": "Cel puțin un copil poate numi o situație din unul dintre cele două jocuri similară cu un exercițiu specific din arc.",
+      "transition_logistics": "Ultimele minute libere pentru echipament, în interiorul segmentului următor."
+    },
+    {
+      "start_min": 65,
+      "end_min": 75,
+      "title": "Joc liber de relaxare și încheiere",
+      "exercise_ids": [],
+      "coach_message": "Jucați liber, fără reguli speciale — azi am închis un arc întreg de exerciții!",
+      "why_now": "Închidere pozitivă a unei ședințe capstone, cu timp activ suplimentar fără presiune evaluativă.",
+      "methodological_rationale": "Nu se introduc constrângeri noi la finalul unei ședințe cu doi timpi de transfer complet și o reflecție extinsă.",
+      "observation_focus": [
+        "siguranța fizică generală"
+      ],
+      "intervention_criteria": [
+        "doar pentru siguranță fizică sau comportament nesportiv"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul de joc liber, chiar dacă nu reflectă exercițiile exersate, nu justifică o intervenție tactică."
+      ],
+      "coach_focus": "Siguranță fizică generală, nu conținut tehnico-tactic.",
+      "verification_method": "Nu se aplică o verificare de conținut la acest segment.",
+      "transition_logistics": "Final de ședință și de arc; echipamentul se strânge în timpul acestui segment."
+    }
+  ],
+  "message_foundations": [
+    {
+      "message": "Jucați ca de obicei — folosiți ce ați exersat dacă vă ajută!",
+      "source_principle": "principle.transfer-autonom-cooperare",
+      "claim_ids": [
+        "CLM-0030",
+        "CLM-0035"
+      ]
+    },
+    {
+      "message": "Din tot ce am exersat, ce ați folosit fără să vă gândiți la el?",
+      "source_principle": "principle.transfer-autonom-cooperare",
+      "claim_ids": [
+        "CLM-0037"
+      ]
+    }
+  ],
+  "session_rationale": "Ședința de închidere a arcului extins oferă antrenorului două jocuri de transfer distincte (3v3, 5v5), la relații numerice diferite de EX-0005, pentru variație reală de-a lungul unui sezon — un antrenor nu trebuie să repete identic același joc de transfer la fiecare ciclu de exersare a temei. Separarea reflecției într-un segment capstone mai lung (15 minute, față de 10 în ședințele anterioare) reflectă o alegere practică ManualFC: închiderea unui arc de 15 exerciții cere mai mult timp decât închiderea unei singure ședințe.",
+  "match_theme": "Transferul complet al deciziilor de sprijin și unghi de pasă exersate de-a lungul întregului arc, verificat la două relații numerice diferite de formatul deja cunoscut.",
+  "reflection": [
+    "Din tot ce am exersat — de la primul exercițiu cu umbra adversarului până la jocul de azi — ce ați folosit fără să vă gândiți la el?",
+    "Care dintre cele două jocuri de azi (3v3 sau 5v5) v-a permis mai ușor să folosiți ce ați exersat?"
+  ],
+  "sources": [
+    "SRC-0029",
+    "SRC-0034",
+    "SRC-0035",
+    "SRC-0036",
+    "SRC-0037"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "child_objectives": [
+    "Aplică autonom deciziile exersate în arcul EX-0001-EX-0013 într-un joc de transfer la relație numerică nouă (3v3, EX-0014).",
+    "Aplică autonom aceleași decizii la formatul cel mai apropiat de meciul real din arc (5v5 cu zonă de finalizare, EX-0015).",
+    "Leagă verbal, la reflecția finală, momente concrete din cele două jocuri de exerciții specifice din întregul arc."
+  ],
+  "coach_objectives": [
+    {
+      "objective": "Verifică transferul la două relații numerice noi, nu doar la formatul deja cunoscut din EX-0005.",
+      "coach_competency_id": "COACH-C14"
+    },
+    {
+      "objective": "Conduce o reflecție capstone care leagă explicit întregul arc de 15 exerciții de cele două jocuri finale, nu doar de ședința curentă.",
+      "coach_competency_id": "COACH-C17"
+    }
+  ],
+  "reflection_v2": {
+    "child_game_dimension": [
+      "Comportamentele exersate izolat au apărut mai ușor la 3v3 sau la 5v5? Ce spune asta despre complexitatea fiecărui format?",
+      "Copiii au putut lega concret momente din joc de exerciții specifice din arc, sau doar vag de „ce am exersat”?"
+    ],
+    "coach_dimension": [
+      "Am rezistat impulsului de a interveni tactic în ambele jocuri de transfer?",
+      "Am condus reflecția capstone ca pe o închidere reală a arcului, sau ca pe o reflecție obișnuită de final de ședință?"
+    ]
+  }
+}

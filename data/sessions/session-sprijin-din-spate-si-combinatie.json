@@ -1,0 +1,225 @@
+{
+  "id": "SES-0003",
+  "title": "Sprijinul și unghiul de pasă — sprijin din spate și combinație",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "duration_min": 75,
+  "primary_objective": "Extinde decizia de bază exersată în SES-0001-SES-0002 cu două direcții noi — unghiul de sprijin din spate (EX-0006) și combinația scurtă pentru a ieși din umbra unui adversar bine poziționat (EX-0007) — păstrând geometria simplă a grupurilor de 3.",
+  "observable_behaviours": [
+    "copiii cer mingea în spate ca alegere activă, nu ca soluție de rezervă",
+    "copiii folosesc o combinație scurtă (pasă și mișcare imediată) când repoziționarea simplă nu mai creează un unghi nou"
+  ],
+  "players_range": {
+    "min": 8,
+    "max": 18,
+    "note": "Grupuri de 3 (EX-0006-EX-0007), la fel ca SES-0001; orice efectiv care nu se împarte exact la 3 lasă copii în așteptare, integrați prin rotație — vezi configuratorul de grup pentru numărul exact de grupe, spațiu și material la fiecare efectiv de la 8 la 18."
+  },
+  "operational_contingencies": [
+    {
+      "scenario": "3 copii ajung după ce ședința a început",
+      "guidance": "PRACTICE_HEURISTIC: nu întrerupe grupurile de 3 deja formate la mijlocul unei repetiții. Copiii întârziați așteaptă vizibil lângă cea mai apropiată stație și intră la următoarea rotație naturală (la 90 de secunde în EX-0006, la 2 minute în EX-0007)."
+    },
+    {
+      "scenario": "Terenul disponibil e mai mic decât dimensiunea canonică a exercițiului",
+      "guidance": "PRACTICE_HEURISTIC: nu micșora o stație sub pragul semnalat explicit în «too_small_signs» al exercițiului respectiv. Dacă spațiul total nu permite toate stațiile la dimensiunea canonică, redu numărul de stații paralele, nu dimensiunea fiecăreia."
+    },
+    {
+      "scenario": "Copiii confundă EX-0007 cu EX-0006 și repetă mecanic repoziționarea simplă în loc de combinație",
+      "guidance": "PRACTICE_HEURISTIC: nu trece la faza dinamică a EX-0007 până când grupul nu a arătat, măcar static, diferența (pasă + mișcare imediată, nu doar mișcare). Revino la etapa statică a exercițiului dacă tiparul vechi persistă."
+    },
+    {
+      "scenario": "Un exercițiu eșuează — niciun copil nu reușește nici cu regresia maximă",
+      "guidance": "PRACTICE_HEURISTIC: tratează eșecul ca informație despre exercițiu, nu despre copii. Oprește segmentul, folosește imediat o întrebare de reflecție, apoi treci la jocul liber mai devreme."
+    },
+    {
+      "scenario": "Tranziția între EX-0006 și EX-0007 durează prea mult",
+      "guidance": "PRACTICE_HEURISTIC: pregătește materialul ambelor stații înainte de începerea ședinței. Dacă tranzițiile tot depășesc timpul alocat, scurtează întâi jocul liber final, niciodată reflecția."
+    }
+  ],
+  "duration_variant_60min": {
+    "total_minutes": 60,
+    "policy_note": "Variantă de 60 minute — PRACTICE_HEURISTIC, o adaptare operațională, nu o durată validată de cercetare. Siguranța și reflecția rămân aproape intacte; exercițiile centrale pierd repetări, nu concepte; jocul liber final e comprimat cel mai mult.",
+    "segments": [
+      { "segment_index": 0, "start_min": 0, "end_min": 8, "reduction_note": "Redus cu 2 min: timpul de organizare de la începutul rutinei, nu execuția ei — rutina de siguranță rămâne completă." },
+      { "segment_index": 1, "start_min": 8, "end_min": 20, "reduction_note": "Redus cu 2 min: mai puține repetări ale rotației de 90 secunde, nu mai puține concepte — fiecare grup exersează decizia de bază de cel puțin două ori." },
+      { "segment_index": 2, "start_min": 20, "end_min": 33, "reduction_note": "Redus cu 3 min: mai puține seturi de combinație continuă — etapa statică (unde trebuie explicată diferența față de EX-0006) rămâne intactă." },
+      { "segment_index": 3, "start_min": 33, "end_min": 41, "reduction_note": "Comprimat, nu eliminat — cele două întrebări de reflecție rămân; se renunță la timpul de așteptare între răspunsuri." },
+      { "segment_index": 4, "start_min": 41, "end_min": 60, "reduction_note": "Cea mai mare reducere relativă — jocul liber e timp activ suplimentar, nu o fază pedagogică esențială; rămân totuși 19 minute, nu eliminat complet." }
+    ]
+  },
+  "equipment": [
+    "conuri de delimitare pentru toate stațiile",
+    "mingi de rezervă suficiente pentru fiecare stație",
+    "veste de marcaj pentru adversari"
+  ],
+  "surface_plan": {
+    "layout": "2-4 stații paralele de 12x9m (EX-0006) sau 14x10m (EX-0007), distanțate cu minimum 3m între ele pentru siguranță.",
+    "rotation": "Grupurile de 3 rotesc rolul (2 în posesie, 1 adversar) în interiorul stației, fără a schimba stația între EX-0006 și EX-0007."
+  },
+  "segments": [
+    {
+      "start_min": 0,
+      "end_min": 10,
+      "title": "Încălzire și rutină de siguranță",
+      "exercise_ids": [],
+      "coach_message": "Începem cu rutina scurtă de siguranță, ca de fiecare dată.",
+      "why_now": "Rutină structurată de încălzire cu efect măsurat asupra riscului de accidentare (programul oficial FIFA 11+ Kids), reutilizată din capitolul despre organizare și siguranță, nu reinventată aici.",
+      "methodological_rationale": "Siguranța rămâne prima prioritate, indiferent de tema tehnico-tactică a ședinței.",
+      "observation_focus": [
+        "execuția corectă a mișcărilor de încălzire, nu graba de a termina"
+      ],
+      "intervention_criteria": [
+        "intervenție imediată doar pentru risc fizic real, altfel se lasă rutina să curgă"
+      ],
+      "non_intervention_criteria": [
+        "O ezitare izolată la un exercițiu de încălzire nu justifică oprirea rutinei — se corectează individual, din mers, doar la risc fizic real."
+      ],
+      "coach_focus": "Verifică execuția corectă a mișcărilor de încălzire, nu doar viteza de finalizare.",
+      "verification_method": "Observare directă a execuției; nicio evaluare verbală necesară la acest segment.",
+      "transition_logistics": "Copiii rămân în grupuri de 3, formate dinainte, pentru tranziția directă la EX-0006."
+    },
+    {
+      "start_min": 10,
+      "end_min": 24,
+      "title": "EX-0006 — Un unghi în spate, nu doar în lateral",
+      "exercise_ids": [
+        "EX-0006"
+      ],
+      "coach_message": "Dacă înainte și lateral sunt închise, în spate e liber — cere-o acolo, nu e o soluție proastă!",
+      "why_now": "Introduce a treia direcție de sprijin (spate) abia după ce direcția laterală (SES-0001) e deja stabilă, respectând progresia de la simplu la complex.",
+      "methodological_rationale": "Numirea explicită a pasei înapoi ca alegere validă, nu ca soluție de rezervă, cere timp dedicat, izolat de alte concepte noi.",
+      "observation_focus": [
+        "cererea clară a mingii în spate atunci când e singura opțiune reală deschisă"
+      ],
+      "intervention_criteria": [
+        "validare verbală explicită a pasei înapoi ca decizie bună, la fel de clar ca la o pasă înainte"
+      ],
+      "non_intervention_criteria": [
+        "O singură repetiție în care copilul a preferat să aștepte în loc să ceară imediat unghiul din spate."
+      ],
+      "coach_focus": "Validarea verbală explicită a pasei înapoi ca decizie bună, nu doar observarea reușitei tehnice.",
+      "verification_method": "La pauza dintre seturi, verifică dacă cel puțin jumătate din repetiții arată cerere clară a unghiului din spate, fără ezitare.",
+      "transition_logistics": "Aceleași grupuri de 3, aceeași stație — se activează constrângerea de combinație pentru EX-0007."
+    },
+    {
+      "start_min": 24,
+      "end_min": 40,
+      "title": "EX-0007 — Unu-doi pentru a ieși din umbră",
+      "exercise_ids": [
+        "EX-0007"
+      ],
+      "coach_message": "Dă-o și pleacă imediat — nu aștepta pe loc să ți-o dea înapoi în același loc!",
+      "why_now": "Adaugă combinația ca a doua cale de a ieși din umbra unui adversar, abia după ce repoziționarea simplă (EX-0006, SES-0001) e deja stabilă.",
+      "methodological_rationale": "Secvența pasă-mișcare-recepție se arată mai întâi static, apoi în joc continuu, pentru a nu suprapune două concepte noi simultan.",
+      "observation_focus": [
+        "mișcarea imediată după pasă, nu doar reușita tehnică a celor două pase"
+      ],
+      "intervention_criteria": [
+        "oprire scurtă pentru a arăta exact unde ar fi trebuit să se deplaseze copilul, doar la tipar repetat de a rămâne pe loc"
+      ],
+      "non_intervention_criteria": [
+        "O singură repetiție fără mișcare imediată după pasă."
+      ],
+      "coach_focus": "Observarea mișcării imediate după pasă, nu doar reușita tehnică a combinației.",
+      "verification_method": "La pauza dintre seturi, verifică dacă combinația (pasă + mișcare + retur în spațiul nou) reușește în cel puțin jumătate din repetiții.",
+      "transition_logistics": "Strângerea materialului; pregătire pentru reflecția de închidere."
+    },
+    {
+      "start_min": 40,
+      "end_min": 50,
+      "title": "Reflecție ghidată de închidere",
+      "exercise_ids": [],
+      "coach_message": "Când ați cerut mingea în spate azi, cum v-ați simțit — ca o soluție bună sau ca un eșec?",
+      "why_now": "Reflecția leagă explicit cele două concepte noi (sprijin din spate, combinație) de percepția copiilor despre valoarea lor, nu doar de execuția tehnică.",
+      "methodological_rationale": "Reflecția scurtă la final consolidează transferul, fără o durată cronometrată fixă validată de cercetare.",
+      "observation_focus": [
+        "capacitatea copiilor de a numi, într-o propoziție, diferența dintre cele două exerciții"
+      ],
+      "intervention_criteria": [
+        "întrebări deschise, copiii formulează concluzia, nu antrenorul într-un monolog"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil nu poate încă formula o observație, nu se impune un răspuns — se trece la următorul copil sau la întrebarea următoare."
+      ],
+      "coach_focus": "Întrebări deschise; copiii formulează concluzia, nu antrenorul într-un monolog.",
+      "verification_method": "Cel puțin un copil poate numi, într-o propoziție, de ce pasa înapoi nu e un eșec.",
+      "transition_logistics": "Încheierea segmentului de reflecție; echipamentul se strânge în timpul jocului liber final."
+    },
+    {
+      "start_min": 50,
+      "end_min": 75,
+      "title": "Joc liber de relaxare",
+      "exercise_ids": [],
+      "coach_message": "Jucați liber, fără reguli speciale — azi ați exersat destul!",
+      "why_now": "Închidere pozitivă a ședinței, timp activ suplimentar fără presiune evaluativă.",
+      "methodological_rationale": "Nu se introduc constrângeri noi la finalul unei ședințe cu încărcare cognitivă deja ridicată (2 concepte noi).",
+      "observation_focus": [
+        "siguranța fizică generală"
+      ],
+      "intervention_criteria": [
+        "doar pentru siguranță fizică sau comportament nesportiv"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul de joc liber, chiar dacă nu reflectă exercițiile exersate, nu justifică o intervenție tactică."
+      ],
+      "coach_focus": "Siguranță fizică generală, nu conținut tehnico-tactic.",
+      "verification_method": "Nu se aplică o verificare de conținut la acest segment — doar supraveghere de siguranță.",
+      "transition_logistics": "Final de ședință; echipamentul se strânge în timpul acestui segment."
+    }
+  ],
+  "message_foundations": [
+    {
+      "message": "Dacă înainte și lateral sunt închise, în spate e liber — cere-o acolo, nu e o soluție proastă!",
+      "source_principle": "principle.progresie-si-sprijin",
+      "claim_ids": [
+        "CLM-0038",
+        "CLM-0042"
+      ]
+    },
+    {
+      "message": "Dă-o și pleacă imediat — nu aștepta pe loc să ți-o dea înapoi în același loc!",
+      "source_principle": "principle.spatiu-si-unghiuri",
+      "claim_ids": [
+        "CLM-0036",
+        "CLM-0040"
+      ]
+    }
+  ],
+  "session_rationale": "A treia ședință din arc, la câteva zile după SES-0002, adaugă exact două concepte noi — sprijinul din spate și combinația scurtă — păstrând geometria simplă a grupurilor de 3 exersată deja în SES-0001. Limitarea la 2 concepte noi (nu 3, ca în SES-0001) reflectă o alegere practică ManualFC: ambele concepte cer o schimbare reală de percepție față de tiparele deja memorate din EX-0001-EX-0002, deci merită timp dedicat, nu doar adăugat mecanic.",
+  "match_theme": "Extinderea deciziei de sprijin dincolo de unghiul lateral deja exersat — recunoașterea sprijinului din spate ca alegere activă și a combinației ca a doua cale de a ieși din umbra unui adversar.",
+  "reflection": [
+    "Când ați cerut mingea în spate azi, cum v-ați simțit — ca o soluție bună sau ca un eșec?",
+    "Ce ați făcut diferit la EX-0007 față de exercițiul cu unghiul din spate?"
+  ],
+  "sources": [
+    "SRC-0035",
+    "SRC-0037",
+    "SRC-0039",
+    "SRC-0040",
+    "SRC-0041"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "child_objectives": [
+    "Recunoaște unghiul de sprijin din spate ca alegere activă, nu ca soluție de rezervă (EX-0006).",
+    "Folosește o combinație scurtă (pasă și mișcare imediată) pentru a ieși din umbra unui adversar bine poziționat (EX-0007)."
+  ],
+  "coach_objectives": [
+    {
+      "objective": "Validează verbal pasa înapoi la fel de clar cum ar valida o pasă înainte, contracarând asocierea implicită cu eșecul.",
+      "coach_competency_id": "COACH-C05"
+    },
+    {
+      "objective": "Limitează deliberat la 2 concepte noi per ședință, ambele cerând o schimbare reală de percepție față de tiparele deja memorate.",
+      "coach_competency_id": "COACH-C16"
+    }
+  ],
+  "reflection_v2": {
+    "child_game_dimension": [
+      "Cererea mingii în spate a apărut ca alegere clară, sau cu ezitare vizibilă?",
+      "Combinația (pasă + mișcare) a apărut fără să fi fost cerută explicit de antrenor?"
+    ],
+    "coach_dimension": [
+      "Am validat verbal pasa înapoi la fel de des ca pe una înainte, sau am rămas tăcut la ea?",
+      "Am lăsat timp pentru etapa statică a combinației înainte de a cere execuție continuă?"
+    ]
+  }
+}

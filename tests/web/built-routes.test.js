@@ -18,7 +18,10 @@ async function htmlFiles(directory) {
 
 test("built route inventory is complete and every page has one main and one h1", async () => {
   const files = await htmlFiles(distRoot);
-  assert.equal(files.length, 101, "the audited route inventory changed");
+  // TASK-3712: +18 pages from 10 new Gold Standard exercises (EX-0006-EX-0015)
+  // and 4 new sessions (SES-0003-SES-0006, each with a normal page + a
+  // mod-teren page): 101 + 10 + 4*2 = 119.
+  assert.equal(files.length, 119, "the audited route inventory changed");
 
   for (const file of files) {
     const html = await readFile(file, "utf8");

@@ -1,0 +1,199 @@
+{
+  "id": "EX-0013",
+  "title": "Sprijin pe culoar, cu banda aproape",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "consolidare",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copilul aplică decizia de sprijin exersată în spații late (EX-0001-EX-0002) într-un culoar îngust, lung, aproape de bandă, unde lățimea disponibilă lateral e mult mai mică — testând dacă decizia depinde de spațiu sau de tiparul memorat.",
+  "observable_behaviours": [
+    "recunoaște că lățimea limitată schimbă unghiurile posibile și se deplasează în lungime, nu doar lateral",
+    "cere mingea doar când linia de pasă e vizibil deschisă, ca și în EX-0001, dar adaptată la geometria culoarului"
+  ],
+  "players": {
+    "total": 3,
+    "in_possession": 2,
+    "defenders": 1,
+    "neutral_players": 0
+  },
+  "numerical_relation": "2v1",
+  "equipment": [
+    "6 conuri de delimitare",
+    "6-8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 6 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 }
+  ],
+  "field": {
+    "length_m": 16,
+    "width_m": 6,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 8,
+    "format": "seturi de 90 de secunde cu rotație, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Terenul e un culoar lung și îngust (16×6 m), simulând spațiul aproape de bandă, nu un pătrat generos ca în EX-0001.",
+      "why": "Testează dacă decizia de sprijin se adaptează la o geometrie reală de meci (aproape de linia laterală), nu doar la spațiul confortabil de exercițiu — reglaj ales pentru acest exercițiu, nu un prag validat de cercetare."
+    },
+    {
+      "rule": "Adversarul nu poate ataca mingea decât după ce a fost pasată o dată, ca în EX-0001.",
+      "why": "Păstrează aceeași constrângere de bază, astfel încât singura variabilă nouă să fie geometria terenului, nu presiunea de timp."
+    }
+  ],
+  "step_by_step": [
+    "Trei jucători: doi în posesie, un adversar, într-un culoar lung și îngust.",
+    "Purtătorul mingii încearcă să păstreze posesia; coechipierul caută un unghi pe care adversarul nu-l poate acoperi, folosind lungimea culoarului, nu lățimea.",
+    "Adversarul se poziționează pentru a acoperi cât mai mult din opțiunile disponibile în spațiul îngust.",
+    "Rotație: adversarul se schimbă la fiecare 90 de secunde."
+  ],
+  "rotation": "Rotație de adversar la fiecare 90 de secunde; toți cei 3 jucători dintr-un grup trec prin rolul de adversar.",
+  "transition": "Trecere directă la EX-0014 fără pauză de reorganizare — grup nou de 6 pentru jocul mic de transfer 3v3.",
+  "child_message": "Aici nu ai loc în lateral ca înainte — mută-te în lungul culoarului până se deschide un unghi!",
+  "why_this_message": "Reperul rămâne limita observabilă a adversarului, ca în EX-0001, dar aplicată unei geometrii diferite — păstrează alegerea despre direcție la copil, fără să prescrie o poziție fixă.",
+  "problem_being_solved": "Copiii care au exersat decizia de sprijin doar în spații late (EX-0001-EX-0002) pot încerca automat aceeași soluție (deplasare laterală) chiar și atunci când spațiul lateral disponibil e foarte mic, aproape de bandă — un tipar memorat, nu o decizie adaptată la geometria reală.",
+  "information_children_must_notice": [
+    "lățimea reală disponibilă lateral, mult mai mică decât în EX-0001",
+    "spațiul disponibil în lungul culoarului, ca alternativă",
+    "poziția adversarului în raport cu ambele direcții posibile"
+  ],
+  "decision_children_must_learn": "Să aleagă direcția deplasării (laterală sau în lungime) în funcție de spațiul real disponibil, nu de tiparul memorat din exercițiile anterioare.",
+  "rationales": {
+    "tactical": "În spațiu îngust, lățimea nu mai e o resursă reală — unghiul de sprijin trebuie căutat pe altă dimensiune, chiar dacă principiul rămâne același.",
+    "perceptual": "Copilul trebuie să recunoască rapid o geometrie diferită, nu doar să aplice mecanic soluția din EX-0001.",
+    "decisional": "Decizia rămâne aceeași ca structură (unde mă mut pentru un unghi nou), dar spațiul de opțiuni reale s-a schimbat.",
+    "cognitive": "Testarea aceleiași decizii într-un context nou verifică dacă a fost înțeleasă, nu doar memorată mecanic pentru un singur tip de spațiu.",
+    "psychological": "Eșecul inițial în noul context nu înseamnă regresie — poate fi doar nevoia de a recunoaște limitele geometriei noi.",
+    "technical": "Pasele în spațiu îngust cer o precizie ceva mai mare, dar tehnica de bază rămâne cea deja exersată.",
+    "social": "Ambii coechipieri trebuie să recunoască împreună limitele noului spațiu, nu doar unul dintre ei."
+  },
+  "age_appropriateness": "La 10–11 ani, adaptarea unei decizii deja exersate la un context nou se arată direct în joc, cu o singură variabilă schimbată (geometria terenului); grupele 2015 și 2016 rămân împreună, cu reglaj individual al lățimii culoarului.",
+  "possible_misinterpretations": [
+    "Copilul încearcă să se deplaseze lateral oricum, chiar dacă spațiul nu permite, pentru că așa a exersat în EX-0001.",
+    "Copilul crede că lungimea culoarului e infinită și se îndepărtează prea mult, pierzând legătura reală cu purtătorul."
+  ],
+  "task_risks": [
+    "Culoar prea îngust elimină complet opțiunea laterală, făcând exercițiul artificial de restrictiv.",
+    "Adversar prea pasiv nu creează presiune reală asupra deciziei de adaptare."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Stai larg, ca înainte.",
+      "reason": "Repetă mecanic o soluție care nu se potrivește noii geometrii — respinge exact adaptarea pe care exercițiul o cere."
+    },
+    {
+      "phrase": "Nu ai loc aici, oricum.",
+      "reason": "Descurajează căutarea unei soluții adaptate, în loc să ghideze copilul spre recunoașterea spațiului real disponibil."
+    }
+  ],
+  "understanding_check": [
+    "copilul se deplasează predominant în lungul culoarului, nu încearcă lateral fără spațiu real",
+    "unghiul deschis apare fără comandă verbală, adaptat la noua geometrie"
+  ],
+  "response_if_not_understood": [
+    "oprește și arată explicit diferența de lățime față de EX-0001",
+    "mărește temporar lățimea culoarului cu 1-2 m pentru mai mult spațiu de decizie, apoi revino la dimensiunea canonică"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Lățimea redusă simulează deliberat spațiul de lângă bandă; lungimea compensează parțial, oferind o direcție alternativă reală de sprijin.",
+  "too_small_signs": [
+    "lățimea e atât de mică încât nicio deplasare laterală nu creează vreodată un unghi nou",
+    "coliziuni frecvente din cauza spațiului redus"
+  ],
+  "too_large_signs": [
+    "culoarul devine suficient de lat încât soluția laterală din EX-0001 funcționează la fel de bine, eliminând scopul exercițiului",
+    "adversarul nu mai poate acoperi nicio opțiune"
+  ],
+  "regression": [
+    "mărește lățimea culoarului cu 1-2 m pentru mai mult spațiu de decizie",
+    "adversar semi-pasiv, ca în EX-0001, până la stabilizarea deciziei adaptate"
+  ],
+  "progression": [
+    "trecere la EX-0014 (joc mic de transfer 3v3)",
+    "reduce ușor lățimea culoarului pentru o presiune spațială și mai realistă"
+  ],
+  "coach_questions": [
+    {
+      "question": "De ce nu te-ai mutat lateral de data asta?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ce a fost diferit față de exercițiul cu terenul lat?",
+      "when": "după primele repetiții în noul spațiu"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Caută spațiul care există cu adevărat aici, nu cel din exercițiul trecut."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ai găsit unghiul în lungul culoarului — exact adaptarea pe care o căutam!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "copilul încearcă repetat deplasarea laterală, deși spațiul nu permite un unghi nou",
+      "possible_causes": [
+        "tiparul memorat din EX-0001-EX-0002 rămâne dominant",
+        "nu a recunoscut încă limita reală a lățimii disponibile"
+      ]
+    },
+    {
+      "observation": "copilul se îndepărtează prea mult în lungul culoarului, pierzând o distanță realistă de pasă",
+      "possible_causes": [
+        "nu a evaluat corect distanța maximă utilă în noul spațiu",
+        "încearcă să compenseze lipsa de spațiu lateral printr-o mișcare exagerată"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "deplasarea predominantă e în lungul culoarului, nu lateral, în majoritatea repetițiilor",
+    "copilul poate explica, într-o propoziție, de ce spațiul acesta cere o soluție diferită de EX-0001"
+  ],
+  "match_transfer": "În meci, jucătorul de sprijin recunoaște când se află aproape de linia laterală și adaptează direcția de căutare a unghiului de sprijin la spațiul real disponibil, în loc să repete mecanic o soluție potrivită doar zonelor centrale ale terenului.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0005, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0040",
+    "SRC-0041"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.spatiu-si-unghiuri"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C10"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C09", "COACH-C11"],
+  "related_pedagog_lesson_ids": ["CH-0102"],
+  "related_coach_lesson_ids": ["CH-0402", "CH-0407"],
+  "child_action": "Recunoaște lățimea limitată a culoarului și se deplasează în lungime pentru a crea un unghi nou, în loc să repete mecanic deplasarea laterală exersată în spații late.",
+  "coach_focus": "Observarea adaptării deciziei la o geometrie nouă, nu doar reușita tehnică a pasei.",
+  "do_not_assume": [
+    "O încercare eșuată de deplasare laterală nu înseamnă că principiul nu a fost înțeles — poate fi doar aplicarea mecanică a unui tipar memorat, care are nevoie de timp pentru a se adapta.",
+    "Faptul că un copil se mișcă mai puțin în acest exercițiu nu înseamnă lipsă de efort — spațiul lateral chiar e mai mic."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de încercare a deplasării laterale fără rezultat, observat la pauza dintre seturi — nu la prima încercare."
+  ],
+  "when_not_to_intervene": [
+    "O singură încercare laterală nereușită în noul spațiu.",
+    "Deplasare în lungime prezentă dar insuficientă ca distanță — se lasă încă o repetiție înainte de a corecta."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul explică verbal soluția (deplasare în lungime) înainte ca grupul să încerce singur variantele.",
+      "why_it_happens": "Dorința de a economisi timp, oferind răspunsul înainte ca descoperirea prin încercare să aibă loc."
+    }
+  ],
+  "coach_reflection": [
+    "Am lăsat grupul să încerce și să descopere limita reală a spațiului, sau am explicat soluția prea devreme?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori (rotație de adversar la fiecare 90 de secunde, deja specificată în acest fișier); la efective mari, culoarele paralele necesită spațiu de siguranță lateral suplimentar față de exercițiile pe teren pătrat.",
+  "assessment_ref": "ASM-0001"
+}

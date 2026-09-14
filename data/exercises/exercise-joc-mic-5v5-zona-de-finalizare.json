@@ -1,0 +1,203 @@
+{
+  "id": "EX-0015",
+  "title": "Joc mic 5v5 cu zonă de finalizare",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "transfer",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copilul aplică întregul arc de decizii Gold Standard (unghi de sprijin, orientare, coordonare la mai mulți sprijinitori, timing, decizie după recuperare) într-un joc reprezentativ 5v5, cel mai apropiat de un meci real din întreaga progresie, cu o zonă de finalizare care cere o ultimă decizie înainte de șut.",
+  "observable_behaviours": [
+    "apar cel puțin două comportamente exersate izolat, în momente diferite ale jocului, fără comandă de pe margine",
+    "echipa în posesie folosește lățimea și adâncimea terenului, nu doar zona centrală"
+  ],
+  "players": {
+    "total": 10,
+    "in_possession": 5,
+    "defenders": 5,
+    "neutral_players": 0
+  },
+  "numerical_relation": "5v5",
+  "equipment": [
+    "8 conuri de delimitare",
+    "2 porți mari sau porți mici cu portar opțional",
+    "10 mingi de rezervă",
+    "veste de marcaj pentru două culori de echipă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 8 },
+    { "item": "porți mari sau porți mici cu portar opțional", "quantity": 2 },
+    { "item": "mingi de rezervă", "quantity": 10 },
+    { "item": "veste de marcaj", "quantity": 5 }
+  ],
+  "field": {
+    "length_m": 32,
+    "width_m": 22,
+    "safety_margin_m": 3
+  },
+  "duration": {
+    "total_minutes": 16,
+    "format": "2 reprize de 8 minute, pauză scurtă între reprize"
+  },
+  "rules": [
+    {
+      "rule": "O zonă de finalizare (ultimii 5 m înainte de fiecare poartă) e marcată vizual, fără reguli suplimentare — golul contează la fel oriunde, dar zona oferă un reper spațial pentru ultima decizie.",
+      "why": "Adaugă un reper realist (aproape de poartă, decizia se schimbă) fără să impună o regulă artificială suplimentară."
+    },
+    {
+      "rule": "Fără comenzi tactice de pe margine în timpul fazei active, ca în EX-0005 și EX-0014.",
+      "why": "Menține testul de transfer autonom la cel mai reprezentativ format din întregul arc."
+    }
+  ],
+  "step_by_step": [
+    "Zece jucători, două echipe de 5, două porți la capetele opuse ale terenului, cu zona de finalizare marcată vizual la fiecare capăt.",
+    "Joc liber 5v5, fără reguli suplimentare față de un meci obișnuit la această dimensiune.",
+    "Antrenorul observă tăcut, notând dacă apar comportamente exersate izolat în ședințele anterioare.",
+    "La pauza dintre reprize, o singură întrebare de reflecție, apoi continuarea jocului.",
+    "Rotație: echipele rămân aceleași pe durata celor două reprize, cu schimb de porți la pauză."
+  ],
+  "rotation": "Schimb de porți la pauza dintre cele două reprize de 8 minute; fără rotație de jucători în interiorul jocului.",
+  "transition": "Încheierea arcului de exerciții noi (EX-0006-EX-0015) — trecere firească spre reflecția de sesiune sau spre o repetare a exercițiilor care nu au transferat încă.",
+  "child_message": "Jucați ca de obicei — folosiți ce ați exersat dacă vă ajută, mai ales aproape de poartă!",
+  "why_this_message": "Aceeași formulare non-directivă din EX-0005/EX-0014, cu o singură adăugire (mențiunea zonei de finalizare) care numește reperul spațial nou, fără să dicteze o acțiune specifică.",
+  "problem_being_solved": "Jocurile de transfer la relații numerice mai mici (EX-0005, EX-0014) nu testează dacă deciziile de sprijin rezistă și la o formă mai apropiată de meciul real, cu mai mulți jucători, spațiu mai mare și o zonă de finalizare care schimbă presiunea deciziei.",
+  "information_children_must_notice": [
+    "aceleași informații ca în orice fază de joc, la o scară mai mare: poziția mingii, a coechipierilor, a adversarilor și a porților",
+    "proximitatea zonei de finalizare și cum schimbă aceasta valoarea unei decizii de sprijin sau progresie"
+  ],
+  "decision_children_must_learn": "Să aplice autonom toate deciziile exersate izolat de-a lungul arcului, adaptând valoarea deciziei (de exemplu, progresie vs. sprijin) la proximitatea zonei de finalizare.",
+  "rationales": {
+    "tactical": "Un joc reprezentativ la 5v5, cu zonă de finalizare, e cel mai apropiat context de meciul real din întregul arc de exerciții — testează transferul la scară mai mare.",
+    "perceptual": "Cu zece jucători pe teren, cantitatea de informație de procesat crește real față de EX-0005/EX-0014.",
+    "decisional": "Proximitatea porții schimbă valoarea relativă a opțiunilor — o pasă de sprijin sigură lângă propria poartă nu are aceeași valoare ca aproape de poarta adversă.",
+    "cognitive": "Acesta e cel mai complex context cognitiv din arc — motiv pentru care e ultimul, nu primul, exercițiu de transfer introdus.",
+    "psychological": "Presiunea de a finaliza aproape de poartă nu trebuie să elimine decizia de sprijin exersată — graba nu e un scop în sine.",
+    "technical": "Toate elementele tehnice ale arcului (recepție orientată, combinație, pasă precisă) sunt disponibile, acum la o viteză de joc mai mare.",
+    "social": "Cu cinci jucători per echipă, coordonarea implicită între mai mulți coechipieri devine o cerință reală, nu doar teoretică."
+  },
+  "age_appropriateness": "La 10–11 ani, acest joc reprezentativ e ultima treaptă a progresiei complete (EX-0001-EX-0015), introdus doar după ce formatele mai mici de transfer (EX-0005, EX-0014) au fost exersate; grupele 2015 și 2016 rămân împreună, cu reglaj individual al dimensiunii terenului.",
+  "possible_misinterpretations": [
+    "Copiii cred că zona de finalizare cere viteză maximă, nu o decizie adaptată situației.",
+    "Antrenorul așteaptă transfer complet și stabil la prima ședință de acest tip, nu progresiv de-a lungul mai multor repetări."
+  ],
+  "task_risks": [
+    "Teren prea mare pentru zece jucători poate reduce frecvența contactelor reale cu mingea.",
+    "Porți fără portar și fără reguli clare de finalizare pot crea ambiguitate — se recomandă portar opțional pentru claritate."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Șutează, nu te mai gândi!",
+      "reason": "Elimină exact decizia (progresie vs. sprijin vs. finalizare) pe care exercițiul o testează."
+    },
+    {
+      "phrase": "Nu ați jucat deloc ca la exerciții.",
+      "reason": "Judecă rezultatul ca eșec personal, nu ca informație validă despre nevoia de mai multă repetare la acest nivel de complexitate."
+    }
+  ],
+  "understanding_check": [
+    "cel puțin două comportamente exersate izolat apar autonom, în momente diferite ale jocului",
+    "echipa în posesie folosește vizibil lățimea și adâncimea terenului, nu doar zona centrală"
+  ],
+  "response_if_not_understood": [
+    "notează ca informație validă absența transferului la această scară, fără a întrerupe jocul",
+    "revino la EX-0005 sau EX-0014 (formate mai mici de transfer) în ședința următoare, înainte de a relua EX-0015"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Cea mai mare din întregul arc, pentru a acomoda zece jucători și o zonă de finalizare reală, păstrând totuși un raport spațiu/jucător comparabil cu EX-0005/EX-0014.",
+  "too_small_signs": [
+    "jocul devine aglomerat, cu puține contacte reale cu mingea per jucător",
+    "zona de finalizare devine prea aproape de mijlocul terenului, pierzându-și sensul de reper"
+  ],
+  "too_large_signs": [
+    "distanțele dintre jucători devin prea mari pentru pase realiste la această vârstă",
+    "jocul se rărește, cu perioade lungi fără fază reală de decizie"
+  ],
+  "regression": [
+    "revino la EX-0005 sau EX-0014 dacă transferul nu apare deloc la acest format mai mare",
+    "reduce ușor terenul pentru mai multe contacte reale cu mingea"
+  ],
+  "progression": [
+    "acesta e ultimul exercițiu al arcului curent — progresia următoare ar însemna un format și mai apropiat de meciul oficial (7v7/9v9), în afara scopului acestui set de exerciții",
+    "introduce portar dedicat, dacă nu a fost folosit inițial, pentru o finalizare mai realistă"
+  ],
+  "coach_questions": [
+    {
+      "question": "Unde ați văzut, în acest joc, o situație ca la un exercițiu anterior?",
+      "when": "la pauza dintre reprize, nu în timpul jocului"
+    },
+    {
+      "question": "Ce s-a schimbat în decizia voastră aproape de poartă, față de mijlocul terenului?",
+      "when": "după o repriză cu finalizări repetate"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Fără indicații acum — doar joc."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo pentru intensitate — am notat ce am văzut, discutăm la pauză."
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "niciun comportament exersat izolat nu apare vizibil la acest format mai mare",
+      "possible_causes": [
+        "complexitatea crescută (zece jucători, zonă de finalizare) depășește ce a fost deja stabilizat la EX-0005/EX-0014",
+        "grupul are nevoie de mai multe repetări la acest format înainte ca transferul să apară"
+      ]
+    },
+    {
+      "observation": "jocul se concentrează exclusiv pe finalizare, ignorând deciziile de sprijin din restul terenului",
+      "possible_causes": [
+        "proximitatea porții domină atenția copiilor, eclipsând deciziile exersate în restul arcului",
+        "zona de finalizare a fost introdusă prea devreme, fără suficientă stabilizare a jocului de mijloc de teren"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "cel puțin două comportamente exersate izolat apar autonom, în momente diferite, de-a lungul celor două reprize",
+    "copiii pot numi, la reflecție, cum s-a schimbat decizia lor aproape de poartă față de mijlocul terenului"
+  ],
+  "match_transfer": "Acest exercițiu e cel mai apropiat test de transfer din întregul arc — verifică dacă principiile exersate izolat (EX-0001-EX-0013) și în jocuri mai mici (EX-0005, EX-0014) rezistă la un format aproape de meciul real; transferul spre meciul oficial 7v7/9v9 rămâne neconfirmat fără o pilotare reală pe teren.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0005, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0029",
+    "SRC-0034",
+    "SRC-0035",
+    "SRC-0036"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.transfer-autonom-cooperare"],
+  "pedagog_competency_ids": ["PED-C07", "PED-C10"],
+  "coach_competency_ids": ["COACH-C03", "COACH-C14"],
+  "related_pedagog_lesson_ids": ["CH-0105"],
+  "related_coach_lesson_ids": ["CH-0406"],
+  "child_action": "Joacă liber la format 5v5, aplicând autonom deciziile exersate izolat și adaptând valoarea lor la proximitatea zonei de finalizare, fără reper extern sau comandă.",
+  "coach_focus": "Non-intervenție verbală completă în timpul fazei active — observare tăcută, notând ce comportamente apar sau nu, în ce moment al jocului.",
+  "do_not_assume": [
+    "Absența transferului la acest format mai mare nu invalidează transferul deja observat la EX-0005/EX-0014 — complexitatea a crescut real.",
+    "Concentrarea pe finalizare nu înseamnă că restul deciziilor au fost uitate — poate fi doar prioritizare firească aproape de poartă."
+  ],
+  "when_to_intervene": [
+    "Doar pentru siguranță fizică sau comportament nesportiv — niciodată pentru conținut tactic în timpul fazei active."
+  ],
+  "when_not_to_intervene": [
+    "Comportamentul țintă nu apare deloc într-o repriză — se notează ca informație validă, nu se întrerupe jocul pentru a preda din nou."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul introduce EX-0015 înainte ca EX-0005/EX-0014 să fi arătat transfer stabil.",
+      "why_it_happens": "Presiunea de a ajunge rapid la formatul cel mai realist, sărind peste pașii intermediari ai progresiei."
+    }
+  ],
+  "coach_reflection": [
+    "Am introdus acest format doar după ce EX-0005/EX-0014 au arătat transfer real, sau am sărit direct la cel mai complex joc?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului, zona de finalizare și formatul reprizelor sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 10/18 jucători și 1-2 antrenori (grupuri de 10, un singur teren); la efective sub 10, se organizează cu efectiv redus (4v4 sau 3v3, ca EX-0005/EX-0014), urmând aceeași logică de zonă de finalizare.",
+  "assessment_ref": "ASM-0001"
+}

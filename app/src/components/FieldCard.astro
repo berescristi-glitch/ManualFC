@@ -4,6 +4,8 @@ import type { GoldStandardExercise } from '../lib/content-bridge';
 
 interface Props { exercise: GoldStandardExercise }
 const { exercise: ex } = Astro.props;
+const diagramVariants = ['EX-0001', 'EX-0002', 'EX-0003', 'EX-0004', 'EX-0005'] as const;
+const hasDiagram = (diagramVariants as readonly string[]).includes(ex.id);
 const variant = ex.id.toLowerCase() as 'ex-0001' | 'ex-0002' | 'ex-0003' | 'ex-0004' | 'ex-0005';
 const players = ex.players as Record<string, unknown>;
 ---
@@ -21,7 +23,9 @@ const players = ex.players as Record<string, unknown>;
     <div><dt>Materiale</dt><dd>{ex.equipment.join(' · ')}</dd></div>
   </dl>
 
-  <div class="fc-diagram"><TacticalDiagram variant={variant} /></div>
+  {hasDiagram
+    ? <div class="fc-diagram"><TacticalDiagram variant={variant} /></div>
+    : <p class="fc-no-diagram">Organizare fără diagramă în această versiune — folosește dimensiunile și pașii din pagina completă a exercițiului.</p>}
 
   <div class="fc-cue">
     <span>Spune exact</span>
@@ -57,6 +61,7 @@ const players = ex.players as Record<string, unknown>;
   .fc-facts dd { margin: .3rem 0 0; font-weight: 700; }
   .fc-diagram { background: white; border-radius: var(--radius-md); padding: var(--space-4); }
   .fc-diagram :global(figcaption) { color: var(--color-text-secondary); }
+  .fc-no-diagram { margin: var(--space-5) 0 0; padding: var(--space-4); background: rgba(255,255,255,.1); border-radius: var(--radius-md); font-size: .85rem; color: #E4E8ED; }
   .fc-cue, .fc-observe { margin-top: var(--space-5); }
   .fc-cue span, .fc-observe span, .fc-adjust span { display: block; font-size: .65rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; color: var(--color-brand-gold); }
   .fc-cue blockquote { margin: .4rem 0 0; padding: 0; border: 0; font: 750 1.2rem/1.35 var(--font-family-heading); }
@@ -68,7 +73,7 @@ const players = ex.players as Record<string, unknown>;
   @media (max-width: 480px) { .fc-facts, .fc-adjust { grid-template-columns: 1fr; } }
   @media print {
     .field-card { background: white; color: black; border: 1px solid #333; break-inside: avoid; page-break-after: always; }
-    .fc-head h2, .fc-facts dd, .fc-cue blockquote, .fc-observe p, .fc-adjust ul, .fc-link a { color: black; }
+    .fc-head h2, .fc-facts dd, .fc-cue blockquote, .fc-observe p, .fc-adjust ul, .fc-link a, .fc-no-diagram { color: black; }
     .fc-facts > div { background: #F4F4F0; }
     .fc-link { display: none; }
   }

@@ -1,0 +1,202 @@
+{
+  "id": "EX-0008",
+  "title": "Al treilea jucător deschide alt unghi",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "avansare",
+  "theme": "sprijin-si-unghi-de-pasa",
+  "game_moment": "posesie",
+  "primary_objective": "Copiii coordonează trei poziții de sprijin diferite (nu doar două, ca în EX-0004), astfel încât doi adversari să nu poată acoperi mai mult de două unghiuri simultan, iar al treilea rămâne mereu o opțiune reală.",
+  "observable_behaviours": [
+    "cei trei jucători de sprijin ocupă trei zone distincte, nu doar două aglomerate",
+    "purtătorul găsește rapid unghiul rămas neacoperit dintre cele trei"
+  ],
+  "players": {
+    "total": 6,
+    "in_possession": 4,
+    "defenders": 2,
+    "neutral_players": 0
+  },
+  "numerical_relation": "4v2",
+  "equipment": [
+    "6 conuri de delimitare",
+    "8-10 mingi de rezervă",
+    "veste de marcaj pentru adversari"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 6 },
+    { "item": "mingi de rezervă", "quantity": 8, "quantity_max": 10 },
+    { "item": "veste de marcaj", "quantity": 2 }
+  ],
+  "field": {
+    "length_m": 20,
+    "width_m": 15,
+    "safety_margin_m": 3
+  },
+  "duration": {
+    "total_minutes": 10,
+    "format": "seturi de 2-3 minute de joc continuu, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Doi adversari nu pot acoperi mai mult de două dintre cele trei opțiuni de sprijin simultan.",
+      "why": "Geometria numerică (4 în posesie, 2 adversari) garantează matematic o a treia opțiune deschisă — reglaj ales pentru acest exercițiu, nu un prag validat de cercetare."
+    },
+    {
+      "rule": "Cei trei jucători de sprijin nu au voie să ocupe zone adiacente — fiecare trebuie să rămână într-o treime distinctă a terenului.",
+      "why": "Previne aglomerarea (problema deja identificată la EX-0004/EX-0005) și obligă la diferențiere spațială reală între trei jucători, nu doar doi."
+    }
+  ],
+  "step_by_step": [
+    "Șase jucători: patru în posesie (un purtător, trei de sprijin), doi adversari.",
+    "Terenul e împărțit mental în trei treimi; fiecare jucător de sprijin rămâne, la un moment dat, într-o treime diferită.",
+    "Purtătorul mingii scanează cele trei opțiuni și pasează spre cea neacoperită de niciun adversar.",
+    "După pasă, rolurile se rotesc — noul purtător repetă scanarea.",
+    "Rotație: adversarii se schimbă la fiecare 2-3 minute."
+  ],
+  "rotation": "Rotație de adversari la fiecare 2-3 minute; toți cei 6 jucători dintr-un grup trec prin rolul de adversar, câte doi simultan.",
+  "transition": "Trecere directă la EX-0009 fără pauză de reorganizare — grup nou de 3 pentru recepția sub presiune completă.",
+  "child_message": "Voi trei, împărțiți-vă terenul în trei bucăți — dacă doi dintre voi sunteți aproape, al treilea trebuie să fie departe!",
+  "why_this_message": "Reperul e relația dintre cei trei jucători de sprijin, nu o poziție fixă a fiecăruia — extensie directă a principiului Progresie și sprijin de la doi la trei jucători coordonați.",
+  "problem_being_solved": "Cu trei jucători de sprijin disponibili, doi tind să se grupeze în aceeași zonă utilă (cea mai apropiată de purtător), lăsând a treia opțiune neexploatată chiar și atunci când geometria numerică (4 vs. 2) garantează un unghi liber.",
+  "information_children_must_notice": [
+    "poziția celorlalți doi jucători de sprijin, nu doar a purtătorului",
+    "care treime a terenului e deja ocupată de un coechipier",
+    "care dintre cei doi adversari acoperă care opțiune"
+  ],
+  "decision_children_must_learn": "Să aleagă treimea de teren neocupată de ceilalți doi coechipieri de sprijin, nu doar zona cea mai apropiată de minge.",
+  "rationales": {
+    "tactical": "Cu trei opțiuni de sprijin și doar doi adversari, geometria numerică garantează o opțiune liberă — dar numai dacă cei trei jucători se diferențiază real.",
+    "perceptual": "Copilul trebuie să citească poziția a doi coechipieri simultan, nu doar a purtătorului și a unui adversar, ceea ce ridică real complexitatea perceptivă față de EX-0004.",
+    "decisional": "Decizia individuală („unde mă poziționez eu”) depinde acum explicit de deciziile altor doi coechipieri, nu doar de poziția adversarului.",
+    "cognitive": "Trei zone distincte, numite simplu (treimile terenului), fac relația verificabilă fără o regulă numerică abstractă.",
+    "psychological": "Responsabilitatea de a „nu fi al treilea în aceeași zonă” e distribuită între toți trei, nu revine unei singure persoane.",
+    "technical": "Pasa spre unghiul liber rămâne tehnic simplă — accentul e pe decizia de poziționare a celor trei, nu pe execuția tehnică.",
+    "social": "Cei trei coechipieri de sprijin trebuie să comunice (verbal sau prin poziționare vizibilă) pentru a evita suprapunerea de zone."
+  },
+  "age_appropriateness": "La 10–11 ani, împărțirea terenului în trei treimi e un reper concret, ușor de arătat vizual; grupele 2015 și 2016 rămân împreună, cu reglaj individual al vitezei de recunoaștere a zonei ocupate de altcineva.",
+  "possible_misinterpretations": [
+    "Copiii cred că treimile sunt linii fixe pe teren, nu zone relative la poziția coechipierilor.",
+    "Un singur jucător de sprijin domină decizia de poziționare, ceilalți doi doar reacționează pasiv."
+  ],
+  "task_risks": [
+    "Teren prea mic elimină diferența reală dintre cele trei treimi.",
+    "Doi adversari prea pasivi nu creează presiune reală asupra deciziei de poziționare."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Rămâneți fiecare în treimea voastră.",
+      "reason": "Transformă o relație dinamică într-o poziție fixă atribuită, exact ce principiul Spațiu și unghiuri respinge."
+    },
+    {
+      "phrase": "Comunicați!",
+      "reason": "Instrucțiune fără conținut — nu spune ce anume trebuie comunicat sau observat."
+    }
+  ],
+  "understanding_check": [
+    "cei trei jucători de sprijin ocupă vizibil trei zone diferite în majoritatea repetițiilor, fără comandă verbală",
+    "purtătorul găsește unghiul liber în mai puțin de 2-3 secunde de scanare"
+  ],
+  "response_if_not_understood": [
+    "oprește jocul și arată exact unde s-au suprapus doi jucători de sprijin",
+    "revino temporar la EX-0004 (doi jucători de sprijin) înainte de a adăuga al treilea"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Mai mare decât EX-0004 pentru a acomoda trei zone distincte de sprijin, nu doar două.",
+  "too_small_signs": [
+    "cele trei treimi se suprapun vizual — jucătorii de sprijin se aglomerează indiferent de intenție",
+    "coliziuni frecvente între jucătorii de sprijin"
+  ],
+  "too_large_signs": [
+    "pasele către treimea îndepărtată devin prea lungi pentru precizia tehnică la această vârstă",
+    "doi adversari nu mai pot acoperi nicio opțiune, exercițiul devine trivial"
+  ],
+  "regression": [
+    "revino temporar la EX-0004 (doi jucători de sprijin, un singur adversar suplimentar) dacă coordonarea la trei eșuează complet",
+    "marchează vizual cele trei treimi cu conuri până la stabilizare"
+  ],
+  "progression": [
+    "trecere la EX-0011 (patru sprijiniri, 4v3, presiune numerică mai mare)",
+    "elimină marcajul vizual al treimilor, lăsând copiii să estimeze zonele singuri"
+  ],
+  "coach_questions": [
+    {
+      "question": "Cine mai era în treimea ta chiar înainte să te muți?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Cum ați decis, fără să vorbiți, cine ia care treime?",
+      "when": "după un set cu diferențiere spațială reușită"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Uită-te unde sunt ceilalți doi coechipieri, nu doar unde e mingea."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ați acoperit toate cele trei treimi — exact geometria pe care o căutam!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "doi jucători de sprijin se grupează în aceeași treime, cea mai apropiată de minge",
+      "possible_causes": [
+        "instinctul de a fi aproape de minge rămâne mai puternic decât citirea poziției coechipierilor",
+        "unul dintre cei doi nu a observat că treimea era deja ocupată"
+      ]
+    },
+    {
+      "observation": "purtătorul nu găsește unghiul liber, deși geometria numerică îl garantează",
+      "possible_causes": [
+        "scanarea rămâne limitată la două opțiuni, nu la toate trei",
+        "timpul de decizie e prea lung, adversarii apucă să se repoziționeze"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "cele trei zone rămân distincte, fără suprapunere vizibilă, în majoritatea repetițiilor",
+    "purtătorul poate explica, într-o propoziție, cum a ales între cele trei opțiuni"
+  ],
+  "match_transfer": "În meci, al treilea jucător de sprijin recunoaște autonom o zonă neocupată de ceilalți coechipieri și se poziționează acolo, extinzând la trei numărul real de opțiuni disponibile pentru purtătorul mingii.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0005, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0049",
+    "SRC-0050"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.progresie-si-sprijin", "principle.superioritate-egalitate-inferioritate-numerica"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C10"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C10", "COACH-C11"],
+  "related_pedagog_lesson_ids": ["CH-0101"],
+  "related_coach_lesson_ids": ["CH-0407", "CH-0408"],
+  "child_action": "Se poziționează într-o treime a terenului distinctă de ceilalți doi jucători de sprijin, ajustând continuu în funcție de unde s-au mutat aceștia.",
+  "coach_focus": "Observarea diferențierii spațiale între trei jucători simultan, nu doar între doi, și a vitezei de scanare a purtătorului.",
+  "do_not_assume": [
+    "O suprapunere izolată de zone nu înseamnă că grupul nu a înțeles conceptul — coordonarea la trei jucători e vizibil mai greu decât la doi.",
+    "Faptul că purtătorul pasează des spre aceeași treime nu înseamnă că ceilalți doi nu s-au diferențiat — poate fi doar cea mai des deschisă în acel set."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de grupare a doi jucători de sprijin în aceeași treime, observat la pauza dintre seturi — nu la prima apariție."
+  ],
+  "when_not_to_intervene": [
+    "O singură repetiție cu suprapunere de zone.",
+    "Diferențiere prezentă dar incompletă (treimi parțial suprapuse) — se lasă încă un set înainte de a corecta."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul atribuie verbal câte o treime fiecărui copil, în loc să lase decizia la ei.",
+      "why_it_happens": "Presiunea de a obține rapid diferențierea spațială corectă, fără a lăsa timp pentru auto-organizare."
+    }
+  ],
+  "coach_reflection": [
+    "Am lăsat cei trei copii să-și negocieze singuri zonele, sau le-am atribuit eu poziții fixe?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului, împărțirea în treimi și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 12/16/18 jucători și 1-2 antrenori (grupuri de 6, rotație de adversari la fiecare 2-3 minute); la efective sub 12, se organizează cu grupuri mixte de 6, folosind rotația documentată în capitolul despre organizare și siguranță.",
+  "assessment_ref": "ASM-0001"
+}

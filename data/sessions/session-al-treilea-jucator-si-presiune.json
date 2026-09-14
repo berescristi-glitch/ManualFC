@@ -1,0 +1,252 @@
+{
+  "id": "SES-0004",
+  "title": "Sprijinul și unghiul de pasă — al treilea jucător și recepția sub presiune",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "duration_min": 75,
+  "primary_objective": "Extinde coordonarea de sprijin la trei jucători (EX-0008), crește presiunea asupra recepției orientate până la opoziție completă (EX-0009) și introduce timingul deplasării ca variabilă nouă (EX-0010) — trei concepte distincte, fiecare cerând o schimbare reală față de tiparele deja stabile din SES-0001-SES-0003.",
+  "observable_behaviours": [
+    "trei jucători de sprijin ocupă trei zone distincte, nu doar două aglomerate",
+    "scanarea la recepție rezistă chiar și cu adversarul aproape și activ din primul moment",
+    "deplasarea de sprijin are loc după un semnal real, nu automat din obișnuință"
+  ],
+  "players_range": {
+    "min": 8,
+    "max": 18,
+    "note": "EX-0008 cere grupuri de 6 (4v2); EX-0009 și EX-0010 revin la grupuri de 3, ca în SES-0001-SES-0003 — vezi configuratorul de grup pentru numărul exact de grupe, spațiu și material la fiecare efectiv de la 8 la 18. Se ajustează numărul de grupuri paralele, nu formatul exercițiilor."
+  },
+  "operational_contingencies": [
+    {
+      "scenario": "3 copii ajung după ce ședința a început",
+      "guidance": "PRACTICE_HEURISTIC: la EX-0008, copiii întârziați intră la următoarea rotație de adversari (2-3 minute). La EX-0009/EX-0010, intră la următoarea rotație de 90 de secunde, ca în exercițiile anterioare cu grupuri de 3."
+    },
+    {
+      "scenario": "Terenul disponibil e mai mic decât dimensiunea canonică (20×15m pentru EX-0008)",
+      "guidance": "PRACTICE_HEURISTIC: pentru EX-0008 în special, un teren prea mic elimină diferența reală dintre cele trei treimi de sprijin. Dacă spațiul complet nu e disponibil, redu numărul de grupuri paralele, nu dimensiunea unui singur teren de 6 jucători."
+    },
+    {
+      "scenario": "Trecerea bruscă la opoziție completă (EX-0009) pare prea grea pentru grup",
+      "guidance": "PRACTICE_HEURISTIC: folosește regresia documentată explicit în exercițiu — revino la distanța de pornire a adversarului din EX-0003 și crește-o treptat, nu sări direct la presiune maximă."
+    },
+    {
+      "scenario": "Un exercițiu eșuează — niciun copil nu reușește nici cu regresia maximă",
+      "guidance": "PRACTICE_HEURISTIC: tratează eșecul ca informație despre exercițiu, nu despre copii. Oprește segmentul, folosește imediat o întrebare de reflecție, apoi treci mai devreme la segmentul următor."
+    },
+    {
+      "scenario": "Tranzițiile între cele trei exerciții durează prea mult",
+      "guidance": "PRACTICE_HEURISTIC: pregătește dinainte materialul pentru toate cele trei stații. Dacă tranzițiile tot depășesc timpul alocat, scurtează întâi jocul liber final, niciodată reflecția."
+    }
+  ],
+  "duration_variant_60min": {
+    "total_minutes": 60,
+    "policy_note": "Variantă de 60 minute — PRACTICE_HEURISTIC, o adaptare operațională, nu o durată validată de cercetare. Toate cele trei exerciții rămân în ședință, cu mai puține repetări fiecare; reflecția păstrează bucla completă.",
+    "segments": [
+      { "segment_index": 0, "start_min": 0, "end_min": 8, "reduction_note": "Redus cu 2 min: timpul de organizare de la începutul rutinei, nu execuția ei." },
+      { "segment_index": 1, "start_min": 8, "end_min": 21, "reduction_note": "Redus cu 3 min: mai puține seturi de coordonare la trei sprijiniri — geometria de bază rămâne exersată complet." },
+      { "segment_index": 2, "start_min": 21, "end_min": 31, "reduction_note": "Redus cu 2 min: mai puține repetări de recepție sub presiune completă, nu o revenire la presiune moderată." },
+      { "segment_index": 3, "start_min": 31, "end_min": 42, "reduction_note": "Redus cu 3 min: mai puține seturi pentru exersarea timingului — conceptul rămâne introdus complet." },
+      { "segment_index": 4, "start_min": 42, "end_min": 50, "reduction_note": "Comprimat, nu eliminat — întrebările de reflecție rămân, fără timp de așteptare între răspunsuri." },
+      { "segment_index": 5, "start_min": 50, "end_min": 60, "reduction_note": "Cea mai mare reducere relativă — jocul liber e timp activ suplimentar, nu fază pedagogică esențială." }
+    ]
+  },
+  "equipment": [
+    "conuri de delimitare pentru toate stațiile",
+    "conuri colorate pentru EX-0009",
+    "mingi de rezervă suficiente pentru fiecare stație",
+    "veste de marcaj pentru adversari"
+  ],
+  "surface_plan": {
+    "layout": "O stație de 20x15m pentru EX-0008 (grupuri de 6), stații de 10x8m (EX-0009) și 12x10m (EX-0010) pentru grupuri de 3, distanțate cu minimum 3m între ele.",
+    "rotation": "Rotație de adversari la 2-3 minute în EX-0008; rotație de adversar la 90 de secunde în EX-0009 și EX-0010, ca în exercițiile anterioare."
+  },
+  "segments": [
+    {
+      "start_min": 0,
+      "end_min": 10,
+      "title": "Încălzire și rutină de siguranță",
+      "exercise_ids": [],
+      "coach_message": "Începem cu rutina scurtă de siguranță, ca de fiecare dată.",
+      "why_now": "Rutină structurată de încălzire cu efect măsurat asupra riscului de accidentare (programul oficial FIFA 11+ Kids), reutilizată din capitolul despre organizare și siguranță.",
+      "methodological_rationale": "Siguranța rămâne prima prioritate, indiferent de tema tehnico-tactică a ședinței.",
+      "observation_focus": [
+        "execuția corectă a mișcărilor de încălzire, nu graba de a termina"
+      ],
+      "intervention_criteria": [
+        "intervenție imediată doar pentru risc fizic real"
+      ],
+      "non_intervention_criteria": [
+        "O ezitare izolată la un exercițiu de încălzire nu justifică oprirea rutinei."
+      ],
+      "coach_focus": "Verifică execuția corectă a mișcărilor de încălzire, nu doar viteza de finalizare.",
+      "verification_method": "Observare directă a execuției; nicio evaluare verbală necesară la acest segment.",
+      "transition_logistics": "Formarea grupurilor de 6 pentru EX-0008."
+    },
+    {
+      "start_min": 10,
+      "end_min": 26,
+      "title": "EX-0008 — Al treilea jucător deschide alt unghi",
+      "exercise_ids": [
+        "EX-0008"
+      ],
+      "coach_message": "Voi trei, împărțiți-vă terenul în trei bucăți — dacă doi dintre voi sunteți aproape, al treilea trebuie să fie departe!",
+      "why_now": "Introduce complexitatea coordonării la trei jucători de sprijin, abia după ce coordonarea la doi (EX-0004, SES-0002) e stabilă.",
+      "methodological_rationale": "Progresia de la doi la trei jucători de sprijin e justificată prin creșterea complexității informaționale, nu doar prin numărul de jucători.",
+      "observation_focus": [
+        "diferențierea spațială a celor trei jucători de sprijin"
+      ],
+      "intervention_criteria": [
+        "oprire scurtă și întrebare ghidată doar la tipar repetat de grupare în aceeași zonă"
+      ],
+      "non_intervention_criteria": [
+        "Prima apariție a grupării în aceeași zonă — se lasă comportamentul să reapară sau nu înainte de a opri jocul."
+      ],
+      "coach_focus": "Observarea diferențierii spațiale între trei jucători simultan.",
+      "verification_method": "La pauza dintre seturi, verifică dacă cele trei zone rămân distincte în majoritatea repetițiilor.",
+      "transition_logistics": "Regrupare în echipe de 3 pentru EX-0009."
+    },
+    {
+      "start_min": 26,
+      "end_min": 36,
+      "title": "EX-0009 — Recepția cu fața la joc, sub presiune completă",
+      "exercise_ids": [
+        "EX-0009"
+      ],
+      "coach_message": "Uită-te la con înainte să vină mingea — chiar dacă adversarul e chiar lângă tine!",
+      "why_now": "Crește presiunea asupra scanării exersate în EX-0003 până la opoziție completă, testând dacă rezistă sub constrângere reală de timp.",
+      "methodological_rationale": "Creșterea presiunii se introduce gradual, folosind regresia documentată dacă e nevoie, nu ca salt brusc de dificultate.",
+      "observation_focus": [
+        "persistența scanării chiar și cu adversarul foarte aproape"
+      ],
+      "intervention_criteria": [
+        "revenire temporară la distanța de pornire din EX-0003 dacă scanarea dispare complet"
+      ],
+      "non_intervention_criteria": [
+        "O recepție imperfectă tehnic, cu scanare prezentă, nu justifică o intervenție."
+      ],
+      "coach_focus": "Observarea persistenței scanării sub presiune crescută, nu doar reușita tehnică a recepției.",
+      "verification_method": "La pauza dintre seturi, verifică dacă scanarea spre con rămâne vizibilă în cel puțin jumătate din repetiții.",
+      "transition_logistics": "Aceleași grupuri de 3, aceeași stație — se activează regula de așteptare a semnalului pentru EX-0010."
+    },
+    {
+      "start_min": 36,
+      "end_min": 50,
+      "title": "EX-0010 — Momentul potrivit, nu doar locul potrivit",
+      "exercise_ids": [
+        "EX-0010"
+      ],
+      "coach_message": "Nu pleca imediat — așteaptă să vezi ce face adversarul, apoi mută-te chiar în acel moment!",
+      "why_now": "Introduce timingul ca variabilă nouă abia după ce direcția și distanța sprijinului sunt deja stabile din exercițiile anterioare.",
+      "methodological_rationale": "Momentul deplasării e o dimensiune temporală absentă din exercițiile anterioare, motiv pentru care se introduce izolat, la finalul ședinței.",
+      "observation_focus": [
+        "așteptarea vizibilă a unui semnal real înainte de deplasare"
+      ],
+      "intervention_criteria": [
+        "oprire scurtă pentru a arăta semnalul, doar la tipar repetat de plecare automată"
+      ],
+      "non_intervention_criteria": [
+        "O singură repetiție cu deplasare timpurie nu justifică o intervenție."
+      ],
+      "coach_focus": "Observarea momentului deplasării în raport cu semnalul, nu doar reușita direcției alese.",
+      "verification_method": "La pauza dintre seturi, verifică dacă deplasarea are loc vizibil după semnalul adversarului, nu automat.",
+      "transition_logistics": "Strângerea materialului; pregătire pentru reflecția de închidere."
+    },
+    {
+      "start_min": 50,
+      "end_min": 60,
+      "title": "Reflecție ghidată de închidere",
+      "exercise_ids": [],
+      "coach_message": "Ce a fost mai greu azi — să vă împărțiți în trei zone, să primiți sub presiune, sau să așteptați momentul potrivit?",
+      "why_now": "Reflecția leagă explicit cele trei concepte noi de percepția proprie a dificultății, nu doar de execuția tehnică.",
+      "methodological_rationale": "Reflecția scurtă la final consolidează transferul, fără o durată cronometrată fixă validată de cercetare.",
+      "observation_focus": [
+        "capacitatea copiilor de a numi, într-o propoziție, care concept a fost mai greu și de ce"
+      ],
+      "intervention_criteria": [
+        "întrebări deschise, copiii formulează concluzia"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil nu poate încă formula o observație, nu se impune un răspuns."
+      ],
+      "coach_focus": "Întrebări deschise; copiii formulează concluzia, nu antrenorul într-un monolog.",
+      "verification_method": "Cel puțin un copil poate numi, într-o propoziție, care dintre cele trei concepte a fost mai greu.",
+      "transition_logistics": "Încheierea segmentului de reflecție; echipamentul se strânge în timpul jocului liber final."
+    },
+    {
+      "start_min": 60,
+      "end_min": 75,
+      "title": "Joc liber de relaxare",
+      "exercise_ids": [],
+      "coach_message": "Jucați liber, fără reguli speciale — azi ați exersat trei lucruri noi!",
+      "why_now": "Închidere pozitivă a ședinței, timp activ suplimentar fără presiune evaluativă, după o ședință cu încărcare cognitivă ridicată (3 concepte noi).",
+      "methodological_rationale": "Nu se introduc constrângeri noi la finalul unei ședințe cu încărcare cognitivă deja ridicată.",
+      "observation_focus": [
+        "siguranța fizică generală"
+      ],
+      "intervention_criteria": [
+        "doar pentru siguranță fizică sau comportament nesportiv"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul de joc liber, chiar dacă nu reflectă exercițiile exersate, nu justifică o intervenție tactică."
+      ],
+      "coach_focus": "Siguranță fizică generală, nu conținut tehnico-tactic.",
+      "verification_method": "Nu se aplică o verificare de conținut la acest segment.",
+      "transition_logistics": "Final de ședință; echipamentul se strânge în timpul acestui segment."
+    }
+  ],
+  "message_foundations": [
+    {
+      "message": "Voi trei, împărțiți-vă terenul în trei bucăți!",
+      "source_principle": "principle.progresie-si-sprijin",
+      "claim_ids": [
+        "CLM-0050",
+        "CLM-0051"
+      ]
+    },
+    {
+      "message": "Uită-te la con înainte să vină mingea — chiar dacă adversarul e chiar lângă tine!",
+      "source_principle": "principle.focalizarea-observatiei-si-criterii-de-interventie",
+      "claim_ids": [
+        "CLM-0094"
+      ]
+    }
+  ],
+  "session_rationale": "A patra ședință din arc introduce trei concepte cu dificultate crescândă real (coordonare la trei, presiune completă, timing), fiecare cerând o schimbare de percepție diferită de cele exersate în SES-0001-SES-0003. Numărul de concepte noi (3) revine la limita folosită deja în SES-0001, respectând regula ManualFC de a nu supra-încărca o singură ședință la această vârstă.",
+  "match_theme": "Coordonarea la mai mult de doi jucători de sprijin, menținerea scanării sub presiune reală și recunoașterea momentului potrivit pentru deplasare.",
+  "reflection": [
+    "Ce a fost mai greu azi — să vă împărțiți în trei zone, să primiți sub presiune, sau să așteptați momentul potrivit?",
+    "Unde ați simțit că timpul era prea scurt pentru a decide?"
+  ],
+  "sources": [
+    "SRC-0035",
+    "SRC-0042",
+    "SRC-0049",
+    "SRC-0050",
+    "SRC-0095",
+    "SRC-0096"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "child_objectives": [
+    "Coordonează trei poziții de sprijin diferite, evitând gruparea în aceeași zonă (EX-0008).",
+    "Menține scanarea și orientarea la recepție chiar sub presiune completă (EX-0009).",
+    "Așteaptă un semnal real înainte de a se deplasa pentru sprijin, nu pleacă automat (EX-0010)."
+  ],
+  "coach_objectives": [
+    {
+      "objective": "Introduce presiunea crescută gradual, folosind regresia documentată, nu ca salt brusc de dificultate.",
+      "coach_competency_id": "COACH-C12"
+    },
+    {
+      "objective": "Observă diferențierea spațială la trei jucători simultan, o sarcină de observație vizibil mai grea decât la doi.",
+      "coach_competency_id": "COACH-C01"
+    }
+  ],
+  "reflection_v2": {
+    "child_game_dimension": [
+      "Diferențierea la trei jucători de sprijin a rezistat pe tot parcursul exercițiului, sau s-a pierdut spre final?",
+      "Scanarea sub presiune completă a fost mai grea decât la ședința anterioară — cum au reacționat copiii la această dificultate?"
+    ],
+    "coach_dimension": [
+      "Am crescut presiunea gradual, sau am sărit direct la nivelul maxim fără o etapă intermediară?",
+      "Am observat corect diferența dintre trei concepte distincte, sau le-am tratat ca pe o singură temă?"
+    ]
+  }
+}
