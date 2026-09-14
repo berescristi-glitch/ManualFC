@@ -12,7 +12,7 @@ class InformationArchitectureV2Tests(unittest.TestCase):
             "/incepe-aici": "Începe aici",
             "/volum": "Învață",
             "/principii": "Principii aplicate",
-            "/gold-standard/rapid": "Rezolvă pe teren",
+            "/rezolva-pe-teren": "Rezolvă pe teren",
             "/gold-standard": "Modul complet",
         }
         for route, label in expected.items():
@@ -20,15 +20,15 @@ class InformationArchitectureV2Tests(unittest.TestCase):
 
     def test_footer_exposes_same_five_destinations(self):
         text = (ROOT / "app/src/components/AppFooter.astro").read_text(encoding="utf-8")
-        for route in ("/incepe-aici", "/volum", "/principii", "/gold-standard/rapid", "/gold-standard"):
+        for route in ("/incepe-aici", "/volum", "/principii", "/rezolva-pe-teren", "/gold-standard"):
             self.assertIn(f'href="{route}"', text)
 
     def test_primary_surfaces_use_plain_language_titles(self):
         principle_index = (ROOT / "app/src/pages/principii/index.astro").read_text(encoding="utf-8")
-        rapid = (ROOT / "app/src/pages/gold-standard/rapid.astro").read_text(encoding="utf-8")
+        rezolva = (ROOT / "app/src/pages/rezolva-pe-teren/index.astro").read_text(encoding="utf-8")
         module = (ROOT / "app/src/pages/gold-standard/index.astro").read_text(encoding="utf-8")
         self.assertIn("Principii pentru joc și antrenament", principle_index)
-        self.assertIn("Rezolvă pe teren", rapid)
+        self.assertIn("Rezolvă pe teren", rezolva)
         self.assertIn("Modul complet", module)
 
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://manualfc.vercel.app/sitemap-index.xml

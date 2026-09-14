@@ -57,7 +57,10 @@ class WebBootstrapTests(unittest.TestCase):
         layout_path = ROOT_DIR / "app" / "src" / "layouts" / "BaseLayout.astro"
         content = layout_path.read_text(encoding="utf-8")
         self.assertIn('<html lang="ro">', content)
-        self.assertIn('Site URL = unresolved', content)
+        # TASK-3711: the "Site URL = unresolved" OpenGraph gap is fixed —
+        # canonical/og:url/og:image now resolve against Astro.site.
+        self.assertIn('rel="canonical" href={canonicalURL}', content)
+        self.assertIn("new URL(Astro.url.pathname, Astro.site)", content)
 
 if __name__ == "__main__":
     unittest.main()
