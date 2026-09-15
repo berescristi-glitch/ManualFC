@@ -1413,6 +1413,22 @@ add("TASK-3712", "Gold Standard Content Expansion: 10 exercitii noi (EX-0006-EX-
     validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test",
                  "python scripts/validate_content.py --strict", "python scripts/validate_gold_standard_v2.py",
                  "python scripts/audit_route_links.py", "git diff --check"])
+add("TASK-3713", "ManualFC Private Pilot Setup: protocol de pilot cu 2-3 antrenori U11 reali, pachet pentru antrenor, format de captura a observatiilor -- pregatire, fara date de teren", "CONTROL-PLANE", ["TASK-3712"],
+    ["docs/field-pilot/MANUALFC_PRIVATE_PILOT_PROTOCOL.md", "docs/field-pilot/PRIVATE_PILOT_COACH_PACK.md",
+     "docs/field-pilot/PRIVATE_PILOT_OBSERVATION_TEMPLATE.md", "tests/test_task3713_private_pilot.py",
+     "plans/TASK-3713-private-pilot-setup.md", REPORT("TASK-3713")],
+    SCHEMA_OK + [
+        "Protocol complet (MANUALFC_PRIVATE_PILOT_PROTOCOL.md): profil participant si criterii de includere, ipoteze de recrutare, participare informata si limite de confidentialitate, durata (2-4 saptamani, minimum 2 sedinte reale/antrenor), cele 9 scenarii de sarcini obligatorii, conditii mobil/desktop si online/offline, metoda de observare, intrebari de debrief, disciplina RAW OBSERVATION/INTERPRETATION/CONFIDENCE, regula explicita spune-vs-face, criterii de succes/oprire, clasificare de severitate pe 4 niveluri, metoda de prioritizare, si decizia MUST FIX/SHOULD FIX/NOT NOW/IGNORE.",
+        "Se raporteaza onest, nu se ascunde: PHASE-23/TASK-2301 (Runda 1, doar SES-0001, un singur antrenor) ramane, la randul ei, neexecutata (FIELD_INPUT_REQUIRED neschimbat de la acel task) -- noul protocol o extinde constient, nu o inlocuieste si nu pretinde ca a rezolvat-o.",
+        "Pachet pentru antrenor (PRIVATE_PILOT_COACH_PACK.md): instructiuni printabile/partajabile, fara jurgon de cercetare, cu cele 9 sarcini in forma practica si asigurari explicite de confidentialitate in limbaj simplu.",
+        "Format de captura (PRIVATE_PILOT_OBSERVATION_TEMPLATE.md): cate o sectiune per sarcina cu RAW OBSERVATION/INTERPRETATION/CONFIDENCE separate, coduri de-identificate A1/A2/A3, lista de verificare a confidentialitatii inainte de trimitere.",
+        "Inspectia jurnalului antrenorului (cod + browser real Playwright la 1440px/390px pe toate cele 11 suprafete cerute) nu a gasit niciun defect de produs care sa necesite reparatie -- 'recents' (revenire la un articol folosit anterior) functioneaza deja prin recordRecent() din CoachActions.astro, 'Spatiul meu' e deja 100% local-first (localStorage, fara cont, fara server), avertismentele de confidentialitate exista deja pe formularele de reflectie si constructie de sedinta. Niciun cod de produs nu a fost modificat -- nu s-a inventat o schimbare doar pentru a avea un diff.",
+        "Niciun rezultat, participant, citat sau dovada de teren nu a fost inventat sau simulat -- pilotul nu a fost inca executat; PHASE-23 ramane FIELD_INPUT_REQUIRED.",
+        "22 teste noi (tests/test_task3713_private_pilot.py) verifica existenta documentelor, absenta rezultatelor fabricate, respectarea limitelor de confidentialitate, absenta jurgonului de cercetare in pachetul pentru antrenor, si acoperirea tuturor sectiunilor/scenariilor cerute.",
+        "Fresh clone independent din origin (E:/ManualFC-remote-verify-3713): npm install, npm run check, npm test (9/9), pytest (576/576), npm run build (119 pagini, neschimbat), audit_route_links.py PASS, comportament offline verificat cu browser real, git fsck --full curat, arbore de fisiere urmarite identic byte-cu-byte cu repo-ul canonic (971/971, 0 diferente)."],
+    volume="CONTROL-PLANE", units=1, status="DONE",
+    validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test",
+                 "python scripts/audit_route_links.py", "git diff --check"])
 add("TASK-2717", "Wave-1 browser acceptance, Preview si baseline", "PHASE-27", ["TASK-2704"],
     ["plans/TASK-2717-wave1-acceptance.md", "reports/audits/MANUALFC_WAVE1_BROWSER_ACCEPTANCE.md", REPORT("TASK-2717")],
     SCHEMA_OK + [
@@ -1962,6 +1978,11 @@ def materialize() -> dict:
             task["attempts"] = 1
             task["started_at"] = "2026-09-14T21:30:00+03:00"
             task["completed_at"] = "2026-09-14T22:15:00+03:00"
+            task["last_error"] = None
+        if task["task_id"] == "TASK-3713":
+            task["attempts"] = 1
+            task["started_at"] = "2026-09-15T09:00:00+03:00"
+            task["completed_at"] = "2026-09-15T10:30:00+03:00"
             task["last_error"] = None
         if task["task_id"] == "TASK-2705":
             task["attempts"] = 1
