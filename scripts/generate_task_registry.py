@@ -1429,6 +1429,18 @@ add("TASK-3713", "ManualFC Private Pilot Setup: protocol de pilot cu 2-3 antreno
     volume="CONTROL-PLANE", units=1, status="DONE",
     validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test",
                  "python scripts/audit_route_links.py", "git diff --check"])
+add("TASK-3715", "Redeploy ManualFC from origin/main and Verify the Live Production Deployment -- verdict BLOCKED (fara acces Vercel autentificat), investigat complet, nicio ocolire", "CONTROL-PLANE", ["TASK-3713"],
+    [REPORT("TASK-3715"), "plans/TASK-3715-redeploy-and-verify-production.md"],
+    SCHEMA_OK + [
+        "Acces de deployment verificat exhaustiv si dovedit indisponibil: `vercel whoami` -> Logged out; niciun `.vercel/project.json` in repo; nicio variabila VERCEL_TOKEN/VERCEL_ORG_ID/VERCEL_PROJECT_ID; niciun `auth.json` pentru Vercel CLI pe disc; niciun tool MCP de deployment Vercel inregistrat in sesiune.",
+        "Proiectul/URL-ul de productie confirmat din documentatia existenta, fara a inventa un domeniu: `manualfc` (prj_P2o9rzNbCsHraLk5CWVQGozAOZuU), alias `https://manualfc.vercel.app/` (reports/deployments/TASK-2601-vercel-staging.md, DEC-0053).",
+        "Stare live curenta verificata direct, cu browser real, fara nicio autentificare Vercel: CTA header/footer/hero live inca `/gold-standard/rapid` (exact defectul reparat de TASK-3711, neajuns inca live); ruta `/gold-standard/exercitii/EX-0006/` (TASK-3712) -> 404 pe live; `/robots.txt` si `/sitemap-index.xml` (TASK-3711) -> 404 pe live; niciun tag canonical/og:url pe homepage live -- dovada directa ca deployment-ul live precede TASK-3711/3712/3713.",
+        "Validare locala completa rulata integral, chiar sub blocaj: `npm run check` 0 erori, `npm test` 9/9, `pytest` 576/576, `npm run build` 119 pagini, `audit_route_links.py` 0 linkuri rupte, toate EX-0006-EX-0015/SES-0003-SES-0006 prezente local, CTA local 100% `/rezolva-pe-teren` (0 aparitii `/gold-standard/rapid`), canonical/og:url prezente si corecte local, comportament offline functional local -- dovedeste ce ANUME ar fi trebuit sa fie live, fara a putea publica.",
+        "Niciun deployment de substitutie, niciun `vercel login` interactiv incercat, nicio modificare de repository facuta pentru a ocoli blocajul -- conform regulii explicite a taskului.",
+        "Niciun cod de produs sau configuratie modificata; working tree ramane curat (doar ExecPlan + raport + guvernanta); local main == origin/main neschimbat pe tot parcursul."],
+    volume="CONTROL-PLANE", units=1, status="DONE",
+    validations=["npm.cmd run check", "npm.cmd run build", "npm.cmd test", "python -m pytest -q",
+                 "python scripts/audit_route_links.py", "git diff --check"])
 add("TASK-2717", "Wave-1 browser acceptance, Preview si baseline", "PHASE-27", ["TASK-2704"],
     ["plans/TASK-2717-wave1-acceptance.md", "reports/audits/MANUALFC_WAVE1_BROWSER_ACCEPTANCE.md", REPORT("TASK-2717")],
     SCHEMA_OK + [
@@ -1984,6 +1996,11 @@ def materialize() -> dict:
             task["started_at"] = "2026-09-15T09:00:00+03:00"
             task["completed_at"] = "2026-09-15T10:30:00+03:00"
             task["last_error"] = None
+        if task["task_id"] == "TASK-3715":
+            task["attempts"] = 1
+            task["started_at"] = "2026-09-15T22:00:00+03:00"
+            task["completed_at"] = "2026-09-15T23:00:00+03:00"
+            task["last_error"] = "BLOCKED: no authenticated Vercel deployment access in this environment (vercel whoami -> Logged out; no token; no project link; no MCP deployment tool)."
         if task["task_id"] == "TASK-2705":
             task["attempts"] = 1
             task["started_at"] = "2026-08-14T20:05:00+03:00"
