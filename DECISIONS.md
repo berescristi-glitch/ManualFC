@@ -706,3 +706,25 @@ Raport final: `reports/task-reports/TASK-3715.md`. Task: `TASK-3715` — muncă 
 **Repo legacy `E:/ManualFC` confirmat neatins.**
 
 Raport final: `reports/task-reports/TASK-3716.md`. Task: `TASK-3716 = DONE`, verdict **`PASS`**.
+
+## DEC-0089 — TASK-3714 nu execută pilotul: PILOT STATUS = NOT STARTED, verdict BLOCKED, nicio dovadă fabricată
+
+Taskul cerea rularea efectivă a pilotului privat cu 2-3 antrenori U11 reali, care să conducă sesiuni reale de antrenament cu copii reali pe o fereastră de 2-4 săptămâni, și producerea unui Product Reality Check bazat pe comportament real observat.
+
+**Căutare exhaustivă, nu presupunere:** înainte de a concluziona orice, s-a căutat în întregul repository orice dovadă reală de pilotare — formulare de observație completate, fișiere codificate `A1`/`A2`/`A3` cu conținut real, orice fișier mai nou decât protocolul (`TASK-3713`) care ar indica participare reală de antrenor. **Zero găsite.** Singurele fișiere din `docs/field-pilot/` rămân cele create în `TASK-2301` (Runda 1, niciodată executată) și `TASK-3713` (protocolul actual, pregătit dar niciodată executat).
+
+**Limitare fundamentală, documentată onest, nu un blocaj tehnic de rezolvat prin altă cale:** acest task cere muncă de teren în lumea reală — recrutarea unor oameni reali (antrenori), care să conducă activități reale (antrenamente) cu alți oameni reali (copii), pe parcursul unor săptămâni reale de calendar, și să raporteze voluntar ce au observat. Nimic din această secvență nu poate avea loc în interiorul unei sesiuni de asistent de cod. O sesiune de automatizare de browser (Playwright) care parcurge site-ul **nu este** un antrenor real folosind produsul cu copii reali pe teren — ar constitui exact fabricarea de dovezi pe care protocolul (disciplina RAW OBSERVATION/INTERPRETATION/CONFIDENCE) și acest task o interzic explicit („do not fabricate participants, sessions, observations, quotes, or findings"). Diferența dintre „am testat tehnic site-ul" (deja făcut extensiv în `TASK-3711`–`TASK-3716`) și „un antrenor real a folosit produsul la un antrenament real și a raportat ce a observat" e exact distincția pe care acest task o protejează.
+
+**Decizie:** `PILOT STATUS` declarat explicit **`NOT_STARTED`**; verdictul taskului: **`BLOCKED`** — conform regulii proprii a taskului: „Use BLOCKED when real participants, sessions, or access to the live product are unavailable." Accesul la produsul live **este** disponibil (`https://manualfc.vercel.app/` → `200`, verificat înainte și după); participanții și sesiunile reale **nu sunt** disponibile — blocajul e specific acestora, nu produsului.
+
+**Niciun Product Reality Check nu a fost scris.** Un astfel de raport, fără dovezi reale de rezumat, ar fi fost fie gol de conținut, fie — mai grav — o invitație tacită de a completa golurile cu presupuneri, exact ce regula „nu inventa" interzice. Regula proprie a taskului e explicită: „do not mark the task PASS because the protocol is merely prepared."
+
+**Validare de regresie rulată integral, chiar fără nicio modificare de cod** (cerută explicit de task pentru acest scenariu): `npm run check` 0 erori; `npm test` 9/9; `pytest` 576/576 + 25 subtests. Confirmă că starea repository-ului rămâne solidă, gata pentru un pilot real, în așteptarea participanților — blocajul nu ține de calitatea produsului.
+
+**Acțiunea exactă cerută din partea utilizatorului**, pentru a debloca acest task: recrutarea reală a 2-3 antrenori U11, conform criteriilor deja documentate în `MANUALFC_PRIVATE_PILOT_PROTOCOL.md` (§2-3); parcurgerea de către fiecare a minimum 2 ședințe reale de antrenament pe o fereastră de 2-4 săptămâni, folosind `PRIVATE_PILOT_COACH_PACK.md` ca ghid; completarea și returnarea `PRIVATE_PILOT_OBSERVATION_TEMPLATE.md` pentru fiecare antrenor/sesiune. Abia atunci un task viitor va putea procesa date reale și produce Product Reality Check-ul cerut — cu aceeași disciplină RAW OBSERVATION/INTERPRETATION/CONFIDENCE, fără nimic completat din presupuneri.
+
+**Niciun cod de produs modificat.** `local main == origin/main` (`81c59467e5f9da178c686bd23dea5f960cd5ee1f`) neschimbat de acest task — niciun commit de cod, doar guvernanță.
+
+**Repo legacy `E:/ManualFC` confirmat neatins.**
+
+Raport final: `reports/task-reports/TASK-3714.md`. Task: `TASK-3714` — muncă de investigare/validare **DONE**, `PILOT STATUS = NOT_STARTED`, verdict **`BLOCKED`**.

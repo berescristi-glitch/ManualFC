@@ -1455,6 +1455,18 @@ add("TASK-3716", "Unblock Vercel Deployment and Publish the Validated ManualFC B
     volume="CONTROL-PLANE", units=1, status="DONE",
     validations=["npm.cmd run check", "npm.cmd run build", "npm.cmd test", "python -m pytest -q",
                  "python scripts/audit_route_links.py", "git diff --check"])
+add("TASK-3714", "Execute the Live ManualFC Private Pilot and Produce the Product Reality Check -- PILOT STATUS = NOT STARTED, verdict BLOCKED (nu exista participanti/sesiuni reale), nicio dovada fabricata", "CONTROL-PLANE", ["TASK-3716"],
+    [REPORT("TASK-3714"), "plans/TASK-3714-execute-private-pilot.md"],
+    SCHEMA_OK + [
+        "Cautare exhaustiva, nu presupunere, a oricarei dovezi reale de pilotare in intregul repository: niciun formular de observatie completat, niciun fisier codificat A1/A2/A3 cu date reale, nimic mai nou decat protocolul (TASK-3713) care ar indica participare reala de antrenor. 0 gasite.",
+        "Site de productie confirmat accesibil (`https://manualfc.vercel.app/` -> 200) inainte si dupa investigatie -- blocajul e specific participantilor/sesiunilor reale, nu accesului la produs.",
+        "PILOT STATUS declarat explicit: NOT_STARTED. Niciun participant, sesiune, observatie, citat sau constatare nu a fost inventat sau simulat -- regula absoluta a taskului respectata integral.",
+        "Nicio automatizare de browser folosita ca substitut pentru comportament real de antrenor -- ar fi constituit exact fabricarea de dovezi interzisa explicit; QA tehnic (deja facut in TASK-3711-TASK-3716) ramane separat de cercetarea comportamentala reala ceruta de acest task.",
+        "Validare de regresie completa rulata, chiar fara nicio modificare de cod: `npm run check` 0 erori, `npm test` 9/9, `pytest` 576/576 -- dovedeste ca starea repository-ului ramane solida, gata pentru un pilot real, in asteptarea participantilor.",
+        "Niciun Product Reality Check scris -- nu exista dovezi reale de rezumat; scrierea unuia ar fi incalcat regula explicita a taskului.",
+        "Actiunea exacta ceruta din partea utilizatorului: recrutarea a 2-3 antrenori reali conform PRIVATE_PILOT_COACH_PACK.md, desfasurarea a minimum 2 sedinte reale per antrenor pe o fereastra de 2-4 saptamani, si returnarea formularelor PRIVATE_PILOT_OBSERVATION_TEMPLATE.md completate -- abia atunci un task viitor poate produce Product Reality Check-ul real."],
+    volume="CONTROL-PLANE", units=1, status="DONE",
+    validations=["npm.cmd run check", "npm.cmd test", "python -m pytest -q", "git diff --check"])
 add("TASK-2717", "Wave-1 browser acceptance, Preview si baseline", "PHASE-27", ["TASK-2704"],
     ["plans/TASK-2717-wave1-acceptance.md", "reports/audits/MANUALFC_WAVE1_BROWSER_ACCEPTANCE.md", REPORT("TASK-2717")],
     SCHEMA_OK + [
@@ -2020,6 +2032,11 @@ def materialize() -> dict:
             task["started_at"] = "2026-09-17T16:30:00+03:00"
             task["completed_at"] = "2026-09-17T17:00:00+03:00"
             task["last_error"] = None
+        if task["task_id"] == "TASK-3714":
+            task["attempts"] = 1
+            task["started_at"] = "2026-09-17T22:20:00+03:00"
+            task["completed_at"] = "2026-09-17T22:45:00+03:00"
+            task["last_error"] = "BLOCKED: no real coaches/sessions available for the pilot; PILOT STATUS = NOT_STARTED. No participants, sessions, observations, or findings were fabricated."
         if task["task_id"] == "TASK-2705":
             task["attempts"] = 1
             task["started_at"] = "2026-08-14T20:05:00+03:00"
