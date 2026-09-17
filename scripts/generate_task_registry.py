@@ -1441,6 +1441,20 @@ add("TASK-3715", "Redeploy ManualFC from origin/main and Verify the Live Product
     volume="CONTROL-PLANE", units=1, status="DONE",
     validations=["npm.cmd run check", "npm.cmd run build", "npm.cmd test", "python -m pytest -q",
                  "python scripts/audit_route_links.py", "git diff --check"])
+add("TASK-3716", "Unblock Vercel Deployment and Publish the Validated ManualFC Baseline -- deblocare prin flux OAuth de dispozitiv, deploy de productie reusit, verificare live completa, verdict PASS", "CONTROL-PLANE", ["TASK-3715"],
+    [REPORT("TASK-3716"), "plans/TASK-3716-unblock-and-deploy.md"],
+    SCHEMA_OK + [
+        "Deblocare legitima prin fluxul de dispozitiv OAuth al Vercel CLI (`vercel login` -> URL + cod afisat, confirmat de utilizator in propriul browser) -- calea A explicit autorizata de task; niciun token/parola vazut vreodata de acest proces.",
+        "Proiect legat explicit la cel existent, nu creat unul nou: `vercel link --project manualfc --scope berescristi-8889s-projects` (scope obtinut din `vercel teams ls`, nu presupus, dupa ce o presupunere initiala gresita a fost respinsa explicit de CLI). `.vercel/project.json` rezultat: `projectId: prj_P2o9rzNbCsHraLk5CWVQGozAOZuU` -- identic cu ID-ul documentat in TASK-2601.",
+        "Validare locala completa inainte de deploy: `npm run check` 0 erori, `npm test` 9/9, `pytest` 576/576, `npm run build` 119 pagini, `audit_route_links.py` 0 linkuri rupte, offline functional local -- rulata la exact `HEAD == origin/main == d2c6c5a399cf245290bb7a1f04f4c7da0763ea22`, tree curat.",
+        "Deployment de productie reusit: `vercel --prod --yes` din E:/ManualFC-clean -> `dpl_FEhcEK61vhgJgHh1qoYrzUsih8Cj`, `target: production`, `readyState: READY`, aliasat automat la `https://manualfc.vercel.app`.",
+        "Verificare live completa cu browser real, dupa deploy: CTA header/footer/hero live acum `/rezolva-pe-teren` (0 aparitii `/gold-standard/rapid` in pozitii de CTA); toate rutele testate (EX-0006, EX-0010, EX-0015, SES-0003-SES-0006, rezolva-pe-teren, gold-standard, principii, volum, incepe-aici) -> 200; `/robots.txt`/`/sitemap-index.xml`/`/sitemap-0.xml` -> 200, sitemap contine 118 URL-uri inclusiv EX-0015/SES-0006; canonical si og:url prezente si corecte (`https://manualfc.vercel.app/`).",
+        "Accesibilitate live: 0 violari axe pe 5 pagini (homepage, Decision Engine, EX-0006, SES-0003, principii), main=1/h1=1 peste tot, focus de tastatura vizibil (outline 3px solid). Responsive: 0 overflow orizontal la 1440px si 390px pe 4 pagini cheie. Offline: service worker activ, homepage si o pagina vizitata anterior raman disponibile offline (200, h1 prezent).",
+        "Identitate de deployment: `x-vercel-id`/`x-vercel-cache: HIT`/`age: 88` confirma servirea deployment-ului nou-creat la momentul verificarii; proiectul nu are integrare Git (deploy prin CLI, upload direct), deci nu exista un SHA Git expus de Vercel -- cea mai puternica dovada disponibila e combinatia sursa exacta (HEAD==origin/main, tree curat la upload) + amprenta de continut (toate rutele TASK-3711/3712 prezente simultan, nimic stale ramas).",
+        "Niciun cod de produs sau configuratie Vercel modificata; niciun credential expus in log-uri/rapoarte; `.vercel/`/`.env.local` raman negestionate de Git (deja in `.gitignore`); local main == origin/main neschimbat de acest task."],
+    volume="CONTROL-PLANE", units=1, status="DONE",
+    validations=["npm.cmd run check", "npm.cmd run build", "npm.cmd test", "python -m pytest -q",
+                 "python scripts/audit_route_links.py", "git diff --check"])
 add("TASK-2717", "Wave-1 browser acceptance, Preview si baseline", "PHASE-27", ["TASK-2704"],
     ["plans/TASK-2717-wave1-acceptance.md", "reports/audits/MANUALFC_WAVE1_BROWSER_ACCEPTANCE.md", REPORT("TASK-2717")],
     SCHEMA_OK + [
@@ -2001,6 +2015,11 @@ def materialize() -> dict:
             task["started_at"] = "2026-09-15T22:00:00+03:00"
             task["completed_at"] = "2026-09-15T23:00:00+03:00"
             task["last_error"] = "BLOCKED: no authenticated Vercel deployment access in this environment (vercel whoami -> Logged out; no token; no project link; no MCP deployment tool)."
+        if task["task_id"] == "TASK-3716":
+            task["attempts"] = 1
+            task["started_at"] = "2026-09-17T16:30:00+03:00"
+            task["completed_at"] = "2026-09-17T17:00:00+03:00"
+            task["last_error"] = None
         if task["task_id"] == "TASK-2705":
             task["attempts"] = 1
             task["started_at"] = "2026-08-14T20:05:00+03:00"

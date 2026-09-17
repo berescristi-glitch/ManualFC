@@ -684,3 +684,25 @@ Taskul cerea redeployment-ul reviziei validate `origin/main` (`b0202f0515b684d6a
 **Repo legacy `E:/ManualFC` confirmat neatins** pe tot parcursul (neinspectat, neschimbat).
 
 Raport final: `reports/task-reports/TASK-3715.md`. Task: `TASK-3715` — muncă de investigare/validare **DONE**, verdict de deployment **`BLOCKED`**.
+
+## DEC-0088 — TASK-3716 deblochează Vercel prin flux OAuth de dispozitiv, publică revizia validată, verificare live completă PASS
+
+`TASK-3715` documentase exhaustiv blocajul de deployment (`vercel whoami` → „Logged out", fără token, fără link de proiect, fără tool MCP). Acest task îl deblochează prin calea A explicit autorizată — autentificarea CLI — folosind fluxul de dispozitiv OAuth al Vercel: `npx vercel login` a afișat un URL public + un cod de unică folosință, iar utilizatorul a confirmat codul în propriul browser. **Acest proces nu a văzut niciodată o parolă, un cookie de sesiune sau un token** — doar codul afișat, generat pentru confirmare externă. Primele două coduri au expirat neconfirmate (fereastra de valabilitate a codului e scurtă); al treilea a fost confirmat la timp. `npx vercel whoami` a confirmat autentificarea: `berescristi-8889`.
+
+**Legarea la proiect, verificată, nu presupusă:** o primă încercare cu `--scope berescristi-8889` (numele de utilizator) a fost respinsă explicit de CLI („You cannot set your Personal Account as the scope"), dovedind că presupunerea inițială era greșită. `npx vercel teams ls` a returnat scope-ul corect, `berescristi-8889s-projects`, folosit apoi cu succes în `vercel link --project manualfc --scope berescristi-8889s-projects`. `.vercel/project.json` rezultat conține `projectId: prj_P2o9rzNbCsHraLk5CWVQGozAOZuU` — **identic** cu ID-ul documentat în `reports/deployments/TASK-2601-vercel-staging.md` — confirmă legarea la proiectul existent corect, nu la unul nou creat din greșeală.
+
+**Validare locală completă înainte de deployment**, la exact `HEAD == origin/main == d2c6c5a399cf245290bb7a1f04f4c7da0763ea22`, tree curat: `npm run check` 0 erori; `npm test` 9/9; `pytest` 576/576; `npm run build` → 119 pagini; `audit_route_links.py` 0 linkuri rupte; comportament offline funcțional local.
+
+**Deployment de producție reușit:** `npx vercel --prod --yes`, rulat direct din `E:/ManualFC-clean` → `dpl_FEhcEK61vhgJgHh1qoYrzUsih8Cj`, `target: production`, `readyState: READY`, aliasat automat la `https://manualfc.vercel.app`.
+
+**Verificare live completă, cu browser real, după deployment** — toate PASS: CTA-urile din header, footer și hero duc acum la `/rezolva-pe-teren` (0 apariții `/gold-standard/rapid` în poziții de CTA — defectul documentat stale în `TASK-3715` e acum rezolvat live); toate rutele testate (`EX-0006`, `EX-0010`, `EX-0015`, `SES-0003`–`SES-0006`, `/rezolva-pe-teren`, `/gold-standard`, `/principii`, `/volum`, `/incepe-aici`) răspund `200`; `/robots.txt`, `/sitemap-index.xml`, `/sitemap-0.xml` răspund `200`, sitemap-ul conține 118 URL-uri, inclusiv `EX-0015`/`SES-0006`; `canonical` și `og:url` prezente și corecte (`https://manualfc.vercel.app/`). Sitemap-ul conține și `/gold-standard/rapid` — **corect, nu o regresie**: acea pagină rămâne o rută reală, intenționat păstrată ca variantă scurtă în familia Gold Standard (decizie `TASK-3711`/`TASK-3712`), doar CTA-urile principale au fost repointate.
+
+**Accesibilitate live:** 0 violări axe pe 5 pagini (homepage, Decision Engine, `EX-0006`, `SES-0003`, `principii`), `main`=1/`h1`=1 peste tot, focus de tastatură vizibil (outline 3px solid). **Responsive:** 0 overflow orizontal la 1440px și 390px pe 4 pagini cheie. **Offline:** service worker activ, homepage și o pagină vizitată anterior rămân disponibile offline (`200`, `h1` prezent) — verificat cu `context.setOffline(true)` pe domeniul live real, nu simulat local.
+
+**Identitatea deployment-ului:** proiectul nu are integrare Git activă (deploy prin CLI, upload direct din directorul local) — Vercel nu expune deci un SHA Git direct în headere pentru acest deployment. Cea mai puternică dovadă disponibilă, documentată explicit ca atare: sursa exactă (`HEAD == origin/main`, tree curat la momentul upload-ului) + amprenta de conținut (toate rutele `TASK-3711`/`TASK-3712` prezente simultan pe live, nimic din starea stale anterioară rămas) + headerele `x-vercel-cache: HIT`/`age: 88` confirmând servirea deployment-ului nou-creat la momentul verificării.
+
+**Niciun cod de produs sau configurare Vercel modificată** — `vercel.json` era deja corect din `TASK-3711`; acest task publică, nu repară, configurația existentă. **Niciun credential expus** în nicio conversație, log sau fișier urmărit de Git — `.vercel/` și `.env.local` rămân acoperite de `.gitignore`, confirmat neschimbat de `git status`. `local main == origin/main` (`d2c6c5a399cf245290bb7a1f04f4c7da0763ea22`) neschimbat de acest task — nu s-a creat niciun commit doar pentru a înregistra deployment-ul.
+
+**Repo legacy `E:/ManualFC` confirmat neatins.**
+
+Raport final: `reports/task-reports/TASK-3716.md`. Task: `TASK-3716 = DONE`, verdict **`PASS`**.
