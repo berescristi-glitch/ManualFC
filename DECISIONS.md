@@ -750,3 +750,27 @@ Utilizatorul a autorizat explicit trecerea la construcția de produs fără a a�
 **Niciun cod de produs modificat în afara scopului strict al temei noi.** Repo legacy `E:/ManualFC` confirmat neatins.
 
 Raport final: `reports/task-reports/TASK-3718.md`. Task: `TASK-3718 = DONE`, verdict **`PASS`** — validarea de către antrenori reali rămâne indisponibilă și nu este pretinsă.
+
+## DEC-0091 — TASK-3719 construiește pilonul de conținut „Scripturi de comunicare", verdict PASS
+
+Roadmap-ul canonic (Phase 5) plasează populația unui pilon de conținut gol după dovezi de pilotare reală, cu regula explicită de a nu umple toți cei trei pilonii goi (studii de caz/scripturi/planuri de sezon) doar pentru că schemele există. Utilizatorul autorizează explicit construirea pilonului „scripturi de comunicare" acum, fără dovezi de pilotare (`TASK-3714` rămâne `BLOCKED`) — aceeași autorizare explicită ca la `TASK-3718` pentru tema a doua.
+
+**26 scripturi noi** (`SCR-0001`–`SCR-0026`), câte 1-2 per categorie, acoperind toate cele 14 categorii cerute explicit de task (observare înainte de corecție, recepție și scanare, sprijin și unghiuri de pasă, mișcare după pasă, tranzițiile la pierderea/câștigarea mingii, cooperare defensivă, decizie sub presiune, greșeala ca informație, reflecție și autoevaluare, conflict/frustrare și reglare emoțională, incluziune/echitate, explicarea constrângerilor, închiderea ședinței/transfer). Fiecare script descrie o situație distinctă de teren, nu o frază motivațională — verificat programatic (`test_short_and_expanded_versions_are_distinct_and_nonempty`, printre altele).
+
+**Schema `communication-script.schema.json` era un schelet neutilizat** (5 proprietăți, 0 documente reale) — completată la ~25 câmpuri, modelată pe `schemas/message-foundation.schema.json` (de asemenea complet neutilizat ca document de sine stătător înainte de acest task), nu inventată de la zero. Reutilizarea numelor de câmpuri deja stabilite pentru exerciții (`child_wording`, `rationales` cu exact 7 dimensiuni) declanșează automat validatorul FAIL_CLOSED de pedagogie deja existent în `validate_content.py`, fără cod nou de validare.
+
+**Verificare manuală a textului complet al fiecărui claim citat, nu doar căutare de cuvinte cheie:** 3 claim-uri găsite inițial prin căutare tematică (`CLM-0054`, `CLM-0056`, `CLM-0057`) s-au dovedit, la citirea integrală, a fi intrări auto-corective care declară explicit că afirmația inițială era fabricată sau nepotrivit atribuită — nu au fost citate; s-au folosit în schimb claim-urile reale corespunzătoare (`CLM-0069`–`CLM-0072`, `CLM-0088`, `CLM-0267`, `CLM-0263`, `CLM-0235` etc.), fiecare verificat înainte de citare.
+
+**Validator nou dedicat** (`scripts/validate_communication_scripts.py`) verifică rezolvarea reală a fiecărui `principle_id`/`related_problem_id`/`related_exercise_id`/`related_session_id`/`source_claim_id` — necesar pentru că validatorul generic nu poate verifica `principle_ids` (format `principle.<slug>`, nu se potrivește modelului `PREFIX-XXXX` verificat acolo). `content-bridge.ts` extins cu `getCommunicationScripts()`/`getCommunicationScript(id)`/`getScriptsForExercise`/`Session`/`Principle`, toate FAIL_CLOSED. `CanonicalKind` (`coach-state.ts`) extins cu `'script'` pentru salvare/favorite/recente local-first — nicio infrastructură nouă.
+
+**Două trasee de descoperire reale:** `/scripturi/` (filtrare pe 14 categorii + căutare text) și blocuri contextuale „Scripturi de comunicare relevante" pe paginile de exercițiu, ședință și principiu, generate din legături reale (`related_exercise_ids`/`related_session_ids`/`principle_ids`), nu dintr-un câmp de temă denormalizat. Indexare completă în căutarea unificată (`discovery-index.ts`).
+
+**Scripturile leagă real conținut din ambele teme** (EX-0001–EX-0015 tema 1, EX-0016–EX-0025 tema 2) și toate cele 8 probleme din motorul de decizie — verificat programatic (`test_both_training_themes_are_reachable_from_the_script_library`).
+
+**Niciun fișier existent din `data/exercises/`, `data/sessions/`, `data/assessments/`, `data/problems/`, `data/principles/` modificat** (`git diff --stat` gol) — nicio corupere a temelor sau motorul de decizie existente.
+
+**Validare completă:** `validate_content.py --strict`/`validate_communication_scripts.py` 0 erori, `npm run check` 0 erori, `npm test` 9/9 (contor de rute actualizat 139→166), `pytest` 613 passed + 25 subtests (16 teste noi), `npm run build` 166 pagini, Playwright+axe la 1440px/390px pe 7 pagini (0 violări, 0 erori consolă, confirmat că blocurile de scripturi relevante randează legături reale), sitemap complet, `git fsck --full` curat, fresh clone independent din `origin` reproduce identic (1028/1028 fișiere, 0 diferențe).
+
+**Niciun cod de produs modificat în afara scopului strict al acestui pilon.** Repo legacy `E:/ManualFC` confirmat neatins.
+
+Raport final: `reports/task-reports/TASK-3719.md`. Task: `TASK-3719 = DONE`, verdict **`PASS`** — validarea de către antrenori reali rămâne indisponibilă și nu este pretinsă.

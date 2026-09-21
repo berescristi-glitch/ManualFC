@@ -1498,6 +1498,58 @@ add("TASK-3718", "Build and Validate the Second Complete ManualFC Training Theme
     validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test",
                  "python scripts/validate_content.py --strict", "python scripts/validate_gold_standard_v2.py",
                  "git diff --check"])
+add("TASK-3719", "Build the Communication Scripts Content Pillar: 26 scripturi noi (SCR-0001-SCR-0026) in toate cele 14 categorii cerute, legate real la ambele teme si la motorul de decizie, verdict PASS, pilotarea reala ramane indisponibila", "CONTROL-PLANE", ["TASK-3718"],
+    ["data/communication-scripts/script-tacere-activa-inainte-de-interventie.json",
+     "data/communication-scripts/script-un-singur-lucru-per-interventie.json",
+     "data/communication-scripts/script-priveste-inainte-sa-vina-mingea.json",
+     "data/communication-scripts/script-orienteaza-te-spre-spatiul-liber.json",
+     "data/communication-scripts/script-iesi-din-umbra-adversarului.json",
+     "data/communication-scripts/script-nu-va-adunati-in-aceeasi-zona.json",
+     "data/communication-scripts/script-nu-ramane-pe-loc-dupa-ce-ai-pasat.json",
+     "data/communication-scripts/script-primele-doua-secunde-dupa-pierdere.json",
+     "data/communication-scripts/script-cine-e-aproape-cine-protejeaza-centrul.json",
+     "data/communication-scripts/script-prima-privire-nu-prima-pasa-inapoi.json",
+     "data/communication-scripts/script-ai-castigat-mingea-ce-vezi-inainte.json",
+     "data/communication-scripts/script-unul-incetineste-celalalt-protejeaza.json",
+     "data/communication-scripts/script-nu-va-eliminati-amandoi-cu-aceeasi-actiune.json",
+     "data/communication-scripts/script-ce-vezi-inainte-sa-alegi.json",
+     "data/communication-scripts/script-nu-exista-o-singura-solutie-corecta.json",
+     "data/communication-scripts/script-greseala-e-informatie-nu-verdict.json",
+     "data/communication-scripts/script-lauda-efortul-nu-doar-rezultatul.json",
+     "data/communication-scripts/script-ce-ai-observat-azi.json",
+     "data/communication-scripts/script-unde-ai-mai-vazut-asta-in-joc.json",
+     "data/communication-scripts/script-esti-frustrat-hai-sa-respiram-o-secunda.json",
+     "data/communication-scripts/script-doi-copii-se-cearta-pe-minge.json",
+     "data/communication-scripts/script-toata-lumea-atinge-mingea.json",
+     "data/communication-scripts/script-nu-eticheta-copilul-care-greseste-des.json",
+     "data/communication-scripts/script-de-ce-am-schimbat-regula.json",
+     "data/communication-scripts/script-ce-luati-cu-voi-la-meci.json",
+     "data/communication-scripts/script-inchidem-cu-un-singur-lucru.json",
+     "schemas/communication-script.schema.json", "scripts/validate_communication_scripts.py",
+     "app/src/lib/content-bridge.ts", "app/src/lib/discovery-index.ts", "app/src/lib/coach-state.ts",
+     "app/src/components/CoachActions.astro",
+     "app/src/pages/scripturi/index.astro", "app/src/pages/scripturi/[id].astro",
+     "app/src/pages/gold-standard/exercitii/[id].astro", "app/src/pages/gold-standard/sedinte/[id].astro",
+     "app/src/pages/principii/[slug].astro",
+     "tests/test_task3719_communication_scripts.py", "tests/web/built-routes.test.js",
+     "plans/TASK-3719-communication-scripts-pillar.md", REPORT("TASK-3719")],
+    SCHEMA_OK + [
+        "Pilon ales explicit dintre cei 3 pilonii goi (studii de caz/scripturi de comunicare/planuri de sezon) semnalati de roadmap-ul canonic (Phase 5) -- utilizatorul autorizeaza construirea acum, fara dovezi de pilotare (TASK-3714 ramane BLOCKED), la fel ca la TASK-3718 pentru tema a doua.",
+        "26 scripturi noi (SCR-0001-SCR-0026), cate 1-2 per categorie, acoperind toate cele 14 categorii cerute explicit (observare inainte de corectie, receptie si scanare, sprijin si unghiuri de pasa, miscare dupa pasa, tranzitiile la pierderea/castigarea mingii, cooperare defensiva, decizie sub presiune, greseala ca informatie, reflectie si autoevaluare, conflict/frustrare, incluziune/echitate, explicarea constrangerilor, inchiderea sedintei/transfer).",
+        "Schema communication-script.schema.json (schelet neutilizat, 5 proprietati, 0 documente reale inainte de acest task) completata la ~25 campuri, modelata pe message-foundation.schema.json (de asemenea neutilizat ca document de sine statator) -- nu inventata de la zero. Reutilizarea numelor de campuri (child_wording, rationales cu exact 7 dimensiuni) declanseaza automat validatorul FAIL_CLOSED de pedagogie deja existent in validate_content.py, fara cod nou.",
+        "Verificare manuala a textului complet al fiecarui claim citat, nu doar cautare de cuvinte cheie: 3 claim-uri gasite initial prin cautare (CLM-0054/0056/0057) s-au dovedit, la citire integrala, intrari auto-corective care declara ca afirmatia initiala era fabricata/nepotrivit atribuita -- nu au fost citate; folosite in schimb claim-urile reale corespunzatoare.",
+        "Validator nou dedicat (scripts/validate_communication_scripts.py) -- verifica rezolvarea reala a fiecarui principle_id/related_problem_id/related_exercise_id/related_session_id/source_claim_id, necesar pentru ca validatorul generic nu poate verifica principle_ids (format principle.<slug>, nu se potriveste modelului PREFIX-XXXX).",
+        "content-bridge.ts extins cu getCommunicationScripts()/getCommunicationScript(id)/getScriptsForExercise/Session/Principle, toate FAIL_CLOSED; CanonicalKind (coach-state.ts) extins cu 'script' pentru salvare/favorite/recente local-first, fara infrastructura noua.",
+        "Doua trasee de descoperire reale: /scripturi/ (filtrare pe 14 categorii + cautare text) si blocuri contextuale 'Scripturi de comunicare relevante' pe exercitii/sedinte/principii, generate din legaturi reale (nu camp de tema denormalizat); indexare completa in cautarea unificata.",
+        "Scripturile leaga real continut din ambele teme (EX-0001-0015 tema 1, EX-0016-0025 tema 2) si toate cele 8 probleme din motorul de decizie -- verificat programatic.",
+        "16 teste noi (tests/test_task3719_communication_scripts.py); niciun fisier existent din data/exercises, data/sessions, data/assessments, data/problems, data/principles modificat (git diff curat).",
+        "Verificare reala de browser (Playwright, Chromium, @axe-core/playwright) la 1440px si 390px pe 7 pagini: 14/14 PASS, 0 violari axe, 0 erori de consola, confirmat ca blocurile de scripturi relevante randeaza legaturi reale.",
+        "npm run build produce 166 pagini (139+27: 26 pagini de script + 1 index); tests/web/built-routes.test.js actualizat de la 139 la 166 cu justificare explicita.",
+        "Nicio pretentie de validare de teren: raportul si continutul pilonului afirma explicit ca pilotarea reala (TASK-3714) ramane BLOCKED si intentionat sarita pentru aceasta faza."],
+    volume="CONTROL-PLANE", units=2, status="DONE",
+    validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test",
+                 "python scripts/validate_content.py --strict", "python scripts/validate_communication_scripts.py",
+                 "git diff --check"])
 add("TASK-2717", "Wave-1 browser acceptance, Preview si baseline", "PHASE-27", ["TASK-2704"],
     ["plans/TASK-2717-wave1-acceptance.md", "reports/audits/MANUALFC_WAVE1_BROWSER_ACCEPTANCE.md", REPORT("TASK-2717")],
     SCHEMA_OK + [
@@ -2072,6 +2124,11 @@ def materialize() -> dict:
             task["attempts"] = 1
             task["started_at"] = "2026-09-21T15:30:00+03:00"
             task["completed_at"] = "2026-09-21T17:15:00+03:00"
+            task["last_error"] = None
+        if task["task_id"] == "TASK-3719":
+            task["attempts"] = 1
+            task["started_at"] = "2026-09-21T21:30:00+03:00"
+            task["completed_at"] = "2026-09-21T22:15:00+03:00"
             task["last_error"] = None
         if task["task_id"] == "TASK-2705":
             task["attempts"] = 1
