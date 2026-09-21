@@ -1,0 +1,62 @@
+{
+  "id": "SCR-0014",
+  "slug": "ce-vezi-inainte-sa-alegi",
+  "title": "Ce vezi înainte să alegi?",
+  "category": "decizie-sub-presiune",
+  "situation_trigger": "Copilul ezită vizibil sub presiunea unui adversar apropiat, fără să pară că evaluează activ opțiunile disponibile, și rămâne blocat sau ia o decizie foarte târzie.",
+  "game_moment": "orice fază cu opoziție activă și presiune de timp",
+  "child_wording": "Ce vezi chiar acum, înainte să alegi?",
+  "short_version": "Ce vezi?",
+  "expanded_version": "Înainte să alegi ce faci, uită-te la ce ai în jur chiar acum — adversarul, spațiul, coechipierii — și abia apoi decide.",
+  "coach_meaning": "Antrenorul redirecționează atenția copilului spre informația disponibilă, nu spre presiunea timpului în sine, ajutându-l să transforme ezitarea într-o observare activă.",
+  "why_this_wording": "Întrebarea cere descrierea informației, nu soluția tactică — lasă copilul să ajungă singur la decizie, pornind de la ce observă, nu de la o instrucțiune directă.",
+  "problem_being_solved": "Sub presiune, copiii pot rămâne blocați nu din lipsă de opțiuni tactice, ci din lipsa unei căutări active de informație în momentul respectiv — ezitarea vine adesea din a nu ști la ce să se uite.",
+  "information_to_notice": [
+    "poziția și distanța adversarului cel mai apropiat",
+    "opțiunile de coechipieri sau spațiu liber disponibile în acel moment"
+  ],
+  "decision_to_learn": "Copilul învață să transforme ezitarea sub presiune într-o căutare activă și rapidă de informație, nu într-un blocaj.",
+  "observable_behaviours": [
+    "decizia sub presiune apare mai rapid după exersarea repetată a acestei întrebări",
+    "copilul poate numi, ulterior, ce a observat înainte de a decide"
+  ],
+  "age_appropriateness": "La 10-11 ani, presiunea de timp poate bloca procesarea informației disponibile; o întrebare scurtă, repetată constant, ajută la formarea obiceiului de căutare activă, fără a impune o soluție tactică fixă.",
+  "rationales": {
+    "tactical": "Decizia rapidă sub presiune depinde de calitatea informației căutate activ, nu de memorarea unei soluții unice pentru fiecare situație.",
+    "perceptual": "Întrebarea antrenează explicit obiceiul de a căuta activ informație relevantă chiar în momentele de presiune maximă, nu doar în situații calme.",
+    "decisional": "Decizia rămâne complet a copilului — scriptul intervine doar asupra procesului de căutare a informației, nu asupra rezultatului deciziei.",
+    "cognitive": "Blocajul sub presiune e adesea un blocaj de căutare a informației, nu de capacitate decizională — redirecționarea atenției poate debloca procesul.",
+    "psychological": "O întrebare scurtă și neutră reduce presiunea suplimentară pe care ar adăuga-o o instrucțiune directă („fă asta acum”) în momentul deja tensionat al ezitării.",
+    "technical": "Nu se prescrie o acțiune tehnică specifică — întrebarea rămâne generică, aplicabilă la orice tip de decizie sub presiune.",
+    "social": "Copiii care își dezvoltă acest obicei devin mai predictibili pentru coechipieri, care pot anticipa o decizie mai rapidă și mai coerentă din partea lor."
+  },
+  "coach_observation_before_speaking": [
+    "dacă ezitarea vine din lipsa de informație căutată sau din altă cauză (oboseală, teamă de eroare)",
+    "dacă presiunea din exercițiu e potrivită nivelului curent al copilului"
+  ],
+  "when_to_intervene": [
+    "blocajul sub presiune se repetă constant, în situații diferite, sugerând un tipar, nu un moment izolat"
+  ],
+  "when_not_to_intervene": [
+    "o singură ezitare izolată, într-o situație de presiune neobișnuit de mare pentru nivelul curent"
+  ],
+  "understanding_check": [
+    "Ce ai văzut chiar înainte să alegi de data asta?"
+  ],
+  "response_if_not_understood": [
+    "dacă răspunsul rămâne vag sau absent, se reduce presiunea exercițiului (regresie) și se repetă întrebarea la un nivel de dificultate mai mic"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Decide mai repede!", "reason": "adaugă presiune suplimentară fără să ofere niciun sprijin pentru procesul de căutare a informației"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate crede că trebuie să numească verbal informația în timpul jocului, ceea ce ar încetini decizia — întrebarea e pentru pauză sau reflecție, nu pentru fază activă"
+  ],
+  "match_transfer": "Obiceiul de a căuta activ informație sub presiune, exersat repetat, e exact ce permite decizii rapide și coerente în meciul oficial, unde presiunea de timp e constantă.",
+  "evidence_boundary": "Nu există o soluție tactică universal corectă la această întrebare — ea antrenează un proces, nu un răspuns fix; eficiența exactă a acestei formulări specifice rămâne neconfirmată printr-o pilotare reală pe teren.",
+  "principle_ids": [
+    "principle.jocul-ca-sistem-de-probleme",
+    "principle.focalizarea-observatiei-si-criterii-de-interventie"
+  ],
+  "related_exercise_ids": ["EX-0009", "EX-0022"]
+}

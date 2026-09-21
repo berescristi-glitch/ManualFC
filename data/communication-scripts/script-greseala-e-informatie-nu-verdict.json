@@ -1,0 +1,65 @@
+{
+  "id": "SCR-0016",
+  "slug": "greseala-e-informatie-nu-verdict",
+  "title": "Greșeala e informație, nu verdict",
+  "category": "greseala-ca-informatie",
+  "situation_trigger": "Un copil greșește vizibil (pierde mingea, alege greșit, ratează o execuție tehnică) și reacția lui imediată e rușine sau frustrare vizibilă, nu curiozitate despre ce s-a întâmplat.",
+  "game_moment": "orice fază, imediat după o greșeală vizibilă",
+  "child_wording": "N-a mers de data asta — ce ai observat?",
+  "short_version": "N-a mers, ce ai văzut?",
+  "expanded_version": "N-a mers de data asta, dar asta ne spune ceva util — ce ai observat chiar înainte să încerci?",
+  "coach_meaning": "Antrenorul redirecționează atenția de la rezultat (eșec) spre proces (informație observată), tratând greșeala ca sursă de învățare, nu ca verdict despre valoarea copilului.",
+  "why_this_wording": "Formularea evită orice cuvânt evaluativ negativ („greșit”, „prost”) și cere direct informația din spatele acțiunii, normalizând greșeala ca parte așteptată a procesului.",
+  "problem_being_solved": "Tratarea greșelii ca eșec personal, nu ca informație despre o decizie sau execuție, crește frica de a încerca și poate duce copilul să evite repetat situațiile de risc (cum arată exact tiparul din PRB-0008).",
+  "information_to_notice": [
+    "dacă reacția copilului la propria greșeală e rușine, frustrare sau curiozitate",
+    "dacă greșeala se repetă identic sau copilul încearcă deja variații"
+  ],
+  "decision_to_learn": "Copilul învață să trateze propria greșeală ca sursă de informație despre ce a văzut și ce a decis, nu ca o etichetă negativă despre sine.",
+  "observable_behaviours": [
+    "copilul continuă să încerce după o greșeală, fără să evite situația similară",
+    "răspunsul la întrebarea despre observație descrie informație concretă, nu doar „nu știu”"
+  ],
+  "age_appropriateness": "La 10-11 ani, asocierea greșelii cu rușinea publică se formează ușor și e greu de inversat ulterior; limbajul folosit imediat după o greșeală are un rol direct în cum copilul învață să se raporteze la propriile erori.",
+  "rationales": {
+    "tactical": "O greșeală analizată ca informație (ce a fost observat, ce a fost decis) oferă antrenorului date reale despre unde exercițiul sau explicația trebuie ajustate.",
+    "perceptual": "Întrebarea direcționează atenția copilului spre propriul proces de observare, nu spre rezultatul negativ, păstrând activă căutarea de informație pentru încercarea următoare.",
+    "decisional": "Separarea deciziei de rezultat (o decizie informată poate avea totuși un rezultat nereușit) protejează calitatea procesului decizional de evaluarea bazată doar pe rezultat.",
+    "cognitive": "Frustrarea indusă de o greșeală poate crește, pe termen scurt, alte erori și variabilitatea reacției — reformularea calmă imediat după greșeală reduce acest efect în lanț.",
+    "psychological": "Tratarea greșelii ca informație, nu ca verdict, protejează dreptul copilului de a greși, un principiu central al pedagogiei aplicate în acest manual.",
+    "technical": "O execuție tehnică nereușită poate reflecta coordonare încă instabilă la această vârstă, nu o lipsă de înțelegere care cere corecție critică.",
+    "social": "Modul în care antrenorul reacționează public la o greșeală stabilește norma pentru cum reacționează și ceilalți copii la greșelile colegilor."
+  },
+  "coach_observation_before_speaking": [
+    "reacția emoțională imediată a copilului la propria greșeală",
+    "dacă greșeala a fost o decizie informată nereușită sau o lipsă reală de informație"
+  ],
+  "when_to_intervene": [
+    "reacția copilului la propria greșeală arată rușine sau evitare vizibilă a situației similare pe viitor"
+  ],
+  "when_not_to_intervene": [
+    "copilul continuă natural să încerce după greșeală, fără semne de frustrare care ar necesita intervenție"
+  ],
+  "understanding_check": [
+    "Ce ai observat chiar înainte să încerci?"
+  ],
+  "response_if_not_understood": [
+    "dacă copilul rămâne blocat în frustrare, se acordă o pauză scurtă de regularizare emoțională înainte de a reveni la întrebarea despre observație"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Iar ai greșit!", "reason": "numără greșelile ca pe un verdict cumulativ, în loc să trateze fiecare ca informație separată"},
+    {"phrase": "Nu-i nimic, nu contează", "reason": "minimizează greșeala în loc să extragă informația utilă din ea — greșeala contează, dar ca informație, nu ca eșec"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate interpreta lipsa oricărei reacții critice ca indiferență a antrenorului, dacă întrebarea despre observație nu e însoțită de un ton cald și implicat"
+  ],
+  "match_transfer": "Capacitatea de a trata propriile greșeli ca informație, nu ca eșec, susține direct disponibilitatea de a încerca decizii riscante și necesare în meciul oficial, fără frica excesivă de eroare.",
+  "evidence_boundary": "Frustrarea indusă crește erorile și variabilitatea reacției la copii, conform unui studiu experimental controlat — pe baza acestui mecanism, reducerea frustrării imediat după o greșeală e o inferență rezonabilă, nu un efect testat direct la copii de fotbal U11.",
+  "principle_ids": [
+    "principle.eroarea-ca-informatie",
+    "principle.greseala-ca-informatie-si-siguranta"
+  ],
+  "related_problem_ids": ["PRB-0008"],
+  "related_session_ids": ["SES-0001", "SES-0007"],
+  "source_claim_ids": ["CLM-0267"]
+}

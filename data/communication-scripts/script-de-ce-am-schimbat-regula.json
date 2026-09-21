@@ -1,0 +1,61 @@
+{
+  "id": "SCR-0024",
+  "slug": "de-ce-am-schimbat-regula",
+  "title": "De ce am schimbat regula",
+  "category": "explicarea-constrangerilor-si-schimbarea-sarcinii",
+  "situation_trigger": "Antrenorul modifică o regulă sau o constrângere a exercițiului (spațiu, număr de atingeri, regulă de punctaj) pentru a scoate în evidență un anumit comportament, iar copiii observă schimbarea și pot percepe regula ca arbitrară.",
+  "game_moment": "orice moment de introducere a unei noi constrângeri sau reguli de exercițiu",
+  "child_wording": "Am schimbat regula ca să vedem mai clar [comportamentul urmărit] — nu pentru că jocul de dinainte era greșit.",
+  "short_version": "Am schimbat regula ca să exersăm [ceva anume].",
+  "expanded_version": "Am schimbat regula ca să vedem mai clar [comportamentul urmărit] — jocul de dinainte nu era greșit, doar că această regulă nouă ne ajută să exersăm exact acest lucru acum.",
+  "coach_meaning": "Antrenorul explică pe scurt scopul constrângerii, nu doar o anunță ca pe o comandă arbitrară, pentru a menține sensul exercițiului transparent pentru copii.",
+  "why_this_wording": "Formularea leagă explicit schimbarea regulii de un scop observabil, nu doar de autoritatea antrenorului de a decide regulile, ceea ce sprijină înțelegerea, nu doar conformarea.",
+  "problem_being_solved": "O regulă introdusă fără nicio explicație poate fi percepută ca arbitrară sau nedreaptă, mai ales dacă schimbă radical un joc pe care copiii îl jucau deja confortabil, reducând implicarea și motivația.",
+  "information_to_notice": [
+    "reacția inițială a copiilor la noua regulă (confuzie, rezistență, curiozitate)",
+    "dacă noua regulă produce efectiv comportamentul urmărit sau are nevoie de ajustare"
+  ],
+  "decision_to_learn": "Copiii învață că regulile exercițiilor au un scop specific legat de ce se exersează, nu sunt arbitrare, ceea ce sprijină acceptarea și înțelegerea constrângerilor viitoare.",
+  "observable_behaviours": [
+    "copiii adoptă noua regulă cu mai puțină rezistență vizibilă după o explicație scurtă a scopului",
+    "comportamentul urmărit de constrângere apare mai vizibil după introducerea explicației"
+  ],
+  "age_appropriateness": "La 10-11 ani, o explicație scurtă a scopului unei reguli e mai eficientă decât impunerea fără context — copiii la această vârstă pot înțelege o legătură simplă cauză-efect, dacă e formulată direct.",
+  "rationales": {
+    "tactical": "O constrângere introdusă cu scop clar (nu arbitrar) exagerează intenționat o problemă de joc, făcând-o mai vizibilă pentru copii, exact rolul metodologic al manipulării constrângerilor.",
+    "perceptual": "Explicarea scopului ajută copiii să observe activ efectul noii reguli asupra propriului comportament, nu doar să o urmeze mecanic.",
+    "decisional": "Înțelegerea scopului unei constrângeri sprijină decizia copiilor de a se adapta activ la ea, nu doar de a se supune pasiv.",
+    "cognitive": "O legătură explicită cauză-efect (regulă → comportament urmărit) e mai ușor de procesat și reținut decât o regulă fără context.",
+    "psychological": "Transparența scopului reduce senzația de arbitrariu sau nedreptate pe care o poate produce o schimbare bruscă de regulă fără explicație.",
+    "technical": "Constrângerile de teren, spațiu sau reguli influențează direct execuția tehnică posibilă — explicarea scopului ajută copiii să înțeleagă de ce anumite execuții devin mai relevante sub noua regulă.",
+    "social": "O regulă înțeleasă de tot grupul, nu doar impusă, sprijină o cultură de cooperare cu procesul de antrenament, nu doar de conformare pasivă."
+  },
+  "coach_observation_before_speaking": [
+    "dacă schimbarea regulii e suficient de neobișnuită încât să merite o explicație explicită, sau e o variație minoră deja familiară grupului",
+    "reacția inițială a copiilor, pentru a calibra cât de detaliată trebuie să fie explicația"
+  ],
+  "when_to_intervene": [
+    "introducerea oricărei constrângeri noi sau neobișnuite, care schimbă vizibil jocul anterior"
+  ],
+  "when_not_to_intervene": [
+    "o variație minoră, deja familiară grupului din exerciții anterioare similare, care nu necesită o explicație repetată"
+  ],
+  "understanding_check": [
+    "De ce credeți că am schimbat regula acum?"
+  ],
+  "response_if_not_understood": [
+    "dacă răspunsurile arată confuzie despre scop, se demonstrează concret diferența (o repetiție cu regula veche, apoi cu cea nouă), nu doar se repetă explicația verbală"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Așa vrem acum, gata!", "reason": "impune regula fără nicio legătură cu scopul ei, reducând-o la o comandă arbitrară de autoritate"}
+  ],
+  "misinterpretation_risks": [
+    "copiii pot crede că vechea regulă a fost „greșită”, dacă explicația nu clarifică faptul că ambele reguli sunt valide, doar cu scopuri diferite"
+  ],
+  "match_transfer": "Înțelegerea legăturii dintre constrângeri și comportamentele pe care le exagerează sprijină, indirect, capacitatea copilului de a recunoaște singur cum diferite condiții de joc (spațiu, număr de jucători) schimbă cerințele tactice reale din meciul oficial.",
+  "evidence_boundary": "Manipularea constrângerilor (spațiu, număr de jucători, reguli) schimbă demonstrabil solicitarea tehnică și tactică a jocurilor reduse, conform unei sinteze sistematice ample; eficiența exactă a comunicării verbale a scopului către copii de 10-11 ani rămâne practică profesională, nu testată direct.",
+  "principle_ids": [
+    "principle.manipularea-si-dozarea-constrangerilor"
+  ],
+  "source_claim_ids": ["CLM-0092"]
+}

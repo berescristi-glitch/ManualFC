@@ -1,0 +1,62 @@
+{
+  "id": "SCR-0026",
+  "slug": "inchidem-cu-un-singur-lucru",
+  "title": "Închidem cu un singur lucru, nu cu zece",
+  "category": "inchiderea-sedintei-si-transferul-in-meci",
+  "situation_trigger": "La finalul unei ședințe cu multe evenimente și corecții acumulate, antrenorul simte impulsul de a rezuma tot ce s-a întâmplat, riscând să transforme închiderea într-o listă lungă de observații.",
+  "game_moment": "închiderea ședinței, mesajul final înainte de plecare",
+  "child_wording": "Un singur lucru de reținut de azi: [mesajul ales].",
+  "short_version": "Un singur lucru de reținut.",
+  "expanded_version": "Din tot ce am făcut azi, un singur lucru merită reținut mai mult decât restul: [mesajul ales] — restul le reluăm data viitoare.",
+  "coach_meaning": "Antrenorul alege deliberat un singur mesaj central de închidere, chiar dacă ședința a generat mai multe observații posibile, pentru ca acesta să rămână efectiv reținut.",
+  "why_this_wording": "Formularea numește explicit alegerea (un singur lucru), semnalând copiilor că mesajul final e prioritizat intenționat, nu doar prima idee care vine în minte antrenorului.",
+  "problem_being_solved": "Un rezumat final cu multe puncte diluează mesajul central al ședinței, iar copiii tind să rețină ultimul lucru spus sau nimic concret, în loc de ideea cea mai importantă.",
+  "information_to_notice": [
+    "care a fost, de fapt, tema centrală reală a ședinței, dincolo de toate detaliile acumulate",
+    "starea de energie și atenție a grupului la finalul ședinței"
+  ],
+  "decision_to_learn": "Copiii exersează, indirect, obiceiul de a reține un mesaj central clar, nu o listă difuză de observații.",
+  "observable_behaviours": [
+    "copiii pot repeta, la începutul ședinței următoare, mesajul central de închidere de data trecută",
+    "mesajul final rostit de antrenor rămâne o singură idee, nu o înșiruire"
+  ],
+  "age_appropriateness": "La 10-11 ani, memoria pentru o listă lungă de observații la finalul unei ședințe obositoare e limitată; un singur mesaj clar are șanse mult mai mari să fie reținut și reactivat ulterior.",
+  "rationales": {
+    "tactical": "Un mesaj central clar la închidere sprijină consolidarea temei tactice principale a ședinței, în loc să o dilueze printre detalii secundare.",
+    "perceptual": "Alegerea unui singur element de reținut ghidează atenția copiilor spre ce anume merită să rămână activ observat până la ședința următoare.",
+    "decisional": "Copiii pleacă cu o singură prioritate clară de aplicat, nu cu o listă lungă imposibil de urmărit simultan.",
+    "cognitive": "Limitarea deliberată la un singur mesaj final respectă capacitatea limitată de reținere a informației verbale la finalul unei ședințe, când oboseala e deja instalată.",
+    "psychological": "Un mesaj final scurt și clar lasă o notă pozitivă și gestionabilă, spre deosebire de o listă lungă care poate fi resimțită ca o evaluare copleșitoare.",
+    "technical": "Nu se reiau toate corecțiile tehnice ale ședinței — doar cea considerată cea mai relevantă rămâne explicită la final.",
+    "social": "Un mesaj comun, simplu, pe care întregul grup îl reține, poate deveni un punct de referință comun pentru ședința următoare."
+  },
+  "coach_observation_before_speaking": [
+    "care element al ședinței a avut cel mai mare efect observabil sau a generat cea mai relevantă discuție",
+    "nivelul de oboseală și atenție rămasă al grupului"
+  ],
+  "when_to_intervene": [
+    "la finalul planificat al fiecărei ședințe, ca mesaj de închidere deliberat, nu spontan"
+  ],
+  "when_not_to_intervene": [
+    "nu se aplică — acest script e el însuși momentul de intervenție planificată de închidere"
+  ],
+  "understanding_check": [
+    "Care a fost singurul lucru de reținut de azi?"
+  ],
+  "response_if_not_understood": [
+    "dacă niciun copil nu poate reproduce mesajul, se reformulează mai scurt și mai concret la ședința următoare, nu se adaugă un al doilea mesaj pentru clarificare"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Să recapitulăm tot ce am făcut azi", "reason": "deschide exact spre lista lungă de observații pe care acest script încearcă să o evite"}
+  ],
+  "misinterpretation_risks": [
+    "copiii pot crede că restul observațiilor din ședință nu au contat deloc, dacă nu se clarifică faptul că doar mesajul final e prioritizat pentru reținere, nu singurul lucru relevant"
+  ],
+  "match_transfer": "Un mesaj final clar și memorabil crește șansa reală ca ceva din ședință să fie efectiv folosit conștient la meciul următor, spre deosebire de o listă lungă rapid uitată.",
+  "evidence_boundary": "Limitarea mesajelor de feedback la un număr mic, gestionabil, e o practică raportată calitativ de antrenori de elită din sporturi de echipă; nu există un prag numeric universal validat specific pentru fotbalul U11.",
+  "principle_ids": [
+    "principle.reflectia-ghidata-si-transferul-in-joc",
+    "principle.limbaj-scurt-si-relevanta"
+  ],
+  "related_session_ids": ["SES-0001", "SES-0010"]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "SCR-0019",
+  "slug": "unde-ai-mai-vazut-asta-in-joc",
+  "title": "Unde ai mai văzut asta în joc?",
+  "category": "reflectie-si-autoevaluare",
+  "situation_trigger": "După jocul liber de la finalul unei ședințe, antrenorul dorește să lege explicit ce s-a întâmplat în joc de exercițiile exersate anterior izolat, pentru a sprijini transferul conștient.",
+  "game_moment": "reflecție ghidată, imediat după jocul liber final al unei ședințe",
+  "child_wording": "Unde ați văzut, în jocul de azi, o situație ca la exercițiul de mai devreme?",
+  "short_version": "Unde ați văzut asta în joc?",
+  "expanded_version": "Gândiți-vă la jocul liber de acum câteva minute — unde ați văzut o situație asemănătoare cu ce am exersat mai devreme?",
+  "coach_meaning": "Antrenorul cere copiilor să facă explicit legătura dintre exercițiul izolat și jocul reprezentativ, sprijinind transferul conștient, nu doar sperând că apare automat.",
+  "why_this_wording": "Întrebarea leagă explicit cele două momente (exercițiu și joc), cerând o comparație concretă, nu doar o impresie generală despre cum a mers jocul.",
+  "problem_being_solved": "Fără o legătură explicită verbalizată, copiii pot exersa un comportament izolat fără să recunoască ulterior aceeași situație în jocul liber, ceea ce slăbește transferul conștient al învățării.",
+  "information_to_notice": [
+    "dacă copiii pot identifica o situație concretă din jocul liber similară cu exercițiul exersat",
+    "dacă comportamentul exersat a apărut de fapt autonom în joc, chiar dacă neobservat explicit de copil"
+  ],
+  "decision_to_learn": "Copiii învață să recunoască și să verbalizeze conexiunea dintre o situație exersată izolat și apariția ei în jocul reprezentativ.",
+  "observable_behaviours": [
+    "cel puțin un copil poate numi o situație din jocul liber similară cu exercițiul anterior",
+    "descrierea include un detaliu specific, nu doar o afirmație generală de tipul „a fost la fel”"
+  ],
+  "age_appropriateness": "La 10-11 ani, transferul explicit între exercițiu și joc nu apare întotdeauna de la sine — verbalizarea ghidată a acestei legături sprijină recunoașterea conștientă a tiparului, fără a impune o interpretare unică.",
+  "rationales": {
+    "tactical": "Legătura conștientă dintre exercițiu și joc întărește relevanța percepută a exercițiilor izolate, care altfel pot părea deconectate de jocul real pentru copil.",
+    "perceptual": "Copilul trebuie să compare activ informația din două momente diferite (exercițiu și joc), o formă de procesare mai complexă decât simpla execuție.",
+    "decisional": "Recunoașterea unei situații similare în joc sprijină decizia viitoare de a aplica deliberat ce a exersat izolat, nu doar întâmplător.",
+    "cognitive": "Verbalizarea unei comparații concrete între două momente diferite exersează o formă timpurie de gândire despre transfer, nu doar despre execuție.",
+    "psychological": "Recunoașterea propriei aplicări reușite a unui comportament exersat construiește încredere direct legată de progresul propriu, nu de o laudă externă generică.",
+    "technical": "Nu se evaluează execuția tehnică — accentul e pe recunoașterea tiparului tactic, indiferent de calitatea execuției din acel moment.",
+    "social": "Ascultarea situațiilor diferite observate de colegi extinde propria capacitate de a recunoaște tiparul în variații pe care copilul nu le-a trăit direct."
+  },
+  "coach_observation_before_speaking": [
+    "dacă a existat cel puțin o repetare vizibilă a comportamentului exersat în jocul liber, la care se poate face referire concretă",
+    "starea de energie a grupului — dacă mai poate susține o reflecție scurtă sau e prea obosit"
+  ],
+  "when_to_intervene": [
+    "la finalul planificat al segmentului de joc liber, imediat, cât timp situațiile sunt încă proaspete în memorie"
+  ],
+  "when_not_to_intervene": [
+    "mult timp după jocul liber, când detaliile specifice nu mai sunt accesibile memoriei copiilor"
+  ],
+  "understanding_check": [
+    "Ce anume era la fel între exercițiu și situația din joc pe care ai văzut-o?"
+  ],
+  "response_if_not_understood": [
+    "dacă niciun copil nu poate identifica o legătură, antrenorul poate oferi un exemplu concret observat chiar el în timpul jocului liber, ca punct de plecare pentru discuție, fără să impună o interpretare unică rămasă necontestabilă"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Ați folosit ce am exersat?", "reason": "cere un răspuns da/nu ușor de dat automat, fără să verifice o legătură concretă și specifică"}
+  ],
+  "misinterpretation_risks": [
+    "copiii pot inventa o legătură forțată doar pentru a răspunde la întrebare, dacă simt presiunea de a găsi neapărat o conexiune"
+  ],
+  "match_transfer": "Această întrebare exersează exact bucla completă problemă-concept-exercițiu-transfer cerută de arhitectura pedagogică a manualului, sprijinind recunoașterea conștientă a tiparelor tactice în meciul oficial.",
+  "evidence_boundary": "Bucla explicită exercițiu-joc-reflecție e o poziție metodologică consacrată în literatura despre transfer; eficiența exactă a acestei formulări specifice la copii de 10-11 ani rămâne neconfirmată printr-o pilotare reală pe teren.",
+  "principle_ids": [
+    "principle.reflectia-ghidata-si-transferul-in-joc"
+  ]
+}

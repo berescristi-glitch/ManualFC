@@ -1,0 +1,64 @@
+{
+  "id": "SCR-0006",
+  "slug": "nu-va-adunati-in-aceeasi-zona",
+  "title": "Nu vă adunați în aceeași zonă",
+  "category": "sprijin-si-unghiuri-de-pasa",
+  "situation_trigger": "Doi sau mai mulți coechipieri fără minge se apropie de purtător și ocupă aceeași zonă de teren, în loc să se distribuie în zone diferite.",
+  "game_moment": "atac organizat, coordonare între mai mulți jucători de sprijin",
+  "child_wording": "Dacă coechipierul tău e deja într-o zonă bună, găsește-ți propria zonă.",
+  "short_version": "Găsește-ți zona ta!",
+  "expanded_version": "Dacă un coechipier e deja într-o zonă bună de sprijin, nu te duce lângă el — găsește-ți o zonă diferită, ca purtătorul mingii să aibă două opțiuni reale, nu una singură dublată.",
+  "coach_meaning": "Antrenorul cere coordonare implicită între coechipieri (fiecare observă unde e deja celălalt), nu o repartizare fixă de zone impusă de antrenor.",
+  "why_this_wording": "Formularea condiționează mișcarea proprie de poziția deja ocupată de coechipier, cerând o decizie relativă la ceilalți, nu o poziție absolută memorată.",
+  "problem_being_solved": "Când mai mulți coechipieri se grupează în aceeași zonă, purtătorul mingii are, de fapt, o singură opțiune reală de pasă, deși vizual pare că are sprijin din mai multe direcții.",
+  "information_to_notice": [
+    "unde sunt deja poziționați ceilalți coechipieri fără minge",
+    "ce zonă a terenului rămâne neacoperită de sprijin"
+  ],
+  "decision_to_learn": "Copilul învață să își aleagă poziția de sprijin în funcție de unde sunt deja coechipierii, nu doar în funcție de unde e mingea.",
+  "observable_behaviours": [
+    "cei doi sau mai mulți jucători de sprijin ocupă zone diferite ale terenului",
+    "un coechipier care vede zona proprie deja ocupată se repoziționează spre alta, fără comandă verbală"
+  ],
+  "age_appropriateness": "La 10-11 ani, tendința naturală e să te apropii de minge; cererea explicită de a verifica poziția coechipierilor înainte de a te muta introduce gradual o decizie de coordonare mai complexă decât poziționarea individuală.",
+  "rationales": {
+    "tactical": "Distribuirea în zone diferite multiplică real opțiunile de pasă disponibile purtătorului, spre deosebire de gruparea în aceeași zonă.",
+    "perceptual": "Copilul trebuie să observe poziția coechipierilor, nu doar poziția mingii și a adversarilor — o dimensiune perceptivă suplimentară față de sprijinul individual.",
+    "decisional": "Decizia de poziționare devine relativă la ceilalți jucători, nu doar la propria relație cu mingea și adversarul cel mai apropiat.",
+    "cognitive": "Coordonarea implicită (fără comunicare verbală) cere copilului să proceseze poziția altcuiva și să își ajusteze propria decizie în timp real.",
+    "psychological": "Reușita de a evita gruparea, observată direct în joc, construiește încredere în capacitatea de a coopera tactic fără instrucțiuni externe.",
+    "technical": "Zone de sprijin distincte oferă purtătorului mingii unghiuri de pasă diferite, nu doar o singură direcție posibilă.",
+    "social": "Evitarea grupării cere atenție la coechipieri, nu doar la propriul joc — o formă timpurie de cooperare tactică observabilă."
+  },
+  "coach_observation_before_speaking": [
+    "dacă gruparea e o tendință repetată sau un moment izolat de urmărire a mingii",
+    "dacă spațiul disponibil în exercițiu permite real o distribuire în zone diferite"
+  ],
+  "when_to_intervene": [
+    "gruparea în aceeași zonă se repetă constant, în mai multe faze consecutive"
+  ],
+  "when_not_to_intervene": [
+    "prima apariție a grupării — se lasă comportamentul să reapară sau nu înainte de a opri jocul"
+  ],
+  "understanding_check": [
+    "Unde era deja coechipierul tău când te-ai dus în acea zonă?"
+  ],
+  "response_if_not_understood": [
+    "dacă răspunsul arată că nu a observat poziția coechipierului, se folosesc conuri sau zone marcate vizual distincte pentru câteva repetiții, apoi se elimină reperul"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Tu stai în stânga, tu în dreapta", "reason": "impune o repartizare fixă în locul unei decizii relative bazate pe observarea coechipierilor"}
+  ],
+  "misinterpretation_risks": [
+    "copiii pot interpreta cererea ca „stați mereu departe unul de altul”, chiar și în momente în care apropierea temporară e utilă (de exemplu, o combinație scurtă unu-doi)"
+  ],
+  "match_transfer": "Coordonarea implicită a zonelor de sprijin, exersată izolat, e exact ce permite unei echipe să păstreze opțiuni reale de pasă pe tot parcursul unei faze de atac în meciul oficial.",
+  "evidence_boundary": "Distribuirea spațială a sprijinului e un principiu tactic consacrat; nu există un prag universal de distanță minimă între coechipieri validat specific pentru copii de 10-11 ani.",
+  "principle_ids": [
+    "principle.spatiu-si-unghiuri",
+    "principle.progresie-si-sprijin"
+  ],
+  "related_problem_ids": ["PRB-0002"],
+  "related_exercise_ids": ["EX-0004", "EX-0008"],
+  "related_session_ids": ["SES-0002", "SES-0004"]
+}

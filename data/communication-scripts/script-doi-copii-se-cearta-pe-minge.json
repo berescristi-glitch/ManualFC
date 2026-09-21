@@ -1,0 +1,62 @@
+{
+  "id": "SCR-0021",
+  "slug": "doi-copii-se-cearta-pe-minge",
+  "title": "Doi copii se ceartă pe minge",
+  "category": "conflict-frustrare-si-reglare-emotionala",
+  "situation_trigger": "Doi copii intră în conflict verbal direct, de obicei legat de o decizie de joc disputată (cine trebuia să paseze, cine a greșit, o coliziune accidentală), iar tonul escaladează rapid.",
+  "game_moment": "orice fază, imediat după un conflict verbal între doi copii",
+  "child_wording": "Opriți-vă amândoi. Spune tu ce s-a întâmplat, apoi tu.",
+  "short_version": "Opriți-vă amândoi.",
+  "expanded_version": "Opriți-vă amândoi o secundă. Tu spui ce s-a întâmplat din perspectiva ta, apoi tu — fără să vă întrerupeți.",
+  "coach_meaning": "Antrenorul intervine imediat pentru a opri escaladarea, apoi oferă ambilor copii spațiu egal de exprimare, fără să stabilească vinovăția înainte de a asculta ambele versiuni.",
+  "why_this_wording": "Formularea oprește conflictul fără a acuza pe niciunul dintre cei doi, și structurează explicit un spațiu egal de exprimare, evitând favorizarea implicită a primului care vorbește.",
+  "problem_being_solved": "Un conflict verbal nerezolvat escaladează rapid la această vârstă și poate afecta relația dintre cei doi copii dincolo de momentul respectiv, dacă nu e adresat direct și echitabil.",
+  "information_to_notice": [
+    "tonul și intensitatea conflictului, pentru a evalua urgența intervenției",
+    "dacă ambii copii au ocazia reală să vorbească sau unul domină discuția"
+  ],
+  "decision_to_learn": "Copiii învață că un dezacord poate fi exprimat verbal, pe rând, fără a escalada spre conflict, și că ambele perspective sunt ascultate înainte de orice concluzie.",
+  "observable_behaviours": [
+    "ambii copii reușesc să-și exprime perspectiva fără să se întrerupă reciproc",
+    "tonul conflictului scade vizibil după intervenția structurată"
+  ],
+  "age_appropriateness": "La 10-11 ani, capacitatea de a asculta perspectiva celuilalt fără întrerupere e încă în dezvoltare; structura explicită oferită de antrenor (pe rând, fără întrerupere) sprijină această abilitate, nu o presupune deja formată.",
+  "rationales": {
+    "tactical": "Rezolvarea rapidă a conflictului permite reluarea jocului fără ca tensiunea să afecteze deciziile ulterioare ale celor doi copii sau ale restului grupului.",
+    "perceptual": "Ascultarea ambelor perspective poate revela că cei doi copii au observat lucruri diferite în aceeași fază de joc, nu că unul minte și celălalt spune adevărul.",
+    "decisional": "Structura de exprimare pe rând sprijină decizia copiilor de a-și exprima punctul de vedere calm, nu prin escaladare.",
+    "cognitive": "Sub emoție intensă, capacitatea de a asculta și procesa perspectiva celuilalt scade — oprirea imediată a escaladării creează condițiile pentru o procesare mai clară.",
+    "psychological": "Spațiul egal de exprimare comunică ambilor copii că nu există o presupunere de vinovăție dinainte de a asculta, ceea ce reduce nevoia de a se apăra agresiv.",
+    "technical": "Nu se discută execuția tehnică a fazei disputate în acest moment — prioritatea e rezolvarea conflictului interpersonal, nu analiza tactică a fazei.",
+    "social": "Modelul de rezolvare structurată a conflictului, exersat repetat, poate fi preluat treptat de copii pentru a-și rezolva singuri dezacordurile minore, fără intervenția constantă a antrenorului."
+  },
+  "coach_observation_before_speaking": [
+    "intensitatea și direcția escaladării (verbală, fizică, retragere) pentru a decide urgența intervenției",
+    "dacă conflictul e izolat sau parte a unei tensiuni mai vechi între cei doi copii"
+  ],
+  "when_to_intervene": [
+    "conflictul verbal escaladează vizibil sau riscă să devină fizic"
+  ],
+  "when_not_to_intervene": [
+    "un schimb scurt, calm, pe care copiii îl rezolvă singuri în câteva secunde, fără escaladare"
+  ],
+  "understanding_check": [
+    "Ați înțeles amândoi ce a spus celălalt?"
+  ],
+  "response_if_not_understood": [
+    "dacă tensiunea persistă după ce ambii au vorbit, se separă temporar copiii în activități diferite, fără a forța o reconciliere imediată sau o scuză impusă"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Cine a început?", "reason": "invită la găsirea unui vinovat înainte de a înțelege situația, ceea ce escaladează adesea, nu rezolvă conflictul"},
+    {"phrase": "Gata, ajunge, jucați!", "reason": "ignoră conflictul fără a-l rezolva, lăsând tensiunea nerezolvată să reapară ulterior"}
+  ],
+  "misinterpretation_risks": [
+    "copiii pot crede că vorbitul pe rând înseamnă că unul dintre ei va fi declarat „câștigătorul” disputei, nu doar că ambele perspective sunt ascultate"
+  ],
+  "match_transfer": "Capacitatea de a exprima un dezacord calm și structurat, fără escaladare, e direct utilă în meciul oficial, unde conflictele momentane între coechipieri pot afecta coeziunea echipei dacă nu sunt gestionate.",
+  "evidence_boundary": "Structura de mediere descrisă aici e o practică profesională de teren (PRACTICE_HEURISTIC), consecventă cu principiile de disciplină fără umilire deja stabilite în manual — nu există un studiu specific care să valideze exact această formulare la copii de fotbal U11.",
+  "principle_ids": [
+    "principle.disciplina-fara-umilire",
+    "principle.conversatii-individuale-si-echitate"
+  ]
+}

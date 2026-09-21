@@ -1,0 +1,60 @@
+{
+  "id": "SCR-0022",
+  "slug": "toata-lumea-atinge-mingea",
+  "title": "Toată lumea atinge mingea",
+  "category": "incluziune-echitate-si-participare-respectuoasa",
+  "situation_trigger": "În jocul liber sau într-un exercițiu de grup, unul sau doi copii mai încrezători domină posesia mingii, în timp ce alți copii din grup rămân multă vreme fără nicio atingere.",
+  "game_moment": "joc liber sau exercițiu de grup, distribuție inegală a posesiei",
+  "child_wording": "Fiecare are ocazia să atingă mingea — dacă vezi un coleg care n-a atins-o de mult, oferă-i o opțiune.",
+  "short_version": "Toată lumea atinge mingea!",
+  "expanded_version": "Uitați-vă la cine n-a atins mingea de un timp — oferiți-i o opțiune de pasă, ca toată lumea să rămână implicată în joc.",
+  "coach_meaning": "Antrenorul cere atenție distribuită la nivel de grup (cine a rămas neimplicat), nu doar o regulă rigidă de tip „fiecare X pase” care ar ignora contextul tactic real.",
+  "why_this_wording": "Formularea cere observarea colegilor, nu doar respectarea unei reguli numerice fixe — copiii decid singuri cui oferă opțiunea, pe baza a ce observă, nu pe baza unui contor impus.",
+  "problem_being_solved": "Distribuția inegală a posesiei reduce implicarea reală și timpul activ de decizie al copiilor mai puțin încrezători, exact grupul care are cea mai mare nevoie de repetiții reale pentru a-și dezvolta încrederea.",
+  "information_to_notice": [
+    "care coechipieri au primit puține sau deloc atingeri de minge în ultimele minute",
+    "dacă distribuția inegală vine din alegere tactică justificată sau din evitarea sistematică a anumitor copii"
+  ],
+  "decision_to_learn": "Copiii învață să observe activ distribuția posesiei în grup și să ofere opțiuni de pasă colegilor mai puțin implicați, nu doar celor mai încrezători.",
+  "observable_behaviours": [
+    "numărul de copii care ating mingea cel puțin o dată la fiecare câteva minute crește",
+    "copiii oferă vizibil opțiuni de pasă către colegi mai puțin implicați, nu doar către cei mai rapizi sau mai încrezători"
+  ],
+  "age_appropriateness": "La 10-11 ani, diferențele de încredere și abilitate între copii sunt frecvente și normale; cererea explicită de distribuție echitabilă previne consolidarea timpurie a unor roluri fixe de „cei care joacă” și „cei care nu prea joacă”.",
+  "rationales": {
+    "tactical": "Distribuirea posesiei către mai mulți jucători păstrează opțiuni tactice variate și previne previzibilitatea unui joc concentrat doar pe unul sau doi copii.",
+    "perceptual": "Observarea activă a colegilor mai puțin implicați cere o atenție distribuită la nivelul întregului grup, nu doar la propria acțiune imediată.",
+    "decisional": "Decizia de a oferi o opțiune unui coleg mai puțin implicat, chiar când o altă opțiune pare tactic mai avantajoasă pe moment, e o formă timpurie de decizie socială responsabilă.",
+    "cognitive": "Menținerea atenției la distribuția de grup, pe lângă propria acțiune tactică, e o cerință cognitivă suplimentară, introdusă gradual prin repetiție.",
+    "psychological": "Copiii mai puțin încrezători câștigă încredere prin repetiții reale de decizie cu mingea, nu doar prin prezența fizică în joc fără implicare reală.",
+    "technical": "Mai multe atingeri reale de minge pentru toți copiii înseamnă mai multe oportunități de exersare tehnică pentru cei care au cel mai mult nevoie de ele.",
+    "social": "Atenția distribuită la nivelul grupului, nu doar la coechipierii preferați, sprijină o cultură de echipă incluzivă, nu una centrată pe câțiva jucători dominanți."
+  },
+  "coach_observation_before_speaking": [
+    "distribuția reală a atingerilor de minge în ultimele minute, nu doar impresia generală",
+    "dacă evitarea unui coleg e sistematică sau doar o coincidență de moment tactic"
+  ],
+  "when_to_intervene": [
+    "unul sau mai mulți copii rămân constant neimplicați, pe parcursul mai multor minute, în mod repetat"
+  ],
+  "when_not_to_intervene": [
+    "o distribuție temporar inegală, justificată de o fază tactică specifică, fără tipar repetat de excludere"
+  ],
+  "understanding_check": [
+    "Cine din grup n-a atins mingea de ceva vreme?"
+  ],
+  "response_if_not_understood": [
+    "dacă distribuția rămâne inegală, se introduce temporar o constrângere explicită de joc (de exemplu, punctul contează doar dacă toți jucătorii au atins mingea în faza respectivă), apoi se elimină constrângerea treptat"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Pasează-i și lui din milă", "reason": "transformă includerea într-un gest de milă vizibilă, umilitor pentru copilul respectiv, în loc de o decizie tactică normală"}
+  ],
+  "misinterpretation_risks": [
+    "copiii pot începe să paseze mecanic, fără valoare tactică reală, doar pentru a „bifa” includerea, ceea ce poate deveni la fel de vizibil și potențial jenant"
+  ],
+  "match_transfer": "Un obicei de atenție distribuită la nivelul întregului grup, exersat izolat, sprijină o cultură de echipă în care toți jucătorii rămân implicați activ, relevantă și pentru participarea în meciul oficial.",
+  "evidence_boundary": "Nu există un prag numeric universal de atingeri minime — distribuția echitabilă e un principiu pedagogic aplicat consecvent în manual (conversații individuale și echitate), nu un rezultat de cercetare cuantificat specific.",
+  "principle_ids": [
+    "principle.conversatii-individuale-si-echitate"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "SCR-0009",
+  "slug": "cine-e-aproape-cine-protejeaza-centrul",
+  "title": "Cine e aproape, cine protejează centrul",
+  "category": "tranzitia-la-pierderea-mingii",
+  "situation_trigger": "Sub superioritate numerică a atacanților, toată echipa care a pierdut mingea aleargă spre purtător, lăsând centrul terenului complet deschis.",
+  "game_moment": "tranziție negativă, apărare sub inferioritate numerică temporară",
+  "child_wording": "Cel mai apropiat merge la minge, restul protejează centrul.",
+  "short_version": "Doar unul la minge!",
+  "expanded_version": "Cel mai apropiat de purtător merge la minge — restul echipei nu aleargă după el, ci se repoziționează spre centru, ca să nu rămână spațiul din față deschis.",
+  "coach_meaning": "Antrenorul cere separarea explicită a rolurilor la nivel de echipă (un singur jucător presează, restul protejează spațiul), nu un răspuns instinctiv de grup spre minge.",
+  "why_this_wording": "Formularea numește direct cine merge la minge (cel mai apropiat) și ce fac ceilalți (protejează centrul), eliminând ambiguitatea despre rolul fiecăruia în echipă.",
+  "problem_being_solved": "Reacția instinctivă de a alerga toți spre minge lasă centrul terenului complet neprotejat, exact zona prin care adversarul poate progresa cel mai periculos sub superioritate numerică.",
+  "information_to_notice": [
+    "cine dintre coechipieri e cel mai aproape de purtătorul advers",
+    "care este drumul central cel mai periculos spre propria poartă"
+  ],
+  "decision_to_learn": "Copiii învață să separe rolul individual (cel mai apropiat presează) de rolul colectiv (restul protejează centrul), în loc să reacționeze toți la fel.",
+  "observable_behaviours": [
+    "un singur jucător se apropie activ de purtătorul advers",
+    "restul echipei se repoziționează spre centru, nu spre minge"
+  ],
+  "age_appropriateness": "La 10-11 ani, separarea rolurilor la nivel de echipă e un pas de complexitate mai mare decât reacția individuală; se introduce abia după ce reacția individuală de bază (cel mai apropiat presează) e deja stabilă.",
+  "rationales": {
+    "tactical": "Protecția centrului sub superioritate numerică a atacanților previne exact drumul cel mai periculos spre poartă, mai important decât recuperarea imediată a mingii.",
+    "perceptual": "Fiecare jucător trebuie să evalueze nu doar propria distanță față de minge, ci și poziția relativă a coechipierilor, pentru a decide dacă rolul lui e presiune sau protecție.",
+    "decisional": "Decizia de a nu alerga spre minge, deși instinctul o cere, e o decizie tactică mai complexă decât reacția individuală simplă.",
+    "cognitive": "Menținerea a două roluri distincte simultan în echipă cere o coordonare colectivă mai avansată decât un singur rol individual repetat de toți.",
+    "psychological": "Rezistarea impulsului natural de a alerga spre minge cere control comportamental, nu doar înțelegere tactică — un pas dificil, dar exersabil.",
+    "technical": "Nu se cere o execuție tehnică specifică — accentul e pe poziționare colectivă, nu pe duel individual.",
+    "social": "Separarea rolurilor cere încredere reciprocă — jucătorii care nu presează trebuie să aibă încredere că cel mai apropiat își face treaba, fără să intervină redundant."
+  },
+  "coach_observation_before_speaking": [
+    "dacă toată echipa aleargă spre minge sau apare deja o separare de rol",
+    "dacă superioritatea numerică reală a atacanților justifică prioritatea protecției centrului"
+  ],
+  "when_to_intervene": [
+    "reacția în bloc spre minge lasă centrul vizibil deschis, în mod repetat"
+  ],
+  "when_not_to_intervene": [
+    "o singură repetiție cu reacție în bloc — se notează ca informație, nu se oprește imediat jocul"
+  ],
+  "understanding_check": [
+    "Cine a mers la minge și ce a făcut restul echipei în acel moment?"
+  ],
+  "response_if_not_understood": [
+    "dacă separarea rolurilor nu apare deloc după mai multe repetiții, se revine la exersarea izolată a reacției individuale (cel mai apropiat presează) înainte de a relua superioritatea numerică"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Toți la apărare, repede!", "reason": "cere o reacție de grup nediferențiată, exact opusul separării de roluri urmărite"}
+  ],
+  "misinterpretation_risks": [
+    "coechipierii care „protejează centrul” pot interpreta asta ca pasivitate completă, în loc de repoziționare activă și continuă"
+  ],
+  "match_transfer": "Separarea rolurilor de presiune și protecție sub superioritate numerică, exersată izolat, e exact decizia colectivă care apare în meciul oficial ori de câte ori echipa pierde mingea într-o fază de atac avansat al adversarului.",
+  "evidence_boundary": "Prioritizarea protecției centrului sub superioritate numerică e un principiu tactic consacrat în metodologia apărării; eficiența exactă a acestei formulări pentru copii de 10-11 ani rămâne neconfirmată printr-o pilotare reală pe teren.",
+  "principle_ids": [
+    "principle.tranzitia-la-pierderea-mingii",
+    "principle.protejarea-centrului"
+  ],
+  "related_problem_ids": ["PRB-0004"],
+  "related_exercise_ids": ["EX-0022"],
+  "related_session_ids": ["SES-0009"]
+}

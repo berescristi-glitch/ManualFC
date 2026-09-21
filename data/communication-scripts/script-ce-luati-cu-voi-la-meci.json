@@ -1,0 +1,61 @@
+{
+  "id": "SCR-0025",
+  "slug": "ce-luati-cu-voi-la-meci",
+  "title": "Ce luați cu voi la meci?",
+  "category": "inchiderea-sedintei-si-transferul-in-meci",
+  "situation_trigger": "La finalul complet al unei ședințe, înainte de plecare, antrenorul dorește să lege explicit ședința de meciul următor, nu doar de exercițiile în sine.",
+  "game_moment": "închiderea ședinței, ultimele minute înainte de plecare",
+  "child_wording": "Ce luați cu voi la meciul de sâmbătă din ce am exersat azi?",
+  "short_version": "Ce luați la meci?",
+  "expanded_version": "Înainte să plecați, gândiți-vă: ce anume din ce am exersat azi ați putea folosi la meciul următor?",
+  "coach_meaning": "Antrenorul deschide explicit o punte între ședința curentă și meciul viitor, sprijinind transferul conștient al învățării dincolo de contextul antrenamentului.",
+  "why_this_wording": "Formularea cere o proiecție concretă spre viitor (meciul următor), nu doar o reflecție retrospectivă asupra ședinței, ceea ce sprijină transferul intențional.",
+  "problem_being_solved": "Fără o legătură explicită formulată la finalul ședinței, copiii pot trata exercițiile ca activități izolate, deconectate de scopul lor real — performanța în meciul oficial.",
+  "information_to_notice": [
+    "dacă copiii pot identifica un element concret din ședință relevant pentru meci, nu doar un răspuns general",
+    "entuziasmul sau starea de energie a grupului la finalul ședinței, pentru a calibra cât timp mai are sens pentru această întrebare"
+  ],
+  "decision_to_learn": "Copiii învață să facă legătura explicită dintre ce exersează la antrenament și ce vor folosi în meciul următor, nu să trateze cele două ca activități separate.",
+  "observable_behaviours": [
+    "cel puțin un copil poate numi un element specific din ședință pe care intenționează să-l folosească la meci",
+    "referirea la acest element apare ulterior în discuția de dinaintea sau de după meciul respectiv"
+  ],
+  "age_appropriateness": "La 10-11 ani, proiecția explicită spre un eveniment viitor concret (meciul de sâmbătă) e mai accesibilă decât o reflecție abstractă despre învățare pe termen lung.",
+  "rationales": {
+    "tactical": "Legătura explicită cu meciul următor păstrează relevanța percepută a exercițiilor izolate, întărind motivația de a le exersa serios.",
+    "perceptual": "Copilul e ghidat să caute activ o legătură între informația exersată azi și situațiile pe care le va întâlni concret în meci.",
+    "decisional": "Proiectarea explicită a unei intenții pentru meciul viitor sprijină decizia conștientă de a aplica ce a fost exersat, nu doar speranța că se va întâmpla automat.",
+    "cognitive": "O întrebare concretă, legată de un eveniment specific viitor, e mai ușor de procesat și reținut decât o reflecție generală despre progres.",
+    "psychological": "Formularea unei intenții proprii pentru meci crește implicarea personală a copilului în propriul proces de învățare, dincolo de participarea pasivă la exerciții.",
+    "technical": "Nu se prescrie un element tehnic anume — copilul alege singur ce element din ședință consideră relevant pentru propriul joc.",
+    "social": "Ascultarea intențiilor diferite ale colegilor pentru meci poate extinde propria listă de opțiuni pe care copilul nu le-ar fi considerat singur."
+  },
+  "coach_observation_before_speaking": [
+    "dacă mai există timp și energie suficiente în grup pentru o reflecție scurtă, sau ședința trebuie închisă rapid din motive practice",
+    "care a fost elementul central real al ședinței, pentru a ghida discuția dacă răspunsurile rămân prea vagi"
+  ],
+  "when_to_intervene": [
+    "la finalul planificat al fiecărei ședințe, ca ultim pas înainte de plecare"
+  ],
+  "when_not_to_intervene": [
+    "grupul e vizibil obosit sau grăbit să plece — o reflecție forțată în acel moment poate deveni contraproductivă"
+  ],
+  "understanding_check": [
+    "Ce anume din ce am exersat azi ai putea folosi la meci?"
+  ],
+  "response_if_not_understood": [
+    "dacă niciun copil nu poate identifica un element concret, antrenorul poate oferi propria sugestie legată de tema centrală a ședinței, ca punct de plecare"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Sper să nu uitați tot ce am făcut azi", "reason": "exprimă îndoială și presiune, nu o invitație deschisă la reflecție"}
+  ],
+  "misinterpretation_risks": [
+    "copiii pot crede că trebuie neapărat să reproducă exact exercițiul la meci, în loc să transfere principiul sau decizia exersată într-o formă adaptată situației reale"
+  ],
+  "match_transfer": "Această întrebare e ea însăși mecanismul de transfer — proiectarea conștientă a unei intenții pentru meciul următor, plecând direct de la ședința tocmai încheiată.",
+  "evidence_boundary": "Bucla explicită dintre antrenament și meci e o poziție metodologică consacrată în manual; nu există un studiu specific care să cuantifice efectul acestei formulări exacte la copii de 10-11 ani.",
+  "principle_ids": [
+    "principle.reflectia-ghidata-si-transferul-in-joc"
+  ],
+  "related_session_ids": ["SES-0006", "SES-0010"]
+}

@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CoachActions from '../../components/CoachActions.astro';
+import { getCommunicationScripts, getCommunicationScript, communicationScriptCategoryLabels, getAllPrinciples } from '../../lib/content-bridge';
+import { getProblem } from '../../lib/problem-library';
+
+export function getStaticPaths() {
+  return getCommunicationScripts().map((s) => ({ params: { id: s.id } }));
+}
+const { id } = Astro.params;
+const script = getCommunicationScript(id as string);
+const categoryLabel = communicationScriptCategoryLabels[script.category] ?? script.category;
+
+const sameCategory = getCommunicationScripts().filter((s) => s.category === script.category);
+const idx = sameCategory.findIndex((s) => s.id === script.id);
+const prevScript = idx > 0 ? sameCategory[idx - 1] : null;
+const nextScript = idx < sameCategory.length - 1 ? sameCategory[idx + 1] : null;
+
+const linkedPrinciples = script.principle_ids.map((pId) => {
+  const target = getAllPrinciples().find((p) => p.id === pId);
+  if (!target) throw new Error(`[FAIL_CLOSED] [Script] [${script.id}] Referința la principiul "${pId}" nu a fost găsită.`);
+  return target;
+});
+const linkedProblems = (script.related_problem_ids ?? []).map((prbId) => getProblem(prbId));
+---
+<BaseLayout title={`${script.title} — Scripturi de comunicare`} description={script.situation_trigger}>
+  <article class="script-page">
+    <Breadcrumb items={[{ label: 'Scripturi de comunicare', href: '/scripturi' }, { label: script.title }]} />
+    <p class="eyebrow">SCRIPT DE COMUNICARE · {categoryLabel} · {script.id}</p>
+    <h1>{script.title}</h1>
+    <CoachActions id={script.id} kind="script" title={script.title} href={`/scripturi/${script.id}`} />
+    <p class="trigger"><strong>Situația:</strong> {script.situation_trigger}</p>
+
+    <section aria-labelledby="ce-spui" id="ce-spui">
+      <h2 id="ce-spui">Ce spui</h2>
+      <p class="live-version">„{script.short_version}”</p>
+      <p class="expanded-version">{script.expanded_version}</p>
+      {script.why_this_wording && <p class="why">{script.why_this_wording}</p>}
+    </section>
+
+    <section aria-labelledby="sensul">
+      <h2 id="sensul">Sensul pentru antrenor</h2>
+      <p>{script.coach_meaning}</p>
+      <p><strong>Problema pe care o rezolvă:</strong> {script.problem_being_solved}</p>
+    </section>
+
+    <section aria-labelledby="ce-observa-copilul">
+      <h2 id="ce-observa-copilul">Ce trebuie să observe și să decidă copilul</h2>
+      <ul>{script.information_to_notice.map((i) => <li>{i}</li>)}</ul>
+      <p><strong>Decizia de învățat:</strong> {script.decision_to_learn}</p>
+      <p><strong>Comportamente observabile:</strong></p>
+      <ul>{script.observable_behaviours.map((b) => <li>{b}</li>)}</ul>
+      <p class="age-note">{script.age_appropriateness}</p>
+    </section>
+
+    <section aria-labelledby="de-ce-functioneaza">
+      <h2 id="de-ce-functioneaza">De ce funcționează</h2>
+      <dl class="rationales">
+        <dt>Tactic</dt><dd>{script.rationales.tactical}</dd>
+        <dt>Perceptiv</dt><dd>{script.rationales.perceptual}</dd>
+        <dt>Decizional</dt><dd>{script.rationales.decisional}</dd>
+        <dt>Cognitiv</dt><dd>{script.rationales.cognitive}</dd>
+        <dt>Psihologic</dt><dd>{script.rationales.psychological}</dd>
+        <dt>Tehnic</dt><dd>{script.rationales.technical}</dd>
+        <dt>Social</dt><dd>{script.rationales.social}</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="inainte-sa-vorbesti">
+      <h2 id="inainte-sa-vorbesti">Înainte să vorbești</h2>
+      <p><strong>Observă:</strong></p>
+      <ul>{script.coach_observation_before_speaking.map((o) => <li>{o}</li>)}</ul>
+      <p><strong>Intervino când:</strong></p>
+      <ul>{script.when_to_intervene.map((w) => <li>{w}</li>)}</ul>
+      <p><strong>Nu intervino când:</strong></p>
+      <ul>{script.when_not_to_intervene.map((w) => <li>{w}</li>)}</ul>
+    </section>
+
+    <section aria-labelledby="verifica-intelegerea">
+      <h2 id="verifica-intelegerea">Verifică înțelegerea</h2>
+      <ul>{script.understanding_check.map((u) => <li>{u}</li>)}</ul>
+      <p><strong>Dacă nu funcționează:</strong></p>
+      <ul>{script.response_if_not_understood.map((r) => <li>{r}</li>)}</ul>
+    </section>
+
+    <section aria-labelledby="evita">
+      <h2 id="evita">Formulări de evitat</h2>
+      <ul class="avoid-list">
+        {script.phrases_to_avoid.map((p) => <li><span class="phrase">„{p.phrase}”</span><span class="reason">{p.reason}</span></li>)}
+      </ul>
+      <p><strong>Riscuri de interpretare:</strong></p>
+      <ul>{script.misinterpretation_risks.map((r) => <li>{r}</li>)}</ul>
+    </section>
+
+    <section aria-labelledby="transfer">
+      <h2 id="transfer">Transfer în meci</h2>
+      <p>{script.match_transfer}</p>
+    </section>
+
+    <section aria-labelledby="ce-nu-stim">
+      <h2 id="ce-nu-stim">Ce nu știm sigur</h2>
+      <p>{script.evidence_boundary}</p>
+    </section>
+
+    <section aria-labelledby="legaturi">
+      <h2 id="legaturi">Legături</h2>
+      <p><strong>Principii:</strong> {linkedPrinciples.map((p, i) => <>{i > 0 && ' · '}<a href={`/principii/${p.slug}`}>{p.title}</a></>)}</p>
+      {linkedProblems.length > 0 && (
+        <p><strong>Probleme din motorul de decizie:</strong> {linkedProblems.map((p, i) => <>{i > 0 && ' · '}<a href={`/rezolva-pe-teren/${p.slug}`}>{p.human_title}</a></>)}</p>
+      )}
+      {(script.related_exercise_ids ?? []).length > 0 && (
+        <p><strong>Exerciții:</strong> {(script.related_exercise_ids ?? []).map((exId, i) => <>{i > 0 && ' · '}<a href={`/gold-standard/exercitii/${exId}`}>{exId}</a></>)}</p>
+      )}
+      {(script.related_session_ids ?? []).length > 0 && (
+        <p><strong>Ședințe:</strong> {(script.related_session_ids ?? []).map((sesId, i) => <>{i > 0 && ' · '}<a href={`/gold-standard/sedinte/${sesId}`}>{sesId}</a></>)}</p>
+      )}
+    </section>
+
+    <nav class="script-nav" aria-label="Navigare între scripturi din aceeași categorie">
+      {prevScript ? <a href={`/scripturi/${prevScript.id}`}>← {prevScript.title}</a> : <span />}
+      {nextScript ? <a href={`/scripturi/${nextScript.id}`}>{nextScript.title} →</a> : <span />}
+    </nav>
+  </article>
+</BaseLayout>
+
+<style>
+  .script-page { max-width: var(--width-content); margin: 0 auto; padding: var(--space-20) var(--space-6); }
+  h1 { max-width: 26ch; margin-top: .5rem; }
+  .trigger { max-width: 68ch; font-size: 1.05rem; margin-top: 1rem; }
+  section { margin-top: var(--space-16); border-top: 1px solid var(--color-border); padding-top: var(--space-8); }
+  .live-version { font-size: 1.6rem; font-weight: 800; }
+  .expanded-version { max-width: 68ch; }
+  .why { color: var(--color-text-muted); font-size: .95rem; }
+  .rationales { display: grid; grid-template-columns: 8rem 1fr; gap: .5rem 1rem; }
+  .rationales dt { font-weight: 800; }
+  .rationales dd { margin: 0 0 .75rem; }
+  .avoid-list { list-style: none; padding: 0; }
+  .avoid-list li { padding: var(--space-3) 0; border-bottom: 1px solid var(--color-border); }
+  .avoid-list .phrase { display: block; font-style: italic; }
+  .avoid-list .reason { color: var(--color-text-muted); font-size: .9rem; }
+  .age-note { color: var(--color-text-muted); font-size: .9rem; }
+  .script-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: var(--space-16); padding-top: var(--space-8); border-top: 1px solid var(--color-border); }
+  @media (max-width: 600px) { .rationales { grid-template-columns: 1fr; } .script-nav { flex-direction: column; } }
+</style>

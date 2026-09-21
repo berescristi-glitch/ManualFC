@@ -1,0 +1,66 @@
+{
+  "id": "SCR-0003",
+  "slug": "priveste-inainte-sa-vina-mingea",
+  "title": "Privește înainte să vină mingea",
+  "category": "receptie-si-scanare",
+  "situation_trigger": "Un copil primește mingea uitându-se numai la ea, fără nicio privire peste umăr sau lateral înainte de contact, și decide abia după recepție ce va face cu mingea.",
+  "game_moment": "recepție sub presiune, în exercițiu sau în joc",
+  "child_wording": "Uită-te în jur înainte să vină mingea la tine.",
+  "short_version": "Uită-te în jur!",
+  "expanded_version": "Uită-te în jur înainte să vină mingea la tine — vezi unde e adversarul și unde e spațiul liber, ca să știi deja ce faci când o primești.",
+  "coach_meaning": "Antrenorul cere o scanare vizuală înainte de contactul cu mingea, nu o corecție a controlului tehnic — problema e informația culeasă înainte de recepție, nu execuția recepției în sine.",
+  "why_this_wording": "Cueing extern („uită-te în jur”, spre spațiu și adversar), nu o instrucțiune tehnică internă despre poziția piciorului sau a corpului — lasă copilul să aleagă singur ce face cu informația observată.",
+  "problem_being_solved": "Fără o scanare prealabilă, copilul decide ce face cu mingea abia după ce a primit-o, ceea ce înseamnă o decizie mai lentă și adesea sub presiunea deja instalată a adversarului apropiat.",
+  "information_to_notice": [
+    "poziția celui mai apropiat adversar",
+    "spațiul liber disponibil imediat după recepție"
+  ],
+  "decision_to_learn": "Copilul învață să culeagă informația relevantă înainte de a primi mingea, astfel încât decizia despre continuare să fie deja parțial formată la momentul contactului.",
+  "observable_behaviours": [
+    "apare o scanare vizibilă a capului spre lateral sau peste umăr înainte de recepție",
+    "prima acțiune după recepție e orientată spre spațiul observat, nu întâmplătoare"
+  ],
+  "age_appropriateness": "La 10-11 ani, scanarea înainte de recepție nu e încă un obicei automat; un indiciu extern scurt și repetat ajută formarea acestui obicei fără a impune o tehnică rigidă de control.",
+  "rationales": {
+    "tactical": "Informația culeasă înainte de recepție permite continuarea rapidă a jocului, esențială pentru a exploata spațiul înainte ca adversarul să se repoziționeze.",
+    "perceptual": "Scanarea explicită construiește obiceiul de a căuta activ informație vizuală, nu de a reacționa doar la ce apare direct în câmpul vizual central.",
+    "decisional": "O decizie formată parțial înainte de contact e mai rapidă și mai puțin dependentă de presiunea de timp instalată chiar în momentul recepției.",
+    "cognitive": "Separarea culegerii de informație (înainte) de execuție (la contact) reduce încărcarea cognitivă simultană cerută copilului.",
+    "psychological": "Un copil care a scanat deja spațiul se simte mai puțin surprins de apropierea adversarului, ceea ce reduce ezitarea la recepție.",
+    "technical": "Orientarea corpului la recepție depinde de informația culeasă anterior — fără scanare, orice tehnică de control rămâne un răspuns întâmplător, nu o alegere informată.",
+    "social": "Copiii care scanează constant devin mai fiabili ca opțiune de pasă pentru coechipieri, pentru că reacționează mai rapid și mai coerent după recepție."
+  },
+  "coach_observation_before_speaking": [
+    "dacă lipsa scanării apare constant sau doar în momente izolate de presiune mare",
+    "dacă adversarul din exercițiu permite fizic timpul necesar unei scanări (spațiu și opoziție potrivite)"
+  ],
+  "when_to_intervene": [
+    "absența scanării se repetă constant, în mai multe faze consecutive, nu doar izolat"
+  ],
+  "when_not_to_intervene": [
+    "o singură recepție fără scanare sub presiune foarte mare — poate fi limitarea reală a timpului disponibil, nu lipsa obiceiului"
+  ],
+  "understanding_check": [
+    "Ce ai văzut chiar înainte să primești mingea?"
+  ],
+  "response_if_not_understood": [
+    "dacă răspunsul descrie doar mingea, nu spațiul sau adversarul, se reduce presiunea exercițiului (regresie) și se repetă cu timp mai mult disponibil pentru scanare"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Uită-te la minge!", "reason": "contrazice direct scopul — copilul trebuie să se uite în altă parte decât la minge înainte de a o primi"},
+    {"phrase": "Nu te-ai uitat, iar!", "reason": "transformă absența scanării într-un reproș repetitiv, fără să ofere din nou reperul util"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate interpreta cererea ca „uită-te mereu în altă parte decât la minge”, pierzând complet controlul tehnic al recepției — scanarea precede contactul, nu îl înlocuiește"
+  ],
+  "match_transfer": "Scanarea înainte de recepție, exersată repetat în situații structurate, e exact comportamentul care face diferența în meciul oficial între o continuare rapidă a jocului și o pierdere de minge sub presiune.",
+  "evidence_boundary": "Un indiciu extern scurt (fără instrucțiune verbală despre tehnică) pentru orientarea la recepție a arătat rezultate pozitive la copii de vârstă apropiată în studii controlate mici — dovada e reală, dar limitată ca volum și context, nu o regulă universală pentru toate situațiile de recepție.",
+  "principle_ids": [
+    "principle.spatiu-si-unghiuri",
+    "principle.focalizarea-observatiei-si-criterii-de-interventie"
+  ],
+  "related_problem_ids": ["PRB-0003"],
+  "related_exercise_ids": ["EX-0003", "EX-0009"],
+  "related_session_ids": ["SES-0001", "SES-0004"],
+  "source_claim_ids": ["CLM-0102"]
+}

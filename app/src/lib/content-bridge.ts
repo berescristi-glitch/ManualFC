@@ -88,6 +88,32 @@ import gsSession9Raw from '../../../data/sessions/session-tranzitie-negativa-si-
 import gsSession10Raw from '../../../data/sessions/session-transfer-defensiv-complet.json';
 import gsAssessment1Raw from '../../../data/assessments/assessment-sprijin-si-unghi-de-pasa.json';
 import gsAssessment2Raw from '../../../data/assessments/assessment-apararea-presiune-si-acoperire.json';
+import script1Raw from '../../../data/communication-scripts/script-tacere-activa-inainte-de-interventie.json';
+import script2Raw from '../../../data/communication-scripts/script-un-singur-lucru-per-interventie.json';
+import script3Raw from '../../../data/communication-scripts/script-priveste-inainte-sa-vina-mingea.json';
+import script4Raw from '../../../data/communication-scripts/script-orienteaza-te-spre-spatiul-liber.json';
+import script5Raw from '../../../data/communication-scripts/script-iesi-din-umbra-adversarului.json';
+import script6Raw from '../../../data/communication-scripts/script-nu-va-adunati-in-aceeasi-zona.json';
+import script7Raw from '../../../data/communication-scripts/script-nu-ramane-pe-loc-dupa-ce-ai-pasat.json';
+import script8Raw from '../../../data/communication-scripts/script-primele-doua-secunde-dupa-pierdere.json';
+import script9Raw from '../../../data/communication-scripts/script-cine-e-aproape-cine-protejeaza-centrul.json';
+import script10Raw from '../../../data/communication-scripts/script-prima-privire-nu-prima-pasa-inapoi.json';
+import script11Raw from '../../../data/communication-scripts/script-ai-castigat-mingea-ce-vezi-inainte.json';
+import script12Raw from '../../../data/communication-scripts/script-unul-incetineste-celalalt-protejeaza.json';
+import script13Raw from '../../../data/communication-scripts/script-nu-va-eliminati-amandoi-cu-aceeasi-actiune.json';
+import script14Raw from '../../../data/communication-scripts/script-ce-vezi-inainte-sa-alegi.json';
+import script15Raw from '../../../data/communication-scripts/script-nu-exista-o-singura-solutie-corecta.json';
+import script16Raw from '../../../data/communication-scripts/script-greseala-e-informatie-nu-verdict.json';
+import script17Raw from '../../../data/communication-scripts/script-lauda-efortul-nu-doar-rezultatul.json';
+import script18Raw from '../../../data/communication-scripts/script-ce-ai-observat-azi.json';
+import script19Raw from '../../../data/communication-scripts/script-unde-ai-mai-vazut-asta-in-joc.json';
+import script20Raw from '../../../data/communication-scripts/script-esti-frustrat-hai-sa-respiram-o-secunda.json';
+import script21Raw from '../../../data/communication-scripts/script-doi-copii-se-cearta-pe-minge.json';
+import script22Raw from '../../../data/communication-scripts/script-toata-lumea-atinge-mingea.json';
+import script23Raw from '../../../data/communication-scripts/script-nu-eticheta-copilul-care-greseste-des.json';
+import script24Raw from '../../../data/communication-scripts/script-de-ce-am-schimbat-regula.json';
+import script25Raw from '../../../data/communication-scripts/script-ce-luati-cu-voi-la-meci.json';
+import script26Raw from '../../../data/communication-scripts/script-inchidem-cu-un-singur-lucru.json';
 
 /**
  * Content Bridge 2.0 — Puntea de citire fail-closed complet tipizată pentru datele canonice ale proiectului.
@@ -700,4 +726,145 @@ export function getGoldStandardAssessmentPrinciples(id: string = DEFAULT_ASSESSM
     }
     return target;
   });
+}
+
+export const communicationScriptCategoryLabels: Record<string, string> = {
+  'observare-inainte-de-corectie': 'Observare înainte de corecție',
+  'receptie-si-scanare': 'Recepție și scanare',
+  'sprijin-si-unghiuri-de-pasa': 'Sprijin și unghiuri de pasă',
+  'miscare-dupa-pasa': 'Mișcare după pasă',
+  'tranzitia-la-pierderea-mingii': 'Tranziția la pierderea mingii',
+  'tranzitia-la-castigarea-mingii': 'Tranziția la câștigarea mingii',
+  'cooperare-defensiva': 'Cooperare defensivă',
+  'decizie-sub-presiune': 'Decizie sub presiune',
+  'greseala-ca-informatie': 'Greșeala ca informație',
+  'reflectie-si-autoevaluare': 'Reflecție și autoevaluare',
+  'conflict-frustrare-si-reglare-emotionala': 'Conflict, frustrare și reglare emoțională',
+  'incluziune-echitate-si-participare-respectuoasa': 'Incluziune, echitate și participare respectuoasă',
+  'explicarea-constrangerilor-si-schimbarea-sarcinii': 'Explicarea constrângerilor și schimbarea sarcinii',
+  'inchiderea-sedintei-si-transferul-in-meci': 'Închiderea ședinței și transferul în meci',
+};
+
+export interface CommunicationScriptPhraseToAvoid { phrase: string; reason: string; }
+export interface CommunicationScriptRationales {
+  tactical: string; perceptual: string; decisional: string; cognitive: string;
+  psychological: string; technical: string; social: string;
+}
+export interface CommunicationScript {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  situation_trigger: string;
+  game_moment: string;
+  child_wording: string;
+  short_version: string;
+  expanded_version: string;
+  coach_meaning: string;
+  why_this_wording?: string;
+  problem_being_solved: string;
+  information_to_notice: string[];
+  decision_to_learn: string;
+  observable_behaviours: string[];
+  age_appropriateness: string;
+  rationales: CommunicationScriptRationales;
+  coach_observation_before_speaking: string[];
+  when_to_intervene: string[];
+  when_not_to_intervene: string[];
+  understanding_check: string[];
+  response_if_not_understood: string[];
+  phrases_to_avoid: CommunicationScriptPhraseToAvoid[];
+  misinterpretation_risks: string[];
+  match_transfer: string;
+  evidence_boundary: string;
+  principle_ids: string[];
+  related_problem_ids?: string[];
+  related_exercise_ids?: string[];
+  related_session_ids?: string[];
+  related_pedagog_lesson_ids?: string[];
+  related_coach_lesson_ids?: string[];
+  source_claim_ids?: string[];
+}
+
+function parseCommunicationScript(raw: any, sourceContext: string): CommunicationScript {
+  const id = requireField(raw?.id, sourceContext, 'id');
+  requireField(raw?.title, id, 'title');
+  requireField(raw?.category, id, 'category');
+  requireField(raw?.child_wording, id, 'child_wording');
+  requireField(raw?.short_version, id, 'short_version');
+  requireField(raw?.expanded_version, id, 'expanded_version');
+  requireField(raw?.rationales, id, 'rationales');
+  for (const dim of ['tactical', 'perceptual', 'decisional', 'cognitive', 'psychological', 'technical', 'social']) {
+    requireField(raw.rationales[dim], id, `rationales.${dim}`);
+  }
+  const principleIds = requireField(raw?.principle_ids, id, 'principle_ids');
+  if (!Array.isArray(principleIds) || principleIds.length === 0) {
+    throw new Error(`[FAIL_CLOSED] [Script] [${id}] "principle_ids" nu poate fi gol.`);
+  }
+  for (const pId of principleIds) {
+    if (!getAllPrinciples().some(p => p.id === pId)) {
+      throw new Error(`[FAIL_CLOSED] [Script] [${id}] Referința la principiul "${pId}" nu a fost găsită.`);
+    }
+  }
+  return raw as CommunicationScript;
+}
+
+let cachedCommunicationScripts: CommunicationScript[] | null = null;
+
+export function getCommunicationScripts(): CommunicationScript[] {
+  if (!cachedCommunicationScripts) {
+    cachedCommunicationScripts = [
+      parseCommunicationScript(script1Raw, 'script-tacere-activa-inainte-de-interventie.json'),
+      parseCommunicationScript(script2Raw, 'script-un-singur-lucru-per-interventie.json'),
+      parseCommunicationScript(script3Raw, 'script-priveste-inainte-sa-vina-mingea.json'),
+      parseCommunicationScript(script4Raw, 'script-orienteaza-te-spre-spatiul-liber.json'),
+      parseCommunicationScript(script5Raw, 'script-iesi-din-umbra-adversarului.json'),
+      parseCommunicationScript(script6Raw, 'script-nu-va-adunati-in-aceeasi-zona.json'),
+      parseCommunicationScript(script7Raw, 'script-nu-ramane-pe-loc-dupa-ce-ai-pasat.json'),
+      parseCommunicationScript(script8Raw, 'script-primele-doua-secunde-dupa-pierdere.json'),
+      parseCommunicationScript(script9Raw, 'script-cine-e-aproape-cine-protejeaza-centrul.json'),
+      parseCommunicationScript(script10Raw, 'script-prima-privire-nu-prima-pasa-inapoi.json'),
+      parseCommunicationScript(script11Raw, 'script-ai-castigat-mingea-ce-vezi-inainte.json'),
+      parseCommunicationScript(script12Raw, 'script-unul-incetineste-celalalt-protejeaza.json'),
+      parseCommunicationScript(script13Raw, 'script-nu-va-eliminati-amandoi-cu-aceeasi-actiune.json'),
+      parseCommunicationScript(script14Raw, 'script-ce-vezi-inainte-sa-alegi.json'),
+      parseCommunicationScript(script15Raw, 'script-nu-exista-o-singura-solutie-corecta.json'),
+      parseCommunicationScript(script16Raw, 'script-greseala-e-informatie-nu-verdict.json'),
+      parseCommunicationScript(script17Raw, 'script-lauda-efortul-nu-doar-rezultatul.json'),
+      parseCommunicationScript(script18Raw, 'script-ce-ai-observat-azi.json'),
+      parseCommunicationScript(script19Raw, 'script-unde-ai-mai-vazut-asta-in-joc.json'),
+      parseCommunicationScript(script20Raw, 'script-esti-frustrat-hai-sa-respiram-o-secunda.json'),
+      parseCommunicationScript(script21Raw, 'script-doi-copii-se-cearta-pe-minge.json'),
+      parseCommunicationScript(script22Raw, 'script-toata-lumea-atinge-mingea.json'),
+      parseCommunicationScript(script23Raw, 'script-nu-eticheta-copilul-care-greseste-des.json'),
+      parseCommunicationScript(script24Raw, 'script-de-ce-am-schimbat-regula.json'),
+      parseCommunicationScript(script25Raw, 'script-ce-luati-cu-voi-la-meci.json'),
+      parseCommunicationScript(script26Raw, 'script-inchidem-cu-un-singur-lucru.json'),
+    ];
+  }
+  return cachedCommunicationScripts;
+}
+
+export function getCommunicationScript(id: string): CommunicationScript {
+  const script = getCommunicationScripts().find(s => s.id === id);
+  if (!script) {
+    throw new Error(`[FAIL_CLOSED] [Script] Scriptul "${id}" nu a fost găsit.`);
+  }
+  return script;
+}
+
+export function getCommunicationScriptCategories(): string[] {
+  return Array.from(new Set(getCommunicationScripts().map(s => s.category)));
+}
+
+export function getScriptsForExercise(exerciseId: string): CommunicationScript[] {
+  return getCommunicationScripts().filter(s => (s.related_exercise_ids ?? []).includes(exerciseId));
+}
+
+export function getScriptsForSession(sessionId: string): CommunicationScript[] {
+  return getCommunicationScripts().filter(s => (s.related_session_ids ?? []).includes(sessionId));
+}
+
+export function getScriptsForPrinciple(principleId: string): CommunicationScript[] {
+  return getCommunicationScripts().filter(s => s.principle_ids.includes(principleId));
 }

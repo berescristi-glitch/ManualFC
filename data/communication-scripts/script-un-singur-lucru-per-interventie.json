@@ -1,0 +1,63 @@
+{
+  "id": "SCR-0002",
+  "slug": "un-singur-lucru-per-interventie",
+  "title": "Un singur lucru per intervenție",
+  "category": "observare-inainte-de-corectie",
+  "situation_trigger": "Antrenorul observă mai multe lucruri de corectat deodată la un copil sau la un grup (poziție, decizie, execuție tehnică) și simte impulsul de a le spune pe toate într-o singură intervenție.",
+  "game_moment": "orice pauză scurtă între repetiții sau seturi",
+  "child_wording": "O singură observație acum, restul altă dată.",
+  "short_version": "Un singur lucru: [observația aleasă].",
+  "expanded_version": "Am observat mai multe lucruri, dar vorbim doar despre unul acum — restul le observăm și le discutăm altă dată.",
+  "coach_meaning": "Antrenorul alege deliberat un singur focalizator per intervenție, chiar dacă a observat mai multe elemente de îmbunătățit, pentru a nu suprasolicita copilul cu informație simultană.",
+  "why_this_wording": "Formularea numește explicit alegerea (un singur lucru), ceea ce protejează copilul de senzația unei liste lungi de defecte și păstrează intervenția scurtă și utilizabilă imediat.",
+  "problem_being_solved": "O intervenție cu mai multe corecții simultane depășește capacitatea copilului de a reține și aplica informație nouă în timp real, iar rezultatul e frecvent confuzie sau blocaj, nu îmbunătățire.",
+  "information_to_notice": [
+    "care dintre elementele observate are cel mai mare efect asupra problemei de joc curente",
+    "dacă grupul a mai primit deja un alt focalizator recent, care încă se consolidează"
+  ],
+  "decision_to_learn": "Antrenorul învață să prioritizeze un singur element de feedback per moment, nu să comunice tot ce a observat.",
+  "observable_behaviours": [
+    "intervenția verbală a antrenorului conține o singură idee centrală, nu o listă",
+    "elementele neincluse sunt notate mental sau scris pentru o intervenție ulterioară, nu abandonate"
+  ],
+  "age_appropriateness": "La 10-11 ani, memoria de lucru pentru instrucțiuni verbale este limitată; o listă de corecții simultane depășește rapid ce poate fi reținut și aplicat în aceeași repriză de joc.",
+  "rationales": {
+    "tactical": "O singură corecție tactică per intervenție permite copilului să o testeze clar în repetițiile următoare, fără să se amestece cu alte schimbări cerute simultan.",
+    "perceptual": "Atenția copilului la această vârstă e limitată ca resursă; concentrarea pe un singur indiciu perceptiv crește șansa ca acel indiciu să fie efectiv căutat în joc.",
+    "decisional": "O singură schimbare de decizie cerută per moment permite evaluarea clară a efectului ei, față de mai multe schimbări simultane care fac imposibilă atribuirea rezultatului unei cauze.",
+    "cognitive": "Limitarea la un singur focalizator respectă capacitatea limitată de procesare simultană a informației la această vârstă, documentată consecvent în literatura despre atenție și memorie de lucru la copii.",
+    "psychological": "O listă lungă de corecții poate fi resimțită ca un verdict global negativ; o singură observație rămâne specifică și gestionabilă.",
+    "technical": "Corectarea tehnică simultană a mai multor elemente (poziția piciorului, unghiul corpului, timing) e frecvent imposibil de aplicat coerent într-o singură repetiție următoare.",
+    "social": "Dacă fiecare intervenție conține multe corecții, copiii pot începe să evite să ceară feedback, anticipând o listă lungă în loc de un răspuns scurt și util."
+  },
+  "coach_observation_before_speaking": [
+    "câte elemente diferite de corectat au apărut real în ultimele repetiții",
+    "care dintre ele afectează cel mai direct problema de joc pe care o exersează exercițiul curent"
+  ],
+  "when_to_intervene": [
+    "există un element clar prioritar, legat direct de obiectivul exercițiului curent"
+  ],
+  "when_not_to_intervene": [
+    "niciun element observat nu e mai important decât altele — se așteaptă o repetiție în plus pentru claritate, nu se alege arbitrar"
+  ],
+  "understanding_check": [
+    "Ce ai schimbat de la intervenția de adineauri?"
+  ],
+  "response_if_not_understood": [
+    "dacă schimbarea cerută nu apare deloc în repetițiile următoare, se reformulează aceeași observație mai concret, fără a adăuga un al doilea element"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Ai de reparat mai multe lucruri, hai să le luăm pe rând acum", "reason": "anunță o listă lungă chiar dacă promite ordine, ceea ce anulează efectul de a limita la un singur focalizator"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate crede că celelalte elemente observate au fost uitate sau nu contează, dacă antrenorul nu revine ulterior la ele"
+  ],
+  "match_transfer": "Capacitatea de a izola un singur element de îmbunătățit pregătește copilul pentru meciul oficial, unde antrenorul nu poate oferi instrucțiuni multiple detaliate în timp real.",
+  "evidence_boundary": "Limitarea la un singur focalizator per intervenție este o practică larg recomandată în literatura despre feedback motor și încărcare cognitivă la copii, dar pragul exact (unul, nu doi) rămâne o convenție de teren, nu un prag validat specific pentru fotbalul U11.",
+  "principle_ids": [
+    "principle.focalizarea-observatiei-si-criterii-de-interventie",
+    "principle.limbaj-scurt-si-relevanta"
+  ],
+  "related_exercise_ids": ["EX-0002", "EX-0017"],
+  "related_session_ids": ["SES-0001", "SES-0007"]
+}

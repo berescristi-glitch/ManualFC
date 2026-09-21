@@ -1,0 +1,63 @@
+{
+  "id": "SCR-0007",
+  "slug": "nu-ramane-pe-loc-dupa-ce-ai-pasat",
+  "title": "Nu rămâi pe loc după ce ai pasat",
+  "category": "miscare-dupa-pasa",
+  "situation_trigger": "După ce a dat o pasă, copilul rămâne nemișcat pe loc, privind mingea, în loc să se deplaseze pentru a oferi o nouă opțiune de continuare.",
+  "game_moment": "atac organizat, imediat după executarea unei pase",
+  "child_wording": "Pasa nu e gata până nu te-ai mișcat din nou.",
+  "short_version": "Mișcă-te după pasă!",
+  "expanded_version": "Pasa nu se termină când mingea a plecat din picior — mișcă-te imediat după, ca să oferi din nou o opțiune coechipierului.",
+  "coach_meaning": "Antrenorul cere continuarea mișcării imediat după pasă, tratând pasa și repoziționarea ca o singură acțiune, nu ca doi pași separați dintre care al doilea e opțional.",
+  "why_this_wording": "Formularea leagă explicit finalizarea acțiunii de mișcarea următoare, contrazicând direct tendința de a trata pasa ca punct final al implicării.",
+  "problem_being_solved": "Un jucător care rămâne pe loc după ce a pasat dispare temporar ca opțiune utilă, exact în momentul în care echipa are nevoie de continuitate în circulația mingii.",
+  "information_to_notice": [
+    "dacă rămâne acoperit de un adversar în poziția din care a pasat",
+    "unde apare un spațiu nou, deschis chiar de pasa proprie"
+  ],
+  "decision_to_learn": "Copilul învață să trateze pasa ca începutul unei noi mișcări, nu ca finalul implicării în fază.",
+  "observable_behaviours": [
+    "copilul se deplasează vizibil în primele secunde după ce a pasat",
+    "noua poziție oferă o opțiune de continuare, nu doar mișcare aleatorie"
+  ],
+  "age_appropriateness": "La 10-11 ani, atenția tinde să rămână pe minge după ce a fost pasată; cererea explicită de mișcare imediată contracarează acest tipar natural fără a impune un traseu fix.",
+  "rationales": {
+    "tactical": "Mișcarea după pasă menține circulația mingii posibilă, evitând ca echipa să rămână cu mai puține opțiuni imediat după fiecare pasă.",
+    "perceptual": "Copilul trebuie să observe noul spațiu deschis de propria pasă, nu doar traiectoria mingii spre coechipier.",
+    "decisional": "Decizia de a te mișca sau nu depinde de evaluarea rapidă a poziției proprii față de adversarul cel mai apropiat, imediat după pasă.",
+    "cognitive": "Legarea pasei de mișcarea următoare ca o singură secvență reduce riscul ca cele două acțiuni să fie tratate mental ca independente.",
+    "psychological": "Un jucător care se mișcă mereu după pasă capătă încredere că rămâne implicat activ în joc, nu doar spectator după fiecare atingere.",
+    "technical": "Execuția pasei rămâne neschimbată — accentul e pe ce urmează imediat după, nu pe tehnica pasei în sine.",
+    "social": "Un coechipier care se mișcă mereu după pasă devine previzibil util pentru restul echipei, care poate anticipa noua sa poziție."
+  },
+  "coach_observation_before_speaking": [
+    "dacă rămânerea pe loc e un tipar repetat sau o pauză justificată (recuperare fizică, poziție deja bună)",
+    "dacă spațiul din jur oferă real o mișcare utilă sau copilul e deja bine plasat"
+  ],
+  "when_to_intervene": [
+    "rămânerea pe loc după pasă se repetă constant, indiferent de context tactic"
+  ],
+  "when_not_to_intervene": [
+    "poziția de după pasă e deja bună, iar mișcarea suplimentară nu ar aduce niciun beneficiu tactic real"
+  ],
+  "understanding_check": [
+    "Unde te-ai mutat după ce ai dat pasa?"
+  ],
+  "response_if_not_understood": [
+    "dacă răspunsul arată că nu a existat nicio mișcare intenționată, se repetă exercițiul cu o constrângere care recompensează explicit mișcarea după pasă (de exemplu, punct doar dacă a doua pasă vine de la altă poziție)"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Treci în față!", "reason": "prescrie o direcție fixă în loc să lase copilul să evalueze unde apare de fapt spațiul util"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate începe să se miște constant și fără scop, doar pentru a respecta regula, fără să evalueze dacă mișcarea oferă cu adevărat o opțiune utilă"
+  ],
+  "match_transfer": "Mișcarea continuă după pasă, exersată izolat, e exact ce distinge un jucător implicat constant în joc de unul care dispare tactic imediat după fiecare atingere a mingii.",
+  "evidence_boundary": "Continuarea mișcării după pasă e o recomandare metodologică larg acceptată; nu există un studiu specific care să cuantifice efectul acestei formulări exacte la copii de 10-11 ani.",
+  "principle_ids": [
+    "principle.progresie-si-sprijin"
+  ],
+  "related_problem_ids": ["PRB-0007"],
+  "related_exercise_ids": ["EX-0007"],
+  "related_session_ids": ["SES-0003"]
+}

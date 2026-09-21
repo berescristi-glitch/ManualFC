@@ -1,0 +1,64 @@
+{
+  "id": "SCR-0023",
+  "slug": "nu-eticheta-copilul-care-greseste-des",
+  "title": "Nu eticheta copilul care greșește des",
+  "category": "incluziune-echitate-si-participare-respectuoasa",
+  "situation_trigger": "Un copil greșește vizibil mai des decât alții din grup, iar antrenorul sau colegii încep, implicit sau explicit, să-l trateze ca „cel slab”, inclusiv prin cum îi vorbesc sau cât de des îi oferă opțiuni.",
+  "game_moment": "orice fază, tratament diferențiat implicit al unui copil",
+  "child_wording": "Ai greșit acum, ca oricine altcineva din grup — hai să vedem ce ai observat.",
+  "short_version": "Ca oricine — ce ai văzut?",
+  "expanded_version": "Ai greșit acum, exact cum a greșit și [alt copil, dacă e relevant] mai devreme — hai să vedem ce ai observat, nu ce ai făcut greșit.",
+  "coach_meaning": "Antrenorul normalizează explicit greșeala copilului respectiv ca fiind de același tip cu orice altă greșeală din grup, contracarând activ tendința de a-l trata diferit din cauza frecvenței mai mari a erorilor.",
+  "why_this_wording": "Formularea plasează greșeala copilului în aceeași categorie cu greșelile oricui altcuiva, contracarând explicit eticheta implicită de „cel care greșește mereu”.",
+  "problem_being_solved": "Copiii percep frecvent tratamentul diferențiat al antrenorului în funcție de nivelul de abilitate, iar copiii mai puțin avansați raportează mai des critica excesivă ca barieră reală de dezvoltare — o etichetă implicită poate deveni o profeție care se auto-împlinește.",
+  "information_to_notice": [
+    "dacă reacția proprie a antrenorului la greșelile acestui copil diferă sistematic de reacția la greșelile similare ale altor copii",
+    "dacă ceilalți copii din grup au început să-l trateze diferit, verbal sau prin excludere din pase"
+  ],
+  "decision_to_learn": "Copilul care greșește frecvent învață că greșeala lui e tratată la fel ca a oricui altcuiva, nu ca dovadă a unei etichete fixe.",
+  "observable_behaviours": [
+    "reacția antrenorului la greșelile acestui copil devine vizibil identică, ca ton și conținut, cu reacția la greșelile altor copii",
+    "copilul continuă să ceară mingea și să încerce decizii, fără retragere vizibilă din participare"
+  ],
+  "age_appropriateness": "La 10-11 ani, etichetele implicite (cel bun, cel slab) se formează rapid și influențează atât percepția de sine a copilului, cât și tratamentul primit de la colegi — limbajul constant și egal al antrenorului contracarează activ acest tipar.",
+  "rationales": {
+    "tactical": "Un copil tratat constant ca „cel slab” primește, în timp, mai puține opțiuni reale de pasă, ceea ce reduce artificial oportunitățile lui de a exersa și progresa.",
+    "perceptual": "Antrenorul trebuie să observe activ propriul tipar de reacție diferențiată, nu doar comportamentul copilului — eticheta se formează adesea prin reacția adultului, nu doar prin frecvența reală a erorilor.",
+    "decisional": "Copilul își păstrează dreptul de a lua decizii riscante și de a greși la fel ca oricine altcineva din grup, fără o presiune suplimentară legată de o etichetă anterioară.",
+    "cognitive": "O etichetă repetată constant poate deveni o profeție care se auto-împlinește, dacă influențează atât încrederea copilului cât și oportunitățile reale primite de la coechipieri.",
+    "psychological": "Tratamentul egal, indiferent de frecvența erorilor, protejează stima de sine a copilului și dreptul lui la fel de greșeli ca oricine altcineva.",
+    "technical": "Progresul tehnic al unui copil care greșește frecvent depinde direct de câte oportunități reale de exersare primește — o etichetă implicită poate reduce artificial aceste oportunități.",
+    "social": "Modul în care antrenorul reacționează la greșelile unui copil stabilește norma pentru cum reacționează și restul grupului față de acel copil."
+  },
+  "coach_observation_before_speaking": [
+    "propriul ton și conținut al reacției față de acest copil, comparativ cu reacția față de alți copii cu greșeli similare",
+    "dacă restul grupului a preluat deja un tipar de excludere sau tratament diferențiat"
+  ],
+  "when_to_intervene": [
+    "apare un tipar vizibil de tratament diferențiat, fie din partea antrenorului, fie din partea colegilor, legat de frecvența erorilor acestui copil"
+  ],
+  "when_not_to_intervene": [
+    "o singură reacție diferită, fără tipar repetat — se monitorizează, nu se presupune imediat o etichetă formată"
+  ],
+  "understanding_check": [
+    "Ce ai observat chiar înainte să încerci?"
+  ],
+  "response_if_not_understood": [
+    "dacă tratamentul diferențiat persistă din partea colegilor, se discută individual, în privat, cu copiii implicați, fără a expune public situația copilului afectat"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Iar tu?", "reason": "confirmă explicit o etichetă de frecvență negativă, tratând greșeala ca pe un tipar personal fix, nu ca informație despre momentul respectiv"},
+    {"phrase": "Nu-i mai da lui, dă-i lui care e mai sigur", "reason": "consolidează explicit excluderea unui copil din opțiunile de joc pe baza unei etichete de abilitate"}
+  ],
+  "misinterpretation_risks": [
+    "colegii pot interpreta atenția explicită a antrenorului către acest copil ca favoritism, dacă nu înțeleg scopul de tratament egal, nu preferențial"
+  ],
+  "match_transfer": "Un copil tratat consecvent ca membru egal al grupului, indiferent de frecvența erorilor, rămâne dispus să ceară mingea și să ia decizii active în meciul oficial, nu doar să se retragă tactic din teamă de a confirma o etichetă.",
+  "evidence_boundary": "Percepția tratamentului diferențiat al antrenorului în funcție de nivelul de abilitate e documentată la sportivi mai mari; aplicarea directă la copii de 10-11 ani rămâne o extrapolare rezonabilă, nu un rezultat testat direct la această vârstă.",
+  "principle_ids": [
+    "principle.disciplina-fara-umilire",
+    "principle.conversatii-individuale-si-echitate"
+  ],
+  "related_problem_ids": ["PRB-0008"],
+  "source_claim_ids": ["CLM-0235"]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "SCR-0018",
+  "slug": "ce-ai-observat-azi",
+  "title": "Ce ai observat azi?",
+  "category": "reflectie-si-autoevaluare",
+  "situation_trigger": "La finalul unei ședințe sau al unui exercițiu, antrenorul dorește să verifice ce a rămas din experiența copilului, dar întrebarea directă „ai înțeles?” nu oferă informație fiabilă.",
+  "game_moment": "reflecție ghidată, la finalul unui exercițiu, segment sau ședințe",
+  "child_wording": "Ce ați observat azi despre [tema exercițiului]?",
+  "short_version": "Ce ați observat azi?",
+  "expanded_version": "Înainte să plecăm, spuneți-mi ce ați observat azi despre [tema exercițiului] — nu dacă a fost greu sau ușor, ci ce ați văzut concret.",
+  "coach_meaning": "Antrenorul înlocuiește verificarea directă a înțelegerii („ai înțeles?”) cu o întrebare care cere o observație concretă, mai fiabilă ca indicator real al procesării.",
+  "why_this_wording": "Întrebarea cere un conținut observabil, specific, nu un răspuns de tip da/nu, care poate fi dat automat fără nicio reflecție reală.",
+  "problem_being_solved": "Întrebarea „ați înțeles?” primește frecvent un „da” automat, indiferent de nivelul real de înțelegere, pentru că auto-evaluarea directă a propriei înțelegeri e nefiabilă la această vârstă.",
+  "information_to_notice": [
+    "dacă răspunsurile copiilor descriu observații concrete, legate de tema ședinței, sau rămân vagi",
+    "câți copii din grup pot oferi o observație specifică, nu doar unul sau doi"
+  ],
+  "decision_to_learn": "Copiii învață să identifice și să verbalizeze o observație concretă din propria experiență, nu doar să confirme sau infirme înțelegerea la cerere.",
+  "observable_behaviours": [
+    "cel puțin un copil poate numi, într-o propoziție, o observație specifică legată de tema ședinței",
+    "răspunsurile evoluează de la vagi la specifice pe parcursul mai multor ședințe"
+  ],
+  "age_appropriateness": "La 10-11 ani, capacitatea de auto-raportare validă e în dezvoltare, dar nu are un prag fix de vârstă — depinde mai mult de tipul întrebării decât de vârsta exactă; o întrebare concretă, ancorată în observație, funcționează mai bine decât una abstractă despre înțelegere.",
+  "rationales": {
+    "tactical": "O observație concretă verbalizată la finalul ședinței ajută la consolidarea legăturii dintre exercițiul exersat și problema de joc pe care o rezolvă.",
+    "perceptual": "Întrebarea cere reactivarea informației perceptive observate în timpul exercițiului, nu doar o judecată generală despre dificultate.",
+    "decisional": "Verbalizarea unei observații proprii e un prim pas spre metacogniție decizională — a ști ce ai văzut, nu doar ce ai făcut.",
+    "cognitive": "Copiii nu-și detectează fiabil propria neînțelegere când sunt întrebați direct — o întrebare concretă, ancorată în observație, oferă un semnal mai util despre procesare reală.",
+    "psychological": "Absența unui răspuns corect sau greșit la această întrebare reduce presiunea evaluativă, comparativ cu o întrebare de verificare de tip test.",
+    "technical": "Nu se verifică execuția tehnică — accentul e pe ce a fost observat perceptiv, nu pe cât de bine a fost executată acțiunea.",
+    "social": "Ascultarea observațiilor diferite ale colegilor poate extinde propria înțelegere a copilului, dincolo de propria experiență individuală."
+  },
+  "coach_observation_before_speaking": [
+    "dacă momentul e potrivit pentru reflecție (nu în grabă, la finalul precipitat al ședinței)",
+    "care a fost tema centrală reală a ședinței, pentru a formula întrebarea specific, nu generic"
+  ],
+  "when_to_intervene": [
+    "la finalul planificat al fiecărei ședințe sau al unui segment tematic important"
+  ],
+  "when_not_to_intervene": [
+    "în timpul fazei active de joc — reflecția e pentru pauză, nu pentru a întrerupe jocul"
+  ],
+  "understanding_check": [
+    "Ce ați observat azi despre tema de azi?"
+  ],
+  "response_if_not_understood": [
+    "dacă niciun copil nu poate oferi o observație, se trece la o întrebare mai concretă, legată direct de un moment specific din exercițiu, nu se insistă pe formularea generală",
+    "nu se impune un răspuns — se trece la următorul copil sau se încheie ședința fără a forța o concluzie"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Ați înțeles ce am făcut azi?", "reason": "primește frecvent un da automat, indiferent de nivelul real de înțelegere, fără să ofere informație utilă antrenorului"}
+  ],
+  "misinterpretation_risks": [
+    "copiii pot crede că există un răspuns „corect” așteptat și pot repeta ce a spus deja un coleg, în loc să ofere propria observație"
+  ],
+  "match_transfer": "Obiceiul de a verbaliza observații concrete despre propriul joc sprijină, pe termen lung, capacitatea de auto-reflecție necesară pentru a continua să înveți fără antrenor de față, inclusiv în meciul oficial.",
+  "evidence_boundary": "Copiii nu-și detectează fiabil propria neînțelegere prin auto-raportare directă — acest tipar e documentat în cercetarea despre metacogniție la copii de vârstă școlară, deși nu specific pentru fotbal; formularea concretă e o adaptare rezonabilă la această limitare, nu o soluție completă.",
+  "principle_ids": [
+    "principle.reflectia-ghidata-si-transferul-in-joc",
+    "principle.intrebari-si-verificarea-intelegerii"
+  ],
+  "related_session_ids": ["SES-0001", "SES-0007"],
+  "source_claim_ids": ["CLM-0071", "CLM-0072"]
+}

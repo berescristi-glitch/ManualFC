@@ -1,0 +1,62 @@
+{
+  "id": "SCR-0020",
+  "slug": "esti-frustrat-hai-sa-respiram-o-secunda",
+  "title": "Ești frustrat — hai să respirăm o secundă",
+  "category": "conflict-frustrare-si-reglare-emotionala",
+  "situation_trigger": "Un copil arată semne clare de frustrare vizibilă (gesturi bruște, ton ridicat, retragere din joc) după o greșeală repetată sau o decizie a arbitrului/coechipierului pe care o percepe nedreaptă.",
+  "game_moment": "orice fază, imediat după un moment de frustrare vizibilă",
+  "child_wording": "Ești frustrat, se vede. Hai să respirăm o secundă înainte să continuăm.",
+  "short_version": "Respiră o secundă.",
+  "expanded_version": "Ești frustrat, se vede clar, și e normal — hai să respirăm o secundă împreună înainte să continuăm, ca să poți gândi limpede din nou.",
+  "coach_meaning": "Antrenorul numește emoția observată, fără judecată, și oferă o pauză scurtă de reglare înainte de a relua jocul sau de a discuta situația care a produs frustrarea.",
+  "why_this_wording": "Numirea emoției fără reproș („ești frustrat, se vede”) validează experiența copilului, iar pauza scurtă oferă timp de reglare fără a transforma momentul într-o mustrare.",
+  "problem_being_solved": "Frustrarea nereglată crește riscul de erori suplimentare, reacții impulsive față de coechipieri sau retragere completă din participare — o pauză scurtă de reglare previne escaladarea, fără a ignora emoția.",
+  "information_to_notice": [
+    "semnele fizice vizibile ale frustrării (ton, gesturi, postură)",
+    "dacă frustrarea se calmează după pauza scurtă sau necesită mai mult timp"
+  ],
+  "decision_to_learn": "Copilul învață că frustrarea poate fi numită și gestionată printr-o pauză scurtă, nu ascunsă sau reprimată forțat.",
+  "observable_behaviours": [
+    "copilul acceptă pauza scurtă și revine în joc cu o stare vizibil mai calmă",
+    "frecvența reacțiilor impulsive ulterioare scade după introducerea acestui obicei"
+  ],
+  "age_appropriateness": "La 10-11 ani, reglarea emoțională autonomă e încă în dezvoltare; o pauză scurtă ghidată de adult, fără critică, oferă un model concret de gestionare pe care copilul îl poate prelua treptat singur.",
+  "rationales": {
+    "tactical": "Un copil frustrat ia decizii tactice mai slabe pe termen scurt — pauza de reglare protejează calitatea deciziilor imediat următoare, nu doar starea emoțională.",
+    "perceptual": "Frustrarea poate îngusta atenția copilului la detaliile relevante ale jocului; o pauză scurtă ajută la revenirea unei percepții mai deschise.",
+    "decisional": "Reluarea jocului dintr-o stare mai calmă permite decizii mai apropiate de capacitatea reală a copilului, nu distorsionate de reacția emoțională a momentului.",
+    "cognitive": "Frustrarea indusă crește erorile și variabilitatea reacției la copii de vârstă apropiată — o pauză scurtă de reglare adresează direct acest mecanism, nu doar starea afectivă.",
+    "psychological": "Numirea emoției fără judecată validează experiența copilului, spre deosebire de a-i cere să „se calmeze” fără recunoașterea explicită a ce simte.",
+    "technical": "Nu se cere nicio corecție tehnică în acest moment — accentul e exclusiv pe starea emoțională, corecțiile tehnice așteaptă un moment mai potrivit.",
+    "social": "Modelul oferit aici (numirea emoției, pauza scurtă, revenirea calmă) poate fi preluat treptat de copii pentru a-și gestiona singuri momentele de frustrare, inclusiv între ei."
+  },
+  "coach_observation_before_speaking": [
+    "semnele fizice vizibile ale frustrării, înainte ca ea să escaladeze spre conflict sau retragere completă",
+    "dacă frustrarea vine dintr-o greșeală proprie, o decizie percepută nedreaptă, sau altă cauză (oboseală, foame, o problemă din afara terenului)"
+  ],
+  "when_to_intervene": [
+    "semnele de frustrare sunt vizibile și în creștere, cu risc de escaladare spre conflict sau retragere din joc"
+  ],
+  "when_not_to_intervene": [
+    "o expresie momentană de frustrare care se dizolvă natural, fără escaladare, în câteva secunde"
+  ],
+  "understanding_check": [
+    "Ești gata să continui, sau mai ai nevoie de o secundă?"
+  ],
+  "response_if_not_understood": [
+    "dacă frustrarea nu scade după pauza scurtă, se oferă o pauză mai lungă, individuală, departe de restul grupului, fără a forța revenirea imediată în joc"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Calmează-te!", "reason": "cere un rezultat (calmul) fără să ofere niciun sprijin concret pentru a ajunge acolo, și poate fi perceput ca o critică a emoției în sine"},
+    {"phrase": "Nu e mare lucru, treci peste", "reason": "minimizează experiența emoțională a copilului în loc să o valideze"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate crede că exprimarea frustrării e inacceptabilă în sine, dacă pauza e introdusă cu un ton de reproș în loc de unul cald și neutru"
+  ],
+  "match_transfer": "Capacitatea de a numi și gestiona frustrarea printr-o pauză scurtă, exersată cu sprijinul antrenorului, e un pas către reglarea emoțională autonomă necesară în meciul oficial, unde antrenorul nu poate interveni la fel de direct.",
+  "evidence_boundary": "Frustrarea indusă crește erorile și variabilitatea timpului de reacție la copii de 8-12 ani, conform unui studiu experimental controlat — pe baza acestui mecanism general, tehnica exactă de reglare propusă aici rămâne practică profesională (PRACTICE_HEURISTIC), nu un protocol testat direct în fotbalul U11.",
+  "principle_ids": [
+    "principle.disciplina-fara-umilire"
+  ],
+  "source_claim_ids": ["CLM-0267"]
+}

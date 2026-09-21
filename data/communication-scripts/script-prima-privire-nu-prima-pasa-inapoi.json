@@ -1,0 +1,64 @@
+{
+  "id": "SCR-0010",
+  "slug": "prima-privire-nu-prima-pasa-inapoi",
+  "title": "Prima privire, nu prima pasă înapoi",
+  "category": "tranzitia-la-castigarea-mingii",
+  "situation_trigger": "Imediat după recuperarea mingii, copilul pasează automat înapoi, spre siguranță, fără să fi verificat dacă exista spațiu sigur înainte.",
+  "game_moment": "tranziție pozitivă, imediat după câștigarea mingii",
+  "child_wording": "Câștigi mingea: vezi mai întâi ce e înainte.",
+  "short_version": "Privește înainte!",
+  "expanded_version": "Când câștigi mingea, uită-te mai întâi ce e în față, înainte să alegi — dacă tot pasa înapoi e cea mai sigură, e o alegere bună, dar abia după ce ai văzut.",
+  "coach_meaning": "Antrenorul ordonează căutarea informației (privește întâi înainte), fără a obliga progresia — pasa înapoi rămâne o soluție validă dacă e o alegere informată, nu automată.",
+  "why_this_wording": "Formularea separă explicit privitul (obligatoriu) de decizia finală (liberă), astfel încât pasa înapoi rămâne acceptabilă, dar nu ca reflex necontrolat.",
+  "problem_being_solved": "O pasă înapoi automată, fără verificarea spațiului din față, irosește sistematic momentul de avantaj creat chiar de recuperarea mingii, când adversarul e adesea dezorganizat.",
+  "information_to_notice": [
+    "spațiul liber din fața purtătorului, imediat după recuperare",
+    "poziția adversarului cel mai apropiat și a coechipierilor disponibili înainte"
+  ],
+  "decision_to_learn": "Copilul învață să verifice activ opțiunea de progresie înainte de a alege pasa înapoi, nu să trateze pasa înapoi ca reflex implicit.",
+  "observable_behaviours": [
+    "apare o privire vizibilă înainte, chiar dacă decizia finală rămâne pasa înapoi",
+    "progresia apare când spațiul din față e real disponibil"
+  ],
+  "age_appropriateness": "La 10-11 ani, siguranța pasei înapoi e frecvent alegerea implicită sub presiune; cererea de a privi întâi înainte, fără a obliga o decizie anume, respectă dreptul copilului de a alege în funcție de ce vede.",
+  "rationales": {
+    "tactical": "Momentul imediat după recuperare oferă adesea cel mai mare avantaj tactic, pentru că adversarul e temporar dezorganizat — verificarea progresiei exploatează acest moment.",
+    "perceptual": "Copilul trebuie să direcționeze prima privire spre înainte, nu spre coechipierul cel mai apropiat din spate, care e adesea prima opțiune vizibilă.",
+    "decisional": "Decizia rămâne complet la copil — scriptul cere doar ordinea informației (întâi privești, apoi alegi), nu rezultatul deciziei.",
+    "cognitive": "Formarea unui obicei de verificare imediat după recuperare reduce dependența de reflexul automat al pasei de siguranță.",
+    "psychological": "Copilul păstrează dreptul de a alege pasa înapoi ca soluție legitimă, ceea ce evită presiunea de a progresa cu orice preț, chiar și fără spațiu real.",
+    "technical": "Nu se cere o execuție tehnică specifică — accentul e pe momentul deciziei, nu pe execuția pasei alese.",
+    "social": "Un jucător care verifică sistematic progresia devine o opțiune de continuare mai valoroasă pentru coechipierii avansați, care pot anticipa o pasă înainte reală."
+  },
+  "coach_observation_before_speaking": [
+    "dacă pasa înapoi a fost o alegere informată (a existat o privire înainte) sau un reflex automat",
+    "dacă spațiul din față era real disponibil la momentul recuperării"
+  ],
+  "when_to_intervene": [
+    "pasa înapoi apare constant, fără nicio privire vizibilă înainte, chiar când spațiul din față era liber"
+  ],
+  "when_not_to_intervene": [
+    "pasa înapoi apare după o privire vizibilă înainte, chiar dacă decizia finală a fost tot spre spate — decizia informată nu se corectează doar pentru că nu a progresat"
+  ],
+  "understanding_check": [
+    "Ce ai avut înainte și ce te-a făcut să alegi înapoi?"
+  ],
+  "response_if_not_understood": [
+    "dacă răspunsul arată că nu a existat nicio verificare, se repetă exercițiul cu adversarul poziționat mai departe la momentul recuperării, ca progresia să fie vizibil mai sigură"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Nu mai da înapoi!", "reason": "elimină o soluție legitimă indiferent de context, deși pasa înapoi poate fi corectă când spațiul din față lipsește real"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate crede că trebuie să progreseze mereu, chiar și fără spațiu real, doar pentru a evita pasa înapoi"
+  ],
+  "match_transfer": "Verificarea progresiei imediat după recuperare, exersată izolat, e exact decizia care determină dacă echipa exploatează sau irosește momentele de dezorganizare temporară a adversarului în meciul oficial.",
+  "evidence_boundary": "Nu există o alegere universal corectă după recuperare — contextul decide utilitatea progresiei; eficiența exactă a acestei formulări pentru copii de 10-11 ani rămâne neconfirmată printr-o pilotare reală pe teren.",
+  "principle_ids": [
+    "principle.tranzitia-la-castigarea-mingii",
+    "principle.progresie-si-sprijin"
+  ],
+  "related_problem_ids": ["PRB-0005"],
+  "related_exercise_ids": ["EX-0012"],
+  "related_session_ids": ["SES-0002", "SES-0005"]
+}

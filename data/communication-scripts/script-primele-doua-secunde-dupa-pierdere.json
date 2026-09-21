@@ -1,0 +1,63 @@
+{
+  "id": "SCR-0008",
+  "slug": "primele-doua-secunde-dupa-pierdere",
+  "title": "Primele două secunde după pierdere",
+  "category": "tranzitia-la-pierderea-mingii",
+  "situation_trigger": "Imediat după ce echipa pierde posesia, jucătorii apropiați rămân pe loc câteva momente, iar adversarul avansează fără presiune sau protecție centrală.",
+  "game_moment": "tranziție negativă, imediat după pierderea mingii",
+  "child_wording": "Am pierdut mingea: cel mai aproape încetinește, ceilalți protejează mijlocul.",
+  "short_version": "Am pierdut: reacționează!",
+  "expanded_version": "Când pierdem mingea, cel mai aproape de purtător încetinește imediat, iar restul se repoziționează spre mijloc, nu toți spre minge deodată.",
+  "coach_meaning": "Antrenorul oferă două roluri funcționale simple, alese după distanța față de minge, nu o comandă de a recupera mingea cu orice preț.",
+  "why_this_wording": "Formularea distribuie explicit două roluri diferite (întârziere vs. protecție), reducând ambiguitatea despre cine ce face, fără a impune trasee fixe de alergare.",
+  "problem_being_solved": "Fără o reacție coordonată imediată, adversarul avansează liber în primele secunde critice după recuperare, moment cu risc tactic ridicat pentru echipa care tocmai a pierdut mingea.",
+  "information_to_notice": [
+    "cine este cel mai aproape de minge în momentul pierderii",
+    "unde este drumul cel mai periculos spre propria poartă"
+  ],
+  "decision_to_learn": "Copiii învață să diferențieze rolul lor imediat după pierdere în funcție de distanța față de minge, nu să alerge toți spre ea deodată.",
+  "observable_behaviours": [
+    "cel mai apropiat jucător reacționează spre purtătorul advers în primele secunde",
+    "restul echipei se repoziționează spre centru, nu toți spre minge"
+  ],
+  "age_appropriateness": "La 10-11 ani, tendința naturală după pierdere e ca toți jucătorii apropiați să alerge spre minge; oferirea a două roluri simple, legate de distanță, e mai ușor de aplicat decât o instrucțiune tactică abstractă.",
+  "rationales": {
+    "tactical": "Reacția imediată a celui mai apropiat, combinată cu protecția centrului de către restul echipei, previne exact tipul de avans liber care produce ocazii clare pentru adversar.",
+    "perceptual": "Copiii trebuie să evalueze rapid propria distanță față de minge relativ la ceilalți coechipieri, pentru a-și alege rolul corect.",
+    "decisional": "Decizia (întârzii sau protejezi centrul) depinde de o singură informație simplă — cine e mai aproape — nu de o evaluare tactică complexă.",
+    "cognitive": "Reducerea reacției de tranziție la două roluri simple, alese după un singur criteriu, e gestionabil pentru capacitatea de decizie rapidă la această vârstă.",
+    "psychological": "Un rol clar imediat după pierderea mingii reduce senzația de haos și panică, frecventă la copii în momentele de tranziție negativă.",
+    "technical": "Nu se cere o tehnică specifică — reacția e despre poziționare și timing, nu despre execuție tehnică individuală.",
+    "social": "Distribuirea rolurilor cere coordonare rapidă între coechipieri, o formă timpurie de cooperare defensivă în echipă."
+  },
+  "coach_observation_before_speaking": [
+    "dacă toți jucătorii apropiați aleargă spre minge simultan sau apare deja o diferențiere de rol",
+    "cât timp a trecut real de la pierdere până la prima reacție vizibilă"
+  ],
+  "when_to_intervene": [
+    "reacția în bloc spre minge (toți deodată) se repetă constant, în mai multe seturi consecutive"
+  ],
+  "when_not_to_intervene": [
+    "o singură repetiție cu reacție întârziată — poate fi surpriza momentului pierderii, nu absența înțelegerii rolului"
+  ],
+  "understanding_check": [
+    "Cine era cel mai aproape când am pierdut mingea, și ce a făcut restul echipei?"
+  ],
+  "response_if_not_understood": [
+    "dacă răspunsul arată confuzie despre roluri, se revine la o variantă cu efectiv redus (3v3) unde diferența de rol e mai ușor observabilă"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Recuperați mingea acum!", "reason": "împinge toți jucătorii spre minge simultan, exact comportamentul pe care acest script încearcă să-l corecteze"}
+  ],
+  "misinterpretation_risks": [
+    "copiii pot interpreta „protejează mijlocul” ca o poziție fixă de stat pe loc, nu ca o repoziționare activă și continuă"
+  ],
+  "match_transfer": "Reacția coordonată în primele secunde după pierdere, exersată izolat, e exact momentul din meciul oficial cu cel mai mare risc tactic dacă rămâne netratat.",
+  "evidence_boundary": "Distincția presiune-imediată versus protecție-a-centrului e un principiu tactic consacrat în metodologia apărării; fereastra exactă de timp (două secunde) e o euristică de teren, nu un prag măsurat specific la copii de 10-11 ani.",
+  "principle_ids": [
+    "principle.tranzitia-la-pierderea-mingii"
+  ],
+  "related_problem_ids": ["PRB-0004"],
+  "related_exercise_ids": ["EX-0021"],
+  "related_session_ids": ["SES-0009"]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "SCR-0005",
+  "slug": "iesi-din-umbra-adversarului",
+  "title": "Ieși din umbra adversarului",
+  "category": "sprijin-si-unghiuri-de-pasa",
+  "situation_trigger": "Un coechipier fără minge rămâne pe aceeași linie cu un adversar față de purtătorul mingii, astfel încât adversarul poate acoperi simultan atât pe purtător cât și pe coechipier.",
+  "game_moment": "atac organizat, sprijin în posesie",
+  "child_wording": "Mută-te până când adversarul nu vă mai poate acoperi pe amândoi deodată.",
+  "short_version": "Mută-te din umbră!",
+  "expanded_version": "Mută-te până când adversarul nu mai poate acoperi în același timp și pasa spre tine, și purtătorul mingii.",
+  "coach_meaning": "Antrenorul cere o repoziționare bazată pe relația vizuală minge-adversar-spațiu, nu o poziție fixă pe teren — copilul trebuie să recunoască singur când e acoperit, nu să memoreze un loc anume.",
+  "why_this_wording": "Formularea descrie condiția de succes (adversarul nu mai poate acoperi ambele opțiuni), nu o coordonată fixă, ceea ce lasă decizia exactă de poziționare la copil.",
+  "problem_being_solved": "Un coechipier ascuns în umbra defensivă a unui adversar nu oferă o opțiune reală de pasă, chiar dacă e prezent fizic aproape de purtător.",
+  "information_to_notice": [
+    "linia dintre purtătorul mingii și propria poziție, și dacă un adversar se află pe acea linie",
+    "spațiul lateral disponibil pentru repoziționare"
+  ],
+  "decision_to_learn": "Copilul învață să evalueze continuu dacă poziția proprie oferă o linie de pasă reală sau e blocată de un adversar, și să se repoziționeze pe baza acestei evaluări, nu pe baza unei reguli fixe.",
+  "observable_behaviours": [
+    "copilul se deplasează lateral sau în adâncime fără comandă verbală atunci când e acoperit",
+    "poziția nouă oferă o linie de pasă vizibil liberă"
+  ],
+  "age_appropriateness": "La 10-11 ani, decizia bazată pe recunoașterea unei relații vizuale (umbra defensivă) e mai transferabilă decât memorarea unei poziții fixe pe teren, care nu mai funcționează când adversarul se mișcă.",
+  "rationales": {
+    "tactical": "Recunoașterea umbrei defensive e fundația deciziei de sprijin în posesie — fără ea, orice poziționare rămâne întâmplătoare.",
+    "perceptual": "Copilul trebuie să perceapă simultan trei elemente (purtătorul, adversarul, propria poziție) ca o singură relație, nu ca informații separate.",
+    "decisional": "Decizia de a se muta sau nu depinde de evaluarea continuă a acestei relații, nu de un semnal extern fix.",
+    "cognitive": "Reducerea deciziei la o singură întrebare observabilă (mă poate acoperi adversarul pe mine și pe purtător deodată?) simplifică o problemă altfel complexă pentru această vârstă.",
+    "psychological": "Copilul câștigă încredere văzând direct efectul propriei mișcări (linia de pasă redeschisă), nu doar urmând o instrucțiune fără feedback vizibil.",
+    "technical": "Poziționarea corectă pregătește o recepție mai simplă tehnic, cu mai mult timp și spațiu disponibil la contactul cu mingea.",
+    "social": "Un coechipier care iese constant din umbră devine o opțiune de pasă fiabilă, ceea ce întărește încrederea reciprocă în echipă."
+  },
+  "coach_observation_before_speaking": [
+    "dacă poziția blocată e stabilă (copilul nu a observat încă) sau tranzitorie (mingea tocmai s-a mutat)",
+    "dacă mișcarea așteptată e fizic posibilă în spațiul disponibil al exercițiului"
+  ],
+  "when_to_intervene": [
+    "poziția blocată persistă mai multe secunde fără nicio încercare de repoziționare"
+  ],
+  "when_not_to_intervene": [
+    "copilul tocmai a fost acoperit, dar mingea s-a mutat imediat și situația s-a schimbat înainte de a exista timp să reacționeze"
+  ],
+  "understanding_check": [
+    "Te putea acoperi adversarul pe tine și pe coechipier deodată, chiar înainte să te miști?"
+  ],
+  "response_if_not_understood": [
+    "dacă răspunsul arată că nu a observat relația, se revine la o variantă cu opoziție redusă (semi-pasivă) și se repetă întrebarea după fiecare repetiție"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Stai acolo, la con!", "reason": "fixează o poziție geometrică în loc de o relație vizuală, și nu mai funcționează când adversarul se mișcă"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate crede că orice mișcare laterală rezolvă problema, chiar dacă noua poziție rămâne tot acoperită de alt adversar"
+  ],
+  "match_transfer": "Recunoașterea umbrei defensive, exersată izolat, e exact decizia care apare repetat în meciul oficial ori de câte ori echipa are posesia și trebuie să ofere opțiuni reale de pasă.",
+  "evidence_boundary": "Conceptul de umbră defensivă e o descriere tactică consacrată în literatura de metodologie a fotbalului; eficiența exactă a acestei formulări specifice pentru copii de 10-11 ani rămâne neconfirmată printr-o pilotare reală pe teren.",
+  "principle_ids": [
+    "principle.spatiu-si-unghiuri"
+  ],
+  "related_problem_ids": ["PRB-0001"],
+  "related_exercise_ids": ["EX-0001", "EX-0006"],
+  "related_session_ids": ["SES-0001"]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "SCR-0017",
+  "slug": "lauda-efortul-nu-doar-rezultatul",
+  "title": "Laudă efortul și decizia, nu doar rezultatul",
+  "category": "greseala-ca-informatie",
+  "situation_trigger": "Un copil ia o decizie riscantă dar bine informată (de exemplu încearcă o progresie în loc de o pasă sigură) și rezultatul nu iese bine, iar antrenorul are ocazia să reacționeze fie la rezultat, fie la decizie.",
+  "game_moment": "orice fază, imediat după o decizie riscantă cu rezultat nereușit",
+  "child_wording": "Ai încercat ceva riscant și bine gândit — asta contează, chiar dacă acum n-a ieșit.",
+  "short_version": "Bună încercare!",
+  "expanded_version": "Ai văzut o opțiune și ai încercat-o, chiar dacă era riscantă — asta e exact genul de decizie care contează, indiferent dacă rezultatul a ieșit bine sau nu de data asta.",
+  "coach_meaning": "Antrenorul distinge explicit calitatea deciziei (informată, curajoasă) de calitatea rezultatului (reușit sau nu), pentru a nu descuraja riscul informat doar pentru că a ieșit nereușit.",
+  "why_this_wording": "Formularea numește explicit ce anume e lăudat (încercarea, gândirea din spate), nu rezultatul, evitând lauda generică fără informație („bravo!”).",
+  "problem_being_solved": "Dacă lauda vine doar când rezultatul iese bine, copiii învață să evite deciziile riscante mai bine informate în favoarea unor alegeri sigure, dar tactic mai sărace.",
+  "information_to_notice": [
+    "dacă decizia riscantă a fost bazată pe o observație reală sau a fost complet întâmplătoare",
+    "reacția emoțională a copilului la propria decizie nereușită"
+  ],
+  "decision_to_learn": "Copilul învață că e valorizat pentru calitatea deciziei și disponibilitatea de a încerca, nu doar pentru rezultatele reușite.",
+  "observable_behaviours": [
+    "copilul continuă să încerce decizii riscante informate, fără să se retragă spre alegeri exclusiv sigure",
+    "frecvența deciziilor riscante bine informate nu scade după rezultate nereușite"
+  ],
+  "age_appropriateness": "La 10-11 ani, distincția între „lauda de efort/proces” și „lauda de rezultat” are efecte diferite asupra modului în care copiii se raportează la propriile capacități — lauda legată de proces sprijină o atitudine mai deschisă către provocări viitoare.",
+  "rationales": {
+    "tactical": "Descurajarea implicită a deciziilor riscante bine informate sărăcește repertoriul tactic al copilului pe termen lung, chiar dacă pe termen scurt reduce numărul de greșeli vizibile.",
+    "perceptual": "Recunoașterea explicită a informației care a stat la baza deciziei întărește obiceiul de a observa activ înainte de a acționa, indiferent de rezultat.",
+    "decisional": "Separarea evaluării deciziei de evaluarea rezultatului e o distincție centrală pentru dezvoltarea judecății tactice autonome.",
+    "cognitive": "Lauda legată de proces, nu de rezultatul fix, e asociată cu o atitudine mai deschisă spre provocări ulterioare, spre deosebire de lauda legată de trăsături fixe sau doar de rezultat.",
+    "psychological": "Copilul rămâne dispus să încerce din nou o decizie similară, în loc să se retragă spre siguranță excesivă din teama de a nu fi lăudat.",
+    "technical": "Execuția tehnică imperfectă a unei decizii bine gândite nu invalidează calitatea deciziei în sine — cele două se evaluează separat.",
+    "social": "Un climat de grup în care riscul informat e valorizat, nu doar rezultatul, încurajează participarea activă a copiilor mai puțin încrezători, nu doar a celor deja siguri pe ei."
+  },
+  "coach_observation_before_speaking": [
+    "dacă decizia riscantă a fost bazată pe o observație reală, nu doar întâmplătoare",
+    "starea emoțională a copilului imediat după rezultatul nereușit"
+  ],
+  "when_to_intervene": [
+    "copilul pare descurajat de rezultatul nereușit al unei decizii care a fost, de fapt, bine informată"
+  ],
+  "when_not_to_intervene": [
+    "decizia riscantă a fost complet neinformată (întâmplătoare) — lauda ar întări atunci noroc, nu o decizie de valoare"
+  ],
+  "understanding_check": [
+    "Ce ai văzut care te-a făcut să încerci exact asta?"
+  ],
+  "response_if_not_understood": [
+    "dacă decizia s-a dovedit întâmplătoare, nu se forțează o laudă nepotrivită — se discută onest ce ar fi putut observa înainte de a alege"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Bravo, ești talentat!", "reason": "leagă rezultatul de o trăsătură fixă a copilului, nu de decizia sau efortul concret, care sunt singurele elemente pe care copilul le poate repeta intenționat"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate crede că orice decizie riscantă e automat lăudabilă, indiferent dacă a fost sau nu informată de o observație reală"
+  ],
+  "match_transfer": "Un copil obișnuit să fie apreciat pentru decizii riscante bine informate, nu doar pentru rezultate sigure, e mai dispus să încerce soluții tactice curajoase în meciul oficial, unde riscul calculat e adesea necesar.",
+  "evidence_boundary": "Distincția lauda de proces versus lauda de persoană provine din cercetarea generală de dezvoltare a copilului, nu dintr-un studiu specific fotbalului U11 — aplicarea la acest context sportiv e o extrapolare rezonabilă, nu un rezultat direct testat.",
+  "principle_ids": [
+    "principle.eroarea-ca-informatie",
+    "principle.greseala-ca-informatie-si-siguranta"
+  ],
+  "related_problem_ids": ["PRB-0005", "PRB-0008"],
+  "source_claim_ids": ["CLM-0263"]
+}

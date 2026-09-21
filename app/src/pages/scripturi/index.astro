@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getCommunicationScripts, communicationScriptCategoryLabels } from '../../lib/content-bridge';
+
+const scripts = getCommunicationScripts();
+const categories = Array.from(new Set(scripts.map((s) => s.category)));
+---
+<BaseLayout title="Scripturi de comunicare" description="O bibliotecă de scripturi de comunicare antrenor-copil, ancorate în situații reale de teren, cu fundamentare pedagogică completă — nu fraze motivaționale generice.">
+  <Breadcrumb items={[{ label: 'Scripturi de comunicare' }]} />
+  <section class="scripts-hero">
+    <p class="eyebrow">BIBLIOTECĂ · CE SPUN ACUM?</p>
+    <h1>Scripturi de comunicare</h1>
+    <p>Fiecare script răspunde la „ce spun acum?" pentru o situație reală de teren, păstrând raționamentul profesional din spate — nu e o listă de fraze motivaționale, ci un instrument legat de o problemă de joc, un principiu și, unde e cazul, un exercițiu sau o ședință concretă.</p>
+    <label for="script-search">Caută în scripturi</label>
+    <input id="script-search" type="search" placeholder="Ex. scanare, frustrare, greșeală…" autocomplete="off" />
+  </section>
+  <div class="filters" role="group" aria-label="Filtrează după categorie">
+    <button class="active" data-category="all">Toate</button>
+    {categories.map((c) => <button data-category={c}>{communicationScriptCategoryLabels[c] ?? c}</button>)}
+  </div>
+  <p id="result-count" aria-live="polite">{scripts.length} scripturi</p>
+  <section class="script-grid" aria-label="Scripturi de comunicare">
+    {scripts.map((s) => (
+      <article
+        data-script
+        data-category={s.category}
+        data-search={`${s.title} ${s.short_version} ${s.situation_trigger} ${communicationScriptCategoryLabels[s.category] ?? s.category}`.toLowerCase()}
+      >
+        <span>{communicationScriptCategoryLabels[s.category] ?? s.category}</span>
+        <h2><a href={`/scripturi/${s.id}`}>{s.title}</a></h2>
+        <p class="short">„{s.short_version}”</p>
+        <p class="trigger">{s.situation_trigger}</p>
+        <a class="go" href={`/scripturi/${s.id}`}>Vezi scriptul complet <span aria-hidden="true">→</span></a>
+      </article>
+    ))}
+  </section>
+  <div id="no-results" hidden>
+    <h2>Niciun script potrivit</h2>
+    <p>Încearcă un cuvânt mai simplu, sau resetează filtrele.</p>
+    <button id="reset">Arată toate</button>
+  </div>
+</BaseLayout>
+<script>
+  const input = document.querySelector<HTMLInputElement>('#script-search');
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-script]')];
+  const count = document.querySelector('#result-count');
+  const empty = document.querySelector<HTMLElement>('#no-results');
+  let category = 'all';
+  function apply() {
+    const q = input?.value.trim().toLocaleLowerCase('ro') || '';
+    let n = 0;
+    cards.forEach((c) => {
+      const show = (category === 'all' || c.dataset.category === category) && (!q || c.dataset.search?.includes(q));
+      c.hidden = !show;
+      if (show) n++;
+    });
+    if (count) count.textContent = `${n} ${n === 1 ? 'script' : 'scripturi'}`;
+    if (empty) empty.hidden = n !== 0;
+  }
+  document.querySelectorAll<HTMLButtonElement>('[data-category]').forEach((b) => b.addEventListener('click', () => {
+    category = b.dataset.category || 'all';
+    document.querySelectorAll('[data-category]').forEach((x) => x.classList.remove('active'));
+    b.classList.add('active');
+    apply();
+  }));
+  input?.addEventListener('input', apply);
+  document.querySelector('#reset')?.addEventListener('click', () => {
+    if (input) input.value = '';
+    category = 'all';
+    document.querySelectorAll('[data-category]').forEach((x) => x.classList.toggle('active', (x as HTMLElement).dataset.category === 'all'));
+    apply();
+  });
+</script>
+<style>
+  .scripts-hero { padding: clamp(2rem, 7vw, 6rem); margin: 1rem calc(50% - 50vw) 2rem; background: var(--color-bg-brand); color: #fff; }
+  .scripts-hero h1 { color: #fff; max-width: 16ch; }
+  .scripts-hero p { max-width: 68ch; color: #dce4e7; }
+  .scripts-hero label { display: block; font-weight: 800; margin: 2rem 0 .5rem; }
+  .scripts-hero input { width: min(680px, 100%); min-height: 56px; border: 0; border-radius: 8px; padding: 0 1rem; font: inherit; }
+  .filters { display: flex; gap: .5rem; overflow: auto; padding: .5rem 0 1rem; flex-wrap: wrap; }
+  .filters button, #reset { min-height: 44px; border: 1px solid var(--color-border); background: #fff; border-radius: 999px; padding: .5rem 1rem; white-space: nowrap; }
+  .filters .active { background: var(--color-bg-brand-secondary); color: #fff; }
+  .script-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .script-grid article { padding: 1.5rem; border: 1px solid var(--color-border); background: #fff; border-radius: 12px; }
+  .script-grid span { font: 700 .72rem var(--font-family-mono); color: var(--color-text-muted); }
+  .script-grid h2 { font-size: 1.35rem; margin-top: .3rem; }
+  .script-grid .short { font-style: italic; color: var(--color-text-secondary); }
+  .script-grid .trigger { color: var(--color-text-muted); font-size: .9rem; }
+  .go { display: inline-block; margin-top: 1rem; font-weight: 800; }
+  #no-results { padding: 3rem; background: #f4f4f1; text-align: center; }
+  @media (max-width: 700px) { .script-grid { grid-template-columns: 1fr; } .scripts-hero { padding-inline: 1rem; } .script-grid article { padding: 1.15rem; } }
+</style>

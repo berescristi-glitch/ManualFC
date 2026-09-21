@@ -1,0 +1,61 @@
+{
+  "id": "SCR-0015",
+  "slug": "nu-exista-o-singura-solutie-corecta",
+  "title": "Nu există o singură soluție corectă",
+  "category": "decizie-sub-presiune",
+  "situation_trigger": "Un copil rezolvă o situație de joc printr-o soluție diferită de ce anticipa antrenorul, iar reacția implicită riscă să fie tratarea acesteia ca greșeală doar pentru că e neașteptată.",
+  "game_moment": "orice fază cu opoziție activă, în special în jocuri reduse sau de transfer",
+  "child_wording": "Ai găsit o soluție diferită — spune-mi ce ai văzut care te-a făcut să alegi așa.",
+  "short_version": "Interesant, ce ai văzut?",
+  "expanded_version": "Ai rezolvat altfel decât mă așteptam — nu e neapărat greșit, spune-mi ce ai observat care te-a făcut să alegi exact așa.",
+  "coach_meaning": "Antrenorul verifică dacă soluția neașteptată a fost o decizie informată, înainte de a o eticheta drept corectă sau greșită doar pe baza conformității cu o soluție anticipată.",
+  "why_this_wording": "Formularea validează explicit dreptul copilului la o soluție diferită, cerând simultan explicația procesului — separă corectitudinea procesului de conformitatea cu o soluție prestabilită.",
+  "problem_being_solved": "Tratarea oricărei soluții neconvenționale ca eroare, doar pentru că diferă de ce anticipa antrenorul, descurajează creativitatea tactică și transformă exercițiul într-un test de ghicire a răspunsului așteptat.",
+  "information_to_notice": [
+    "dacă soluția neașteptată a rezolvat efectiv problema de joc, chiar dacă altfel decât anticipat",
+    "dacă copilul poate explica raționamentul din spatele alegerii sale"
+  ],
+  "decision_to_learn": "Copilul învață că e evaluat pe calitatea procesului de decizie, nu pe conformitatea cu o soluție unică impusă dinainte.",
+  "observable_behaviours": [
+    "copiii propun soluții variate la aceeași situație de joc, nu doar soluția demonstrată inițial de antrenor",
+    "copilul poate explica raționamentul propriei alegeri, chiar și când diferă de așteptare"
+  ],
+  "age_appropriateness": "La 10-11 ani, protejarea creativității tactice e esențială — o cultură în care doar o singură soluție e „corectă” limitează exact capacitatea de decizie autonomă pe care sportul tactic urmărește să o dezvolte.",
+  "rationales": {
+    "tactical": "Jocul real permite frecvent mai multe soluții valide la aceeași problemă; insistarea pe o singură soluție corectă nu reflectă complexitatea reală a jocului.",
+    "perceptual": "Soluții diferite pot proveni din informații perceptive diferite observate de copii diferiți în aceeași fază — validarea diversității respectă această variație reală.",
+    "decisional": "Evaluarea procesului decizional, nu doar a rezultatului conform așteptării, întărește autonomia perceptiv-decizională urmărită de întreaga metodologie.",
+    "cognitive": "Frica de a greși prin nonconformitate poate bloca explorarea activă a opțiunilor, exact opusul procesării flexibile pe care jocul tactic o cere.",
+    "psychological": "Validarea soluțiilor neconvenționale, atunci când sunt informate, construiește încrederea copilului în propria capacitate de judecată, nu doar în capacitatea de a reproduce o soluție demonstrată.",
+    "technical": "Soluții tehnice diferite pot fi la fel de valide dacă rezolvă problema de joc, chiar dacă diferă de execuția standard demonstrată inițial.",
+    "social": "Un climat care validează soluții variate încurajează copiii să încerce, nu doar să imite, ceea ce sprijină participarea activă a întregului grup, nu doar a celor mai încrezători."
+  },
+  "coach_observation_before_speaking": [
+    "dacă soluția neașteptată a rezolvat efectiv problema de joc sau doar a evitat-o întâmplător",
+    "dacă e o soluție izolată sau un tipar repetat care merită numit explicit grupului"
+  ],
+  "when_to_intervene": [
+    "soluția neconvențională a funcționat și merită validată explicit, ca informație utilă pentru întregul grup"
+  ],
+  "when_not_to_intervene": [
+    "soluția a fost întâmplătoare, fără nicio informație observată în spate — se verifică prin întrebare, nu se presupune direct că a fost o decizie informată"
+  ],
+  "understanding_check": [
+    "Ce ai văzut care te-a făcut să alegi exact așa?"
+  ],
+  "response_if_not_understood": [
+    "dacă copilul nu poate explica raționamentul, răspunsul rămâne informație validă (poate fi întâmplare) — nu se forțează o explicație inexistentă"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Nu așa trebuia!", "reason": "impune o singură soluție corectă înainte de a verifica dacă soluția copilului a fost, de fapt, o decizie informată și funcțională"}
+  ],
+  "misinterpretation_risks": [
+    "copiii pot crede că orice soluție e automat validă doar pentru că e diferită, fără să conteze dacă a rezolvat efectiv problema de joc"
+  ],
+  "match_transfer": "Un copil obișnuit să-și explice și să-și susțină soluțiile proprii, nu doar să reproducă un model unic, e mai pregătit să ia decizii autonome în situațiile variate și neanticipate ale meciului oficial.",
+  "evidence_boundary": "Principiul jocului ca sistem de probleme cu soluții multiple e o poziție metodologică consacrată, nu un rezultat de studiu specific; aplicarea sa exactă în evaluarea de teren rămâne o practică profesională, nu o formulă validată.",
+  "principle_ids": [
+    "principle.jocul-ca-sistem-de-probleme"
+  ],
+  "related_exercise_ids": ["EX-0014", "EX-0024"]
+}

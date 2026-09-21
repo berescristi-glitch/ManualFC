@@ -1,0 +1,63 @@
+{
+  "id": "SCR-0004",
+  "slug": "orienteaza-te-spre-spatiul-liber",
+  "title": "Orientează-te spre spațiul liber, nu spre minge",
+  "category": "receptie-si-scanare",
+  "situation_trigger": "La recepție, copilul își orientează primul contact înapoi spre locul de unde a venit mingea sau direct spre adversar, în loc să continue spre spațiul liber disponibil.",
+  "game_moment": "recepție cu opoziție activă",
+  "child_wording": "Primește-o spre spațiul liber, nu spre locul de unde a venit.",
+  "short_version": "Spre spațiul liber!",
+  "expanded_version": "Când primești mingea, orientează primul control spre spațiul liber, nu spre locul de unde a venit sau direct spre adversar.",
+  "coach_meaning": "Indiciul cere un focus extern (direcția din teren, nu mișcarea propriului picior), consecvent cu absența unei tehnici unice de control validate ca superioară pentru toate situațiile.",
+  "why_this_wording": "Formularea numește reperul extern (spațiul liber) și nu piciorul sau unghiul corpului — copilul rămâne liber să găsească singur soluția tehnică, atâta timp cât rezultatul e orientarea corectă.",
+  "problem_being_solved": "Un prim control orientat înapoi sau spre adversar pierde timpul câștigat prin recepție și obligă la o a doua acțiune doar pentru a corecta direcția, timp în care presiunea adversarului crește.",
+  "information_to_notice": [
+    "unde este spațiul liber chiar înainte de contactul cu mingea",
+    "unde este adversarul cel mai apropiat"
+  ],
+  "decision_to_learn": "Copilul învață să aleagă direcția primului control în funcție de spațiul disponibil, nu în funcție de direcția din care a venit mingea.",
+  "observable_behaviours": [
+    "primul contact cu mingea o mută vizibil spre spațiul liber, nu înapoi",
+    "copilul continuă acțiunea (conducere, pasă) fără o a doua atingere corectivă"
+  ],
+  "age_appropriateness": "La 10-11 ani, un reper extern simplu (spațiul, nu piciorul) e mai ușor de aplicat decât o instrucțiune tehnică despre suprafața de contact sau unghiul gleznei, și lasă loc variației individuale de execuție.",
+  "rationales": {
+    "tactical": "Orientarea primului control spre spațiul liber păstrează avantajul de timp câștigat prin recepție, în loc să-l anuleze printr-o a doua atingere corectivă.",
+    "perceptual": "Cere copilului să lege informația observată înainte de recepție (unde e spațiul) cu execuția tehnică de la contact, nu să le trateze separat.",
+    "decisional": "Decizia despre direcție se ia înainte de contact, pe baza spațiului observat, nu reactiv, după ce mingea a ajuns deja la picior.",
+    "cognitive": "Un singur reper extern simplu (spațiul) e mai ușor de reținut și aplicat sub presiune decât o serie de instrucțiuni tehnice despre poziția piciorului.",
+    "psychological": "Reușita de a continua direct jocul, fără o a doua atingere corectivă, întărește încrederea copilului în propria decizie de recepție.",
+    "technical": "Nu se prescrie o singură tehnică de control — orice suprafață de contact care orientează mingea spre spațiul liber e acceptată, consecvent cu absența unei tehnici unice validate ca superioară.",
+    "social": "Un control orientat corect păstrează viteza jocului pentru coechipieri, care pot anticipa continuarea, spre deosebire de o recepție care obligă la o pauză de corecție."
+  },
+  "coach_observation_before_speaking": [
+    "dacă spațiul liber era real disponibil la momentul recepției sau adversarul acoperea deja toate opțiunile",
+    "dacă orientarea greșită se repetă constant sau doar sub presiune de timp foarte mare"
+  ],
+  "when_to_intervene": [
+    "orientarea spre locul de unde a venit mingea sau spre adversar se repetă constant, cu spațiu liber real disponibil"
+  ],
+  "when_not_to_intervene": [
+    "o orientare greșită izolată sub presiune extremă, când spațiul liber real era minim sau inexistent"
+  ],
+  "understanding_check": [
+    "Unde era spațiul liber chiar înainte să primești mingea?"
+  ],
+  "response_if_not_understood": [
+    "dacă răspunsul nu identifică spațiul, se repetă exercițiul cu un reper vizual extern (con colorat sau zonă marcată) plasat exact în spațiul liber țintă"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Orientează piciorul la 45 de grade", "reason": "prescrie o tehnică internă unică fără dovadă de superioritate universală, în loc să lase decizia la copil pe baza reperului extern"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate crede că trebuie mereu să evite direcția din care a venit mingea, chiar și când exact acolo e spațiul liber real"
+  ],
+  "match_transfer": "Recepția orientată spre spațiul liber, nu spre reflex, e exact comportamentul care face diferența în meci între păstrarea inițiativei și pierderea unui moment de avantaj.",
+  "evidence_boundary": "Feedbackul cu focalizare externă la recepție a arătat rezultate pozitive la copii de vârstă apropiată în studii controlate, dar volumul de dovezi specifice fotbalului U11 rămâne mic — se aplică cu prudență, nu ca regulă universală de tehnică.",
+  "principle_ids": [
+    "principle.spatiu-si-unghiuri"
+  ],
+  "related_exercise_ids": ["EX-0003", "EX-0009"],
+  "related_session_ids": ["SES-0001", "SES-0004"],
+  "source_claim_ids": ["CLM-0066", "CLM-0102", "CLM-0135"]
+}

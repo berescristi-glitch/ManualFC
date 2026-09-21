@@ -1,5 +1,5 @@
 ---
-interface Props { id:string; kind:'problem'|'principle'|'exercise'|'session'|'assessment'|'chapter'; title:string; href:string; compact?:boolean; }
+interface Props { id:string; kind:'problem'|'principle'|'exercise'|'session'|'assessment'|'chapter'|'script'; title:string; href:string; compact?:boolean; }
 const {id,kind,title,href,compact=false}=Astro.props;
 ---
 <coach-actions data-ref={JSON.stringify({id,kind,title,href})} class:list={['coach-actions',{compact}]}>

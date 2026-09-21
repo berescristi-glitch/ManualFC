@@ -1,0 +1,69 @@
+{
+  "id": "SCR-0001",
+  "slug": "tacere-activa-inainte-de-interventie",
+  "title": "Tăcere activă înainte de a interveni",
+  "category": "observare-inainte-de-corectie",
+  "situation_trigger": "Un copil ezită, alege o soluție discutabilă sau greșește vizibil în timpul unui exercițiu sau al jocului liber, iar antrenorul simte impulsul de a corecta imediat.",
+  "game_moment": "orice fază activă, în exercițiu structurat sau în joc liber",
+  "child_wording": "Continuă, mai încearcă o dată.",
+  "short_version": "Continuă!",
+  "expanded_version": "Continuă, mai încearcă o dată — nu opri jocul pentru o singură încercare.",
+  "coach_meaning": "Antrenorul amână orice comentariu verbal și lasă copilul să repete decizia de mai multe ori înainte de a decide dacă tiparul e stabil sau doar o încercare izolată.",
+  "why_this_wording": "Formularea e scurtă, nu descrie greșeala și nu oferă soluția — păstrează jocul în mișcare și lasă informația reală (ce se întâmplă la a doua sau a treia încercare) să se acumuleze înainte de orice verdict.",
+  "problem_being_solved": "Corectarea la prima încercare nereușită tratează o singură repetiție ca pe un verdict despre copil, deși o încercare izolată poate fi întâmplare, oboseală de moment sau o variantă validă neexperimentată încă de antrenor.",
+  "information_to_notice": [
+    "dacă aceeași ezitare sau eroare reapare la a doua și a treia repetiție",
+    "dacă alți copii din grup au aceeași dificultate în aceeași fază"
+  ],
+  "decision_to_learn": "Antrenorul învață să distingă un tipar repetat (care merită o intervenție) de o încercare izolată (care nu merită oprirea jocului).",
+  "observable_behaviours": [
+    "antrenorul rămâne tăcut vizibil în primele repetiții după o eroare",
+    "intervenția, când apare, se bazează pe cel puțin două-trei repetiții observate, nu pe prima"
+  ],
+  "age_appropriateness": "La 10-11 ani, copiii au nevoie de spațiu să repete o decizie fără să simtă că fiecare încercare e evaluată public; oprirea la prima greșeală asociază greșeala cu rușinea, nu cu informația.",
+  "rationales": {
+    "tactical": "O singură repetiție nu arată dacă decizia tactică e stabilă sau accidentală; observarea a mai multor repetiții separă zgomotul de tipar.",
+    "perceptual": "Copilul are nevoie de mai multe expuneri la aceeași informație vizuală (poziția adversarului, spațiul liber) pentru ca un tipar perceptiv să devină vizibil, inclusiv pentru antrenor.",
+    "decisional": "Amânarea intervenției păstrează decizia la copil pe durata mai multor repetiții, în loc să o înlocuiască imediat cu instrucțiunea antrenorului.",
+    "cognitive": "Corectarea imediată, la fiecare eroare, suprasolicită atenția copilului cu informație nouă înainte ca el să fi terminat de procesat încercarea anterioară.",
+    "psychological": "Tăcerea activă comunică încredere în capacitatea copilului de a-și regla singur acțiunea, fără presiunea unei evaluări verbale la fiecare pas.",
+    "technical": "O execuție tehnică nereușită o singură dată poate fi coordonare încă instabilă la această vârstă, nu o greșeală de înțelegere care cere corecție verbală.",
+    "social": "Dacă antrenorul oprește jocul la fiecare greșeală individuală, ceilalți copii asociază greșeala cu atenția negativă a grupului, nu cu un pas normal de învățare."
+  },
+  "coach_observation_before_speaking": [
+    "câte repetiții au trecut de la prima apariție a ezitării sau erorii",
+    "dacă tiparul se repetă identic sau copilul încearcă deja variante diferite"
+  ],
+  "when_to_intervene": [
+    "eroarea sau ezitarea se repetă identic la trei repetiții consecutive, fără nicio variație spontană",
+    "riscul fizic imediat impune o intervenție, indiferent de repetiție"
+  ],
+  "when_not_to_intervene": [
+    "prima sau a doua încercare nereușită, fără alt semnal",
+    "copilul încearcă deja o variantă nouă față de încercarea anterioară, chiar dacă nu reușește"
+  ],
+  "understanding_check": [
+    "Ce ai încercat de data asta, față de prima oară?"
+  ],
+  "response_if_not_understood": [
+    "dacă tiparul rămâne identic după 3-4 repetiții fără nicio variație, se trece la o întrebare ghidată scurtă înainte de instrucțiune directă",
+    "nu se repetă aceeași corecție verbală de mai multe ori la rând — se schimbă întrebarea sau se revine la observare"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Nu așa, greșit!", "reason": "numește greșeala fără informație utilă și oprește jocul la prima repetiție, exact ce acest script evită"},
+    {"phrase": "Câte ori ți-am zis?", "reason": "transformă o repetiție normală de învățare într-un reproș personal"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate interpreta tăcerea prelungită ca dezinteres, dacă nu există deloc alt semnal pozitiv (privire, gest) din partea antrenorului",
+    "un coleg poate prelua rolul de corector verbal în locul antrenorului, cu un ton mai puțin protector"
+  ],
+  "match_transfer": "În meciul oficial, antrenorul nu poate opri jocul la fiecare decizie discutabilă — capacitatea de a distinge tiparul de întâmplare, exersată aici, e exact ce permite observarea utilă de pe margine în timpul unui meci real.",
+  "evidence_boundary": "Nu există un prag universal de câte repetiții separă întâmplarea de tipar — trei repetiții e o euristică de teren (PRACTICE_HEURISTIC), nu un rezultat de cercetare specific fotbalului U11.",
+  "principle_ids": [
+    "principle.tacet-si-observa-fara-joystick",
+    "principle.focalizarea-observatiei-si-criterii-de-interventie"
+  ],
+  "related_problem_ids": ["PRB-0008"],
+  "related_exercise_ids": ["EX-0001", "EX-0016"],
+  "related_session_ids": ["SES-0001", "SES-0007"]
+}

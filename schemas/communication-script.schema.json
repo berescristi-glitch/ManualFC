@@ -1,15 +1,91 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://manual-u11.local/schemas/communication-script.schema.json",
+  "title": "Script de comunicare antrenor-copil",
   "type": "object",
-  "required": ["id", "slug", "title", "principle_ids", "message_foundations"],
+  "required": [
+    "id", "slug", "title", "category", "situation_trigger", "game_moment",
+    "child_wording", "short_version", "expanded_version", "coach_meaning",
+    "problem_being_solved", "information_to_notice", "decision_to_learn",
+    "observable_behaviours", "age_appropriateness", "rationales",
+    "coach_observation_before_speaking", "when_to_intervene", "when_not_to_intervene",
+    "understanding_check", "response_if_not_understood", "phrases_to_avoid",
+    "misinterpretation_risks", "match_transfer", "evidence_boundary", "principle_ids"
+  ],
   "properties": {
     "$schema": {"type": "string"},
     "id": {"type": "string", "pattern": "^SCR-[0-9]{4,}$"},
     "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "title": {"type": "string", "minLength": 3},
+    "category": {
+      "enum": [
+        "observare-inainte-de-corectie",
+        "receptie-si-scanare",
+        "sprijin-si-unghiuri-de-pasa",
+        "miscare-dupa-pasa",
+        "tranzitia-la-pierderea-mingii",
+        "tranzitia-la-castigarea-mingii",
+        "cooperare-defensiva",
+        "decizie-sub-presiune",
+        "greseala-ca-informatie",
+        "reflectie-si-autoevaluare",
+        "conflict-frustrare-si-reglare-emotionala",
+        "incluziune-echitate-si-participare-respectuoasa",
+        "explicarea-constrangerilor-si-schimbarea-sarcinii",
+        "inchiderea-sedintei-si-transferul-in-meci"
+      ]
+    },
+    "situation_trigger": {"type": "string", "minLength": 1},
+    "game_moment": {"type": "string", "minLength": 1},
+    "child_wording": {"type": "string", "minLength": 1},
+    "short_version": {"type": "string", "minLength": 1},
+    "expanded_version": {"type": "string", "minLength": 1},
+    "coach_meaning": {"type": "string", "minLength": 1},
+    "why_this_wording": {"type": "string", "minLength": 1},
+    "problem_being_solved": {"type": "string", "minLength": 1},
+    "information_to_notice": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "decision_to_learn": {"type": "string", "minLength": 1},
+    "observable_behaviours": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"type": "string"}},
+    "age_appropriateness": {"type": "string", "minLength": 1},
+    "rationales": {
+      "type": "object",
+      "required": ["tactical", "perceptual", "decisional", "cognitive", "psychological", "technical", "social"],
+      "properties": {
+        "tactical": {"type": "string", "minLength": 1},
+        "perceptual": {"type": "string", "minLength": 1},
+        "decisional": {"type": "string", "minLength": 1},
+        "cognitive": {"type": "string", "minLength": 1},
+        "psychological": {"type": "string", "minLength": 1},
+        "technical": {"type": "string", "minLength": 1},
+        "social": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "coach_observation_before_speaking": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "when_to_intervene": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "when_not_to_intervene": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "understanding_check": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "response_if_not_understood": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "phrases_to_avoid": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["phrase", "reason"],
+        "properties": {"phrase": {"type": "string"}, "reason": {"type": "string"}},
+        "additionalProperties": false
+      }
+    },
+    "misinterpretation_risks": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "match_transfer": {"type": "string", "minLength": 1},
+    "evidence_boundary": {"type": "string", "minLength": 1},
     "principle_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
-    "message_foundations": {"type": "array", "minItems": 1, "items": {"type": "object"}}
+    "related_problem_ids": {"type": "array", "items": {"type": "string", "pattern": "^PRB-[0-9]{4,}$"}},
+    "related_exercise_ids": {"type": "array", "items": {"type": "string", "pattern": "^EX-[0-9]{4,}$"}},
+    "related_session_ids": {"type": "array", "items": {"type": "string", "pattern": "^SES-[0-9]{4,}$"}},
+    "related_pedagog_lesson_ids": {"type": "array", "items": {"type": "string"}},
+    "related_coach_lesson_ids": {"type": "array", "items": {"type": "string"}},
+    "source_claim_ids": {"type": "array", "items": {"type": "string", "pattern": "^CLM-[0-9]{4,}$"}}
   },
   "additionalProperties": false
 }

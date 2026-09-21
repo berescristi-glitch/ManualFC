@@ -1,0 +1,63 @@
+{
+  "id": "SCR-0012",
+  "slug": "unul-incetineste-celalalt-protejeaza",
+  "title": "Unul încetinește, celălalt protejează",
+  "category": "cooperare-defensiva",
+  "situation_trigger": "Doi apărători se apropie amândoi direct de purtătorul mingii, fără ca niciunul să acopere drumul rămas liber spre poartă.",
+  "game_moment": "apărare organizată, doi apărători împotriva unui purtător",
+  "child_wording": "Unul dintre voi încetinește purtătorul, celălalt protejează drumul spre poartă.",
+  "short_version": "Unul încetinește, unul protejează!",
+  "expanded_version": "Nu vă duceți amândoi după minge deodată — unul rămâne aproape să încetinească purtătorul, celălalt ocupă drumul spre poartă pe care primul nu-l mai poate acoperi.",
+  "coach_meaning": "Antrenorul leagă rolul de pericol (drumul spre poartă), nu de o poziție geometrică fixă — copiii aleg cine presează în funcție de cine e mai aproape, nu după o regulă memorată.",
+  "why_this_wording": "Formularea numește ambele roluri simultan (încetinire și protecție), fără să prescrie o distanță fixă, lăsând copiii să decidă pe baza situației reale.",
+  "problem_being_solved": "Dacă amândoi apărătorii se duc direct la minge, drumul rămas spre poartă e complet neprotejat, exact rezultatul opus a ceea ce apărarea în doi ar trebui să ofere.",
+  "information_to_notice": [
+    "cine dintre cei doi apărători e mai aproape de purtător",
+    "care e drumul cel mai periculos spre poartă, rămas neacoperit"
+  ],
+  "decision_to_learn": "Copiii învață să își aleagă rolul (presiune sau acoperire) în funcție de proximitate, nu să reacționeze identic amândoi la aceeași situație.",
+  "observable_behaviours": [
+    "cei doi apărători ocupă roluri diferite, vizibil distincte",
+    "al doilea apărător rămâne poziționat pe drumul periculos, nu fixat pe purtător"
+  ],
+  "age_appropriateness": "La 10-11 ani, coordonarea între doi apărători e un pas de complexitate mai mare decât apărarea individuală; introducerea rolurilor complementare, legate de un reper simplu (proximitatea), face decizia gestionabilă.",
+  "rationales": {
+    "tactical": "Separarea explicită a rolurilor de presiune și acoperire e fundația cooperării defensive de bază, aplicabilă la orice nivel numeric ulterior.",
+    "perceptual": "Fiecare apărător trebuie să evalueze poziția celuilalt, nu doar propria distanță față de purtător, pentru a decide corect rolul.",
+    "decisional": "Decizia de rol (presiune sau acoperire) se bazează pe o singură informație simplă — cine e mai aproape — nu pe o regulă fixă memorată dinainte.",
+    "cognitive": "Menținerea a două roluri distincte simultan, fiecare adaptabil la schimbarea situației, cere o coordonare mai avansată decât o reacție individuală repetată de amândoi.",
+    "psychological": "Încrederea că celălalt apărător își face treaba permite fiecăruia să rămână la propriul rol, fără să intervină redundant din neîncredere.",
+    "technical": "Nu se cere o tehnică specifică de tackling — accentul e pe poziționare și distanță, nu pe execuția unui duel individual.",
+    "social": "Cooperarea defensivă cere comunicare non-verbală constantă între cei doi apărători, o formă timpurie de lucru în echipă în fază defensivă."
+  },
+  "coach_observation_before_speaking": [
+    "dacă amândoi apărătorii se duc direct la minge sau apare deja o diferențiere de rol",
+    "dacă drumul spre poartă rămâne vizibil neprotejat"
+  ],
+  "when_to_intervene": [
+    "ambii apărători se duc constant direct la minge, lăsând drumul spre poartă deschis în mod repetat"
+  ],
+  "when_not_to_intervene": [
+    "o singură repetiție cu ambii apărători apropiați — se lasă informația să se acumuleze din mai multe repetiții înainte de a interveni"
+  ],
+  "understanding_check": [
+    "Cine încetinea și cine proteja drumul spre poartă în situația de adineauri?"
+  ],
+  "response_if_not_understood": [
+    "dacă niciunul dintre apărători nu poate identifica rolul propriu, se revine temporar la apărarea individuală (unu contra unu) înainte de a relua situația cu doi apărători"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Stai la doi metri!", "reason": "prescrie o distanță fixă care ignoră viteza, unghiul și situația reală a fazei"}
+  ],
+  "misinterpretation_risks": [
+    "al doilea apărător poate interpreta „protejează drumul” ca a urmări un adversar fix, nu ca a ocupa spațiul periculos indiferent cine se mișcă prin el"
+  ],
+  "match_transfer": "Cooperarea de bază între doi apărători, exersată izolat, e fundația directă a apărării organizate în meciul oficial, la orice relație numerică ulterioară.",
+  "evidence_boundary": "Distincția presiune-acoperire e un principiu tactic consacrat în metodologia apărării; distanța și timingul exacte depind de viteză, unghi, spațiu și nivelul copiilor, nu de un prag universal.",
+  "principle_ids": [
+    "principle.presiune-si-acoperire"
+  ],
+  "related_problem_ids": ["PRB-0006"],
+  "related_exercise_ids": ["EX-0017"],
+  "related_session_ids": ["SES-0007"]
+}

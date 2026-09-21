@@ -1,0 +1,65 @@
+{
+  "id": "SCR-0011",
+  "slug": "ai-castigat-mingea-ce-vezi-inainte",
+  "title": "Ai câștigat mingea — ce vezi înainte?",
+  "category": "tranzitia-la-castigarea-mingii",
+  "situation_trigger": "La pauza dintre repetiții sau seturi, imediat după o recuperare de minge, antrenorul verifică dacă decizia luată a fost informată, indiferent care a fost rezultatul ei.",
+  "game_moment": "reflecție scurtă, la pauza imediat următoare unei recuperări de minge",
+  "child_wording": "Spune-mi ce ai văzut chiar înainte să alegi ce faci cu mingea.",
+  "short_version": "Ce ai văzut?",
+  "expanded_version": "Înainte să vorbim despre ce ai făcut cu mingea, spune-mi ce ai văzut chiar înainte să alegi — asta contează mai mult decât rezultatul acelei alegeri.",
+  "coach_meaning": "Antrenorul verifică procesul de decizie (informația observată), nu doar rezultatul acțiunii, separând explicit o decizie informată dar nereușită de o decizie neinformată dar întâmplător reușită.",
+  "why_this_wording": "Întrebarea cere descrierea informației observate, nu o justificare a rezultatului — previne confuzia dintre o alegere bună și un rezultat bun.",
+  "problem_being_solved": "Evaluarea deciziilor doar după rezultat (a mers bine sau nu) nu distinge o decizie informată de una întâmplătoare, ceea ce poate întări obiceiuri greșite atunci când rezultatul iese bine din întâmplare.",
+  "information_to_notice": [
+    "dacă răspunsul copilului descrie o observație reală (spațiu, adversar, coechipier) sau doar rezultatul acțiunii",
+    "dacă copilul poate reconstitui secvența decizională sau doar rezultatul final"
+  ],
+  "decision_to_learn": "Copilul învață să lege verbal decizia proprie de informația care a stat la baza ei, nu doar de rezultat.",
+  "observable_behaviours": [
+    "copilul poate descrie, într-o propoziție, ce a observat înainte de a decide",
+    "răspunsul distinge informația observată de rezultatul acțiunii"
+  ],
+  "age_appropriateness": "La 10-11 ani, verbalizarea unei decizii recente e posibilă cu sprijin, dar copiii tind să răspundă mai ușor despre rezultat decât despre proces — întrebarea trebuie formulată explicit spre proces.",
+  "rationales": {
+    "tactical": "Separarea procesului de decizie de rezultat permite antrenorului să evalueze corect calitatea tactică a alegerii, indiferent dacă a reușit sau nu.",
+    "perceptual": "Verbalizarea observației întărește obiceiul de a căuta activ informație înainte de decizie, nu doar de a reacționa.",
+    "decisional": "Copilul exersează să facă legătura explicită între ce a văzut și ce a ales, o abilitate metacognitivă utilă pentru decizii viitoare similare.",
+    "cognitive": "Copiii de această vârstă nu-și detectează întotdeauna fiabil propriul proces de gândire când sunt întrebați direct — întrebarea concretă (ce ai văzut) e mai accesibilă decât o întrebare abstractă despre gândire.",
+    "psychological": "Separarea procesului de rezultat reduce presiunea de a fi „corect”, permițând copilului să discute o decizie chiar dacă rezultatul nu a fost cel dorit.",
+    "technical": "Nu se evaluează execuția tehnică a acțiunii — doar procesul perceptiv-decizional care a precedat-o.",
+    "social": "Practica de a verbaliza decizii proprii poate fi extinsă ulterior la discuții de grup, unde copiii compară ce a observat fiecare în aceeași fază de joc."
+  },
+  "coach_observation_before_speaking": [
+    "dacă recuperarea de minge a fost urmată de o acțiune clară, observabilă, care poate fi discutată concret",
+    "dacă momentul e potrivit pentru o pauză scurtă (nu în mijlocul unei faze active)"
+  ],
+  "when_to_intervene": [
+    "la pauza naturală dintre seturi sau repetiții, imediat după o recuperare de minge relevantă pentru tema exercițiului"
+  ],
+  "when_not_to_intervene": [
+    "în timpul fazei active de joc — întrebarea e pentru pauză, nu pentru a opri jocul"
+  ],
+  "understanding_check": [
+    "Ce ai văzut chiar înainte să alegi?"
+  ],
+  "response_if_not_understood": [
+    "dacă copilul nu poate descrie nimic observat, se oferă opțiuni concrete de ales dintre ele (spațiul din față, adversarul, coechipierul), nu se cere o descriere complet liberă"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "De ce ai făcut asta?", "reason": "sună ca un reproș implicit și invită la justificare defensivă, nu la descrierea informației observate"}
+  ],
+  "misinterpretation_risks": [
+    "copilul poate crede că răspunsul greșit la această întrebare înseamnă că decizia a fost greșită, deși scopul e doar de a exersa verbalizarea procesului"
+  ],
+  "match_transfer": "Capacitatea de a lega verbal decizia de informația observată sprijină, pe termen lung, autonomia perceptiv-decizională necesară în meciul oficial, unde antrenorul nu poate interveni la fiecare decizie.",
+  "evidence_boundary": "Copiii de vârstă apropiată tind să fie supraîncrezători și mai puțin fiabili în auto-evaluarea propriei înțelegeri sau proces de gândire când sunt întrebați direct — întrebarea concretă, ancorată în observație, e o adaptare la această limitare, nu o soluție care o elimină complet.",
+  "principle_ids": [
+    "principle.tranzitia-la-castigarea-mingii",
+    "principle.intrebari-si-verificarea-intelegerii"
+  ],
+  "related_problem_ids": ["PRB-0005"],
+  "related_exercise_ids": ["EX-0012"],
+  "related_session_ids": ["SES-0002"],
+  "source_claim_ids": ["CLM-0071", "CLM-0072"]
+}

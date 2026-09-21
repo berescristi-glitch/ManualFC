@@ -1,0 +1,64 @@
+{
+  "id": "SCR-0013",
+  "slug": "nu-va-eliminati-amandoi-cu-aceeasi-actiune",
+  "title": "Nu vă eliminați amândoi cu aceeași acțiune",
+  "category": "cooperare-defensiva",
+  "situation_trigger": "Doi apărători reacționează identic la aceeași finta sau schimbare de direcție a atacantului și sunt depășiți amândoi simultan, lăsând echipa fără niciun apărător rămas în zonă.",
+  "game_moment": "apărare organizată, 2v2, risc de eliminare simultană",
+  "child_wording": "Dacă amândoi mergeți după minge deodată, cine rămâne să protejeze restul?",
+  "short_version": "Nu amândoi deodată!",
+  "expanded_version": "Dacă amândoi reacționați identic la aceeași fentă, s-ar putea să fiți eliminați amândoi deodată — unul trebuie să rămână gata să protejeze, indiferent ce face primul.",
+  "coach_meaning": "Antrenorul expune consecința eliminării simultane prin întrebare, nu prin comandă, lăsând copiii să descopere costul acestui tipar din chiar consecința din joc.",
+  "why_this_wording": "Întrebarea („cine rămâne”) direcționează atenția spre consecință, nu spre execuția tehnică a apărării — copiii trebuie să recunoască singuri riscul, nu doar să memoreze o regulă.",
+  "problem_being_solved": "Eliminarea simultană a ambilor apărători prin aceeași acțiune a atacanților lasă echipa complet expusă, o eroare frecventă și costisitoare la această vârstă.",
+  "information_to_notice": [
+    "dacă reacția proprie e identică cu a coechipierului la aceeași fază",
+    "cine rămâne disponibil să reacționeze dacă primul apărător e depășit"
+  ],
+  "decision_to_learn": "Copiii învață să nu reacționeze identic la aceeași acțiune a atacanților, păstrând mereu cel puțin un apărător pregătit să reacționeze la o eventuală depășire.",
+  "observable_behaviours": [
+    "reacția celor doi apărători la aceeași acțiune a atacanților devine diferențiată în timp",
+    "frecvența eliminării simultane scade față de primele repetiții"
+  ],
+  "age_appropriateness": "La 10-11 ani, tendința de a reacționa identic și simultan la o amenințare vizibilă e naturală; constrângerea jocului, nu explicația verbală prealabilă, expune eficient acest cost.",
+  "rationales": {
+    "tactical": "Menținerea diferențierii de rol chiar sub presiunea unei finte previne exact situația în care echipa rămâne temporar fără niciun apărător activ.",
+    "perceptual": "Copiii trebuie să observe nu doar acțiunea atacantului, ci și reacția propriului coechipier, pentru a evita reacția identică.",
+    "decisional": "Decizia de a nu reacționa identic cu coechipierul e o formă de autoreglare tactică, mai complexă decât reacția individuală simplă.",
+    "cognitive": "Eroarea de eliminare simultană devine vizibilă mai eficient prin consecința directă din joc decât printr-o explicație verbală anticipată.",
+    "psychological": "Tratarea eliminării simultane ca informație despre exercițiu, nu ca eșec personal, păstrează încrederea copiilor în procesul de învățare.",
+    "technical": "Nu se cere o tehnică specifică — accentul e pe decizia de moment, nu pe execuția fizică a intervenției defensive.",
+    "social": "Evitarea eliminării simultane cere încredere că celălalt apărător rămâne pregătit, chiar dacă nu comunică verbal în acel moment."
+  },
+  "coach_observation_before_speaking": [
+    "dacă eliminarea simultană se repetă constant sau a fost un moment izolat",
+    "dacă reacția identică vine dintr-o lipsă reală de diferențiere sau dintr-o coincidență de moment"
+  ],
+  "when_to_intervene": [
+    "eliminarea simultană se repetă în mai multe seturi consecutive, cu același tipar de reacție identică"
+  ],
+  "when_not_to_intervene": [
+    "o singură eliminare simultană într-un set — se lasă informația să se acumuleze din mai multe repetiții, fără oprire imediată"
+  ],
+  "understanding_check": [
+    "Amândoi ați mers după minge deodată — cine mai rămânea liber să reacționeze?"
+  ],
+  "response_if_not_understood": [
+    "dacă eliminarea simultană continuă neschimbată, se reduce viteza fentei folosite de atacanți (regresie), pentru a oferi mai mult timp de diferențiere a reacției"
+  ],
+  "phrases_to_avoid": [
+    {"phrase": "Ați greșit amândoi!", "reason": "etichetează greșeala fără să ofere informația utilă despre ce trebuia diferit — copiii nu pot corecta un verdict, doar o observație concretă"}
+  ],
+  "misinterpretation_risks": [
+    "un apărător poate interpreta „nu reacționa la fel” ca a nu reacționa deloc, devenind pasiv din prudență excesivă"
+  ],
+  "match_transfer": "Evitarea eliminării simultane, exersată izolat, e exact decizia care menține echipa organizată defensiv în meciul oficial, ori de câte ori doi apărători se confruntă cu aceeași fază.",
+  "evidence_boundary": "Riscul eliminării simultane e o observație consacrată în metodologia apărării de teren; nu există un studiu specific care să cuantifice frecvența acestui tipar la copii de 10-11 ani.",
+  "principle_ids": [
+    "principle.presiune-si-acoperire",
+    "principle.protejarea-centrului"
+  ],
+  "related_problem_ids": ["PRB-0006"],
+  "related_exercise_ids": ["EX-0019"],
+  "related_session_ids": ["SES-0008"]
+}
