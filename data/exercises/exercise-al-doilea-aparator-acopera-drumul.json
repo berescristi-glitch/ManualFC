@@ -1,0 +1,201 @@
+{
+  "id": "EX-0020",
+  "title": "Al doilea apărător acoperă drumul, nu omul",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "avansare",
+  "theme": "apararea-presiune-si-acoperire",
+  "game_moment": "aparare",
+  "primary_objective": "Copiii extind relația presiune-acoperire la trei atacanți și doi apărători, învățând ca al doilea apărător să protejeze drumul cel mai periculos spre poartă, nu un adversar anume, atunci când superioritatea numerică a atacului face imposibilă acoperirea fiecărui om.",
+  "observable_behaviours": [
+    "al doilea apărător se poziționează pe drumul central spre poartă, nu pe un adversar fix",
+    "primul apărător influențează purtătorul curent fără să aștepte comanda pentru a-și asuma rolul"
+  ],
+  "players": {
+    "total": 5,
+    "in_possession": 3,
+    "defenders": 2,
+    "neutral_players": 0
+  },
+  "numerical_relation": "3v2",
+  "equipment": [
+    "6 conuri de delimitare",
+    "1 poartă mică sau conuri pentru poartă mini",
+    "8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 6 },
+    { "item": "poartă mică sau conuri pentru poartă mini", "quantity": 1 },
+    { "item": "mingi de rezervă", "quantity": 8 }
+  ],
+  "field": {
+    "length_m": 18,
+    "width_m": 14,
+    "safety_margin_m": 3
+  },
+  "duration": {
+    "total_minutes": 10,
+    "format": "seturi de 2-3 minute de joc continuu, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Cu trei atacanți și doar doi apărători, acoperirea „om la om” e explicit imposibilă — al doilea apărător trebuie să aleagă drumul, nu un adversar anume.",
+      "why": "Geometria numerică (3 vs. 2) forțează exact decizia-țintă a exercițiului — acoperirea spațiului periculos, nu a unei persoane."
+    },
+    {
+      "rule": "Primul apărător (cel mai aproape de minge) influențează purtătorul curent; ceilalți doi atacanți sunt responsabilitatea drumului acoperit de al doilea apărător, nu a unui marcaj individual.",
+      "why": "Extensie directă a principiului Protejarea centrului — protecția e a drumului spre poartă, nu a unei persoane fixe."
+    }
+  ],
+  "step_by_step": [
+    "Cinci jucători: trei atacanți, doi apărători, o poartă mică.",
+    "Atacanții pasează liber între ei, căutând drumul cel mai direct spre poartă.",
+    "Primul apărător influențează purtătorul curent; al doilea se poziționează pe drumul central, nu pe un adversar anume.",
+    "Rotație: schimb de roluri la fiecare 2-3 minute."
+  ],
+  "rotation": "Rotație de roluri (atacanți/apărători) la fiecare 2-3 minute; toți cei 5 jucători trec prin ambele configurații.",
+  "transition": "Trecere directă la EX-0021 fără pauză de reorganizare — grup nou de 6 pentru primele secunde după pierderea mingii.",
+  "child_message": "Nu poți acoperi pe toți trei — apără drumul, nu un jucător anume.",
+  "why_this_message": "Reperul rămâne drumul spre poartă, nu o persoană — extensie directă a principiului canonic Protejarea centrului la o situație de inferioritate numerică reală.",
+  "problem_being_solved": "Al doilea apărător încearcă să marcheze un adversar anume, ca la egalitate numerică, deși cu trei atacanți și doi apărători acoperirea om la om lasă mereu un adversar complet liber lângă drumul spre poartă.",
+  "information_children_must_notice": [
+    "care dintre cei trei atacanți are mingea",
+    "care e drumul cel mai direct și periculos spre poartă, indiferent cine îl ocupă",
+    "poziția primului apărător față de purtătorul curent"
+  ],
+  "decision_children_must_learn": "Să aleagă poziția care protejează drumul cel mai periculos spre poartă, nu un adversar anume, recunoscând că acoperirea completă om la om nu e posibilă la inferioritate numerică.",
+  "rationales": {
+    "tactical": "La inferioritate numerică reală, protejarea spațiului valorează mai mult decât marcajul unei persoane — o decizie calitativ diferită de egalitatea numerică din EX-0017-EX-0019.",
+    "perceptual": "Copilul trebuie să evalueze trei adversari simultan și să aleagă ce spațiu, nu ce persoană, contează cel mai mult.",
+    "decisional": "Decizia „pe cine acopăr” se transformă în „ce drum protejez” — o schimbare conceptuală reală, nu doar o extensie numerică.",
+    "cognitive": "Introducerea inferiorității numerice reale (3v2) după stabilizarea relației presiune-acoperire la egalitate (2v1, 2v2) respectă progresia de la simplu la complex.",
+    "psychological": "Acceptarea faptului că nu poți acoperi pe toți reduce presiunea nerealistă de a „prinde” fiecare adversar.",
+    "technical": "Poziționarea corpului pe linia drumului periculos, nu orientată spre o persoană, e elementul tehnic central.",
+    "social": "Cei doi apărători trebuie să comunice explicit cine ia purtătorul curent și cine rămâne pe drum, nu doar să reacționeze individual."
+  },
+  "age_appropriateness": "La 10–11 ani, distincția drum-vs-persoană se arată concret, cu drumul marcat vizual (conuri) la introducere; grupele 2015 și 2016 rămân împreună, cu reglaj individual al vitezei de recunoaștere a drumului periculos.",
+  "possible_misinterpretations": [
+    "Copilul crede că trebuie să stea mereu exact pe linia porții, indiferent de poziția reală a mingii.",
+    "Al doilea apărător ignoră complet atacanții din apropiere, chiar și atunci când unul devine purtător."
+  ],
+  "task_risks": [
+    "Teren prea mare pentru doi apărători poate face protejarea drumului imposibilă, indiferent de decizie.",
+    "Trei atacanți prea rapizi pentru nivelul actual pot elimina orice fereastră reală de decizie."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Ia-l pe cel din stânga.",
+      "reason": "Prescrie o persoană fixă, exact opusul deciziei „protejează drumul” pe care exercițiul o cere."
+    },
+    {
+      "phrase": "Acoperă-i pe toți.",
+      "reason": "Cere o sarcină imposibilă la inferioritate numerică reală, fără să ofere o decizie realistă."
+    }
+  ],
+  "understanding_check": [
+    "al doilea apărător rămâne pe drumul central, nu pe un adversar fix, în majoritatea repetițiilor",
+    "copiii pot arăta, după fază, care era drumul cel mai periculos și de ce"
+  ],
+  "response_if_not_understood": [
+    "marchează vizual cu conuri drumul central de protejat, până la stabilizarea deciziei",
+    "revino temporar la EX-0017 (2v1, egalitate numerică) pentru a reconfirma relația de bază"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Mai mare decât EX-0019 pentru a acomoda trei atacanți, dar suficient de mic pentru ca drumul central să rămână o decizie clară, nu ambiguă.",
+  "too_small_signs": [
+    "cei trei atacanți nu au loc să se diferențieze spațial, exercițiul devine un 1v1 mascat",
+    "coliziuni frecvente din cauza spațiului redus"
+  ],
+  "too_large_signs": [
+    "drumul central devine prea lat pentru a fi protejat de un singur apărător, indiferent de decizie",
+    "cei doi apărători nu mai pot menține nicio relație reală de comunicare"
+  ],
+  "regression": [
+    "marchează vizual drumul central cu conuri, până la stabilizarea deciziei",
+    "revino la EX-0017 (egalitate numerică) dacă decizia „drum, nu om” eșuează complet"
+  ],
+  "progression": [
+    "trecere la EX-0021 (primele secunde după pierderea mingii)",
+    "elimină marcajul vizual al drumului, lăsând copiii să estimeze singuri zona periculoasă"
+  ],
+  "coach_questions": [
+    {
+      "question": "Ce drum protejai, nu pe cine urmăreai?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ce s-a întâmplat cu al treilea atacant, cel neacoperit?",
+      "when": "după o fază cu gol primit prin adversarul liber"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Apără spațiul periculos, nu o persoană anume."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ai rămas pe drum chiar dacă al treilea atacant era liber!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "al doilea apărător urmărește un adversar specific, lăsând drumul central complet neprotejat",
+      "possible_causes": [
+        "tiparul de marcaj om la om din exercițiile de egalitate numerică rămâne dominant",
+        "nu a acceptat încă faptul că acoperirea completă nu e posibilă la 3v2"
+      ]
+    },
+    {
+      "observation": "al doilea apărător rămâne static pe linia porții, ignorând complet mișcarea reală a mingii",
+      "possible_causes": [
+        "a interpretat „protejează drumul” ca o poziție fixă, nu una relativă la minge",
+        "nu a fost încă coordonat cu primul apărător despre cine ia purtătorul curent"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "al doilea apărător rămâne pe drumul periculos, nu pe o persoană fixă, în cel puțin jumătate din repetiții",
+    "copiii pot explica, într-o propoziție, de ce nu pot acoperi toți cei trei atacanți"
+  ],
+  "match_transfer": "În meci, apărătorul aflat în inferioritate numerică recunoaște că protejarea drumului spre poartă valorează mai mult decât marcajul unei persoane, și își ajustează poziția în funcție de pericolul real, nu de un adversar anume.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0019, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0037",
+    "SRC-0042"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.protejarea-centrului"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C10"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C10", "COACH-C11"],
+  "related_pedagog_lesson_ids": ["CH-0103"],
+  "related_coach_lesson_ids": ["CH-0404", "CH-0403"],
+  "child_action": "Se poziționează pe drumul cel mai periculos spre poartă, nu pe un adversar anume, recunoscând că la inferioritate numerică acoperirea completă nu e posibilă.",
+  "coach_focus": "Observarea deciziei drum-vs-persoană, nu doar rezultatul final al fazei (gol primit sau nu).",
+  "do_not_assume": [
+    "Un gol primit prin adversarul liber nu înseamnă că decizia a fost greșită — la inferioritate numerică reală, cineva rămâne mereu liber.",
+    "Faptul că al doilea apărător nu urmărește un adversar specific nu înseamnă lipsă de implicare — poate fi exact decizia corectă."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de marcaj om la om la inferioritate numerică, observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "Un gol primit printr-o decizie corectă de protejare a drumului, cu al treilea atacant liber.",
+    "O singură ezitare la recunoașterea drumului periculos."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul cere acoperirea tuturor celor trei atacanți, o sarcină matematic imposibilă la 3v2.",
+      "why_it_happens": "Transferarea directă a așteptării de la egalitate numerică (fiecare își are omul lui) fără a recunoaște schimbarea reală de context."
+    }
+  ],
+  "coach_reflection": [
+    "Am cerut o sarcină realistă (protejarea drumului) sau una imposibilă (acoperirea tuturor) la inferioritate numerică?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului, marcajul vizual al drumului și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 10/15/18 jucători și 1-2 antrenori (grupuri de 5, rotație de roluri la fiecare 2-3 minute); la alte efective, se organizează cu grupuri mixte, urmând rotația documentată în capitolul despre organizare și siguranță.",
+  "assessment_ref": "ASM-0002"
+}

@@ -1,0 +1,249 @@
+{
+  "id": "SES-0008",
+  "title": "Presiune și acoperire — coordonare defensivă în 2v2 și 3v2",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "duration_min": 75,
+  "primary_objective": "Consolidează schimbul de rol exersat în SES-0007 printr-o reamintire scurtă, apoi adaugă riscul de eliminare simultană sub opoziție 2v2 (EX-0018, EX-0019) și introduce protejarea drumului periculos, nu a unui om fix, sub superioritate numerică 3v2 (EX-0020).",
+  "observable_behaviours": [
+    "cei doi apărători nu se lasă eliminați simultan de aceeași acțiune a atacanților",
+    "al doilea apărător rămâne poziționat pe drumul periculos, nu fixat pe un adversar"
+  ],
+  "players_range": {
+    "min": 8,
+    "max": 18,
+    "note": "EX-0018 și EX-0019 cer grupuri de 4 (2v2); EX-0020 cere grupuri de 5 (3v2) — cele două formate au praguri de grup diferite, deci numărul de copii în așteptare diferă între segmente la același efectiv total. Vezi configuratorul de grup pentru numărul exact de grupe, spațiu și material la fiecare efectiv de la 8 la 18."
+  },
+  "operational_contingencies": [
+    {
+      "scenario": "3 copii ajung după ce ședința a început",
+      "guidance": "PRACTICE_HEURISTIC: la EX-0018/EX-0019, copiii întârziați intră la următoarea rotație de perechi. La EX-0020, intră la pauza dintre seturi, nu în mijlocul unui set activ."
+    },
+    {
+      "scenario": "Terenul disponibil e mai mic decât dimensiunea canonică (16×12m pentru EX-0018/EX-0019, 20×15m pentru EX-0020)",
+      "guidance": "PRACTICE_HEURISTIC: dacă spațiul complet nu e disponibil, redu numărul de terenuri paralele, nu comprima terenul unui singur joc sub pragul la care mișcarea 2v2/3v2 mai are sens defensiv."
+    },
+    {
+      "scenario": "Veste de marcaj insuficiente pentru două culori de echipă",
+      "guidance": "PRACTICE_HEURISTIC: folosește convenția tricou-pe-umăr/tricou-normal — distincția vizuală e necesară pentru observarea comportamentului de coordonare defensivă."
+    },
+    {
+      "scenario": "Un exercițiu eșuează — niciun copil nu reușește nici cu regresia maximă",
+      "guidance": "PRACTICE_HEURISTIC: la EX-0018/EX-0019, revino temporar la EX-0016-EX-0017 (regresia documentată explicit) mai degrabă decât să repeți fără succes. La EX-0020, dacă protejarea drumului nu apare deloc, notează asta ca informație validă pentru ASM-0002, nu se anulează sesiunea."
+    },
+    {
+      "scenario": "Copiii se elimină simultan repetat la EX-0019",
+      "guidance": "PRACTICE_HEURISTIC: aceasta e exact comportamentul pe care exercițiul îl expune — nu e un eșec al exercițiului. Folosește o întrebare ghidată («Amândoi ați mers după minge — cine mai rămânea liber?») la pauza dintre seturi, nu o comandă tehnică în timpul jocului activ."
+    }
+  ],
+  "duration_variant_60min": {
+    "total_minutes": 60,
+    "policy_note": "Variantă de 60 minute — PRACTICE_HEURISTIC, o adaptare operațională, nu o durată validată de cercetare. Ambele exerciții 2v2 rămân, cu mai puține seturi; EX-0020 păstrează cel puțin două seturi complete.",
+    "segments": [
+      { "segment_index": 0, "start_min": 0, "end_min": 8, "reduction_note": "Redus cu 2 min: reamintirea rămâne verbală și scurtă; se renunță la timpul de așteptare pentru răspunsuri multiple." },
+      { "segment_index": 1, "start_min": 8, "end_min": 22, "reduction_note": "Redus cu 3 min: mai puține seturi la EX-0018, obiectivul central (coordonarea rolurilor sub 2v2) rămâne exersat cu opoziție activă completă." },
+      { "segment_index": 2, "start_min": 22, "end_min": 36, "reduction_note": "Redus cu 4 min: mai puține seturi la EX-0019 — riscul de eliminare simultană, elementul central nou, rămâne expus în fiecare set rămas." },
+      { "segment_index": 3, "start_min": 36, "end_min": 50, "reduction_note": "Redus cu 4 min, păstrând cel puțin două seturi complete la EX-0020 — protejarea drumului sub superioritate numerică cere mai mult de o singură repetiție pentru a fi observabilă." },
+      { "segment_index": 4, "start_min": 50, "end_min": 60, "reduction_note": "Redus cu 5 min: reflecția rămâne completă; se renunță din timpul liber final pentru echipament." },
+      { "segment_index": 5, "start_min": 60, "end_min": 60, "reduction_note": "Segmentul de joc liber final e eliminat complet la varianta de 60 minute — e explicit timp non-esențial în structura canonică de 75 minute, iar cele trei exerciții centrale și reflecția rămân prioritare." }
+    ]
+  },
+  "equipment": [
+    "conuri de delimitare pentru toate stațiile",
+    "mingi de rezervă",
+    "veste de marcaj pentru două culori de echipă",
+    "porți mici sau conuri mari pentru marcarea porților la EX-0020"
+  ],
+  "surface_plan": {
+    "layout": "Stații de 16x12m pentru EX-0018 și EX-0019 (2v2), teren de 20x15m pentru EX-0020 (3v2), amplasate cu spațiu de siguranță de minimum 3m.",
+    "rotation": "Rotație de perechi la fiecare set în EX-0018/EX-0019; la EX-0020, schimbare de roluri atac/apărare la fiecare set."
+  },
+  "segments": [
+    {
+      "start_min": 0,
+      "end_min": 10,
+      "title": "Încălzire cu reamintire scurtă",
+      "exercise_ids": [],
+      "coach_message": "Cine își amintește cum am schimbat rolul de presiune și acoperire data trecută?",
+      "why_now": "Rutină de siguranță combinată cu o reamintire scurtă, nu o reluare completă a EX-0016-EX-0017 — sesiunea anterioară a consolidat deja decizia de bază.",
+      "methodological_rationale": "Reamintirea scurtă, nu re-predarea, respectă timpul disponibil real al unei ședințe de club.",
+      "observation_focus": [
+        "participarea activă la reamintirea verbală, nu doar execuția fizică"
+      ],
+      "intervention_criteria": [
+        "dacă niciun copil nu-și amintește elementele de bază, se inserează o repetiție scurtă de EX-0016 înainte de a continua"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil răspunde parțial sau ezitant la reamintire, nu se corectează imediat — se lasă și alți copii să completeze răspunsul înainte de a interveni."
+      ],
+      "coach_focus": "Reamintire scurtă, nu re-predare completă — verifică participarea activă, nu doar execuția fizică.",
+      "verification_method": "Cel puțin un copil poate numi verbal elementul de bază exersat în SES-0007 înainte de a continua.",
+      "transition_logistics": "Formarea grupurilor de 4 pentru EX-0018."
+    },
+    {
+      "start_min": 10,
+      "end_min": 24,
+      "title": "EX-0018 — Schimbă rolul când mingea se mută",
+      "exercise_ids": [
+        "EX-0018"
+      ],
+      "coach_message": "Când mingea se mută la celălalt atacant, verificați dacă rolurile voastre trebuie să se schimbe.",
+      "why_now": "Testează dacă schimbul de rol exersat izolat în EX-0017 rămâne stabil sub opoziție 2v2 completă, cu mai multe opțiuni de pasă pentru atacanți.",
+      "methodological_rationale": "Progresia 2v1→2v2 e justificată prin creșterea complexității informaționale (a doua opțiune de pasă a atacanților), nu doar prin numărul de jucători.",
+      "observation_focus": [
+        "schimbarea rolului de presiune/acoperire în fiecare moment în care mingea se mută între atacanți"
+      ],
+      "intervention_criteria": [
+        "oprire scurtă și întrebare ghidată doar la tipar repetat de rol neschimbat, nu la prima apariție"
+      ],
+      "non_intervention_criteria": [
+        "Prima apariție a unui rol neschimbat la mutarea mingii — se lasă comportamentul să reapară sau nu înainte de a opri jocul."
+      ],
+      "coach_focus": "Actualizarea continuă a rolului — pune o întrebare ghidată la tipar repetat, nu corectează direct poziția.",
+      "verification_method": "La pauza dintre seturi, verifică dacă rolurile s-au schimbat corect în majoritatea mutărilor mingii.",
+      "transition_logistics": "Aceleași grupuri de 4, aceeași stație — se activează regula de eliminare simultană pentru EX-0019."
+    },
+    {
+      "start_min": 24,
+      "end_min": 36,
+      "title": "EX-0019 — Nu vă eliminați amândoi cu aceeași acțiune",
+      "exercise_ids": [
+        "EX-0019"
+      ],
+      "coach_message": "Dacă amândoi mergeți după minge deodată, cine rămâne să protejeze restul?",
+      "why_now": "Expune direct riscul de eliminare simultană, o eroare comună la această vârstă, abia după ce schimbul de rol de bază (EX-0018) e exersat.",
+      "methodological_rationale": "Constrângerea jocului (nu o comandă verbală) expune eroarea; copiii descoperă costul eliminării simultane prin consecința din joc, nu prin explicație prealabilă.",
+      "observation_focus": [
+        "diferențierea reacției celor doi apărători la aceeași acțiune a atacanților"
+      ],
+      "intervention_criteria": [
+        "întrebare ghidată la pauza dintre seturi dacă eliminarea simultană se repetă în mai multe seturi consecutive"
+      ],
+      "non_intervention_criteria": [
+        "O singură eliminare simultană într-un set nu justifică oprirea jocului — se lasă informația să se acumuleze din mai multe repetiții."
+      ],
+      "coach_focus": "Non-intervenție în timpul fazei active — eroarea ca informație, nu ca verdict despre copii.",
+      "verification_method": "La pauza dintre seturi, notează dacă eliminarea simultană a scăzut ca frecvență față de primul set.",
+      "transition_logistics": "Extindere la teren de 20x15m și formare de grupuri de 5 pentru EX-0020."
+    },
+    {
+      "start_min": 36,
+      "end_min": 50,
+      "title": "EX-0020 — Al doilea apărător acoperă drumul, nu omul",
+      "exercise_ids": [
+        "EX-0020"
+      ],
+      "coach_message": "Nu urmări un singur adversar — ocupă drumul spre poartă pe care nimeni altcineva nu-l acoperă.",
+      "why_now": "Sub superioritate numerică a atacanților (3v2), al doilea apărător trebuie să aleagă drumul periculos, nu o persoană fixă — o decizie mai complexă decât cea exersată în EX-0018/EX-0019.",
+      "methodological_rationale": "Superioritatea numerică forțează prioritizarea explicită a spațiului periculos față de urmărirea unui adversar, consecvent cu principiul protejării centrului.",
+      "observation_focus": [
+        "poziționarea celui de-al doilea apărător pe drumul periculos, nu pe un adversar fix"
+      ],
+      "intervention_criteria": [
+        "un singur focalizator per set (drumul periculos, nu adversarul), fără durată cronometrată fixă"
+      ],
+      "non_intervention_criteria": [
+        "Urmărirea unui adversar fix la prima repetiție nu justifică oprirea jocului — se lasă opoziția să continue, corecția vine la pauza dintre seturi."
+      ],
+      "coach_focus": "Drumul periculos, nu adversarul — feedback de tip focus extern, nu corecție tehnică internă.",
+      "verification_method": "La pauza dintre seturi, verifică dacă al doilea apărător rămâne poziționat pe drumul periculos în majoritatea repetițiilor.",
+      "transition_logistics": "Strângerea materialului; pregătire pentru reflecția de închidere."
+    },
+    {
+      "start_min": 50,
+      "end_min": 65,
+      "title": "Reflecție ghidată de închidere",
+      "exercise_ids": [],
+      "coach_message": "Ce ați observat azi despre cum ați evitat să vă eliminați amândoi deodată?",
+      "why_now": "Reflecția leagă explicit cele trei exerciții de decizia comună — coordonarea între doi apărători sub presiune numerică variabilă.",
+      "methodological_rationale": "Reflecția consolidează transferul, nu doar evaluează execuția tehnică izolată.",
+      "observation_focus": [
+        "capacitatea copiilor de a numi, într-o propoziție, ce au observat despre coordonarea cu coechipierul"
+      ],
+      "intervention_criteria": [
+        "întrebări deschise, copiii formulează concluzia, nu antrenorul într-un monolog"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil nu poate încă formula o observație, nu se impune un răspuns — se trece la următorul copil sau la întrebarea următoare."
+      ],
+      "coach_focus": "Întrebări deschise; copiii formulează concluzia, nu antrenorul într-un monolog.",
+      "verification_method": "Cel puțin un copil poate numi, într-o propoziție, ce a observat despre coordonarea defensivă.",
+      "transition_logistics": "Încheierea segmentului de reflecție; echipamentul se strânge pe parcurs."
+    },
+    {
+      "start_min": 65,
+      "end_min": 75,
+      "title": "Joc liber de relaxare",
+      "exercise_ids": [],
+      "coach_message": "Jucați liber, fără reguli speciale — azi ați exersat destul!",
+      "why_now": "Închidere pozitivă a ședinței, timp activ suplimentar fără presiune evaluativă.",
+      "methodological_rationale": "Nu se introduc constrângeri noi la finalul unei ședințe cu încărcare cognitivă deja ridicată (3 concepte noi).",
+      "observation_focus": [
+        "siguranța fizică generală"
+      ],
+      "intervention_criteria": [
+        "doar pentru siguranță fizică sau comportament nesportiv"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul de joc liber, chiar dacă nu reflectă exercițiile exersate, nu justifică o intervenție tactică — acest segment e explicit relaxare, nu evaluare."
+      ],
+      "coach_focus": "Siguranță fizică generală, nu conținut tehnico-tactic.",
+      "verification_method": "Nu se aplică o verificare de conținut la acest segment — doar supraveghere de siguranță.",
+      "transition_logistics": "Final de ședință."
+    }
+  ],
+  "message_foundations": [
+    {
+      "message": "Dacă amândoi mergeți după minge deodată, cine rămâne să protejeze restul?",
+      "source_principle": "principle.presiune-si-acoperire",
+      "claim_ids": [
+        "CLM-0043",
+        "CLM-0044"
+      ]
+    },
+    {
+      "message": "Nu urmări un singur adversar — ocupă drumul spre poartă pe care nimeni altcineva nu-l acoperă.",
+      "source_principle": "principle.protejarea-centrului",
+      "claim_ids": [
+        "CLM-0038"
+      ]
+    }
+  ],
+  "session_rationale": "A doua ședință a temei consolidează schimbul de rol printr-o reamintire scurtă (nu re-predare completă) și adaugă cele două trepte rămase din progresia defensivă de bază: riscul de eliminare simultană sub 2v2 și protejarea drumului periculos sub superioritate numerică 3v2. Separarea în ședințe distincte reflectă limitarea deliberată a numărului de concepte noi per ședință la vârsta U11, nu un rezultat de cercetare privind intervalul optim între ședințe.",
+  "match_theme": "Coordonarea a doi apărători sub presiunea directă a opoziției și protejarea drumului periculos, nu a unui adversar fix, sub superioritate numerică.",
+  "reflection": [
+    "Ce ați observat azi despre cum ați evitat să vă eliminați amândoi deodată?",
+    "Când ați fost al doilea apărător, ce ați urmărit — omul sau drumul spre poartă?"
+  ],
+  "sources": [
+    "SRC-0035",
+    "SRC-0037",
+    "SRC-0042",
+    "SRC-0043"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "child_objectives": [
+    "Schimbă rolul de presiune și acoperire sub opoziție 2v2 completă (EX-0018).",
+    "Evită eliminarea simultană cu coechipierul la aceeași acțiune a atacanților (EX-0019).",
+    "Protejează drumul periculos, nu un adversar fix, sub superioritate numerică 3v2 (EX-0020)."
+  ],
+  "coach_objectives": [
+    {
+      "objective": "Tratează eliminarea simultană repetată ca informație despre exercițiu, nu ca verdict despre copii, fără intervenție verbală în timpul fazei active.",
+      "coach_competency_id": "COACH-C11"
+    },
+    {
+      "objective": "Folosește un singur focalizator per set (drumul periculos, nu adversarul) la EX-0020.",
+      "coach_competency_id": "COACH-C12"
+    }
+  ],
+  "reflection_v2": {
+    "child_game_dimension": [
+      "Schimbul de rol și protejarea drumului au apărut doar în exercițiul structurat sau și în discuția de reflecție?",
+      "A fost nevoie de reper extern (întrebare, comandă) sau comportamentul a apărut autonom?"
+    ],
+    "coach_dimension": [
+      "Am tratat eliminarea simultană ca informație, nu ca eroare de corectat imediat?",
+      "Am rezistat impulsului de a numi «greșeala» în timpul fazei active, lăsând întrebarea pentru pauza dintre seturi?"
+    ]
+  }
+}

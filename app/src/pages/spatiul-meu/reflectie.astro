@@ -1,14 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'; import Breadcrumb from '../../components/Breadcrumb.astro';
-import { getGoldStandardSessions, getGoldStandardSessionExercises, getGoldStandardAssessment } from '../../lib/content-bridge';
+import { getGoldStandardSessions, getGoldStandardSessionExercises, getGoldStandardAssessments } from '../../lib/content-bridge';
 import { getProblems } from '../../lib/problem-library';
 
-function criterionExerciseId(text: string): string | null { const m = text.match(/\(EX-\d{4}\)/); return m ? m[0].slice(1, -1) : null; }
-const assessment = getGoldStandardAssessment();
+function criterionExerciseIds(text: string): string[] { const m = text.match(/\(([^)]*)\)/); if (!m) return []; return m[1].match(/EX-\d{4}/g) ?? []; }
+const assessments = getGoldStandardAssessments();
 const problems = getProblems().map(p => ({
   id: p.problem_id, title: p.human_title, slug: p.slug,
   cue: p.child_cues[0]?.say ?? '', transferCheck: p.transfer_checks[0]?.text ?? '', exerciseIds: p.related_exercises,
-  criteria: p.assessment_links.length ? assessment.criteria.filter(c => { const exId = criterionExerciseId(c.observable_behaviour); return exId ? p.related_exercises.includes(exId) : false; }).map(c => c.observable_behaviour) : []
+  criteria: p.assessment_links.length
+    ? assessments
+        .filter(a => p.assessment_links.includes(a.id))
+        .flatMap(a => a.criteria)
+        .filter(c => criterionExerciseIds(c.observable_behaviour).some(exId => p.related_exercises.includes(exId)))
+        .map(c => c.observable_behaviour)
+    : []
 }));
 const sessions = getGoldStandardSessions().map(s => { const exercises = getGoldStandardSessionExercises(s); return { id: s.id, title: s.title, exerciseIds: exercises.map(e => e.id), exerciseTitles: exercises.map(e => e.title) }; });
 ---

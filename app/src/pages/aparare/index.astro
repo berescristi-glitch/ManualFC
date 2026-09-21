@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EvidenceBadge from '../../components/EvidenceBadge.astro';
+import { getGoldStandardExercises, getGoldStandardSessions, getGoldStandardAssessment, resolveEvidenceClaims } from '../../lib/content-bridge';
+import presiuneSiAcoperire from '../../../../data/principles/principle-presiune-si-acoperire.json';
+import protejareaCentrului from '../../../../data/principles/principle-protejarea-centrului.json';
+import tranzitiaLaPierdere from '../../../../data/principles/principle-tranzitia-la-pierderea-mingii.json';
+
+const exercises = getGoldStandardExercises().filter((ex) => ex.theme === 'apararea-presiune-si-acoperire');
+const sessions = getGoldStandardSessions().filter((ses) => exercises.some((ex) => ses.segments.some((seg) => seg.exercise_ids.includes(ex.id))));
+const assessment = getGoldStandardAssessment('ASM-0002');
+const combinedClaims = [...resolveEvidenceClaims(presiuneSiAcoperire), ...resolveEvidenceClaims(protejareaCentrului), ...resolveEvidenceClaims(tranzitiaLaPierdere)];
+const evidenceClaims = combinedClaims.filter((claim, i) => combinedClaims.findIndex((c) => c.claim_id === claim.claim_id) === i);
+---
+<BaseLayout title="Modul complet — Apărarea: presiune și acoperire" description="A doua temă de antrenament ManualFC: presiunea și acoperirea în apărare, tranziția negativă și protejarea centrului, de la 1v1 la 6v6, pentru U11.">
+  <div class="gs-page">
+    <Breadcrumb items={[{ label: 'Apărarea: presiune și acoperire' }]} />
+    <p class="eyebrow">A DOUA TEMĂ · MOD APROFUNDAT</p>
+    <h1>Apărarea: presiune și acoperire</h1>
+    <p class="intro">A doua temă completă de antrenament ManualFC — o problemă de joc distinctă de <a href="/gold-standard">Sprijinul și unghiul de pasă</a>: cum apără copiii împreună, nu cum se sprijină în posesie. Acoperă frânarea controlată a purtătorului, coordonarea a doi apărători, reacția imediată după pierderea mingii și protejarea centrului la nivel de echipă, de la 1v1 izolat până la transfer complet în 6v6. Ca și prima temă, rămâne construită din exerciții, ședințe și o evaluare — nu doar o listă de exerciții izolate.</p>
+
+    <section aria-labelledby="concept">
+      <h2 id="concept">Conceptul de bază</h2>
+      <p><strong>Presiune și acoperire</strong> = doi apărători își împart rolurile astfel încât unul încetinește purtătorul mingii, iar celălalt protejează drumul periculos rămas — nu un adversar fix. <strong>Protejarea centrului</strong> = prioritizarea spațiului periculos din fața propriei porți față de urmărirea individuală a unui adversar, mai ales sub superioritate numerică a atacanților.</p>
+      <p class="reused-note">Fundația conceptuală și decizională e reutilizată direct din principiile canonice <a href="/principii/presiune-si-acoperire">Unul influențează, celălalt protejează</a>, <a href="/principii/protejarea-centrului">Protejează drumul scurt către poartă</a> și <a href="/principii/tranzitia-la-pierderea-mingii">Cine influențează, cine protejează, chiar în primele secunde</a>, nu re-derivată pentru această temă.</p>
+    </section>
+
+    <section aria-labelledby="distinctie">
+      <h2 id="distinctie">Cum diferă de Sprijinul și unghiul de pasă</h2>
+      <p>Prima temă rezolvă o problemă de posesie: cum se poziționează echipa care are mingea pentru a păstra opțiuni. Această temă rezolvă o problemă de apărare: cum reacționează echipa care nu are mingea, individual și în grup, imediat după ce a pierdut-o sau când adversarul atacă direct. Cele două teme folosesc principii diferite, probleme diferite din motorul de decizie și exerciții cu roluri opuse (purtător vs. apărător) — nu sunt o variație superficială una a celeilalte.</p>
+    </section>
+
+    <section aria-labelledby="evidenta">
+      <h2 id="evidenta">Evidența de bază</h2>
+      <ul class="evidence-list">
+        {evidenceClaims.map((claim) => (
+          <li>
+            <EvidenceBadge level={claim.epistemic_level} />
+            <p>{claim.statement}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="exercitii">
+      <h2 id="exercitii">Familia de exerciții</h2>
+      <ol class="exercise-list">
+        {exercises.map((ex) => (
+          <li>
+            <a href={`/gold-standard/exercitii/${ex.id}`}>
+              <span class="ex-id">{ex.id}</span>
+              <strong>{ex.title}</strong>
+              <span class="ex-level">{ex.level} · {ex.numerical_relation}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section aria-labelledby="sedinte">
+      <h2 id="sedinte">Ședințe</h2>
+      <ol class="session-list">
+        {sessions.map((ses) => (
+          <li>
+            <a href={`/gold-standard/sedinte/${ses.id}`}>
+              <span class="ex-id">{ses.id}</span>
+              <strong>{ses.title}</strong>
+              <span class="ex-level">{ses.duration_min} min</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section aria-labelledby="evaluare">
+      <h2 id="evaluare">Evaluare și transfer</h2>
+      <p><a href={`/gold-standard/evaluare/${assessment.id}`}>{assessment.title}</a> — {assessment.criteria.length} criterii, de la comportamente izolate la transfer autonom în joc. Fiecare criteriu folosește niveluri calitative, nu scoruri numerice.</p>
+      <ul class="criteria-list">
+        {assessment.criteria.map((c) => <li>{c.observable_behaviour}</li>)}
+      </ul>
+      <p><a href={`/gold-standard/evaluare/${assessment.id}`}>Deschide instrumentul complet de evaluare →</a></p>
+    </section>
+
+    <section aria-labelledby="probleme">
+      <h2 id="probleme">Problemele de joc rezolvate</h2>
+      <p>Această temă răspunde direct la două probleme observabile din motorul de decizie: <a href="/rezolva-pe-teren/dupa-pierderea-mingii-se-opresc">După pierderea mingii, jucătorii se opresc</a> și <a href="/rezolva-pe-teren/primul-aparator-preseaza-fara-acoperire">Primul apărător presează fără acoperire</a>. Vezi <a href="/rezolva-pe-teren">Rezolvă pe teren</a> pentru diagnosticul complet și pentru celelalte probleme din motorul de decizie.</p>
+    </section>
+
+    <p class="status-note">Stare: exerciții și ședințe validate structural și pedagogic, la aceeași profunzime ca prima temă. Vizualurile tactice rămân rezervate (specificație semantică în așteptare), consecvent cu restul familiei EX-0006 și peste. Transferul real în meciul oficial rămâne neconfirmat până la o pilotare reală pe teren — nicio afirmație din această pagină nu presupune validare de către antrenori reali.</p>
+  </div>
+</BaseLayout>
+
+<style>
+  .gs-page { max-width: var(--width-content); margin: 0 auto; padding: var(--space-20) var(--space-6); }
+  h1 { max-width: 24ch; }
+  .intro { max-width: 68ch; font-size: 1.1rem; }
+  .reused-note { font-size: .9rem; color: var(--color-text-muted); }
+  section { margin-top: var(--space-16); border-top: 1px solid var(--color-border); padding-top: var(--space-8); }
+  .evidence-list, .criteria-list { list-style: none; padding: 0; }
+  .evidence-list li { padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); }
+  .evidence-list p { margin: .5rem 0 0; }
+  .exercise-list, .session-list { list-style: none; padding: 0; }
+  .exercise-list a, .session-list a { display: grid; grid-template-columns: 6rem 1fr auto; gap: var(--space-4); padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); text-decoration: none; align-items: baseline; }
+  .ex-id { font-family: var(--font-family-mono); color: var(--color-text-accent); }
+  .ex-level { color: var(--color-text-muted); font-size: .85rem; }
+  .status-note { margin-top: var(--space-16); font-size: .85rem; color: var(--color-text-muted); }
+  @media (max-width: 600px) { .exercise-list a, .session-list a { grid-template-columns: 1fr; gap: .25rem; } }
+</style>

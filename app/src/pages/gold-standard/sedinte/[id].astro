@@ -13,8 +13,8 @@ export function getStaticPaths() {
 }
 const { id } = Astro.params;
 const ses = getGoldStandardSession(id as string);
-const assessment = getGoldStandardAssessment();
 const sessionExercises = getGoldStandardSessionExercises(ses);
+const assessment = getGoldStandardAssessment(sessionExercises.find(ex => ex.assessment_ref)?.assessment_ref);
 
 const equipmentMatches = sessionExercises.every(ex => ex.equipment.join('|') === sessionExercises[0].equipment.join('|'));
 const equipment = equipmentMatches ? sessionExercises[0].equipment : null;

@@ -6,8 +6,8 @@ import { getGoldStandardExercises, getGoldStandardSessions, getGoldStandardAsses
 import spatiuUnghiuri from '../../../../data/principles/principle-spatiu-si-unghiuri.json';
 import progresieSprijin from '../../../../data/principles/principle-progresie-si-sprijin.json';
 
-const exercises = getGoldStandardExercises();
-const sessions = getGoldStandardSessions();
+const exercises = getGoldStandardExercises().filter(ex => ex.theme === 'sprijin-si-unghi-de-pasa');
+const sessions = getGoldStandardSessions().filter(ses => exercises.some(ex => ses.segments.some(seg => seg.exercise_ids.includes(ex.id))));
 const assessment = getGoldStandardAssessment();
 const combinedClaims = [...resolveEvidenceClaims(spatiuUnghiuri), ...resolveEvidenceClaims(progresieSprijin)];
 const evidenceClaims = combinedClaims.filter((claim, i) => combinedClaims.findIndex(c => c.claim_id === claim.claim_id) === i);

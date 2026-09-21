@@ -28,11 +28,13 @@ const durationLabel = formatDuration(ex.duration);
 const rationalesByKey: Record<string, string> = ex.rationales as unknown as Record<string, string>;
 const diagramVariants = ['EX-0001', 'EX-0002', 'EX-0003', 'EX-0004', 'EX-0005'] as const;
 const hasDiagram = (diagramVariants as readonly string[]).includes(ex.id);
-const allExercises = getGoldStandardExercises();
+const allExercises = getGoldStandardExercises().filter(e => e.theme === ex.theme);
 const exIndex = allExercises.findIndex(e => e.id === ex.id);
 const prevExercise = exIndex > 0 ? allExercises[exIndex - 1] : null;
 const nextExercise = exIndex < allExercises.length - 1 ? allExercises[exIndex + 1] : null;
 const parentSession = getGoldStandardSessions().find(ses => getGoldStandardSessionExercises(ses).some(e => e.id === ex.id));
+const themeHref = ex.theme === 'apararea-presiune-si-acoperire' ? '/aparare' : '/gold-standard';
+const themeLabel = ex.theme === 'apararea-presiune-si-acoperire' ? 'Apărarea: presiune și acoperire' : 'Modul complet';
 const playerCount = String(ex.players.total ?? ex.numerical_relation);
 const equipmentLabel = ex.equipment.join(' · ');
 const isV2 = ex.gold_standard_v2?.status === 'V2';
@@ -43,7 +45,7 @@ function chapterHref(chapterId: string): string {
 ---
 <BaseLayout title={`${ex.title} — Exercițiu aplicat`} description={ex.primary_objective}>
   <article class="gs-exercise">
-    <Breadcrumb items={[{ label: 'Modul complet', href: '/gold-standard' }, { label: ex.title }]} />
+    <Breadcrumb items={[{ label: themeLabel, href: themeHref }, { label: ex.title }]} />
     <FieldSummary eyebrow={`Exercițiu aplicat · ${ex.level} · ${ex.id}`} title={ex.title} objective={ex.primary_objective} relation={ex.numerical_relation} players={`${playerCount} jucători`} field={`${ex.field.length_m}×${ex.field.width_m} m + ${ex.field.safety_margin_m} m siguranță`} duration={durationLabel} equipment={equipmentLabel} childMessage={ex.child_message} observable={ex.observable_behaviours[0]} />
     <CoachActions id={ex.id} kind="exercise" title={ex.title} href={`/gold-standard/exercitii/${ex.id}`}/>
     <SectionNavigator items={[{href:'#organizare',label:'Organizează'},{href:'#observa',label:'Observă și adaptează'},{href:'#fundamentare',label:'Înțelege de ce'},...(ex.gold_standard_v2?.status === 'V2' ? [{href:'#teorie-practica',label:'Pedagogul → Antrenorul'}] : []),{href:'#transfer',label:'Verifică transferul'}]} />

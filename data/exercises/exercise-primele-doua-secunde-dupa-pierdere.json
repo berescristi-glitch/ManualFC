@@ -1,0 +1,202 @@
+{
+  "id": "EX-0021",
+  "title": "Primele două secunde după pierdere",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "avansare",
+  "theme": "apararea-presiune-si-acoperire",
+  "game_moment": "tranziție negativă",
+  "primary_objective": "Copiii aplică decizia deja exersată (cine influențează, cine protejează) exact în momentul real al pierderii mingii, separând explicit cele două responsabilități: cel mai bine plasat încearcă o influență controlată sau întârziere, restul echipei se orientează spre protejarea centrului, nu spre minge.",
+  "observable_behaviours": [
+    "cel mai apropiat de minge încearcă influență controlată sau întârziere, nu atac necontrolat, imediat după pierdere",
+    "restul jucătorilor se orientează spre propria poartă, nu aleargă toți spre minge"
+  ],
+  "players": {
+    "total": 6,
+    "in_possession": 3,
+    "defenders": 3,
+    "neutral_players": 0
+  },
+  "numerical_relation": "3v3",
+  "equipment": [
+    "8 conuri de delimitare",
+    "1-2 porți mici sau conuri pentru porți mini",
+    "8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 8 },
+    { "item": "porți mici sau conuri pentru porți mini", "quantity": 2 },
+    { "item": "mingi de rezervă", "quantity": 8 }
+  ],
+  "field": {
+    "length_m": 20,
+    "width_m": 14,
+    "safety_margin_m": 3
+  },
+  "duration": {
+    "total_minutes": 10,
+    "format": "seturi de 2 minute de joc continuu, cu pierderi/recuperări repetate ale mingii, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Jocul e continuu 3v3, cu ambele echipe alternând între posesie și pierdere de mai multe ori pe set — nu se oprește la fiecare pierdere de minge.",
+      "why": "Creează momente reale, repetate, de pierdere a mingii în interiorul aceluiași set, exact contextul în care decizia trebuie exersată — reglaj ales pentru acest exercițiu, nu un prag validat de cercetare."
+    },
+    {
+      "rule": "Echipa care pierde mingea nu are voie ca toți cei trei jucători să alerge simultan spre minge — cel puțin unul trebuie să se orienteze imediat spre propria poartă.",
+      "why": "Previne aglomerarea în jurul mingii imediat după pierdere, obligând la separarea explicită a celor două responsabilități documentate în principiul canonic Tranziția la pierderea mingii."
+    }
+  ],
+  "step_by_step": [
+    "Șase jucători, trei într-o echipă, trei în cealaltă; jocul curge continuu între cele două porți mici.",
+    "La fiecare pierdere a mingii, jucătorul cel mai aproape încearcă influență controlată sau întârziere, nu atac necontrolat.",
+    "Ceilalți doi jucători ai echipei care a pierdut mingea se orientează spre propria poartă, protejând drumul central.",
+    "Jocul continuă până la următoarea pierdere/recuperare, fără oprire.",
+    "Rotație: echipele se schimbă la fiecare set de 2 minute."
+  ],
+  "rotation": "Rotație de echipe la fiecare set de 2 minute; toți cei 6 jucători trec prin ambele configurații.",
+  "transition": "Trecere directă la EX-0022 fără pauză de reorganizare — extindere la 4v3 pentru coordonarea la pierderea mingii sub inferioritate numerică.",
+  "child_message": "Ai pierdut mingea. Cine e aproape, încetinește. Restul, închideți drumul spre poartă.",
+  "why_this_message": "Mesaj reutilizat direct din principiul canonic Tranziția la pierderea mingii — distribuie responsabilitatea fără să ceară întregii echipe să alerge spre minge și fără să impună un cronometru netestat.",
+  "problem_being_solved": "După o pierdere de minge, copiii fie ignoră complet mingea, fie aleargă toți spre ea deodată, lăsând drumul spre propria poartă complet neprotejat exact în momentul cel mai vulnerabil.",
+  "information_children_must_notice": [
+    "locul exact unde s-a pierdut mingea",
+    "purtătorul advers și drumul lui cel mai scurt spre poartă",
+    "dacă un coleg e deja mai bine plasat pentru a influența purtătorul"
+  ],
+  "decision_children_must_learn": "Să decidă rapid, chiar în momentul pierderii, dacă influențează purtătorul advers sau protejează centrul, în funcție de poziția proprie față de minge și de poartă, nu după un rol fix atribuit dinainte.",
+  "rationales": {
+    "tactical": "Influența imediată și protecția centrului sunt două funcții distincte care trebuie coordonate în primele momente, nu o singură reacție de grup spre minge.",
+    "perceptual": "Copiii trebuie să citească locul pierderii, purtătorul advers, colegii proprii și spațiul din spate, chiar în momentul de șoc al pierderii mingii.",
+    "decisional": "Rolul (influență sau protecție) se stabilește după poziția fiecăruia în momentul pierderii, nu după o regulă fixă sau un cronometru numărat.",
+    "cognitive": "Aplicarea deciziei deja exersate static (EX-0016-EX-0020) la un declanșator real, dinamic (pierderea mingii), respectă progresia de la simplu la complex.",
+    "psychological": "Copilul care nu ajunge primul la minge nu e etichetat lent — poate fi cel care a protejat corect centrul.",
+    "technical": "Orientarea rapidă a corpului și primul pas de recuperare a poziției susțin ambele roluri, fără o cerință tehnică nouă.",
+    "social": "Echipa își împarte responsabilitatea fără să aștepte comanda antrenorului la fiecare pierdere reală de minge."
+  },
+  "age_appropriateness": "La 10–11 ani, momentul pierderii e arătat mai întâi dintr-un joc oprit și reluat, apoi lăsat să curgă în joc continuu; grupele 2015 și 2016 rămân împreună, cu reglaj individual al distanței și al clarității semnalului de pierdere.",
+  "possible_misinterpretations": [
+    "Copilul crede că trebuie să alerge mereu spre minge, indiferent de poziția proprie față de ea.",
+    "Copilul care întârzie e perceput ca lipsit de efort, deși poate proteja corect centrul."
+  ],
+  "task_risks": [
+    "Aglomerarea în jurul mingii, dacă regula de separare a rolurilor nu e respectată, poate produce contact necontrolat.",
+    "Teren prea mare pentru efectiv poate elimina orice șansă reală de reorganizare rapidă."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Toată lumea la minge!",
+      "reason": "Anulează protecția centrului și lasă poarta descoperită — respins explicit de principiul canonic."
+    },
+    {
+      "phrase": "Aveți 2 secunde!",
+      "reason": "Impune un cronometru fără bază științifică testată și mută atenția copilului de la joc la numărat."
+    }
+  ],
+  "understanding_check": [
+    "cel mai aproape de minge alege între influență și întârziere fără să fie eliminat imediat",
+    "restul echipei se orientează spre poartă, nu spre minge, în majoritatea pierderilor"
+  ],
+  "response_if_not_understood": [
+    "oprește la aglomerarea în jurul mingii și arată spațiul gol rămas în spate",
+    "simplifică temporar la 2v2 pe spațiu mai mic, apoi revino la 3v3"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Suficient de mare pentru ca protejarea centrului să aibă sens spațial real, dar suficient de mic pentru ca pierderile de minge să fie frecvente în interiorul unui singur set.",
+  "too_small_signs": [
+    "aglomerarea în jurul mingii devine inevitabilă, indiferent de decizie",
+    "coliziuni frecvente la fiecare pierdere de minge"
+  ],
+  "too_large_signs": [
+    "pierderile de minge devin prea rare pentru a exersa decizia de mai multe ori per set",
+    "distanța până la poartă devine irelevantă pentru presiunea reală a deciziei"
+  ],
+  "regression": [
+    "reintroduce o pauză scurtă (1-2 secunde) după fiecare pierdere înainte de a permite reacția, dacă aglomerarea persistă",
+    "reduce la 2v2 pe spațiu mai mic"
+  ],
+  "progression": [
+    "trecere la EX-0022 (coordonare la pierderea mingii sub inferioritate numerică, 4v3)",
+    "elimină orice pauză, lăsând reacția complet la viteza reală a jocului"
+  ],
+  "coach_questions": [
+    {
+      "question": "Ce ai făcut în primele momente după ce ați pierdut mingea?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Cine a protejat centrul de data asta?",
+      "when": "după o pierdere urmată de recuperare rapidă"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Cine e aproape, încetinește. Restul, spre poartă."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ați protejat centrul imediat după pierdere!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "toți cei trei jucători aleargă spre minge imediat după pierdere, indiferent de poziție",
+      "possible_causes": [
+        "reflexul de a recupera imediat mingea rămâne mai puternic decât decizia de a separa rolurile",
+        "nu a fost încă exersată suficient distincția influență-vs-protecție în context dinamic real"
+      ]
+    },
+    {
+      "observation": "niciun jucător nu reacționează la pierdere, mingea rămâne complet neinfluențată",
+      "possible_causes": [
+        "confuzie despre cine e „cel mai aproape” în momentul real al pierderii",
+        "regula de separare a rolurilor a fost interpretată ca pasivitate completă"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "cel puțin un jucător influențează sau întârzie purtătorul advers în cel puțin jumătate din pierderile de minge",
+    "cel puțin un coleg se orientează vizibil spre poartă în același interval, fără comandă verbală"
+  ],
+  "match_transfer": "În meci, echipa identifică autonom cine influențează purtătorul advers și cine protejează centrul după fiecare pierdere de minge, iar tiparul reapare în zone diferite ale terenului, nu doar în sarcina dedicată — transferul spre meciul oficial rămâne neconfirmat fără pilotare reală pe teren.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0020, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0044",
+    "SRC-0045"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.tranzitia-la-pierderea-mingii"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C07"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C11", "COACH-C14"],
+  "related_pedagog_lesson_ids": ["CH-0103"],
+  "related_coach_lesson_ids": ["CH-0407", "CH-0406"],
+  "child_action": "Decide, chiar în momentul pierderii mingii, dacă influențează purtătorul advers sau protejează drumul spre poartă, fără să aștepte comandă și fără să alerge automat spre minge.",
+  "coach_focus": "Observarea secvenței reale de reacție la fiecare pierdere de minge, nu doar rezultatul final al fazei.",
+  "do_not_assume": [
+    "O reacție lentă la pierdere nu înseamnă lipsă de efort — poate fi timpul real necesar pentru a evalua situația.",
+    "Faptul că un copil nu aleargă spre minge nu înseamnă dezinteres — poate fi exact decizia corectă de a proteja centrul."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de aglomerare completă spre minge la fiecare pierdere, observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "O singură pierdere fără nicio reacție organizată.",
+    "Reacție prezentă dar întârziată — se lasă încă o repetiție înainte de a corecta."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul strigă instrucțiuni la fiecare pierdere de minge, în loc să lase echipa să reacționeze autonom.",
+      "why_it_happens": "Presiunea de a preveni imediat un gol posibil, în detrimentul lăsării deciziei reale la copii."
+    }
+  ],
+  "coach_reflection": [
+    "Am lăsat echipa să reacționeze autonom la pierderea mingii, sau am dat comenzi imediate de fiecare dată?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului, regula de separare a rolurilor și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 12/18 jucători și 1-2 antrenori (grupuri de 6, terenuri paralele); la alte efective, se organizează cu grupuri mixte, urmând rotația documentată în capitolul despre organizare și siguranță.",
+  "assessment_ref": "ASM-0002"
+}

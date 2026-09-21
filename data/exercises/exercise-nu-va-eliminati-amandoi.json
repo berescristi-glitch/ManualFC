@@ -1,0 +1,203 @@
+{
+  "id": "EX-0019",
+  "title": "Nu vă eliminați amândoi cu aceeași acțiune",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "avansare",
+  "theme": "apararea-presiune-si-acoperire",
+  "game_moment": "aparare",
+  "primary_objective": "Copiii recunosc momentul în care o singură acțiune a adversarului (o conducere a mingii, o pasă scurtă) ar putea elimina simultan ambii apărători, dacă amândoi reacționează la fel, și își diferențiază reacția pentru ca cel puțin unul să rămână capabil să răspundă.",
+  "observable_behaviours": [
+    "cei doi apărători nu se aruncă simultan la aceeași acțiune a adversarului",
+    "cel puțin un apărător rămâne poziționat pentru a răspunde chiar și după o mișcare surpriză a adversarilor"
+  ],
+  "players": {
+    "total": 4,
+    "in_possession": 2,
+    "defenders": 2,
+    "neutral_players": 0
+  },
+  "numerical_relation": "2v2",
+  "equipment": [
+    "6 conuri de delimitare",
+    "1 poartă mică sau conuri pentru poartă mini",
+    "6-8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 6 },
+    { "item": "poartă mică sau conuri pentru poartă mini", "quantity": 1 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 }
+  ],
+  "field": {
+    "length_m": 16,
+    "width_m": 12,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 10,
+    "format": "seturi de 2 minute de joc continuu, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Adversarii pot folosi o mișcare falsă sau o schimbare bruscă de direcție o dată pe fază, special construită să atragă ambii apărători spre aceeași acțiune.",
+      "why": "Creează exact situația-țintă a exercițiului — testează dacă apărătorii se diferențiază sau se elimină amândoi prin aceeași reacție."
+    },
+    {
+      "rule": "Dacă ambii apărători sunt eliminați prin aceeași acțiune, faza se oprește imediat și se reia, fără gol — nu se continuă jocul dezechilibrat.",
+      "why": "Face vizibil costul dublajului orb fără a transforma greșeala într-o pedeapsă disproporționată (gol încasat), păstrând accentul pe decizie, nu pe rezultat."
+    }
+  ],
+  "step_by_step": [
+    "Patru jucători: doi adversari, doi apărători, o poartă mică.",
+    "Adversarii încearcă cel puțin o dată pe fază o mișcare construită să atragă ambii apărători spre aceeași acțiune.",
+    "Apărătorii trebuie să recunoască momentul și să se diferențieze — unul reacționează, celălalt rămâne poziționat.",
+    "Dacă ambii sunt eliminați simultan, faza se oprește și se reia fără gol.",
+    "Rotație: schimb de roluri la fiecare 2 minute."
+  ],
+  "rotation": "Rotație de roluri (adversari/apărători) la fiecare 2 minute.",
+  "transition": "Trecere directă la EX-0020 fără pauză de reorganizare — grup nou de 5 pentru coordonarea la trei apărători.",
+  "child_message": "Nu vă lăsați eliminați amândoi de aceeași mișcare — dacă el reacționează, tu rămâi pe loc.",
+  "why_this_message": "Reperul rămâne evenimentul (mișcarea adversarului), nu o poziție fixă — extensie directă a principiului Presiune și acoperire la o situație în care greșeala tipică e reacția simultană, nu absența acoperirii.",
+  "problem_being_solved": "Cei doi apărători reacționează amândoi la aceeași mișcare a adversarului (o fentă, o schimbare de direcție), fiind eliminați simultan și lăsând drumul complet liber, deși unul dintre ei ar fi putut rămâne poziționat pentru acoperire.",
+  "information_children_must_notice": [
+    "dacă colegul apărător a reacționat deja la mișcarea adversarului",
+    "direcția reală a mingii, nu doar mișcarea corpului adversarului",
+    "spațiul rămas complet neprotejat dacă amândoi reacționează identic"
+  ],
+  "decision_children_must_learn": "Să decidă, în funcție de reacția colegului, dacă rămâne poziționat pentru acoperire sau reacționează la mișcarea adversarului — nu ambii simultan.",
+  "rationales": {
+    "tactical": "O echipă care se lasă eliminată de aceeași acțiune de două ori pierde orice structură defensivă — diferențierea reacției păstrează cel puțin o linie de apărare.",
+    "perceptual": "Copilul trebuie să citească nu doar adversarul, ci și reacția propriului coleg, o informație socială suplimentară față de EX-0017-EX-0018.",
+    "decisional": "Decizia „reacționez sau rămân” depinde explicit de ce a făcut deja colegul, nu de mișcarea adversarului izolat.",
+    "cognitive": "Introducerea unei mișcări false deliberate testează dacă relația presiune-acoperire rezistă la o presiune perceptivă mai mare, după ce a fost stabilă în condiții simple.",
+    "psychological": "Eliminarea simultană inițială e informație despre exercițiu, nu despre capacitatea copiilor — se așteaptă eșecuri la primele repetiții.",
+    "technical": "Nu se cere nicio tehnică nouă — accentul rămâne exclusiv pe citirea relației cu colegul.",
+    "social": "Cei doi apărători depind complet unul de celălalt pentru a evita eliminarea simultană — cooperare explicită sub presiune reală."
+  },
+  "age_appropriateness": "La 10–11 ani, mișcarea falsă a adversarilor rămâne simplă și previzibilă la introducere, crescând treptat; grupele 2015 și 2016 rămân împreună, cu reglaj individual al complexității fentei permise.",
+  "possible_misinterpretations": [
+    "Copiii cred că „nu reacționa” înseamnă pasivitate completă, nu o decizie activă de acoperire.",
+    "Un singur copil preia mereu rolul de a rămâne poziționat, fără ca decizia să fie cu adevărat împărțită."
+  ],
+  "task_risks": [
+    "Mișcări false prea complexe pentru nivelul actual pot elimina orice șansă reală de diferențiere.",
+    "Oprirea frecventă a fazei poate întrerupe ritmul jocului dacă regula nu e aplicată consecvent."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Fiți atenți amândoi!",
+      "reason": "Instrucțiune fără informație despre CE anume trebuie să facă diferit fiecare apărător."
+    },
+    {
+      "phrase": "De ce ați căzut amândoi în cursă?",
+      "reason": "Tratează o greșeală așteptată la introducerea acestui concept ca eșec personal, nu ca informație de exercițiu."
+    }
+  ],
+  "understanding_check": [
+    "cel puțin un apărător rămâne poziționat în majoritatea repetițiilor cu mișcare falsă",
+    "copiii pot arăta, după o eliminare simultană, ce ar fi trebuit să facă diferit"
+  ],
+  "response_if_not_understood": [
+    "reconstituie exact aceeași mișcare falsă la viteză redusă și arată unde ar fi trebuit să rămână al doilea apărător",
+    "revino temporar la EX-0018 (fără mișcări false) pentru a reconfirma coordonarea de bază"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Identică cu EX-0018, deliberat, pentru ca singura variabilă nouă introdusă să fie mișcarea falsă a adversarilor, nu spațiul.",
+  "too_small_signs": [
+    "mișcarea falsă nu are loc să se desfășoare, devenind confuză pentru toți jucătorii",
+    "coliziuni frecvente la eliminarea simultană"
+  ],
+  "too_large_signs": [
+    "mișcarea falsă devine ușor de anticipat din depărtare, eliminând presiunea reală de decizie",
+    "spațiul mare permite recuperarea fără nicio coordonare reală între apărători"
+  ],
+  "regression": [
+    "adversarii anunță verbal, o dată, ce mișcare falsă vor încerca, pentru a izola decizia de recunoaștere",
+    "revino la EX-0018 (fără mișcări false) dacă eliminarea simultană persistă"
+  ],
+  "progression": [
+    "trecere la EX-0020 (coordonare la trei apărători, 3v2)",
+    "elimină anunțarea prealabilă, lăsând mișcarea falsă complet surpriză"
+  ],
+  "coach_questions": [
+    {
+      "question": "Cine a reacționat primul, și ce a făcut celălalt?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ce ați fi putut face diferit ca să nu fiți eliminați amândoi?",
+      "when": "după o eliminare simultană"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Dacă el s-a mișcat deja, tu rămâi — nu reacționați amândoi la fel."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ai rămas poziționat exact când colegul tău a reacționat!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "ambii apărători reacționează simultan la aceeași mișcare falsă, fiind eliminați împreună",
+      "possible_causes": [
+        "nu au perceput încă reacția colegului ca informație relevantă",
+        "mișcarea falsă a fost suficient de convingătoare încât ambii au reacționat instinctiv"
+      ]
+    },
+    {
+      "observation": "unul dintre apărători rămâne mereu pasiv, indiferent de situație, nu doar când colegul reacționează",
+      "possible_causes": [
+        "a confundat rolul de acoperire cu pasivitatea generală",
+        "nu se simte suficient de încrezător pentru a reacționa vreodată"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "cel puțin un apărător rămâne poziționat în cel puțin jumătate din repetițiile cu mișcare falsă",
+    "copiii pot explica, într-o propoziție, cum au decis cine reacționează și cine rămâne"
+  ],
+  "match_transfer": "În meci, cei doi apărători evită să fie eliminați simultan de aceeași acțiune a adversarului, menținând cel puțin o linie de răspuns activă, indiferent de fenta sau schimbarea de direcție încercată.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0018, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0042",
+    "SRC-0043",
+    "SRC-0037"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.presiune-si-acoperire", "principle.protejarea-centrului"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C11"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C11", "COACH-C13"],
+  "related_pedagog_lesson_ids": ["CH-0103"],
+  "related_coach_lesson_ids": ["CH-0404", "CH-0408"],
+  "child_action": "Decide, în funcție de reacția colegului apărător, dacă răspunde la mișcarea adversarului sau rămâne poziționat pentru acoperire, evitând eliminarea simultană a amândurora.",
+  "coach_focus": "Observarea diferențierii reacției între cei doi apărători sub o mișcare falsă deliberată, nu doar rezultatul final al fazei.",
+  "do_not_assume": [
+    "O eliminare simultană la prima repetiție nu înseamnă lipsă de înțelegere — conceptul e nou și cere timp de recunoaștere.",
+    "Faptul că un apărător nu reacționează nu înseamnă pasivitate — poate fi exact decizia corectă de a rămâne pentru acoperire."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de eliminare simultană la aceeași mișcare falsă, observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "O singură eliminare simultană, la introducerea conceptului.",
+    "Diferențiere prezentă dar cu întârziere vizibilă — se lasă încă o repetiție înainte de a corecta."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul tratează prima eliminare simultană ca eșec de atenție, nu ca informație despre un concept nou.",
+      "why_it_happens": "Presiunea de a vedea progres imediat, fără a recunoaște dificultatea reală a conceptului la prima expunere."
+    }
+  ],
+  "coach_reflection": [
+    "Am tratat prima eliminare simultană ca informație despre exercițiu, sau ca o greșeală de corectat imediat?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului, regula de oprire a fazei și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori (rotație de roluri la fiecare 2 minute, deja specificată în acest fișier).",
+  "assessment_ref": "ASM-0002"
+}

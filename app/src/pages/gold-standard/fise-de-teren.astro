@@ -4,7 +4,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import FieldCard from '../../components/FieldCard.astro';
 import { getGoldStandardExercises } from '../../lib/content-bridge';
 
-const exercises = getGoldStandardExercises();
+const exercises = getGoldStandardExercises().filter((ex) => ex.theme === 'sprijin-si-unghi-de-pasa');
 ---
 <BaseLayout
   title="Fișe de teren — Modul complet"

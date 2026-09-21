@@ -66,13 +66,28 @@ import gsExercise12Raw from '../../../data/exercises/exercise-prima-privire-dupa
 import gsExercise13Raw from '../../../data/exercises/exercise-sprijin-pe-culoar-lateral.json';
 import gsExercise14Raw from '../../../data/exercises/exercise-joc-mic-3v3-doua-porti.json';
 import gsExercise15Raw from '../../../data/exercises/exercise-joc-mic-5v5-zona-de-finalizare.json';
+import gsExercise16Raw from '../../../data/exercises/exercise-incetineste-nu-ataca-mingea.json';
+import gsExercise17Raw from '../../../data/exercises/exercise-unul-incetineste-celalalt-protejeaza.json';
+import gsExercise18Raw from '../../../data/exercises/exercise-schimba-rolul-cand-mingea-se-muta.json';
+import gsExercise19Raw from '../../../data/exercises/exercise-nu-va-eliminati-amandoi.json';
+import gsExercise20Raw from '../../../data/exercises/exercise-al-doilea-aparator-acopera-drumul.json';
+import gsExercise21Raw from '../../../data/exercises/exercise-primele-doua-secunde-dupa-pierdere.json';
+import gsExercise22Raw from '../../../data/exercises/exercise-cine-e-aproape-cine-protejeaza-centrul.json';
+import gsExercise23Raw from '../../../data/exercises/exercise-recupereaza-forma-nu-doar-mingea.json';
+import gsExercise24Raw from '../../../data/exercises/exercise-joc-mic-4v4-observare-defensiva.json';
+import gsExercise25Raw from '../../../data/exercises/exercise-joc-mic-6v6-zona-de-protejat.json';
 import gsSession1Raw from '../../../data/sessions/session-introducere.json';
 import gsSession2Raw from '../../../data/sessions/session-coordonare-si-transfer.json';
 import gsSession3Raw from '../../../data/sessions/session-sprijin-din-spate-si-combinatie.json';
 import gsSession4Raw from '../../../data/sessions/session-al-treilea-jucator-si-presiune.json';
 import gsSession5Raw from '../../../data/sessions/session-recuperare-si-sprijin-lateral.json';
 import gsSession6Raw from '../../../data/sessions/session-transfer-complet-jocuri-variate.json';
-import gsAssessmentRaw from '../../../data/assessments/assessment-sprijin-si-unghi-de-pasa.json';
+import gsSession7Raw from '../../../data/sessions/session-incetinire-si-schimb-de-rol.json';
+import gsSession8Raw from '../../../data/sessions/session-coordonare-defensiva-2v2.json';
+import gsSession9Raw from '../../../data/sessions/session-tranzitie-negativa-si-echipa.json';
+import gsSession10Raw from '../../../data/sessions/session-transfer-defensiv-complet.json';
+import gsAssessment1Raw from '../../../data/assessments/assessment-sprijin-si-unghi-de-pasa.json';
+import gsAssessment2Raw from '../../../data/assessments/assessment-apararea-presiune-si-acoperire.json';
 
 /**
  * Content Bridge 2.0 — Puntea de citire fail-closed complet tipizată pentru datele canonice ale proiectului.
@@ -576,7 +591,9 @@ function parseGoldStandardAssessment(raw: any, sourceContext: string): GoldStand
 
 let cachedGoldStandardExercises: GoldStandardExercise[] | null = null;
 let cachedGoldStandardSessions: GoldStandardSession[] | null = null;
-let cachedGoldStandardAssessment: GoldStandardAssessment | null = null;
+let cachedGoldStandardAssessments: GoldStandardAssessment[] | null = null;
+
+const DEFAULT_ASSESSMENT_ID = 'ASM-0001';
 
 export function getGoldStandardExercises(): GoldStandardExercise[] {
   if (!cachedGoldStandardExercises) {
@@ -596,6 +613,16 @@ export function getGoldStandardExercises(): GoldStandardExercise[] {
       parseGoldStandardExercise(gsExercise13Raw, 'exercise-sprijin-pe-culoar-lateral.json'),
       parseGoldStandardExercise(gsExercise14Raw, 'exercise-joc-mic-3v3-doua-porti.json'),
       parseGoldStandardExercise(gsExercise15Raw, 'exercise-joc-mic-5v5-zona-de-finalizare.json'),
+      parseGoldStandardExercise(gsExercise16Raw, 'exercise-incetineste-nu-ataca-mingea.json'),
+      parseGoldStandardExercise(gsExercise17Raw, 'exercise-unul-incetineste-celalalt-protejeaza.json'),
+      parseGoldStandardExercise(gsExercise18Raw, 'exercise-schimba-rolul-cand-mingea-se-muta.json'),
+      parseGoldStandardExercise(gsExercise19Raw, 'exercise-nu-va-eliminati-amandoi.json'),
+      parseGoldStandardExercise(gsExercise20Raw, 'exercise-al-doilea-aparator-acopera-drumul.json'),
+      parseGoldStandardExercise(gsExercise21Raw, 'exercise-primele-doua-secunde-dupa-pierdere.json'),
+      parseGoldStandardExercise(gsExercise22Raw, 'exercise-cine-e-aproape-cine-protejeaza-centrul.json'),
+      parseGoldStandardExercise(gsExercise23Raw, 'exercise-recupereaza-forma-nu-doar-mingea.json'),
+      parseGoldStandardExercise(gsExercise24Raw, 'exercise-joc-mic-4v4-observare-defensiva.json'),
+      parseGoldStandardExercise(gsExercise25Raw, 'exercise-joc-mic-6v6-zona-de-protejat.json'),
     ];
   }
   return cachedGoldStandardExercises;
@@ -618,6 +645,10 @@ export function getGoldStandardSessions(): GoldStandardSession[] {
       parseGoldStandardSession(gsSession4Raw, 'session-al-treilea-jucator-si-presiune.json'),
       parseGoldStandardSession(gsSession5Raw, 'session-recuperare-si-sprijin-lateral.json'),
       parseGoldStandardSession(gsSession6Raw, 'session-transfer-complet-jocuri-variate.json'),
+      parseGoldStandardSession(gsSession7Raw, 'session-incetinire-si-schimb-de-rol.json'),
+      parseGoldStandardSession(gsSession8Raw, 'session-coordonare-defensiva-2v2.json'),
+      parseGoldStandardSession(gsSession9Raw, 'session-tranzitie-negativa-si-echipa.json'),
+      parseGoldStandardSession(gsSession10Raw, 'session-transfer-defensiv-complet.json'),
     ];
   }
   return cachedGoldStandardSessions;
@@ -642,15 +673,26 @@ export function getGoldStandardSessionExercises(session: GoldStandardSession): G
   });
 }
 
-export function getGoldStandardAssessment(): GoldStandardAssessment {
-  if (!cachedGoldStandardAssessment) {
-    cachedGoldStandardAssessment = parseGoldStandardAssessment(gsAssessmentRaw, 'assessment-sprijin-si-unghi-de-pasa.json');
+export function getGoldStandardAssessments(): GoldStandardAssessment[] {
+  if (!cachedGoldStandardAssessments) {
+    cachedGoldStandardAssessments = [
+      parseGoldStandardAssessment(gsAssessment1Raw, 'assessment-sprijin-si-unghi-de-pasa.json'),
+      parseGoldStandardAssessment(gsAssessment2Raw, 'assessment-apararea-presiune-si-acoperire.json'),
+    ];
   }
-  return cachedGoldStandardAssessment;
+  return cachedGoldStandardAssessments;
 }
 
-export function getGoldStandardAssessmentPrinciples(): PrincipleEntity[] {
-  const assessment = getGoldStandardAssessment();
+export function getGoldStandardAssessment(id: string = DEFAULT_ASSESSMENT_ID): GoldStandardAssessment {
+  const assessment = getGoldStandardAssessments().find(a => a.id === id);
+  if (!assessment) {
+    throw new Error(`[FAIL_CLOSED] [Gold Standard] Evaluarea "${id}" nu a fost găsită.`);
+  }
+  return assessment;
+}
+
+export function getGoldStandardAssessmentPrinciples(id: string = DEFAULT_ASSESSMENT_ID): PrincipleEntity[] {
+  const assessment = getGoldStandardAssessment(id);
   return assessment.principle_ids.map(pId => {
     const target = getAllPrinciples().find(p => p.id === pId);
     if (!target) {

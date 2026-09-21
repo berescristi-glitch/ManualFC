@@ -1,0 +1,202 @@
+{
+  "id": "EX-0023",
+  "title": "Recuperează forma, nu doar mingea",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "avansare",
+  "theme": "apararea-presiune-si-acoperire",
+  "game_moment": "aparare",
+  "primary_objective": "Copiii combină toate deciziile exersate izolat în arc — încetinire individuală, relația presiune-acoperire, protejarea drumului la inferioritate numerică, reacția la pierderea mingii — într-un joc 4v4 complet, unde o primă linie de apărare poate fi depășită și echipa trebuie să se reorganizeze, nu doar să continue duelul individual pierdut.",
+  "observable_behaviours": [
+    "după ce un adversar depășește un apărător, restul echipei se reorganizează spre protejarea centrului, nu doar spre urmărirea individuală",
+    "cel puțin doi jucători mențin o relație de presiune-acoperire vizibilă în orice moment al fazei defensive"
+  ],
+  "players": {
+    "total": 8,
+    "in_possession": 4,
+    "defenders": 4,
+    "neutral_players": 0
+  },
+  "numerical_relation": "4v4",
+  "equipment": [
+    "8 conuri de delimitare",
+    "2 porți mici sau conuri pentru porți mini",
+    "10 mingi de rezervă",
+    "veste de marcaj pentru două culori de echipă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 8 },
+    { "item": "porți mici sau conuri pentru porți mini", "quantity": 2 },
+    { "item": "mingi de rezervă", "quantity": 10 },
+    { "item": "veste de marcaj", "quantity": 4 }
+  ],
+  "field": {
+    "length_m": 24,
+    "width_m": 18,
+    "safety_margin_m": 3
+  },
+  "duration": {
+    "total_minutes": 12,
+    "format": "2 reprize de 6 minute, pauză scurtă între reprize"
+  },
+  "rules": [
+    {
+      "rule": "Jocul e liber 4v4, fără constrângeri artificiale suplimentare — testul e dacă deciziile exersate izolat apar fără reper extern.",
+      "why": "Diferența față de exercițiile anterioare e chiar absența constrângerilor — testul e dacă principiile apar fără ele, nu cu ele, exact ca la capstone-urile de transfer ale primei teme."
+    },
+    {
+      "rule": "Fără comenzi tactice de pe margine în timpul fazei active — antrenorul observă tăcut, notând dacă apare reorganizarea după o depășire.",
+      "why": "Testează transferul autonom al comportamentelor exersate izolat, nu execuția ghidată verbal."
+    }
+  ],
+  "step_by_step": [
+    "Opt jucători, două echipe de 4, două porți mici la capetele opuse ale terenului.",
+    "Joc liber 4v4, fără reguli suplimentare față de un meci obișnuit la această dimensiune.",
+    "Antrenorul observă tăcut, notând dacă apar comportamentele exersate izolat în exercițiile anterioare.",
+    "La pauza dintre reprize, o singură întrebare de reflecție, apoi continuarea jocului.",
+    "Rotație: echipele rămân aceleași pe durata celor două reprize, cu schimb de porți la pauză."
+  ],
+  "rotation": "Schimb de porți la pauza dintre cele două reprize de 6 minute; fără rotație de jucători în interiorul jocului.",
+  "transition": "Trecere directă la EX-0024 fără pauză de reorganizare — primul joc de transfer complet, cu observare defensivă explicită.",
+  "child_message": "Jucați ca de obicei — folosiți ce ați exersat dacă vă ajută!",
+  "why_this_message": "Aceeași formulare non-directivă folosită la capstone-urile de transfer ale primei teme — nu numește un comportament țintă specific, lăsând transferul să apară autonom sau nu, ca informație reală.",
+  "problem_being_solved": "Când un apărător e depășit într-un duel individual, restul echipei continuă adesea să reacționeze doar la acel duel pierdut, în loc să se reorganizeze imediat spre protejarea centrului — exact momentul în care toate deciziile exersate izolat (încetinire, presiune-acoperire, protejarea drumului, reacția la pierdere) trebuie să apară combinate.",
+  "information_children_must_notice": [
+    "aceleași informații ca în orice fază defensivă: poziția mingii, a adversarilor, a colegilor și a porții proprii",
+    "momentul exact în care un coleg a fost depășit și centrul a rămas descoperit"
+  ],
+  "decision_children_must_learn": "Să aplice autonom, fără reper extern, toate deciziile defensive exersate izolat — încetinire, presiune-acoperire, protejarea drumului, reacția la pierdere — în funcție de ce vede în joc, nu de o comandă.",
+  "rationales": {
+    "tactical": "Un joc reprezentativ complet la 4v4 verifică dacă toate cele patru decizii exersate izolat (EX-0016-EX-0022) apar combinate, nu doar una câte una.",
+    "perceptual": "Fără indicii externe, copilul trebuie să citească complet situația defensivă singur, inclusiv momentul unei depășiri și nevoia de reorganizare.",
+    "decisional": "Toate deciziile defensive exersate separat trebuie combinate în timp real, fără ordine prestabilită.",
+    "cognitive": "Jocul liber complet, fără nicio constrângere suplimentară, e cea mai grea sarcină cognitivă din arcul defensiv — motiv pentru care rămâne ultimul pas înainte de jocurile de transfer.",
+    "psychological": "Absența unui comportament țintă exersat nu e un eșec al copilului — e informație reală despre ce mai are nevoie de exersare izolată.",
+    "technical": "Toate elementele tehnice exersate (frânare controlată, poziționare pe drum, orientare rapidă) sunt disponibile, dar niciunul nu e cerut explicit.",
+    "social": "Coechipierii trebuie să se reorganizeze complet autonom după o depășire, exact ca într-un meci real."
+  },
+  "age_appropriateness": "La 10–11 ani, jocul liber complet cu reorganizare după o depășire e ultima treaptă a progresiei defensive, introdusă doar după stabilizarea comportamentelor izolate; grupele 2015 și 2016 rămân împreună, cu reglaj individual al dimensiunii terenului dacă reorganizarea nu apare deloc.",
+  "possible_misinterpretations": [
+    "Antrenorul așteaptă ca toate comportamentele exersate să apară simultan, nu doar unele.",
+    "Absența reorganizării după o depășire e interpretată ca eșec al copilului, nu ca informație despre exercițiile care mai au nevoie de repetare."
+  ],
+  "task_risks": [
+    "Teren prea mic pentru 4v4 schimbă natura jocului reprezentativ mai mult decât la exercițiile izolate.",
+    "Porți fără portar pot crea ambiguitate în finalizare — se acceptă gol la atingerea porții mici, fără portar, ca variantă simplificată."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Reorganizați-vă acum!",
+      "reason": "Transformă testul de transfer autonom într-o execuție ghidată verbal, anulând exact ce se testează."
+    },
+    {
+      "phrase": "Nu ați folosit nimic din ce am exersat.",
+      "reason": "Judecă rezultatul ca eșec personal, nu ca informație validă despre nevoia de mai multă repetare izolată."
+    }
+  ],
+  "understanding_check": [
+    "cel puțin o reorganizare vizibilă apare după o depășire, fără comandă, în cel puțin una din cele două reprize",
+    "relația presiune-acoperire rămâne vizibilă în majoritatea fazelor defensive"
+  ],
+  "response_if_not_understood": [
+    "notează ca informație validă absența reorganizării, fără a întrerupe jocul pentru a preda din nou",
+    "revino la exercițiul izolat relevant (EX-0016-EX-0022) în ședința următoare, nu în mijlocul jocului"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Diferită de exercițiile izolate anterioare, pentru ca relația numerică 4v4 să păstreze un raport spațiu/jucător comparabil cu jocurile de transfer ale primei teme.",
+  "too_small_signs": [
+    "jocul devine haotic, fără spațiu real pentru decizii defensive coordonate",
+    "coliziuni frecvente între jucători"
+  ],
+  "too_large_signs": [
+    "jocul devine prea rar în contact, cu puține ocazii reale de a exersa reorganizarea defensivă",
+    "duelurile individuale domină, fără presiune reală asupra restului echipei"
+  ],
+  "regression": [
+    "reintroduce temporar un indiciu extern (semnal verbal la fiecare depășire) dacă reorganizarea nu apare deloc după mai multe repetiții",
+    "reduce ușor terenul pentru mai multe faze defensive reale"
+  ],
+  "progression": [
+    "trecere la EX-0024 (joc mic de transfer 4v4 cu observare defensivă explicită)",
+    "elimină porțile mici, folosind doar linia de fund ca țintă, pentru o formă și mai apropiată de jocul complet"
+  ],
+  "coach_questions": [
+    {
+      "question": "Ce ați făcut când colegul vostru a fost depășit?",
+      "when": "la pauza dintre reprize, nu în timpul jocului"
+    },
+    {
+      "question": "Ați recunoscut vreun moment din exercițiile anterioare în acest joc?",
+      "when": "după reprize cu transfer vizibil"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Fără indicații acum — doar joc."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo pentru intensitate — am notat ce am văzut, discutăm la pauză."
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "niciun comportament exersat izolat nu apare vizibil în cele două reprize",
+      "possible_causes": [
+        "comportamentele izolate nu erau încă suficient de stabile înainte de acest test combinat",
+        "jocul liber complet schimbă suficient contextul încât transferul nu apare imediat"
+      ]
+    },
+    {
+      "observation": "echipa continuă să reacționeze doar la duelul individual pierdut, fără nicio reorganizare a restului",
+      "possible_causes": [
+        "atenția rămâne fixată pe duelul vizibil, nu pe spațiul rămas descoperit",
+        "reorganizarea rapidă nu a fost încă exersată la această combinație de decizii"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "cel puțin o reorganizare autonomă apare după o depășire, fără comandă de pe margine, în cel puțin una din reprize",
+    "copiii pot numi, la reflecție, o legătură reală între joc și un exercițiu anterior"
+  ],
+  "match_transfer": "Acest exercițiu testează dacă toate deciziile defensive exersate izolat — încetinire, presiune-acoperire, protejarea drumului, reacția la pierdere — apar combinate într-un joc reprezentativ complet; transferul spre meciul oficial 7v7/9v9 rămâne neconfirmat fără o pilotare reală pe teren.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0022, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0042",
+    "SRC-0044"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.protejarea-centrului", "principle.presiune-si-acoperire"],
+  "pedagog_competency_ids": ["PED-C07", "PED-C10"],
+  "coach_competency_ids": ["COACH-C03", "COACH-C14"],
+  "related_pedagog_lesson_ids": ["CH-0105"],
+  "related_coach_lesson_ids": ["CH-0406"],
+  "child_action": "Joacă liber, aplicând autonom deciziile defensive exersate izolat — mai ales reorganizarea rapidă după ce un coleg e depășit — fără reper extern sau comandă.",
+  "coach_focus": "Non-intervenție verbală completă în timpul fazei active — observare tăcută, notând dacă apare reorganizarea după o depășire.",
+  "do_not_assume": [
+    "Absența unei reorganizări vizibile nu înseamnă că nu a fost învățată — poate încă avea nevoie de context izolat pentru a apărea stabil.",
+    "O depășire individuală nu e un eșec dacă echipa se reorganizează corect imediat după."
+  ],
+  "when_to_intervene": [
+    "Doar pentru siguranță fizică sau comportament nesportiv — niciodată pentru conținut tactic în timpul fazei active."
+  ],
+  "when_not_to_intervene": [
+    "Comportamentul țintă nu apare deloc într-o repriză — se notează ca informație validă, nu se întrerupe jocul pentru a preda din nou."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul intervine verbal de pe margine de îndată ce vede o depășire neurmată de reorganizare.",
+      "why_it_happens": "Dorința de a corecta imediat concurează cu scopul explicit al exercițiului — testarea transferului autonom, nu execuția ghidată."
+    }
+  ],
+  "coach_reflection": [
+    "Am rezistat impulsului de a interveni tactic în timpul jocului, sau am comentat de pe margine?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului și formatul reprizelor sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 16/18 jucători și 1-2 antrenori (grupuri de 8, terenuri paralele); la alte efective, se organizează cu grupuri mixte, urmând rotația documentată în capitolul despre organizare și siguranță.",
+  "assessment_ref": "ASM-0002"
+}

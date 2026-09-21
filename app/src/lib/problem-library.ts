@@ -1,5 +1,5 @@
 import libraryRaw from '../../../data/problems/problem-library.json';
-import { getAllPrinciples, getGoldStandardAssessment, getGoldStandardExercises, getGoldStandardSessions } from './content-bridge';
+import { getAllPrinciples, getGoldStandardAssessments, getGoldStandardExercises, getGoldStandardSessions } from './content-bridge';
 
 export type ProblemEvidenceState = 'VERIFIED_FACT'|'CONSENSUS'|'STUDY_RESULT'|'PRACTICE_HEURISTIC'|'HYPOTHESIS'|'NEEDS_RESEARCH'|'NEEDS_FIELD_VALIDATION';
 export type CanonicalProblem = (typeof libraryRaw.problems)[number];
@@ -17,7 +17,7 @@ export function validateProblemGraph(): true {
   const principleIds = new Set<string>(getAllPrinciples().filter(item => !item.development_fixture).map(item => item.id));
   const exerciseIds = new Set(getGoldStandardExercises().map(item => item.id));
   const sessionIds = new Set(getGoldStandardSessions().map(item => item.id));
-  const assessmentIds = new Set([getGoldStandardAssessment().id]);
+  const assessmentIds = new Set(getGoldStandardAssessments().map(item => item.id));
   const ids = new Set<string>();
   const relationIds = new Set<string>();
   for (const problem of problems) {

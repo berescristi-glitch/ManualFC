@@ -1,0 +1,204 @@
+{
+  "id": "SES-0010",
+  "title": "Presiune și acoperire — transfer defensiv complet în joc reprezentativ",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "duration_min": 75,
+  "primary_objective": "Testează dacă întregul lanț defensiv exersat izolat în SES-0007, SES-0008 și SES-0009 (frânare controlată, schimb de rol, protejarea drumului, reacția de tranziție, protejarea centrului în echipă) apare autonom în joc mic reprezentativ, mai întâi la 4v4 cu observare defensivă (EX-0024), apoi la 6v6 cu o zonă centrală de protejat (EX-0025), fără constrângeri artificiale sau comenzi de pe margine.",
+  "observable_behaviours": [
+    "cel puțin un comportament defensiv exersat izolat apare autonom în jocul de 4v4",
+    "echipa protejează zona centrală ca prioritate colectivă în jocul de 6v6, fără comandă"
+  ],
+  "players_range": {
+    "min": 8,
+    "max": 18,
+    "note": "EX-0024 cere grupuri de 8 (4v4); EX-0025 cere grupuri de 12 (6v6) — la efective mai mici de 12, EX-0025 se joacă cu un singur teren complet, fără paralelizare; la efective mai mari, se formează mai multe terenuri simultan. Vezi configuratorul de grup pentru numărul exact de grupe, spațiu și material la fiecare efectiv de la 8 la 18."
+  },
+  "operational_contingencies": [
+    {
+      "scenario": "3 copii ajung după ce ședința a început",
+      "guidance": "PRACTICE_HEURISTIC: la EX-0024, intră la pauza dintre reprize. La EX-0025, dacă efectivul total scade sub 12, se joacă temporar 5v5 sau 5v6 până sosesc restul copiilor — zona centrală de protejat rămâne aceeași, doar numărul de jucători pe teren variază."
+    },
+    {
+      "scenario": "Terenul disponibil e mai mic decât dimensiunea canonică (26×20m pentru EX-0024, 40×30m pentru EX-0025)",
+      "guidance": "PRACTICE_HEURISTIC: pentru EX-0025 în special, un teren prea mic pentru 6v6 schimbă natura jocului reprezentativ mai mult decât la exercițiile izolate. Dacă spațiul complet nu e disponibil, redu numărul de terenuri paralele, nu comprima terenul unui singur joc sub pragul la care mișcarea 6v6 mai are sens."
+    },
+    {
+      "scenario": "Veste de marcaj sau porți insuficiente",
+      "guidance": "PRACTICE_HEURISTIC: fără veste suficiente pentru două culori, folosește convenția tricou-pe-umăr. Fără porți, conurile mari marchează porți mini."
+    },
+    {
+      "scenario": "Comportamentul defensiv țintă nu apare deloc într-o repriză",
+      "guidance": "PRACTICE_HEURISTIC: notează asta ca informație validă pentru ASM-0002, nu se întrerupe jocul pentru a preda din nou. Ședința rămâne planificată complet — absența transferului e o observație despre stadiul de învățare al grupului, nu un eșec al ședinței."
+    },
+    {
+      "scenario": "Tranziția de la EX-0024 (26×20m) la EX-0025 (40×30m) durează prea mult",
+      "guidance": "PRACTICE_HEURISTIC: dacă spațiul o permite, marchează dinainte conturul complet de 40×30m și folosește doar o parte din el pentru EX-0024. Dacă tranzițiile tot depășesc timpul alocat, scurtează întâi ultimele minute libere din segmentul de încheiere, niciodată timpul dedicat reflecției ghidate."
+    }
+  ],
+  "duration_variant_60min": {
+    "total_minutes": 60,
+    "policy_note": "Variantă de 60 minute — PRACTICE_HEURISTIC, o adaptare operațională, nu o durată validată de cercetare. Structura de 2 reprize la EX-0025 rămâne intactă (doar mai scurtă); reflecția finală păstrează bucla completă PROBLEMĂ→CONCEPT→EXERCIȚIU→TRANSFER.",
+    "segments": [
+      { "segment_index": 0, "start_min": 0, "end_min": 8, "reduction_note": "Redus cu 2 min: reamintirea rămâne verbală și scurtă; se renunță la timpul de așteptare pentru răspunsuri multiple." },
+      { "segment_index": 1, "start_min": 8, "end_min": 26, "reduction_note": "Redus cu 4 min, păstrând ambele reprize la EX-0024 — tăierea unei reprize ar elimina jumătate din oportunitatea de a observa transferul." },
+      { "segment_index": 2, "start_min": 26, "end_min": 48, "reduction_note": "Redus cu 5 min, păstrând ambele reprize la EX-0025 — fereastra pentru transfer spontan la nivel de echipă e doar mai mică, nu eliminată." },
+      { "segment_index": 3, "start_min": 48, "end_min": 60, "reduction_note": "Redus cu 4 min: bucla PROBLEMĂ→CONCEPT→EXERCIȚIU→TRANSFER rămâne completă în întrebările de reflecție; se renunță din timpul liber final pentru echipament." }
+    ]
+  },
+  "equipment": [
+    "conuri de delimitare pentru toate stațiile",
+    "mingi de rezervă",
+    "veste de marcaj pentru două culori de echipă",
+    "porți mici sau porți mari cu portar opțional pentru EX-0024 și EX-0025",
+    "conuri pentru marcarea zonei centrale de protejat la EX-0025"
+  ],
+  "surface_plan": {
+    "layout": "Teren de 26x20m pentru EX-0024 (4v4), teren de 40x30m cu zonă centrală marcată pentru EX-0025 (6v6), amplasate cu spațiu de siguranță de minimum 3m.",
+    "rotation": "Schimbare de echipe/porți la pauza dintre reprize, la ambele exerciții."
+  },
+  "segments": [
+    {
+      "start_min": 0,
+      "end_min": 10,
+      "title": "Încălzire cu reamintire scurtă",
+      "exercise_ids": [],
+      "coach_message": "Cine își amintește ce am exersat despre reacția după pierderea mingii, data trecută?",
+      "why_now": "Rutină de siguranță combinată cu o reamintire scurtă, nu o reluare completă a SES-0009 — sesiunea anterioară a consolidat deja reacția de tranziție și protejarea centrului.",
+      "methodological_rationale": "Reamintirea scurtă, nu re-predarea, respectă timpul disponibil real al unei ședințe de club.",
+      "observation_focus": [
+        "participarea activă la reamintirea verbală, nu doar execuția fizică"
+      ],
+      "intervention_criteria": [
+        "dacă niciun copil nu-și amintește elementele de bază, se inserează o repetiție scurtă de EX-0021 înainte de a continua"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil răspunde parțial sau ezitant la reamintire, nu se corectează imediat — se lasă și alți copii să completeze răspunsul înainte de a interveni."
+      ],
+      "coach_focus": "Reamintire scurtă, nu re-predare completă — verifică participarea activă, nu doar execuția fizică.",
+      "verification_method": "Cel puțin un copil poate numi verbal elementul de bază exersat în SES-0009 înainte de a continua.",
+      "transition_logistics": "Formarea echipelor de 4 pentru EX-0024."
+    },
+    {
+      "start_min": 10,
+      "end_min": 30,
+      "title": "EX-0024 — Joc mic 4v4 cu observare defensivă",
+      "exercise_ids": [
+        "EX-0024"
+      ],
+      "coach_message": "Jucați ca de obicei — folosiți ce ați exersat dacă vă ajută!",
+      "why_now": "Primul test de transfer la scară mică (4v4) — verifică dacă lanțul defensiv individual și în pereche (SES-0007, SES-0008) apare autonom, înainte de a extinde la scara de echipă completă (EX-0025).",
+      "methodological_rationale": "4v4 păstrează densitatea de decizii individuale ridicată, potrivită ca prim test de transfer, consecvent cu distincția explicită performanță vs. învățare.",
+      "observation_focus": [
+        "apariția autonomă a frânării controlate, schimbului de rol sau protejării drumului, fără comandă de pe margine"
+      ],
+      "intervention_criteria": [
+        "fără comenzi verbale în timpul fazei active; observare tăcută, un singur focalizator per repriză"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul țintă nu apare deloc într-o repriză — se notează ca informație validă (pentru ASM-0002), nu se întrerupe jocul pentru a preda din nou."
+      ],
+      "coach_focus": "Non-intervenție verbală completă în timpul fazei active — testul de transfer individual/pereche, nu de performanță izolată.",
+      "verification_method": "La pauza dintre reprize, notează dacă a apărut cel puțin un comportament defensiv țintă, fără comandă de pe margine.",
+      "transition_logistics": "Extindere la teren de 40x30m cu marcarea zonei centrale și formare de echipe de 6 pentru EX-0025."
+    },
+    {
+      "start_min": 30,
+      "end_min": 52,
+      "title": "EX-0025 — Joc mic 6v6 cu zonă de protejat",
+      "exercise_ids": [
+        "EX-0025"
+      ],
+      "coach_message": "Jucați ca de obicei — echipa care apără decide împreună cum protejează zona centrală.",
+      "why_now": "Extinde testul de transfer la scara de echipă completă (6v6) — verifică dacă separarea rolurilor de influență și protejare a centrului (SES-0009) apare autonom la o densitate de jucători mai mare.",
+      "methodological_rationale": "Ultimul pas al progresiei acestei teme — verifică transferul la nivel colectiv, nu doar individual sau în pereche.",
+      "observation_focus": [
+        "apariția autonomă a protejării colective a zonei centrale, fără comandă de pe margine"
+      ],
+      "intervention_criteria": [
+        "fără comenzi verbale în timpul fazei active; observare tăcută, un singur focalizator per repriză"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul de protejare colectivă nu apare deloc într-o repriză — se notează ca informație validă (pentru ASM-0002), nu se întrerupe jocul pentru a preda din nou."
+      ],
+      "coach_focus": "Non-intervenție verbală completă în timpul fazei active — testul de transfer colectiv, nu de performanță izolată.",
+      "verification_method": "La pauza dintre reprize, notează dacă echipa a protejat zona centrală ca prioritate colectivă, fără comandă de pe margine.",
+      "transition_logistics": "Pauză scurtă între cele două reprize pentru reflecția intermediară."
+    },
+    {
+      "start_min": 52,
+      "end_min": 65,
+      "title": "Reflecție ghidată, transfer în meci și încheiere",
+      "exercise_ids": [],
+      "coach_message": "Unde ați văzut, în jocurile de azi, o situație ca la exercițiile de apărare exersate în ultimele ședințe?",
+      "why_now": "Reflecția leagă explicit ambele jocuri libere de întregul lanț de exerciții defensive exersate în temă, sprijinind transferul spre meciul oficial.",
+      "methodological_rationale": "Închide bucla PROBLEMĂ → CONCEPT → EXERCIȚIU → TRANSFER cerută de arhitectura Gold Standard; ultimele minute rămân libere pentru echipament, în cadrul aceluiași segment de încheiere.",
+      "observation_focus": [
+        "capacitatea copiilor de a lega verbal jocul de exercițiile anterioare din întreaga temă"
+      ],
+      "intervention_criteria": [
+        "întrebări deschise; niciun verdict impus dacă un copil nu poate încă face legătura"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil nu poate încă lega jocul de exercițiile anterioare, nu se impune un verdict — rămâne informație pentru ședințele următoare."
+      ],
+      "coach_focus": "Întrebări deschise care leagă explicit ambele jocuri libere de întregul lanț de exerciții defensive.",
+      "verification_method": "Cel puțin un copil poate numi o situație din joc similară cu un exercițiu din temă.",
+      "transition_logistics": "Ultimele minute libere pentru echipament și plecare, în interiorul acestui segment."
+    }
+  ],
+  "message_foundations": [
+    {
+      "message": "Jucați ca de obicei — folosiți ce ați exersat dacă vă ajută!",
+      "source_principle": "principle.transfer-autonom-cooperare",
+      "claim_ids": [
+        "CLM-0030",
+        "CLM-0035"
+      ]
+    },
+    {
+      "message": "Jucați ca de obicei — echipa care apără decide împreună cum protejează zona centrală.",
+      "source_principle": "principle.transfer-autonom-cooperare",
+      "claim_ids": [
+        "CLM-0036",
+        "CLM-0037"
+      ]
+    }
+  ],
+  "session_rationale": "Ședința de încheiere a temei nu introduce concepte noi — testează dacă întregul lanț defensiv exersat izolat în SES-0007, SES-0008 și SES-0009 apare autonom, mai întâi la scară mică (4v4), apoi la scara completă de echipă (6v6). Absența unui comportament țintă în oricare dintre jocuri rămâne informație validă pentru evaluare, nu un eșec al ședinței — distincție explicită performanță vs. învățare, consecventă cu restul arhitecturii Gold Standard.",
+  "match_theme": "Transferul complet al lanțului defensiv — frânare controlată, schimb de rol, protejarea drumului, reacție de tranziție și protejarea centrului — în joc reprezentativ, întâi individual/pereche, apoi la nivel de echipă completă.",
+  "reflection": [
+    "Unde ați văzut, în jocurile de azi, o situație ca la exercițiile de apărare exersate în ultimele ședințe?",
+    "Ce a fost diferit între jocul de 4v4 și cel de 6v6 în felul în care ați apărat?"
+  ],
+  "sources": [
+    "SRC-0029",
+    "SRC-0034",
+    "SRC-0035",
+    "SRC-0036"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "child_objectives": [
+    "Aplică lanțul defensiv individual și în pereche exersat izolat, într-un joc reprezentativ 4v4, fără constrângeri artificiale (EX-0024).",
+    "Aplică separarea rolurilor de influență și protejare a centrului la nivel de echipă completă, într-un joc reprezentativ 6v6 (EX-0025)."
+  ],
+  "coach_objectives": [
+    {
+      "objective": "Menține non-intervenție verbală completă în timpul ambelor jocuri, observând tăcut, cu un singur focalizator per repriză.",
+      "coach_competency_id": "COACH-C03"
+    },
+    {
+      "objective": "Notează corect dacă transferul a apărut sau nu, la scară mică și la scară de echipă, ca informație, nu ca verdict despre copii.",
+      "coach_competency_id": "COACH-C14"
+    }
+  ],
+  "reflection_v2": {
+    "child_game_dimension": [
+      "Comportamentele defensive exersate izolat în temă au apărut la 4v4, la 6v6, sau la ambele?",
+      "A fost mai ușor sau mai greu să protejeze zona centrală în echipă completă (6v6) față de în pereche (4v4)?"
+    ],
+    "coach_dimension": [
+      "Am rezistat impulsului de a interveni tactic în timpul ambelor jocuri?",
+      "Am comparat corect transferul la scară mică și la scară de echipă, fără să tratez diferența ca eșec?"
+    ]
+  }
+}

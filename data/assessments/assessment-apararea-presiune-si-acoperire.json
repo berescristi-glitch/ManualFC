@@ -1,0 +1,57 @@
+{
+  "id": "ASM-0002",
+  "title": "Evaluarea presiunii și acoperirii în apărare",
+  "principle_ids": [
+    "principle.presiune-si-acoperire",
+    "principle.protejarea-centrului",
+    "principle.tranzitia-la-pierderea-mingii",
+    "principle.transfer-autonom-cooperare"
+  ],
+  "criteria": [
+    {
+      "id": "ASM-0002-C1",
+      "observable_behaviour": "Încetinirea controlată a purtătorului mingii, fără atac imediat necontrolat (EX-0016, EX-0017).",
+      "levels": [
+        "Atacă mingea imediat ce se apropie, indiferent de regulă, sau rămâne complet pasiv fără nicio influență.",
+        "Frânează controlat doar cu reper extern (numărătoare, întrebare ghidată) sau intervenția antrenorului.",
+        "Frânează controlat și orientează purtătorul departe de drumul direct, autonom, în majoritatea repetițiilor observate."
+      ]
+    },
+    {
+      "id": "ASM-0002-C2",
+      "observable_behaviour": "Schimbarea rolurilor de presiune și acoperire pe măsură ce mingea se mută între adversari (EX-0018).",
+      "levels": [
+        "Rămâne fixat pe același adversar sau pe aceeași atribuire de rol, indiferent unde se mută mingea.",
+        "Schimbă rolul doar cu întârziere vizibilă sau după o oprire a antrenorului.",
+        "Schimbă rolul de presiune și acoperire autonom, la fiecare mișcare reală a mingii, fără comandă."
+      ]
+    },
+    {
+      "id": "ASM-0002-C3",
+      "observable_behaviour": "Coordonarea cu un al doilea apărător pentru a evita eliminarea simultană și pentru a proteja drumul, nu o persoană (EX-0019, EX-0020).",
+      "levels": [
+        "Se lasă eliminat simultan cu colegul de aceeași acțiune, sau urmărește un adversar fix în loc de drumul periculos.",
+        "Diferențierea reacției sau protejarea drumului apar doar cu indiciu vizual sau intervenția antrenorului.",
+        "Cel puțin unul dintre apărători rămâne poziționat autonom, protejând drumul periculos, fără reper extern."
+      ]
+    },
+    {
+      "id": "ASM-0002-C4",
+      "observable_behaviour": "Reacția imediată după pierderea mingii — influență sau întârziere din partea celui mai apropiat, protejarea centrului din partea restului echipei (EX-0021, EX-0022).",
+      "levels": [
+        "Toți jucătorii aleargă spre minge simultan după pierdere, sau nimeni nu reacționează.",
+        "Separarea rolurilor (influență/protecție) apare doar cu semnal verbal explicit al antrenorului.",
+        "Echipa separă autonom, fără comandă, cine influențează și cine protejează centrul, imediat după pierdere."
+      ]
+    },
+    {
+      "id": "ASM-0002-C5",
+      "observable_behaviour": "Transferul comportamentelor defensive exersate izolat în joc reprezentativ, fără constrângeri artificiale (EX-0023, EX-0024, EX-0025).",
+      "levels": [
+        "Comportamentul nu apare în jocul liber, deși a apărut în exercițiile izolate anterioare.",
+        "Comportamentul apare ocazional în joc liber, inconsecvent între repetiții sau doar la unul dintre formatele de joc (4v4 sau 6v6).",
+        "Comportamentul apare autonom și repetat în joc liber reprezentativ, la mai multe relații numerice (transferul spre meciul oficial rămâne neconfirmat — nu poate fi validat fără o pilotare reală pe teren)."
+      ]
+    }
+  ]
+}

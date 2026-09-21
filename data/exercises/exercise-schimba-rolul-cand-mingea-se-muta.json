@@ -1,0 +1,201 @@
+{
+  "id": "EX-0018",
+  "title": "Schimbă rolul când mingea se mută",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "consolidare",
+  "theme": "apararea-presiune-si-acoperire",
+  "game_moment": "aparare",
+  "primary_objective": "Copiii mențin relația presiune-acoperire exersată static în EX-0017 sub o pasă reală între doi adversari, schimbând continuu cine influențează și cine protejează pe măsură ce mingea se mută, nu doar o singură dată la începutul fazei.",
+  "observable_behaviours": [
+    "rolurile de presiune și acoperire se schimbă vizibil la fiecare pasă a adversarilor, fără comandă verbală",
+    "niciun apărător nu rămâne fixat pe același adversar indiferent de unde e mingea"
+  ],
+  "players": {
+    "total": 4,
+    "in_possession": 2,
+    "defenders": 2,
+    "neutral_players": 0
+  },
+  "numerical_relation": "2v2",
+  "equipment": [
+    "6 conuri de delimitare",
+    "1 poartă mică sau conuri pentru poartă mini",
+    "6-8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 6 },
+    { "item": "poartă mică sau conuri pentru poartă mini", "quantity": 1 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 }
+  ],
+  "field": {
+    "length_m": 16,
+    "width_m": 12,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 10,
+    "format": "seturi de 2 minute de joc continuu, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Cei doi adversari pot pasa liber între ei; apărătorii trebuie să reevalueze după fiecare pasă cine influențează și cine protejează.",
+      "why": "Testează dacă relația presiune-acoperire exersată static în EX-0017 rezistă sub mișcare reală a mingii, nu doar într-o singură configurație fixă."
+    },
+    {
+      "rule": "Un apărător nu are voie să urmărească același adversar pe tot parcursul fazei, indiferent unde se mută mingea.",
+      "why": "Previne fixarea pe „omul meu” în locul citirii relației reale cu mingea — obligă la o decizie continuă, nu la o atribuire de rol dinainte."
+    }
+  ],
+  "step_by_step": [
+    "Patru jucători: doi adversari care pasează liber, doi apărători.",
+    "La fiecare pasă, apărătorul mai aproape de noul purtător preia rolul de presiune; celălalt trece la acoperire.",
+    "Adversarii încearcă să ajungă la poarta mică folosind pasele pentru a crea confuzie în schimbul de roluri.",
+    "Rotație: schimb de roluri (adversari/apărători) la fiecare 2 minute."
+  ],
+  "rotation": "Rotație de roluri (adversari/apărători) la fiecare 2 minute; toți cei 4 jucători trec prin ambele roluri.",
+  "transition": "Trecere directă la EX-0019 fără pauză de reorganizare — aceeași geometrie, accent pe evitarea dublajului orb.",
+  "child_message": "Unul îl încetinește. Celălalt: dacă trece, poți fi tu următorul?",
+  "why_this_message": "Același mesaj din EX-0017, aplicat acum sub mișcare reală a mingii — reperul rămâne relația dintre cei doi apărători, nu o poziție fixă.",
+  "problem_being_solved": "Apărătorii stabilesc o singură dată cine influențează și cine protejează, apoi rămân fixați pe acea atribuire chiar și după ce mingea s-a mutat la celălalt adversar, lăsând purtătorul real neacoperit.",
+  "information_children_must_notice": [
+    "cine are mingea în fiecare moment, nu doar la începutul fazei",
+    "poziția colegului apărător față de noul purtător",
+    "spațiul din spate rămas neprotejat după schimbarea mingii"
+  ],
+  "decision_children_must_learn": "Să reevalueze continuu, la fiecare mișcare a mingii, cine trebuie să influențeze și cine să protejeze, fără să rămână fixat pe atribuirea inițială.",
+  "rationales": {
+    "tactical": "Relația presiune-acoperire trebuie să rămână validă indiferent unde se mută mingea, nu doar în configurația inițială.",
+    "perceptual": "Copiii citesc acum o situație dinamică (pasa), nu doar una statică, ceea ce ridică real complexitatea perceptivă față de EX-0017.",
+    "decisional": "Decizia „cine influențează, cine protejează” se repetă la fiecare pasă, nu se stabilește o singură dată.",
+    "cognitive": "Introducerea mișcării reale a mingii, după ce relația de bază e stabilă static, respectă progresia de la simplu la complex.",
+    "psychological": "Confuzia inițială la schimbul de roluri e informație despre exercițiu, nu despre capacitatea copiilor — se așteaptă erori la început.",
+    "technical": "Repoziționarea rapidă și comunicarea scurtă între cei doi apărători susțin decizia, fără cerințe tehnice noi.",
+    "social": "Cei doi apărători trebuie să comunice sau să citească reciproc mișcarea pentru a evita atât dublajul, cât și golurile de acoperire."
+  },
+  "age_appropriateness": "La 10–11 ani, schimbarea de rol se arată mai întâi cu pase lente, apoi la viteză reală; grupele 2015 și 2016 rămân împreună, cu reglaj individual al vitezei paselor permise adversarilor.",
+  "possible_misinterpretations": [
+    "Copiii cred că trebuie să-și urmărească „omul” fix, nu relația cu mingea.",
+    "Apărătorii schimbă rolul prea des, chiar și când mingea nu s-a mutat cu adevărat."
+  ],
+  "task_risks": [
+    "Adversari care pasează prea rapid pentru nivelul actual pot face schimbul de roluri imposibil de urmărit.",
+    "Teren prea mic elimină timpul de reacție la schimbarea mingii."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Rămâi pe omul tău.",
+      "reason": "Fixează un rol pe persoană, nu pe relația cu mingea — exact ce exercițiul cere să depășească."
+    },
+    {
+      "phrase": "Schimbați mereu!",
+      "reason": "Instrucțiune fără informație despre CÂND schimbul e cu adevărat necesar."
+    }
+  ],
+  "understanding_check": [
+    "rolurile se schimbă vizibil la fiecare pasă reală, nu la mișcări false ale adversarilor",
+    "niciun apărător nu rămâne fixat pe același adversar pe tot parcursul fazei"
+  ],
+  "response_if_not_understood": [
+    "oprește la o pasă și arată exact cine ar fi trebuit să preia presiunea",
+    "revino temporar la EX-0017 (static) pentru a reconfirma relația de bază înainte de a adăuga mișcarea"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Puțin mai mare decât EX-0017 pentru ca pasele reale între cei doi adversari să aibă sens geometric.",
+  "too_small_signs": [
+    "pasele între adversari devin imposibile din lipsă de spațiu, exercițiul revine la un 1v1 mascat",
+    "coliziuni frecvente la schimbul de roluri"
+  ],
+  "too_large_signs": [
+    "distanța dintre apărători devine prea mare pentru o acoperire reală",
+    "adversarii nu mai simt nicio presiune, indiferent de schimbul de roluri"
+  ],
+  "regression": [
+    "revino la EX-0017 (relație statică) dacă schimbul de roluri sub mișcare eșuează complet",
+    "reduce viteza paselor permise adversarilor"
+  ],
+  "progression": [
+    "trecere la EX-0019 (evitarea dublajului orb la 2v2 complet activ)",
+    "adversarii pot alterna pasa cu conducerea mingii, crescând complexitatea deciziei de schimb"
+  ],
+  "coach_questions": [
+    {
+      "question": "Cum ați știut cine preia presiunea după acea pasă?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "A rămas cineva neacoperit după schimbarea mingii?",
+      "when": "după o repetiție cu un gol de acoperire vizibil"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Urmărește mingea, nu doar adversarul tău."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ați schimbat rolurile exact când mingea s-a mutat!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "apărătorii rămân fixați pe adversarul inițial, indiferent unde se mută mingea",
+      "possible_causes": [
+        "tiparul „un apărător per adversar” din alte contexte rămâne dominant",
+        "nu a fost încă exersată suficient relația dinamică cu mingea"
+      ]
+    },
+    {
+      "observation": "ambii apărători se mută spre noul purtător, lăsând celălalt adversar complet liber",
+      "possible_causes": [
+        "schimbarea rolului nu a fost coordonată între cei doi",
+        "reflexul de a urmări mingea domină decizia de acoperire"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "schimbul de roluri apare vizibil la cel puțin jumătate din pasele reale dintre adversari",
+    "copiii pot explica, într-o propoziție, cum au decis cine preia presiunea"
+  ],
+  "match_transfer": "În meci, cei doi apărători recunosc autonom când mingea s-a mutat la alt adversar și schimbă rolurile de presiune și acoperire, fără să rămână fixați pe atribuirea inițială.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0017, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0042",
+    "SRC-0043"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.presiune-si-acoperire"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C11"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C11", "COACH-C12"],
+  "related_pedagog_lesson_ids": ["CH-0103"],
+  "related_coach_lesson_ids": ["CH-0404", "CH-0408"],
+  "child_action": "Reevaluează continuu, la fiecare pasă între adversari, cine trebuie să influențeze purtătorul și cine să protejeze, schimbând rolul cu celălalt apărător fără comandă.",
+  "coach_focus": "Observarea schimbului de roluri la fiecare mișcare reală a mingii, nu doar reușita unei singure configurații inițiale.",
+  "do_not_assume": [
+    "O confuzie inițială la schimbul de roluri nu înseamnă lipsă de înțelegere — coordonarea dinamică e vizibil mai grea decât cea statică din EX-0017.",
+    "Faptul că apărătorii ezită o clipă la schimbarea mingii nu înseamnă eșec — poate fi timpul necesar de evaluare."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de fixare pe același adversar, indiferent de mișcarea mingii, observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "O singură repetiție cu confuzie la schimbul de roluri.",
+    "Ezitare vizibilă de scurtă durată înainte de schimbul corect de rol."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul strigă instrucțiuni de schimb de rol în timpul jocului continuu, în loc să lase copiii să decidă.",
+      "why_it_happens": "Dorința de a corecta rapid o confuzie vizibilă, în detrimentul lăsării deciziei la copii."
+    }
+  ],
+  "coach_reflection": [
+    "Am lăsat copiii să decidă singuri schimbul de rol, sau am dat comenzi în timpul jocului continuu?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori (rotație de roluri la fiecare 2 minute, deja specificată în acest fișier).",
+  "assessment_ref": "ASM-0002"
+}

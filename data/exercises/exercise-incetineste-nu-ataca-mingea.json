@@ -1,0 +1,202 @@
+{
+  "id": "EX-0016",
+  "title": "Încetinește, nu ataca mingea",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "introducere",
+  "theme": "apararea-presiune-si-acoperire",
+  "game_moment": "aparare",
+  "primary_objective": "Copilul recunoaște că apropierea de purtătorul mingii are ca scop încetinirea și orientarea lui departe de drumul direct spre poartă, nu atacul imediat al mingii, și alege momentul potrivit pentru a nu fi depășit prin propria viteză necontrolată.",
+  "observable_behaviours": [
+    "frânează înainte de distanța de intervenție, fără să atace mingea din primul pas",
+    "își orientează corpul astfel încât să închidă drumul direct spre poartă, nu doar să se apropie"
+  ],
+  "players": {
+    "total": 2,
+    "in_possession": 1,
+    "defenders": 1,
+    "neutral_players": 0
+  },
+  "numerical_relation": "1v1",
+  "equipment": [
+    "4 conuri de delimitare",
+    "1 poartă mică sau 2 conuri pentru poartă mini",
+    "6-8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 4 },
+    { "item": "poartă mică sau conuri pentru poartă mini", "quantity": 1 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 }
+  ],
+  "field": {
+    "length_m": 10,
+    "width_m": 8,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 8,
+    "format": "seturi de 60 de secunde cu rotație, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Apărătorul nu are voie să atace mingea în primele 2 secunde de la pornire — poate doar să se apropie și să frâneze controlat.",
+      "why": "Elimină reflexul de a ataca mingea imediat, izolând decizia de bază (încetinire, nu tackle) înainte de a adăuga presiune de timp reală — reglaj ales pentru acest exercițiu, nu un prag validat de cercetare."
+    },
+    {
+      "rule": "Purtătorul mingii încearcă să ajungă la poarta mică; apărătorul câștigă punctul dacă întârzie suficient cât un coleg imaginar (numărat cu voce tare de antrenor) ar fi avut timp să ajungă.",
+      "why": "Face vizibilă valoarea încetinirii chiar și atunci când apărătorul nu recuperează mingea — succesul nu înseamnă doar recuperare, ci și timp câștigat."
+    }
+  ],
+  "step_by_step": [
+    "Doi jucători: un purtător de minge, un apărător, o poartă mică.",
+    "Purtătorul pornește cu mingea spre poartă; apărătorul se apropie controlat, fără să atace mingea în primele 2 secunde.",
+    "Apărătorul își poziționează corpul între minge și poartă, orientând purtătorul departe de drumul direct.",
+    "După cele 2 secunde, apărătorul poate interveni dacă vede o ocazie reală, nu doar din reflex.",
+    "Rotație: schimb de roluri la fiecare 60 de secunde."
+  ],
+  "rotation": "Schimb de roluri (purtător/apărător) la fiecare 60 de secunde.",
+  "transition": "Trecere directă la EX-0017 fără pauză de reorganizare — grup nou de 3 pentru relația presiune+acoperire.",
+  "child_message": "Poarta e în spatele tău? Încetinește-l și arată-i drumul mai lung.",
+  "why_this_message": "Mesaj reutilizat direct din principiul canonic Protejarea centrului — poarta oferă reperul, iar drumul mai lung definește scopul fără a prescrie o parte fixă a terenului.",
+  "problem_being_solved": "Copilul atacă mingea imediat ce se apropie de purtător, fiind frecvent depășit prin propria viteză necontrolată, în loc să încetinească adversarul și să câștige timp pentru reorganizare.",
+  "information_children_must_notice": [
+    "poziția mingii față de poartă",
+    "viteza și orientarea purtătorului",
+    "drumul cel mai direct spre poartă"
+  ],
+  "decision_children_must_learn": "Să aleagă viteza apropierii și momentul frânării care întârzie calea directă spre poartă, păstrând posibilitatea de a interveni mai târziu, nu imediat.",
+  "rationales": {
+    "tactical": "Reduce accesul direct la poartă și câștigă timp, în loc să rezolve situația printr-o singură acțiune riscantă.",
+    "perceptual": "Copilul citește simultan mingea, purtătorul, poarta și drumul direct, la cel mai simplu nivel — un singur adversar, nicio acoperire de coordonat încă.",
+    "decisional": "Viteza apropierii și momentul frânării rămân alegerea copilului, nu o instrucțiune fixă de a ataca mereu.",
+    "cognitive": "O singură decizie de bază (încetinește, nu ataca) la introducere, fără a adăuga încă rolul unui al doilea apărător.",
+    "psychological": "Succesul nu depinde de recuperarea mingii — întârzierea suficientă e deja o reușită vizibilă, reducând presiunea de a „câștiga” duelul.",
+    "technical": "Frânarea controlată și postura corpului între minge și poartă sunt elementele tehnice centrale, fără presiunea unei decizii de tackle.",
+    "social": "Copilul învață că apărarea reușită nu înseamnă mereu recuperarea mingii — pregătește distincția rol-pereche din exercițiile următoare."
+  },
+  "age_appropriateness": "La 10–11 ani, relația dintre minge, purtător și poartă se arată direct într-un 1v1 simplu, cu o singură decizie de bază; grupele 2015 și 2016 rămân împreună, cu reglaj individual al distanței de pornire.",
+  "possible_misinterpretations": [
+    "Copilul crede că trebuie să rămână complet pasiv, fără să intervină niciodată.",
+    "Copilul confundă încetinirea cu retragerea completă, lăsând purtătorul să treacă fără nicio influență."
+  ],
+  "task_risks": [
+    "Teren prea mic elimină timpul real de decizie înainte de intervenție.",
+    "Purtătorul prea rapid pentru vârstă poate crește riscul de coliziune la frânare."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Ia-i mingea!",
+      "reason": "Grăbește intervenția exact în momentul în care exercițiul cere întârziere controlată, nu atac imediat."
+    },
+    {
+      "phrase": "Nu-l lăsa să treacă cu niciun preț.",
+      "reason": "Transformă o decizie graduală într-o cerință absolută, care poate încuraja un tackle riscant."
+    }
+  ],
+  "understanding_check": [
+    "apărătorul frânează vizibil înainte de distanța de intervenție, în majoritatea repetițiilor",
+    "corpul apărătorului rămâne orientat între minge și poartă, nu doar lateral față de purtător"
+  ],
+  "response_if_not_understood": [
+    "oprește la primul atac imediat al mingii și arată exact unde ar fi trebuit să frâneze",
+    "mărește pragul de așteptare obligatorie de la 2 la 3 secunde, apoi revino treptat"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Teren mic, cu o singură poartă, pentru a păstra decizia de bază (încetinire) clară și repetabilă, fără variabile suplimentare de spațiu.",
+  "too_small_signs": [
+    "purtătorul ajunge la poartă înainte ca apărătorul să poată frâna controlat, indiferent de decizie",
+    "coliziuni frecvente la apropiere"
+  ],
+  "too_large_signs": [
+    "apărătorul are timp nelimitat, iar decizia de moment devine irelevantă",
+    "purtătorul nu mai simte nicio presiune reală de a decide rapid"
+  ],
+  "regression": [
+    "mărește pragul de așteptare obligatorie a apărătorului (3-4 secunde) pentru mai mult timp de procesare",
+    "purtătorul pornește mai încet, cu un avans de start"
+  ],
+  "progression": [
+    "trecere la EX-0017 (relația presiune+acoperire cu doi apărători)",
+    "elimină pragul obligatoriu de așteptare, lăsând complet la latitudinea apărătorului momentul intervenției"
+  ],
+  "coach_questions": [
+    {
+      "question": "Ce drum îi ofereai purtătorului când ai frânat?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ai simțit că ai câștigat timp, chiar dacă nu ai recuperat mingea?",
+      "when": "după o repetiție cu întârziere reușită, fără recuperare"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Arată-i drumul mai lung, nu ataca mingea imediat."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ai câștigat timp — asta conta, nu doar recuperarea."
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "copilul atacă mingea imediat ce ajunge lângă purtător, indiferent de regulă",
+      "possible_causes": [
+        "reflexul de a recupera mingea rămâne mai puternic decât instrucțiunea de întârziere",
+        "nu a înțeles încă că întârzierea singură e o reușită"
+      ]
+    },
+    {
+      "observation": "copilul se apropie prea încet și lasă purtătorul să treacă fără nicio influență",
+      "possible_causes": [
+        "a interpretat greșit „încetinește” ca „nu te implica deloc”",
+        "distanța de pornire a fost prea mare pentru nivelul actual"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "apărătorul frânează controlat înainte de distanța de intervenție în cel puțin jumătate din repetiții",
+    "copilul poate explica, într-o propoziție, de ce a ales să încetinească, nu să atace imediat"
+  ],
+  "match_transfer": "În meci, jucătorul recunoaște momentul în care trebuie doar să încetinească un adversar și să-i închidă drumul direct spre poartă, fără să riște un tackle imediat necontrolat.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0015, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0037",
+    "SRC-0042"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.protejarea-centrului"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C07"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C06", "COACH-C11"],
+  "related_pedagog_lesson_ids": ["CH-0103"],
+  "related_coach_lesson_ids": ["CH-0404", "CH-0407"],
+  "child_action": "Se apropie controlat de purtătorul mingii, frânează înainte de distanța de intervenție și își orientează corpul între minge și poartă, fără să atace mingea imediat.",
+  "coach_focus": "Observarea frânării controlate și a orientării corpului spre poartă, nu doar reușita recuperării mingii.",
+  "do_not_assume": [
+    "O întârziere reușită fără recuperare a mingii nu înseamnă eșec — poate fi exact decizia corectă.",
+    "Faptul că un copil nu recuperează mingea nu înseamnă că nu a înțeles — poate fi tocmai aplicarea corectă a întârzierii."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de atac imediat al mingii, fără nicio frânare vizibilă, observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "O singură repetiție cu atac imediat.",
+    "Întârziere prezentă dar insuficientă ca distanță — se lasă încă o repetiție înainte de a corecta."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul laudă doar recuperările de minge, ignorând întârzierile reușite fără recuperare.",
+      "why_it_happens": "Asocierea implicită a apărării bune exclusiv cu recuperarea mingii, nu cu întârzierea ca rezultat valid în sine."
+    }
+  ],
+  "coach_reflection": [
+    "Am validat verbal o întârziere reușită la fel de clar cum aș fi validat o recuperare de minge?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului, pragul de așteptare obligatorie și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori (rotație de roluri la fiecare 60 de secunde, deja specificată în acest fișier).",
+  "assessment_ref": "ASM-0002"
+}

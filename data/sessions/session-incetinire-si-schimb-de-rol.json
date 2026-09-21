@@ -1,0 +1,223 @@
+{
+  "id": "SES-0007",
+  "title": "Presiune și acoperire — încetinire și schimb de rol",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "duration_min": 75,
+  "primary_objective": "Introduce lanțul decizional defensiv de bază (încetinirea controlată a purtătorului mingii, apoi schimbul de rol între presiune și acoperire pe măsură ce mingea circulă) folosind EX-0016 și EX-0017, fără a introduce încă al doilea apărător activ sub formă de 2v2.",
+  "observable_behaviours": [
+    "copiii frânează controlat purtătorul mingii fără să atace imediat necontrolat",
+    "copiii schimbă rolul de presiune/acoperire fără comandă verbală când mingea se mută"
+  ],
+  "players_range": {
+    "min": 8,
+    "max": 18,
+    "note": "EX-0016 cere grupuri de 2 (1v1 cu regulă de încetinire); EX-0017 cere grupuri de 3 (2v1). Vezi configuratorul de grup pentru numărul exact de grupe, spațiu și material la fiecare efectiv de la 8 la 18. Cu efectiv mare, se organizează stații paralele, nu o coadă unică."
+  },
+  "operational_contingencies": [
+    {
+      "scenario": "3 copii ajung după ce ședința a început",
+      "guidance": "PRACTICE_HEURISTIC: nu întrerupe perechile sau grupurile de 3 deja formate la mijlocul unei repetiții. Copiii întârziați așteaptă vizibil lângă cea mai apropiată stație și intră la următoarea rotație de rol, deja programată la 90 de secunde în EX-0016 și la fiecare set în EX-0017."
+    },
+    {
+      "scenario": "Terenul disponibil e mai mic decât dimensiunea canonică a exercițiului",
+      "guidance": "PRACTICE_HEURISTIC: nu micșora o stație sub pragul semnalat explicit în «too_small_signs» al exercițiului respectiv. Dacă spațiul total nu permite toate stațiile la dimensiunea canonică, redu numărul de stații paralele, nu dimensiunea fiecăreia."
+    },
+    {
+      "scenario": "Conuri insuficiente pentru a marca toate stațiile simultan",
+      "guidance": "PRACTICE_HEURISTIC: redistribuie materialul de la o stație la alta urmând ordinea segmentelor — nu improviza un tip nou de reper vizual doar din lipsă de conuri."
+    },
+    {
+      "scenario": "Un exercițiu eșuează — niciun copil nu reușește nici cu regresia maximă",
+      "guidance": "PRACTICE_HEURISTIC: tratează eșecul ca informație despre exercițiu, nu despre copii (consecvent cu principiul «eroarea ca informație, nu ca verdict»). Oprește segmentul, folosește imediat o întrebare de reflecție, apoi treci mai devreme la jocul liber — nu forța repetiții suplimentare fără niciun semnal de progres."
+    },
+    {
+      "scenario": "Copiii confundă «încetinește» cu «nu te implica deloc»",
+      "guidance": "PRACTICE_HEURISTIC: aceasta e o interpretare greșită documentată explicit în EX-0016 («phrases_to_avoid», «common_errors»). Corectează cu o întrebare ghidată («Ai rămas suficient de aproape ca să reacționezi?»), nu cu o comandă tehnică despre poziția corpului."
+    }
+  ],
+  "duration_variant_60min": {
+    "total_minutes": 60,
+    "policy_note": "Variantă de 60 minute — PRACTICE_HEURISTIC, o adaptare operațională, nu o durată validată de cercetare. Siguranța și reflecția rămân aproape intacte; exercițiile centrale pierd repetări, nu concepte.",
+    "segments": [
+      { "segment_index": 0, "start_min": 0, "end_min": 9, "reduction_note": "Redus cu 3 min: timpul de organizare de la începutul rutinei, nu execuția ei — rutina de siguranță rămâne completă." },
+      { "segment_index": 1, "start_min": 9, "end_min": 20, "reduction_note": "Redus cu 3 min: mai puține repetări ale rotației de rol în EX-0016, nu mai puține concepte — fiecare copil exersează decizia de bază de cel puțin două ori." },
+      { "segment_index": 2, "start_min": 20, "end_min": 40, "reduction_note": "Redus cu 3 min: un set de joc continuu mai puțin per grup la EX-0017 — schimbul de rol sub opoziție activă rămâne exersat complet." },
+      { "segment_index": 3, "start_min": 40, "end_min": 50, "reduction_note": "Comprimat, nu eliminat — cele două întrebări de reflecție rămân; se renunță la timpul de așteptare între răspunsuri." },
+      { "segment_index": 4, "start_min": 50, "end_min": 60, "reduction_note": "Cea mai mare reducere relativă — jocul liber e timp activ suplimentar, nu o fază pedagogică esențială; rămân totuși 10 minute, nu eliminat complet." }
+    ]
+  },
+  "equipment": [
+    "conuri de delimitare pentru toate stațiile",
+    "mingi de rezervă suficiente pentru fiecare stație",
+    "veste de marcaj pentru echipe/roluri"
+  ],
+  "surface_plan": {
+    "layout": "2-4 stații paralele de 8x6m (EX-0016) sau 12x10m (EX-0017), distanțate cu minimum 3m între ele pentru siguranță.",
+    "rotation": "Rotația rolului (atacant/apărător) are loc la fiecare 90 de secunde în EX-0016, la fiecare set în EX-0017, fără schimbare de stație."
+  },
+  "segments": [
+    {
+      "start_min": 0,
+      "end_min": 12,
+      "title": "Încălzire și rutină de siguranță",
+      "exercise_ids": [],
+      "coach_message": "Începem cu o rutină scurtă care ne ajută să nu ne accidentăm.",
+      "why_now": "Rutină structurată de încălzire cu efect măsurat asupra riscului de accidentare, reutilizată din capitolul despre organizare și siguranță.",
+      "methodological_rationale": "Siguranța rămâne prima prioritate, indiferent de tema tehnico-tactică a ședinței.",
+      "observation_focus": [
+        "execuția corectă a mișcărilor de încălzire, nu graba de a termina"
+      ],
+      "intervention_criteria": [
+        "intervenție imediată doar pentru risc fizic real, altfel se lasă rutina să curgă"
+      ],
+      "non_intervention_criteria": [
+        "O ezitare izolată la un exercițiu de încălzire nu justifică oprirea rutinei — se corectează individual, din mers, doar la risc fizic real."
+      ],
+      "coach_focus": "Verifică execuția corectă a mișcărilor de încălzire, nu doar viteza de finalizare.",
+      "verification_method": "Observare directă a execuției; nicio evaluare verbală necesară la acest segment.",
+      "transition_logistics": "Copiii rămân în perechi, formate dinainte, pentru tranziția directă la EX-0016."
+    },
+    {
+      "start_min": 12,
+      "end_min": 25,
+      "title": "EX-0016 — Încetinește, nu ataca mingea",
+      "exercise_ids": [
+        "EX-0016"
+      ],
+      "coach_message": "Rămâi suficient de aproape ca să reacționezi, dar nu ataca mingea imediat.",
+      "why_now": "Prima expunere la problema de bază a apărării individuale — frânarea controlată — cu opoziție 1v1 simplă, pentru a păstra decizia perceptivă gestionabilă.",
+      "methodological_rationale": "Introducerea izolată a unei singure decizii (frânare controlată) înainte de a adăuga complexitatea unui al doilea apărător (EX-0017).",
+      "observation_focus": [
+        "apariția frânării controlate fără comandă verbală"
+      ],
+      "intervention_criteria": [
+        "amână intervenția cât timp copilul procesează activ decizia; intervine doar la tipar repetat (atac necontrolat sau pasivitate totală), nu la prima încercare nereușită"
+      ],
+      "non_intervention_criteria": [
+        "O singură încercare nereușită de frânare; distanță insuficientă dar prezentă — se lasă încă o repetiție înainte de a corecta."
+      ],
+      "coach_focus": "Cueing extern („rămâi aproape, nu ataca”) și observarea apariției autonome a frânării, nu doar reușita opririi atacantului.",
+      "verification_method": "La pauza dintre seturi, verifică dacă cel puțin jumătate din repetiții arată frânare controlată fără atac imediat.",
+      "transition_logistics": "Formarea grupurilor de 3 pentru EX-0017."
+    },
+    {
+      "start_min": 25,
+      "end_min": 45,
+      "title": "EX-0017 — Unul încetinește, celălalt protejează",
+      "exercise_ids": [
+        "EX-0017"
+      ],
+      "coach_message": "Dacă coechipierul tău încetinește deja purtătorul, tu ocupă drumul spre poartă.",
+      "why_now": "Adaugă coordonarea cu un al doilea apărător abia după ce decizia individuală de frânare (EX-0016) e stabilă.",
+      "methodological_rationale": "Progresia 1v1→2v1 e justificată prin creșterea complexității informaționale (poziția celuilalt apărător), nu doar prin numărul de jucători.",
+      "observation_focus": [
+        "schimbarea rolului de presiune și acoperire fără comandă verbală când mingea se mută"
+      ],
+      "intervention_criteria": [
+        "un singur focalizator per set (ex: doar momentul schimbării de rol); intervenție scurtă, fără durată cronometrată fixă"
+      ],
+      "non_intervention_criteria": [
+        "Confuzie temporară de rol la prima repetiție nu justifică oprirea jocului — se lasă opoziția activă să continue, corecția vine la pauza dintre seturi."
+      ],
+      "coach_focus": "Actualizarea continuă a rolului fiecărui apărător — observă schimbul de rol, nu doar reușita recuperării mingii.",
+      "verification_method": "La pauza dintre seturi, întreabă „Cine încetinea și cine proteja când mingea s-a mutat?” și verifică dacă răspunsul descrie rolul corect.",
+      "transition_logistics": "Strângerea materialului; pregătire pentru reflecția de închidere."
+    },
+    {
+      "start_min": 45,
+      "end_min": 60,
+      "title": "Reflecție ghidată de închidere",
+      "exercise_ids": [],
+      "coach_message": "Ce ați observat azi despre cum v-ați ajutat unul pe altul în apărare?",
+      "why_now": "Reflecția scurtă la final consolidează transferul, fără o durată cronometrată fixă validată de cercetare.",
+      "methodological_rationale": "Reflecția leagă explicit exercițiile de situația din meci, nu doar evaluează execuția tehnică izolată.",
+      "observation_focus": [
+        "capacitatea copiilor de a numi, într-o propoziție, ce au observat"
+      ],
+      "intervention_criteria": [
+        "întrebări deschise, copiii formulează concluzia, nu antrenorul într-un monolog"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil nu poate încă formula o observație, nu se impune un răspuns — se trece la următorul copil sau la întrebarea următoare."
+      ],
+      "coach_focus": "Întrebări deschise; copiii formulează concluzia, nu antrenorul într-un monolog.",
+      "verification_method": "Cel puțin un copil poate numi, într-o propoziție, ce a observat despre rolul său defensiv.",
+      "transition_logistics": "Încheierea segmentului de reflecție; echipamentul se strânge pe parcurs."
+    },
+    {
+      "start_min": 60,
+      "end_min": 75,
+      "title": "Joc liber de relaxare",
+      "exercise_ids": [],
+      "coach_message": "Jucați liber, fără reguli speciale — azi ați exersat destul!",
+      "why_now": "Închidere pozitivă a ședinței, timp activ suplimentar fără presiune evaluativă.",
+      "methodological_rationale": "Nu se introduc constrângeri noi la finalul unei ședințe cu încărcare cognitivă deja ridicată.",
+      "observation_focus": [
+        "siguranța fizică generală"
+      ],
+      "intervention_criteria": [
+        "doar pentru siguranță fizică sau comportament nesportiv"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul de joc liber, chiar dacă nu reflectă exercițiile exersate, nu justifică o intervenție tactică — acest segment e explicit relaxare, nu evaluare."
+      ],
+      "coach_focus": "Siguranță fizică generală, nu conținut tehnico-tactic.",
+      "verification_method": "Nu se aplică o verificare de conținut la acest segment — doar supraveghere de siguranță.",
+      "transition_logistics": "Final de ședință."
+    }
+  ],
+  "message_foundations": [
+    {
+      "message": "Rămâi suficient de aproape ca să reacționezi, dar nu ataca mingea imediat.",
+      "source_principle": "principle.presiune-si-acoperire",
+      "claim_ids": [
+        "CLM-0036",
+        "CLM-0043"
+      ]
+    },
+    {
+      "message": "Dacă coechipierul tău încetinește deja purtătorul, tu ocupă drumul spre poartă.",
+      "source_principle": "principle.presiune-si-acoperire",
+      "claim_ids": [
+        "CLM-0044"
+      ]
+    }
+  ],
+  "session_rationale": "Ședința introduce cele două decizii defensive de bază — frânarea controlată individuală și schimbul de rol între presiune și acoperire — care nu necesită încă un al doilea apărător activ în 2v2 (EX-0018) sau riscul de eliminare simultană (EX-0019). Numărul de concepte noi (2) e limitat deliberat pentru a nu supra-încărca o singură ședință la această vârstă.",
+  "match_theme": "Încetinirea purtătorului mingii și coordonarea rolurilor de presiune și acoperire între doi apărători.",
+  "reflection": [
+    "Ce ați observat azi despre cum v-ați ajutat unul pe altul în apărare?",
+    "Când coechipierul vostru încetinea purtătorul, ce ați făcut voi?"
+  ],
+  "sources": [
+    "SRC-0035",
+    "SRC-0037",
+    "SRC-0042",
+    "SRC-0043"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "child_objectives": [
+    "Frânează controlat purtătorul mingii fără să atace imediat necontrolat (EX-0016).",
+    "Schimbă rolul de presiune și acoperire fără comandă verbală când mingea se mută (EX-0017)."
+  ],
+  "coach_objectives": [
+    {
+      "objective": "Amână intervenția cât timp copilul procesează activ decizia de frânare, intervenind doar la tipar repetat.",
+      "coach_competency_id": "COACH-C01"
+    },
+    {
+      "objective": "Folosește un singur focalizator per set (momentul schimbării de rol), fără corecție tehnică internă.",
+      "coach_competency_id": "COACH-C11"
+    }
+  ],
+  "reflection_v2": {
+    "child_game_dimension": [
+      "Comportamentul de frânare controlată a apărut doar în exercițiul structurat sau și în jocul liber final?",
+      "A fost nevoie de reper extern (întrebare, comandă) sau schimbul de rol a apărut autonom?"
+    ],
+    "coach_dimension": [
+      "Am respectat limita de concepte noi, sau am adăugat corecții suplimentare neplanificate?",
+      "Am oferit soluția prea repede, înainte să las copilul să încerce din nou?"
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "id": "EX-0022",
+  "title": "Cine e aproape, cine protejează centrul",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "avansare",
+  "theme": "apararea-presiune-si-acoperire",
+  "game_moment": "tranziție negativă",
+  "primary_objective": "Copiii aplică decizia influență-vs-protecție din EX-0021 într-un context de inferioritate numerică reală (4v3), unde echipa care pierde mingea nu mai are suficienți jucători pentru a acoperi fiecare adversar, combinând reacția la pierdere cu decizia „protejează drumul, nu omul” din EX-0020.",
+  "observable_behaviours": [
+    "cel mai aproape de minge influențează sau întârzie purtătorul advers imediat după pierdere",
+    "ceilalți doi jucători se orientează spre drumul central spre poartă, nu spre adversari individuali"
+  ],
+  "players": {
+    "total": 7,
+    "in_possession": 4,
+    "defenders": 3,
+    "neutral_players": 0
+  },
+  "numerical_relation": "4v3",
+  "equipment": [
+    "8 conuri de delimitare",
+    "1-2 porți mici sau conuri pentru porți mini",
+    "8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 8 },
+    { "item": "porți mici sau conuri pentru porți mini", "quantity": 2 },
+    { "item": "mingi de rezervă", "quantity": 8 }
+  ],
+  "field": {
+    "length_m": 22,
+    "width_m": 16,
+    "safety_margin_m": 3
+  },
+  "duration": {
+    "total_minutes": 10,
+    "format": "seturi de 2-3 minute de joc continuu, cu pierderi/recuperări repetate, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Echipa de 3 pierde mingea împotriva echipei de 4 — la reluare, echipa de 3 trebuie să decidă imediat cine influențează și cine protejează drumul, știind că nu poate acoperi toți cei 4 adversari.",
+      "why": "Combină exact cele două decizii deja exersate separat (EX-0020: drum, nu om; EX-0021: influență-vs-protecție la pierdere) într-un singur context real, mai dificil decât fiecare exercițiu izolat."
+    },
+    {
+      "rule": "Jocul rămâne continuu — echipele își schimbă rolul de „3” și „4” la fiecare set, nu doar mingea.",
+      "why": "Permite fiecărui copil să exerseze atât inferioritatea numerică defensivă, cât și atacul cu superioritate, fără a fixa un rol permanent."
+    }
+  ],
+  "step_by_step": [
+    "Șapte jucători: patru într-o echipă, trei în cealaltă; jocul curge continuu între cele două porți mici.",
+    "La fiecare pierdere a mingii de către echipa de 3, cel mai aproape influențează sau întârzie; ceilalți doi protejează drumul central, nu un adversar anume.",
+    "Echipa de 4 caută drumul liber, exact ca în EX-0020, dar acum declanșat de o pierdere reală de minge, nu de o fază statică.",
+    "Rotație: echipele își schimbă rolul de „3”/„4” la fiecare set de 2-3 minute."
+  ],
+  "rotation": "Rotație de roluri (echipa de 3/echipa de 4) la fiecare set de 2-3 minute; toți cei 7 jucători trec prin ambele configurații.",
+  "transition": "Trecere directă la EX-0023 fără pauză de reorganizare — extindere la 4v4 pentru recuperarea formei complete după o linie depășită.",
+  "child_message": "Ai pierdut mingea și sunteți mai puțini — cine e aproape, încetinește; restul, apărați drumul, nu un jucător anume.",
+  "why_this_message": "Combină direct cele două mesaje deja exersate (Tranziția la pierderea mingii + Protejarea centrului) — nu introduce un mesaj nou, ci le aplică simultan într-un context mai greu.",
+  "problem_being_solved": "După pierderea mingii în inferioritate numerică reală, echipa fie încearcă să acopere fiecare adversar (imposibil matematic), fie se dezorganizează complet, lăsând drumul central liber exact când echipa e deja dezavantajată numeric.",
+  "information_children_must_notice": [
+    "cine dintre cei patru adversari are mingea imediat după pierdere",
+    "drumul cel mai periculos spre poartă, nu un adversar anume",
+    "poziția celorlalți doi coechipieri, pentru a evita atât aglomerarea, cât și golurile de acoperire"
+  ],
+  "decision_children_must_learn": "Să combine, sub presiunea reală a unei pierderi de minge, decizia despre cine influențează purtătorul cu decizia despre protejarea drumului, nu a unei persoane, în inferioritate numerică.",
+  "rationales": {
+    "tactical": "Inferioritatea numerică după o pierdere de minge e una dintre cele mai frecvente situații reale de meci — combină exact cele două decizii deja stabile separat.",
+    "perceptual": "Copilul trebuie să evalueze patru adversari, doi coechipieri și un drum periculos, toate sub presiunea reală a unei pierderi recente — cea mai grea sarcină perceptivă din arc până acum.",
+    "decisional": "Decizia „influență sau protecție” (EX-0021) și decizia „drum, nu om” (EX-0020) trebuie aplicate simultan, nu izolat.",
+    "cognitive": "Combinarea a două decizii deja stabile separat, într-un singur context real, respectă progresia de la simplu la complex fără a introduce un concept complet nou.",
+    "psychological": "Rata de succes va fi vizibil mai mică decât la EX-0020 sau EX-0021 izolat — informație despre dificultatea reală combinată, nu despre regresie.",
+    "technical": "Orientarea rapidă a corpului spre drum, nu spre o persoană, rămâne elementul tehnic central, acum sub presiune de timp reală.",
+    "social": "Cei trei coechipieri trebuie să se coordoneze mai rapid decât în exercițiile anterioare, având un singur adversar în minus disponibil pentru acoperire."
+  },
+  "age_appropriateness": "La 10–11 ani, combinarea a două decizii deja exersate separat se introduce doar după stabilizarea fiecăreia izolat (EX-0020, EX-0021); grupele 2015 și 2016 rămân împreună, cu reglaj individual al frecvenței pierderilor de minge exersate.",
+  "possible_misinterpretations": [
+    "Copiii încearcă să acopere toți cei patru adversari, revenind la tiparul respins deja în EX-0020.",
+    "Echipa renunță complet la protejarea centrului, concentrându-se doar pe recuperarea mingii."
+  ],
+  "task_risks": [
+    "Combinarea a două decizii poate fi prea grea dacă oricare dintre EX-0020/EX-0021 nu era încă stabilă izolat.",
+    "Teren prea mare pentru inferioritate numerică reală poate face protejarea drumului imposibilă, indiferent de decizie."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Acoperiți-i pe toți patru!",
+      "reason": "Cere o sarcină matematic imposibilă la inferioritate numerică — exact eroarea pe care exercițiul o corectează."
+    },
+    {
+      "phrase": "De ce ați primit gol, erați doar cu unul mai puțini!",
+      "reason": "Judecă rezultatul fără să recunoască dificultatea reală crescută a inferiorității numerice combinate cu momentul pierderii."
+    }
+  ],
+  "understanding_check": [
+    "reacția de influență/protecție apare vizibil chiar sub inferioritate numerică, în cel puțin unele repetiții",
+    "cei doi jucători care protejează rămân pe drum, nu pe adversari individuali"
+  ],
+  "response_if_not_understood": [
+    "revino temporar la EX-0020 sau EX-0021 izolat, pentru a reconfirma decizia de bază înainte de a le combina din nou",
+    "reconstituie o fază oprită și arată exact ce combinație de decizii ar fi fost corectă"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Mai mare decât EX-0021 pentru a acomoda patru atacanți, dar suficient de mic pentru ca protejarea drumului să rămână o decizie clară sub presiune de timp.",
+  "too_small_signs": [
+    "cei patru atacanți nu au loc să se diferențieze spațial, exercițiul devine haotic",
+    "coliziuni frecvente din cauza spațiului redus combinat cu inferioritatea numerică"
+  ],
+  "too_large_signs": [
+    "drumul central devine prea lat pentru a fi protejat de doi jucători, indiferent de decizie",
+    "pierderile de minge devin prea rare pentru a exersa decizia combinată de mai multe ori per set"
+  ],
+  "regression": [
+    "revino la EX-0020 sau EX-0021 izolat dacă decizia combinată eșuează complet",
+    "mărește ușor terenul pentru mai mult timp de decizie sub inferioritate numerică"
+  ],
+  "progression": [
+    "trecere la EX-0023 (recuperarea formei complete după o linie depășită, 4v4)",
+    "reduce ușor terenul pentru presiune de timp și mai mare, odată ce combinația e stabilă"
+  ],
+  "coach_questions": [
+    {
+      "question": "Cum ați decis cine influențează și cine protejează drumul, fiind cu unul mai puțini?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ce ați face diferit dacă ați avea din nou aceeași pierdere?",
+      "when": "după o fază cu gol primit prin inferioritate numerică"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Fiind cu unul mai puțini, drumul contează mai mult ca oricând."
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ați combinat exact cele două decizii exersate!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "echipa de 3 încearcă acoperire completă om la om, ignorând complet decizia „drum, nu om” din EX-0020",
+      "possible_causes": [
+        "presiunea reală a pierderii de minge face mai greu accesul la decizia deja exersată static",
+        "combinarea celor două decizii nu a fost încă exersată suficient"
+      ]
+    },
+    {
+      "observation": "niciun jucător nu influențează purtătorul advers, echipa se retrage complet pasiv",
+      "possible_causes": [
+        "confuzie între „protejează drumul” și „nu interveni deloc”",
+        "inferioritatea numerică a fost interpretată ca imposibilitate totală de reacție"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "cel puțin o combinație corectă (influență + protejarea drumului) apare per set, chiar sub inferioritate numerică",
+    "copiii pot explica, într-o propoziție, de ce nu au încercat să acopere toți cei patru adversari"
+  ],
+  "match_transfer": "În meci, echipa aflată în inferioritate numerică imediat după o pierdere de minge combină autonom influența asupra purtătorului cu protejarea drumului periculos, acceptând că nu poate acoperi fiecare adversar — transferul spre meciul oficial rămâne neconfirmat fără pilotare reală pe teren.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0021, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0044",
+    "SRC-0046"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.tranzitia-la-pierderea-mingii", "principle.protejarea-centrului"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C10"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C11", "COACH-C12"],
+  "related_pedagog_lesson_ids": ["CH-0103"],
+  "related_coach_lesson_ids": ["CH-0407", "CH-0403"],
+  "child_action": "Combină, imediat după o pierdere de minge în inferioritate numerică, decizia de a influența purtătorul cu decizia de a proteja drumul spre poartă, nu un adversar anume.",
+  "coach_focus": "Observarea combinării celor două decizii deja exersate separat, nu doar rezultatul final al fazei sub inferioritate numerică.",
+  "do_not_assume": [
+    "O rată de succes mai mică decât la EX-0020/EX-0021 izolat nu înseamnă regresie — combinarea celor două decizii sub inferioritate numerică e real mai grea.",
+    "Un gol primit prin adversarul liber nu invalidează o decizie corectă de protejare a drumului — la inferioritate numerică reală, cineva rămâne mereu liber."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de acoperire completă imposibilă (om la om) sub inferioritate numerică, observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "O rată de succes mai mică decât exercițiile izolate, dacă decizia de bază rămâne vizibilă.",
+    "Un gol primit printr-o decizie corectă de protejare a drumului."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul introduce acest exercițiu înainte ca EX-0020 și EX-0021 să fi arătat stabilitate izolat.",
+      "why_it_happens": "Presiunea de a ajunge rapid la situația cea mai realistă de meci, sărind peste pașii intermediari ai progresiei."
+    }
+  ],
+  "coach_reflection": [
+    "Am introdus această combinație doar după ce EX-0020 și EX-0021 au arătat stabilitate izolat, sau am sărit direct la cel mai greu context?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 14/18 jucători și 1-2 antrenori (grupuri de 7, rotație de roluri la fiecare 2-3 minute); la alte efective, se organizează cu grupuri mixte, urmând rotația documentată în capitolul despre organizare și siguranță.",
+  "assessment_ref": "ASM-0002"
+}

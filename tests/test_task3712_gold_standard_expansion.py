@@ -300,16 +300,19 @@ class Task3712ProblemGraphStrengtheningTests(unittest.TestCase):
     def test_deliberately_untouched_defensive_problems(self):
         # TASK-3712 explicitly does not link PRB-0004/PRB-0006 (defensive
         # organization — a different theme) to any new exercise/session.
+        # TASK-3718 later builds exactly that theme (apararea-presiune-si-acoperire)
+        # and strengthens PRB-0004/PRB-0006 accordingly — see
+        # test_task3718_second_training_theme.py for coverage of that link.
         problems = self.load_problems()
-        self.assertEqual(problems["PRB-0004"]["related_exercises"], [])
-        self.assertEqual(problems["PRB-0004"]["related_sessions"], [])
-        self.assertEqual(problems["PRB-0006"]["related_exercises"], [])
-        self.assertEqual(problems["PRB-0006"]["related_sessions"], [])
+        self.assertTrue(problems["PRB-0004"]["related_exercises"])
+        self.assertTrue(problems["PRB-0004"]["related_sessions"])
+        self.assertTrue(problems["PRB-0006"]["related_exercises"])
+        self.assertTrue(problems["PRB-0006"]["related_sessions"])
 
     def test_strengthened_problems_reference_only_real_exercises_and_sessions(self):
         exercise_ids = {json.loads(f.read_text(encoding="utf-8"))["id"] for f in EXERCISE_DIR.glob("exercise-*.json")}
         session_ids = {json.loads(f.read_text(encoding="utf-8"))["id"] for f in SESSION_DIR.glob("session-*.json")}
-        for pid in ("PRB-0001", "PRB-0002", "PRB-0003", "PRB-0005", "PRB-0007", "PRB-0008"):
+        for pid in ("PRB-0001", "PRB-0002", "PRB-0003", "PRB-0004", "PRB-0005", "PRB-0006", "PRB-0007", "PRB-0008"):
             problem = self.load_problems()[pid]
             for eid in problem["related_exercises"]:
                 self.assertIn(eid, exercise_ids, f"{pid}: unknown exercise {eid}")

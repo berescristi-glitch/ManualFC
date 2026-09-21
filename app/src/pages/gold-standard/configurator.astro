@@ -5,7 +5,7 @@ import { getGoldStandardExercises } from '../../lib/content-bridge';
 import { SUPPORTED_PLAYER_COUNTS, computeGroupConfiguration, TOTAL_SPACE_LABEL } from '../../lib/group-configurator';
 import type { CoachCount } from '../../lib/group-configurator';
 
-const exercises = getGoldStandardExercises();
+const exercises = getGoldStandardExercises().filter((exercise) => exercise.theme === 'sprijin-si-unghi-de-pasa');
 const coachCounts: CoachCount[] = [1, 2];
 
 const rows = exercises.map((exercise) => {

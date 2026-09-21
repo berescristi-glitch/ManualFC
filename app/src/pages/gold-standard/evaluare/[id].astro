@@ -1,42 +1,50 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
-import { getGoldStandardAssessment, getGoldStandardAssessmentPrinciples } from '../../../lib/content-bridge';
+import { getGoldStandardAssessments, getGoldStandardAssessment, getGoldStandardAssessmentPrinciples, getGoldStandardSessions, getGoldStandardSessionExercises } from '../../../lib/content-bridge';
 
 export function getStaticPaths() {
-  const assessment = getGoldStandardAssessment();
-  return [{ params: { id: assessment.id } }];
+  return getGoldStandardAssessments().map((a) => ({ params: { id: a.id } }));
 }
 const { id } = Astro.params;
-const assessment = getGoldStandardAssessment();
-if (assessment.id !== id) {
-  throw new Error(`[FAIL_CLOSED] [Gold Standard] Evaluarea "${id}" nu a fost găsită.`);
-}
-const principles = getGoldStandardAssessmentPrinciples();
+const assessment = getGoldStandardAssessment(id as string);
+const principles = getGoldStandardAssessmentPrinciples(assessment.id);
 const levelLabels = ['Nivel 1 — nu apare încă', 'Nivel 2 — apare doar cu sprijin extern', 'Nivel 3 — apare autonom'];
+
+function criterionExerciseIds(text: string): string[] { const m = text.match(/\(([^)]*)\)/); if (!m) return []; return m[1].match(/EX-\d{4}/g) ?? []; }
+const allExerciseIds = assessment.criteria.flatMap(c => criterionExerciseIds(c.observable_behaviour));
+const firstExerciseId = allExerciseIds[0];
+const lastExerciseId = allExerciseIds[allExerciseIds.length - 1];
+
+const linkedSessions = getGoldStandardSessions().filter((s) =>
+  getGoldStandardSessionExercises(s).some((ex) => allExerciseIds.includes(ex.id))
+);
 ---
-<BaseLayout title={`${assessment.title} — Gold Standard`} description="Cum observă antrenorul dacă sprijinul și unghiul de pasă au fost înțelese, nu doar exersate.">
+<BaseLayout title={`${assessment.title} — Gold Standard`} description={`Cum observă antrenorul dacă ${assessment.title.toLowerCase()} au fost înțelese, nu doar exersate.`}>
   <article class="asm-page">
     <Breadcrumb items={[{ label: 'Gold Standard', href: '/gold-standard' }, { label: assessment.id }]} />
     <p class="eyebrow">GOLD STANDARD · EVALUARE {assessment.id}</p>
     <h1>{assessment.title}</h1>
     <p class="intro">Un instrument de observare pe teren, nu un test sau un formular de scor. Verifică dacă ceea ce s-a exersat izolat în {' '}
-      <a href="/gold-standard/exercitii/EX-0001">EX-0001</a>–<a href="/gold-standard/exercitii/EX-0005">EX-0005</a>
+      {firstExerciseId && <a href={`/gold-standard/exercitii/${firstExerciseId}`}>{firstExerciseId}</a>}
+      {lastExerciseId && lastExerciseId !== firstExerciseId && <>–<a href={`/gold-standard/exercitii/${lastExerciseId}`}>{lastExerciseId}</a></>}
       {' '}a devenit un comportament pe care copilul îl alege singur, fără comandă.</p>
 
     <section aria-labelledby="ce-evaluam">
       <h2 id="ce-evaluam">Ce evaluăm și de ce</h2>
-      <p>Evaluăm dacă copilul recunoaște singur o umbră defensivă, își adaptează poziția de sprijin, se orientează la recepție, se coordonează cu ceilalți jucători de sprijin și transferă acest comportament în joc liber — cele cinci comportamente exersate în familia de exerciții Gold Standard. Scopul nu este un scor, ci un răspuns la o singură întrebare: <strong>copilul mai are nevoie de un reper extern (con, întrebare, comandă), sau alege singur?</strong></p>
+      <p>Evaluăm dacă comportamentele exersate izolat în această familie de exerciții Gold Standard devin comportamente pe care copilul le alege singur, fără comandă. Scopul nu este un scor, ci un răspuns la o singură întrebare: <strong>copilul mai are nevoie de un reper extern (con, întrebare, comandă), sau alege singur?</strong></p>
       <p class="reused-note">Criteriile sunt legate direct de principiile canonice {principles.map((p, i) => <>{i > 0 && ' · '}<a href={`/principii/${p.slug}`}>{p.title}</a></>)}, nu re-derivate.</p>
     </section>
 
     <section aria-labelledby="cand">
       <h2 id="cand">Când folosesc instrumentul</h2>
-      <p>După ședințe, nu în timpul lor. Cel mai simplu moment: în ultimele 10–15 minute de joc liber la finalul lui <a href="/gold-standard/sedinte/SES-0001">SES-0001</a> sau <a href="/gold-standard/sedinte/SES-0002">SES-0002</a>, când comportamentul fie apare fără comandă, fie nu apare. Nu se folosește ca test la începutul unei ședințe — copilul nu a avut încă ocazia să exerseze.</p>
+      <p>După ședințe, nu în timpul lor. Cel mai simplu moment: în ultimele 10–15 minute de joc liber la finalul {linkedSessions.length > 0 ? (
+        <>{linkedSessions.map((s, i) => <>{i > 0 && (i === linkedSessions.length - 1 ? ' sau ' : ', ')}<a href={`/gold-standard/sedinte/${s.id}`}>{s.id}</a></>)}</>
+      ) : 'ședințelor din această temă'}, când comportamentul fie apare fără comandă, fie nu apare. Nu se folosește ca test la începutul unei ședințe — copilul nu a avut încă ocazia să exerseze.</p>
     </section>
 
     <section aria-labelledby="criterii">
-      <h2 id="criterii">Criterii C1–C5</h2>
+      <h2 id="criterii">Criterii {assessment.criteria[0]?.id.split('-').pop()}–{assessment.criteria[assessment.criteria.length - 1]?.id.split('-').pop()}</h2>
       <ol class="criteria-list">
         {assessment.criteria.map((c) => (
           <li>
@@ -61,24 +69,26 @@ const levelLabels = ['Nivel 1 — nu apare încă', 'Nivel 2 — apare doar cu s
       <h2 id="nu-pot-conclude">Ce nu pot conclude din această observație</h2>
       <ul>
         <li>Un singur „nivel 3" într-o repetiție nu înseamnă că principiul e stabil — verifică din nou peste 2–3 repetiții sau ședința următoare.</li>
-        <li>Nivelul obținut la un criteriu nu prezice nivelul la celelalte patru — un copil poate recunoaște umbra defensivă (C1) și totuși să nu se coordoneze încă bine cu al doilea jucător de sprijin (C4).</li>
+        <li>Nivelul obținut la un criteriu nu prezice nivelul la celelalte criterii — un copil poate reuși la primul criteriu și totuși să nu se coordoneze încă bine la un criteriu ulterior.</li>
         <li>Instrumentul nu evaluează talentul, inteligența tactică sau potențialul copilului — evaluează un comportament observabil, într-un context anume, azi.</li>
       </ul>
     </section>
 
     <section aria-labelledby="repetitie-vs-invatare">
       <h2 id="repetitie-vs-invatare">Cum evit confuzia dintre o repetiție reușită și învățare</h2>
-      <p>O repetiție reușită arată ce poate face copilul chiar acum, cu sprijinul disponibil în acel moment. Învățarea se confirmă doar când comportamentul reapare <strong>fără acel sprijin</strong>, în repetiții diferite și, mai ales, în jocul liber de la finalul ședinței (C5) — nu în exercițiul structurat unde reperele externe sunt încă prezente.</p>
+      <p>O repetiție reușită arată ce poate face copilul chiar acum, cu sprijinul disponibil în acel moment. Învățarea se confirmă doar când comportamentul reapare <strong>fără acel sprijin</strong>, în repetiții diferite și, mai ales, în jocul liber de la finalul ședinței — nu în exercițiul structurat unde reperele externe sunt încă prezente.</p>
     </section>
 
     <section aria-labelledby="legaturi">
       <h2 id="legaturi">Legătura cu exercițiile și ședințele</h2>
-      <p>Fiecare criteriu corespunde exercițiului în care comportamentul e introdus întâi (C1→EX-0001, C2→EX-0002, C3→EX-0003, C4→EX-0004, C5→EX-0005), dar poate fi observat oricând comportamentul e vizibil, nu doar în acel exercițiu. <a href="/gold-standard/sedinte/SES-0001">SES-0001</a> acoperă introducerea prin C1–C3; <a href="/gold-standard/sedinte/SES-0002">SES-0002</a> extinde spre C4–C5.</p>
+      <p>Fiecare criteriu corespunde exercițiului (exercițiilor) în care comportamentul e introdus întâi, menționat direct în textul criteriului, dar poate fi observat oricând comportamentul e vizibil, nu doar în acel exercițiu. {linkedSessions.length > 0 && (
+        <>{linkedSessions.map((s, i) => <>{i > 0 && ' · '}<a href={`/gold-standard/sedinte/${s.id}`}>{s.id}</a></>)} acoperă exercițiile acestei evaluări în ordinea progresiei temei.</>
+      )}</p>
     </section>
 
     <section aria-labelledby="transfer">
       <h2 id="transfer">Transfer în joc</h2>
-      <p>Transferul real — comportamentul de sprijin apărând autonom în meciul oficial 7v7, nu doar în jocul liber redus de la finalul ședinței — rămâne neconfirmat până la o pilotare reală pe teren. Această evaluare surprinde transferul spre joc reprezentativ redus (C5); nu poate, prin ea însăși, confirma transferul spre meciul complet.</p>
+      <p>Transferul real — comportamentul apărând autonom în meciul oficial 7v7, nu doar în jocul liber redus de la finalul ședinței — rămâne neconfirmat până la o pilotare reală pe teren. Această evaluare surprinde transferul spre joc reprezentativ redus; nu poate, prin ea însăși, confirma transferul spre meciul complet.</p>
     </section>
   </article>
 </BaseLayout>

@@ -1,0 +1,202 @@
+{
+  "id": "EX-0017",
+  "title": "Unul încetinește, celălalt protejează",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "level": "consolidare",
+  "theme": "apararea-presiune-si-acoperire",
+  "game_moment": "aparare",
+  "primary_objective": "Copiii coordonează două roluri complementare — unul influențează controlat purtătorul mingii, celălalt rămâne capabil să răspundă unei eventuale depășiri — extinzând decizia individuală de întârziere din EX-0016 la o relație între doi apărători.",
+  "observable_behaviours": [
+    "primul apărător se apropie și frânează controlat, fără să fie eliminat prin propria viteză",
+    "al doilea apărător rămâne poziționat pentru a răspunde dacă primul e depășit, nu dublează orb aceeași acțiune"
+  ],
+  "players": {
+    "total": 3,
+    "in_possession": 1,
+    "defenders": 2,
+    "neutral_players": 0
+  },
+  "numerical_relation": "2v1",
+  "equipment": [
+    "6 conuri de delimitare",
+    "1 poartă mică sau conuri pentru poartă mini",
+    "6-8 mingi de rezervă"
+  ],
+  "equipment_items": [
+    { "item": "conuri de delimitare", "quantity": 6 },
+    { "item": "poartă mică sau conuri pentru poartă mini", "quantity": 1 },
+    { "item": "mingi de rezervă", "quantity": 6, "quantity_max": 8 }
+  ],
+  "field": {
+    "length_m": 14,
+    "width_m": 10,
+    "safety_margin_m": 2
+  },
+  "duration": {
+    "total_minutes": 9,
+    "format": "seturi de 90 de secunde cu rotație, pauză scurtă între seturi"
+  },
+  "rules": [
+    {
+      "rule": "Al doilea apărător nu are voie să se alăture atacului asupra mingii cât timp primul apărător nu a fost depășit.",
+      "why": "Previne dublajul orb (ambii apărători pe aceeași acțiune) și obligă la citirea explicită a rolului de acoperire — reglaj ales pentru acest exercițiu, nu un prag validat de cercetare."
+    },
+    {
+      "rule": "Rolurile (cine influențează, cine protejează) se pot schimba în timpul fazei, dacă purtătorul schimbă direcția.",
+      "why": "Reflectă natura dinamică a relației presiune-acoperire — nu e o atribuire fixă de rol, ci o decizie continuă, reutilizată direct din principiul canonic Unul influențează, celălalt protejează."
+    }
+  ],
+  "step_by_step": [
+    "Trei jucători: un purtător de minge, doi apărători, o poartă mică.",
+    "Primul apărător (cel mai aproape) se apropie și frânează controlat, ca în EX-0016.",
+    "Al doilea apărător se poziționează astfel încât să poată răspunde dacă primul e depășit, fără să dubleze orb aceeași acțiune.",
+    "Dacă purtătorul schimbă direcția, rolurile se pot schimba între cei doi apărători.",
+    "Rotație: schimb de roluri (purtător/apărători) la fiecare 90 de secunde."
+  ],
+  "rotation": "Rotație de roluri la fiecare 90 de secunde; toți cei 3 jucători dintr-un grup trec prin rolul de purtător.",
+  "transition": "Trecere directă la EX-0018 fără pauză de reorganizare — aceeași geometrie, opoziție continuă activată.",
+  "child_message": "Unul îl încetinește. Celălalt: dacă trece, poți fi tu următorul?",
+  "why_this_message": "Mesaj reutilizat direct din principiul canonic Presiune și acoperire — cele două funcții sunt concrete și verificabile, iar întrebarea pregătește schimbul de rol fără a dicta distanța sau partea.",
+  "problem_being_solved": "Primul apărător atacă mingea sau este depășit, iar al doilea apărător rămâne pasiv sau se aruncă în aceeași acțiune, lăsând drumul spre poartă complet neprotejat dacă primul eșuează.",
+  "information_children_must_notice": [
+    "mingea și orientarea purtătorului",
+    "unghiul și viteza primului apărător",
+    "spațiul din spatele duelului dintre purtător și primul apărător"
+  ],
+  "decision_children_must_learn": "Să decidă cine poate influența acum purtătorul și unde se poziționează celălalt pentru a deveni următoarea presiune, dacă primul e depășit.",
+  "rationales": {
+    "tactical": "Presiunea reduce opțiunile purtătorului, iar acoperirea limitează consecința unei eventuale depășiri — două funcții complementare, nu o singură reacție de grup.",
+    "perceptual": "Copiii citesc simultan duelul, poarta, colegul de apărare și spațiul din spate — o extensie reală față de decizia individuală din EX-0016.",
+    "decisional": "Rolul (presiune sau acoperire) se adaptează la poziția fiecăruia, nu e o atribuire fixă dinainte.",
+    "cognitive": "Introducerea celui de-al doilea apărător adaugă o singură relație nouă (cine acoperă pe cine), respectând progresia de la simplu la complex.",
+    "psychological": "Depășirea primului apărător nu e un eșec dacă acoperirea funcționează — reduce presiunea de a „câștiga” duelul individual cu orice preț.",
+    "technical": "Apropierea, frânarea și poziționarea corpului rămân elementele tehnice centrale, acum coordonate între doi jucători.",
+    "social": "Colegii își oferă protecție reciprocă și refac rolurile fără reproș după o depășire — cooperare explicită, nu competiție individuală."
+  },
+  "age_appropriateness": "La 10–11 ani, rolurile sunt arătate direct într-un 2v1 simplu și verificate imediat; grupele 2015 și 2016 rămân împreună, cu reglaj individual al distanței de start.",
+  "possible_misinterpretations": [
+    "Al doilea apărător crede că trebuie să atace mingea imediat ce primul se apropie, nu doar să acopere.",
+    "Copiii cred că rolurile sunt fixe pe toată durata fazei, nu adaptabile la mișcarea purtătorului."
+  ],
+  "task_risks": [
+    "Intrările necontrolate ale celui de-al doilea apărător cresc riscul de contact.",
+    "Teren prea mic elimină timpul necesar pentru frânare și schimb de rol."
+  ],
+  "phrases_to_avoid": [
+    {
+      "phrase": "Amândoi la minge.",
+      "reason": "Elimină acoperirea și permite unei singure acțiuni să depășească doi apărători — respins explicit de principiul canonic."
+    },
+    {
+      "phrase": "Stai în spatele lui.",
+      "reason": "Oferă o adresă fără unghi, distanță sau relație reală cu poarta."
+    }
+  ],
+  "understanding_check": [
+    "primul apărător frânează controlat, ca în EX-0016, fără a fi eliminat prin propria viteză",
+    "al doilea apărător rămâne poziționat pentru a răspunde, fără să dubleze orb aceeași acțiune"
+  ],
+  "response_if_not_understood": [
+    "reconstituie un moment static și mută doar acoperirea, cerând copilului să arate diferența",
+    "revino temporar la EX-0016 (1v1) pentru a reconfirma decizia individuală înainte de a adăuga coordonarea"
+  ],
+  "dimension_rationale": "Dimensiunea terenului este un parametru specific acestui exercițiu, nu un prag validat de cercetare. Puțin mai mare decât EX-0016 pentru a acomoda al doilea apărător și spațiul de acoperire, fără a deveni un teren de joc complet.",
+  "too_small_signs": [
+    "cei doi apărători nu pot menține distanța reală dintre presiune și acoperire",
+    "coliziuni frecvente între cei doi apărători"
+  ],
+  "too_large_signs": [
+    "purtătorul nu mai simte nicio presiune reală, indiferent de decizia apărătorilor",
+    "distanța dintre presiune și acoperire devine irelevantă pentru decizie"
+  ],
+  "regression": [
+    "revino temporar la EX-0016 (1v1) dacă coordonarea la doi eșuează complet",
+    "mărește terenul cu 2 m pentru mai mult timp de decizie"
+  ],
+  "progression": [
+    "trecere la EX-0018 (schimbarea rolului pe măsură ce mingea se mută, opoziție continuă)",
+    "reduce terenul cu 1-2 m pentru presiune de timp mai mare"
+  ],
+  "coach_questions": [
+    {
+      "question": "Cine influența purtătorul și cine proteja drumul spre poartă?",
+      "when": "la pauza dintre seturi, nu în timpul jocului"
+    },
+    {
+      "question": "Ce s-a întâmplat cu acoperirea când primul apărător a fost depășit?",
+      "when": "după o repetiție cu depășire reală"
+    }
+  ],
+  "coach_feedback": [
+    {
+      "type": "focus_extern",
+      "cue": "Dacă el e depășit, tu ești următorul — unde ești?"
+    },
+    {
+      "type": "incurajare_efort",
+      "cue": "Bravo, ați schimbat rolurile fără să vă opriți din joc!"
+    }
+  ],
+  "common_errors": [
+    {
+      "observation": "al doilea apărător se aruncă la minge odată cu primul, lăsând drumul complet neprotejat",
+      "possible_causes": [
+        "nu a perceput încă rolul distinct de acoperire",
+        "instinctul de a ajuta imediat rămâne mai puternic decât înțelegerea rolului"
+      ]
+    },
+    {
+      "observation": "al doilea apărător rămâne prea departe pentru a putea răspunde real la o depășire",
+      "possible_causes": [
+        "nu a evaluat corect distanța utilă de acoperire",
+        "confundă acoperirea cu retragerea completă"
+      ]
+    }
+  ],
+  "success_criteria": [
+    "al doilea apărător răspunde real la cel puțin jumătate din depășirile primului apărător, fără dublaj orb inițial",
+    "cei doi copii pot explica, într-o propoziție, cine avea rolul de presiune și cine de acoperire"
+  ],
+  "match_transfer": "În meci, cei doi apărători coordonează autonom cine influențează purtătorul și cine protejează drumul spre poartă, schimbând rolurile fără comandă când mingea sau purtătorul se mută.",
+  "visual_assets": {
+    "static_svg": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ, consecvent cu EX-0001–EX-0016, doar specificații textuale până la aprobare separată).",
+    "animation_or_storyboard": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ).",
+    "pdf_frames": "PENDING — specificație semantică rezervată; niciun fișier grafic produs (design freeze activ)."
+  },
+  "sources": [
+    "SRC-0035",
+    "SRC-0042",
+    "SRC-0043"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "pedagogical_principle_ids": ["principle.presiune-si-acoperire"],
+  "pedagog_competency_ids": ["PED-C01", "PED-C11"],
+  "coach_competency_ids": ["COACH-C01", "COACH-C11", "COACH-C13"],
+  "related_pedagog_lesson_ids": ["CH-0103"],
+  "related_coach_lesson_ids": ["CH-0404", "CH-0408"],
+  "child_action": "Coordonează rolul de presiune (frânare controlată) sau acoperire (poziționare pentru a răspunde la o depășire) cu celălalt apărător, schimbând rolurile dacă purtătorul schimbă direcția.",
+  "coach_focus": "Observarea relației dintre cei doi apărători — cine influențează, cine protejează — nu doar reușita individuală a duelului.",
+  "do_not_assume": [
+    "O depășire a primului apărător nu e un eșec dacă acoperirea funcționează — poate fi exact rezultatul urmărit de exercițiu.",
+    "Faptul că al doilea apărător nu intervine nu înseamnă pasivitate — poate fi exact rolul corect de acoperire."
+  ],
+  "when_to_intervene": [
+    "Tipar repetat de dublaj orb (ambii apărători pe aceeași acțiune), observat la pauza dintre seturi."
+  ],
+  "when_not_to_intervene": [
+    "O singură repetiție cu dublaj orb.",
+    "Acoperire prezentă dar la distanță nepotrivită — se lasă încă o repetiție înainte de a corecta."
+  ],
+  "coach_common_errors": [
+    {
+      "observation": "Antrenorul corectează doar tehnica duelului individual, ignorând poziția celui de-al doilea apărător.",
+      "why_it_happens": "Duelul vizibil, direct, atrage atenția mai ușor decât relația de acoperire, mai subtilă."
+    }
+  ],
+  "coach_reflection": [
+    "Am observat relația dintre cei doi apărători, sau doar rezultatul duelului individual?"
+  ],
+  "evidence_boundary": "Dimensiunea terenului și pragurile de intervenție sunt alegeri de proiectare ManualFC (PRACTICE_HEURISTIC), nu praguri validate de cercetare; transferul comportamentului în meciul oficial rămâne neconfirmat fără pilotare reală pe teren (FIELD_INPUT_REQUIRED).",
+  "group_configuration_note": "Compatibil cu Group Configurator pentru 8/10/12/14/16/18 jucători și 1-2 antrenori (rotație de roluri la fiecare 90 de secunde, deja specificată în acest fișier).",
+  "assessment_ref": "ASM-0002"
+}

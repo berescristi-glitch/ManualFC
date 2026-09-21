@@ -1,0 +1,252 @@
+{
+  "id": "SES-0009",
+  "title": "Presiune și acoperire — tranziția negativă și protejarea centrului în echipă",
+  "age_category": "10–11 ani, grupe 2015 și 2016 tratate împreună",
+  "duration_min": 75,
+  "primary_objective": "Extinde coordonarea defensivă de la doi jucători la un grup mai mare, introducând reacția imediată după pierderea mingii (EX-0021), separarea rolurilor de influență și protejare a centrului sub 4v3 (EX-0022) și recuperarea formei defensive, nu doar a mingii, sub 4v4 (EX-0023).",
+  "observable_behaviours": [
+    "cel mai apropiat jucător influențează purtătorul imediat după pierdere, fără să aștepte comandă",
+    "restul echipei se repoziționează pentru a proteja centrul, nu doar aleargă spre minge"
+  ],
+  "players_range": {
+    "min": 8,
+    "max": 18,
+    "note": "EX-0021 cere grupuri de 6 (3v3); EX-0022 cere grupuri de 7 (4v3); EX-0023 cere grupuri de 8 (4v4) — trei praguri de grup diferite, deci numărul de copii în așteptare diferă între segmente la același efectiv total. Vezi configuratorul de grup pentru numărul exact de grupe, spațiu și material la fiecare efectiv de la 8 la 18."
+  },
+  "operational_contingencies": [
+    {
+      "scenario": "3 copii ajung după ce ședința a început",
+      "guidance": "PRACTICE_HEURISTIC: copiii întârziați intră la pauza dintre seturi la exercițiul curent, nu în mijlocul unui set activ — schimbarea de jucători în timpul fazei active ar întrerupe exact comportamentul de tranziție pe care segmentul îl observă."
+    },
+    {
+      "scenario": "Terenul disponibil e mai mic decât dimensiunea canonică a exercițiului",
+      "guidance": "PRACTICE_HEURISTIC: la EX-0021 în special, un teren prea mic schimbă fereastra de timp disponibilă pentru reacția de tranziție. Dacă spațiul complet nu e disponibil, redu numărul de terenuri paralele, nu dimensiunea unui singur teren sub pragul canonic."
+    },
+    {
+      "scenario": "Veste de marcaj insuficiente pentru trei echipe/roluri distincte",
+      "guidance": "PRACTICE_HEURISTIC: folosește convenția tricou-pe-umăr pentru a distinge rolurile — distincția vizuală e necesară pentru observarea separării rolurilor de influență și protecție."
+    },
+    {
+      "scenario": "Un exercițiu eșuează — niciun copil nu reușește nici cu regresia maximă",
+      "guidance": "PRACTICE_HEURISTIC: la EX-0021/EX-0022, revino temporar la EX-0016-EX-0018 (regresia documentată explicit) mai degrabă decât să repeți fără succes. Dacă reacția de tranziție nu apare deloc la EX-0023, notează asta ca informație validă pentru ASM-0002."
+    },
+    {
+      "scenario": "Toți copiii aleargă spre minge simultan după pierdere",
+      "guidance": "PRACTICE_HEURISTIC: aceasta e exact comportamentul pe care exercițiile îl expun, nu un eșec al exercițiului — copiii la această vârstă tind spontan spre minge. Folosește o întrebare ghidată la pauza dintre seturi («Cine era cel mai aproape? Ce a făcut restul echipei?»), nu o comandă în timpul fazei active."
+    }
+  ],
+  "duration_variant_60min": {
+    "total_minutes": 60,
+    "policy_note": "Variantă de 60 minute — PRACTICE_HEURISTIC, o adaptare operațională, nu o durată validată de cercetare. Toate cele trei exerciții rămân, cu mai puține seturi fiecare; EX-0023 păstrează cel puțin două seturi complete pentru a putea observa recuperarea formei.",
+    "segments": [
+      { "segment_index": 0, "start_min": 0, "end_min": 8, "reduction_note": "Redus cu 2 min: reamintirea rămâne verbală și scurtă; se renunță la timpul de așteptare pentru răspunsuri multiple." },
+      { "segment_index": 1, "start_min": 8, "end_min": 20, "reduction_note": "Redus cu 3 min: mai puține seturi la EX-0021 — fereastra de reacție imediată după pierdere rămâne exersată în fiecare set rămas." },
+      { "segment_index": 2, "start_min": 20, "end_min": 34, "reduction_note": "Redus cu 4 min: mai puține seturi la EX-0022 — separarea rolurilor de influență și protecție, elementul central nou, rămâne expusă." },
+      { "segment_index": 3, "start_min": 34, "end_min": 50, "reduction_note": "Redus cu 4 min, păstrând cel puțin două seturi complete la EX-0023 — recuperarea formei sub 4v4 cere mai mult de o singură repetiție pentru a fi observabilă." },
+      { "segment_index": 4, "start_min": 50, "end_min": 60, "reduction_note": "Redus cu 5 min: reflecția rămâne completă; se renunță din timpul liber final pentru echipament." },
+      { "segment_index": 5, "start_min": 60, "end_min": 60, "reduction_note": "Segmentul de joc liber final e eliminat complet la varianta de 60 minute — e explicit timp non-esențial în structura canonică de 75 minute, iar cele trei exerciții centrale și reflecția rămân prioritare." }
+    ]
+  },
+  "equipment": [
+    "conuri de delimitare pentru toate stațiile",
+    "mingi de rezervă",
+    "veste de marcaj pentru echipe/roluri distincte",
+    "porți mici sau conuri mari pentru marcarea porților"
+  ],
+  "surface_plan": {
+    "layout": "Teren de 20x16m pentru EX-0021 (3v3), 24x18m pentru EX-0022 (4v3), 26x20m pentru EX-0023 (4v4), amplasate cu spațiu de siguranță de minimum 3m.",
+    "rotation": "Rotație de roluri la fiecare set (cine pierde mingea, cine influențează) la toate cele trei exerciții."
+  },
+  "segments": [
+    {
+      "start_min": 0,
+      "end_min": 10,
+      "title": "Încălzire cu reamintire scurtă",
+      "exercise_ids": [],
+      "coach_message": "Cine își amintește cum am protejat drumul periculos, nu un adversar fix, data trecută?",
+      "why_now": "Rutină de siguranță combinată cu o reamintire scurtă, nu o reluare completă a SES-0008 — sesiunea anterioară a consolidat deja coordonarea 2v2/3v2.",
+      "methodological_rationale": "Reamintirea scurtă, nu re-predarea, respectă timpul disponibil real al unei ședințe de club.",
+      "observation_focus": [
+        "participarea activă la reamintirea verbală, nu doar execuția fizică"
+      ],
+      "intervention_criteria": [
+        "dacă niciun copil nu-și amintește elementele de bază, se inserează o repetiție scurtă de EX-0018 înainte de a continua"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil răspunde parțial sau ezitant la reamintire, nu se corectează imediat — se lasă și alți copii să completeze răspunsul înainte de a interveni."
+      ],
+      "coach_focus": "Reamintire scurtă, nu re-predare completă — verifică participarea activă, nu doar execuția fizică.",
+      "verification_method": "Cel puțin un copil poate numi verbal elementul de bază exersat în SES-0008 înainte de a continua.",
+      "transition_logistics": "Formarea grupurilor de 6 pentru EX-0021."
+    },
+    {
+      "start_min": 10,
+      "end_min": 22,
+      "title": "EX-0021 — Primele două secunde după pierdere",
+      "exercise_ids": [
+        "EX-0021"
+      ],
+      "coach_message": "În momentul în care pierdeți mingea, cine e cel mai aproape reacționează imediat.",
+      "why_now": "Introduce reacția imediată de tranziție negativă abia după ce coordonarea defensivă statică (SES-0007, SES-0008) e stabilă — tranziția adaugă presiunea de timp ca element nou.",
+      "methodological_rationale": "Fereastra scurtă de timp după pierderea mingii e momentul cu cel mai mare risc tactic; constrângerea jocului (nu instrucțiunea verbală) expune acest moment.",
+      "observation_focus": [
+        "reacția imediată a celui mai apropiat jucător față de purtătorul advers, fără să aștepte comandă"
+      ],
+      "intervention_criteria": [
+        "un singur focalizator per set (viteza reacției imediate), fără durată cronometrată fixă"
+      ],
+      "non_intervention_criteria": [
+        "O reacție întârziată la prima pierdere de minge nu justifică oprirea jocului — se lasă opoziția să continue, corecția vine la pauza dintre seturi."
+      ],
+      "coach_focus": "Viteza reacției imediate a celui mai apropiat jucător, nu reacția întregului grup deodată.",
+      "verification_method": "La pauza dintre seturi, verifică dacă cel mai apropiat jucător a influențat purtătorul în primele două secunde, în majoritatea repetițiilor.",
+      "transition_logistics": "Extindere la teren de 24x18m și formare de grupuri de 7 pentru EX-0022."
+    },
+    {
+      "start_min": 22,
+      "end_min": 36,
+      "title": "EX-0022 — Cine e aproape, cine protejează centrul",
+      "exercise_ids": [
+        "EX-0022"
+      ],
+      "coach_message": "Cel mai apropiat merge la minge — restul protejează centrul, nu aleargă toți deodată.",
+      "why_now": "Sub 4v3, adaugă separarea explicită a rolurilor în echipă — un singur jucător influențează, restul protejează centrul — abia după ce reacția individuală (EX-0021) e exersată.",
+      "methodological_rationale": "Superioritatea numerică a atacanților (4v3) forțează echipa să nu reacționeze în bloc spre minge, consecvent cu principiul protejării centrului aplicat la nivel de echipă, nu doar individual.",
+      "observation_focus": [
+        "separarea rolurilor — un jucător influențează, restul se repoziționează spre centru"
+      ],
+      "intervention_criteria": [
+        "întrebare ghidată la pauza dintre seturi dacă toată echipa aleargă spre minge simultan, în mod repetat"
+      ],
+      "non_intervention_criteria": [
+        "O singură repetiție cu reacție în bloc spre minge nu justifică oprirea jocului — se lasă informația să se acumuleze din mai multe repetiții."
+      ],
+      "coach_focus": "Separarea rolurilor la nivel de echipă, nu doar decizia individuală a celui mai apropiat jucător.",
+      "verification_method": "La pauza dintre seturi, verifică dacă cel puțin un jucător a rămas poziționat spre centru în loc să alerge spre minge.",
+      "transition_logistics": "Extindere la teren de 26x20m și formare de echipe de 4 pentru EX-0023."
+    },
+    {
+      "start_min": 36,
+      "end_min": 52,
+      "title": "EX-0023 — Recuperează forma, nu doar mingea",
+      "exercise_ids": [
+        "EX-0023"
+      ],
+      "coach_message": "Jucați ca de obicei — dacă pierdeți mingea, gândiți-vă la formă, nu doar la a recupera mingea imediat.",
+      "why_now": "Testează dacă principiile exersate izolat (EX-0021, EX-0022) apar autonom în joc reprezentativ 4v4, fără constrângeri artificiale.",
+      "methodological_rationale": "Ultimul pas al progresiei acestei ședințe — verifică transferul spre joc complet, nu doar performanța în sarcina izolată.",
+      "observation_focus": [
+        "apariția autonomă a recuperării formei defensive (nu doar a mingii) după pierdere"
+      ],
+      "intervention_criteria": [
+        "fără comenzi verbale în timpul fazei active; observare tăcută, un singur focalizator per repriză"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul țintă nu apare deloc într-o repriză — se notează ca informație validă (pentru ASM-0002), nu se întrerupe jocul pentru a preda din nou."
+      ],
+      "coach_focus": "Non-intervenție verbală completă în timpul fazei active — testul de transfer, nu de performanță izolată.",
+      "verification_method": "La pauza dintre reprize, notează dacă a apărut cel puțin un comportament de recuperare a formei, fără comandă de pe margine.",
+      "transition_logistics": "Pauză scurtă între cele două reprize pentru reflecția intermediară."
+    },
+    {
+      "start_min": 52,
+      "end_min": 65,
+      "title": "Reflecție ghidată de închidere",
+      "exercise_ids": [],
+      "coach_message": "Unde ați văzut, în jocul de azi, o situație ca la exercițiile cu tranziția după pierdere?",
+      "why_now": "Reflecția leagă explicit jocul liber de exercițiile anterioare, sprijinind transferul spre meciul oficial.",
+      "methodological_rationale": "Închide bucla PROBLEMĂ → CONCEPT → EXERCIȚIU → TRANSFER cerută de arhitectura Gold Standard.",
+      "observation_focus": [
+        "capacitatea copiilor de a lega verbal jocul de exercițiile anterioare"
+      ],
+      "intervention_criteria": [
+        "întrebări deschise; niciun verdict impus dacă un copil nu poate încă face legătura"
+      ],
+      "non_intervention_criteria": [
+        "Dacă un copil nu poate încă lega jocul de exercițiile anterioare, nu se impune un verdict — rămâne informație pentru ședințele următoare."
+      ],
+      "coach_focus": "Întrebări deschise care leagă explicit jocul liber de exercițiile anterioare.",
+      "verification_method": "Cel puțin un copil poate numi o situație din joc similară cu un exercițiu anterior.",
+      "transition_logistics": "Ultimele minute libere pentru echipament, în interiorul aceluiași segment."
+    },
+    {
+      "start_min": 65,
+      "end_min": 75,
+      "title": "Joc liber de relaxare",
+      "exercise_ids": [],
+      "coach_message": "Jucați liber, fără reguli speciale — azi ați exersat destul!",
+      "why_now": "Închidere pozitivă a ședinței, timp activ suplimentar fără presiune evaluativă.",
+      "methodological_rationale": "Nu se introduc constrângeri noi la finalul unei ședințe cu încărcare cognitivă deja ridicată (3 concepte noi).",
+      "observation_focus": [
+        "siguranța fizică generală"
+      ],
+      "intervention_criteria": [
+        "doar pentru siguranță fizică sau comportament nesportiv"
+      ],
+      "non_intervention_criteria": [
+        "Comportamentul de joc liber, chiar dacă nu reflectă exercițiile exersate, nu justifică o intervenție tactică — acest segment e explicit relaxare, nu evaluare."
+      ],
+      "coach_focus": "Siguranță fizică generală, nu conținut tehnico-tactic.",
+      "verification_method": "Nu se aplică o verificare de conținut la acest segment — doar supraveghere de siguranță.",
+      "transition_logistics": "Final de ședință."
+    }
+  ],
+  "message_foundations": [
+    {
+      "message": "În momentul în care pierdeți mingea, cine e cel mai aproape reacționează imediat.",
+      "source_principle": "principle.tranzitia-la-pierderea-mingii",
+      "claim_ids": [
+        "CLM-0045",
+        "CLM-0046"
+      ]
+    },
+    {
+      "message": "Cel mai apropiat merge la minge — restul protejează centrul, nu aleargă toți deodată.",
+      "source_principle": "principle.protejarea-centrului",
+      "claim_ids": [
+        "CLM-0038",
+        "CLM-0047"
+      ]
+    }
+  ],
+  "session_rationale": "Ședința extinde coordonarea defensivă de la doi jucători (SES-0007, SES-0008) la reacția întregii echipe imediat după pierderea mingii — momentul de tranziție negativă. Separarea rolurilor (influență vs. protecție a centrului) e introdusă gradual, de la 3v3 la 4v3, înainte de testul de transfer în 4v4. Numărul de concepte noi (3) e limitat deliberat pentru a nu supra-încărca o singură ședință la această vârstă.",
+  "match_theme": "Reacția imediată după pierderea mingii și separarea rolurilor de influență și protejare a centrului la nivel de echipă.",
+  "reflection": [
+    "Unde ați văzut, în jocul de azi, o situație ca la exercițiile cu tranziția după pierdere?",
+    "Cine era cel mai aproape când ați pierdut mingea, și ce a făcut restul echipei?"
+  ],
+  "sources": [
+    "SRC-0035",
+    "SRC-0037",
+    "SRC-0042",
+    "SRC-0044",
+    "SRC-0045",
+    "SRC-0046"
+  ],
+  "gold_standard_v2": { "status": "V2", "version": "2.0" },
+  "child_objectives": [
+    "Reacționează imediat, ca cel mai apropiat jucător, la pierderea mingii, fără să aștepte comandă (EX-0021).",
+    "Separă rolul de influență directă de rolul de protejare a centrului, sub superioritate numerică a atacanților (EX-0022).",
+    "Recuperează forma defensivă a echipei, nu doar mingea, în joc reprezentativ 4v4 (EX-0023)."
+  ],
+  "coach_objectives": [
+    {
+      "objective": "Tratează reacția în bloc spre minge ca informație despre stadiul de învățare, nu ca eroare de corectat imediat, la EX-0021/EX-0022.",
+      "coach_competency_id": "COACH-C11"
+    },
+    {
+      "objective": "Menține non-intervenție verbală completă în timpul EX-0023, observând tăcut, cu un singur focalizator per repriză.",
+      "coach_competency_id": "COACH-C14"
+    }
+  ],
+  "reflection_v2": {
+    "child_game_dimension": [
+      "Reacția imediată după pierdere și separarea rolurilor de echipă au apărut doar în exercițiul structurat sau și în jocul liber final (EX-0023)?",
+      "A fost un singur moment izolat sau s-a repetat în ambele reprize?"
+    ],
+    "coach_dimension": [
+      "Am rezistat impulsului de a interveni tactic în timpul EX-0023?",
+      "Am notat corect dacă transferul a apărut sau nu, ca informație, nu ca verdict despre copii?"
+    ]
+  }
+}
