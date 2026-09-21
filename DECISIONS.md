@@ -728,3 +728,25 @@ Taskul cerea rularea efectivă a pilotului privat cu 2-3 antrenori U11 reali, ca
 **Repo legacy `E:/ManualFC` confirmat neatins.**
 
 Raport final: `reports/task-reports/TASK-3714.md`. Task: `TASK-3714` — muncă de investigare/validare **DONE**, `PILOT STATUS = NOT_STARTED`, verdict **`BLOCKED`**.
+
+## DEC-0090 — TASK-3718 construiește a doua temă completă de antrenament ManualFC: „Apărarea: presiune și acoperire", verdict PASS
+
+Utilizatorul a autorizat explicit trecerea la construcția de produs fără a aștepta dovezi de pilotare (`TASK-3714` rămâne `BLOCKED`) — acest task nu pretinde nicio validare de teren.
+
+**Selecția temei nu a fost arbitrară:** 3 candidați evaluați pe 8 criterii explicite (relevanță, adiacență pedagogică, distincție, profunzime de conținut, transferabilitate, efort de schemă, risc de duplicare, capacitate de a construi acum) în `plans/TASK-3718-second-training-theme.md` §3. **„Apărarea: presiune și acoperire" aleasă** pentru că era singura cu infrastructură deja evidențiată — `PRB-0004`/`PRB-0006`, lăsate deliberat orfane de `TASK-3712` exact pentru acest scop, plus 3 principii canonice cu `evidence_claim_ids` reale, neretrase. Alegerea a evitat fabricarea de cercetare nouă. Distincția față de tema 1 e reală, nu superficială: posesie (cum se poziționează echipa cu mingea) vs. apărare (cum reacționează echipa fără minge).
+
+**10 exerciții noi** (EX-0016–EX-0025, `theme: "apararea-presiune-si-acoperire"`), **4 ședințe noi** (SES-0007–SES-0010, progresie 1v1→2v2→3v3/4v3→4v4/6v6), **1 evaluare nouă** (ASM-0002, 5 criterii) — toate la profunzimea V2 completă (verificat de `validate_gold_standard_v2.py`, 0 erori pe 25 exerciții/10 ședințe). `PRB-0004`/`PRB-0006` întărite acum cu `related_exercises`/`related_sessions`/`assessment_links` reale.
+
+**Limitare arhitecturală reală găsită și generalizată minimal:** `getGoldStandardAssessment()` din `content-bridge.ts` era hardcodat la o singură evaluare globală, consumat fără parametri în 6 locuri. Generalizat compatibil retroactiv (parametru opțional cu valoare implicită `'ASM-0001'` plus `getGoldStandardAssessments()` nouă), reparând 3 consumatori care presupuneau incorect o singură evaluare globală (`gold-standard/sedinte/[id].astro`, `gold-standard/evaluare/[id].astro` — rescrisă integral să deriveze proza din date, nu hardcodată la tema 1 —, `spatiul-meu/reflectie.astro`) și `assessmentIds` din `validateProblemGraph()`.
+
+**Decizie de rutare:** rutele de detaliu (`/gold-standard/exercitii|sedinte|evaluare/[id]`) rămân comune pentru ambele teme, ca să nu rupă URL-uri live. `gold-standard/index.astro`, `fise-de-teren.astro`, `configurator.astro` filtrate explicit la `theme==='sprijin-si-unghi-de-pasa'` (câmp text deja existent, nicio schemă schimbată) ca să nu absoarbă tacit tema 2. Pagina nouă `/aparare/` e singura suprafață nouă de navigare.
+
+**Defect real găsit și reparat:** `SES-0008`/`SES-0009` aveau inițial `duration_variant_60min.segments` incomplet (lipsea ultimul segment din cele 6) — prins de validatorul `FAIL_CLOSED` la `npm run build`, nu ignorat; reparat prin completarea datelor, cu test de regresie dedicat adăugat.
+
+**Fișierele canonice ale temei 1 rămân identice byte-cu-byte** (`git diff` curat) — nicio corupere a Gold Standard-ului existent. 21 teste noi (`tests/test_task3718_second_training_theme.py`); `tests/test_task3712_gold_standard_expansion.py` actualizat (asertiunea „PRB-0004/PRB-0006 rămân neatinse" devenea falsă prin design, nu o regresie).
+
+**Validare completă:** `validate_content.py --strict`/`validate_gold_standard_v2.py` 0 erori, `npm run check` 0 erori, `npm test` 9/9 (contor de rute actualizat 119→139 cu justificare explicită), `pytest` 597 passed + 25 subtests, `npm run build` 139 pagini, Playwright+axe la 1440px/390px pe 6 pagini (0 violări, 0 erori consolă), sitemap complet, `git fsck --full` curat, fresh clone independent din `origin` reproduce identic.
+
+**Niciun cod de produs modificat în afara scopului strict al temei noi.** Repo legacy `E:/ManualFC` confirmat neatins.
+
+Raport final: `reports/task-reports/TASK-3718.md`. Task: `TASK-3718 = DONE`, verdict **`PASS`** — validarea de către antrenori reali rămâne indisponibilă și nu este pretinsă.

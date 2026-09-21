@@ -160,7 +160,7 @@
       "started_at": "2026-08-09T12:14:30+03:00",
       "completed_at": "2026-08-09T12:15:00+03:00",
       "migration_disposition": "MOVE_EARLIER",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-0101",
@@ -397,7 +397,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "MOVE_LATER",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-0106",
@@ -433,7 +433,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "MOVE_LATER",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-0107",
@@ -469,7 +469,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "MOVE_LATER",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-0108",
@@ -505,7 +505,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "MOVE_LATER",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-0109",
@@ -541,7 +541,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "MOVE_LATER",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-0410",
@@ -607,7 +607,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "MOVE_EARLIER",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-0412",
@@ -769,7 +769,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "MOVE_LATER",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-0417",
@@ -3125,7 +3125,7 @@
       "started_at": "2026-08-11T22:00:00+03:00",
       "completed_at": "2026-08-11T19:05:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.621
+      "weight_percent": 0.62
     },
     {
       "task_id": "TASK-0710",
@@ -3202,7 +3202,7 @@
       "started_at": "2026-08-11T21:45:00+03:00",
       "completed_at": "2026-08-12T00:25:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.621
+      "weight_percent": 0.62
     },
     {
       "task_id": "TASK-0810",
@@ -3818,7 +3818,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1002",
@@ -3857,7 +3857,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1003",
@@ -3896,7 +3896,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1004",
@@ -3935,7 +3935,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1005",
@@ -3974,7 +3974,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1006",
@@ -4013,7 +4013,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1007",
@@ -4052,7 +4052,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1008",
@@ -4091,7 +4091,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1009",
@@ -4130,7 +4130,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1010",
@@ -4169,7 +4169,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1011",
@@ -4208,7 +4208,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1012",
@@ -4247,7 +4247,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1013",
@@ -4286,7 +4286,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1014",
@@ -4325,7 +4325,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1015",
@@ -4364,7 +4364,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1021",
@@ -4511,7 +4511,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-1101",
@@ -4548,7 +4548,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1102",
@@ -4585,7 +4585,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1103",
@@ -4622,7 +4622,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1104",
@@ -4659,7 +4659,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1105",
@@ -4696,7 +4696,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1106",
@@ -4733,7 +4733,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1107",
@@ -4770,7 +4770,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1108",
@@ -4807,7 +4807,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1109",
@@ -4844,7 +4844,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1110",
@@ -4881,7 +4881,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1111",
@@ -4918,7 +4918,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1112",
@@ -4955,7 +4955,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1113",
@@ -4992,7 +4992,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1114",
@@ -5029,7 +5029,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1115",
@@ -5066,7 +5066,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1116",
@@ -5103,7 +5103,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1117",
@@ -5140,7 +5140,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1118",
@@ -5177,7 +5177,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-1121",
@@ -5327,7 +5327,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-1201",
@@ -6275,7 +6275,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-1506",
@@ -6374,7 +6374,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-1603",
@@ -6407,7 +6407,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-1604",
@@ -6506,7 +6506,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "MOVE_LATER",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-1703",
@@ -6573,7 +6573,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-1802",
@@ -6709,7 +6709,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-1904",
@@ -6743,7 +6743,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2001",
@@ -6809,7 +6809,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2003",
@@ -6842,7 +6842,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2101",
@@ -6909,7 +6909,7 @@
       "started_at": null,
       "completed_at": null,
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2103",
@@ -7080,7 +7080,7 @@
       "started_at": "2026-08-12T11:20:00+03:00",
       "completed_at": "2026-08-12T13:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-2205",
@@ -7114,7 +7114,7 @@
       "started_at": "2026-08-12T13:35:00+03:00",
       "completed_at": "2026-08-12T14:40:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2206",
@@ -7217,7 +7217,7 @@
       "started_at": "2026-08-12T16:15:00+03:00",
       "completed_at": "2026-08-12T18:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2209",
@@ -7422,7 +7422,7 @@
       "started_at": "2026-08-13T17:05:00+03:00",
       "completed_at": "2026-08-13T17:35:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2403",
@@ -7495,7 +7495,7 @@
       "started_at": "2026-08-13T21:50:00+03:00",
       "completed_at": "2026-08-13T22:45:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-2601",
@@ -7536,7 +7536,7 @@
       "started_at": "2026-08-13T22:50:00+03:00",
       "completed_at": "2026-08-14T14:45:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2701",
@@ -7574,7 +7574,7 @@
       "started_at": "2026-08-14T15:00:00+03:00",
       "completed_at": "2026-08-14T17:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.932
+      "weight_percent": 0.93
     },
     {
       "task_id": "TASK-2702",
@@ -7738,7 +7738,7 @@
       "started_at": "2026-08-14T20:05:00+03:00",
       "completed_at": "2026-08-14T20:20:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2706",
@@ -7829,7 +7829,7 @@
       "started_at": "2026-08-14T20:36:00+03:00",
       "completed_at": "2026-08-14T20:55:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2711",
@@ -7997,7 +7997,7 @@
       "started_at": "2026-08-15T23:03:00+03:00",
       "completed_at": "2026-08-15T23:09:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-2712",
@@ -8073,7 +8073,7 @@
       "started_at": "2026-08-16T19:30:00+03:00",
       "completed_at": "2026-08-16T20:55:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2802",
@@ -8114,7 +8114,7 @@
       "started_at": "2026-08-16T21:00:00+03:00",
       "completed_at": "2026-08-16T22:45:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.621
+      "weight_percent": 0.62
     },
     {
       "task_id": "TASK-2803",
@@ -8237,7 +8237,7 @@
       "started_at": "2026-08-17T15:00:00+03:00",
       "completed_at": "2026-08-17T18:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-2806",
@@ -8271,7 +8271,7 @@
       "started_at": "2026-08-17T19:00:00+03:00",
       "completed_at": "2026-08-17T21:50:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2901",
@@ -8335,7 +8335,7 @@
       "started_at": "2026-08-18T09:00:00+03:00",
       "completed_at": "2026-08-18T13:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2903",
@@ -8367,7 +8367,7 @@
       "started_at": "2026-08-18T09:00:00+03:00",
       "completed_at": "2026-08-18T13:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2904",
@@ -8500,7 +8500,7 @@
       "started_at": "2026-08-18T09:00:00+03:00",
       "completed_at": "2026-08-18T13:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-2908",
@@ -8636,7 +8636,7 @@
       "started_at": "2026-08-23T14:00:00+03:00",
       "completed_at": "2026-08-24T02:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3002",
@@ -8668,7 +8668,7 @@
       "started_at": "2026-08-23T14:00:00+03:00",
       "completed_at": "2026-08-24T02:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3003",
@@ -8700,7 +8700,7 @@
       "started_at": "2026-08-23T14:00:00+03:00",
       "completed_at": "2026-08-24T02:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3004",
@@ -8732,7 +8732,7 @@
       "started_at": "2026-08-23T14:00:00+03:00",
       "completed_at": "2026-08-24T02:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3005",
@@ -8764,7 +8764,7 @@
       "started_at": "2026-08-23T14:00:00+03:00",
       "completed_at": "2026-08-24T02:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3006",
@@ -8796,7 +8796,7 @@
       "started_at": "2026-08-23T14:00:00+03:00",
       "completed_at": "2026-08-24T02:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3007",
@@ -8828,7 +8828,7 @@
       "started_at": "2026-08-23T14:00:00+03:00",
       "completed_at": "2026-08-24T02:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3008",
@@ -8860,7 +8860,7 @@
       "started_at": "2026-08-23T14:00:00+03:00",
       "completed_at": "2026-08-24T02:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3009",
@@ -8892,7 +8892,7 @@
       "started_at": "2026-08-23T14:00:00+03:00",
       "completed_at": "2026-08-24T02:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3010",
@@ -8939,7 +8939,7 @@
       "started_at": "2026-08-23T14:00:00+03:00",
       "completed_at": "2026-08-24T02:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-3011",
@@ -9037,7 +9037,7 @@
       "started_at": "2026-08-24T14:00:00+03:00",
       "completed_at": "2026-08-24T22:15:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3014",
@@ -9069,7 +9069,7 @@
       "started_at": "2026-08-24T14:00:00+03:00",
       "completed_at": "2026-08-24T22:15:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3015",
@@ -9101,7 +9101,7 @@
       "started_at": "2026-08-24T14:00:00+03:00",
       "completed_at": "2026-08-24T22:15:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3016",
@@ -9133,7 +9133,7 @@
       "started_at": "2026-08-24T14:00:00+03:00",
       "completed_at": "2026-08-24T22:15:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3017",
@@ -9165,7 +9165,7 @@
       "started_at": "2026-08-24T14:00:00+03:00",
       "completed_at": "2026-08-24T22:15:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3018",
@@ -9197,7 +9197,7 @@
       "started_at": "2026-08-24T14:00:00+03:00",
       "completed_at": "2026-08-24T22:15:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3019",
@@ -9229,7 +9229,7 @@
       "started_at": "2026-08-24T14:00:00+03:00",
       "completed_at": "2026-08-24T22:15:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3020",
@@ -9273,7 +9273,7 @@
       "started_at": "2026-08-24T14:00:00+03:00",
       "completed_at": "2026-08-24T22:15:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-3021",
@@ -9371,7 +9371,7 @@
       "started_at": "2026-08-25T13:00:00+03:00",
       "completed_at": "2026-08-25T15:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3024",
@@ -9436,7 +9436,7 @@
       "started_at": "2026-08-25T13:00:00+03:00",
       "completed_at": "2026-08-25T15:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3026",
@@ -9468,7 +9468,7 @@
       "started_at": "2026-08-25T13:00:00+03:00",
       "completed_at": "2026-08-25T15:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3027",
@@ -9533,7 +9533,7 @@
       "started_at": "2026-08-25T13:00:00+03:00",
       "completed_at": "2026-08-25T15:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3029",
@@ -9575,7 +9575,7 @@
       "started_at": "2026-08-25T13:00:00+03:00",
       "completed_at": "2026-08-25T15:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-3030",
@@ -9608,7 +9608,7 @@
       "started_at": "2026-08-25T13:00:00+03:00",
       "completed_at": "2026-08-25T15:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3031",
@@ -9673,7 +9673,7 @@
       "started_at": "2026-08-25T13:00:00+03:00",
       "completed_at": "2026-08-25T15:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3033",
@@ -9774,7 +9774,7 @@
       "started_at": "2026-08-25T22:00:00+03:00",
       "completed_at": "2026-08-25T23:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.621
+      "weight_percent": 0.62
     },
     {
       "task_id": "TASK-3103",
@@ -9908,7 +9908,7 @@
       "started_at": "2026-08-26T14:00:00+03:00",
       "completed_at": "2026-08-26T15:35:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.621
+      "weight_percent": 0.62
     },
     {
       "task_id": "TASK-3302",
@@ -9974,7 +9974,7 @@
       "started_at": "2026-08-26T14:00:00+03:00",
       "completed_at": "2026-08-26T15:35:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-3304",
@@ -10015,7 +10015,7 @@
       "started_at": "2026-08-26T14:00:00+03:00",
       "completed_at": "2026-08-26T15:35:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-3305",
@@ -10087,7 +10087,7 @@
       "started_at": "2026-08-26T14:00:00+03:00",
       "completed_at": "2026-08-26T15:35:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.544
+      "weight_percent": 0.543
     },
     {
       "task_id": "TASK-3307",
@@ -10119,7 +10119,7 @@
       "started_at": "2026-08-26T14:00:00+03:00",
       "completed_at": "2026-08-26T15:35:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3308",
@@ -10187,7 +10187,7 @@
       "started_at": "2026-08-26T19:30:00+03:00",
       "completed_at": "2026-08-26T22:15:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.466
+      "weight_percent": 0.465
     },
     {
       "task_id": "TASK-3310",
@@ -10327,7 +10327,7 @@
       "started_at": "2026-08-27T00:00:00+03:00",
       "completed_at": "2026-08-27T02:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.699
+      "weight_percent": 0.698
     },
     {
       "task_id": "TASK-3404",
@@ -10364,7 +10364,7 @@
       "started_at": "2026-08-27T00:00:00+03:00",
       "completed_at": "2026-08-27T02:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3405",
@@ -10396,7 +10396,7 @@
       "started_at": "2026-08-28T11:00:00+03:00",
       "completed_at": "2026-08-28T12:00:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3406",
@@ -10632,7 +10632,7 @@
       "started_at": "2026-08-29T22:00:00+03:00",
       "completed_at": "2026-08-29T23:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3506",
@@ -10664,7 +10664,7 @@
       "started_at": "2026-08-29T22:00:00+03:00",
       "completed_at": "2026-08-29T23:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3507",
@@ -10776,7 +10776,7 @@
       "started_at": "2026-08-31T12:00:00+03:00",
       "completed_at": "2026-08-31T21:30:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.311
+      "weight_percent": 0.31
     },
     {
       "task_id": "TASK-3701",
@@ -11288,6 +11288,83 @@
       "weight_percent": 0.078
     },
     {
+      "task_id": "TASK-3718",
+      "title": "Build and Validate the Second Complete ManualFC Training Theme: apararea (presiune si acoperire, tranzitia negativa, protejarea centrului) -- 10 exercitii noi (EX-0016-EX-0025), 4 sedinte noi (SES-0007-SES-0010), 1 evaluare noua (ASM-0002), verdict PASS, pilotarea reala ramane indisponibila",
+      "phase": "CONTROL-PLANE",
+      "volume": "CONTROL-PLANE",
+      "status": "DONE",
+      "priority": "HIGH",
+      "dependencies": [
+        "TASK-3714"
+      ],
+      "outputs": [
+        "data/exercises/exercise-incetineste-nu-ataca-mingea.json",
+        "data/exercises/exercise-unul-incetineste-celalalt-protejeaza.json",
+        "data/exercises/exercise-schimba-rolul-cand-mingea-se-muta.json",
+        "data/exercises/exercise-nu-va-eliminati-amandoi.json",
+        "data/exercises/exercise-al-doilea-aparator-acopera-drumul.json",
+        "data/exercises/exercise-primele-doua-secunde-dupa-pierdere.json",
+        "data/exercises/exercise-cine-e-aproape-cine-protejeaza-centrul.json",
+        "data/exercises/exercise-recupereaza-forma-nu-doar-mingea.json",
+        "data/exercises/exercise-joc-mic-4v4-observare-defensiva.json",
+        "data/exercises/exercise-joc-mic-6v6-zona-de-protejat.json",
+        "data/sessions/session-incetinire-si-schimb-de-rol.json",
+        "data/sessions/session-coordonare-defensiva-2v2.json",
+        "data/sessions/session-tranzitie-negativa-si-echipa.json",
+        "data/sessions/session-transfer-defensiv-complet.json",
+        "data/assessments/assessment-apararea-presiune-si-acoperire.json",
+        "data/problems/problem-library.json",
+        "app/src/lib/content-bridge.ts",
+        "app/src/lib/discovery-index.ts",
+        "app/src/lib/problem-library.ts",
+        "app/src/pages/aparare/index.astro",
+        "app/src/pages/gold-standard/index.astro",
+        "app/src/pages/gold-standard/configurator.astro",
+        "app/src/pages/gold-standard/fise-de-teren.astro",
+        "app/src/pages/gold-standard/exercitii/[id].astro",
+        "app/src/pages/gold-standard/sedinte/[id].astro",
+        "app/src/pages/gold-standard/evaluare/[id].astro",
+        "app/src/pages/spatiul-meu/reflectie.astro",
+        "tests/test_task3718_second_training_theme.py",
+        "tests/test_task3712_gold_standard_expansion.py",
+        "tests/web/built-routes.test.js",
+        "plans/TASK-3718-second-training-theme.md",
+        "reports/task-reports/TASK-3718.md"
+      ],
+      "acceptance_criteria": [
+        "Outputurile declarate există.",
+        "Validările declarate ies cu cod 0.",
+        "Raportul conține dovezi și limite.",
+        "Tema aleasa nu e arbitrara: 3 candidati evaluati explicit pe 8 criterii (relevanta pentru antrenor, adiacenta pedagogica, distinctie fata de 'Sprijinul si unghiul de pasa', profunzime de continut disponibila, transferabilitate in joc reprezentativ, efort de schema/implementare, risc de duplicare, capacitate de a construi o tema completa acum) in plans/TASK-3718-second-training-theme.md -- 'Apararea: presiune si acoperire' aleasa pentru ca era singura cu infrastructura deja evidentiata (PRB-0004/PRB-0006 orfane + 3 principii canonice cu evidence_claim_ids reale), evitand fabricarea de cercetare noua.",
+        "10 exercitii noi (EX-0016-EX-0025, theme='apararea-presiune-si-acoperire') si 4 sedinte noi (SES-0007-SES-0010), toate cu profunzimea completa V2 (verificat de scripts/validate_gold_standard_v2.py, 0 erori pe 25 exercitii/10 sedinte): problema, perceptie, decizie, mesaj exact, cele 7 rationale, cand intervii/nu intervii, progresie/regresie, granita dovezii.",
+        "ASM-0002 (5 criterii) creata; PRB-0004 si PRB-0006 (lasate deliberat orfane de TASK-3712) intarite acum cu related_exercises/related_sessions/assessment_links reale -- exact tema pentru care fusesera rezervate.",
+        "Limitare arhitecturala reala gasita si generalizata minimal: getGoldStandardAssessment() era hardcodat la o singura evaluare, consumat fara parametri in 6 locuri. Generalizat compatibil retroactiv (parametru optional cu valoare implicita 'ASM-0001' plus getGoldStandardAssessments() noua); 3 consumatori care presupuneau o singura evaluare globala reparati (gold-standard/sedinte/[id].astro, gold-standard/evaluare/[id].astro, spatiul-meu/reflectie.astro) si assessmentIds din validateProblemGraph() actualizat.",
+        "Rutele de detaliu (exercitii/sedinte/evaluare) raman comune la /gold-standard/... pentru ambele teme, ca sa nu rupa URL-uri live; gold-standard/index.astro, fise-de-teren.astro si configurator.astro filtrate explicit la theme==='sprijin-si-unghi-de-pasa' (camp text deja existent, nicio schimbare de schema) ca sa nu absoarba tacit continutul temei 2; navigarea prev/next si breadcrumb din exercitii/[id].astro scopate la aceeasi tema. Pagina noua /aparare/ e singura suprafata noua de navigare, cu legaturi reciproce catre /gold-standard/, /principii/ si /rezolva-pe-teren/.",
+        "Fisierele canonice ale temei 1 raman identice byte-cu-byte (git diff curat pe exercise-recunoasterea-umbrei-defensive.json, session-introducere.json, assessment-sprijin-si-unghi-de-pasa.json etc.) -- nicio corupere a Gold Standard-ului existent.",
+        "21 teste noi (tests/test_task3718_second_training_theme.py) plus tests/test_task3712_gold_standard_expansion.py actualizat (asertiunea 'PRB-0004/PRB-0006 raman neatinse' devenea falsa prin design, nu o regresie -- actualizata sa reflecte ca TASK-3718 construieste exact tema pentru care fusesera rezervate).",
+        "Verificare reala de browser (Playwright, Chromium, cu @axe-core/playwright) la 1440px si 390px pe 6 pagini (inclusiv /aparare/, /gold-standard/evaluare/ASM-0002/, /gold-standard/exercitii/EX-0020/, /gold-standard/sedinte/SES-0009/): 12/12 verificari trecute, 0 violari axe, 0 erori de consola.",
+        "npm run build produce 139 pagini (119+20: 10 exercitii + 4 sedinte x2 rute + 1 evaluare + 1 pagina de tema); tests/web/built-routes.test.js actualizat de la 119 la 139 cu justificare explicita in comentariu; sitemap contine toate rutele noi.",
+        "Nicio pretentie de validare de teren: raportul si continutul noii teme afirma explicit ca pilotarea reala (TASK-3714) ramane BLOCKED si intentionat sarita pentru aceasta faza -- nicio afirmatie din /aparare/ sau ASM-0002 nu presupune coachi reali."
+      ],
+      "validation_commands": [
+        "python -m pytest -q",
+        "npm.cmd run check",
+        "npm.cmd run build",
+        "npm.cmd test",
+        "python scripts/validate_content.py --strict",
+        "python scripts/validate_gold_standard_v2.py",
+        "git diff --check"
+      ],
+      "attempts": 1,
+      "max_attempts": 4,
+      "last_error": null,
+      "created_at": "2026-07-30",
+      "started_at": "2026-09-21T15:30:00+03:00",
+      "completed_at": "2026-09-21T17:15:00+03:00",
+      "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
+      "weight_percent": 0.155
+    },
+    {
       "task_id": "TASK-2717",
       "title": "Wave-1 browser acceptance, Preview si baseline",
       "phase": "PHASE-27",
@@ -11325,7 +11402,7 @@
       "started_at": "2026-08-14T19:11:00+03:00",
       "completed_at": "2026-08-14T19:57:00+03:00",
       "migration_disposition": "KEEP_WITH_WEB_OUTPUT",
-      "weight_percent": 0.232
+      "weight_percent": 0.188
     }
   ]
 }

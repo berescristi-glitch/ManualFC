@@ -1467,6 +1467,37 @@ add("TASK-3714", "Execute the Live ManualFC Private Pilot and Produce the Produc
         "Actiunea exacta ceruta din partea utilizatorului: recrutarea a 2-3 antrenori reali conform PRIVATE_PILOT_COACH_PACK.md, desfasurarea a minimum 2 sedinte reale per antrenor pe o fereastra de 2-4 saptamani, si returnarea formularelor PRIVATE_PILOT_OBSERVATION_TEMPLATE.md completate -- abia atunci un task viitor poate produce Product Reality Check-ul real."],
     volume="CONTROL-PLANE", units=1, status="DONE",
     validations=["npm.cmd run check", "npm.cmd test", "python -m pytest -q", "git diff --check"])
+add("TASK-3718", "Build and Validate the Second Complete ManualFC Training Theme: apararea (presiune si acoperire, tranzitia negativa, protejarea centrului) -- 10 exercitii noi (EX-0016-EX-0025), 4 sedinte noi (SES-0007-SES-0010), 1 evaluare noua (ASM-0002), verdict PASS, pilotarea reala ramane indisponibila", "CONTROL-PLANE", ["TASK-3714"],
+    ["data/exercises/exercise-incetineste-nu-ataca-mingea.json", "data/exercises/exercise-unul-incetineste-celalalt-protejeaza.json",
+     "data/exercises/exercise-schimba-rolul-cand-mingea-se-muta.json", "data/exercises/exercise-nu-va-eliminati-amandoi.json",
+     "data/exercises/exercise-al-doilea-aparator-acopera-drumul.json", "data/exercises/exercise-primele-doua-secunde-dupa-pierdere.json",
+     "data/exercises/exercise-cine-e-aproape-cine-protejeaza-centrul.json", "data/exercises/exercise-recupereaza-forma-nu-doar-mingea.json",
+     "data/exercises/exercise-joc-mic-4v4-observare-defensiva.json", "data/exercises/exercise-joc-mic-6v6-zona-de-protejat.json",
+     "data/sessions/session-incetinire-si-schimb-de-rol.json", "data/sessions/session-coordonare-defensiva-2v2.json",
+     "data/sessions/session-tranzitie-negativa-si-echipa.json", "data/sessions/session-transfer-defensiv-complet.json",
+     "data/assessments/assessment-apararea-presiune-si-acoperire.json", "data/problems/problem-library.json",
+     "app/src/lib/content-bridge.ts", "app/src/lib/discovery-index.ts", "app/src/lib/problem-library.ts",
+     "app/src/pages/aparare/index.astro", "app/src/pages/gold-standard/index.astro",
+     "app/src/pages/gold-standard/configurator.astro", "app/src/pages/gold-standard/fise-de-teren.astro",
+     "app/src/pages/gold-standard/exercitii/[id].astro", "app/src/pages/gold-standard/sedinte/[id].astro",
+     "app/src/pages/gold-standard/evaluare/[id].astro", "app/src/pages/spatiul-meu/reflectie.astro",
+     "tests/test_task3718_second_training_theme.py", "tests/test_task3712_gold_standard_expansion.py",
+     "tests/web/built-routes.test.js", "plans/TASK-3718-second-training-theme.md", REPORT("TASK-3718")],
+    SCHEMA_OK + [
+        "Tema aleasa nu e arbitrara: 3 candidati evaluati explicit pe 8 criterii (relevanta pentru antrenor, adiacenta pedagogica, distinctie fata de 'Sprijinul si unghiul de pasa', profunzime de continut disponibila, transferabilitate in joc reprezentativ, efort de schema/implementare, risc de duplicare, capacitate de a construi o tema completa acum) in plans/TASK-3718-second-training-theme.md -- 'Apararea: presiune si acoperire' aleasa pentru ca era singura cu infrastructura deja evidentiata (PRB-0004/PRB-0006 orfane + 3 principii canonice cu evidence_claim_ids reale), evitand fabricarea de cercetare noua.",
+        "10 exercitii noi (EX-0016-EX-0025, theme='apararea-presiune-si-acoperire') si 4 sedinte noi (SES-0007-SES-0010), toate cu profunzimea completa V2 (verificat de scripts/validate_gold_standard_v2.py, 0 erori pe 25 exercitii/10 sedinte): problema, perceptie, decizie, mesaj exact, cele 7 rationale, cand intervii/nu intervii, progresie/regresie, granita dovezii.",
+        "ASM-0002 (5 criterii) creata; PRB-0004 si PRB-0006 (lasate deliberat orfane de TASK-3712) intarite acum cu related_exercises/related_sessions/assessment_links reale -- exact tema pentru care fusesera rezervate.",
+        "Limitare arhitecturala reala gasita si generalizata minimal: getGoldStandardAssessment() era hardcodat la o singura evaluare, consumat fara parametri in 6 locuri. Generalizat compatibil retroactiv (parametru optional cu valoare implicita 'ASM-0001' plus getGoldStandardAssessments() noua); 3 consumatori care presupuneau o singura evaluare globala reparati (gold-standard/sedinte/[id].astro, gold-standard/evaluare/[id].astro, spatiul-meu/reflectie.astro) si assessmentIds din validateProblemGraph() actualizat.",
+        "Rutele de detaliu (exercitii/sedinte/evaluare) raman comune la /gold-standard/... pentru ambele teme, ca sa nu rupa URL-uri live; gold-standard/index.astro, fise-de-teren.astro si configurator.astro filtrate explicit la theme==='sprijin-si-unghi-de-pasa' (camp text deja existent, nicio schimbare de schema) ca sa nu absoarba tacit continutul temei 2; navigarea prev/next si breadcrumb din exercitii/[id].astro scopate la aceeasi tema. Pagina noua /aparare/ e singura suprafata noua de navigare, cu legaturi reciproce catre /gold-standard/, /principii/ si /rezolva-pe-teren/.",
+        "Fisierele canonice ale temei 1 raman identice byte-cu-byte (git diff curat pe exercise-recunoasterea-umbrei-defensive.json, session-introducere.json, assessment-sprijin-si-unghi-de-pasa.json etc.) -- nicio corupere a Gold Standard-ului existent.",
+        "21 teste noi (tests/test_task3718_second_training_theme.py) plus tests/test_task3712_gold_standard_expansion.py actualizat (asertiunea 'PRB-0004/PRB-0006 raman neatinse' devenea falsa prin design, nu o regresie -- actualizata sa reflecte ca TASK-3718 construieste exact tema pentru care fusesera rezervate).",
+        "Verificare reala de browser (Playwright, Chromium, cu @axe-core/playwright) la 1440px si 390px pe 6 pagini (inclusiv /aparare/, /gold-standard/evaluare/ASM-0002/, /gold-standard/exercitii/EX-0020/, /gold-standard/sedinte/SES-0009/): 12/12 verificari trecute, 0 violari axe, 0 erori de consola.",
+        "npm run build produce 139 pagini (119+20: 10 exercitii + 4 sedinte x2 rute + 1 evaluare + 1 pagina de tema); tests/web/built-routes.test.js actualizat de la 119 la 139 cu justificare explicita in comentariu; sitemap contine toate rutele noi.",
+        "Nicio pretentie de validare de teren: raportul si continutul noii teme afirma explicit ca pilotarea reala (TASK-3714) ramane BLOCKED si intentionat sarita pentru aceasta faza -- nicio afirmatie din /aparare/ sau ASM-0002 nu presupune coachi reali."],
+    volume="CONTROL-PLANE", units=2, status="DONE",
+    validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test",
+                 "python scripts/validate_content.py --strict", "python scripts/validate_gold_standard_v2.py",
+                 "git diff --check"])
 add("TASK-2717", "Wave-1 browser acceptance, Preview si baseline", "PHASE-27", ["TASK-2704"],
     ["plans/TASK-2717-wave1-acceptance.md", "reports/audits/MANUALFC_WAVE1_BROWSER_ACCEPTANCE.md", REPORT("TASK-2717")],
     SCHEMA_OK + [
@@ -2037,6 +2068,11 @@ def materialize() -> dict:
             task["started_at"] = "2026-09-17T22:20:00+03:00"
             task["completed_at"] = "2026-09-17T22:45:00+03:00"
             task["last_error"] = "BLOCKED: no real coaches/sessions available for the pilot; PILOT STATUS = NOT_STARTED. No participants, sessions, observations, or findings were fabricated."
+        if task["task_id"] == "TASK-3718":
+            task["attempts"] = 1
+            task["started_at"] = "2026-09-21T15:30:00+03:00"
+            task["completed_at"] = "2026-09-21T17:15:00+03:00"
+            task["last_error"] = None
         if task["task_id"] == "TASK-2705":
             task["attempts"] = 1
             task["started_at"] = "2026-08-14T20:05:00+03:00"
