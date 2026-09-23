@@ -798,3 +798,32 @@ Al patrulea pilon de conținut ManualFC, autorizat explicit de utilizator fără
 **Niciun cod de produs modificat în afara scopului strict al acestui pilon.** Repo legacy `E:/ManualFC` confirmat neatins.
 
 Raport final: `reports/task-reports/TASK-3720.md`. Task: `TASK-3720 = DONE`, verdict **`PASS`** — validarea de către antrenori reali rămâne indisponibilă și nu este pretinsă; planurile sunt sinteze profesionale de secvențiere pedagogică, nu periodizare sportivă tehnică și nu o garanție de dezvoltare a jucătorului.
+
+## DEC-0093 — TASK-3721 integrează traseul antrenorului pe toate cele patru sisteme de conținut, verdict PASS
+
+Cele patru sisteme de conținut ManualFC (teme/metodologie, exerciții/ședințe, scripturi de comunicare, planuri de sezon — completate secvențial în `TASK-3718`–`TASK-3720`) funcționau corect fiecare în parte, dar nu ca un singur traseu de lucru al antrenorului. Utilizatorul a cerut integrarea lor, fără infrastructură nouă și fără dovezi de pilotare (`TASK-3714` rămâne `BLOCKED`).
+
+**Nu s-a construit un al cincilea sistem de conținut** — mandatul a fost explicit „repară tranzițiile, nu adăuga conținut". Traseul actual a fost mapat direct, prin citirea a ~12 fișiere sursă (header, footer, homepage, onboarding, căutare, pagină de problemă, pagină de exercițiu, pagină de ședință, pagină de principiu, Spațiul meu, unealta de reflecție, pagina offline) și încrucișarea cu `grep`, nu prin presupuneri despre ce ar trebui să existe.
+
+**Tranziții reale rupte, găsite prin această mapare:**
+- Header și footer randau din două liste hardcodate independente (`AppHeader.astro`/`AppFooter.astro`), divergente — footer-ul nu includea scripturile/planurile de sezon/căutarea/Spațiul meu la fel de fiabil ca header-ul.
+- Paginile de exercițiu, ședință și principiu nu legau înapoi la problema de joc pe care o rezolvă, deși `related_exercises`/`related_sessions`/`related_principles` existau deja pe fiecare problemă din motorul de decizie.
+- Pagina de problemă (`rezolva-pe-teren/[slug]`) nu afișa nici principiul din spate, nici scripturile de comunicare relevante, deși ambele relații existau deja în date (`related_principles`, `related_problem_ids` pe scripturi).
+- Unealta de reflecție (`spatiul-meu/reflectie`) accepta deja `?sesiune=` ca parametru de pre-completare, dar nimic nu trimitea spre ea — un dead-end real, nu doar o îmbunătățire posibilă.
+- `cauta.astro` excludea tacit din rezultate orice script sau plan de sezon fără metadate de efectiv/durată, de îndată ce utilizatorul aplica filtrul Efectiv sau Timp — bug de filtrare, nu limitare de scop.
+
+**Reparații, toate minime și peste date deja declarate:**
+- `getPrimaryNavigation()` (`content-bridge.ts`) devine sursa unică pentru header și footer, fiecare cu propria hartă locală de etichete/filtrare — elimină lista divergentă, nu creează un nou sistem de configurare.
+- `getProblemsForExercise`/`Session`/`Principle` (`problem-library.ts`, noi) și `getScriptsForProblem` (`content-bridge.ts`, nou) — toate filtre pure peste câmpuri relaționale deja existente, niciodată un motor de scor sau recomandare nouă. Această alegere respectă explicit cerința de a distinge relevanța de popularitate.
+- CTA de reflecție adăugat pe pagina canonică de ședință și pe fiecare microciclu dintr-un plan de sezon (legat la prima sa ședință) — un singur pas următor clar, nu o listă de opțiuni.
+- Logica de facet din `cauta.astro` corectată să trateze absența unui facet ca „neaplicabil, trece filtrul" în loc de „eșec de potrivire"; etichete de tip lizibile adăugate pentru toate cele 8 tipuri de descoperire.
+- `CANONICAL_KIND_LABELS` nou (`coach-state.ts`, plasat client-safe, separat de `content-bridge.ts` pentru a nu introduce importurile grele de JSON în bundle-ul de browser) afișat ca etichetă de tip pe salvate/favorite/recente în Spațiul meu; toate cele cinci stări goale rescrise să numească acțiunea concretă care le umple, nu doar absența conținutului.
+- Acasă și `incepe-aici` capătă un al treilea mod/intrare către planuri de sezon, alături de cele două deja existente (învață / rezolvă pe teren).
+
+**Niciun conținut existent modificat inutil:** `git diff --stat` limitat la 13 fișiere sursă de produs + 2 fișiere noi (test, plan) + 1 test actualizat; nicio dată din `data/exercises/`, `data/sessions/`, `data/problems/`, `data/principles/`, `data/communication-scripts/`, `data/season-plans/`, `data/curriculum/` atinsă. Nicio rută nouă adăugată — `npm run build` produce în continuare 171 pagini.
+
+**Validare completă:** `validate_content.py --strict` 0 erori, `validate_season_plans.py` 4/4, `validate_communication_scripts.py` 26/26, `validate_gold_standard_v2.py` 0 erori, `npm run check` 0 erori (101 fișiere), `npm test` 9/9, `pytest` 665 passed + 25 subtests (29 teste noi), `npm run build` 171 pagini (neschimbat), sitemap 170 URL-uri + `404.html`, Playwright+axe la 1440px/390px pe 10 pagini cheie — 20/20 PASS (0 violări axe, 0 erori de consolă, 0 depășire orizontală, inclusiv navigarea extinsă la 10 elemente în header), `git fsck --full` curat (doar obiecte dangling benigne), fresh clone independent din `origin` reproduce identic.
+
+**Niciun cod de produs modificat în afara scopului strict al integrării traseului.** Repo legacy `E:/ManualFC` confirmat neatins.
+
+Raport final: `reports/task-reports/TASK-3721.md`. Task: `TASK-3721 = DONE`, verdict **`PASS`** — validarea de către antrenori reali rămâne indisponibilă (`TASK-3714 = BLOCKED`) și nu este pretinsă nicăieri în conținutul sau raportul acestui task.

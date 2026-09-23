@@ -72,13 +72,13 @@ Toate comenzile din task: validatoare de conținut, `npm run check`, `npm test`,
 ## 10. Progres
 
 - [x] Harta fluxului actual, constatări verificate
-- [ ] Getteri noi de legătură inversă
-- [ ] Legături contextuale noi pe problemă/exercițiu/ședință/principiu/plan
-- [ ] Navigare globală reparată și unificată
-- [ ] Homepage/onboarding actualizate
-- [ ] Căutare reparată
-- [ ] Spațiul meu — etichete de tip + stări goale
-- [ ] Teste noi + validare completă + fresh clone + guvernanță
+- [x] Getteri noi de legătură inversă
+- [x] Legături contextuale noi pe problemă/exercițiu/ședință/principiu/plan
+- [x] Navigare globală reparată și unificată
+- [x] Homepage/onboarding actualizate
+- [x] Căutare reparată
+- [x] Spațiul meu — etichete de tip + stări goale
+- [x] Teste noi + validare completă + fresh clone + guvernanță
 
 ## 11. Jurnal de decizii
 
@@ -88,4 +88,10 @@ Toate comenzile din task: validatoare de conținut, `npm run check`, `npm test`,
 
 ## 12. Rezultat și retrospectivă
 
-_(completat la finalul taskului)_
+Verdict **PASS**. Cele patru sisteme de conținut formează acum un traseu coerent (problemă → principiu → exercițiu/ședință → script → plan de sezon → reflecție → salvat/continuat), fără nicio infrastructură nouă și fără nicio pretenție de validare de teren (`TASK-3714` rămâne `BLOCKED`).
+
+Ce a funcționat: maparea directă prin citirea codului sursă (nu presupuneri) a găsit exact 7 tranziții rupte reale, toate reparabile cu modificări mici peste date deja declarate — niciun caz nu a necesitat un motor de recomandare, o schemă nouă sau infrastructură suplimentară. Reutilizarea tiparului `related_*` deja existent pentru toate legăturile noi a păstrat garanția „relevanță, nu popularitate" fără efort suplimentar de proiectare.
+
+Dificultate tehnică notabilă: editarea regexului de eliminare a diacriticelor din `cauta.astro` (`/[\u0300-\u036f]/g`) a fost coruptă de trei ori consecutiv pentru că secvențele de escape Unicode tastate direct în parametrii uneltelor de editare erau interpretate ca punctul de cod real, nu păstrate ca text ASCII literal — rezolvat printr-un script Node.js separat care construiește backslash-ul prin `String.fromCharCode(92)`, evitând complet tastarea literală a unui `\u`.
+
+Rămâne neschimbat, deliberat: numărul de pagini (171), toate schemele de date, toate fișierele din `data/`, mecanismul de bază al Spațiului meu (doar afișarea s-a schimbat). Repo legacy `E:/ManualFC` confirmat neatins pe tot parcursul taskului.

@@ -1582,6 +1582,32 @@ add("TASK-3720", "Build the Season Planning Content Pillar: 4 planuri de sezon (
     validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test",
                  "python scripts/validate_content.py --strict", "python scripts/validate_season_plans.py",
                  "git diff --check"])
+add("TASK-3721", "Integrate the coach workflow across all four content systems (teme/metodologie, exercitii/sedinte, scripturi de comunicare, planuri de sezon) intr-un singur traseu coerent problema -> principiu -> exercitiu/sedinta -> script -> plan de sezon -> reflectie -> salvat/continuat, verdict PASS, pilotarea reala ramane indisponibila", "CONTROL-PLANE", ["TASK-3720"],
+    ["app/src/lib/content-bridge.ts", "app/src/lib/problem-library.ts", "app/src/lib/coach-state.ts",
+     "app/src/components/AppHeader.astro", "app/src/components/AppFooter.astro",
+     "app/src/pages/index.astro", "app/src/pages/incepe-aici.astro", "app/src/pages/cauta.astro",
+     "app/src/pages/rezolva-pe-teren/[slug].astro", "app/src/pages/gold-standard/exercitii/[id].astro",
+     "app/src/pages/gold-standard/sedinte/[id].astro", "app/src/pages/principii/[slug].astro",
+     "app/src/pages/planuri-de-sezon/[id].astro", "app/src/pages/spatiul-meu/index.astro",
+     "tests/test_task3721_workflow_integration.py", "tests/test_task2703_ia_v2.py",
+     "plans/TASK-3721-coach-workflow-integration.md", REPORT("TASK-3721")],
+    SCHEMA_OK + [
+        "Nu s-a construit un al cincilea sistem de continut, ci s-au reparat tranzitiile reale dintre cele patru deja existente: mapare directa a jurnalului de lucru al antrenorului (citire a ~12 fisiere sursa, nu presupuneri) a gasit navigare cap/footer divergenta, pagini de exercitiu/sedinta/principiu fara legatura inapoi la problema, pagina de problema fara scriptul sau principiul asociat, unealta de reflectie neconectata din nicio pagina, si filtre de cautare care excludeau tacit scripturi/planuri fara metadate de efectiv/durata.",
+        "Navigare unificata: header si footer randeaza acum din aceeasi getPrimaryNavigation() (content-bridge.ts), fiecare cu propria harta de etichete/filtrare, eliminand cele doua liste hardcodate divergente semnalate explicit ca risc in cerinta (\"duplicate discovery paths\").",
+        "Legaturi noi de continut invers, toate peste campuri relationale deja declarate in date (related_principles/related_exercises/related_sessions/related_problem_ids), niciodata un motor de scor/popularitate nou: getProblemsForExercise/Session/Principle (problem-library.ts, nou) si getScriptsForProblem (content-bridge.ts, nou); pagina de problema afiseaza acum principiul din spate (rezolvare FAIL_CLOSED) si scripturile relevante.",
+        "Tranzitie reala reparata: unealta de reflectie (spatiul-meu/reflectie) accepta deja ?sesiune=, dar nimic nu trimitea spre ea. Adaugat CTA de reflectie pe pagina canonica de sedinta si pe fiecare microciclu dintr-un plan de sezon (catre prima sa sedinta).",
+        "cauta.astro excludea tacit scripturile/planurile fara efectiv/durata din filtrele Efectiv/Timp; logica de facet corectata sa trateze absenta unui facet ca fiind neaplicabila, nu ca esec de potrivire; etichete de tip lizibile adaugate pentru toate cele 8 tipuri de descoperire.",
+        "Spatiul meu: listele de salvate/favorite/recente afiseaza acum o eticheta de tip (CANONICAL_KIND_LABELS, coach-state.ts, nou) pentru fiecare intrare; toate cele cinci stari goale rescrise sa numeasca actiunea concreta care le umple, nu doar absenta continutului -- fara cont, server sau date personale introduse.",
+        "Acasa si incepe-aici (onboarding) ofereau doar doua moduri de intrare (invata / rezolva pe teren); planificarea de sezon era accesibila doar din navigare. Adaugat un al treilea mod/intrare catre planuri-de-sezon pe ambele pagini.",
+        "29 teste noi (tests/test_task3721_workflow_integration.py), plus 1 test existent (test_task2703_ia_v2.py) actualizat dupa unificarea navigarii footer-ului (schimbare arhitecturala intentionata, nu regresie); niciun continut existent de teme/scripturi/planuri de sezon modificat inutil (git diff limitat la 15 fisiere sursa + 2 fisiere noi).",
+        "Verificare reala de browser (Playwright, Chromium, @axe-core/playwright) la 1440px si 390px pe 10 pagini cheie: 20/20 PASS, 0 violari axe, 0 erori de consola, 0 depasire orizontala -- inclusiv navigarea extinsa la 10 elemente in header la 1440px.",
+        "npm run build produce tot 171 pagini (nicio ruta noua adaugata in acest task, doar legaturi si continut in paginile existente); sitemap 170 URL-uri + 404.",
+        "Nicio pretentie de validare de teren: nici raportul, nici continutul modificat nu afirma ca pilotarea reala a avut loc; TASK-3714 ramane BLOCKED si este mentionat explicit in raport."],
+    volume="CONTROL-PLANE", units=2, status="DONE",
+    validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test",
+                 "python scripts/validate_content.py --strict", "python scripts/validate_season_plans.py",
+                 "python scripts/validate_communication_scripts.py", "python scripts/validate_gold_standard_v2.py",
+                 "git diff --check"])
 add("TASK-2717", "Wave-1 browser acceptance, Preview si baseline", "PHASE-27", ["TASK-2704"],
     ["plans/TASK-2717-wave1-acceptance.md", "reports/audits/MANUALFC_WAVE1_BROWSER_ACCEPTANCE.md", REPORT("TASK-2717")],
     SCHEMA_OK + [
@@ -2166,6 +2192,11 @@ def materialize() -> dict:
             task["attempts"] = 1
             task["started_at"] = "2026-09-23T16:30:00+03:00"
             task["completed_at"] = "2026-09-23T18:00:00+03:00"
+            task["last_error"] = None
+        if task["task_id"] == "TASK-3721":
+            task["attempts"] = 1
+            task["started_at"] = "2026-09-23T18:15:00+03:00"
+            task["completed_at"] = "2026-09-23T21:00:00+03:00"
             task["last_error"] = None
         if task["task_id"] == "TASK-2705":
             task["attempts"] = 1
