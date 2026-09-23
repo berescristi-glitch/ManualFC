@@ -1550,6 +1550,38 @@ add("TASK-3719", "Build the Communication Scripts Content Pillar: 26 scripturi n
     validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test",
                  "python scripts/validate_content.py --strict", "python scripts/validate_communication_scripts.py",
                  "git diff --check"])
+add("TASK-3720", "Build the Season Planning Content Pillar: 4 planuri de sezon (PLAN-0001-PLAN-0004) cu 8 blocuri si 16 microcicluri, progresie pedagogica reala legata la ambele teme, scripturi si motorul de decizie, verdict PASS, pilotarea reala ramane indisponibila", "CONTROL-PLANE", ["TASK-3719"],
+    ["data/curriculum/curriculum-traseul-de-baza.json", "data/curriculum/curriculum-aprofundare-sprijin.json",
+     "data/curriculum/curriculum-aprofundare-aparare.json", "data/curriculum/curriculum-integrare-completa.json",
+     "data/season-plans/season-plan-traseul-de-baza.json", "data/season-plans/season-plan-aprofundare-sprijin.json",
+     "data/season-plans/season-plan-aprofundare-aparare.json", "data/season-plans/season-plan-integrare-completa.json",
+     "schemas/curriculum.schema.json", "schemas/season-plan.schema.json", "scripts/validate_season_plans.py",
+     "app/src/lib/content-bridge.ts", "app/src/lib/discovery-index.ts", "app/src/lib/coach-state.ts",
+     "app/src/components/CoachActions.astro",
+     "app/src/pages/planuri-de-sezon/index.astro", "app/src/pages/planuri-de-sezon/[id].astro",
+     "app/src/pages/rezolva-pe-teren/[slug].astro", "app/src/pages/gold-standard/index.astro",
+     "app/src/pages/aparare/index.astro", "app/src/pages/principii/[slug].astro",
+     "app/src/pages/gold-standard/exercitii/[id].astro", "app/src/pages/gold-standard/sedinte/[id].astro",
+     "app/src/pages/scripturi/[id].astro",
+     "tests/test_task3720_season_plans.py", "tests/web/built-routes.test.js",
+     "plans/TASK-3720-season-planning-pillar.md", REPORT("TASK-3720")],
+    SCHEMA_OK + [
+        "Al patrulea pilon de continut ManualFC, autorizat explicit de utilizator fara dovezi de pilotare (TASK-3714 ramane BLOCKED), la fel ca la TASK-3718/TASK-3719 -- de data asta pentru planificarea de sezon, ca sa dea unui antrenor o progresie coerenta pe mai multe saptamani, nu un calendar generic.",
+        "Ambele scheme necesare (curriculum.schema.json tip CUR-XXXX/BLK-XXXX, season-plan.schema.json tip PLAN-XXXX/MIC-XXXX) existau deja ca schelete complet neutilizate, cu relatia de compozitie deja corecta (PLAN -> curriculum_ids -> CUR -> blocks) -- completate, nu reproiectate, de la 5-6 proprietati la ~19-26 campuri pedagogice pe nivel.",
+        "4 curricula (8 blocuri) si 4 planuri de sezon (16 microcicluri): traseul de baza pentru un grup nou, doua trasee de aprofundare (cate unul per tema de antrenament), si un traseu de integrare completa -- fiecare cu context al problemei, progresie perceptiv-decizionala, criterii de progres/regres, reguli de adaptare, si semnale explicite de continuare/ajustare/incetinire/abandon.",
+        "Evidenta despre periodizare (CLM-0366-CLM-0373), deja inregistrata dar neexploatata pana acum, verificata prin citire completa: periodizarea pe blocuri/traditionala e validata aproape exclusiv pe adulti de elita, nu pe dezvoltare juvenila; modelul Cote plaseaza 10-11 ani in anii de esantionare (joc variat, nu specializare). Decizie explicita: pilonul se declara planificare pedagogica, nu periodizare sportiva -- fiecare din cele 4 planuri contine aceasta declaratie explicit in evidence_boundary, verificat programatic.",
+        "Referintele EX-/SES-/SCR-/CUR- (format PREFIX-XXXX) sunt validate generic de validate_content.py la orice adancime din document; principle_ids (format cu punct) si duplicatele BLK-/MIC- (imbricate, neindexate generic) au cerut un validator dedicat nou (scripts/validate_season_plans.py).",
+        "content-bridge.ts extins cu getCurricula/getSeasonPlans/getSeasonPlan/getCurriculaForPlan si 5 functii de surfacing incrucisat (getSeasonPlansForProblem/Exercise/Session/Principle/Script/Theme), toate FAIL_CLOSED; CanonicalKind extins cu 'season-plan' pentru salvare/favorite local-first.",
+        "Doua trasee de descoperire: /planuri-de-sezon/ (navigare pe progresie: pornire -> aprofundare -> integrare, nu calendar filtrabil) si blocuri contextuale 'Plan de sezon relevant' pe 6 tipuri de pagini (probleme, ambele teme, principii, exercitii, sedinte, scripturi), toate din legaturi reale.",
+        "Planurile leaga real continut din ambele teme (EX-0001-0015 tema 1, EX-0016-0025 tema 2), din motorul de decizie si din biblioteca de scripturi -- verificat programatic.",
+        "23 teste noi (tests/test_task3720_season_plans.py); niciun fisier existent din data/exercises, data/sessions, data/assessments, data/problems, data/principles, data/communication-scripts modificat (git diff curat).",
+        "Verificare reala de browser (Playwright, Chromium, @axe-core/playwright) la 1440px si 390px pe 10 pagini: 20/20 PASS, 0 violari axe, 0 erori de consola, confirmat ca toate cele 6 blocuri de plan relevant randeaza legaturi reale.",
+        "npm run build produce 171 pagini (166+5: 4 pagini de plan + 1 index); tests/web/built-routes.test.js actualizat de la 166 la 171 cu justificare explicita.",
+        "Nicio pretentie de validare de teren: raportul si continutul pilonului afirma explicit ca pilotarea reala (TASK-3714) ramane BLOCKED si intentionat sarita pentru aceasta faza; planurile sunt sinteze profesionale de secventiere, nu garantie de dezvoltare a jucatorului."],
+    volume="CONTROL-PLANE", units=2, status="DONE",
+    validations=["python -m pytest -q", "npm.cmd run check", "npm.cmd run build", "npm.cmd test",
+                 "python scripts/validate_content.py --strict", "python scripts/validate_season_plans.py",
+                 "git diff --check"])
 add("TASK-2717", "Wave-1 browser acceptance, Preview si baseline", "PHASE-27", ["TASK-2704"],
     ["plans/TASK-2717-wave1-acceptance.md", "reports/audits/MANUALFC_WAVE1_BROWSER_ACCEPTANCE.md", REPORT("TASK-2717")],
     SCHEMA_OK + [
@@ -2129,6 +2161,11 @@ def materialize() -> dict:
             task["attempts"] = 1
             task["started_at"] = "2026-09-21T21:30:00+03:00"
             task["completed_at"] = "2026-09-21T22:15:00+03:00"
+            task["last_error"] = None
+        if task["task_id"] == "TASK-3720":
+            task["attempts"] = 1
+            task["started_at"] = "2026-09-23T16:30:00+03:00"
+            task["completed_at"] = "2026-09-23T18:00:00+03:00"
             task["last_error"] = None
         if task["task_id"] == "TASK-2705":
             task["attempts"] = 1

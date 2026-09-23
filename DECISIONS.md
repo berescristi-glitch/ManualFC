@@ -774,3 +774,27 @@ Roadmap-ul canonic (Phase 5) plasează populația unui pilon de conținut gol du
 **Niciun cod de produs modificat în afara scopului strict al acestui pilon.** Repo legacy `E:/ManualFC` confirmat neatins.
 
 Raport final: `reports/task-reports/TASK-3719.md`. Task: `TASK-3719 = DONE`, verdict **`PASS`** — validarea de către antrenori reali rămâne indisponibilă și nu este pretinsă.
+
+## DEC-0092 — TASK-3720 construiește pilonul de conținut „Planificare de sezon", verdict PASS
+
+Al patrulea pilon de conținut ManualFC, autorizat explicit de utilizator fără dovezi de pilotare (`TASK-3714` rămâne `BLOCKED`), la fel ca la `TASK-3718`/`TASK-3719` — de data asta pentru planificarea de sezon, ca să dea unui antrenor o progresie coerentă pe mai multe săptămâni, nu un calendar generic de activități disconectate.
+
+**Ambele scheme necesare existau deja ca schelete complet neutilizate**, descoperite prin inspecție directă: `schemas/curriculum.schema.json` (tip `CUR-XXXX`, cu blocuri `BLK-XXXX`) și `schemas/season-plan.schema.json` (tip `PLAN-XXXX`, referind curricula și conținând propriile microcicluri `MIC-XXXX`). Relația de compoziție era deja corectă (`PLAN → curriculum_ids → CUR → blocks`) — s-a completat, nu s-a reproiectat, de la 5-6 proprietăți la ~19-26 câmpuri pedagogice pe nivel.
+
+**4 curricula (8 blocuri) și 4 planuri de sezon (16 microcicluri):** traseul de bază pentru un grup nou, două trasee de aprofundare (câte unul per temă de antrenament) și un traseu de integrare completă — fiecare cu context al problemei, progresie perceptiv-decizională, criterii de progres/regres, reguli de adaptare și semnale explicite de continuare/ajustare/încetinire/abandon, verificate programatic ca prezente și nevide la toate cele trei niveluri (plan, bloc, microciclu).
+
+**Evidență despre periodizare, deja înregistrată dar neexploatată până acum** (`CLM-0366`–`CLM-0373`), verificată prin citire completă, nu căutare de cuvinte cheie: periodizarea pe blocuri (Issurin) și cea tradițională (Matveyev) sunt validate aproape exclusiv pe sportivi adulți de elită, NU pe dezvoltare juvenilă; modelul Côté (DMSP) plasează 10-11 ani în „anii de eșantionare" — joc variat, nu specializare orientată spre competiție. **Decizie explicită:** pilonul se declară „planificare pedagogică", nu „periodizare sportivă" — fiecare din cele 4 planuri conține această declarație explicit în `evidence_boundary`, verificat programatic (`test_evidence_boundary_declares_this_is_not_sports_periodization`).
+
+**Validator nou dedicat** (`scripts/validate_season_plans.py`) — referințele `EX-`/`SES-`/`SCR-`/`CUR-` (format `PREFIX-XXXX`) sunt deja validate generic de `validate_content.py` la orice adâncime din document, dar `principle_ids` (format cu punct) și duplicatele `BLK-`/`MIC-` (imbricate în documente, deci neindexate generic) cer verificare dedicată. `content-bridge.ts` extins cu `getCurricula`/`getSeasonPlans`/`getSeasonPlan`/`getCurriculaForPlan` și 5 funcții de surfacing încrucișat, toate FAIL_CLOSED; `CanonicalKind` extins cu `'season-plan'` pentru salvare/favorite local-first.
+
+**Două trasee de descoperire:** `/planuri-de-sezon/` (navigare pe progresie: pornire → aprofundare → integrare, nu un calendar filtrabil generic) și blocuri contextuale „Plan de sezon relevant" pe **6 tipuri de pagini** (probleme din motorul de decizie, ambele teme, principii, exerciții, ședințe, scripturi de comunicare) — toate generate din legături reale, verificate prin browser real.
+
+**Planurile leagă real conținut din ambele teme** (`EX-0001`–`EX-0015` tema 1, `EX-0016`–`EX-0025` tema 2), din motorul de decizie și din biblioteca de scripturi — verificat programatic.
+
+**Niciun fișier existent din `data/exercises/`, `data/sessions/`, `data/assessments/`, `data/problems/`, `data/principles/`, `data/communication-scripts/` modificat** (`git diff --stat` gol) — nicio corupere a temelor, scripturilor sau motorul de decizie existente.
+
+**Validare completă:** `validate_content.py --strict`/`validate_season_plans.py` 0 erori, `npm run check` 0 erori, `npm test` 9/9 (contor de rute actualizat 166→171), `pytest` 636 passed + 25 subtests (23 teste noi), `npm run build` 171 pagini, Playwright+axe la 1440px/390px pe 10 pagini (0 violări, 0 erori consolă, confirmat că toate cele 6 blocuri de plan relevant randează legături reale), sitemap complet, `git fsck --full` curat, fresh clone independent din `origin` reproduce identic (1042/1042 fișiere, 0 diferențe).
+
+**Niciun cod de produs modificat în afara scopului strict al acestui pilon.** Repo legacy `E:/ManualFC` confirmat neatins.
+
+Raport final: `reports/task-reports/TASK-3720.md`. Task: `TASK-3720 = DONE`, verdict **`PASS`** — validarea de către antrenori reali rămâne indisponibilă și nu este pretinsă; planurile sunt sinteze profesionale de secvențiere pedagogică, nu periodizare sportivă tehnică și nu o garanție de dezvoltare a jucătorului.
