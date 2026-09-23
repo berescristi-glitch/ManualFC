@@ -1,0 +1,170 @@
+{
+  "id": "PLAN-0003",
+  "slug": "aprofundare-aparare",
+  "title": "Aprofundare — apărarea organizată",
+  "age_category": "10–11 ani, grupele 2015 și 2016 tratate împreună",
+  "scope": "Grup care are deja frânarea controlată individuală și coordonarea de bază în 2v1 (parcurs `PLAN-0001` sau echivalent) și e pregătit pentru complexitate defensivă mai mare: 2v2 complet, superioritate numerică a atacanților, tranziție negativă și protejarea centrului la nivel de echipă.",
+  "weekly_model": "2_training_plus_match",
+  "curriculum_ids": ["CUR-0003"],
+  "starting_problem": "Sub 2v2 complet, cei doi apărători riscă să fie eliminați simultan de aceeași acțiune a atacanților; sub superioritate numerică, al doilea apărător tinde să urmărească un adversar fix în loc să protejeze drumul periculos; iar imediat după pierderea mingii, echipa fie rămâne pasivă, fie aleargă toată spre minge, lăsând centrul complet deschis.",
+  "related_problem_ids": ["PRB-0004", "PRB-0006"],
+  "assumptions_and_prerequisites": [
+    "grupul demonstrează deja constant frânarea controlată individuală și diferențierea de bază a rolurilor presiune/acoperire în 2v1",
+    "efectivul disponibil permite formarea de grupuri de 4 (2v2), 5 (3v2), 6 (3v3) și 7 (4v3), conform configuratorului de grup"
+  ],
+  "overall_learning_intention": "Echipa reacționează coordonat, nu instinctiv, în primele secunde după pierderea mingii, iar al doilea apărător protejează drumul periculos, nu un adversar fix, indiferent de raportul numeric.",
+  "principle_ids": ["principle.presiune-si-acoperire", "principle.protejarea-centrului", "principle.tranzitia-la-pierderea-mingii", "principle.transfer-autonom-cooperare"],
+  "related_exercise_ids": ["EX-0018", "EX-0019", "EX-0020", "EX-0021", "EX-0022", "EX-0023", "EX-0024", "EX-0025"],
+  "related_session_ids": ["SES-0008", "SES-0009", "SES-0010"],
+  "related_script_ids": ["SCR-0008", "SCR-0009", "SCR-0012", "SCR-0013", "SCR-0017", "SCR-0018", "SCR-0019", "SCR-0025"],
+  "observation_criteria": [
+    "frecvența eliminării simultane a celor doi apărători sub 2v2, comparativ cu primele repetiții",
+    "alegerea celui de-al doilea apărător sub superioritate numerică — drumul periculos sau un adversar fix"
+  ],
+  "when_to_intervene": [
+    "eliminarea simultană se repetă constant, în mai multe seturi consecutive, fără nicio reușită de diferențiere",
+    "reacția în bloc spre minge după pierdere lasă centrul vizibil deschis, în mod repetat"
+  ],
+  "when_not_to_intervene": [
+    "o singură eliminare simultană într-un set — se lasă informația să se acumuleze din mai multe repetiții",
+    "o reacție întârziată izolată la o singură pierdere de minge, fără alt semnal de tipar stabil"
+  ],
+  "reflection_questions": [
+    "Cine încetinea și cine proteja drumul spre poartă în situația de adineauri?",
+    "Cine era cel mai aproape când am pierdut mingea, și ce a făcut restul echipei?"
+  ],
+  "match_transfer_checkpoints": [
+    "la finalul `BLK-0005`, verifică dacă protejarea drumului periculos (nu a unui adversar fix) apare constant sub 3v2",
+    "la finalul `BLK-0006`, verifică dacă transferul defensiv apare atât la 4v4 cât și la 6v6"
+  ],
+  "adaptation_rules": [
+    "dacă grupul nu a stabilizat frânarea controlată individuală, nu introduce 2v2 complet direct — revino la 2v1, condiție prealabilă a acestui traseu",
+    "diferențiază individual copiii care evită contactul defensiv direct, printr-o regresie de intensitate, nu prin excludere din exercițiu"
+  ],
+  "progression_logic": [
+    "trece la `PLAN-0004` (traseul de integrare) după ce ambele blocuri ale acestui traseu sunt stabile, DOAR dacă grupul a parcurs sau parcurge în paralel și `PLAN-0002` (sprijinul) — integrarea completă cere ambele teme aprofundate",
+    "dacă grupul nu a aprofundat încă sprijinul ofensiv, repetă acest traseu cu variații de format înainte de a avansa spre integrare"
+  ],
+  "regression_logic": [
+    "dacă eliminarea simultană nu scade după 3-4 ședințe sub 2v2, revino la 2v1 (regresia documentată în `BLK-0005`) și extinde durata acestei trepte înainte de a relua 2v2"
+  ],
+  "review_points": [
+    "la finalul `BLK-0005` (aproximativ săptămâna 2), verifică stabilitatea coordonării 2v2/3v2 înainte de a trece la tranziția negativă din `BLK-0006`",
+    "la finalul `MIC-0012` (consolidare), decide dacă grupul e gata pentru `PLAN-0004` sau are nevoie de o repetare parțială"
+  ],
+  "continuation_signals": {
+    "continue": [
+      "protejarea drumului periculos și reacția coordonată de tranziție apar constant, în mai multe ședințe consecutive"
+    ],
+    "adjust": [
+      "coordonarea 2v2 progresează bine dar tranziția la nivel de echipă rămâne fragilă (sau invers) — alocă timp suplimentar blocului specific"
+    ],
+    "slow_down": [
+      "superioritatea numerică a atacanților (3v2, 4v3) produce eliminări sau dezorganizare care nu apăreau la raportul egal — revino temporar la raport egal"
+    ],
+    "abandon": [
+      "grupul nu a stabilizat deloc frânarea controlată individuală (condiție prealabilă) — revino la `PLAN-0001`, acest traseu nu e potrivit fără acea bază"
+    ]
+  },
+  "evidence_boundary": "Ca și celelalte trasee din acest pilon, aprofundarea apărării e sinteză profesională de secvențiere pedagogică, nu periodizare sportivă tehnică. Progresia de la 2v1 la 2v2 și apoi la superioritate numerică urmează principiul manipulării graduale a constrângerilor, dar durata exactă a fiecărei trepte rămâne o decizie de teren, ajustată pe baza observației directe, nu un calendar fix. Riscul de eliminare simultană și tendința de a alerga în bloc spre minge sunt tipare comportamentale des observate la această vârstă, documentate metodologic, dar frecvența exactă și viteza de ameliorare variază real de la un grup la altul. Transferul spre meciul oficial rămâne neconfirmat fără o pilotare reală pe teren.",
+  "microcycles": [
+    {
+      "id": "MIC-0009",
+      "order": 1,
+      "title": "Coordonare defensivă 2v2",
+      "session_ids": ["SES-0008"],
+      "learning_intention": "Copiii mențin schimbul de rol presiune/acoperire sub opoziție 2v2 completă și încep să recunoască riscul de eliminare simultană.",
+      "target_behaviour": [
+        "schimbarea rolului de presiune/acoperire la fiecare mutare reală a mingii",
+        "scăderea frecvenței eliminării simultane față de primul set"
+      ],
+      "coach_observation_focus": [
+        "actualizarea rolului în EX-0018, la fiecare mutare a mingii",
+        "diferențierea reacției celor doi apărători în EX-0019, la aceeași acțiune a atacanților"
+      ],
+      "related_script_ids": ["SCR-0012", "SCR-0013"],
+      "reflection_prompts": [
+        "Amândoi ați mers după minge deodată — cine mai rămânea liber să reacționeze?"
+      ],
+      "match_transfer": "Nu se așteaptă încă eliminare a riscului de eliminare simultană la prima expunere la 2v2 complet — obiectivul e expunerea la problemă, nu rezolvarea ei completă.",
+      "review_notes": "Dacă eliminarea simultană apare la fiecare repetiție, fără nicio variație, verifică dacă viteza atacanților e potrivită nivelului curent al grupului.",
+      "adaptation_options": [
+        "reduce viteza atacanților temporar dacă eliminarea simultană e sistematică, nu ocazională"
+      ],
+      "safety_and_workload_notes": "2v2 complet crește intensitatea contactului față de 2v1 — verifică regula de intensitate controlată explicit înainte de start."
+    },
+    {
+      "id": "MIC-0010",
+      "order": 2,
+      "title": "Protejarea drumului sub superioritate numerică",
+      "session_ids": ["SES-0008"],
+      "learning_intention": "Al doilea apărător alege să protejeze drumul periculos, nu un adversar fix, sub superioritate numerică a atacanților (3v2).",
+      "target_behaviour": [
+        "al doilea apărător rămâne poziționat pe drumul periculos, nu fixat pe un adversar"
+      ],
+      "coach_observation_focus": [
+        "poziționarea celui de-al doilea apărător în EX-0020, sub 3v2"
+      ],
+      "related_script_ids": ["SCR-0009"],
+      "reflection_prompts": [
+        "Când ai fost al doilea apărător, ce ai urmărit — omul sau drumul spre poartă?"
+      ],
+      "match_transfer": "Verifică la pauza dintre seturi dacă alegerea drumului periculos, nu a adversarului fix, apare în majoritatea repetițiilor.",
+      "review_notes": "Dacă urmărirea adversarului fix persistă, verifică dacă exercițiul comunică suficient de clar unde e drumul periculos (marcaje vizuale, porți).",
+      "adaptation_options": [
+        "revino la 2v2 dacă 3v2 produce confuzie sistematică de rol, nu doar erori ocazionale"
+      ],
+      "safety_and_workload_notes": "Format cu superioritate numerică — verifică rotația de roluri astfel încât toți copiii exersează atât poziția de atacant cât și cea de apărător."
+    },
+    {
+      "id": "MIC-0011",
+      "order": 3,
+      "title": "Tranziția negativă în echipă",
+      "session_ids": ["SES-0009"],
+      "learning_intention": "Echipa separă rolurile de influență directă și protejare a centrului imediat după pierderea mingii, sub superioritate numerică a atacanților.",
+      "target_behaviour": [
+        "reacția imediată a celui mai apropiat jucător, în primele secunde după pierdere",
+        "separarea rolurilor de echipă (influență/protecție), fără reacție în bloc spre minge"
+      ],
+      "coach_observation_focus": [
+        "viteza reacției celui mai apropiat jucător în EX-0021",
+        "separarea rolurilor de echipă în EX-0022, sub 4v3"
+      ],
+      "related_script_ids": ["SCR-0008", "SCR-0009"],
+      "reflection_prompts": [
+        "Cine era cel mai aproape când am pierdut mingea, și ce a făcut restul echipei?"
+      ],
+      "match_transfer": "Notează dacă separarea rolurilor de echipă apare fără comandă verbală, în mai multe repetiții, nu doar o singură dată.",
+      "review_notes": "Compară cu MIC-0009/0010: dacă reacția individuală de bază (cel mai apropiat) nu e încă stabilă, separarea de rol la nivel de echipă va fi și mai dificilă — verifică ordinea corectă a progresiei.",
+      "adaptation_options": [
+        "revino la 3v3 simplu (fără separare explicită de rol de echipă) dacă 4v3 produce dezorganizare completă"
+      ],
+      "safety_and_workload_notes": "Exercițiu cu pierderi de minge programate — verifică dacă regula de declanșare a tranziției e clară pentru toți copiii înainte de start, pentru a evita confuzie și coliziuni."
+    },
+    {
+      "id": "MIC-0012",
+      "order": 4,
+      "title": "Consolidare defensivă completă",
+      "session_ids": ["SES-0008", "SES-0009"],
+      "learning_intention": "Verifică dacă atât coordonarea 2v2/3v2 cât și tranziția de echipă rămân stabile la reluare consecutivă, și decide traseul următor.",
+      "target_behaviour": [
+        "coordonarea defensivă de bază rămâne stabilă la reluarea SES-0008",
+        "reacția de tranziție rămâne stabilă la reluarea SES-0009"
+      ],
+      "coach_observation_focus": [
+        "stabilitatea comportamentului din MIC-0009/0010 la reluare",
+        "stabilitatea comportamentului din MIC-0011 la reluare"
+      ],
+      "related_script_ids": ["SCR-0017", "SCR-0018"],
+      "reflection_prompts": [
+        "Ce a fost mai ușor și ce a fost mai greu, între coordonarea în doi și reacția de echipă?"
+      ],
+      "match_transfer": "Ultima repriză de joc liber a ședinței combină observarea ambelor blocuri — notează separat progresul fiecăruia.",
+      "review_notes": "Acest microciclu alimentează direct decizia de la `review_points`-ul de la nivel de plan — dacă unul dintre cele două blocuri rămâne clar mai fragil, alocă o repetare parțială înainte de `PLAN-0004`.",
+      "adaptation_options": [
+        "dacă timpul nu permite reluarea completă a ambelor ședințe, prioritizează exercițiul sau segmentul unde grupul a arătat cea mai mare fragilitate"
+      ],
+      "safety_and_workload_notes": "Ședință cu conținut dublu, intensiv defensiv — verifică nivelul de oboseală la mijlocul ședinței, în special după blocurile cu contact 2v2."
+    }
+  ]
+}

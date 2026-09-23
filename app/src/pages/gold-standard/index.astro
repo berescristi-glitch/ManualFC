@@ -2,13 +2,14 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import EvidenceBadge from '../../components/EvidenceBadge.astro';
-import { getGoldStandardExercises, getGoldStandardSessions, getGoldStandardAssessment, resolveEvidenceClaims } from '../../lib/content-bridge';
+import { getGoldStandardExercises, getGoldStandardSessions, getGoldStandardAssessment, resolveEvidenceClaims, getSeasonPlansForTheme } from '../../lib/content-bridge';
 import spatiuUnghiuri from '../../../../data/principles/principle-spatiu-si-unghiuri.json';
 import progresieSprijin from '../../../../data/principles/principle-progresie-si-sprijin.json';
 
 const exercises = getGoldStandardExercises().filter(ex => ex.theme === 'sprijin-si-unghi-de-pasa');
 const sessions = getGoldStandardSessions().filter(ses => exercises.some(ex => ses.segments.some(seg => seg.exercise_ids.includes(ex.id))));
 const assessment = getGoldStandardAssessment();
+const relevantPlans = getSeasonPlansForTheme('sprijin-si-unghi-de-pasa');
 const combinedClaims = [...resolveEvidenceClaims(spatiuUnghiuri), ...resolveEvidenceClaims(progresieSprijin)];
 const evidenceClaims = combinedClaims.filter((claim, i) => combinedClaims.findIndex(c => c.claim_id === claim.claim_id) === i);
 ---
@@ -85,6 +86,15 @@ const evidenceClaims = combinedClaims.filter((claim, i) => combinedClaims.findIn
       </ul>
       <p><a href={`/gold-standard/evaluare/${assessment.id}`}>Deschide instrumentul complet de evaluare →</a></p>
     </section>
+
+    {relevantPlans.length > 0 && (
+      <section aria-labelledby="planuri-relevante">
+        <h2 id="planuri-relevante">Planuri de sezon care folosesc această temă</h2>
+        <ul class="criteria-list">
+          {relevantPlans.map((p) => <li><a href={`/planuri-de-sezon/${p.id}`}>{p.title}</a> — {p.scope}</li>)}
+        </ul>
+      </section>
+    )}
 
     <p class="status-note">Stare: exerciții și ședințe validate structural și pedagogic. Vizualurile tactice pentru toate cele 5 exerciții (EX-0001–EX-0005) sunt disponibile pe paginile exercițiilor. Transferul real în meciul oficial rămâne neconfirmat până la o pilotare reală pe teren.</p>
   </div>

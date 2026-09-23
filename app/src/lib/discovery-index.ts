@@ -1,7 +1,7 @@
-import { getAllPrinciples, getCanonicalProductionContent, getGoldStandardAssessments, getGoldStandardExercises, getGoldStandardSessions, getCommunicationScripts, communicationScriptCategoryLabels } from './content-bridge';
+import { getAllPrinciples, getCanonicalProductionContent, getGoldStandardAssessments, getGoldStandardExercises, getGoldStandardSessions, getCommunicationScripts, communicationScriptCategoryLabels, getSeasonPlans } from './content-bridge';
 import { getProblems } from './problem-library';
 
-export type DiscoveryType='PROBLEMĂ'|'PRINCIPIU'|'EXERCIȚIU'|'ȘEDINȚĂ'|'EVALUARE'|'CAPITOL'|'SCRIPT';
+export type DiscoveryType='PROBLEMĂ'|'PRINCIPIU'|'EXERCIȚIU'|'ȘEDINȚĂ'|'EVALUARE'|'CAPITOL'|'SCRIPT'|'PLAN DE SEZON';
 export interface DiscoveryItem { id:string; type:DiscoveryType; title:string; summary:string; href:string; searchText:string; gameMoment:string; playersMin?:number; playersMax?:number; minutes?:number; evidence:string; media:boolean; }
 const norm=(value:string)=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 
@@ -12,13 +12,14 @@ export function getDiscoveryIndex():DiscoveryItem[]{
   const sessions=getGoldStandardSessions().map(s=>({id:s.id,type:'ȘEDINȚĂ' as const,title:s.title,summary:s.primary_objective,href:`/gold-standard/sedinte/${s.id}`,searchText:norm(`${s.title} ${s.primary_objective} ${s.observable_behaviours.join(' ')} ${s.match_theme}`),gameMoment:'SESIUNE_COMPLETĂ',playersMin:Number((s.players_range as any).min||8),playersMax:Number((s.players_range as any).max||18),minutes:s.duration_min,evidence:'CANONICAL',media:true}));
   const assessment=getGoldStandardAssessments().map(a=>({id:a.id,type:'EVALUARE' as const,title:a.title,summary:a.criteria.map(c=>c.observable_behaviour).join(' · '),href:`/gold-standard/evaluare/${a.id}`,searchText:norm(`${a.title} ${a.criteria.map(c=>c.observable_behaviour).join(' ')}`),gameMoment:'OBSERVAȚIE',evidence:'CANONICAL',media:false}));
   const scripts=getCommunicationScripts().map(s=>({id:s.id,type:'SCRIPT' as const,title:s.title,summary:s.short_version,href:`/scripturi/${s.id}`,searchText:norm(`${s.title} ${s.short_version} ${s.expanded_version} ${s.situation_trigger} ${communicationScriptCategoryLabels[s.category]??s.category}`),gameMoment:s.game_moment,evidence:'CANONICAL',media:false}));
+  const seasonPlans=getSeasonPlans().map(p=>({id:p.id,type:'PLAN DE SEZON' as const,title:p.title,summary:p.overall_learning_intention,href:`/planuri-de-sezon/${p.id}`,searchText:norm(`${p.title} ${p.scope} ${p.starting_problem} ${p.overall_learning_intention}`),gameMoment:'PLANIFICARE',evidence:'CANONICAL',media:false}));
   const chapters=[
     {id:'VOLUME-01',title:'Copilul U11 și dezvoltarea lui',summary:'Maturizare, variație individuală, adaptare și evaluare fără etichete.',href:'/volum/01',terms:'copil dezvoltare maturizare adaptare evaluare'},
     {id:'VOLUME-02',title:'Jocul ca sistem de probleme',summary:'Spațiu, sprijin, progresie, apărare și tranziții.',href:'/volum/02',terms:'spatiu sprijin progresie presiune acoperire tranzitie superioritate'},
     {id:'VOLUME-03',title:'Antrenorul ca pedagog',summary:'Limbaj, întrebări, siguranță emoțională, disciplină și echitate.',href:'/volum/03',terms:'limbaj intrebari siguranta disciplina comunicare echitate'},
     {id:'VOLUME-04',title:'Proiectarea și observarea antrenamentului',summary:'Sarcini reprezentative, constrângeri, progresie, organizare și transfer.',href:'/volum/04',terms:'sarcina constrangeri observatie interventie organizare reflectie transfer'}
   ].map(c=>({...c,type:'CAPITOL' as const,searchText:norm(`${c.title} ${c.summary} ${c.terms}`),gameMoment:'STUDIU',evidence:'EVIDENCE_LINKED',media:false}));
-  return [...problems,...principles,...exercises,...sessions,...assessment,...scripts,...chapters];
+  return [...problems,...principles,...exercises,...sessions,...assessment,...scripts,...seasonPlans,...chapters];
 }
 
 export function scoreDiscovery(item:DiscoveryItem,query:string){const q=norm(query).trim();if(!q)return 1;const terms=q.split(/\s+/);let score=0;for(const term of terms){if(norm(item.title).includes(term))score+=5;if(norm(item.summary).includes(term))score+=3;if(item.searchText.includes(term))score+=1}return score;}

@@ -1,0 +1,73 @@
+{
+  "id": "CUR-0002",
+  "title": "Curriculum — aprofundarea sprijinului și unghiului de pasă",
+  "age_category": "10–11 ani, grupele 2015 și 2016 tratate împreună",
+  "blocks": [
+    {
+      "id": "BLK-0003",
+      "order": 1,
+      "title": "Sprijin din spate și combinație sub presiune crescândă",
+      "principle_ids": ["principle.spatiu-si-unghiuri", "principle.progresie-si-sprijin", "principle.superioritate-egalitate-inferioritate-numerica"],
+      "session_ids": ["SES-0003", "SES-0004"],
+      "related_problem_ids": ["PRB-0007"],
+      "problem_context": "Un grup care are deja decizia de bază de sprijin stabilă rămâne totuși static după ce a pasat mingea (nu oferă un unghi din spate) și rezolvă recepția sub presiune completă mai lent decât sub presiune moderată — aceste limite apar abia după ce decizia de bază nu mai e o problemă.",
+      "perceptual_decisional_progression": "Se adaugă direcția de sprijin din spate (nu doar lateral), apoi combinația scurtă unu-doi ca ieșire alternativă din umbra defensivă, apoi coordonarea la trei jucători de sprijin sub presiune numerică mai mare, și recepția cu fața la joc sub presiune completă.",
+      "representative_game_context": "2v1 și 4v2 cu opoziție reală și un al treilea jucător de sprijin — complexitatea crește prin numărul de opțiuni reale disponibile purtătorului, nu prin dificultate artificială.",
+      "expected_observable_behaviour": [
+        "apare o poziție de sprijin din spate, nu doar laterală, când situația o cere",
+        "combinația unu-doi apare ca opțiune aleasă, nu doar demonstrată"
+      ],
+      "coach_watch_for": [
+        "dacă jucătorii de sprijin variază unghiul (spate/lateral) în funcție de poziția reală a adversarului sau repetă mecanic un singur unghi învățat",
+        "dacă recepția cu fața la joc rămâne stabilă când presiunea crește de la moderată la completă"
+      ],
+      "do_not_assume": [
+        "nu presupune că un grup care stăpânește sprijinul lateral simplu stăpânește automat și sprijinul din spate — sunt decizii perceptive diferite",
+        "nu presupune că viteza de execuție sub presiune completă va fi identică cu viteza sub presiune moderată la prima expunere"
+      ],
+      "constraint_variation": [
+        "schimbă poziția inițială a celui de-al doilea apărător pentru a face sprijinul din spate mai mult sau mai puțin necesar",
+        "crește gradual raportul numeric (2v1 → 4v2 → 4v3) doar după ce fiecare treaptă e stabilă"
+      ],
+      "progression_decision_criteria": [
+        "sprijinul din spate apare autonom în cel puțin jumătate din situațiile care îl cer",
+        "recepția cu fața la joc rămâne stabilă sub presiune completă în majoritatea repetițiilor"
+      ],
+      "too_difficult_adjustment": "revino la presiune moderată pentru recepție și la 2v1 pentru combinație, fără al treilea jucător de sprijin, până la stabilizare.",
+      "too_easy_adjustment": "introdu direct 4v3 și presiune completă de la începutul ședinței următoare, sau treci la blocul de transfer (`BLK-0004`)."
+    },
+    {
+      "id": "BLK-0004",
+      "order": 2,
+      "title": "Recuperare, culoar lateral și transfer complet",
+      "principle_ids": ["principle.tranzitia-la-castigarea-mingii", "principle.progresie-si-sprijin", "principle.transfer-autonom-cooperare"],
+      "session_ids": ["SES-0005", "SES-0006"],
+      "related_problem_ids": ["PRB-0005"],
+      "problem_context": "După ce recuperează mingea, copiii pasează frecvent automat înapoi fără să fi verificat opțiunea de progresie, și au dificultăți suplimentare de sprijin când banda terenului limitează spațiul lateral disponibil.",
+      "perceptual_decisional_progression": "Se introduce decizia de a privi întâi înainte la momentul recuperării, apoi adaptarea sprijinului la spațiul îngust de bandă, iar blocul se încheie cu două jocuri de transfer variate (3v3, 5v5) pentru a verifica dacă întreg lanțul decizional exersat izolat apare autonom în joc reprezentativ.",
+      "representative_game_context": "Jocuri mici cu recuperări reale de minge și cu bandă marcată explicit, urmate de joc liber 3v3 și 5v5 fără constrângeri artificiale.",
+      "expected_observable_behaviour": [
+        "apare o privire vizibilă înainte, chiar dacă decizia finală rămâne pasa înapoi",
+        "cel puțin un comportament exersat izolat apare autonom în jocul liber final"
+      ],
+      "coach_watch_for": [
+        "dacă privirea înainte la recuperare devine obicei sau rămâne ocazională",
+        "dacă transferul apare doar în 3v3 sau și în 5v5, la o densitate de jucători mai mare"
+      ],
+      "do_not_assume": [
+        "nu presupune că pasa înapoi e mereu o alegere greșită — poate fi decizia corectă dacă spațiul din față lipsește real",
+        "nu presupune că absența transferului într-o repriză înseamnă eșecul întregului bloc — notează ca informație, nu ca verdict"
+      ],
+      "constraint_variation": [
+        "poziționează adversarul mai aproape sau mai departe la momentul recuperării pentru a face progresia mai mult sau mai puțin sigură vizual",
+        "variază lățimea benzii pentru a testa adaptarea sprijinului la spații diferite"
+      ],
+      "progression_decision_criteria": [
+        "verificarea înainte la recuperare apare constant, nu doar la prima repetiție",
+        "cel puțin un comportament exersat izolat reapare autonom în ambele jocuri de transfer (3v3 și 5v5)"
+      ],
+      "too_difficult_adjustment": "revino la recuperări cu adversar mai departe (regresie documentată), pentru ca progresia sigură să fie mai evidentă vizual, înainte de a relua transferul complet.",
+      "too_easy_adjustment": "treci direct la `PLAN-0004` (traseul de integrare), care combină acest conținut cu tema defensivă în aceeași ședință."
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "id": "PLAN-0004",
+  "slug": "integrare-completa",
+  "title": "Integrare completă — atac și apărare împreună",
+  "age_category": "10–11 ani, grupele 2015 și 2016 tratate împreună",
+  "scope": "Grup care a parcurs deja separat aprofundarea sprijinului (`PLAN-0002`) și aprofundarea apărării (`PLAN-0003`), pregătit să alterneze deciziile ofensive și defensive în aceeași ședință, cu accent crescut pe autonomie, reflecție și transfer complet.",
+  "weekly_model": "3_training_plus_match",
+  "curriculum_ids": ["CUR-0004"],
+  "starting_problem": "Un grup poate stăpâni fiecare temă izolat, dar nu a fost testat dacă poate comuta atenția între o decizie ofensivă avansată și una defensivă avansată în aceeași ședință, fără ca una să interfereze cu cealaltă; iar unii copii, chiar și la acest nivel, evită repetat situațiile de presiune directă, indiferent de temă.",
+  "related_problem_ids": ["PRB-0004", "PRB-0005", "PRB-0006", "PRB-0007", "PRB-0008"],
+  "assumptions_and_prerequisites": [
+    "grupul a parcurs sau parcurge în paralel atât `PLAN-0002` cât și `PLAN-0003` — acest traseu nu introduce concepte noi, ci testează integrarea celor deja exersate",
+    "modelul săptămânal presupune 3 antrenamente plus meci, nu 2 — timpul suplimentar permite alternanța tematică fără a sacrifica profunzimea fiecărei teme",
+    "efectivul disponibil permite formate de la 6 (3v3) până la 12 (6v6), conform configuratorului de grup"
+  ],
+  "overall_learning_intention": "Copiii mențin calitatea deciziei atât ofensive cât și defensive atunci când cele două teme alternează în aceeași ședință, iar comportamentele exersate izolat în ambele teme apar autonom în joc liber complet, fără comandă de pe margine.",
+  "principle_ids": ["principle.progresie-si-sprijin", "principle.tranzitia-la-pierderea-mingii", "principle.jocul-ca-sistem-de-probleme", "principle.transfer-autonom-cooperare", "principle.reflectia-ghidata-si-transferul-in-joc"],
+  "related_exercise_ids": ["EX-0008", "EX-0009", "EX-0010", "EX-0014", "EX-0015", "EX-0021", "EX-0022", "EX-0023", "EX-0024", "EX-0025"],
+  "related_session_ids": ["SES-0004", "SES-0006", "SES-0009", "SES-0010"],
+  "related_script_ids": ["SCR-0002", "SCR-0008", "SCR-0009", "SCR-0014", "SCR-0019", "SCR-0022", "SCR-0025", "SCR-0026"],
+  "observation_criteria": [
+    "stabilitatea calității deciziei ofensive și defensive la trecerea de la o temă la alta, în aceeași ședință",
+    "apariția simultană a cel puțin un comportament ofensiv și unul defensiv autonome, în același joc liber"
+  ],
+  "when_to_intervene": [
+    "un copil confundă vizibil un comportament ofensiv cu unul defensiv (aplică greșit rolul), în mod repetat",
+    "un copil evită repetat implicarea în duel defensiv direct sau evită repetat să ceară mingea sub presiune, semn posibil al tiparului din `PRB-0008`"
+  ],
+  "when_not_to_intervene": [
+    "o ezitare izolată la trecerea de la o temă la alta, fără tipar repetat de confuzie",
+    "o repriză de joc liber în care nu apare deloc un comportament țintă — notează ca informație, nu ca eșec"
+  ],
+  "reflection_questions": [
+    "Ce a fost diferit între jocul de atac și cel de apărare în felul în care ați decis?",
+    "Ce luați cu voi la meciul următor din ambele teme exersate până acum?"
+  ],
+  "match_transfer_checkpoints": [
+    "la finalul `BLK-0007`, verifică dacă alternanța tematică nu degradează calitatea deciziei față de exersarea izolată a fiecărei teme",
+    "la finalul `BLK-0008`, verifică dacă transferul autonom apare la relații numerice variate (3v3 până la 6v6), nu doar la una singură"
+  ],
+  "adaptation_rules": [
+    "dacă un copil evită constant presiunea directă (semnul din `PRB-0008`), verifică mai întâi dacă sarcina anterioară a fost potrivită ca nivel de dificultate, înainte de a presupune lipsă de curaj",
+    "dacă efectivul disponibil nu permite 6v6, rulează exclusiv formate mai mici (3v3, 4v4), păstrând testul de transfer, nu formatul exact"
+  ],
+  "progression_logic": [
+    "acest traseu e capstone-ul întregului pilon de planificare — la reușită constantă a `BLK-0008`, planul se consideră încheiat pentru acest grup",
+    "un grup care încheie acest traseu poate relua un traseu de aprofundare pe o direcție nouă (nu prevăzută explicit în acest set de 4 planuri) sau poate repeta integrarea cu variații de format pentru consolidare suplimentară"
+  ],
+  "regression_logic": [
+    "dacă alternanța tematică produce degradare vizibilă și constantă a deciziei (nu doar ezitare izolată), revino temporar la separarea completă a celor două teme în ședințe distincte (structura din `PLAN-0002`/`PLAN-0003`)"
+  ],
+  "review_points": [
+    "la finalul `BLK-0007` (aproximativ săptămâna 2), verifică dacă alternanța tematică e sustenabilă înainte de a trece la capstone-ul din `BLK-0008`",
+    "la finalul `MIC-0016` (capstone final), documentează explicit ce a rămas incomplet, dacă e cazul, pentru referință viitoare"
+  ],
+  "continuation_signals": {
+    "continue": [
+      "calitatea deciziei rămâne comparabilă în ambele teme la alternanță, iar transferul autonom apare constant în joc liber complet"
+    ],
+    "adjust": [
+      "una dintre cele două teme se degradează vizibil la alternanță — alocă un microciclu suplimentar de reamintire izolată a temei afectate, în afara acestui set de 4 microcicluri"
+    ],
+    "slow_down": [
+      "oboseala de decizie (confuzie crescută la comutarea între teme) persistă după 2-3 ședințe — extinde tranziția dintre cele două părți tematice ale ședinței"
+    ],
+    "abandon": [
+      "grupul nu a stabilizat deloc una dintre cele două teme aprofundate separat (`PLAN-0002`/`PLAN-0003`) — acest traseu nu e potrivit fără ambele baze; revino la traseul de aprofundare relevant"
+    ]
+  },
+  "evidence_boundary": "Acest traseu de integrare rămâne, ca și celelalte, sinteză profesională de secvențiere pedagogică, nu periodizare sportivă tehnică sau garanție de dezvoltare a jucătorului — un plan de antrenament influențează oportunitățile de exersare oferite copilului, nu determină singur nivelul lui viitor. Modelul Côté (10-11 ani = anii de eșantionare) susține varietatea și alternanța tematică mai degrabă decât specializarea timpurie pe o singură temă, dar nu există dovadă specifică fotbalului U11 care să valideze exact această secvență de integrare. Studii calitative asupra implementării reale a planurilor de antrenament în academii juvenile arată că livrarea efectivă e modelată constant de factori externi (absențe, cereri concurente), nu doar de planificarea tehnică — motivul explicit pentru care acest traseu, ca toate celelalte din acest pilon, include semnale explicite de ajustare, încetinire și abandon, nu doar o secvență fixă de urmat necondiționat. Transferul spre meciul oficial complet rămâne neconfirmat fără o pilotare reală pe teren.",
+  "microcycles": [
+    {
+      "id": "MIC-0013",
+      "order": 1,
+      "title": "Reluare ofensivă avansată în context de integrare",
+      "session_ids": ["SES-0004"],
+      "learning_intention": "Verifică dacă decizia ofensivă avansată (al treilea jucător de sprijin, recepție sub presiune) rămâne stabilă când e reluată în contextul mai larg al acestui traseu de integrare.",
+      "target_behaviour": [
+        "distribuirea celor trei jucători de sprijin rămâne stabilă",
+        "recepția orientată sub presiune completă rămâne stabilă"
+      ],
+      "coach_observation_focus": [
+        "comparație directă cu performanța din `PLAN-0002`/`MIC-0006` — a scăzut, a rămas identică sau a crescut?"
+      ],
+      "related_script_ids": ["SCR-0014"],
+      "reflection_prompts": [
+        "Ce ai observat azi care era la fel ca ultima dată când am exersat asta?"
+      ],
+      "match_transfer": "Nu se introduce încă alternanța cu tema defensivă în acest microciclu — reluarea izolată confirmă mai întâi stabilitatea temei ofensive.",
+      "review_notes": "Dacă performanța a scăzut vizibil față de `PLAN-0002`, alocă timp suplimentar de reamintire înainte de a introduce alternanța din `MIC-0014`.",
+      "adaptation_options": [
+        "scurtează reamintirea dacă grupul demonstrează imediat stabilitate, pentru a lăsa mai mult timp temei defensive în ședința următoare"
+      ],
+      "safety_and_workload_notes": "Model săptămânal de 3 antrenamente — verifică distribuirea corectă a încărcării pe parcursul săptămânii, nu concentra toată intensitatea în această primă ședință."
+    },
+    {
+      "id": "MIC-0014",
+      "order": 2,
+      "title": "Reluare defensivă avansată și prima alternanță",
+      "session_ids": ["SES-0009"],
+      "learning_intention": "Verifică stabilitatea tranziției negative de echipă și introduce prima alternanță reală față în față cu tema ofensivă din microciclul anterior.",
+      "target_behaviour": [
+        "reacția de tranziție rămâne stabilă la reluare",
+        "grupul comută atenția de la tema ofensivă (microciclul anterior) la cea defensivă fără confuzie majoră de rol"
+      ],
+      "coach_observation_focus": [
+        "comparație directă cu performanța din `PLAN-0003`/`MIC-0011`",
+        "orice semn de aplicare greșită a unui comportament ofensiv într-o fază defensivă"
+      ],
+      "related_script_ids": ["SCR-0008", "SCR-0009"],
+      "reflection_prompts": [
+        "Ce a fost diferit între cum ai decis săptămâna trecută (atac) și azi (apărare)?"
+      ],
+      "match_transfer": "Primul test real de alternanță — notează explicit dacă a apărut confuzie de rol, ca informație pentru ajustarea ritmului de alternanță.",
+      "review_notes": "Acest microciclu e primul punct real de observație pentru `BLK-0007` — rezultatul lui ghidează dacă `MIC-0015`/`MIC-0016` continuă ca planificat sau necesită ajustare de ritm.",
+      "adaptation_options": [
+        "dacă confuzia de rol e semnificativă, introdu o pauză explicită de tranziție între cele două teme, cu o scurtă reamintire verbală a fiecăreia"
+      ],
+      "safety_and_workload_notes": "A doua ședință din săptămâna de 3 antrenamente — verifică nivelul de oboseală acumulată față de prima ședință."
+    },
+    {
+      "id": "MIC-0015",
+      "order": 3,
+      "title": "Transfer ofensiv complet în context de integrare",
+      "session_ids": ["SES-0006"],
+      "learning_intention": "Reia testul de transfer ofensiv complet, cu accent suplimentar pe distribuirea echitabilă a implicării în grup, nu doar pe calitatea tactică a deciziei.",
+      "target_behaviour": [
+        "transferul ofensiv autonom apare la fel de constant ca în `PLAN-0002`",
+        "toți copiii din grup ating mingea și iau decizii active, nu doar cei mai încrezători"
+      ],
+      "coach_observation_focus": [
+        "distribuirea reală a atingerilor de minge în jocul liber",
+        "orice semn de evitare repetată a implicării din partea unui copil specific"
+      ],
+      "related_script_ids": ["SCR-0022", "SCR-0019"],
+      "reflection_prompts": [
+        "Unde ați văzut, în jocul de azi, o situație ca la exercițiile din traseul de aprofundare ofensivă?"
+      ],
+      "match_transfer": "Verifică dacă transferul apare distribuit în tot grupul, nu concentrat doar la 2-3 copii mai avansați.",
+      "review_notes": "Dacă un copil specific evită constant implicarea, notează explicit pentru discuție individuală, conform principiului conversațiilor individuale și echității — nu se rezolvă public, în fața grupului.",
+      "adaptation_options": [
+        "introdu temporar o constrângere de distribuție (fiecare atinge mingea înainte de gol) dacă inegalitatea de implicare e accentuată"
+      ],
+      "safety_and_workload_notes": "A treia ședință din săptămâna de 3 antrenamente, aproape de meci — verifică intensitatea generală, evită introducerea de conținut nou solicitant fizic chiar înainte de meci."
+    },
+    {
+      "id": "MIC-0016",
+      "order": 4,
+      "title": "Capstone final — transfer defensiv complet și închidere",
+      "session_ids": ["SES-0010"],
+      "learning_intention": "Testul final al întregului pilon de planificare — verifică dacă lanțul defensiv complet apare autonom, la relații numerice variate, și închide explicit acest set de 4 trasee cu o reflecție asupra întregului parcurs.",
+      "target_behaviour": [
+        "transferul defensiv autonom apare atât la 4v4 cât și la 6v6",
+        "grupul poate verbaliza o legătură concretă între întregul parcurs (toate cele 4 planuri) și jocul liber de azi"
+      ],
+      "coach_observation_focus": [
+        "robustețea transferului defensiv la densitate mai mare (6v6)",
+        "calitatea reflecției finale — specifică și concretă, nu generică"
+      ],
+      "related_script_ids": ["SCR-0025", "SCR-0026"],
+      "reflection_prompts": [
+        "Din tot ce am exersat în aceste luni, ce folosiți cel mai des acum, fără să vă gândiți?",
+        "Ce rămâne încă greu, chiar și acum?"
+      ],
+      "match_transfer": "Acesta e checkpoint-ul final de transfer al întregului pilon — documentează explicit rezultatul, ca punct de plecare pentru orice traseu viitor construit peste acest set de 4 planuri.",
+      "review_notes": "Rezultatul acestui microciclu, combinat cu observațiile din `MIC-0013`–`MIC-0015`, alimentează decizia finală de la `progression_logic`: reluare cu variații sau trecere la o direcție complet nouă.",
+      "adaptation_options": [
+        "dacă timpul nu permite ambele formate (4v4 și 6v6), prioritizează formatul la care grupul a arătat cea mai mare fragilitate în traseele anterioare"
+      ],
+      "safety_and_workload_notes": "Ședință de închidere a unui parcurs lung — alocă timp suficient reflecției finale, nu o comprima pentru a maximiza timpul de joc."
+    }
+  ]
+}

@@ -8,7 +8,7 @@ import QuickModePattern from '../../components/QuickModePattern.astro';
 import SectionNavigator from '../../components/SectionNavigator.astro';
 import CoachActions from '../../components/CoachActions.astro';
 import canonicalDetail from '../../../../data/principles/principle-variabilitatea-dezvoltarii-u11.json';
-import { getAllPrinciples, getCanonicalProductionContent, getResolvedPrinciple, resolveEvidenceClaims, getCategoryById, getScriptsForPrinciple } from '../../lib/content-bridge';
+import { getAllPrinciples, getCanonicalProductionContent, getResolvedPrinciple, resolveEvidenceClaims, getCategoryById, getScriptsForPrinciple, getSeasonPlansForPrinciple } from '../../lib/content-bridge';
 
 export function getStaticPaths() { return getCanonicalProductionContent(getAllPrinciples()).map(p => ({ params:{ slug:p.slug }, props:{ principleId:p.id } })); }
 const { principleId } = Astro.props;
@@ -26,6 +26,7 @@ const supportTypeLabels: Record<string, string> = { DIRECT: 'direct', CONTEXTUAL
 const observeItems = detail?.observable_behaviours ?? [principle.concept_text];
 const interpretationItems = detail?.possible_misinterpretations ?? [principle.why_it_matters];
 const relevantScripts = getScriptsForPrinciple(principle.id);
+const relevantPlans = getSeasonPlansForPrinciple(principle.id);
 ---
 <BaseLayout title={`${principle.title} — Principiu U11`} description={principle.summary}>
   <Breadcrumb items={[{ label:'Principii de joc', href:'/principii' },{ label:principle.title }]} />
@@ -86,6 +87,8 @@ const relevantScripts = getScriptsForPrinciple(principle.id);
     {exercises.length>0 && <section class="related"><span class="eyebrow">Transfer în joc</span><h2>Exerciții asociate</h2>{exercises.map(ex=><a href={`/exercitii/${ex.slug}`}><strong>{ex.title}</strong><span>{ex.area} · {ex.duration}</span></a>)}</section>}
 
     {relevantScripts.length>0 && <section class="related"><span class="eyebrow">Ce spui</span><h2>Scripturi de comunicare relevante</h2>{relevantScripts.map(s=><a href={`/scripturi/${s.id}`}><strong>{s.title}</strong><span>{s.short_version}</span></a>)}</section>}
+
+    {relevantPlans.length>0 && <section class="related"><span class="eyebrow">Planificare</span><h2>Planuri de sezon relevante</h2>{relevantPlans.map(p=><a href={`/planuri-de-sezon/${p.id}`}><strong>{p.title}</strong><span>{p.scope}</span></a>)}</section>}
   </article>
   <script is:inline>
     /* Measures the real scrollbar gutter so the full-bleed .principle-hero

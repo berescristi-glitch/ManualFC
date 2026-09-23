@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import EvidenceBadge from '../../components/EvidenceBadge.astro';
-import { getGoldStandardExercises, getGoldStandardSessions, getGoldStandardAssessment, resolveEvidenceClaims } from '../../lib/content-bridge';
+import { getGoldStandardExercises, getGoldStandardSessions, getGoldStandardAssessment, resolveEvidenceClaims, getSeasonPlansForTheme } from '../../lib/content-bridge';
 import presiuneSiAcoperire from '../../../../data/principles/principle-presiune-si-acoperire.json';
 import protejareaCentrului from '../../../../data/principles/principle-protejarea-centrului.json';
 import tranzitiaLaPierdere from '../../../../data/principles/principle-tranzitia-la-pierderea-mingii.json';
@@ -10,6 +10,7 @@ import tranzitiaLaPierdere from '../../../../data/principles/principle-tranzitia
 const exercises = getGoldStandardExercises().filter((ex) => ex.theme === 'apararea-presiune-si-acoperire');
 const sessions = getGoldStandardSessions().filter((ses) => exercises.some((ex) => ses.segments.some((seg) => seg.exercise_ids.includes(ex.id))));
 const assessment = getGoldStandardAssessment('ASM-0002');
+const relevantPlans = getSeasonPlansForTheme('apararea-presiune-si-acoperire');
 const combinedClaims = [...resolveEvidenceClaims(presiuneSiAcoperire), ...resolveEvidenceClaims(protejareaCentrului), ...resolveEvidenceClaims(tranzitiaLaPierdere)];
 const evidenceClaims = combinedClaims.filter((claim, i) => combinedClaims.findIndex((c) => c.claim_id === claim.claim_id) === i);
 ---
@@ -86,6 +87,15 @@ const evidenceClaims = combinedClaims.filter((claim, i) => combinedClaims.findIn
       <h2 id="probleme">Problemele de joc rezolvate</h2>
       <p>Această temă răspunde direct la două probleme observabile din motorul de decizie: <a href="/rezolva-pe-teren/dupa-pierderea-mingii-se-opresc">După pierderea mingii, jucătorii se opresc</a> și <a href="/rezolva-pe-teren/primul-aparator-preseaza-fara-acoperire">Primul apărător presează fără acoperire</a>. Vezi <a href="/rezolva-pe-teren">Rezolvă pe teren</a> pentru diagnosticul complet și pentru celelalte probleme din motorul de decizie.</p>
     </section>
+
+    {relevantPlans.length > 0 && (
+      <section aria-labelledby="planuri-relevante">
+        <h2 id="planuri-relevante">Planuri de sezon care folosesc această temă</h2>
+        <ul class="criteria-list">
+          {relevantPlans.map((p) => <li><a href={`/planuri-de-sezon/${p.id}`}>{p.title}</a> — {p.scope}</li>)}
+        </ul>
+      </section>
+    )}
 
     <p class="status-note">Stare: exerciții și ședințe validate structural și pedagogic, la aceeași profunzime ca prima temă. Vizualurile tactice rămân rezervate (specificație semantică în așteptare), consecvent cu restul familiei EX-0006 și peste. Transferul real în meciul oficial rămâne neconfirmat până la o pilotare reală pe teren — nicio afirmație din această pagină nu presupune validare de către antrenori reali.</p>
   </div>

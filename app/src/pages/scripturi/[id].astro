@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CoachActions from '../../components/CoachActions.astro';
-import { getCommunicationScripts, getCommunicationScript, communicationScriptCategoryLabels, getAllPrinciples } from '../../lib/content-bridge';
+import { getCommunicationScripts, getCommunicationScript, communicationScriptCategoryLabels, getAllPrinciples, getSeasonPlansForScript } from '../../lib/content-bridge';
 import { getProblem } from '../../lib/problem-library';
 
 export function getStaticPaths() {
@@ -23,6 +23,7 @@ const linkedPrinciples = script.principle_ids.map((pId) => {
   return target;
 });
 const linkedProblems = (script.related_problem_ids ?? []).map((prbId) => getProblem(prbId));
+const relevantPlans = getSeasonPlansForScript(script.id);
 ---
 <BaseLayout title={`${script.title} — Scripturi de comunicare`} description={script.situation_trigger}>
   <article class="script-page">
@@ -114,6 +115,9 @@ const linkedProblems = (script.related_problem_ids ?? []).map((prbId) => getProb
       )}
       {(script.related_session_ids ?? []).length > 0 && (
         <p><strong>Ședințe:</strong> {(script.related_session_ids ?? []).map((sesId, i) => <>{i > 0 && ' · '}<a href={`/gold-standard/sedinte/${sesId}`}>{sesId}</a></>)}</p>
+      )}
+      {relevantPlans.length > 0 && (
+        <p><strong>Planuri de sezon:</strong> {relevantPlans.map((p, i) => <>{i > 0 && ' · '}<a href={`/planuri-de-sezon/${p.id}`}>{p.title}</a></>)}</p>
       )}
     </section>
 

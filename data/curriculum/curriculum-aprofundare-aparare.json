@@ -1,0 +1,73 @@
+{
+  "id": "CUR-0003",
+  "title": "Curriculum — aprofundarea apărării organizate",
+  "age_category": "10–11 ani, grupele 2015 și 2016 tratate împreună",
+  "blocks": [
+    {
+      "id": "BLK-0005",
+      "order": 1,
+      "title": "Coordonare defensivă în 2v2 și 3v2",
+      "principle_ids": ["principle.presiune-si-acoperire", "principle.protejarea-centrului"],
+      "session_ids": ["SES-0008"],
+      "related_problem_ids": ["PRB-0006"],
+      "problem_context": "Un grup care are deja frânarea controlată individuală și coordonarea de bază în 2v1 se confruntă, sub 2v2 complet, cu riscul de eliminare simultană a ambilor apărători prin aceeași acțiune a atacanților, iar sub 3v2 tinde să urmărească un adversar fix în loc să protejeze drumul periculos rămas.",
+      "perceptual_decisional_progression": "Se testează întâi dacă schimbul de rol presiune/acoperire rezistă sub opoziție 2v2 completă (mai multe opțiuni de pasă pentru atacanți), apoi se expune direct riscul de eliminare simultană prin constrângerea jocului, apoi se introduce superioritatea numerică a atacanților (3v2), unde al doilea apărător trebuie să aleagă drumul periculos, nu o persoană.",
+      "representative_game_context": "2v2 și 3v2 cu opoziție reală și porți mici — fără aceste porți, protejarea drumului spre poartă nu are un scop observabil clar.",
+      "expected_observable_behaviour": [
+        "rolurile de presiune și acoperire se schimbă corect când mingea se mută între atacanți",
+        "al doilea apărător rămâne poziționat pe drumul periculos, nu fixat pe un adversar"
+      ],
+      "coach_watch_for": [
+        "dacă eliminarea simultană scade ca frecvență față de primele repetiții din 2v2",
+        "dacă alegerea celui de-al doilea apărător sub 3v2 e drumul periculos sau un adversar fix"
+      ],
+      "do_not_assume": [
+        "nu presupune că eliminarea simultană repetată e o greșeală individuală — poate fi absența unui reper comun despre cine reacționează",
+        "nu presupune că un grup stabil în 2v1 rezistă automat sub 2v2 complet — a doua opțiune de pasă a atacanților schimbă real complexitatea informațională"
+      ],
+      "constraint_variation": [
+        "reduce viteza atacanților temporar dacă eliminarea simultană se repetă constant, fără o singură reușită de diferențiere",
+        "crește gradual raportul numeric doar după ce coordonarea de bază în 2v2 e stabilă"
+      ],
+      "progression_decision_criteria": [
+        "eliminarea simultană scade vizibil față de primul set, în mai multe ședințe consecutive",
+        "al doilea apărător alege drumul periculos, nu un adversar fix, în majoritatea repetițiilor sub 3v2"
+      ],
+      "too_difficult_adjustment": "revino temporar la 2v1 (regresia documentată explicit a exercițiilor din acest bloc) până la stabilizarea schimbului de rol, apoi reintrodu 2v2 complet.",
+      "too_easy_adjustment": "treci mai devreme la `BLK-0006` (tranziția negativă și protejarea centrului la nivel de echipă)."
+    },
+    {
+      "id": "BLK-0006",
+      "order": 2,
+      "title": "Tranziția negativă și transferul defensiv complet",
+      "principle_ids": ["principle.tranzitia-la-pierderea-mingii", "principle.protejarea-centrului", "principle.transfer-autonom-cooperare"],
+      "session_ids": ["SES-0009", "SES-0010"],
+      "related_problem_ids": ["PRB-0004"],
+      "problem_context": "Imediat după pierderea mingii, jucătorii apropiați rămân adesea pe loc câteva momente, iar sub superioritate numerică a atacanților, toată echipa tinde să alerge spre minge deodată, lăsând centrul terenului complet deschis.",
+      "perceptual_decisional_progression": "Se pornește de la reacția individuală imediată a celui mai apropiat jucător (3v3), apoi se adaugă separarea explicită a rolurilor la nivel de echipă sub superioritate numerică (4v3), iar blocul se încheie cu două jocuri de transfer (4v4, 6v6) pentru a testa dacă întregul lanț defensiv apare autonom, fără constrângeri artificiale.",
+      "representative_game_context": "Jocuri mici cu pierderi reale de minge programate, urmate de joc liber 4v4 și 6v6 cu o zonă centrală de protejat.",
+      "expected_observable_behaviour": [
+        "cel mai apropiat jucător reacționează spre purtătorul advers în primele secunde după pierdere",
+        "echipa protejează zona centrală ca prioritate colectivă în jocul de 6v6, fără comandă"
+      ],
+      "coach_watch_for": [
+        "dacă reacția în bloc spre minge (toți deodată) scade ca frecvență în favoarea separării de rol",
+        "dacă protejarea colectivă a centrului apare la densitate mai mare de jucători (6v6), nu doar la 4v4"
+      ],
+      "do_not_assume": [
+        "nu presupune că reacția în bloc spre minge e o lipsă de disciplină — la această vârstă e tendința instinctivă dominantă, nu o excepție",
+        "nu presupune că transferul reușit la 4v4 se repetă automat la 6v6 — densitatea mai mare de jucători schimbă real complexitatea deciziei colective"
+      ],
+      "constraint_variation": [
+        "programează explicit momentul pierderii mingii (regulă de exercițiu) pentru a crește numărul de repetiții observabile ale reacției de tranziție",
+        "marchează vizual zona centrală de protejat la 6v6 pentru a face prioritatea colectivă mai ușor de recunoscut"
+      ],
+      "progression_decision_criteria": [
+        "separarea rolurilor de echipă (influență/protecție) apare fără comandă verbală, în mai multe repetiții consecutive",
+        "cel puțin un comportament defensiv exersat izolat apare autonom în ambele jocuri de transfer (4v4 și 6v6)"
+      ],
+      "too_difficult_adjustment": "revino temporar la reacția individuală simplă (3v3, fără separare de roluri de echipă) până la stabilizare, apoi reintrodu superioritatea numerică.",
+      "too_easy_adjustment": "treci direct la `PLAN-0004` (traseul de integrare), care combină acest conținut cu tema ofensivă în aceeași ședință."
+    }
+  ]
+}

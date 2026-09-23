@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://manual-u11.local/schemas/curriculum.schema.json",
+  "title": "Curriculum (bloc pedagogic de sezon)",
   "type": "object",
   "required": ["id", "title", "age_category", "blocks"],
   "properties": {
@@ -12,12 +13,30 @@
       "type": "array", "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "order", "principle_ids", "session_ids"],
+        "required": [
+          "id", "order", "title", "principle_ids", "session_ids",
+          "problem_context", "perceptual_decisional_progression", "representative_game_context",
+          "expected_observable_behaviour", "coach_watch_for", "do_not_assume",
+          "constraint_variation", "progression_decision_criteria",
+          "too_difficult_adjustment", "too_easy_adjustment"
+        ],
         "properties": {
           "id": {"type": "string", "pattern": "^BLK-[0-9]{4,}$"},
           "order": {"type": "integer", "minimum": 1},
+          "title": {"type": "string", "minLength": 3},
           "principle_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
-          "session_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+          "session_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "related_problem_ids": {"type": "array", "items": {"type": "string", "pattern": "^PRB-[0-9]{4,}$"}},
+          "problem_context": {"type": "string", "minLength": 1},
+          "perceptual_decisional_progression": {"type": "string", "minLength": 1},
+          "representative_game_context": {"type": "string", "minLength": 1},
+          "expected_observable_behaviour": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "coach_watch_for": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "do_not_assume": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "constraint_variation": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "progression_decision_criteria": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "too_difficult_adjustment": {"type": "string", "minLength": 1},
+          "too_easy_adjustment": {"type": "string", "minLength": 1}
         },
         "additionalProperties": false
       }

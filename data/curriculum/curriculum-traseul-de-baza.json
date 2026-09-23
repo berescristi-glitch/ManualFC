@@ -1,0 +1,73 @@
+{
+  "id": "CUR-0001",
+  "title": "Curriculum — traseul de bază pentru un grup nou",
+  "age_category": "10–11 ani, grupele 2015 și 2016 tratate împreună",
+  "blocks": [
+    {
+      "id": "BLK-0001",
+      "order": 1,
+      "title": "Sprijin de bază în posesie",
+      "principle_ids": ["principle.spatiu-si-unghiuri", "principle.progresie-si-sprijin"],
+      "session_ids": ["SES-0001", "SES-0002"],
+      "related_problem_ids": ["PRB-0001", "PRB-0002", "PRB-0003"],
+      "problem_context": "Copiii fără expunere sistematică anterioară rămân frecvent în umbra defensivă a unui adversar, se adună în aceeași zonă când vor să ajute purtătorul mingii și primesc mingea fără să fi scanat înainte — trei tipare distincte care apar de obicei simultan la un grup nou, nu izolat.",
+      "perceptual_decisional_progression": "Se pornește de la o singură decizie perceptivă (recunoașterea umbrei defensive a unui singur adversar, cu opoziție semi-pasivă), apoi se adaugă opoziția activă continuă, apoi coordonarea cu un al doilea jucător de sprijin, și abia la final dimensiunea tehnică a recepției orientate.",
+      "representative_game_context": "Grupuri mici (2-4 jucători) cu opoziție reală, nu exerciții fără adversar — decizia de poziționare nu are sens fără presiunea unui adversar care poate acoperi opțiunea de pasă.",
+      "expected_observable_behaviour": [
+        "copiii ies din umbra defensivă a unui adversar fără comandă verbală",
+        "cel puțin doi jucători de sprijin ocupă zone diferite, fără să se grupeze"
+      ],
+      "coach_watch_for": [
+        "dacă deplasarea din umbra defensivă apare spontan sau doar după indiciu verbal",
+        "dacă gruparea în aceeași zonă scade după introducerea celui de-al doilea jucător de sprijin"
+      ],
+      "do_not_assume": [
+        "nu presupune că un grup nou înțelege deja noțiunea de unghi de pasă doar pentru că a auzit termenul la alt sport sau la televizor",
+        "nu presupune că absența deplasării înseamnă lene sau lipsă de atenție — poate fi pur și simplu absența obiceiului de a observa umbra defensivă"
+      ],
+      "constraint_variation": [
+        "reduce numărul de adversari activi pentru a izola decizia de bază, apoi adaugă opoziție completă",
+        "mărește sau micșorează spațiul de joc pentru a face umbra defensivă mai mult sau mai puțin evidentă vizual"
+      ],
+      "progression_decision_criteria": [
+        "cel puțin jumătate din repetiții arată deplasare din umbra defensivă fără comandă verbală, în mai multe ședințe consecutive",
+        "gruparea în aceeași zonă a scăzut vizibil față de primele repetiții"
+      ],
+      "too_difficult_adjustment": "revino la opoziție semi-pasivă (adversarul nu se mișcă activ să acopere) și la grupuri de 2, fără al doilea jucător de sprijin, până când decizia de bază individuală e stabilă.",
+      "too_easy_adjustment": "adaugă opoziție activă continuă mai devreme, introdu al treilea jucător de sprijin, sau treci direct la jocul mic de transfer (SES-0002) dacă grupul demonstrează deja decizia de bază constant."
+    },
+    {
+      "id": "BLK-0002",
+      "order": 2,
+      "title": "Apărare individuală și în pereche",
+      "principle_ids": ["principle.presiune-si-acoperire", "principle.protejarea-centrului"],
+      "session_ids": ["SES-0007"],
+      "related_problem_ids": ["PRB-0006"],
+      "problem_context": "La primul contact cu apărarea organizată, copiii fie atacă mingea necontrolat, fie rămân complet pasivi; iar când sunt doi apărători, se duc amândoi direct la purtător, lăsând drumul spre poartă complet neprotejat.",
+      "perceptual_decisional_progression": "Se pornește de la frânarea controlată individuală (1v1), apoi se introduce coordonarea cu un al doilea apărător (2v1), fără a mai avansa în acest bloc spre 2v2 sau superioritate numerică — acestea aparțin traseului de aprofundare defensivă (`PLAN-0003`).",
+      "representative_game_context": "Duel 1v1 cu regulă de încetinire, apoi 2v1 cu un purtător și doi apărători — opoziție reală, nu o cursă de agilitate fără adversar.",
+      "expected_observable_behaviour": [
+        "copiii frânează controlat purtătorul mingii fără să atace imediat necontrolat",
+        "cei doi apărători ocupă roluri diferite, nu ambii direct pe purtător"
+      ],
+      "coach_watch_for": [
+        "dacă frânarea controlată apare fără comandă verbală în majoritatea repetițiilor",
+        "dacă rolurile de presiune/acoperire rămân fixe sau se schimbă corect când mingea se mută"
+      ],
+      "do_not_assume": [
+        "nu presupune că un copil pasiv defensiv e leneș — poate fi teamă de contact sau lipsa reperului despre ce înseamnă încetinește, nu ataca",
+        "nu presupune că grupul e gata pentru 2v2 doar pentru că 2v1 a mers bine o singură repetiție"
+      ],
+      "constraint_variation": [
+        "schimbă regula explicită de încetinire (distanța minimă, timpul minim de menținere) pentru a face comportamentul mai ușor sau mai greu de produs",
+        "reduce viteza purtătorului advers pentru grupurile care nu reușesc încă frânarea controlată"
+      ],
+      "progression_decision_criteria": [
+        "frânarea controlată apare constant în 1v1, la majoritatea copiilor din grup, nu doar la cei mai avansați",
+        "în 2v1, rolurile de presiune și acoperire sunt vizibil diferite, chiar dacă nu perfect executate"
+      ],
+      "too_difficult_adjustment": "revino la 1v1 cu adversar semi-pasiv (nu încearcă activ să depășească) până când frânarea controlată e stabilă, apoi reintrodu opoziția completă.",
+      "too_easy_adjustment": "treci mai devreme la conținutul din `PLAN-0003` (coordonare 2v2/3v2), fără a aștepta finalul planificat al acestui bloc."
+    }
+  ]
+}

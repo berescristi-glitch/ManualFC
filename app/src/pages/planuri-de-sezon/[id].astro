@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CoachActions from '../../components/CoachActions.astro';
+import { getSeasonPlans, getSeasonPlan, getCurriculaForPlan, getAllPrinciples } from '../../lib/content-bridge';
+import { getProblem } from '../../lib/problem-library';
+
+export function getStaticPaths() {
+  return getSeasonPlans().map((p) => ({ params: { id: p.id } }));
+}
+const { id } = Astro.params;
+const plan = getSeasonPlan(id as string);
+const curricula = getCurriculaForPlan(plan);
+const blocks = curricula.flatMap((c) => c.blocks).sort((a, b) => a.order - b.order);
+const microcycles = [...plan.microcycles].sort((a, b) => a.order - b.order);
+
+const linkedPrinciples = plan.principle_ids.map((pId) => {
+  const target = getAllPrinciples().find((p) => p.id === pId);
+  if (!target) throw new Error(`[FAIL_CLOSED] [SeasonPlan] [${plan.id}] Referința la principiul "${pId}" nu a fost găsită.`);
+  return target;
+});
+const linkedProblems = plan.related_problem_ids.map((prbId) => getProblem(prbId));
+
+const weeklyModelLabel = plan.weekly_model === '2_training_plus_match' ? '2 antrenamente + meci' : '3 antrenamente + meci';
+---
+<BaseLayout title={`${plan.title} — Plan de sezon`} description={plan.overall_learning_intention}>
+  <article class="plan-page">
+    <Breadcrumb items={[{ label: 'Planuri de sezon', href: '/planuri-de-sezon' }, { label: plan.title }]} />
+    <p class="eyebrow">PLAN DE SEZON · {plan.id} · {weeklyModelLabel}</p>
+    <h1>{plan.title}</h1>
+    <CoachActions id={plan.id} kind="season-plan" title={plan.title} href={`/planuri-de-sezon/${plan.id}`} />
+    <p class="scope">{plan.scope}</p>
+
+    <section aria-labelledby="pornire">
+      <h2 id="pornire">De unde pornești</h2>
+      <p><strong>Problema de la care se pornește:</strong> {plan.starting_problem}</p>
+      <p><strong>Intenția generală de învățare:</strong> {plan.overall_learning_intention}</p>
+      <p><strong>Presupuneri și condiții prealabile:</strong></p>
+      <ul>{plan.assumptions_and_prerequisites.map((a) => <li>{a}</li>)}</ul>
+    </section>
+
+    <section aria-labelledby="blocuri">
+      <h2 id="blocuri">Structura pe blocuri</h2>
+      {blocks.map((block) => (
+        <div class="block-card">
+          <h3>{block.order}. {block.title} <span class="block-id">{block.id}</span></h3>
+          <p>{block.problem_context}</p>
+          <dl class="block-fields">
+            <dt>Progresia perceptiv-decizională</dt><dd>{block.perceptual_decisional_progression}</dd>
+            <dt>Contextul reprezentativ de joc</dt><dd>{block.representative_game_context}</dd>
+            <dt>Comportament observabil așteptat</dt><dd><ul>{block.expected_observable_behaviour.map((b) => <li>{b}</li>)}</ul></dd>
+            <dt>Ce urmărește antrenorul</dt><dd><ul>{block.coach_watch_for.map((b) => <li>{b}</li>)}</ul></dd>
+            <dt>Ce nu presupune antrenorul</dt><dd><ul>{block.do_not_assume.map((b) => <li>{b}</li>)}</ul></dd>
+            <dt>Variația constrângerilor</dt><dd><ul>{block.constraint_variation.map((b) => <li>{b}</li>)}</ul></dd>
+            <dt>Criterii de progres</dt><dd><ul>{block.progression_decision_criteria.map((b) => <li>{b}</li>)}</ul></dd>
+            <dt>Dacă e prea greu</dt><dd>{block.too_difficult_adjustment}</dd>
+            <dt>Dacă e prea ușor</dt><dd>{block.too_easy_adjustment}</dd>
+          </dl>
+          <p class="block-links">
+            Ședințe: {block.session_ids.map((sid, i) => <>{i > 0 && ' · '}<a href={`/gold-standard/sedinte/${sid}`}>{sid}</a></>)}
+            {' · '}Principii: {block.principle_ids.map((pid, i) => {
+              const p = getAllPrinciples().find((x) => x.id === pid);
+              return <>{i > 0 && ' · '}{p ? <a href={`/principii/${p.slug}`}>{p.title}</a> : pid}</>;
+            })}
+          </p>
+        </div>
+      ))}
+    </section>
+
+    <section aria-labelledby="microcicluri">
+      <h2 id="microcicluri">Micro-cicluri săptămânale</h2>
+      {microcycles.map((mic) => (
+        <div class="mic-card">
+          <h3>Săptămâna {mic.order}. {mic.title} <span class="block-id">{mic.id}</span></h3>
+          <p><strong>Intenția de învățare:</strong> {mic.learning_intention}</p>
+          <p><strong>Ședințe:</strong> {mic.session_ids.map((sid, i) => <>{i > 0 && ' · '}<a href={`/gold-standard/sedinte/${sid}`}>{sid}</a></>)}</p>
+          <p><strong>Comportament țintă:</strong></p>
+          <ul>{mic.target_behaviour.map((t) => <li>{t}</li>)}</ul>
+          <p><strong>Focus de observație:</strong></p>
+          <ul>{mic.coach_observation_focus.map((o) => <li>{o}</li>)}</ul>
+          <p><strong>Scripturi relevante:</strong> {mic.related_script_ids.map((sid, i) => <>{i > 0 && ' · '}<a href={`/scripturi/${sid}`}>{sid}</a></>)}</p>
+          <p><strong>Reflecție:</strong></p>
+          <ul>{mic.reflection_prompts.map((r) => <li>{r}</li>)}</ul>
+          <p><strong>Transfer în meci:</strong> {mic.match_transfer}</p>
+          <p><strong>Note de revizuire:</strong> {mic.review_notes}</p>
+          <p><strong>Opțiuni de adaptare:</strong></p>
+          <ul>{mic.adaptation_options.map((a) => <li>{a}</li>)}</ul>
+          <p class="safety"><strong>Siguranță și încărcare:</strong> {mic.safety_and_workload_notes}</p>
+        </div>
+      ))}
+    </section>
+
+    <section aria-labelledby="observatie">
+      <h2 id="observatie">Observație și intervenție</h2>
+      <p><strong>Criterii de observație:</strong></p>
+      <ul>{plan.observation_criteria.map((o) => <li>{o}</li>)}</ul>
+      <p><strong>Intervino când:</strong></p>
+      <ul>{plan.when_to_intervene.map((w) => <li>{w}</li>)}</ul>
+      <p><strong>Nu intervino când:</strong></p>
+      <ul>{plan.when_not_to_intervene.map((w) => <li>{w}</li>)}</ul>
+    </section>
+
+    <section aria-labelledby="reflectie-transfer">
+      <h2 id="reflectie-transfer">Reflecție și transfer</h2>
+      <p><strong>Întrebări de reflecție:</strong></p>
+      <ul>{plan.reflection_questions.map((r) => <li>{r}</li>)}</ul>
+      <p><strong>Puncte de verificare a transferului:</strong></p>
+      <ul>{plan.match_transfer_checkpoints.map((m) => <li>{m}</li>)}</ul>
+    </section>
+
+    <section aria-labelledby="adaptare-progres">
+      <h2 id="adaptare-progres">Adaptare, progres și revizuire</h2>
+      <p><strong>Reguli de adaptare:</strong></p>
+      <ul>{plan.adaptation_rules.map((a) => <li>{a}</li>)}</ul>
+      <p><strong>Logica de progres:</strong></p>
+      <ul>{plan.progression_logic.map((p) => <li>{p}</li>)}</ul>
+      <p><strong>Logica de regres:</strong></p>
+      <ul>{plan.regression_logic.map((r) => <li>{r}</li>)}</ul>
+      <p><strong>Puncte de revizuire:</strong></p>
+      <ul>{plan.review_points.map((r) => <li>{r}</li>)}</ul>
+    </section>
+
+    <section aria-labelledby="semnale" class="signals">
+      <h2 id="semnale">Semnale de continuare</h2>
+      <div class="signal-grid">
+        <div class="signal continue"><h3>Continuă</h3><ul>{plan.continuation_signals.continue.map((s) => <li>{s}</li>)}</ul></div>
+        <div class="signal adjust"><h3>Ajustează</h3><ul>{plan.continuation_signals.adjust.map((s) => <li>{s}</li>)}</ul></div>
+        <div class="signal slow"><h3>Încetinește</h3><ul>{plan.continuation_signals.slow_down.map((s) => <li>{s}</li>)}</ul></div>
+        <div class="signal abandon"><h3>Abandonează</h3><ul>{plan.continuation_signals.abandon.map((s) => <li>{s}</li>)}</ul></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="ce-nu-stim">
+      <h2 id="ce-nu-stim">Ce nu știm sigur</h2>
+      <p>{plan.evidence_boundary}</p>
+    </section>
+
+    <section aria-labelledby="legaturi">
+      <h2 id="legaturi">Legături</h2>
+      <p><strong>Probleme din motorul de decizie:</strong> {linkedProblems.map((p, i) => <>{i > 0 && ' · '}<a href={`/rezolva-pe-teren/${p.slug}`}>{p.human_title}</a></>)}</p>
+      <p><strong>Principii:</strong> {linkedPrinciples.map((p, i) => <>{i > 0 && ' · '}<a href={`/principii/${p.slug}`}>{p.title}</a></>)}</p>
+      <p><strong>Exerciții:</strong> {plan.related_exercise_ids.map((exId, i) => <>{i > 0 && ' · '}<a href={`/gold-standard/exercitii/${exId}`}>{exId}</a></>)}</p>
+      <p><strong>Ședințe:</strong> {plan.related_session_ids.map((sesId, i) => <>{i > 0 && ' · '}<a href={`/gold-standard/sedinte/${sesId}`}>{sesId}</a></>)}</p>
+      <p><strong>Scripturi:</strong> {plan.related_script_ids.map((scrId, i) => <>{i > 0 && ' · '}<a href={`/scripturi/${scrId}`}>{scrId}</a></>)}</p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .plan-page { max-width: var(--width-content); margin: 0 auto; padding: var(--space-20) var(--space-6); }
+  h1 { max-width: 28ch; margin-top: .5rem; }
+  .scope { max-width: 68ch; font-size: 1.05rem; color: var(--color-text-secondary); }
+  section { margin-top: var(--space-16); border-top: 1px solid var(--color-border); padding-top: var(--space-8); }
+  .block-card, .mic-card { padding: var(--space-6); border: 1px solid var(--color-border); border-radius: 12px; margin-top: var(--space-6); break-inside: avoid; }
+  .block-id { font-family: var(--font-family-mono); font-size: .75rem; color: var(--color-text-muted); }
+  .block-fields { display: grid; gap: var(--space-2); margin-top: var(--space-4); }
+  .block-fields dt { font-weight: 800; margin-top: var(--space-3); }
+  .block-fields dd { margin: 0; }
+  .block-links { font-size: .9rem; color: var(--color-text-muted); margin-top: var(--space-4); }
+  .safety { font-size: .9rem; color: var(--color-text-muted); }
+  .signal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .signal { padding: var(--space-4); border-radius: 8px; border: 1px solid var(--color-border); }
+  .signal h3 { font-size: .85rem; text-transform: uppercase; margin-top: 0; }
+  .signal.continue { border-left: 4px solid #2f9e44; }
+  .signal.adjust { border-left: 4px solid #f08c00; }
+  .signal.slow { border-left: 4px solid #e8590c; }
+  .signal.abandon { border-left: 4px solid #c92a2a; }
+  @media (max-width: 800px) { .signal-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .signal-grid { grid-template-columns: 1fr; } }
+  @media print {
+    .block-card, .mic-card { page-break-inside: avoid; }
+    section { page-break-before: auto; }
+    #blocuri, #microcicluri { page-break-before: always; }
+  }
+</style>

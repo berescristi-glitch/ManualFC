@@ -3,7 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import SurfaceMap from '../../../components/SurfaceMap.astro';
 import CoachActions from '../../../components/CoachActions.astro';
-import { getGoldStandardSessions, getGoldStandardSession, getGoldStandardAssessment, getGoldStandardSessionExercises, getScriptsForSession } from '../../../lib/content-bridge';
+import { getGoldStandardSessions, getGoldStandardSession, getGoldStandardAssessment, getGoldStandardSessionExercises, getScriptsForSession, getSeasonPlansForSession } from '../../../lib/content-bridge';
 import { SUPPORTED_PLAYER_COUNTS, computeGroupConfiguration } from '../../../lib/group-configurator';
 import type { CoachCount } from '../../../lib/group-configurator';
 import { buildSurfaceMap } from '../../../lib/surface-map';
@@ -16,6 +16,7 @@ const ses = getGoldStandardSession(id as string);
 const sessionExercises = getGoldStandardSessionExercises(ses);
 const assessment = getGoldStandardAssessment(sessionExercises.find(ex => ex.assessment_ref)?.assessment_ref);
 const relevantScripts = getScriptsForSession(ses.id);
+const relevantPlans = getSeasonPlansForSession(ses.id);
 
 const equipmentMatches = sessionExercises.every(ex => ex.equipment.join('|') === sessionExercises[0].equipment.join('|'));
 const equipment = equipmentMatches ? sessionExercises[0].equipment : null;
@@ -215,6 +216,17 @@ const isV2 = ses.gold_standard_v2?.status === 'V2';
         <ul class="script-links">
           {relevantScripts.map((s) => (
             <li><a href={`/scripturi/${s.id}`}>{s.title}</a> — <span class="script-hint">{s.short_version}</span></li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {relevantPlans.length > 0 && (
+      <section aria-labelledby="planuri-relevante">
+        <h2 id="planuri-relevante">Planuri de sezon relevante</h2>
+        <ul class="script-links">
+          {relevantPlans.map((p) => (
+            <li><a href={`/planuri-de-sezon/${p.id}`}>{p.title}</a> — <span class="script-hint">{p.scope}</span></li>
           ))}
         </ul>
       </section>

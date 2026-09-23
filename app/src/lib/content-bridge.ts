@@ -114,6 +114,14 @@ import script23Raw from '../../../data/communication-scripts/script-nu-eticheta-
 import script24Raw from '../../../data/communication-scripts/script-de-ce-am-schimbat-regula.json';
 import script25Raw from '../../../data/communication-scripts/script-ce-luati-cu-voi-la-meci.json';
 import script26Raw from '../../../data/communication-scripts/script-inchidem-cu-un-singur-lucru.json';
+import curriculum1Raw from '../../../data/curriculum/curriculum-traseul-de-baza.json';
+import curriculum2Raw from '../../../data/curriculum/curriculum-aprofundare-sprijin.json';
+import curriculum3Raw from '../../../data/curriculum/curriculum-aprofundare-aparare.json';
+import curriculum4Raw from '../../../data/curriculum/curriculum-integrare-completa.json';
+import seasonPlan1Raw from '../../../data/season-plans/season-plan-traseul-de-baza.json';
+import seasonPlan2Raw from '../../../data/season-plans/season-plan-aprofundare-sprijin.json';
+import seasonPlan3Raw from '../../../data/season-plans/season-plan-aprofundare-aparare.json';
+import seasonPlan4Raw from '../../../data/season-plans/season-plan-integrare-completa.json';
 
 /**
  * Content Bridge 2.0 — Puntea de citire fail-closed complet tipizată pentru datele canonice ale proiectului.
@@ -867,4 +875,190 @@ export function getScriptsForSession(sessionId: string): CommunicationScript[] {
 
 export function getScriptsForPrinciple(principleId: string): CommunicationScript[] {
   return getCommunicationScripts().filter(s => s.principle_ids.includes(principleId));
+}
+
+export interface CurriculumBlock {
+  id: string;
+  order: number;
+  title: string;
+  principle_ids: string[];
+  session_ids: string[];
+  related_problem_ids?: string[];
+  problem_context: string;
+  perceptual_decisional_progression: string;
+  representative_game_context: string;
+  expected_observable_behaviour: string[];
+  coach_watch_for: string[];
+  do_not_assume: string[];
+  constraint_variation: string[];
+  progression_decision_criteria: string[];
+  too_difficult_adjustment: string;
+  too_easy_adjustment: string;
+}
+export interface Curriculum {
+  id: string;
+  title: string;
+  age_category: string;
+  blocks: CurriculumBlock[];
+}
+
+function parseCurriculum(raw: any, sourceContext: string): Curriculum {
+  const id = requireField(raw?.id, sourceContext, 'id');
+  const blocks = requireField(raw?.blocks, id, 'blocks');
+  if (!Array.isArray(blocks) || blocks.length === 0) {
+    throw new Error(`[FAIL_CLOSED] [Curriculum] [${id}] "blocks" nu poate fi gol.`);
+  }
+  for (const block of blocks) {
+    for (const pId of block.principle_ids ?? []) {
+      if (!getAllPrinciples().some(p => p.id === pId)) {
+        throw new Error(`[FAIL_CLOSED] [Curriculum] [${id}/${block.id}] Referința la principiul "${pId}" nu a fost găsită.`);
+      }
+    }
+  }
+  return raw as Curriculum;
+}
+
+let cachedCurricula: Curriculum[] | null = null;
+
+export function getCurricula(): Curriculum[] {
+  if (!cachedCurricula) {
+    cachedCurricula = [
+      parseCurriculum(curriculum1Raw, 'curriculum-traseul-de-baza.json'),
+      parseCurriculum(curriculum2Raw, 'curriculum-aprofundare-sprijin.json'),
+      parseCurriculum(curriculum3Raw, 'curriculum-aprofundare-aparare.json'),
+      parseCurriculum(curriculum4Raw, 'curriculum-integrare-completa.json'),
+    ];
+  }
+  return cachedCurricula;
+}
+
+export function getCurriculum(id: string): Curriculum {
+  const cur = getCurricula().find(c => c.id === id);
+  if (!cur) {
+    throw new Error(`[FAIL_CLOSED] [Curriculum] Curriculumul "${id}" nu a fost găsit.`);
+  }
+  return cur;
+}
+
+export interface SeasonPlanMicrocycle {
+  id: string;
+  order: number;
+  title: string;
+  session_ids: string[];
+  learning_intention: string;
+  target_behaviour: string[];
+  coach_observation_focus: string[];
+  related_script_ids: string[];
+  reflection_prompts: string[];
+  match_transfer: string;
+  review_notes: string;
+  adaptation_options: string[];
+  safety_and_workload_notes: string;
+}
+export interface SeasonPlanContinuationSignals {
+  continue: string[];
+  adjust: string[];
+  slow_down: string[];
+  abandon: string[];
+}
+export interface SeasonPlan {
+  id: string;
+  slug: string;
+  title: string;
+  age_category: string;
+  scope: string;
+  weekly_model: string;
+  curriculum_ids: string[];
+  starting_problem: string;
+  related_problem_ids: string[];
+  assumptions_and_prerequisites: string[];
+  overall_learning_intention: string;
+  principle_ids: string[];
+  related_exercise_ids: string[];
+  related_session_ids: string[];
+  related_script_ids: string[];
+  observation_criteria: string[];
+  when_to_intervene: string[];
+  when_not_to_intervene: string[];
+  reflection_questions: string[];
+  match_transfer_checkpoints: string[];
+  adaptation_rules: string[];
+  progression_logic: string[];
+  regression_logic: string[];
+  review_points: string[];
+  continuation_signals: SeasonPlanContinuationSignals;
+  evidence_boundary: string;
+  microcycles: SeasonPlanMicrocycle[];
+}
+
+function parseSeasonPlan(raw: any, sourceContext: string): SeasonPlan {
+  const id = requireField(raw?.id, sourceContext, 'id');
+  requireField(raw?.title, id, 'title');
+  const microcycles = requireField(raw?.microcycles, id, 'microcycles');
+  if (!Array.isArray(microcycles) || microcycles.length === 0) {
+    throw new Error(`[FAIL_CLOSED] [SeasonPlan] [${id}] "microcycles" nu poate fi gol.`);
+  }
+  const principleIds = requireField(raw?.principle_ids, id, 'principle_ids');
+  for (const pId of principleIds) {
+    if (!getAllPrinciples().some(p => p.id === pId)) {
+      throw new Error(`[FAIL_CLOSED] [SeasonPlan] [${id}] Referința la principiul "${pId}" nu a fost găsită.`);
+    }
+  }
+  for (const curId of raw.curriculum_ids ?? []) {
+    if (!getCurricula().some(c => c.id === curId)) {
+      throw new Error(`[FAIL_CLOSED] [SeasonPlan] [${id}] Referința la curriculumul "${curId}" nu a fost găsită.`);
+    }
+  }
+  return raw as SeasonPlan;
+}
+
+let cachedSeasonPlans: SeasonPlan[] | null = null;
+
+export function getSeasonPlans(): SeasonPlan[] {
+  if (!cachedSeasonPlans) {
+    cachedSeasonPlans = [
+      parseSeasonPlan(seasonPlan1Raw, 'season-plan-traseul-de-baza.json'),
+      parseSeasonPlan(seasonPlan2Raw, 'season-plan-aprofundare-sprijin.json'),
+      parseSeasonPlan(seasonPlan3Raw, 'season-plan-aprofundare-aparare.json'),
+      parseSeasonPlan(seasonPlan4Raw, 'season-plan-integrare-completa.json'),
+    ];
+  }
+  return cachedSeasonPlans;
+}
+
+export function getSeasonPlan(id: string): SeasonPlan {
+  const plan = getSeasonPlans().find(p => p.id === id);
+  if (!plan) {
+    throw new Error(`[FAIL_CLOSED] [SeasonPlan] Planul "${id}" nu a fost găsit.`);
+  }
+  return plan;
+}
+
+export function getCurriculaForPlan(plan: SeasonPlan): Curriculum[] {
+  return plan.curriculum_ids.map(curId => getCurriculum(curId));
+}
+
+export function getSeasonPlansForProblem(problemId: string): SeasonPlan[] {
+  return getSeasonPlans().filter(p => p.related_problem_ids.includes(problemId));
+}
+
+export function getSeasonPlansForExercise(exerciseId: string): SeasonPlan[] {
+  return getSeasonPlans().filter(p => p.related_exercise_ids.includes(exerciseId));
+}
+
+export function getSeasonPlansForSession(sessionId: string): SeasonPlan[] {
+  return getSeasonPlans().filter(p => p.related_session_ids.includes(sessionId));
+}
+
+export function getSeasonPlansForPrinciple(principleId: string): SeasonPlan[] {
+  return getSeasonPlans().filter(p => p.principle_ids.includes(principleId));
+}
+
+export function getSeasonPlansForScript(scriptId: string): SeasonPlan[] {
+  return getSeasonPlans().filter(p => p.related_script_ids.includes(scriptId));
+}
+
+export function getSeasonPlansForTheme(theme: string): SeasonPlan[] {
+  const themeExerciseIds = new Set(getGoldStandardExercises().filter(e => e.theme === theme).map(e => e.id));
+  return getSeasonPlans().filter(p => p.related_exercise_ids.some(exId => themeExerciseIds.has(exId)));
 }

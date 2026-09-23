@@ -1,0 +1,174 @@
+{
+  "id": "PLAN-0001",
+  "slug": "traseul-de-baza",
+  "title": "Traseul de bază — primul semestru cu un grup nou",
+  "age_category": "10–11 ani, grupele 2015 și 2016 tratate împreună",
+  "scope": "Grup nou, fără expunere sistematică anterioară la niciuna dintre cele două teme de antrenament ManualFC. Potrivit pentru primele 4-6 săptămâni de lucru cu un grup format recent sau cu copii veniți din alte contexte de joc neformal.",
+  "weekly_model": "2_training_plus_match",
+  "curriculum_ids": ["CUR-0001"],
+  "starting_problem": "Copiii rămân în umbra defensivă a unui adversar, se aglomerează în aceeași zonă când vor să ajute purtătorul, primesc mingea fără să fi scanat înainte, și — la primul contact cu apărarea organizată — fie atacă mingea necontrolat, fie rămân pasivi și se duc amândoi apărătorii direct la purtător.",
+  "related_problem_ids": ["PRB-0001", "PRB-0002", "PRB-0003", "PRB-0006"],
+  "assumptions_and_prerequisites": [
+    "grupul poate participa la exerciții cu opoziție reală de la prima ședință — nu se presupune experiență tehnică prealabilă",
+    "efectivul disponibil permite formarea a cel puțin unui grup de 3 și a unei perechi de apărare 2v1 (minimum 8 copii, conform configuratorului de grup)",
+    "antrenorul a citit deja pagina de identitate a ambelor teme (`/gold-standard/`, `/aparare/`) înainte de a începe acest traseu"
+  ],
+  "overall_learning_intention": "Copiii recunosc singuri, fără comandă verbală, umbra defensivă a unui adversar în posesie și frânează controlat un purtător de minge în apărare — cele două decizii de bază care deschid fiecare din cele două teme complete.",
+  "principle_ids": ["principle.spatiu-si-unghiuri", "principle.progresie-si-sprijin", "principle.presiune-si-acoperire", "principle.protejarea-centrului"],
+  "related_exercise_ids": ["EX-0001", "EX-0002", "EX-0003", "EX-0004", "EX-0005", "EX-0016", "EX-0017"],
+  "related_session_ids": ["SES-0001", "SES-0002", "SES-0007"],
+  "related_script_ids": ["SCR-0001", "SCR-0003", "SCR-0005", "SCR-0006", "SCR-0007", "SCR-0012", "SCR-0016", "SCR-0018"],
+  "observation_criteria": [
+    "apariția deplasării din umbra defensivă fără comandă verbală, în mai multe repetiții consecutive",
+    "frânarea controlată a purtătorului mingii în duel individual, fără atac necontrolat"
+  ],
+  "when_to_intervene": [
+    "un tipar de eroare se repetă identic la trei repetiții consecutive, fără nicio variație spontană",
+    "riscul fizic imediat impune o intervenție, indiferent de repetiție"
+  ],
+  "when_not_to_intervene": [
+    "prima sau a doua încercare nereușită a unei decizii noi, fără alt semnal de tipar stabil",
+    "copilul încearcă deja o variantă diferită față de încercarea anterioară, chiar dacă nu reușește"
+  ],
+  "reflection_questions": [
+    "Ce ați observat azi despre cum v-ați mutat ca să ajutați coechipierul?",
+    "Ce ai văzut chiar înainte să alegi ce ai făcut cu mingea?"
+  ],
+  "match_transfer_checkpoints": [
+    "la finalul blocului de sprijin de bază (`BLK-0001`), verifică dacă cel puțin un comportament exersat izolat apare autonom în jocul liber final al `SES-0002`",
+    "la finalul blocului de apărare individuală (`BLK-0002`), verifică dacă frânarea controlată apare spontan în jocul liber, nu doar în duelul structurat"
+  ],
+  "adaptation_rules": [
+    "dacă efectivul disponibil scade sub pragul unui grup de 3 sau al unei perechi 2v1, folosește configuratorul de grup pentru a redistribui, nu improviza un format nou",
+    "dacă grupul include copii cu niveluri foarte diferite de experiență anterioară, diferențiază individual prin regresie/progresie documentată la nivel de exercițiu, nu prin separarea grupului în două categorii fixe"
+  ],
+  "progression_logic": [
+    "trece la `PLAN-0002` (aprofundarea sprijinului) sau la `PLAN-0003` (aprofundarea apărării) — nu la ambele simultan — abia după ce ambele criterii de progres ale blocurilor din acest traseu sunt îndeplinite constant, în mai multe ședințe consecutive",
+    "alege între `PLAN-0002` și `PLAN-0003` pe baza observației directe: care dintre cele două decizii de bază (sprijin sau apărare) rămâne mai fragilă merită prioritate, nu ordinea implicită a acestui document"
+  ],
+  "regression_logic": [
+    "dacă niciunul dintre cele două blocuri nu arată progres după 3-4 ședințe, revino la regresiile documentate explicit în fiecare bloc (`too_difficult_adjustment`) înainte de a continua secvența"
+  ],
+  "review_points": [
+    "la finalul fiecărui bloc (aproximativ săptămâna 2 și săptămâna 4), revizuiește dacă criteriile de progres sunt îndeplinite înainte de a trece mai departe",
+    "după microciclul de consolidare (`MIC-0004`), decide explicit dacă grupul e gata pentru un traseu de aprofundare sau mai are nevoie de o repetare a acestui traseu de bază"
+  ],
+  "continuation_signals": {
+    "continue": [
+      "ambele decizii de bază (sprijin, apărare individuală) apar constant fără comandă verbală, în mai multe ședințe"
+    ],
+    "adjust": [
+      "una dintre cele două decizii de bază progresează clar mai lent decât cealaltă — alocă mai mult timp blocului respectiv înainte de a trece mai departe"
+    ],
+    "slow_down": [
+      "grupul arată semne de suprasolicitare cognitivă (confuzie repetată, frustrare crescută) la introducerea celui de-al doilea jucător de sprijin sau a coordonării 2v1 — revino la decizia individuală izolată"
+    ],
+    "abandon": [
+      "efectivul disponibil sau constanța participării scade sub pragul minim necesar pentru exercițiile cu opoziție reală (sub 8 copii, cu prezență inconstantă) — traseul nu poate fi urmat coerent în aceste condiții și necesită o soluție organizatorică, nu pedagogică"
+    ]
+  },
+  "evidence_boundary": "Acest traseu e o sinteză profesională de secvențiere pedagogică, nu un program de periodizare sportivă în sensul tehnic al termenului (Issurin, Matveyev) — literatura de periodizare e dezvoltată aproape exclusiv pe sportivi adulți de elită, nu pe dezvoltare juvenilă. Modelul Côté plasează 10-11 ani în anii de eșantionare (joc variat, nu specializare orientată spre competiție), iar acest traseu respectă acea recomandare prin varietate și joc liber constant, nu prin încărcare progresivă de tip sportiv. Ordinea exactă a blocurilor și durata exactă a fiecăruia rămân decizii de teren ale antrenorului, ajustate pe baza observației reale — planurile reale de antrenament deviază constant de la intenția inițială din cauza factorilor externi (absențe, ritm diferit de progres), iar acest traseu e conceput să fie ajustat, nu urmat rigid. Transferul spre meciul oficial rămâne neconfirmat fără o pilotare reală pe teren.",
+  "microcycles": [
+    {
+      "id": "MIC-0001",
+      "order": 1,
+      "title": "Introducere — sprijin de bază",
+      "session_ids": ["SES-0001"],
+      "learning_intention": "Copiii recunosc umbra defensivă a unui singur adversar și se orientează la recepție, fără comandă verbală constantă.",
+      "target_behaviour": [
+        "deplasare din umbra defensivă fără comandă verbală",
+        "scanare vizibilă înainte de recepție"
+      ],
+      "coach_observation_focus": [
+        "apariția deplasării laterale în EX-0001, fără comandă",
+        "scanarea vizibilă spre spațiu în EX-0003, înainte de contact"
+      ],
+      "related_script_ids": ["SCR-0003", "SCR-0005"],
+      "reflection_prompts": [
+        "Ce ați observat azi despre cum vă mutați ca să ajutați coechipierul?"
+      ],
+      "match_transfer": "Nu se așteaptă încă transfer vizibil în joc liber la această primă expunere — obiectivul e introducerea deciziei, nu consolidarea ei.",
+      "review_notes": "Dacă niciun copil nu arată deplasare din umbra defensivă până la finalul ședinței, notează ca informație pentru ședința următoare, nu ca eșec — revino la EX-0001 cu opoziție semi-pasivă.",
+      "adaptation_options": [
+        "reduce numărul de grupuri paralele dacă spațiul disponibil e limitat, păstrând dimensiunea canonică a fiecărei stații"
+      ],
+      "safety_and_workload_notes": "Rutina de încălzire completă (FIFA 11+ Kids sau echivalent) rămâne obligatorie la prima ședință cu un grup nou; nu se comprimă pentru a face loc conținutului tehnico-tactic."
+    },
+    {
+      "id": "MIC-0002",
+      "order": 2,
+      "title": "Coordonare și transfer — tema 1",
+      "session_ids": ["SES-0002"],
+      "learning_intention": "Copiii coordonează doi jucători de sprijin fără să se grupeze în aceeași zonă, și testează dacă decizia de bază apare autonom în joc mic reprezentativ.",
+      "target_behaviour": [
+        "cei doi jucători de sprijin ocupă zone diferite",
+        "cel puțin un comportament exersat izolat apare autonom în jocul liber final"
+      ],
+      "coach_observation_focus": [
+        "diferențierea spațială a celor doi jucători de sprijin în EX-0004",
+        "apariția autonomă a unui unghi de sprijin util în EX-0005, fără comandă de pe margine"
+      ],
+      "related_script_ids": ["SCR-0006", "SCR-0007"],
+      "reflection_prompts": [
+        "Unde ați văzut, în jocul de azi, o situație ca la exercițiile cu conul sau cu doi coechipieri?"
+      ],
+      "match_transfer": "Verifică la pauza dintre reprize dacă a apărut cel puțin un comportament țintă în jocul liber, fără comandă de pe margine — notează ca informație, nu ca verdict, dacă nu apare.",
+      "review_notes": "Compară cu MIC-0001: dacă gruparea în aceeași zonă persistă identic, alocă o repetiție suplimentară cu conuri sau zone marcate vizual înainte de a continua la BLK-0002.",
+      "adaptation_options": [
+        "dacă spațiul complet de 30x20m pentru EX-0005 nu e disponibil, redu numărul de terenuri paralele, nu dimensiunea unui singur teren"
+      ],
+      "safety_and_workload_notes": "Vestele de marcaj pentru două culori de echipă sunt necesare pentru EX-0005 — pregătește-le înainte de ședință pentru a nu pierde timp activ."
+    },
+    {
+      "id": "MIC-0003",
+      "order": 3,
+      "title": "Introducere — apărare individuală",
+      "session_ids": ["SES-0007"],
+      "learning_intention": "Copiii frânează controlat purtătorul mingii în duel individual și încep să coordoneze rolurile de presiune și acoperire în pereche.",
+      "target_behaviour": [
+        "frânare controlată fără atac necontrolat",
+        "schimbarea rolului de presiune/acoperire fără comandă verbală când mingea se mută"
+      ],
+      "coach_observation_focus": [
+        "apariția frânării controlate în EX-0016, fără comandă verbală",
+        "schimbarea rolului în EX-0017, la mutarea mingii"
+      ],
+      "related_script_ids": ["SCR-0001", "SCR-0012"],
+      "reflection_prompts": [
+        "Ce ați observat azi despre cum v-ați ajutat unul pe altul în apărare?"
+      ],
+      "match_transfer": "Nu se așteaptă încă transfer vizibil în joc liber la prima expunere defensivă — obiectivul e introducerea deciziei, la fel ca la MIC-0001 pentru tema ofensivă.",
+      "review_notes": "Compară reacția emoțională a grupului la primul contact cu duelul defensiv față de reacția la primul contact cu sprijinul ofensiv (MIC-0001) — unele grupuri resimt apărarea ca fiind mai solicitantă fizic și emoțional.",
+      "adaptation_options": [
+        "dacă frânarea controlată nu apare deloc, reduce viteza purtătorului advers explicit, nu doar distanța de start"
+      ],
+      "safety_and_workload_notes": "Duelurile 1v1 cresc riscul de contact fizic direct față de exercițiile de sprijin fără opoziție de contact — verifică explicit regula de intensitate controlată înainte de start."
+    },
+    {
+      "id": "MIC-0004",
+      "order": 4,
+      "title": "Consolidare și primă observație combinată",
+      "session_ids": ["SES-0002", "SES-0007"],
+      "learning_intention": "Verifică dacă ambele decizii de bază (sprijin ofensiv, apărare individuală) rămân stabile atunci când sunt reluate consecutiv, nu doar izolat, și decide traseul următor pe baza observației directe.",
+      "target_behaviour": [
+        "ambele decizii de bază apar constant, fără comandă verbală, la reluare",
+        "grupul poate numi verbal cel puțin o observație concretă din fiecare temă"
+      ],
+      "coach_observation_focus": [
+        "stabilitatea comportamentului din MIC-0002 la reluarea SES-0002",
+        "stabilitatea comportamentului din MIC-0003 la reluarea SES-0007"
+      ],
+      "related_script_ids": ["SCR-0016", "SCR-0018"],
+      "reflection_prompts": [
+        "Ce ai observat azi despre cum v-ați mutat ca să ajutați coechipierul, față de prima dată?",
+        "Ce a fost mai ușor și ce a fost mai greu între sprijin și apărare?"
+      ],
+      "match_transfer": "Ultima repriză de joc liber a ședinței combină observarea ambelor teme — notează separat dacă apare comportament ofensiv, defensiv, sau ambele, fără a le amesteca într-un singur verdict.",
+      "review_notes": "Acesta e punctul de revizuire principal al traseului (vezi `review_points` la nivel de plan) — decizia despre `PLAN-0002` vs. `PLAN-0003` se ia aici, pe baza cărei decizii de bază rămâne mai fragilă.",
+      "adaptation_options": [
+        "dacă timpul disponibil nu permite reluarea completă a ambelor ședințe, prioritizează segmentele de joc liber final ale fiecăreia, nu introducerea de exerciții noi"
+      ],
+      "safety_and_workload_notes": "Ședință cu conținut dublu tematic — verifică nivelul de oboseală al grupului la mijlocul ședinței și scurtează segmentul de joc liber final dacă e necesar, nu segmentele structurate."
+    }
+  ]
+}

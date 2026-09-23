@@ -1,23 +1,77 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://manual-u11.local/schemas/season-plan.schema.json",
+  "title": "Plan de sezon",
   "type": "object",
-  "required": ["id", "title", "weekly_model", "curriculum_ids", "microcycles"],
+  "required": [
+    "id", "slug", "title", "age_category", "scope", "weekly_model", "curriculum_ids", "microcycles",
+    "starting_problem", "related_problem_ids", "assumptions_and_prerequisites", "overall_learning_intention",
+    "principle_ids", "related_exercise_ids", "related_session_ids", "related_script_ids",
+    "observation_criteria", "when_to_intervene", "when_not_to_intervene",
+    "reflection_questions", "match_transfer_checkpoints", "adaptation_rules",
+    "progression_logic", "regression_logic", "review_points", "continuation_signals", "evidence_boundary"
+  ],
   "properties": {
     "$schema": {"type": "string"},
     "id": {"type": "string", "pattern": "^PLAN-[0-9]{4,}$"},
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "title": {"type": "string", "minLength": 3},
+    "age_category": {"const": "10–11 ani, grupele 2015 și 2016 tratate împreună"},
+    "scope": {"type": "string", "minLength": 1},
     "weekly_model": {"enum": ["2_training_plus_match", "3_training_plus_match"]},
-    "curriculum_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "curriculum_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^CUR-[0-9]{4,}$"}},
+    "starting_problem": {"type": "string", "minLength": 1},
+    "related_problem_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^PRB-[0-9]{4,}$"}},
+    "assumptions_and_prerequisites": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "overall_learning_intention": {"type": "string", "minLength": 1},
+    "principle_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "related_exercise_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^EX-[0-9]{4,}$"}},
+    "related_session_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^SES-[0-9]{4,}$"}},
+    "related_script_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^SCR-[0-9]{4,}$"}},
+    "observation_criteria": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "when_to_intervene": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "when_not_to_intervene": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "reflection_questions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "match_transfer_checkpoints": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "adaptation_rules": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "progression_logic": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "regression_logic": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "review_points": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "continuation_signals": {
+      "type": "object",
+      "required": ["continue", "adjust", "slow_down", "abandon"],
+      "properties": {
+        "continue": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "adjust": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "slow_down": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "abandon": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "evidence_boundary": {"type": "string", "minLength": 1},
     "microcycles": {
       "type": "array", "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "order", "session_ids"],
+        "required": [
+          "id", "order", "title", "session_ids", "learning_intention", "target_behaviour",
+          "coach_observation_focus", "related_script_ids", "reflection_prompts",
+          "match_transfer", "review_notes", "adaptation_options", "safety_and_workload_notes"
+        ],
         "properties": {
           "id": {"type": "string", "pattern": "^MIC-[0-9]{4,}$"},
           "order": {"type": "integer", "minimum": 1},
-          "session_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+          "title": {"type": "string", "minLength": 3},
+          "session_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "learning_intention": {"type": "string", "minLength": 1},
+          "target_behaviour": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "coach_observation_focus": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "related_script_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^SCR-[0-9]{4,}$"}},
+          "reflection_prompts": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "match_transfer": {"type": "string", "minLength": 1},
+          "review_notes": {"type": "string", "minLength": 1},
+          "adaptation_options": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "safety_and_workload_notes": {"type": "string", "minLength": 1}
         },
         "additionalProperties": false
       }

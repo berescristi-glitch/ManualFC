@@ -1,0 +1,73 @@
+{
+  "id": "CUR-0004",
+  "title": "Curriculum — integrarea completă a atacului și apărării",
+  "age_category": "10–11 ani, grupele 2015 și 2016 tratate împreună",
+  "blocks": [
+    {
+      "id": "BLK-0007",
+      "order": 1,
+      "title": "Alternanță tematică ghidată",
+      "principle_ids": ["principle.progresie-si-sprijin", "principle.tranzitia-la-pierderea-mingii", "principle.jocul-ca-sistem-de-probleme"],
+      "session_ids": ["SES-0004", "SES-0009"],
+      "related_problem_ids": ["PRB-0004", "PRB-0007"],
+      "problem_context": "Un grup care a parcurs deja aprofundarea separată a fiecărei teme (`PLAN-0002`, `PLAN-0003`) poate stăpâni fiecare temă izolat, dar nu a fost încă testat dacă poate alterna deciziile ofensive și defensive în aceeași ședință, fără ca una să interfereze cu cealaltă.",
+      "perceptual_decisional_progression": "Se reiau, în aceeași ședință, o decizie ofensivă avansată (al treilea jucător de sprijin sub presiune, `SES-0004`) și o decizie defensivă avansată (separarea rolurilor de echipă la tranziția negativă, `SES-0009`), fără o temă dominantă — scopul e verificarea flexibilității de a comuta atenția, nu introducerea de concept nou.",
+      "representative_game_context": "Aceleași formate deja exersate izolat (4v2, 4v3), reluate consecutiv în aceeași ședință, cu o tranziție scurtă între ele, nu o combinație artificială nouă.",
+      "expected_observable_behaviour": [
+        "calitatea deciziei ofensive din prima parte a ședinței nu scade vizibil în a doua parte, defensivă",
+        "copiii comută atenția între cele două teme fără confuzie vizibilă de rol"
+      ],
+      "coach_watch_for": [
+        "dacă oboseala de decizie (nu fizică) apare la trecerea de la o temă la alta, vizibilă prin ezitare crescută",
+        "dacă un copil aplică din greșeală un comportament ofensiv într-o fază defensivă sau invers"
+      ],
+      "do_not_assume": [
+        "nu presupune că stăpânirea separată a celor două teme garantează alternanța fluidă — comutarea atenției e o cerință suplimentară, nu doar suma celor două",
+        "nu presupune că oboseala de decizie observată e oboseală fizică — pot fi confundate ușor, iar soluțiile diferă"
+      ],
+      "constraint_variation": [
+        "scurtează sau lungește tranziția dintre cele două părți tematice ale ședinței pentru a testa dacă timpul de comutare contează",
+        "păstrează formatele numerice identice cu cele deja exersate izolat, pentru a izola variabila reală testată (alternanța, nu o dificultate nouă)"
+      ],
+      "progression_decision_criteria": [
+        "calitatea deciziei rămâne comparabilă în ambele părți tematice ale ședinței, pe parcursul mai multor repetiții",
+        "confuzia de rol între teme scade sau dispare după 2-3 ședințe de alternanță"
+      ],
+      "too_difficult_adjustment": "separă din nou cele două teme în ședințe distincte (revenire temporară la structura din `PLAN-0002`/`PLAN-0003`) până la o mai bună consolidare individuală, apoi reintrodu alternanța.",
+      "too_easy_adjustment": "treci direct la `BLK-0008` (autonomie și transfer complet), reducând timpul dedicat reluării separate a celor două teme."
+    },
+    {
+      "id": "BLK-0008",
+      "order": 2,
+      "title": "Autonomie și transfer complet",
+      "principle_ids": ["principle.transfer-autonom-cooperare", "principle.reflectia-ghidata-si-transferul-in-joc"],
+      "session_ids": ["SES-0006", "SES-0010"],
+      "related_problem_ids": ["PRB-0005", "PRB-0008"],
+      "problem_context": "La acest nivel, problema nu mai e o decizie tactică izolată, ci autonomia întregului lanț decizional (ofensiv și defensiv) în joc reprezentativ complet, fără constrângeri artificiale și fără comandă de pe margine — inclusiv tendința unor copii de a evita repetat situațiile de presiune, chiar dacă stăpânesc tehnic decizia cerută.",
+      "perceptual_decisional_progression": "Se reiau cele două capstone-uri de transfer deja exersate izolat (`SES-0006` ofensiv, `SES-0010` defensiv), cu accent explicit pe reflecție și verbalizare a legăturii exercițiu-joc, folosind scripturile de comunicare relevante pentru a susține autonomia, nu pentru a o înlocui cu instrucțiune.",
+      "representative_game_context": "Joc liber complet (3v3 până la 6v6), fără constrângeri artificiale, cu observare tăcută din partea antrenorului și reflecție ghidată la final.",
+      "expected_observable_behaviour": [
+        "cel puțin un comportament ofensiv și unul defensiv exersate izolat apar autonom în același joc liber",
+        "copiii pot verbaliza, fără ajutor, o legătură concretă între exercițiile anterioare și jocul liber"
+      ],
+      "coach_watch_for": [
+        "dacă un copil evită repetat să ceară mingea sau să se implice în duel defensiv direct, semn posibil al tiparului descris în `PRB-0008`",
+        "dacă verbalizarea reflecției rămâne generică sau devine specifică și concretă"
+      ],
+      "do_not_assume": [
+        "nu presupune că absența unui comportament într-o singură repriză înseamnă regres — notează ca informație, nu ca verdict",
+        "nu presupune că evitarea repetată a presiunii e lipsă de curaj — verifică mai întâi dacă sarcina anterioară a fost potrivită ca nivel de dificultate"
+      ],
+      "constraint_variation": [
+        "variază relația numerică (3v3 până la 6v6) pentru a testa robustețea transferului la densități diferite de jucători",
+        "elimină complet comenzile de pe margine în timpul fazei active, indiferent de rezultat, pentru a păstra testul de autonomie curat"
+      ],
+      "progression_decision_criteria": [
+        "transferul autonom apare constant, în mai multe repetiții și relații numerice diferite",
+        "reflecția verbalizată de copii leagă explicit exercițiul de situația din joc, fără ajutor extins din partea antrenorului"
+      ],
+      "too_difficult_adjustment": "revino la testarea separată a transferului ofensiv și defensiv (structura din `PLAN-0002`/`PLAN-0003`) înainte de a relua integrarea completă.",
+      "too_easy_adjustment": "acest bloc e deja capstone-ul traseului de integrare — la reușită constantă, planul se consideră încheiat pentru acest grup, iar antrenorul poate relua un traseu de aprofundare pe o temă nouă, în afara acestui set de planuri."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getSeasonPlans, getCurriculaForPlan } from '../../lib/content-bridge';
+
+const plans = getSeasonPlans();
+const byId = Object.fromEntries(plans.map((p) => [p.id, p]));
+const startPlan = byId['PLAN-0001'];
+const deepeningPlans = [byId['PLAN-0002'], byId['PLAN-0003']].filter(Boolean);
+const integrationPlan = byId['PLAN-0004'];
+
+function stats(plan: (typeof plans)[number]) {
+  const blocks = getCurriculaForPlan(plan).flatMap((c) => c.blocks).length;
+  return { blocks, weeks: plan.microcycles.length };
+}
+---
+<BaseLayout title="Planuri de sezon" description="Trasee de planificare de sezon ManualFC — progresie pedagogică reală de la o problemă de joc la principii, exerciții, ședințe, scripturi și transfer în meci, nu un calendar generic.">
+  <Breadcrumb items={[{ label: 'Planuri de sezon' }]} />
+  <section class="plans-hero">
+    <p class="eyebrow">PLANIFICARE DE SEZON · PROGRESIE, NU CALENDAR</p>
+    <h1>De unde pornești și unde ajungi</h1>
+    <p>Patru trasee legate între ele, nu patru calendare independente. Fiecare traseu pornește de la o problemă reală de antrenor, progresează de la simplu la reprezentativ prin blocuri și micro-cicluri săptămânale, și include semnale explicite de continuare, ajustare, încetinire sau abandon — nu o secvență fixă de urmat orbește.</p>
+  </section>
+
+  <section class="pathway" aria-labelledby="pas-1">
+    <span class="tier">PASUL 1 · PUNCT DE PLECARE</span>
+    {startPlan && (
+      <article class="plan-card">
+        <h2 id="pas-1"><a href={`/planuri-de-sezon/${startPlan.id}`}>{startPlan.title}</a></h2>
+        <p class="scope">{startPlan.scope}</p>
+        <p class="starting-problem"><strong>Pornește de la:</strong> {startPlan.starting_problem}</p>
+        <p class="stats">{stats(startPlan).blocks} blocuri · {stats(startPlan).weeks} micro-cicluri · {startPlan.weekly_model === '2_training_plus_match' ? '2 antrenamente + meci' : '3 antrenamente + meci'}</p>
+        <a class="go" href={`/planuri-de-sezon/${startPlan.id}`}>Deschide traseul →</a>
+      </article>
+    )}
+  </section>
+
+  <div class="arrow" aria-hidden="true">↓</div>
+
+  <section class="pathway" aria-labelledby="pas-2">
+    <span class="tier">PASUL 2 · APROFUNDARE (alege pe baza observației, nu ambele deodată)</span>
+    <h2 id="pas-2" class="visually-hidden">Aprofundare</h2>
+    <div class="plan-grid">
+      {deepeningPlans.map((plan) => (
+        <article class="plan-card">
+          <h3><a href={`/planuri-de-sezon/${plan.id}`}>{plan.title}</a></h3>
+          <p class="scope">{plan.scope}</p>
+          <p class="starting-problem"><strong>Pornește de la:</strong> {plan.starting_problem}</p>
+          <p class="stats">{stats(plan).blocks} blocuri · {stats(plan).weeks} micro-cicluri</p>
+          <a class="go" href={`/planuri-de-sezon/${plan.id}`}>Deschide traseul →</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <div class="arrow" aria-hidden="true">↓</div>
+
+  <section class="pathway" aria-labelledby="pas-3">
+    <span class="tier">PASUL 3 · INTEGRARE (după ambele trasee de aprofundare)</span>
+    {integrationPlan && (
+      <article class="plan-card">
+        <h2 id="pas-3"><a href={`/planuri-de-sezon/${integrationPlan.id}`}>{integrationPlan.title}</a></h2>
+        <p class="scope">{integrationPlan.scope}</p>
+        <p class="starting-problem"><strong>Pornește de la:</strong> {integrationPlan.starting_problem}</p>
+        <p class="stats">{stats(integrationPlan).blocks} blocuri · {stats(integrationPlan).weeks} micro-cicluri · 3 antrenamente + meci</p>
+        <a class="go" href={`/planuri-de-sezon/${integrationPlan.id}`}>Deschide traseul →</a>
+      </article>
+    )}
+  </section>
+
+  <p class="status-note">Cele 4 trasee sunt sinteze profesionale de secvențiere pedagogică, nu periodizare sportivă tehnică și nu o garanție de dezvoltare a jucătorului — fiecare are propriile semnale explicite de ajustare, încetinire sau abandon, bazate pe observație reală, nu pe un calendar fix. Transferul spre meciul oficial rămâne neconfirmat fără o pilotare reală pe teren.</p>
+</BaseLayout>
+
+<style>
+  .plans-hero { padding: clamp(2rem, 7vw, 6rem); margin: 1rem calc(50% - 50vw) 2rem; background: var(--color-bg-brand); color: #fff; }
+  .plans-hero h1 { color: #fff; max-width: 20ch; }
+  .plans-hero p { max-width: 68ch; color: #dce4e7; }
+  .pathway { margin-top: var(--space-8); }
+  .tier { display: block; font: 700 .72rem var(--font-family-mono); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: var(--space-3); }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+  .arrow { text-align: center; font-size: 1.8rem; color: var(--color-text-muted); margin: var(--space-4) 0; }
+  .plan-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .plan-card { padding: 1.5rem; border: 1px solid var(--color-border); background: #fff; border-radius: 12px; }
+  .plan-card h2, .plan-card h3 { margin-top: 0; }
+  .scope { color: var(--color-text-secondary); }
+  .starting-problem { max-width: 70ch; }
+  .stats { font-size: .85rem; color: var(--color-text-muted); }
+  .go { display: inline-block; margin-top: .5rem; font-weight: 800; }
+  .status-note { margin-top: var(--space-16); font-size: .85rem; color: var(--color-text-muted); }
+  @media (max-width: 700px) { .plan-grid { grid-template-columns: 1fr; } .plans-hero { padding-inline: 1rem; } }
+</style>

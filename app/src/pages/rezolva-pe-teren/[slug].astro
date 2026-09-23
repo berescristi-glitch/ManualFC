@@ -7,10 +7,11 @@ import ConceptLoop from '../../components/ConceptLoop.astro';
 import CoachExplainerScript from '../../components/CoachExplainerScript.astro';
 import CoachActions from '../../components/CoachActions.astro';
 import { getProblems, getProblem, problemFamilyLabels } from '../../lib/problem-library';
-import { resolveEvidenceClaims } from '../../lib/content-bridge';
+import { resolveEvidenceClaims, getSeasonPlansForProblem } from '../../lib/content-bridge';
 import { getCoachExplainer } from '../../lib/media-registry';
 export function getStaticPaths(){return getProblems().map(problem=>({params:{slug:problem.slug},props:{problemId:problem.problem_id}}))}
 const problem=getProblem(Astro.props.problemId); const evidence=resolveEvidenceClaims(problem); const test=problem.quick_tests[0]; const cue=problem.child_cues[0];
+const relevantPlans=getSeasonPlansForProblem(problem.problem_id);
 const ctx=`problema=${encodeURIComponent(problem.problem_id)}&sursa=decision-engine`;
 const explainer=getCoachExplainer(problem.problem_id);
 ---
@@ -28,6 +29,7 @@ const explainer=getCoachExplainer(problem.problem_id);
     <section id="aplica" class="apply"><p class="eyebrow">APLICĂ PE TEREN</p><h2>Alege următorul pas</h2>
       {problem.related_exercises.length ? <div class="action-grid">{problem.related_exercises.map(id=><article><span>EXERCIȚIU</span><h3>{id}</h3><a href={`/gold-standard/exercitii/${id}?${ctx}`}>Deschide exercițiul</a><a href={`/gold-standard/configurator?exercitiu=${id}&copii=12&antrenori=1&${ctx}`}>Adaptează la grupa mea</a></article>)}</div>:<p>Nu există încă un exercițiu canonic legitim pentru această problemă. Folosește testul de mai sus și observă din nou.</p>}
       {problem.related_sessions.length>0 && <div class="handoff"><strong>Antrenament complet</strong>{problem.related_sessions.map(id=><><a href={`/gold-standard/sedinte/${id}?${ctx}`}>{id} · hartă și materiale</a><a href={`/gold-standard/sedinte/${id}/mod-teren?${ctx}`}>Intră în Field Mode</a></>)}</div>}
+      {relevantPlans.length>0 && <div class="handoff"><strong>Plan de sezon relevant</strong>{relevantPlans.map(p=><a href={`/planuri-de-sezon/${p.id}`}>{p.title} →</a>)}</div>}
     </section>
     <section class="transfer"><p class="eyebrow">URMĂREȘTE · TRANSFER</p><h2>Reușita în exercițiu nu este încă transfer.</h2>{problem.transfer_checks.map(t=><p>{t.text}</p>)}<p class="status">STARE: FIELD_INPUT_REQUIRED / NECONFIRMAT</p>{problem.assessment_links.map(id=><a href={`/gold-standard/evaluare/${id}?${ctx}`}>Deschide evaluarea {id}</a>)}</section>
     <section id="dovezi"><p class="eyebrow">DOVEZI ȘI LIMITE</p>{evidence.map(c=><details><summary><EvidenceBadge level={c.epistemic_level}/> {c.practical_implication}</summary><p>{c.statement}</p><ul>{c.limitations.map(x=><li>{x}</li>)}</ul>{c.sources.map(s=><p><a href={s.url||'#'} rel="external">{s.title}</a> · {s.year}</p>)}</details>)}<h3>Limite ale problemei</h3><ul>{problem.limitations.map(x=><li>{x}</li>)}</ul><h3>Siguranță</h3><ul>{problem.safety_notes.map(x=><li>{x}</li>)}</ul></section>

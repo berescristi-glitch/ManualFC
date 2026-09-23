@@ -1,0 +1,173 @@
+{
+  "id": "PLAN-0002",
+  "slug": "aprofundare-sprijin",
+  "title": "Aprofundare — sprijinul și unghiul de pasă",
+  "age_category": "10–11 ani, grupele 2015 și 2016 tratate împreună",
+  "scope": "Grup care are deja decizia de bază de sprijin stabilă (parcurs `PLAN-0001` sau echivalent) și e pregătit pentru complexitate ofensivă mai mare: sprijin din spate, combinații scurte, presiune numerică crescută și recepție sub presiune completă.",
+  "weekly_model": "2_training_plus_match",
+  "curriculum_ids": ["CUR-0002"],
+  "starting_problem": "Copiii rămân statici după ce au pasat mingea, în loc să ofere un nou unghi de sprijin, iar recepția sub presiune completă e vizibil mai lentă și mai puțin orientată decât sub presiune moderată — două limite care apar abia după ce decizia de bază de sprijin nu mai e o problemă.",
+  "related_problem_ids": ["PRB-0005", "PRB-0007"],
+  "assumptions_and_prerequisites": [
+    "grupul demonstrează deja constant decizia de bază de sprijin (ieșirea din umbra defensivă, distribuirea în zone diferite), fără a mai necesita reamintire extinsă",
+    "efectivul disponibil permite formarea de grupuri de 4 (pentru 4v2) și de 8 (pentru 5v5), conform configuratorului de grup"
+  ],
+  "overall_learning_intention": "Copiii aleg direcția de sprijin (spate sau lateral) în funcție de poziția reală a adversarului, nu dintr-un tipar memorat, și mențin decizia de recepție orientată stabilă sub presiune completă.",
+  "principle_ids": ["principle.spatiu-si-unghiuri", "principle.progresie-si-sprijin", "principle.superioritate-egalitate-inferioritate-numerica", "principle.tranzitia-la-castigarea-mingii", "principle.transfer-autonom-cooperare"],
+  "related_exercise_ids": ["EX-0006", "EX-0007", "EX-0008", "EX-0009", "EX-0010", "EX-0011", "EX-0012", "EX-0013", "EX-0014", "EX-0015"],
+  "related_session_ids": ["SES-0003", "SES-0004", "SES-0005", "SES-0006"],
+  "related_script_ids": ["SCR-0002", "SCR-0006", "SCR-0010", "SCR-0011", "SCR-0014", "SCR-0015", "SCR-0019", "SCR-0025"],
+  "observation_criteria": [
+    "apariția sprijinului din spate, nu doar lateral, când poziția adversarului îl cere",
+    "stabilitatea recepției orientate sub presiune completă, comparativ cu presiune moderată"
+  ],
+  "when_to_intervene": [
+    "un singur unghi de sprijin (de obicei lateral) se repetă mecanic indiferent de poziția reală a adversarului, în mod constant",
+    "recepția se degradează vizibil și constant sub presiune completă, fără nicio repetiție reușită"
+  ],
+  "when_not_to_intervene": [
+    "prima expunere la presiune completă, fără alt semnal de blocaj repetat",
+    "o singură repetiție cu sprijin lateral când sprijinul din spate ar fi fost la fel de valid — nu orice alegere diferită de cea așteptată e o greșeală"
+  ],
+  "reflection_questions": [
+    "Ce ai avut înainte și ce te-a făcut să alegi înapoi?",
+    "Unde ați văzut, în jocul de azi, o situație ca la exercițiile anterioare?"
+  ],
+  "match_transfer_checkpoints": [
+    "la finalul `BLK-0003`, verifică dacă recepția orientată rămâne stabilă în jocul liber sub presiune reală, nu doar în exercițiul structurat",
+    "la finalul `BLK-0004`, verifică dacă transferul apare atât în jocul de 3v3 cât și în cel de 5v5"
+  ],
+  "adaptation_rules": [
+    "dacă grupul nu a parcurs deloc `PLAN-0001`, dar demonstrează deja decizia de bază prin experiență anterioară (alt club, joc liber intens), verifică direct prin observație, nu presupune automat nevoia de a relua traseul de bază",
+    "diferențiază individual prin regresie documentată (presiune moderată, adversar mai departe) pentru copiii care nu au încă stabilă decizia de bază, în timp ce restul grupului avansează"
+  ],
+  "progression_logic": [
+    "trece la `PLAN-0004` (traseul de integrare) după ce ambele blocuri ale acestui traseu sunt stabile, DOAR dacă grupul a parcurs sau parcurge în paralel și `PLAN-0003` (apărarea) — integrarea completă cere ambele teme aprofundate",
+    "dacă grupul nu a aprofundat încă apărarea, repetă acest traseu cu variații de format (alt raport numeric, alt spațiu) în loc să avanseze spre integrare prematur"
+  ],
+  "regression_logic": [
+    "dacă recepția sub presiune completă nu progresează după 3-4 ședințe, revino la presiune moderată constantă (regresia documentată în `BLK-0003`) și extinde durata acestei trepte"
+  ],
+  "review_points": [
+    "la finalul `BLK-0003` (aproximativ săptămâna 2), verifică stabilitatea recepției sub presiune completă înainte de a trece la transferul din `BLK-0004`",
+    "la finalul `MIC-0008` (capstone de transfer), decide dacă grupul e gata pentru `PLAN-0004` sau are nevoie de o repetare parțială"
+  ],
+  "continuation_signals": {
+    "continue": [
+      "sprijinul din spate și recepția orientată sub presiune completă apar constant, în mai multe ședințe consecutive"
+    ],
+    "adjust": [
+      "sprijinul din spate progresează bine dar recepția sub presiune rămâne fragilă (sau invers) — alocă timp suplimentar exercițiului specific, nu întregului bloc"
+    ],
+    "slow_down": [
+      "presiunea numerică crescută (4v3) produce erori care nu apăreau la 4v2 — revino temporar la 4v2 înainte de a relua progresia"
+    ],
+    "abandon": [
+      "grupul nu a stabilizat deloc decizia de bază de sprijin (condiție prealabilă a acestui traseu) — revino la `PLAN-0001`, acest traseu nu e potrivit fără acea bază"
+    ]
+  },
+  "evidence_boundary": "Ca și `PLAN-0001`, acest traseu e sinteză profesională de secvențiere, nu periodizare sportivă tehnică — nu se bazează pe încărcare fiziologică programată, ci pe observație pedagogică directă. Progresia de la 4v2 la 4v3 și de la presiune moderată la completă urmează principiul manipulării graduale a constrângerilor, documentat metodologic, dar durata exactă a fiecărei trepte rămâne o decizie de teren, nu un calendar fix. Transferul spre meciul oficial 7v7 rămâne neconfirmat fără o pilotare reală pe teren.",
+  "microcycles": [
+    {
+      "id": "MIC-0005",
+      "order": 1,
+      "title": "Sprijin din spate și combinație scurtă",
+      "session_ids": ["SES-0003"],
+      "learning_intention": "Copiii aleg sprijinul din spate când poziția adversarului îl cere, și folosesc combinația unu-doi ca alternativă la repoziționarea simplă.",
+      "target_behaviour": [
+        "apariția poziției de sprijin din spate, nu doar laterală",
+        "combinația unu-doi aleasă ca opțiune, nu doar demonstrată"
+      ],
+      "coach_observation_focus": [
+        "varierea unghiului de sprijin în EX-0006 în funcție de poziția reală a adversarului",
+        "apariția combinației scurte în EX-0007, ca ieșire din umbra defensivă"
+      ],
+      "related_script_ids": ["SCR-0006"],
+      "reflection_prompts": [
+        "Când ai ales sprijinul din spate în loc de lateral, ce ai văzut la adversar?"
+      ],
+      "match_transfer": "Nu se așteaptă transfer complet la prima expunere la sprijinul din spate — obiectivul e introducerea variației, nu consolidarea ei.",
+      "review_notes": "Dacă toți copiii aleg constant sprijinul lateral, indiferent de poziția adversarului, verifică dacă exercițiul EX-0006 oferă suficient de clar situația care cere sprijin din spate.",
+      "adaptation_options": [
+        "reduce opoziția la EX-0007 dacă combinația unu-doi nu apare deloc, pentru a face fereastra de execuție mai mare"
+      ],
+      "safety_and_workload_notes": "Combinațiile scurte cresc viteza de execuție cerută — verifică încălzirea specifică pentru schimbări rapide de direcție înainte de start."
+    },
+    {
+      "id": "MIC-0006",
+      "order": 2,
+      "title": "Al treilea jucător și presiune numerică crescută",
+      "session_ids": ["SES-0004"],
+      "learning_intention": "Copiii coordonează trei jucători de sprijin sub presiune numerică mai mare și mențin recepția orientată sub presiune completă.",
+      "target_behaviour": [
+        "trei jucători de sprijin ocupă poziții distincte sub 4v3",
+        "recepția rămâne orientată sub presiune completă, nu doar sub presiune moderată"
+      ],
+      "coach_observation_focus": [
+        "distribuirea spațială a celor trei jucători de sprijin în EX-0008",
+        "stabilitatea orientării la recepție în EX-0009, la trecerea de la presiune moderată la completă"
+      ],
+      "related_script_ids": ["SCR-0014", "SCR-0015"],
+      "reflection_prompts": [
+        "Ce ai văzut care te-a făcut să alegi exact acea poziție de sprijin?"
+      ],
+      "match_transfer": "Verifică dacă cel puțin unul dintre cei trei jucători de sprijin oferă o opțiune reală de pasă la fiecare fază, nu doar teoretic.",
+      "review_notes": "Compară stabilitatea recepției la EX-0009 cu ședința anterioară (MIC-0005, fără accent pe presiune) — o degradare accentuată sub presiune completă justifică regresie temporară.",
+      "adaptation_options": [
+        "revino la 4v2 dacă 4v3 produce erori sistematice la toți copiii, nu doar la câțiva"
+      ],
+      "safety_and_workload_notes": "Densitate mai mare de jucători pe spațiu redus — verifică marja de siguranță explicit înainte de a crește raportul numeric la 4v3."
+    },
+    {
+      "id": "MIC-0007",
+      "order": 3,
+      "title": "Recuperare și adaptare la culoar lateral",
+      "session_ids": ["SES-0005"],
+      "learning_intention": "Copiii verifică opțiunea de progresie înainte de a alege pasa înapoi la recuperarea mingii, și adaptează sprijinul la spațiul îngust de bandă.",
+      "target_behaviour": [
+        "privire vizibilă înainte la recuperare, chiar dacă decizia rămâne pasa înapoi",
+        "sprijin adaptat la spațiul redus al benzii, fără a abandona decizia de bază"
+      ],
+      "coach_observation_focus": [
+        "apariția privirii înainte în EX-0012, la momentul recuperării",
+        "adaptarea poziției de sprijin în EX-0013, sub constrângerea benzii"
+      ],
+      "related_script_ids": ["SCR-0010", "SCR-0011"],
+      "reflection_prompts": [
+        "Ce ai avut înainte și ce te-a făcut să alegi înapoi?"
+      ],
+      "match_transfer": "Notează dacă privirea înainte la recuperare devine vizibil mai frecventă față de prima repetiție a ședinței, nu doar dacă a apărut o singură dată.",
+      "review_notes": "Dacă pasa înapoi rămâne complet automată, fără nicio privire înainte vizibilă, verifică dacă adversarul din exercițiu e poziționat prea aproape, eliminând orice opțiune reală de progresie.",
+      "adaptation_options": [
+        "lărgește temporar banda dacă adaptarea sprijinului la spațiu îngust nu apare deloc, apoi revino la lățimea canonică"
+      ],
+      "safety_and_workload_notes": "Spațiul de bandă redus crește riscul de coliziune la marginea terenului — verifică delimitarea clară și marja de siguranță laterală."
+    },
+    {
+      "id": "MIC-0008",
+      "order": 4,
+      "title": "Transfer complet — capstone",
+      "session_ids": ["SES-0006"],
+      "learning_intention": "Testează dacă întregul lanț decizional de sprijin exersat izolat în acest traseu apare autonom în joc reprezentativ variat, la două densități diferite de jucători.",
+      "target_behaviour": [
+        "cel puțin un comportament exersat izolat apare autonom în jocul de 3v3",
+        "transferul se repetă și la densitatea mai mare de jucători din 5v5"
+      ],
+      "coach_observation_focus": [
+        "apariția autonomă a unui unghi de sprijin util în EX-0014 (3v3)",
+        "robustețea transferului la EX-0015 (5v5), la densitate mai mare"
+      ],
+      "related_script_ids": ["SCR-0019", "SCR-0025"],
+      "reflection_prompts": [
+        "Unde ați văzut, în jocurile de azi, o situație ca la exercițiile din ultimele săptămâni?",
+        "Ce luați cu voi la meciul următor din ce am exersat în acest traseu?"
+      ],
+      "match_transfer": "Acesta e testul central al întregului traseu — non-intervenție verbală completă în timpul fazei active, observare tăcută, un singur focalizator per repriză.",
+      "review_notes": "Rezultatul acestui microciclu alimentează direct decizia de la `review_points`-ul de la nivel de plan: dacă transferul nu apare deloc în niciuna dintre cele două jocuri, notează ca informație validă, nu se repetă mecanic aceleași exerciții fără ajustare.",
+      "adaptation_options": [
+        "dacă efectivul nu permite 5v5, rulează doar 3v3 cu mai multe reprize, păstrând testul de transfer, nu formatul exact"
+      ],
+      "safety_and_workload_notes": "Ședință de capstone, potențial mai lungă — verifică hidratarea și pauzele dintre reprize la densitate mare de jucători (5v5)."
+    }
+  ]
+}

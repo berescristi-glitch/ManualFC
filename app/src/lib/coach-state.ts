@@ -1,6 +1,6 @@
 export const COACH_STATE_KEY = 'manualfc.coach-state.v1';
 
-export type CanonicalKind = 'problem' | 'principle' | 'exercise' | 'session' | 'assessment' | 'chapter' | 'script';
+export type CanonicalKind = 'problem' | 'principle' | 'exercise' | 'session' | 'assessment' | 'chapter' | 'script' | 'season-plan';
 export interface CanonicalRef { id: string; kind: CanonicalKind; href: string; title: string; }
 export interface RecentRef extends CanonicalRef { visitedAt: string; }
 export interface WorkspaceItem { ref: CanonicalRef; minutes: number; }
@@ -67,7 +67,7 @@ const defaults = (): CoachState => ({
   saved: [], favorites: [], recents: [], sessions: [], reflections: [], offlinePacks: []
 });
 
-const VALID_KINDS: readonly CanonicalKind[] = ['problem', 'principle', 'exercise', 'session', 'assessment', 'chapter', 'script'];
+const VALID_KINDS: readonly CanonicalKind[] = ['problem', 'principle', 'exercise', 'session', 'assessment', 'chapter', 'script', 'season-plan'];
 const isKind = (v: unknown): v is CanonicalKind => typeof v === 'string' && (VALID_KINDS as readonly string[]).includes(v);
 
 export function clampPlayers(v: unknown): number {

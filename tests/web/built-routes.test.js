@@ -27,7 +27,9 @@ test("built route inventory is complete and every page has one main and one h1",
   // identity page (/aparare/): 119 + 10 + 4*2 + 1 + 1 = 139.
   // TASK-3719: +27 pages for the communication-scripts content pillar: 26 script
   // detail pages (SCR-0001-SCR-0026) plus 1 browse index (/scripturi/): 139 + 27 = 166.
-  assert.equal(files.length, 166, "the audited route inventory changed");
+  // TASK-3720: +5 pages for the season-planning content pillar: 4 season-plan
+  // detail pages (PLAN-0001-PLAN-0004) plus 1 browse index (/planuri-de-sezon/): 166 + 5 = 171.
+  assert.equal(files.length, 171, "the audited route inventory changed");
 
   for (const file of files) {
     const html = await readFile(file, "utf8");
