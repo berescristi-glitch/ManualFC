@@ -43,3 +43,15 @@ export const problemFamilyLabels: Record<string,string> = {
   POSSESSION:'Posesie', TRANSITION_AFTER_LOSS:'După pierdere', TRANSITION_AFTER_WIN:'După recuperare',
   DEFENDING:'Apărare', PERCEPTION_DECISION:'Percepție și decizie', PEDAGOGICAL_BEHAVIOURAL:'Implicare și siguranță'
 };
+
+export function getProblemsForExercise(exerciseId: string): CanonicalProblem[] {
+  return problems.filter(p => p.related_exercises.includes(exerciseId));
+}
+
+export function getProblemsForSession(sessionId: string): CanonicalProblem[] {
+  return problems.filter(p => p.related_sessions.includes(sessionId));
+}
+
+export function getProblemsForPrinciple(principleId: string): CanonicalProblem[] {
+  return problems.filter(p => p.related_principles.includes(principleId));
+}

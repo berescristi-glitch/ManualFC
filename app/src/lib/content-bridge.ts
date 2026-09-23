@@ -198,7 +198,11 @@ export function getPrimaryNavigation() {
     { label: "Principii", href: "/principii" },
     { label: "Rezolvă pe teren", href: "/rezolva-pe-teren" },
     { label: "Caută", href: "/cauta" },
-    { label: "Gold Standard", href: "/gold-standard" }
+    { label: "Gold Standard", href: "/gold-standard" },
+    { label: "Apărarea", href: "/aparare" },
+    { label: "Scripturi", href: "/scripturi" },
+    { label: "Planuri de sezon", href: "/planuri-de-sezon" },
+    { label: "Spațiul meu", href: "/spatiul-meu" }
   ];
 }
 
@@ -875,6 +879,10 @@ export function getScriptsForSession(sessionId: string): CommunicationScript[] {
 
 export function getScriptsForPrinciple(principleId: string): CommunicationScript[] {
   return getCommunicationScripts().filter(s => s.principle_ids.includes(principleId));
+}
+
+export function getScriptsForProblem(problemId: string): CommunicationScript[] {
+  return getCommunicationScripts().filter(s => (s.related_problem_ids ?? []).includes(problemId));
 }
 
 export interface CurriculumBlock {

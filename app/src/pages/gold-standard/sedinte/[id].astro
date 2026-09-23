@@ -4,6 +4,7 @@ import Breadcrumb from '../../../components/Breadcrumb.astro';
 import SurfaceMap from '../../../components/SurfaceMap.astro';
 import CoachActions from '../../../components/CoachActions.astro';
 import { getGoldStandardSessions, getGoldStandardSession, getGoldStandardAssessment, getGoldStandardSessionExercises, getScriptsForSession, getSeasonPlansForSession } from '../../../lib/content-bridge';
+import { getProblemsForSession } from '../../../lib/problem-library';
 import { SUPPORTED_PLAYER_COUNTS, computeGroupConfiguration } from '../../../lib/group-configurator';
 import type { CoachCount } from '../../../lib/group-configurator';
 import { buildSurfaceMap } from '../../../lib/surface-map';
@@ -17,6 +18,7 @@ const sessionExercises = getGoldStandardSessionExercises(ses);
 const assessment = getGoldStandardAssessment(sessionExercises.find(ex => ex.assessment_ref)?.assessment_ref);
 const relevantScripts = getScriptsForSession(ses.id);
 const relevantPlans = getSeasonPlansForSession(ses.id);
+const relatedProblems = getProblemsForSession(ses.id);
 
 const equipmentMatches = sessionExercises.every(ex => ex.equipment.join('|') === sessionExercises[0].equipment.join('|'));
 const equipment = equipmentMatches ? sessionExercises[0].equipment : null;
@@ -47,6 +49,9 @@ const isV2 = ses.gold_standard_v2?.status === 'V2';
     <p class="eyebrow">GOLD STANDARD · ȘEDINȚĂ {ses.id} · {ses.duration_min} minute</p>
     <h1>{ses.title}</h1>
     <p class="objective">{ses.primary_objective}</p>
+    {relatedProblems.length > 0 && (
+      <p class="problem-link"><strong>Problema pe care o rezolvă:</strong> {relatedProblems.map((p, i) => <>{i > 0 && ' · '}<a href={`/rezolva-pe-teren/${p.slug}`}>{p.human_title}</a></>)}</p>
+    )}
     <CoachActions id={ses.id} kind="session" title={ses.title} href={`/gold-standard/sedinte/${ses.id}`}/>
     <a class="field-mode-cta" href={`/gold-standard/sedinte/${ses.id}/mod-teren?durata=75`} data-field-mode-cta>Pornește modul teren (75 min) →</a>
     <p class="field-mode-note">Un segment pe ecran, cronometru, navigare cu degetul mare — pentru lângă teren, nu pentru citit acasă. Alegerea 60/75 de mai jos schimbă și modul teren.</p>
@@ -201,6 +206,7 @@ const isV2 = ses.gold_standard_v2?.status === 'V2';
           <p class="reflection-boundary">Reflecția antrenorului nu este o măsură obiectivă a schimbării de comportament, iar auto-raportarea copilului nu este dovadă obiectivă de învățare — ambele rămân developmentale și descriptive, nu un scor.</p>
         </div>
       )}
+      <p class="reflect-cta"><a href={`/spatiul-meu/reflectie?sesiune=${ses.id}`}>Reflectează după această ședință în Spațiul meu →</a></p>
     </section>
 
     <p class="theme-note"><strong>Temă de meci:</strong> {ses.match_theme}</p>
@@ -238,6 +244,8 @@ const isV2 = ses.gold_standard_v2?.status === 'V2';
   .gs-session { max-width: var(--width-content); margin: 0 auto; padding: var(--space-20) var(--space-6); }
   h1 { max-width: 24ch; }
   .objective { max-width: 60ch; font-size: 1.1rem; }
+  .problem-link { margin-top: var(--space-4); font-size: .95rem; }
+  .reflect-cta { margin-top: var(--space-6); font-weight: 800; }
   .field-mode-cta { display: inline-flex; align-items: center; min-height: 48px; margin-top: var(--space-6); padding: 0 var(--space-6); background: var(--color-brand-gold); color: var(--color-bg-brand); font-weight: 800; border-radius: var(--radius-md); text-decoration: none; }
   .field-mode-note { margin-top: var(--space-2); font-size: .85rem; color: var(--color-text-muted); }
   .prep-summary { margin-top: var(--space-10); border-top: none; padding: var(--space-6); background: var(--color-bg-brand); color: white; border-radius: var(--radius-lg); }

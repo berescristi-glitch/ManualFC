@@ -19,9 +19,16 @@ class InformationArchitectureV2Tests(unittest.TestCase):
             self.assertIn(f"'{route}': '{label}'", text)
 
     def test_footer_exposes_same_five_destinations(self):
+        # TASK-3721: the footer no longer hardcodes <a href="..."> markup for each
+        # destination -- it renders dynamically from getPrimaryNavigation(), the
+        # same single source of truth the header uses (avoiding the duplicate,
+        # divergence-prone route lists this test originally guarded against).
+        # The five original destinations remain configured, just via a label map
+        # instead of static markup.
         text = (ROOT / "app/src/components/AppFooter.astro").read_text(encoding="utf-8")
+        self.assertIn("getPrimaryNavigation", text)
         for route in ("/incepe-aici", "/volum", "/principii", "/rezolva-pe-teren", "/gold-standard"):
-            self.assertIn(f'href="{route}"', text)
+            self.assertIn(f"'{route}':", text)
 
     def test_primary_surfaces_use_plain_language_titles(self):
         principle_index = (ROOT / "app/src/pages/principii/index.astro").read_text(encoding="utf-8")

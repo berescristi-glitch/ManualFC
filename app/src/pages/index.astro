@@ -11,7 +11,7 @@ const summaryLevel = evidence[0]?.epistemic_level;
   <HomepageHero />
 
   <section id="moduri" class="mode-split" aria-labelledby="mode-title">
-    <h2 id="mode-title" class="visually-hidden">Două moduri de folosire</h2>
+    <h2 id="mode-title" class="visually-hidden">Trei moduri de folosire</h2>
     <article class="mode-learn">
       <span class="mode-number">A / 01</span><span class="eyebrow">Vreau să învăț</span>
       <h3>Construiește-ți judecata, nu colecția de exerciții.</h3>
@@ -23,6 +23,13 @@ const summaryLevel = evidence[0]?.epistemic_level;
       <h3>Pornește de la ce vezi pe teren.</h3>
       <ol><li>Observă comportamentul</li><li>Nu presupune cauza</li><li>Modifică o variabilă</li></ol>
       <a class="button button-primary" href="/rezolva-pe-teren">Rezolvă o problemă de joc</a>
+      <p class="mode-hint">Fiecare problemă leagă la principiul, exercițiul, ședința și <a href="/scripturi">scriptul de comunicare</a> potrivite.</p>
+    </article>
+    <article class="mode-plan">
+      <span class="mode-number">C / SEZON</span><span class="eyebrow">Vreau să planific</span>
+      <h3>Organizează o progresie pe mai multe săptămâni.</h3>
+      <p>Patru trasee legate între ele — de la un grup nou până la integrarea completă a ambelor teme.</p>
+      <a href="/planuri-de-sezon">Vezi planurile de sezon <span aria-hidden="true">→</span></a>
     </article>
   </section>
 
@@ -67,7 +74,7 @@ const summaryLevel = evidence[0]?.epistemic_level;
   :global(:root){--scrollbar-w:15px}
   .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   .final-cta{width:calc(100vw - var(--scrollbar-w));margin-left:calc(50% - 50vw + var(--scrollbar-w)/2);background:var(--color-bg-brand)}
-  .mode-split{display:grid;grid-template-columns:1.15fr .85fr;margin:var(--space-20) 0}.mode-split article{padding:clamp(2rem,5vw,4.5rem);min-height:440px}.mode-learn{background:white;border-top:1px solid var(--color-bg-brand)}.mode-now{background:var(--color-bg-brand-secondary)}.mode-number{display:block;margin-bottom:var(--space-16);font:700 .7rem var(--font-family-mono);color:#596579}.mode-now .mode-number{color:#D5DAE1}.mode-now .eyebrow{color:var(--color-brand-gold)}.mode-split h3{font-size:clamp(2rem,4vw,3.6rem);max-width:14ch}.mode-learn>a{display:inline-block;margin-top:var(--space-8);font-weight:850;text-decoration:none;border-bottom:2px solid var(--color-brand-gold)}.mode-now ol{margin:var(--space-8) 0;color:#D5DAE1}.mode-now li{padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.15)}
+  .mode-split{display:grid;grid-template-columns:1fr 1fr .8fr;margin:var(--space-20) 0}.mode-split article{padding:clamp(1.75rem,4vw,3.5rem);min-height:440px}.mode-learn,.mode-plan{background:white;border-top:1px solid var(--color-bg-brand)}.mode-now{background:var(--color-bg-brand-secondary)}.mode-number{display:block;margin-bottom:var(--space-16);font:700 .7rem var(--font-family-mono);color:#596579}.mode-now .mode-number{color:#D5DAE1}.mode-now .eyebrow{color:var(--color-brand-gold)}.mode-split h3{font-size:clamp(1.6rem,3.2vw,2.6rem);max-width:14ch}.mode-learn>a,.mode-plan>a{display:inline-block;margin-top:var(--space-8);font-weight:850;text-decoration:none;border-bottom:2px solid var(--color-brand-gold)}.mode-now ol{margin:var(--space-8) 0;color:#D5DAE1}.mode-now li{padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.15)}.mode-hint{margin-top:var(--space-6);font-size:.85rem;color:#D5DAE1}.mode-hint a{color:white;text-decoration-color:var(--color-brand-gold)}
   .manifest{padding:var(--space-20) 0;display:grid;grid-template-columns:1fr 3fr;gap:var(--space-12);border-block:1px solid var(--color-border)}.manifest p{font-family:var(--font-family-heading);font-size:clamp(1.8rem,4vw,3.6rem);font-weight:700;line-height:1.08;max-width:23ch;color:var(--color-text-primary)}
   .content-proof{display:grid;grid-template-columns:.55fr 2.45fr;gap:var(--space-12);padding:var(--space-24) 0}.proof-index{display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--color-border);font:700 .7rem var(--font-family-mono);color:var(--color-text-muted)}.proof-index b{font-size:5rem;color:var(--color-text-muted)}.proof-copy h2{max-width:18ch;margin:1rem 0 2rem}.proof-copy p{font-size:1.1rem}.proof-link{display:block;margin-top:var(--space-8);padding-top:var(--space-4);border-top:1px solid var(--color-border);font-weight:800;text-decoration:none}
   .values{padding:var(--space-20) 0;border-top:3px solid var(--color-bg-brand)}.values header{display:grid;grid-template-columns:1fr 2fr}.values ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,1fr);margin-top:var(--space-12)}.values li{display:grid;grid-template-columns:3rem 1fr;gap:var(--space-4);padding:var(--space-6) 0;border-top:1px solid var(--color-border);font-size:1.25rem}.values li:nth-child(odd){margin-right:var(--space-8)}.values li span{font:700 .7rem var(--font-family-mono);color:var(--color-text-accent)}

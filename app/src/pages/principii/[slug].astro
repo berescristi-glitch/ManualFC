@@ -9,6 +9,7 @@ import SectionNavigator from '../../components/SectionNavigator.astro';
 import CoachActions from '../../components/CoachActions.astro';
 import canonicalDetail from '../../../../data/principles/principle-variabilitatea-dezvoltarii-u11.json';
 import { getAllPrinciples, getCanonicalProductionContent, getResolvedPrinciple, resolveEvidenceClaims, getCategoryById, getScriptsForPrinciple, getSeasonPlansForPrinciple } from '../../lib/content-bridge';
+import { getProblemsForPrinciple } from '../../lib/problem-library';
 
 export function getStaticPaths() { return getCanonicalProductionContent(getAllPrinciples()).map(p => ({ params:{ slug:p.slug }, props:{ principleId:p.id } })); }
 const { principleId } = Astro.props;
@@ -27,6 +28,7 @@ const observeItems = detail?.observable_behaviours ?? [principle.concept_text];
 const interpretationItems = detail?.possible_misinterpretations ?? [principle.why_it_matters];
 const relevantScripts = getScriptsForPrinciple(principle.id);
 const relevantPlans = getSeasonPlansForPrinciple(principle.id);
+const relatedProblems = getProblemsForPrinciple(principle.id);
 ---
 <BaseLayout title={`${principle.title} — Principiu U11`} description={principle.summary}>
   <Breadcrumb items={[{ label:'Principii de joc', href:'/principii' },{ label:principle.title }]} />
@@ -83,6 +85,8 @@ const relevantPlans = getSeasonPlansForPrinciple(principle.id);
         <details><summary>Surse și localizare ({claim.sources.length})</summary><ul>{claim.sources.map(source=><li data-citation-id={source.citation_id}><a href={source.url ?? (source.doi ? `https://doi.org/${source.doi}` : undefined)}>{source.title} ({source.year})</a><span> — {source.locator}; suport {supportTypeLabels[source.support_type] ?? source.support_type}</span></li>)}</ul></details>
       </article>)}</div>
     </section>
+
+    {relatedProblems.length>0 && <section class="related"><span class="eyebrow">Pornește de la</span><h2>Probleme de joc rezolvate de acest principiu</h2>{relatedProblems.map(p=><a href={`/rezolva-pe-teren/${p.slug}`}><strong>{p.human_title}</strong><span>{p.observable_behavior}</span></a>)}</section>}
 
     {exercises.length>0 && <section class="related"><span class="eyebrow">Transfer în joc</span><h2>Exerciții asociate</h2>{exercises.map(ex=><a href={`/exercitii/${ex.slug}`}><strong>{ex.title}</strong><span>{ex.area} · {ex.duration}</span></a>)}</section>}
 

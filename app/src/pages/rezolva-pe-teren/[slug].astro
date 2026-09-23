@@ -7,11 +7,17 @@ import ConceptLoop from '../../components/ConceptLoop.astro';
 import CoachExplainerScript from '../../components/CoachExplainerScript.astro';
 import CoachActions from '../../components/CoachActions.astro';
 import { getProblems, getProblem, problemFamilyLabels } from '../../lib/problem-library';
-import { resolveEvidenceClaims, getSeasonPlansForProblem } from '../../lib/content-bridge';
+import { resolveEvidenceClaims, getSeasonPlansForProblem, getScriptsForProblem, getAllPrinciples } from '../../lib/content-bridge';
 import { getCoachExplainer } from '../../lib/media-registry';
 export function getStaticPaths(){return getProblems().map(problem=>({params:{slug:problem.slug},props:{problemId:problem.problem_id}}))}
 const problem=getProblem(Astro.props.problemId); const evidence=resolveEvidenceClaims(problem); const test=problem.quick_tests[0]; const cue=problem.child_cues[0];
 const relevantPlans=getSeasonPlansForProblem(problem.problem_id);
+const relevantScripts=getScriptsForProblem(problem.problem_id);
+const linkedPrinciples=problem.related_principles.map(pid=>{
+  const target=getAllPrinciples().find(p=>p.id===pid);
+  if(!target) throw new Error(`[FAIL_CLOSED] [Problem] [${problem.problem_id}] Referința la principiul "${pid}" nu a fost găsită.`);
+  return target;
+});
 const ctx=`problema=${encodeURIComponent(problem.problem_id)}&sursa=decision-engine`;
 const explainer=getCoachExplainer(problem.problem_id);
 ---
@@ -25,10 +31,13 @@ const explainer=getCoachExplainer(problem.problem_id);
     {problem.flagship && <ProblemVisual problemId={problem.problem_id} title={problem.human_title}/>}
     {problem.problem_id === 'PRB-0003' && <ConceptLoop variant="prb-0003" />}
     {explainer?.script && <CoachExplainerScript script={explainer.script} targetDuration={explainer.target_recorded_duration_seconds} />}
-    <section id="intelege"><p class="eyebrow">ÎNȚELEGE · FĂRĂ DIAGNOSTIC</p><h2>Ce ar putea explica observația?</h2><div class="hypotheses">{problem.possible_explanations.map(h=><article><span>{h.evidence_state}</span><p>{h.text}</p></article>)}</div><details><summary>De ce acest mesaj?</summary><p>{cue.coach_meaning}</p><p>{cue.why}</p><h3>Evită</h3><ul>{cue.avoid.map(x=><li>{x}</li>)}</ul><h3>Întreabă</h3><ul>{problem.coach_questions.map(x=><li>{x}</li>)}</ul></details></section>
+    <section id="intelege"><p class="eyebrow">ÎNȚELEGE · FĂRĂ DIAGNOSTIC</p><h2>Ce ar putea explica observația?</h2><div class="hypotheses">{problem.possible_explanations.map(h=><article><span>{h.evidence_state}</span><p>{h.text}</p></article>)}</div><details><summary>De ce acest mesaj?</summary><p>{cue.coach_meaning}</p><p>{cue.why}</p><h3>Evită</h3><ul>{cue.avoid.map(x=><li>{x}</li>)}</ul><h3>Întreabă</h3><ul>{problem.coach_questions.map(x=><li>{x}</li>)}</ul></details>
+      {linkedPrinciples.length>0 && <p class="principle-link"><strong>Principiul din spate:</strong> {linkedPrinciples.map((p,i)=><>{i>0 && ' · '}<a href={`/principii/${p.slug}`}>{p.title}</a></>)}</p>}
+    </section>
     <section id="aplica" class="apply"><p class="eyebrow">APLICĂ PE TEREN</p><h2>Alege următorul pas</h2>
       {problem.related_exercises.length ? <div class="action-grid">{problem.related_exercises.map(id=><article><span>EXERCIȚIU</span><h3>{id}</h3><a href={`/gold-standard/exercitii/${id}?${ctx}`}>Deschide exercițiul</a><a href={`/gold-standard/configurator?exercitiu=${id}&copii=12&antrenori=1&${ctx}`}>Adaptează la grupa mea</a></article>)}</div>:<p>Nu există încă un exercițiu canonic legitim pentru această problemă. Folosește testul de mai sus și observă din nou.</p>}
       {problem.related_sessions.length>0 && <div class="handoff"><strong>Antrenament complet</strong>{problem.related_sessions.map(id=><><a href={`/gold-standard/sedinte/${id}?${ctx}`}>{id} · hartă și materiale</a><a href={`/gold-standard/sedinte/${id}/mod-teren?${ctx}`}>Intră în Field Mode</a></>)}</div>}
+      {relevantScripts.length>0 && <div class="handoff"><strong>Ce spui</strong>{relevantScripts.map(s=><a href={`/scripturi/${s.id}`}>{s.title} →</a>)}</div>}
       {relevantPlans.length>0 && <div class="handoff"><strong>Plan de sezon relevant</strong>{relevantPlans.map(p=><a href={`/planuri-de-sezon/${p.id}`}>{p.title} →</a>)}</div>}
     </section>
     <section class="transfer"><p class="eyebrow">URMĂREȘTE · TRANSFER</p><h2>Reușita în exercițiu nu este încă transfer.</h2>{problem.transfer_checks.map(t=><p>{t.text}</p>)}<p class="status">STARE: FIELD_INPUT_REQUIRED / NECONFIRMAT</p>{problem.assessment_links.map(id=><a href={`/gold-standard/evaluare/${id}?${ctx}`}>Deschide evaluarea {id}</a>)}</section>

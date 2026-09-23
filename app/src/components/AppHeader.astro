@@ -8,12 +8,16 @@ const preferredLabels: Record<string, string> = {
   '/volum': 'Învață',
   '/principii': 'Principii aplicate',
   '/rezolva-pe-teren': 'Rezolvă pe teren',
-  '/gold-standard': 'Modul complet'
+  '/gold-standard': 'Modul complet',
+  '/aparare': 'Apărarea',
+  '/scripturi': 'Scripturi',
+  '/planuri-de-sezon': 'Planuri de sezon',
+  '/cauta': 'Caută',
+  '/spatiul-meu': 'Spațiul meu'
 };
 const navItems = getPrimaryNavigation()
   .filter(item => preferredLabels[item.href])
   .map(item => ({ ...item, label: preferredLabels[item.href] }));
-navItems.push({ href: '/spatiul-meu', label: 'Spațiul meu' } as (typeof navItems)[number]);
 ---
 <header class="app-header">
   <div class="container header-content">

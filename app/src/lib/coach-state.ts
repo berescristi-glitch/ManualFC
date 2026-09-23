@@ -1,6 +1,10 @@
 export const COACH_STATE_KEY = 'manualfc.coach-state.v1';
 
 export type CanonicalKind = 'problem' | 'principle' | 'exercise' | 'session' | 'assessment' | 'chapter' | 'script' | 'season-plan';
+export const CANONICAL_KIND_LABELS: Record<CanonicalKind, string> = {
+  problem: 'Problemă', principle: 'Principiu', exercise: 'Exercițiu', session: 'Ședință',
+  assessment: 'Evaluare', chapter: 'Capitol', script: 'Script', 'season-plan': 'Plan de sezon',
+};
 export interface CanonicalRef { id: string; kind: CanonicalKind; href: string; title: string; }
 export interface RecentRef extends CanonicalRef { visitedAt: string; }
 export interface WorkspaceItem { ref: CanonicalRef; minutes: number; }

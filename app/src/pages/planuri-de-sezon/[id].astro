@@ -81,6 +81,7 @@ const weeklyModelLabel = plan.weekly_model === '2_training_plus_match' ? '2 antr
           <p><strong>Scripturi relevante:</strong> {mic.related_script_ids.map((sid, i) => <>{i > 0 && ' · '}<a href={`/scripturi/${sid}`}>{sid}</a></>)}</p>
           <p><strong>Reflecție:</strong></p>
           <ul>{mic.reflection_prompts.map((r) => <li>{r}</li>)}</ul>
+          {mic.session_ids[0] && <p class="reflect-cta"><a href={`/spatiul-meu/reflectie?sesiune=${mic.session_ids[0]}`}>Reflectează după această săptămână în Spațiul meu →</a></p>}
           <p><strong>Transfer în meci:</strong> {mic.match_transfer}</p>
           <p><strong>Note de revizuire:</strong> {mic.review_notes}</p>
           <p><strong>Opțiuni de adaptare:</strong></p>
@@ -158,6 +159,7 @@ const weeklyModelLabel = plan.weekly_model === '2_training_plus_match' ? '2 antr
   .block-fields dd { margin: 0; }
   .block-links { font-size: .9rem; color: var(--color-text-muted); margin-top: var(--space-4); }
   .safety { font-size: .9rem; color: var(--color-text-muted); }
+  .reflect-cta { font-weight: 800; }
   .signal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
   .signal { padding: var(--space-4); border-radius: 8px; border: 1px solid var(--color-border); }
   .signal h3 { font-size: .85rem; text-transform: uppercase; margin-top: 0; }
