@@ -43,7 +43,7 @@ Doar P0/P1 reproductibile, în scop, sigure, cu test de regresie, re-validare ș
 
 ## 7. Jurnal de progres și descoperiri
 
-(se completează în timpul execuției)
+- 4 defecte P1 remediate cu regresie (overflow nav, miss offline la slash, href javascript: din localStorage, obiecte git corupte). Productia e la d2c6c5a (TASK-3715): drift de deployment, fara deploy.
 
 ## 8. Decizii
 
@@ -51,4 +51,4 @@ Doar P0/P1 reproductibile, în scop, sigure, cu test de regresie, re-validare ș
 
 ## 9. Rezultate
 
-(se completează în raportul final)
+Vezi reports/task-reports/TASK-3722.md. Verdict PASS; clasificare READY FOR PRIVATE PILOT.
