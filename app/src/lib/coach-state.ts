@@ -81,10 +81,14 @@ export function clampPlayers(v: unknown): number {
 const sanitizeDuration = (v: unknown): 60 | 75 => (Number(v) === 60 ? 60 : 75);
 const sanitizeCoaches = (v: unknown): 1 | 2 => (Number(v) === 2 ? 2 : 1);
 
+// TASK-3722: saved/favourite/recent hrefs are rendered as <a href> in "Spațiul meu".
+// Only same-origin absolute paths are valid; a tampered localStorage value such as
+// `javascript:...` or a protocol-relative `//host` URL is dropped instead of rendered.
+const isSiteRelativeHref = (v: unknown): v is string => typeof v === 'string' && /^\/(?![/\\])[^\s]*$/.test(v);
 function sanitizeRef(v: unknown): CanonicalRef | null {
   if (!v || typeof v !== 'object') return null;
   const r = v as Record<string, unknown>;
-  if (typeof r.id !== 'string' || !r.id || !isKind(r.kind) || typeof r.href !== 'string' || !r.href || typeof r.title !== 'string' || !r.title) return null;
+  if (typeof r.id !== 'string' || !r.id || !isKind(r.kind) || !isSiteRelativeHref(r.href) || typeof r.title !== 'string' || !r.title) return null;
   return { id: r.id, kind: r.kind, href: r.href, title: r.title };
 }
 const sanitizeRefList = (v: unknown): CanonicalRef[] => Array.isArray(v) ? v.map(sanitizeRef).filter((x): x is CanonicalRef => x !== null) : [];

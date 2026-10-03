@@ -55,10 +55,13 @@ const navItems = getPrimaryNavigation()
   .nav-link { display: flex; align-items: center; min-height: 44px; color: #E4E8ED; font-size: .9rem; font-weight: 750; line-height: 1; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; }
   .nav-link:hover, .nav-link.active { color: white; border-bottom-color: var(--color-brand-gold); }
   .mobile-menu { display:none; }
-  @media (max-width: 860px) {
+  /* TASK-3722: the 10-item primary navigation (TASK-3721) no longer fits on one
+     row below ~1240px. Stack the logo above the nav and let the items wrap so
+     every link stays visible and the page never scrolls horizontally. */
+  @media (max-width: 1240px) {
     .header-content { align-items: flex-start; flex-direction: column; padding-block: .85rem; gap: .45rem; }
-    .main-nav { width: 100%; overflow-x: auto; scrollbar-width: thin; }
-    .main-nav ul { width: max-content; gap: 1.15rem; }
+    .main-nav { width: 100%; }
+    .main-nav ul { flex-wrap: wrap; justify-content: flex-start; gap: 0 1.15rem; }
   }
   @media (max-width: 700px) {
     .header-content { min-height:68px; padding-block:.55rem; flex-direction:row; align-items:center; gap:1rem; }

@@ -81,6 +81,22 @@ function isNavigationRequest(request) {
   return request.mode === 'navigate' || (request.method === 'GET' && (request.headers.get('accept') || '').includes('text/html'));
 }
 
+/**
+ * TASK-3722: the static host serves both `/principii` and `/principii/` and the
+ * site's own links use both forms, but Cache Storage matches exact URLs. A page
+ * visited as one form must still be found offline when requested as the other.
+ */
+async function matchAlternateSlash(request) {
+  let url;
+  try { url = new URL(request.url); } catch { return undefined; }
+  if (url.pathname === '/' || /\.[a-z0-9]+$/i.test(url.pathname)) return undefined;
+  url.pathname = url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : `${url.pathname}/`;
+  return (
+    (await caches.match(url.href, { ignoreVary: true })) ||
+    (await caches.match(url.href, { ignoreSearch: true, ignoreVary: true }))
+  );
+}
+
 async function networkFirstNavigation(request) {
   try {
     const response = await fetch(request);
@@ -92,7 +108,8 @@ async function networkFirstNavigation(request) {
   } catch {
     const cached =
       (await caches.match(request, { ignoreVary: true })) ||
-      (await caches.match(request, { ignoreSearch: true, ignoreVary: true }));
+      (await caches.match(request, { ignoreSearch: true, ignoreVary: true })) ||
+      (await matchAlternateSlash(request));
     if (cached) return cached;
     const fallback = await caches.match(OFFLINE_FALLBACK_URL, { ignoreVary: true });
     if (fallback) return fallback;
